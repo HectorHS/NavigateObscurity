@@ -1,8 +1,61 @@
-$main-blue: #3b6f77;
+$blue: #3b6f77;
+$blue-bright: #168a9c;
 $main-font: Helvetica, sans-serif;
+
+@mixin background-size($property) {
+  -webkit-background-size: $property;
+  -moz-background-size: $property;
+  -o-background-size: $property;
+  background-size: $property;
+}
+
 
 body {
     font: 100% $main-font;
-    color: $main-blue;
+    margin:0;
+    height: 100%;
   }
+
+  html {
+    height: 100%;
+  }
+
+.test {
+  background-color: green;
+}
+
+.height-full {
+  max-height: 100vh;
+  max-width: 100%;
+}
+
+.image-center-cover {
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.container {
+  position: relative;
+}
+
+.header-container { 
+  background-image: url(../images/background.jpg);
+  height: 100%;
+  background-position: center;
+  background-repeat: no-repeat;
+  @include background-size(cover); 
+}
+
+.header-main {
+  color: $blue-bright;
+  position: absolute;
+  bottom:50px;
+  left:50px;
+  border-left: 5px solid $blue;
+  padding-left: 10px;
+}
+
+
 

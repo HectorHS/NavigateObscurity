@@ -3,11 +3,19 @@
 <head>
     {% load static %}
     <link rel='stylesheet' type="text/css" href={% static "main/css/main.css" %}>
-    <title>Navigate Obscurity
-    </title>
+    <title>Navigate Obscurity</title>
 </head>
 
 <body>
+        
     <header id='site-header'></header>
-    <p>Hello there</p>
+    <div class="header-container">
+        <h1 class="header-main">Life is full of obscurities. Don't demystify life. Navigate it.</h1>
+    </div>
+    
+    <p class=''>Hello there</p>
+    <p class=' test'> Warning</p>
+
+    <img src="{% static "main/images/background.jpg" %}" 
+    class="height-full image-center-cover"/>
 </body>

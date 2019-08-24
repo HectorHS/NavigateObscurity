@@ -1,6 +1,49 @@
 body {
   font: 100% Helvetica, sans-serif;
-  color: #3b6f77;
+  margin: 0;
+  height: 100%;
 }
 
-/*# sourceMappingURL=../css/main.css.map */
+html {
+  height: 100%;
+}
+
+.test {
+  background-color: green;
+}
+
+.height-full {
+  max-height: 100vh;
+  max-width: 100%;
+}
+
+.image-center-cover {
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.container {
+  position: relative;
+}
+
+.header-container {
+  background-image: url(../images/background.jpg);
+  height: 100%;
+  background-position: center;
+  background-repeat: no-repeat;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+}
+
+.header-main {
+  color: #168a9c;
+  position: absolute;
+  bottom: 50px;
+  left: 50px;
+  border-left: 5px solid #3b6f77;
+  padding-left: 10px;
+}
