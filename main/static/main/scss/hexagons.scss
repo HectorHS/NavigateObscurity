@@ -1,0 +1,152 @@
+// Hexagons from https://github.com/web-tiki/responsive-grid-of-hexagons
+#hexagon-grid {
+  display: grid;
+  grid-gap:15px;
+  grid-template-columns: repeat(6,1fr);
+  width: 90%;
+  margin: 0 auto;
+  padding-bottom: 8.4%;
+  list-style-type: none;
+  overflow:hidden;
+}
+
+.hexagon {
+  grid-column-end: span 2;
+  position: relative;
+  visibility:hidden;
+  outline:1px solid transparent; /* fix for jagged edges in FF on hover transition */
+
+  img {
+    display:none;
+    left: -100%;
+    right: -100%;
+    width: auto;
+    margin: 0 auto;
+    @include transform(rotate(0deg));
+  }
+  h3 {
+    width: 100%;
+    margin:0;
+    overflow-wrap: break-word;
+    font-size: 2.8vw;
+    color: $dark-grey;
+  }
+}
+.hexagon::after{
+  content:'';
+  display:block;
+  padding-bottom: 86.602%;  /* =  100 / tan(60) * 1.5 */
+}
+.hexagon-item{
+  visibility: hidden;
+  position: absolute;
+  width:100%;
+  padding-bottom: 115.470%; /* =  width / sin(60) */
+  overflow: hidden;
+  outline:1px solid transparent; /* fix for jagged edges in FF on hover transition */
+  @include transform(rotate(-60deg) skewY(30deg));
+}
+.hexagon-item * {
+  position: absolute;
+  visibility: visible;
+  outline:1px solid transparent; /* fix for jagged edges in FF on hover transition */
+}
+.hexagon-link {
+  display:flex;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  overflow: hidden;
+  @include transform(skewY(-30deg) rotate(60deg));
+  @extend %gradient-transition-main;
+}
+.hexagon-link::before {
+  @extend %gradient-transition-before;
+  background-image: linear-gradient(to top right, rgba(255,0,0,0) 0%, $orange 80%);
+}
+.hexagon:nth-child(5n+1) .hexagon-link { 
+  background-image: $blue-shade-2;
+}
+.hexagon:nth-child(5n+2) .hexagon-link { 
+  background-image: $blue-shade-4;
+}
+.hexagon:nth-child(5n+3) .hexagon-link { 
+  background-image: $blue-shade-1;
+}
+.hexagon:nth-child(5n+4) .hexagon-link { 
+  background-image: $blue-shade-3;
+}
+.hexagon:nth-child(5n+5) .hexagon-link { 
+  background-image: $blue-shade-5;
+}
+.hexagon-link:hover {
+  h3 {
+    display: block;
+  }
+  img {
+    display: none;
+  }
+}
+.hexagon-link:hover::before {
+  @extend %gradient-transition-hover;
+}
+
+@media (min-width: 1025px) { /* <- 2-3  hexagons per row */
+  #hexagon-grid{
+    grid-template-columns: repeat(6,1fr);
+    padding-bottom: 8.4%;
+  }
+  .hexagon:nth-child(5n+1){ /* first hexagon of odd rows */
+    grid-column-start: 2;
+  }
+  .hexagon {
+    h3 {
+      font-size: 1.5vw;
+      display:none;
+    }
+    img {
+      display: block;
+    }
+  }
+}
+
+@media (min-width:768px) and (max-width: 1024px) { /* <- 2-1  hexagons per row */
+  #hexagon-grid{
+    grid-template-columns: repeat(4,1fr);
+    padding-bottom: 12.2%;
+    grid-gap:10px;
+  }
+  .hexagon:nth-child(3n+3){ /* first hexagon of even rows */
+    grid-column-start: 2;
+  }
+  .hexagon h3 {
+    font-size: 1.5vw;
+  }
+  .hexagon:nth-child(5n+1) .hexagon-link { 
+    background-image: $blue-shade-1;
+  }
+  .hexagon:nth-child(5n+2) .hexagon-link { 
+    background-image: $blue-shade-2;
+  }
+  .hexagon:nth-child(5n+3) .hexagon-link { 
+    background-image: $blue-shade-3;
+  }
+  .hexagon:nth-child(5n+4) .hexagon-link { 
+    background-image: $blue-shade-4;
+  }
+  .hexagon:nth-child(5n+5) .hexagon-link { 
+    background-image: $blue-shade-5;
+  }
+}
+@media (min-width:768px) and (max-width: 849px) { /* <- 2-1  hexagons per row */
+  .hexagon h3 {
+    font-size: 2vw;
+  }
+}
+
+@media (max-width: 767px) {
+  .hexagon:nth-child(5n+1){ /* first hexagon of odd rows */
+    grid-column-start: 2;
+  }
+}

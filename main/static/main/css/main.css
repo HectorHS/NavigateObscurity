@@ -1,36 +1,22 @@
 @charset "UTF-8";
-body {
-  font: 100% "Poppins", sans-serif;
-  margin: 0;
-  height: 100%;
+.hexagon-link, button {
+  z-index: 1;
 }
 
-html {
-  height: 100%;
-}
-
-.header-container {
-  background-image: url(../images/background.jpg);
-  height: 100%;
-  background-position: center;
-  background-repeat: no-repeat;
-  -webkit-background-size: cover;
-  -moz-background-size: cover;
-  -o-background-size: cover;
-  background-size: cover;
-}
-
-.header-title-main {
-  color: #168a9c;
+.hexagon-link::before, button::before {
   position: absolute;
-  bottom: 50px;
-  left: 50px;
-  border-left: 5px solid #168a9c;
-  padding-left: 10px;
-  font-size: 130%;
-  font-weight: 500;
-  letter-spacing: 2px;
-  z-index: 10;
+  content: "";
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: -1;
+  transition: opacity 0.2s ease;
+  opacity: 0;
+}
+
+.hexagon-link:hover::before, button:hover::before {
+  opacity: 1;
 }
 
 .nav-bar {
@@ -79,7 +65,7 @@ nav ul li a, nav ul li a:visited {
   padding-left: 25%;
   line-height: 20px;
   background: rgba(23, 28, 28, 0.9);
-  color: #d3dede;
+  color: #dffcff;
   font-weight: 400;
   letter-spacing: 2px;
   text-decoration: none;
@@ -88,8 +74,8 @@ nav ul li a, nav ul li a:visited {
 }
 
 nav ul li a:hover, nav ul li a:visited:hover {
-  background: #168a9c;
-  color: #d3dede;
+  background: #277daa;
+  color: #dffcff;
 }
 
 nav ul li a:not(:only-child):after, nav ul li a:visited:not(:only-child):after {
@@ -106,7 +92,7 @@ nav ul li ul li a {
   padding-left: 30%;
   border-top-style: solid;
   border-top-width: 1px;
-  border-top-color: #d3dede;
+  border-top-color: #dffcff;
 }
 
 .nav-list {
@@ -138,7 +124,7 @@ nav ul li ul li a {
   border-radius: 5px;
   height: 5px;
   width: 35px;
-  background: #d3dede;
+  background: #dffcff;
   position: absolute;
   display: block;
   content: '';
@@ -169,23 +155,7 @@ nav ul li ul li a {
   transform: rotate(-45deg);
 }
 
-.height-full {
-  max-height: 100vh;
-  max-width: 100%;
-}
-
-.image-center-cover {
-  background-attachment: fixed;
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: cover;
-}
-
-.container {
-  position: relative;
-}
-
-@media screen and (min-width: 799px) {
+@media screen and (min-width: 768px) {
   nav {
     padding: 0;
     width: auto;
@@ -225,5 +195,284 @@ nav ul li ul li a {
   .nav-dropdown {
     position: absolute;
     display: none;
+  }
+}
+
+#hexagon-grid {
+  display: grid;
+  grid-gap: 15px;
+  grid-template-columns: repeat(6, 1fr);
+  width: 90%;
+  margin: 0 auto;
+  padding-bottom: 8.4%;
+  list-style-type: none;
+  overflow: hidden;
+}
+
+.hexagon {
+  grid-column-end: span 2;
+  position: relative;
+  visibility: hidden;
+  outline: 1px solid transparent;
+  /* fix for jagged edges in FF on hover transition */
+}
+
+.hexagon img {
+  display: none;
+  left: -100%;
+  right: -100%;
+  width: auto;
+  margin: 0 auto;
+  -webkit-transform: rotate(0deg);
+  -ms-transform: rotate(0deg);
+  transform: rotate(0deg);
+}
+
+.hexagon h3 {
+  width: 100%;
+  margin: 0;
+  overflow-wrap: break-word;
+  font-size: 2.8vw;
+  color: #171c1c;
+}
+
+.hexagon::after {
+  content: '';
+  display: block;
+  padding-bottom: 86.602%;
+  /* =  100 / tan(60) * 1.5 */
+}
+
+.hexagon-item {
+  visibility: hidden;
+  position: absolute;
+  width: 100%;
+  padding-bottom: 115.470%;
+  /* =  width / sin(60) */
+  overflow: hidden;
+  outline: 1px solid transparent;
+  /* fix for jagged edges in FF on hover transition */
+  -webkit-transform: rotate(-60deg) skewY(30deg);
+  -ms-transform: rotate(-60deg) skewY(30deg);
+  transform: rotate(-60deg) skewY(30deg);
+}
+
+.hexagon-item * {
+  position: absolute;
+  visibility: visible;
+  outline: 1px solid transparent;
+  /* fix for jagged edges in FF on hover transition */
+}
+
+.hexagon-link {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  overflow: hidden;
+  -webkit-transform: skewY(-30deg) rotate(60deg);
+  -ms-transform: skewY(-30deg) rotate(60deg);
+  transform: skewY(-30deg) rotate(60deg);
+}
+
+.hexagon-link::before {
+  background-image: linear-gradient(to top right, rgba(255, 0, 0, 0) 0%, #d66808 80%);
+}
+
+.hexagon:nth-child(5n+1) .hexagon-link {
+  background-image: linear-gradient(to top right, #59acd9, #3984ac);
+}
+
+.hexagon:nth-child(5n+2) .hexagon-link {
+  background-image: linear-gradient(to top right, #277daa, #204960);
+}
+
+.hexagon:nth-child(5n+3) .hexagon-link {
+  background-image: linear-gradient(to top right, #fbc99d, #539dc6);
+}
+
+.hexagon:nth-child(5n+4) .hexagon-link {
+  background-image: linear-gradient(to top right, #2f98d0, #2d6786);
+}
+
+.hexagon:nth-child(5n+5) .hexagon-link {
+  background-image: linear-gradient(to top right, #216a91, #132c39);
+}
+
+.hexagon-link:hover h3 {
+  display: block;
+}
+
+.hexagon-link:hover img {
+  display: none;
+}
+
+@media (min-width: 1025px) {
+  /* <- 2-3  hexagons per row */
+  #hexagon-grid {
+    grid-template-columns: repeat(6, 1fr);
+    padding-bottom: 8.4%;
+  }
+  .hexagon:nth-child(5n+1) {
+    /* first hexagon of odd rows */
+    grid-column-start: 2;
+  }
+  .hexagon h3 {
+    font-size: 1.5vw;
+    display: none;
+  }
+  .hexagon img {
+    display: block;
+  }
+}
+
+@media (min-width: 768px) and (max-width: 1024px) {
+  /* <- 2-1  hexagons per row */
+  #hexagon-grid {
+    grid-template-columns: repeat(4, 1fr);
+    padding-bottom: 12.2%;
+    grid-gap: 10px;
+  }
+  .hexagon:nth-child(3n+3) {
+    /* first hexagon of even rows */
+    grid-column-start: 2;
+  }
+  .hexagon h3 {
+    font-size: 1.5vw;
+  }
+  .hexagon:nth-child(5n+1) .hexagon-link {
+    background-image: linear-gradient(to top right, #fbc99d, #539dc6);
+  }
+  .hexagon:nth-child(5n+2) .hexagon-link {
+    background-image: linear-gradient(to top right, #59acd9, #3984ac);
+  }
+  .hexagon:nth-child(5n+3) .hexagon-link {
+    background-image: linear-gradient(to top right, #2f98d0, #2d6786);
+  }
+  .hexagon:nth-child(5n+4) .hexagon-link {
+    background-image: linear-gradient(to top right, #277daa, #204960);
+  }
+  .hexagon:nth-child(5n+5) .hexagon-link {
+    background-image: linear-gradient(to top right, #216a91, #132c39);
+  }
+}
+
+@media (min-width: 768px) and (max-width: 849px) {
+  /* <- 2-1  hexagons per row */
+  .hexagon h3 {
+    font-size: 2vw;
+  }
+}
+
+@media (max-width: 767px) {
+  .hexagon:nth-child(5n+1) {
+    /* first hexagon of odd rows */
+    grid-column-start: 2;
+  }
+}
+
+body {
+  font: 100% "Poppins", sans-serif;
+  margin: 0;
+  height: 100%;
+}
+
+html {
+  height: 100%;
+}
+
+.header-container {
+  height: 100%;
+  background-image: url(../images/background.jpg);
+  background-position: center;
+  background-repeat: no-repeat;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+}
+
+.header-title-main {
+  position: absolute;
+  bottom: 50px;
+  left: 50px;
+  padding-left: 10px;
+  border-left: 5px solid #277daa;
+  color: #277daa;
+  font-size: 130%;
+  font-weight: 500;
+  letter-spacing: 2px;
+  z-index: 10;
+}
+
+.data-container {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-gap: 50px;
+  padding: 50px;
+  background-color: #171c1c;
+  color: #dffcff;
+}
+
+button {
+  display: inline-block;
+  position: relative;
+  padding: 20px;
+  margin: 0;
+  margin-top: 20px;
+  border-radius: 35px;
+  border: 0.0001px solid #171c1c;
+  transition: background-image 0.5s ease;
+  background-image: linear-gradient(to top right, #171c1c 0%, #277daa 60%);
+  color: #171c1c;
+  font-size: 18px;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+button::before {
+  background-image: linear-gradient(to top right, rgba(255, 0, 0, 0) 0%, #d66808 60%);
+  border: 0.0001px solid #171c1c;
+  border-radius: 35px;
+}
+
+.height-full {
+  max-height: 100vh;
+  max-width: 100%;
+}
+
+.image-center-cover {
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.container {
+  position: relative;
+}
+
+.v-align {
+  display: flex;
+  align-items: center;
+}
+
+@media (min-width: 1025px) {
+  .data-container {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+@media (min-width: 850px) and (max-width: 1024px) {
+  .data-container {
+    grid-template-columns: 2fr 1fr;
+  }
+}
+
+@media (min-width: 768px) and (max-width: 849px) {
+  .data-container {
+    grid-template-columns: 1fr 1fr;
   }
 }

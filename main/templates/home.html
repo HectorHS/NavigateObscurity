@@ -11,7 +11,7 @@
 
 <body>
 
-
+<!--  Navigation bar -->
       <section class="nav-bar">
           <div class="logo">
             <a href="">
@@ -43,34 +43,64 @@
           </nav>
         </section>
 
-       
-
-
-
-
+    <!-- Hero -->
     <div class="header-container">
         <h1 class="header-title-main">Life is full of obscurities. Don't demystify life. Navigate it.</h1>
     </div>
-    
-    <p class=''>Hello there</p>
-    <p class=' test'> Warning</p>
 
-    <img src="{% static "main/images/background.jpg" %}" 
-    class="height-full image-center-cover"/>
+    <!-- Data section -->
+   <div class="data-container">
+     <div class="v-align">
+        <div>
+          <p>Too often, I realise how little I know about this world. I am not talking about details, I am talking about the big picture. The kind of things you would expect to cover on an Earth 101 course in an alien university. So, I look for reasonably well sourced data and visualise them hoping to aid my perspective on life on Earth.</p>
+          <button>Browse all data</button>
+        </div>
+     </div>
+    <div>
+       <ul id="hexagon-grid">
+         <li class="hexagon">
+            <div class="hexagon-item">
+                <a class="hexagon-link" href="#">
+                  <img src={% static 'main/images/icons8-skull-96.png' %}>
+                   <h3>Death</h3>
+                </a>
+              </div>
+         </li>
+         <li class="hexagon">
+            <div class="hexagon-item">
+                <a class="hexagon-link" href="#">
+                  <img src={% static 'main/images/icons8-globe-96.png' %}>
+                  <h3>Sustainability</h3>
+                </a>
+              </div>
+         </li>
+         <li class="hexagon">
+            <div class="hexagon-item">
+                <a class="hexagon-link" href="#">
+                  <img src={% static 'main/images/icons8-grass-96.png' %}>
+                  <h3>Biodiversity</h3>
+                </a>
+              </div>
+         </li>
+         <li class="hexagon">
+            <div class="hexagon-item">
+                <a class="hexagon-link" href="#">
+                  <img src={% static 'main/images/icons8-traveler-96.png' %}>
+                  <h3>Migration</h3>
+                </a>
+              </div>
+         </li>
+
+       </ul>
+      </div>
+    </div>
+
+    
+  
 
   
 
   <script src="http://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
   <script  src={% static "main/js/function.js" %}></script>
 
-    <script>
-            function myFunction() {
-              var x = document.getElementById("myTopnav");
-              if (x.className === "topnav") {
-                x.className += " responsive";
-              } else {
-                x.className = "topnav";
-              }
-            }
-            </script>
 </body>
