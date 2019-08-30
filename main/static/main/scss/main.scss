@@ -15,7 +15,7 @@ body {
 }
 .header-container { 
   height: 100%;
-  background-image: url(../images/background.jpg);
+  background-image: url(../images/background2.jpg);
   background-position: center;
   background-repeat: no-repeat;
   @include background-size(cover); 
@@ -35,7 +35,7 @@ body {
 .footer-container {
   position: relative;
   height: 500px;
-  background-image: url(../images/footer.jpg);
+  background-image: url(../images/footer2.jpg);
   background-position: center;
   background-repeat: no-repeat;
   @include background-size(cover); 
@@ -46,7 +46,7 @@ body {
   left:50px;
   padding-left: 10px;
   border-left: 5px solid $bright-blue;
-  color: $dark-grey;
+  color: $darker-grey;
   font-size: 150%;
   font-weight: 600;
   letter-spacing: 1px;
@@ -122,7 +122,7 @@ button {
   border: 0.0001px solid $dark-grey;
   transition: background-image 0.5s ease;
   background-image: linear-gradient(to top right, $dark-grey 0%,$bright-blue 60%);
-  color: $dark-grey;
+  color: $darker-grey;
   font-size: 18px;
   font-weight: 800;
   text-transform: uppercase;

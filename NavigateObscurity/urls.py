@@ -20,5 +20,5 @@ from main import views as main_views
 urlpatterns = [
     path('', main_views.home),
     path('admin/', admin.site.urls),
-    path('worlddata/', include('worlddata.urls')),
+    path('data/', include('worlddata.urls')),
 ]

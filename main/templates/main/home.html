@@ -1,0 +1,83 @@
+{% extends 'main/layout.html' %}
+
+{% block content %}
+{% load static %}
+
+<!-- Hero -->
+<section class="header-container">
+  <h1 class="header-title-main">Life is full of obscurities. Don't demystify life. Navigate it.</h1>
+</section>
+
+<!-- Data section -->
+<section class="data-container">
+  <div class="data-hexagons">
+    <ul id="hexagon-grid">
+      <li class="hexagon-data">
+        <div class="hexagon-item">
+          <a class="hexagon-link" href="#">
+            <img src={% static 'main/images/icons8-skull-96.png' %}>
+            <h3>Death</h3>
+          </a>
+        </div>
+      </li>
+      <li class="hexagon-data">
+        <div class="hexagon-item">
+          <a class="hexagon-link" href="#">
+            <img src={% static 'main/images/icons8-globe-96.png' %}>
+            <h3>Sustainability</h3>
+          </a>
+        </div>
+      </li>
+      <li class="hexagon-data">
+        <div class="hexagon-item">
+          <a class="hexagon-link" href="#">
+            <img src={% static 'main/images/icons8-grass-96.png' %}>
+            <h3>Biodiversity</h3>
+          </a>
+        </div>
+      </li>
+      <li class="hexagon-data">
+        <div class="hexagon-item">
+          <a class="hexagon-link" href="#">
+            <img src={% static 'main/images/icons8-traveler-96.png' %}>
+            <h3>Migration</h3>
+          </a>
+        </div>
+      </li>
+    </ul>
+  </div>
+  <div class="data-text v-align">
+    <div>
+      <p>Too often, I realise how little I know about this world. I am not talking about details, I am talking about
+        the big picture. The kind of things you would expect to cover on an Earth 101 course in an alien university.
+        So, I look for reasonably well sourced data and visualise them hoping to aid my perspective on life on Earth.
+      </p>
+      <button>Browse all data</button>
+    </div>
+  </div>
+</section>
+
+<!-- Notes sections -->
+<section class="notes-container">
+  <div>
+    <ul id="hexagon-grid">
+      <li class="hexagon-notes">
+        <div class="hexagon-item">
+          <a class="hexagon-link" href="#">
+            <img class="hexagon-img-note" src={% static 'main/images/head strong.jpg' %}>
+            <h3>Head strong</h3>
+          </a>
+        </div>
+      </li>
+    </ul>
+  </div>
+  <div class="v-align">
+    <div>
+      <p>I read books and then I forget about them. So I take notes. But then I never go through the notes again. So I
+        am trying to find nicer ways to revisit notes and themes from books in a more engaging and non linear way.</p>
+      <button>Browse all notes</button>
+    </div>
+  </div>
+</section>
+
+{% endblock %}

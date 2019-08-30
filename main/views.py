@@ -4,6 +4,7 @@ from django.template import loader
 
 # Create your views here.
 
+
 def home(request):
-    
-    return render(request, 'home.html')
+
+    return render(request, 'main/home.html')
