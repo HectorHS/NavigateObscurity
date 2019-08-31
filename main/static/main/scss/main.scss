@@ -3,113 +3,16 @@
 @import 'parents';
 
 @import 'navbar';
+@import 'footer';
 @import 'hexagons';
 
+html {
+  height: 100%;
+}
 body {
     font: 100% $main-font;
     margin:0;
     height: 100%;
-}
- html {
-  height: 100%;
-}
-.header-container { 
-  height: 100%;
-  background-image: url(../images/background2.jpg);
-  background-position: center;
-  background-repeat: no-repeat;
-  @include background-size(cover); 
-}
-.header-title-main {
-  position: absolute;
-  bottom:50px;
-  left:50px;
-  padding-left: 10px;
-  border-left: 5px solid $bright-blue;
-  color: $bright-blue;
-  font-size: 130%;
-  font-weight: 500;
-  letter-spacing: 2px;
-  z-index:10;
-}
-.footer-container {
-  position: relative;
-  height: 500px;
-  background-image: url(../images/footer2.jpg);
-  background-position: center;
-  background-repeat: no-repeat;
-  @include background-size(cover); 
-}
-.footer-title {
-  position: absolute;
-  bottom:50px;
-  left:50px;
-  padding-left: 10px;
-  border-left: 5px solid $bright-blue;
-  color: $darker-grey;
-  font-size: 150%;
-  font-weight: 600;
-  letter-spacing: 1px;
-  word-spacing: 3px;
-}
-.bottom-bar {
-  background-color: black;
-  height: 20px;
-  margin:0;
-  padding:5px;
-  p {
-    margin:0;
-    color: $almost-white;
-    text-align: center;
-    font-size: 80%;
-  }
-}
-.data-container {
-  display: grid;
-  grid-template-columns: 1fr;
-  grid-gap: 50px;
-  padding:50px;
-  background-color: $dark-grey;
-  color: $almost-white;
-  
-  @media (min-width: $mobile-breakpoint) {
-    grid-template-columns: 1fr 1fr; 
-    @media (min-width: $tablet-breakpoint) {
-      grid-template-columns: 2fr 1fr; 
-      @media (min-width: $desktop-breakpoint) {
-        grid-template-columns: 1fr 1fr; 
-      }
-    }
-  }
-}
-.data-hexagons {
-  @media (min-width: $mobile-breakpoint) {
-    grid-column-start: 2;
-  }
-}
-.data-text {
-  @media (min-width: $mobile-breakpoint) {
-    grid-column-start: 1;
-    grid-row-start: 1;
-  }
-}
-.notes-container {
-  display: grid;
-  grid-template-columns: 1fr;
-  grid-gap: 50px;
-  padding:50px;
-  background-color: $dark-grey;
-  color: $almost-white;
-  
-  @media (min-width: $mobile-breakpoint) {
-    grid-template-columns: 1fr 1fr; 
-    @media (min-width: $tablet-breakpoint) {
-      grid-template-columns: 1fr 2fr; 
-      @media (min-width: $desktop-breakpoint) {
-        grid-template-columns: 1fr 1fr; 
-      }
-    }
-  }
 }
 button {
   @extend %gradient-transition-main;
@@ -137,6 +40,22 @@ button::before {
 button:hover::before {
   @extend %gradient-transition-hover;
 }
+.container {
+  padding:50px;
+  background-color: $dark-grey;
+  color: $almost-white;
+}
+.banner-container {
+  height: 300px;
+  background-image: url(../images/banner.jpg);
+  @extend  %container-image;
+}
+.header-title-banner {
+  top:200px;
+  left:50px;
+  @extend %header-title;
+}
+
 
 // Utility
 
@@ -157,4 +76,8 @@ button:hover::before {
   display:flex;
   align-items: center;
 }
+ .limited-width {
+  padding-right: 30%;
+}
+ 
 

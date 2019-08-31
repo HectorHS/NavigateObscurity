@@ -6,6 +6,7 @@
   width: 90%;
   margin: 0 auto;
   padding-bottom: 8.4%;
+  padding-inline-start: 0;
   list-style-type: none;
   overflow:hidden;
   
@@ -18,6 +19,14 @@
       padding-bottom: 8.4%;
     }
   }
+}
+#hexagon-grid-data-index {
+  margin: 0 auto;
+  padding-bottom: 28.4%;
+  padding-inline-start: 0;
+  list-style-type: none;
+  overflow:hidden;
+  max-width: 150px;
 }
 
 %hexagon {
@@ -54,19 +63,19 @@
     display:block;
     padding-bottom: 86.602%;  /* =  100 / tan(60) * 1.5 */
   }
-  &:nth-child(5n+1) .hexagon-link { 
+  &:nth-child(5n+1) .hexagon-link-main { 
     background-image: $blue-shade-2;
   }
-  &:nth-child(5n+2) .hexagon-link { 
+  &:nth-child(5n+2) .hexagon-link-main { 
     background-image: $blue-shade-4;
   }
-  &:nth-child(5n+3) .hexagon-link { 
+  &:nth-child(5n+3) .hexagon-link-main { 
     background-image: $blue-shade-1;
   }
-  &:nth-child(5n+4) .hexagon-link { 
+  &:nth-child(5n+4) .hexagon-link-main { 
     background-image: $blue-shade-3;
   }
-  &:nth-child(5n+5) .hexagon-link { 
+  &:nth-child(5n+5) .hexagon-link-main { 
     background-image: $blue-shade-5;
   }
   @media (min-width: $desktop-breakpoint) { /* <- 2-3  hexagons per row */
@@ -78,19 +87,19 @@
     &:nth-child(3n+3){ /* first hexagon of even rows */
       grid-column-start: 2;
     }
-    &:nth-child(5n+1) .hexagon-link { 
+    &:nth-child(5n+1) .hexagon-link-main { 
       background-image: $blue-shade-1;
     }
-    &:nth-child(5n+2) .hexagon-link { 
+    &:nth-child(5n+2) .hexagon-link-main { 
       background-image: $blue-shade-2;
     }
-    &:nth-child(5n+3) .hexagon-link { 
+    &:nth-child(5n+3) .hexagon-link-main { 
       background-image: $blue-shade-3;
     }
-    &:nth-child(5n+4) .hexagon-link { 
+    &:nth-child(5n+4) .hexagon-link-main { 
       background-image: $blue-shade-4;
     }
-    &:nth-child(5n+5) .hexagon-link { 
+    &:nth-child(5n+5) .hexagon-link-main { 
       background-image: $blue-shade-5;
     }
   }
@@ -115,6 +124,12 @@
     display: none;
   }
 }
+.hexagon-data-index {
+  @extend %hexagon;
+  img {
+    height: 60%;
+  }
+}
 .hexagon-item{
   visibility: hidden;
   position: absolute;
@@ -129,7 +144,7 @@
   visibility: visible;
   outline:1px solid transparent; /* fix for jagged edges in FF on hover transition */
 }
-.hexagon-link {
+%hexagon-link {
   display:flex;
   align-items: center;
   width: 100%;
@@ -137,22 +152,28 @@
   text-align: center;
   overflow: hidden;
   @include transform(skewY(-30deg) rotate(60deg));
+}
+.hexagon-link-main {
+  @extend %hexagon-link;
   @extend %gradient-transition-main;
-}
-.hexagon-link::before {
-  @extend %gradient-transition-before;
-  background-image: linear-gradient(to top right, rgba(255,0,0,0) 0%, $orange 80%);
-}
-.hexagon-link:hover {
-  h3 {
-    display: block;
+  &:before {
+    @extend %gradient-transition-before;
+    background-image: linear-gradient(to top right, rgba(255,0,0,0) 0%, $orange 80%);
   }
-  img {
-    display: none;
+  &:hover {
+    h3 {
+      display: block;
+    }
+    img {
+      display: none;
+    }
+    &:before {
+      @extend %gradient-transition-hover;
+    }
   }
 }
-.hexagon-link:hover::before {
-  @extend %gradient-transition-hover;
+.hexagon-link-single {
+  @extend %hexagon-link;
 }
 .hexagon-img-note {
   height: 140%;

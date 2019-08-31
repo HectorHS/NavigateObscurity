@@ -1,45 +1,48 @@
 {% extends 'main/layout.html' %}
-
-{% block content %}
 {% load static %}
 
+{% block styles %}
+<link rel='stylesheet' type="text/css" href={% static "main/css/home.css" %}>
+{% endblock %}
+
+{% block content %}
 <!-- Hero -->
-<section class="header-container">
+<section class="header-container" title="walking on desert">
   <h1 class="header-title-main">Life is full of obscurities. Don't demystify life. Navigate it.</h1>
 </section>
 
 <!-- Data section -->
-<section class="data-container">
+<section class="container data-container">
   <div class="data-hexagons">
     <ul id="hexagon-grid">
       <li class="hexagon-data">
         <div class="hexagon-item">
-          <a class="hexagon-link" href="#">
-            <img src={% static 'main/images/icons8-skull-96.png' %}>
+          <a class="hexagon-link-main" href="#">
+            <img src={% static 'main/images/icons8-skull-96.png' alt='skull' %}>
             <h3>Death</h3>
           </a>
         </div>
       </li>
       <li class="hexagon-data">
         <div class="hexagon-item">
-          <a class="hexagon-link" href="#">
-            <img src={% static 'main/images/icons8-globe-96.png' %}>
+          <a class="hexagon-link-main" href="#">
+            <img src={% static 'main/images/icons8-globe-96.png' alt='globe' %}>
             <h3>Sustainability</h3>
           </a>
         </div>
       </li>
       <li class="hexagon-data">
         <div class="hexagon-item">
-          <a class="hexagon-link" href="#">
-            <img src={% static 'main/images/icons8-grass-96.png' %}>
+          <a class="hexagon-link-main" href="#">
+            <img src={% static 'main/images/icons8-grass-96.png' alt='grass' %}>
             <h3>Biodiversity</h3>
           </a>
         </div>
       </li>
       <li class="hexagon-data">
         <div class="hexagon-item">
-          <a class="hexagon-link" href="#">
-            <img src={% static 'main/images/icons8-traveler-96.png' %}>
+          <a class="hexagon-link-main" href="#">
+            <img src={% static 'main/images/icons8-traveler-96.png' alt='traveler' %}>
             <h3>Migration</h3>
           </a>
         </div>
@@ -58,13 +61,13 @@
 </section>
 
 <!-- Notes sections -->
-<section class="notes-container">
+<section class="container notes-container">
   <div>
     <ul id="hexagon-grid">
       <li class="hexagon-notes">
         <div class="hexagon-item">
-          <a class="hexagon-link" href="#">
-            <img class="hexagon-img-note" src={% static 'main/images/head strong.jpg' %}>
+          <a class="hexagon-link-main" href="#">
+            <img class="hexagon-img-note" src={% static 'main/images/head strong.jpg' alt='head strong' %}>
             <h3>Head strong</h3>
           </a>
         </div>

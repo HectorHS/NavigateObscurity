@@ -1,0 +1,32 @@
+.footer-container {
+    position: relative;
+    height: 500px;
+    background-image: url(../images/footer2.jpg);
+    background-position: center;
+    background-repeat: no-repeat;
+    @include background-size(cover); 
+  }
+  .footer-title {
+    position: absolute;
+    bottom:50px;
+    left:50px;
+    padding-left: 10px;
+    border-left: 5px solid $bright-blue;
+    color: $darker-grey;
+    font-size: 150%;
+    font-weight: 600;
+    letter-spacing: 1px;
+    word-spacing: 3px;
+  }
+  .bottom-bar {
+    background-color: black;
+    height: 20px;
+    margin:0;
+    padding:5px;
+    p {
+      margin:0;
+      color: $almost-white;
+      text-align: center;
+      font-size: 80%;
+    }
+  }

@@ -9,6 +9,8 @@
         rel="stylesheet">
     {% load static %}
     <link rel='stylesheet' type="text/css" href={% static "main/css/main.css" %}>
+    {% block styles %}
+    {% endblock %}
     <title>Navigate Obscurity</title>
 </head>
 
@@ -18,7 +20,7 @@
     <section class="nav-bar">
         <div class="logo">
             <a href="">
-                <img src={% static "main/images/logo.png" %}></a>
+                <img src={% static "main/images/logo.png" alt='navigate obscurity logo' %}></a>
         </div>
         <nav role="navigation">
             <div class="nav-mobile">
@@ -53,7 +55,7 @@
 
     <!-- Footer -->
     <section>
-        <div class="footer-container">
+        <div class="footer-container" title="inverted mountains">
             <h2 class="footer-title">Always looking for themes to explore. <br />
                 Have an idea? <br />
                 Get in touch at hector@navigateobscurity.com</h2>
