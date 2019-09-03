@@ -2,15 +2,15 @@
 {% load static %}
 
 {% block styles %}
-<link rel='stylesheet' type="text/css" href={% static "worlddata/css/index.css" %}>
+<link rel='stylesheet' type="text/css" href={% static "worlddata/css/data.css" %}>
 {% endblock %}
 
 {% block content %}
-<div class="banner-container">
+<section class="banner-container">
     <h1 class="header-title-banner">Get some perspective</h1>
-</div>
+</section>
 
-<div class="container limited-width">
+<section class="container limited-width">
     <p>
         Too often, I realise how little I know about this world.
         I am not talking about details, I am talking about the big picture.
@@ -18,9 +18,9 @@
         So, I look for reasonably well sourced data and visualise them
         hoping to aid my perspective on life on Earth.
     </p>
-</div>
+</section>
 
-<div class="container data-index-container">
+<section class="container data-index-container">
     <ul>
         <li class="data-box-container">
             <div>
@@ -105,7 +105,6 @@
             </div>
         </li>
     </ul>
-</div>
-
+</section>
 
 {% endblock %}

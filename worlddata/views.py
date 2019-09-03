@@ -6,3 +6,7 @@ from django.http import HttpResponse
 
 def index(request):
     return render(request, 'worlddata/index.html')
+
+
+def death(request):
+    return render(request, 'worlddata/death.html')

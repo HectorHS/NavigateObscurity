@@ -1,0 +1,219 @@
+{% extends 'main/layout.html' %}
+{% load static %}
+
+{% block styles %}
+<link rel='stylesheet' type="text/css" href={% static "worlddata/css/data.css" %}>
+{% endblock %}
+
+{% block content %}
+<section class="banner-container">
+    <h1 class="header-title-banner">Death</h1>
+</section>
+
+<section>
+    <!-- Viz 1 - Causes of death -->
+    <div class="container limited-width">
+        <p>
+            Good to have some perspective on what is killing us.
+            Also, pretty interesting to see how causes of death change according to country,
+            income level, age and sex.
+        </p>
+        <p>
+            All data is from 2016. Numbers are actual total numbers.
+            The measures available below are death – total number of casualties,
+            YLLs – years of life lost calculated against life expectancy,
+            YLDs – years lived with disability caused by the particular disease, and finally,
+            DALYs – disability adjusted life years lost which are calculated by adding YLLs & YLDs,
+            so basically healthy years lost due to the particular cause.
+        </p>
+    </div>
+    <div class="tableau-big">
+        <div class='tableauPlaceholder' id='viz1541114386415' style='position: relative'><noscript><a href='#'><img
+                        alt=' '
+                        src='https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;de&#47;death2016&#47;Dashboard1&#47;1_rss.png'
+                        style='border: none' /></a></noscript><object class='tableauViz' style='display:none;'>
+                <param name='host_url' value='https%3A%2F%2Fpublic.tableau.com%2F' />
+                <param name='embed_code_version' value='3' />
+                <param name='site_root' value='' />
+                <param name='name' value='death2016&#47;Dashboard1' />
+                <param name='tabs' value='no' />
+                <param name='toolbar' value='yes' />
+                <param name='static_image'
+                    value='https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;de&#47;death2016&#47;Dashboard1&#47;1.png' />
+                <param name='animate_transition' value='yes' />
+                <param name='display_static_image' value='yes' />
+                <param name='display_spinner' value='yes' />
+                <param name='display_overlay' value='yes' />
+                <param name='display_count' value='yes' />
+                <param name='filter' value='publish=yes' /></object></div>
+        <script type='text/javascript'>                    var divElement = document.getElementById('viz1541114386415'); var vizElement = divElement.getElementsByTagName('object')[0]; vizElement.style.minWidth = '200px'; vizElement.style.maxWidth = '2500px'; vizElement.style.width = '100%'; vizElement.style.height = '619px'; var scriptElement = document.createElement('script'); scriptElement.src = 'https://public.tableau.com/javascripts/api/viz_v1.js'; vizElement.parentNode.insertBefore(scriptElement, vizElement);                
+        </script>
+    </div>
+    <div class="source-text">
+        <p>
+            *Source:
+            <a href="http://ghdx.healthdata.org/gbd-results-tool">The Global Health Data Exchange</a>
+        </p>
+    </div>
+    <!-- Viz 2 - Breakdown of cancer -->
+    <div class="container limited-width">
+        <p>
+            And this is how cancer is broken down.
+        </p>
+    </div>
+    <div class="tableau-big">
+        <div class='tableauPlaceholder' id='viz1551344512704' style='position: relative'><noscript><a
+                    href='https:&#47;&#47;www.navigateobscurity.com&#47;data&#47;death&#47;'><img alt=' '
+                        src='https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;ca&#47;cancerbreakdown&#47;Dashboard1&#47;1_rss.png'
+                        style='border: none' /></a></noscript><object class='tableauViz' style='display:none;'>
+                <param name='host_url' value='https%3A%2F%2Fpublic.tableau.com%2F' />
+                <param name='embed_code_version' value='3' />
+                <param name='site_root' value='' />
+                <param name='name' value='cancerbreakdown&#47;Dashboard1' />
+                <param name='tabs' value='no' />
+                <param name='toolbar' value='yes' />
+                <param name='static_image'
+                    value='https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;ca&#47;cancerbreakdown&#47;Dashboard1&#47;1.png' />
+                <param name='animate_transition' value='yes' />
+                <param name='display_static_image' value='yes' />
+                <param name='display_spinner' value='yes' />
+                <param name='display_overlay' value='yes' />
+                <param name='display_count' value='yes' />
+                <param name='filter' value='publish=yes' /></object></div>
+        <script type='text/javascript'>                    var divElement = document.getElementById('viz1551344512704'); var vizElement = divElement.getElementsByTagName('object')[0]; if (divElement.offsetWidth > 800) { vizElement.style.minWidth = '200px'; vizElement.style.maxWidth = '2500px'; vizElement.style.width = '100%'; vizElement.style.height = '619px'; } else if (divElement.offsetWidth > 500) { vizElement.style.minWidth = '200px'; vizElement.style.maxWidth = '2500px'; vizElement.style.width = '100%'; vizElement.style.height = '619px'; } else { vizElement.style.width = '100%'; vizElement.style.height = '619px'; } var scriptElement = document.createElement('script'); scriptElement.src = 'https://public.tableau.com/javascripts/api/viz_v1.js'; vizElement.parentNode.insertBefore(scriptElement, vizElement);                
+        </script>
+    </div>
+
+    <div class="source-text">
+        <p>
+            *Source:
+            <a href="http://ghdx.healthdata.org/gbd-results-tool">The Global Health Data Exchange</a>
+        </p>
+    </div>
+    <!-- Viz 3 - Historical causes of death -->
+    <div class="container limited-width">
+        <p>
+            Unfortunately we do not have equally good data for older periods,
+            but see a similar - although rougher - break down of major causes of death
+            for the US in 1900.
+        </p>
+    </div>
+    <div class="tableau-small">
+        <div class='tableauPlaceholder' id='viz1551298082324' style='position: relative'><noscript><a
+                    href='https:&#47;&#47;www.navigateobscurity.com&#47;data&#47;death&#47;'><img alt=' '
+                        src='https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;Ca&#47;CausesOfDeath-US1900&#47;Dashboard1&#47;1_rss.png'
+                        style='border: none' /></a></noscript><object class='tableauViz' style='display:none;'>
+                <param name='host_url' value='https%3A%2F%2Fpublic.tableau.com%2F' />
+                <param name='embed_code_version' value='3' />
+                <param name='site_root' value='' />
+                <param name='name' value='CausesOfDeath-US1900&#47;Dashboard1' />
+                <param name='tabs' value='no' />
+                <param name='toolbar' value='yes' />
+                <param name='static_image'
+                    value='https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;Ca&#47;CausesOfDeath-US1900&#47;Dashboard1&#47;1.png' />
+                <param name='animate_transition' value='yes' />
+                <param name='display_static_image' value='yes' />
+                <param name='display_spinner' value='yes' />
+                <param name='display_overlay' value='yes' />
+                <param name='display_count' value='yes' /></object></div>
+        <script
+            type='text/javascript'>                    var divElement = document.getElementById('viz1551298082324'); var vizElement = divElement.getElementsByTagName('object')[0]; vizElement.style.minWidth = '200px'; vizElement.style.maxWidth = '2500px'; vizElement.style.width = '100%'; vizElement.style.height = '277px'; var scriptElement = document.createElement('script'); scriptElement.src = 'https://public.tableau.com/javascripts/api/viz_v1.js'; vizElement.parentNode.insertBefore(scriptElement, vizElement);                </script>
+    </div>
+    <div class="source-text">
+        <p>
+            *Source:
+            <a href="https://www.nejm.org/doi/full/10.1056/NEJMp1113569">The New England Journal of Medicine</a>
+        </p>
+    </div>
+    <div class="container limited-width">
+        <p>
+            Causes of death differ wildly according to geography -
+            partly because they differ wildly according to income level as we saw above.
+            Have a look for instance at the big killers: cardiovascular disease and cancer.
+            And compare those to something like HIV, maternal and neonatal disorders, 
+            or nutritional deficiencies.
+        </p>
+    </div>
+    <div class="tableau-big">
+        <div class='tableauPlaceholder' id='viz1540477426648' style='position: relative'><noscript><a href='#'><img
+                        alt=' '
+                        src='https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;Ca&#47;Causeofdeathbycountry&#47;Dashboard2&#47;1_rss.png'
+                        style='border: none' /></a></noscript><object class='tableauViz' style='display:none;'>
+                <param name='host_url' value='https%3A%2F%2Fpublic.tableau.com%2F' />
+                <param name='embed_code_version' value='3' />
+                <param name='site_root' value='' />
+                <param name='name' value='Causeofdeathbycountry&#47;Dashboard2' />
+                <param name='tabs' value='no' />
+                <param name='toolbar' value='yes' />
+                <param name='static_image'
+                    value='https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;Ca&#47;Causeofdeathbycountry&#47;Dashboard2&#47;1.png' />
+                <param name='animate_transition' value='yes' />
+                <param name='display_static_image' value='yes' />
+                <param name='display_spinner' value='yes' />
+                <param name='display_overlay' value='yes' />
+                <param name='display_count' value='yes' />
+                <param name='filter' value='publish=yes' /></object></div>
+        <script
+            type='text/javascript'>                    var divElement = document.getElementById('viz1540477426648'); var vizElement = divElement.getElementsByTagName('object')[0]; vizElement.style.minWidth = '200px'; vizElement.style.maxWidth = '2500px'; vizElement.style.width = '100%'; vizElement.style.height = '619px'; var scriptElement = document.createElement('script'); scriptElement.src = 'https://public.tableau.com/javascripts/api/viz_v1.js'; vizElement.parentNode.insertBefore(scriptElement, vizElement);                </script>
+    </div>
+    <div class="source-text">
+        <p>
+            *Source:
+            <a href="http://ghdx.healthdata.org/gbd-results-tool">The Global Health Data Exchange</a>
+        </p>
+    </div>
+    <div class="container limited-width">
+        <p>
+            Below you can see risks that have been identified as causes of
+            conditions leading to death or disability. All these risks are completely preventable.
+            Note that risks overlap significantly and that there is  good amount of casualties /
+            incidents that have not been associated with any risks. So minimising
+            the associated risks cannot eliminate the possibility of a disease / condition occurring,
+            but it definitely helps.
+        </p>
+    </div>
+    <div class="tableau-592-800">
+        <div class='tableauPlaceholder' id='viz1541121330532' style='position: relative'>
+            <noscript><a href='#'>
+                    <img alt=' '
+                        src='https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;Ri&#47;Riskandcausesofdeath2016&#47;Dashboard1&#47;1_rss.png'
+                        style='border: none' />
+                </a>
+            </noscript>
+            <object class='tableauViz' style='display:none;'>
+                <param name='host_url' value='https%3A%2F%2Fpublic.tableau.com%2F' />
+                <param name='embed_code_version' value='3' />
+                <param name='site_root' value='' />
+                <param name='name' value='Riskandcausesofdeath2016&#47;Dashboard1' />
+                <param name='tabs' value='no' />
+                <param name='toolbar' value='yes' />
+                <param name='static_image'
+                    value='https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;Ri&#47;Riskandcausesofdeath2016&#47;Dashboard1&#47;1.png' />
+                <param name='animate_transition' value='yes' />
+                <param name='display_static_image' value='yes' />
+                <param name='display_spinner' value='yes' />
+                <param name='display_overlay' value='yes' />
+                <param name='display_count' value='yes' />
+                <param name='filter' value='publish=yes' />
+            </object>
+        </div>
+        <script type='text/javascript'>
+            var divElement = document.getElementById('viz1541121330532');
+            var vizElement = divElement.getElementsByTagName('object')[0];
+            if (divElement.offsetWidth > 800) { vizElement.style.minWidth = '200px'; vizElement.style.maxWidth = '2500px'; vizElement.style.width = '100%'; vizElement.style.height = '619px'; }
+            else if (divElement.offsetWidth > 500) { vizElement.style.minWidth = '200px'; vizElement.style.maxWidth = '2500px'; vizElement.style.width = '100%'; vizElement.style.height = '619px'; }
+            else { vizElement.style.width = '100%'; vizElement.style.height = '927px'; }
+            var scriptElement = document.createElement('script');
+            scriptElement.src = 'https://public.tableau.com/javascripts/api/viz_v1.js';
+            vizElement.parentNode.insertBefore(scriptElement, vizElement);                
+        </script>
+    </div>
+    <div class="source-text">
+        <p>
+            *Source:
+            <a href="http://ghdx.healthdata.org/gbd-results-tool">The Global Health Data Exchange</a>
+        </p>
+    </div>
+
+</section>
+{% endblock %}

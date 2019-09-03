@@ -36,3 +36,33 @@
   .data-box-text {
     max-width:600px;
   }
+  .tableau-big {
+    height: 592px;
+    overflow: hidden;
+  }
+  .tableau-small {
+    height: 250px;
+    overflow: hidden;
+  }
+  .tableau-almost-big {
+    height: 530px;
+    overflow: hidden;
+  }
+  .tableau-592-800 {
+    height: 800px;
+    overflow: hidden;
+    @media only screen and (min-width: $mobile-breakpoint)
+    {
+      height: 592px;
+    }
+  }
+  .source-text {
+    background-color: $dark-grey;
+    color: $almost-white;
+    text-align: right;
+    font-size: 80%;
+    padding: 10px;
+    a {
+      color: $bright-blue;
+    }
+  }
