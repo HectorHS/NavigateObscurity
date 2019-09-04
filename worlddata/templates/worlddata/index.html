@@ -10,6 +10,8 @@
     <h1 class="header-title-banner">Get some perspective</h1>
 </section>
 
+
+
 <section class="container limited-width">
     <p>
         Too often, I realise how little I know about this world.
@@ -19,91 +21,27 @@
         hoping to aid my perspective on life on Earth.
     </p>
 </section>
-
 <section class="container data-index-container">
     <ul>
+        {% for page in pages %}
         <li class="data-box-container">
             <div>
                 <ul id="hexagon-grid-data-index">
                     <li class="hexagon-data-index">
                         <div class="hexagon-item">
                             <div class="hexagon-link-single">
-                                <img src={% static 'main/images/icons8-skull-96.png' alt='skull' %}>
+                                <img src={{page.icon.url}} alt={{page.title}}>
                             </div>
                         </div>
                     </li>
                 </ul>
             </div>
             <div class="data-box-text">
-                <p>Which are the leading causes of death and how do they differ according to age,
-                    sex, geography and income?
-                    I still can’t believe that almost a third of all deaths in South Africa are due to HIV
-                    or that about 1 in 10 deaths in Greenland is a suicide.</p>
-                <button>Explore death</button>
+                <p>{{page.abstract}}</p>
+                <button>Explore {{page.title}}</button>
             </div>
         </li>
-        <li class="data-box-container">
-            <div>
-                <ul id="hexagon-grid-data-index">
-                    <li class="hexagon-data-index">
-                        <div class="hexagon-item">
-                            <div class="hexagon-link-single">
-                                <img src={% static 'main/images/icons8-globe-96.png' alt='globe' %}>
-                            </div>
-                        </div>
-                    </li>
-                </ul>
-            </div>
-            <div class="data-box-text">
-                <p>Is our way of living sustainable by Earth’s resources?
-                    Think of this question this way. If I invite my friends over for a party,
-                    will my house return to its normal state next day? Next week?
-                    What if the party itself lasts a week? How much partying can my house take
-                    before it becomes inhabitable?</p>
-                <button>Explore sustainability</button>
-            </div>
-        </li>
-        <li class="data-box-container">
-            <div>
-                <ul id="hexagon-grid-data-index">
-                    <li class="hexagon-data-index">
-                        <div class="hexagon-item">
-                            <div class="hexagon-link-single">
-                                <img src={% static 'main/images/icons8-grass-96.png' alt='grass' %}>
-                            </div>
-                        </div>
-                    </li>
-                </ul>
-            </div>
-            <div class="data-box-text">
-                <p>We humans have had this peculiar conception that we are the masters of the Earth.
-                    And as a result we are doing our best to change everything around us to fit our needs.
-                    Even a lot of environmentalism is actually around making Earth more habitable for humans.
-                    But how much of life do humans make up on Earth. And how much do we impact other life?</p>
-                <button>Explore biodiversity</button>
-            </div>
-        </li>
-        <li class="data-box-container">
-            <div>
-                <ul id="hexagon-grid-data-index">
-                    <li class="hexagon-data-index">
-                        <div class="hexagon-item">
-                            <div class="hexagon-link-single">
-                                <img src={% static 'main/images/icons8-traveler-96.png' alt='traveler' %}>
-                            </div>
-                        </div>
-                    </li>
-                </ul>
-            </div>
-            <div class="data-box-text">
-                <p>Migration has been a part of human life for millennia, even if we sometimes act
-                    like it’ something new. But how many people are choosing – or are forced –
-                    to migrate today? Where are they going, and where are they coming from?
-                    It was very interesting to note how common it is for a country to have both immigrants
-                    and emigrants - in the most part in similar percentages of their population.</p>
-                <button>Explore migration</button>
-            </div>
-        </li>
+        {% endfor %}
     </ul>
 </section>
 
