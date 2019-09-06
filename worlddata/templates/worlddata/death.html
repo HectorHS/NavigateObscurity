@@ -125,6 +125,7 @@
             <a href="https://www.nejm.org/doi/full/10.1056/NEJMp1113569">The New England Journal of Medicine</a>
         </p>
     </div>
+    <!-- Viz 4 - Causes of death by geography -->
     <div class="container limited-width">
         <p>
             Causes of death differ wildly according to geography -
@@ -162,6 +163,7 @@
             <a href="http://ghdx.healthdata.org/gbd-results-tool">The Global Health Data Exchange</a>
         </p>
     </div>
+    <!-- Viz 5 - Risks for causes of death -->
     <div class="container limited-width">
         <p>
             Below you can see risks that have been identified as causes of
@@ -216,4 +218,35 @@
     </div>
 
 </section>
-{% endblock %}
+<section>
+    <div class="container">
+        <hr>
+        {% for comment in comments %}
+        {% if comment.approved_comment %}
+        <div class="comment-container">
+            <div class="comment-author">{{ comment.author }}</div>
+            <div class="comment-date">{{ comment.created_date }}</div>
+            {{ comment.message|linebreaks }}
+        </div>
+        {% endif %}
+        {% empty %}
+        <p>No comments here yet :(</p>
+        {% endfor %}
+        <hr>
+        <div class="comment-form-container">
+            <h3>Leave a comment</h3>
+            <form method="post">
+                {% csrf_token %}
+                <div>
+                    {{comment_form.author}}
+                </div>
+                <div>
+                    {{ comment_form.message }}
+                </div>
+                <div>
+                    <button type="submit" formmethod="post">Post comment</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</section> {% endblock %}
