@@ -9,6 +9,7 @@ class Page(models.Model):
     abstract = models.TextField()
     parent = models.CharField(max_length=200)
     icon = models.FileField()
+    slug = models.CharField(max_length=200)
 
     def __str__(self):
         return self.title

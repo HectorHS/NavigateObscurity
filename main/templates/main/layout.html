@@ -33,10 +33,9 @@
                 <li><a href="{% url 'home' %}">Home</a></li>
                 <li><a href="{% url 'worlddata:index' %}">Data</a>
                     <ul class="nav-dropdown">
-                        <li><a href="{% url 'worlddata:death' %}">Death</a></li>
-                        <li><a href="{% url 'worlddata:sustainability' %}">Sustainability</a></li>
-                        <li><a href="{% url 'worlddata:biodiversity' %}">Biodiversity</a></li>
-                        <li><a href="{% url 'worlddata:migration' %}">Migration</a></li>
+                        {% for page in data_pages %}
+                        <li><a href="{% url 'worlddata:'|add:page.slug %}">{{page.title}}</a></li>
+                        {% endfor %}
                     </ul>
                 </li>
                 <li><a href="#!">Notes</a>

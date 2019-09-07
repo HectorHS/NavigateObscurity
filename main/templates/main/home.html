@@ -18,7 +18,7 @@
       {% for page in data_pages %}
       <li class="hexagon-data">
         <div class="hexagon-item">
-          <a class="hexagon-link-main" href="{% url 'worlddata:'|add:page.title %}">
+          <a class="hexagon-link-main" href="{% url 'worlddata:'|add:page.slug %}">
             <img src={{page.icon.url}} alt={{page.title}}>
             <h3>{{page.title}}</h3>
           </a>

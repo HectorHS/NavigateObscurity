@@ -11,17 +11,10 @@ from main.forms import CommentForm
 class IndexView(TemplateView):
     template_name = 'worlddata/index.html'
 
-    def get_context_data(self, **kwargs):
-        pages = Page.objects.filter(parent='worlddata')
-        context = {
-            'pages': pages
-        }
-        return context
-
 
 class DeathView(TemplateView):
     template_name = 'worlddata/death.html'
-    page = get_object_or_404(Page, title="death")
+    page = get_object_or_404(Page, title="Death")
 
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
@@ -44,7 +37,7 @@ class DeathView(TemplateView):
 
 class SustainabilityView(TemplateView):
     template_name = 'worlddata/sustainability.html'
-    page = get_object_or_404(Page, title="sustainability")
+    page = get_object_or_404(Page, title="Sustainability")
 
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
@@ -67,7 +60,7 @@ class SustainabilityView(TemplateView):
 
 class BiodiversityView(TemplateView):
     template_name = 'worlddata/biodiversity.html'
-    page = get_object_or_404(Page, title="biodiversity")
+    page = get_object_or_404(Page, title="Biodiversity")
 
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
@@ -87,9 +80,10 @@ class BiodiversityView(TemplateView):
             comment.save()
         return HttpResponseRedirect(self.request.path_info)
 
+
 class MigrationView(TemplateView):
     template_name = 'worlddata/migration.html'
-    page = get_object_or_404(Page, title="migration")
+    page = get_object_or_404(Page, title="Migration")
 
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
