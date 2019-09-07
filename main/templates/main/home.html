@@ -17,7 +17,7 @@
     <ul id="hexagon-grid">
       <li class="hexagon-data">
         <div class="hexagon-item">
-          <a class="hexagon-link-main" href="#">
+          <a class="hexagon-link-main" href="{% url 'worlddata:death' %}">
             <img src={% static 'main/images/icons8-skull-96.png' alt='skull' %}>
             <h3>Death</h3>
           </a>
@@ -25,7 +25,7 @@
       </li>
       <li class="hexagon-data">
         <div class="hexagon-item">
-          <a class="hexagon-link-main" href="#">
+          <a class="hexagon-link-main" href="{% url 'worlddata:sustainability' %}">
             <img src={% static 'main/images/icons8-globe-96.png' alt='globe' %}>
             <h3>Sustainability</h3>
           </a>
@@ -33,7 +33,7 @@
       </li>
       <li class="hexagon-data">
         <div class="hexagon-item">
-          <a class="hexagon-link-main" href="#">
+          <a class="hexagon-link-main" href="{% url 'worlddata:biodiversity' %}">
             <img src={% static 'main/images/icons8-grass-96.png' alt='grass' %}>
             <h3>Biodiversity</h3>
           </a>
@@ -41,7 +41,7 @@
       </li>
       <li class="hexagon-data">
         <div class="hexagon-item">
-          <a class="hexagon-link-main" href="#">
+          <a class="hexagon-link-main" href="{% url 'worlddata:migration' %}">
             <img src={% static 'main/images/icons8-traveler-96.png' alt='traveler' %}>
             <h3>Migration</h3>
           </a>
@@ -55,7 +55,7 @@
         the big picture. The kind of things you would expect to cover on an Earth 101 course in an alien university.
         So, I look for reasonably well sourced data and visualise them hoping to aid my perspective on life on Earth.
       </p>
-      <button>Browse all data</button>
+      <a class="button" href="{% url 'worlddata:index' %}">Browse all data</a>
     </div>
   </div>
 </section>

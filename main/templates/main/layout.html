@@ -30,13 +30,13 @@
                 </a>
             </div>
             <ul class="nav-list">
-                <li><a href="#">Home</a></li>
-                <li><a href="#">Data</a>
+                <li><a href="{% url 'home' %}">Home</a></li>
+                <li><a href="{% url 'worlddata:index' %}">Data</a>
                     <ul class="nav-dropdown">
-                        <li><a href="#">Death</a></li>
-                        <li><a href="#">Sustainability</a></li>
-                        <li><a href="#">Biodiversity</a></li>
-                        <li><a href="#">Migration</a></li>
+                        <li><a href="{% url 'worlddata:death' %}">Death</a></li>
+                        <li><a href="{% url 'worlddata:sustainability' %}">Sustainability</a></li>
+                        <li><a href="{% url 'worlddata:biodiversity' %}">Biodiversity</a></li>
+                        <li><a href="{% url 'worlddata:migration' %}">Migration</a></li>
                     </ul>
                 </li>
                 <li><a href="#!">Notes</a>

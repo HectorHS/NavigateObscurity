@@ -38,7 +38,8 @@
             </div>
             <div class="data-box-text">
                 <p>{{page.abstract}}</p>
-                <button>Explore {{page.title}}</button>
+                <a class="button" href="{% url 'worlddata:'|add:page.title %}">Explore {{page.title}}</a>
+
             </div>
         </li>
         {% endfor %}

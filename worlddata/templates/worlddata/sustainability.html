@@ -1,0 +1,142 @@
+{% extends 'main/layout.html' %}
+{% load static %}
+
+{% block styles %}
+<link rel='stylesheet' type="text/css" href={% static "worlddata/css/data.css" %}>
+{% endblock %}
+
+{% block content %}
+<section class="banner-container">
+    <h1 class="header-title-banner">Sustainability</h1>
+</section>
+
+<section>
+    <div class="container limited-width">
+        <p>
+            Biocapacity here is the ability of earth to provide what humans demand of it in a
+            sustainable way. Start by thinking of all the cropland, grazing land,
+            fishing grounds and forests needed to extract our food and other essential resources,
+            and put them all together. Then add all the land and forests needed to absorb
+            all our waste and carbon emissions. Lastly, add all the space humanity takes up
+            for our infrastructure, cities etc. All that, provided in a manner that is renewable,
+            makes up earth’s biocapacity. The average biocapacity per person on the planet is
+            1.7 global hectares. This is our personal budget for all our needs.
+        </p>
+        <p>
+            A global hectare (gha) is a productivity weighted measurement of space. So a gha of cropland takes up less
+            space than a gha of pasture land, according to their difference in productivity. This allows us to have a
+            single unit of measurement for diverse environmental resources, and more importantly, of the environmental
+            impact of our consumption habits.
+        </p>
+        <p>
+            The environmental footprint of consumption is therefore measured in the global hectares needed for those
+            activities. When the footprint exceeds biocapacity, production is not sustainable and we have an
+            environmental deficit. On a national level, biocapacity could be imported via trade. But on an international
+            level, a deficit translates to environmental assets being depleted (think of fisheries, forests etc) and /
+            or waste being emitted (land, sea and atmosphere). The total ecological footprint of humanity is 2.8 gha per
+            person. In our current consumption levels, we need 1.7 earths to sustain us.
+        </p>
+        <p>
+            For more information and great visualisations, visit the <a
+                href="http://data.footprintnetwork.org/#/">Global Footprint Network</a>.
+        </p>
+    </div>
+    <div class="tableau-big">
+        <div class='tableauPlaceholder' id='viz1543704625758' style='position: relative'><noscript><a href='#'><img
+                        alt=' '
+                        src='https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;bi&#47;biocapacityandenvironmentalfootprintofconsumptionandproduction&#47;Dashboard1&#47;1_rss.png'
+                        style='border: none' /></a></noscript><object class='tableauViz' style='display:none;'>
+                <param name='host_url' value='https%3A%2F%2Fpublic.tableau.com%2F' />
+                <param name='embed_code_version' value='3' />
+                <param name='site_root' value='' />
+                <param name='name'
+                    value='biocapacityandenvironmentalfootprintofconsumptionandproduction&#47;Dashboard1' />
+                <param name='tabs' value='no' />
+                <param name='toolbar' value='yes' />
+                <param name='static_image'
+                    value='https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;bi&#47;biocapacityandenvironmentalfootprintofconsumptionandproduction&#47;Dashboard1&#47;1.png' />
+                <param name='animate_transition' value='yes' />
+                <param name='display_static_image' value='yes' />
+                <param name='display_spinner' value='yes' />
+                <param name='display_overlay' value='yes' />
+                <param name='display_count' value='yes' />
+                <param name='filter' value='publish=yes' /></object></div>
+        <script
+            type='text/javascript'>                    var divElement = document.getElementById('viz1543704625758'); var vizElement = divElement.getElementsByTagName('object')[0]; vizElement.style.minWidth = '200px'; vizElement.style.maxWidth = '2500px'; vizElement.style.width = '100%'; vizElement.style.height = '619px'; var scriptElement = document.createElement('script'); scriptElement.src = 'https://public.tableau.com/javascripts/api/viz_v1.js'; vizElement.parentNode.insertBefore(scriptElement, vizElement);                </script>
+    </div>
+    <div class="source-text">
+        <p>
+            *Source:
+            <a href="http://data.footprintnetwork.org/#/">Global Footprint Network. </a>
+            National Footprint Accounts, 2018 Edition. Downloaded 25/11/2018.
+        </p>
+    </div>
+    <div class="container limited-width">
+        <p>
+            Below you can see a breakdown of the different types of consumption or biocapacity as well as historical
+            data for each country. 
+        </p>
+    </div>
+    <div class="tableau-almost-big">
+        <div class='tableauPlaceholder' id='viz1547205701025' style='position: relative'><noscript><a href='#'><img
+                        alt=' '
+                        src='https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;hi&#47;historicalbiocapacityandfootpringbycountry&#47;Dashboard1&#47;1_rss.png'
+                        style='border: none' /></a></noscript><object class='tableauViz' style='display:none;'>
+                <param name='host_url' value='https%3A%2F%2Fpublic.tableau.com%2F' />
+                <param name='embed_code_version' value='3' />
+                <param name='site_root' value='' />
+                <param name='name' value='historicalbiocapacityandfootpringbycountry&#47;Dashboard1' />
+                <param name='tabs' value='no' />
+                <param name='toolbar' value='yes' />
+                <param name='static_image'
+                    value='https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;hi&#47;historicalbiocapacityandfootpringbycountry&#47;Dashboard1&#47;1.png' />
+                <param name='animate_transition' value='yes' />
+                <param name='display_static_image' value='yes' />
+                <param name='display_spinner' value='yes' />
+                <param name='display_overlay' value='yes' />
+                <param name='display_count' value='yes' />
+                <param name='filter' value='publish=yes' /></object></div>
+        <script
+            type='text/javascript'>                    var divElement = document.getElementById('viz1547205701025'); var vizElement = divElement.getElementsByTagName('object')[0]; vizElement.style.minWidth = '200px'; vizElement.style.maxWidth = '2500px'; vizElement.style.width = '100%'; vizElement.style.height = '557px'; var scriptElement = document.createElement('script'); scriptElement.src = 'https://public.tableau.com/javascripts/api/viz_v1.js'; vizElement.parentNode.insertBefore(scriptElement, vizElement);                </script>
+    </div>
+
+    <div class="source-text">
+        <p>
+            *Source:
+            <a href="http://data.footprintnetwork.org/#/">Global Footprint Network. </a>
+            National Footprint Accounts, 2018 Edition. Downloaded 25/11/2018.
+        </p>
+    </div>
+</section>
+<section>
+    <div class="container">
+        <hr>
+        <div class="comment-container">
+            {% for comment in comments %}
+            {% if comment.approved_comment %}
+            <div class="comment-author">{{ comment.author }}</div>
+            <div class="comment-date">{{ comment.created_date }}</div>
+            {{ comment.message|linebreaks }}
+            {% endif %}
+            {% empty %}
+            <p>No comments here yet :(</p>
+            {% endfor %}
+        </div>
+        <hr>
+        <div class="comment-form-container">
+            <h3>Leave a comment</h3>
+            <form method="post">
+                {% csrf_token %}
+                <div>
+                    {{comment_form.author}}
+                </div>
+                <div>
+                    {{ comment_form.message }}
+                </div>
+                <div>
+                    <button type="submit" formmethod="post">Post comment</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</section> {% endblock %}

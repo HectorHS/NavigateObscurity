@@ -1,0 +1,178 @@
+{% extends 'main/layout.html' %}
+{% load static %}
+
+{% block styles %}
+<link rel='stylesheet' type="text/css" href={% static "worlddata/css/data.css" %}>
+{% endblock %}
+
+{% block content %}
+<section class="banner-container">
+    <h1 class="header-title-banner">Migration</h1>
+</section>
+
+<section>
+    <div class="container limited-width">
+        <p>
+            In this interactive map you can get a glimpse on how many migrants and refugees are hosted in each country
+            (destination of) and where they are coming from (origin of). The colours of the visualisations are based on
+            population percentages. Use the parameters to switch between destination and origin visualisations, see data
+            for different years, or slice them according to income levels. You can also use the slider (% of population)
+            to exclude ranges of values and focus on the ones you want.
+        </p>
+        <p>
+            I have removed the Vatican from this visualisation (Holy See), as migration is stuck at 100% there. Also
+            removed a few years’ worth of data from the Caribbean Netherlands for being an extreme outlier (over 300%
+            migration during the 90’s, partly due to a tiny 14 thousand local population).
+        </p>
+        <p>
+            I was surprised by two things here. One, how most countries end up having a very similar colour shade –
+            meaning they are quite similar in their capacity to produce and absorb migrants. I actually had to introduce
+            multiple colours here because the usual 2 colour spectrum came out too flat. Two, how certain countries
+            spectacularly stand out, like Lebanon, Jordan, Syria, UAE and Kuwait.
+        </p>
+    </div>
+    <div class="tableau-big">
+        <div class='tableauPlaceholder' id='viz1550760534992' style='position: relative'><noscript><a href='#'><img
+                        alt=' '
+                        src='https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;Mi&#47;Migration_33&#47;Dashboard1&#47;1_rss.png'
+                        style='border: none' /></a></noscript><object class='tableauViz' style='display:none;'>
+                <param name='host_url' value='https%3A%2F%2Fpublic.tableau.com%2F' />
+                <param name='embed_code_version' value='3' />
+                <param name='site_root' value='' />
+                <param name='name' value='Migration_33&#47;Dashboard1' />
+                <param name='tabs' value='no' />
+                <param name='toolbar' value='yes' />
+                <param name='static_image'
+                    value='https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;Mi&#47;Migration_33&#47;Dashboard1&#47;1.png' />
+                <param name='animate_transition' value='yes' />
+                <param name='display_static_image' value='yes' />
+                <param name='display_spinner' value='yes' />
+                <param name='display_overlay' value='yes' />
+                <param name='display_count' value='yes' /></object></div>
+        <script
+            type='text/javascript'>                    var divElement = document.getElementById('viz1550760534992'); var vizElement = divElement.getElementsByTagName('object')[0]; vizElement.style.minWidth = '200px'; vizElement.style.maxWidth = '2500px'; vizElement.style.width = '100%'; vizElement.style.height = '619px'; var scriptElement = document.createElement('script'); scriptElement.src = 'https://public.tableau.com/javascripts/api/viz_v1.js'; vizElement.parentNode.insertBefore(scriptElement, vizElement);                </script>
+    </div>
+    <div class="source-text">
+        <p>
+            *Source:
+            <a href="http://www.un.org/en/development/desa/population/migration/data/index.shtml">United Nations </a>
+            (retrieved 02/02/2019)
+        </p>
+    </div>
+    <div class="container limited-width">
+        <p>
+            And here is a breakdown of the immigrants living in each country. The size indicates larger populations, but
+            you can also check the exact numbers by hovering over them. The colours have been randomly assigned and
+            don’t mean anything - just there for show.
+        </p>
+    </div>
+    <div class="tableau-almost-big">
+        <div class='tableauPlaceholder' id='viz1550764777406' style='position: relative'><noscript><a href='#'><img
+                        alt=' '
+                        src='https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;Mi&#47;Migrationbreakdownbycountry&#47;Dashboard2&#47;1_rss.png'
+                        style='border: none' /></a></noscript><object class='tableauViz' style='display:none;'>
+                <param name='host_url' value='https%3A%2F%2Fpublic.tableau.com%2F' />
+                <param name='embed_code_version' value='3' />
+                <param name='site_root' value='' />
+                <param name='name' value='Migrationbreakdownbycountry&#47;Dashboard2' />
+                <param name='tabs' value='no' />
+                <param name='toolbar' value='yes' />
+                <param name='static_image'
+                    value='https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;Mi&#47;Migrationbreakdownbycountry&#47;Dashboard2&#47;1.png' />
+                <param name='animate_transition' value='yes' />
+                <param name='display_static_image' value='yes' />
+                <param name='display_spinner' value='yes' />
+                <param name='display_overlay' value='yes' />
+                <param name='display_count' value='yes' />
+                <param name='filter' value='publish=yes' /></object></div>
+        <script
+            type='text/javascript'>                    var divElement = document.getElementById('viz1550764777406'); var vizElement = divElement.getElementsByTagName('object')[0]; vizElement.style.minWidth = '200px'; vizElement.style.maxWidth = '2500px'; vizElement.style.width = '100%'; vizElement.style.height = '587px'; var scriptElement = document.createElement('script'); scriptElement.src = 'https://public.tableau.com/javascripts/api/viz_v1.js'; vizElement.parentNode.insertBefore(scriptElement, vizElement);                </script>
+    </div>
+
+    <div class="source-text">
+        <p>
+            *Source:
+            <a href="http://www.un.org/en/development/desa/population/migration/data/index.shtml">United Nations </a>
+            (retrieved 02/02/2019)
+        </p>
+    </div>
+    <div class="container limited-width">
+        <p>
+            Below you can see my puny attempt to roughly visualise the flow of migration between larger areas (otherwise
+            it gets even more complicated). On the right (or top if you are on a mobile), the first bar chart shows how
+            many people have emigrated from large areas (origin) with the colours indicating where they ended up
+            (destination). The second bar chart shows the opposite – how many immigrants are living in large areas
+            (destination) with the colours indicating where they came from (origin). The circular visualisation shows
+            these flows with the outer bases representing the destination of immigration. Recommended way to figure it
+            all out is to select an area from the bottom of the visualisation (Asia is currently selected), wait for
+            parts of the visualisation to stand out, and then hover over the highlighted areas and inspect the numbers.
+            It is slow, so bear with it.
+        </p>
+    </div>
+    <div class="tableau-592-800">
+        <div class='tableauPlaceholder' id='viz1550593927924' style='position: relative'><noscript><a href='#'><img
+                        alt=' '
+                        src='https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;Mi&#47;Migrationflow&#47;ChordDiagramBarChart&#47;1_rss.png'
+                        style='border: none' /></a></noscript><object class='tableauViz' style='display:none;'>
+                <param name='host_url' value='https%3A%2F%2Fpublic.tableau.com%2F' />
+                <param name='embed_code_version' value='3' />
+                <param name='site_root' value='' />
+                <param name='name' value='Migrationflow&#47;ChordDiagramBarChart' />
+                <param name='tabs' value='no' />
+                <param name='toolbar' value='yes' />
+                <param name='static_image'
+                    value='https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;Mi&#47;Migrationflow&#47;ChordDiagramBarChart&#47;1.png' />
+                <param name='animate_transition' value='yes' />
+                <param name='display_static_image' value='yes' />
+                <param name='display_spinner' value='yes' />
+                <param name='display_overlay' value='yes' />
+                <param name='display_count' value='yes' /></object></div>
+        <script
+            type='text/javascript'>                    var divElement = document.getElementById('viz1550593927924'); var vizElement = divElement.getElementsByTagName('object')[0]; if (divElement.offsetWidth > 800) { vizElement.style.minWidth = '200px'; vizElement.style.maxWidth = '2500px'; vizElement.style.width = '100%'; vizElement.style.height = '619px'; } else if (divElement.offsetWidth > 500) { vizElement.style.minWidth = '200px'; vizElement.style.maxWidth = '2500px'; vizElement.style.width = '100%'; vizElement.style.height = '619px'; } else { vizElement.style.width = '100%'; vizElement.style.height = '927px'; } var scriptElement = document.createElement('script'); scriptElement.src = 'https://public.tableau.com/javascripts/api/viz_v1.js'; vizElement.parentNode.insertBefore(scriptElement, vizElement);                </script>
+    </div>
+
+    <div class="source-text">
+        <p>
+            *Source:
+            <a href="http://www.un.org/en/development/desa/population/migration/data/index.shtml">United Nations </a>
+            (retrieved 02/02/2019)
+        </p>
+        <p>
+            Chord diagram visualisation based on amazing work by
+            <a href="http://www.datablick.com/blog/2015/08/27/diy-chord-diagrams-in-tableau-by-noah-salvaterra"> Noah
+                Salvaterra</a>
+        </p>
+    </div>
+</section>
+<section>
+    <div class="container">
+        <hr>
+        <div class="comment-container">
+            {% for comment in comments %}
+            {% if comment.approved_comment %}
+            <div class="comment-author">{{ comment.author }}</div>
+            <div class="comment-date">{{ comment.created_date }}</div>
+            {{ comment.message|linebreaks }}
+            {% endif %}
+            {% empty %}
+            <p>No comments here yet :(</p>
+            {% endfor %}
+        </div>
+        <hr>
+        <div class="comment-form-container">
+            <h3>Leave a comment</h3>
+            <form method="post">
+                {% csrf_token %}
+                <div>
+                    {{comment_form.author}}
+                </div>
+                <div>
+                    {{ comment_form.message }}
+                </div>
+                <div>
+                    <button type="submit" formmethod="post">Post comment</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</section> {% endblock %}

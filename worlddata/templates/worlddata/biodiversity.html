@@ -1,0 +1,131 @@
+{% extends 'main/layout.html' %}
+{% load static %}
+
+{% block styles %}
+<link rel='stylesheet' type="text/css" href={% static "worlddata/css/data.css" %}>
+{% endblock %}
+
+{% block content %}
+<section class="banner-container">
+    <h1 class="header-title-banner">Biodiversity</h1>
+</section>
+
+<section>
+    <div class="container limited-width">
+        <p>
+            Below you can see the breakdown of the total weight of living organisms (biomass) estimated to be currently
+            living on Earth. Biomass is here counted in gigatons of carbon.
+        </p>
+        <p>
+            You can use the filters on the right to look at all Taxa (broad biological categories) or to concentrate on
+            animals. You can also filter according to territories: terrestrial - including birds and soil, terrestrial
+            deep subsurface - deeper than 8m from the surface, marine - oceans, lakes, rivers etc, and marine deep
+            subsurface which extends up to around 6km underneath the seafloor.
+        </p>
+        <p>
+            There is an argument here for removing from these estimations the 300 gt of tree trunks and stems which are
+            mostly non-living lignified tissue, and the viruses, archaea and bacteria of the deep subterranian levels
+            (both terrestrial and marine) as these organisms are metabolically dormant. It's worth noting, that even
+            without tree trunks and stems, plants still dominate the global biomass of Earth with 150 gt.
+        </p>
+    </div>
+    <div class="tableau-almost-big">
+        <div class='tableauPlaceholder' id='viz1542570186958' style='position: relative'><noscript><a href='#'><img
+                        alt=' '
+                        src='https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;bi&#47;biomass-taxonsandterritories&#47;Dashboard1&#47;1_rss.png'
+                        style='border: none' /></a></noscript><object class='tableauViz' style='display:none;'>
+                <param name='host_url' value='https%3A%2F%2Fpublic.tableau.com%2F' />
+                <param name='embed_code_version' value='3' />
+                <param name='site_root' value='' />
+                <param name='name' value='biomass-taxonsandterritories&#47;Dashboard1' />
+                <param name='tabs' value='no' />
+                <param name='toolbar' value='yes' />
+                <param name='static_image'
+                    value='https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;bi&#47;biomass-taxonsandterritories&#47;Dashboard1&#47;1.png' />
+                <param name='animate_transition' value='yes' />
+                <param name='display_static_image' value='yes' />
+                <param name='display_spinner' value='yes' />
+                <param name='display_overlay' value='yes' />
+                <param name='display_count' value='yes' />
+                <param name='filter' value='publish=yes' /></object></div>
+        <script
+            type='text/javascript'>                    var divElement = document.getElementById('viz1542570186958'); var vizElement = divElement.getElementsByTagName('object')[0]; vizElement.style.minWidth = '200px'; vizElement.style.maxWidth = '2500px'; vizElement.style.width = '100%'; vizElement.style.height = '557px'; var scriptElement = document.createElement('script'); scriptElement.src = 'https://public.tableau.com/javascripts/api/viz_v1.js'; vizElement.parentNode.insertBefore(scriptElement, vizElement);                </script>
+    </div>
+    <div class="source-text">
+        <p>
+            *Source:
+            <a href="http://www.pnas.org/content/115/25/6506">Yinon M. Bar-On, Rob Phillips, and Ron Milo. 2018. "The
+                biomass distribution on Earth". Proceedings of the National Academy of Sciences of the United States of
+                America.</a>
+        </p>
+    </div>
+    <div class="container limited-width">
+        <p>
+            Here you can see the correlation between the total population of taxa, and their corresponding biomass. Note
+            that populations are presented in powers of ten, so every step indicates a tenfold increase of population. 
+        </p>
+    </div>
+    <div class="tableau-almost-big">
+        <div class='tableauPlaceholder' id='viz1551349080037' style='position: relative'><noscript><a
+                    href='https:&#47;&#47;www.navigateobscurity.com&#47;data&#47;biodiversity&#47;'><img alt=' '
+                        src='https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;Bi&#47;Biomassandpopulation&#47;Dashboard1&#47;1_rss.png'
+                        style='border: none' /></a></noscript><object class='tableauViz' style='display:none;'>
+                <param name='host_url' value='https%3A%2F%2Fpublic.tableau.com%2F' />
+                <param name='embed_code_version' value='3' />
+                <param name='site_root' value='' />
+                <param name='name' value='Biomassandpopulation&#47;Dashboard1' />
+                <param name='tabs' value='no' />
+                <param name='toolbar' value='yes' />
+                <param name='static_image'
+                    value='https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;Bi&#47;Biomassandpopulation&#47;Dashboard1&#47;1.png' />
+                <param name='animate_transition' value='yes' />
+                <param name='display_static_image' value='yes' />
+                <param name='display_spinner' value='yes' />
+                <param name='display_overlay' value='yes' />
+                <param name='display_count' value='yes' />
+                <param name='filter' value='publish=yes' /></object></div>
+        <script
+            type='text/javascript'>                    var divElement = document.getElementById('viz1551349080037'); var vizElement = divElement.getElementsByTagName('object')[0]; if (divElement.offsetWidth > 800) { vizElement.style.minWidth = '200px'; vizElement.style.maxWidth = '2500px'; vizElement.style.width = '100%'; vizElement.style.height = '557px'; } else if (divElement.offsetWidth > 500) { vizElement.style.minWidth = '200px'; vizElement.style.maxWidth = '2500px'; vizElement.style.width = '100%'; vizElement.style.height = '557px'; } else { vizElement.style.width = '100%'; vizElement.style.height = '557px'; } var scriptElement = document.createElement('script'); scriptElement.src = 'https://public.tableau.com/javascripts/api/viz_v1.js'; vizElement.parentNode.insertBefore(scriptElement, vizElement);                </script>
+    </div>
+
+    <div class="source-text">
+        <p>
+            *Source:
+            <a href="http://www.pnas.org/content/115/25/6506">Yinon M. Bar-On, Rob Phillips, and Ron Milo. 2018. "The
+                biomass distribution on Earth". Proceedings of the National Academy of Sciences of the United States of
+                America.</a>
+        </p>
+    </div>
+</section>
+<section>
+    <div class="container">
+        <hr>
+        <div class="comment-container">
+            {% for comment in comments %}
+            {% if comment.approved_comment %}
+            <div class="comment-author">{{ comment.author }}</div>
+            <div class="comment-date">{{ comment.created_date }}</div>
+            {{ comment.message|linebreaks }}
+            {% endif %}
+            {% empty %}
+            <p>No comments here yet :(</p>
+            {% endfor %}
+        </div>
+        <hr>
+        <div class="comment-form-container">
+            <h3>Leave a comment</h3>
+            <form method="post">
+                {% csrf_token %}
+                <div>
+                    {{comment_form.author}}
+                </div>
+                <div>
+                    {{ comment_form.message }}
+                </div>
+                <div>
+                    <button type="submit" formmethod="post">Post comment</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</section> {% endblock %}

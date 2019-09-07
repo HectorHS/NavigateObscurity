@@ -40,11 +40,11 @@ textarea {
   font: 100% $main-font;
   color: $almost-white;
 }
-button {
+button, .button {
   @extend %gradient-transition-main;
   display: inline-block;
   position: relative;
-  padding: 20px;
+  padding: 15px;
   margin: 0;
   margin-top: 20px;
   border-radius: 35px;
@@ -56,6 +56,7 @@ button {
   font-size: 110%;
   font-weight: 800;
   text-transform: uppercase;
+  text-decoration: none;
   letter-spacing: 0.05em;
   &:before {
     @extend %gradient-transition-before;
@@ -66,6 +67,9 @@ button {
   &:hover::before {
     @extend %gradient-transition-hover;
   }
+}
+a {
+  color: $bright-blue;
 }
 h3 {
   color: $bright-blue;
@@ -98,7 +102,7 @@ hr {
   @extend  %container-image;
 }
 .header-title-banner {
-  top:200px;
+  top:230px;
   left:50px;
   @extend %header-title;
 }
