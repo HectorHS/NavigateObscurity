@@ -2,11 +2,11 @@ from django.contrib import admin
 from django.conf import settings
 from django.urls import include, path
 from django.conf.urls.static import static
-from main import views as main_views
+from main.views import HomeView
 
 
 urlpatterns = [
-    path('', main_views.home, name='home'),
+    path('', HomeView.as_view(), name='home'),
     path('admin/', admin.site.urls),
     path('data/', include('worlddata.urls'), name='data'),
 ]

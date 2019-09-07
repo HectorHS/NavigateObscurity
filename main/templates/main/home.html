@@ -15,38 +15,16 @@
 <section class="container data-container">
   <div class="data-hexagons">
     <ul id="hexagon-grid">
+      {% for page in data_pages %}
       <li class="hexagon-data">
         <div class="hexagon-item">
-          <a class="hexagon-link-main" href="{% url 'worlddata:death' %}">
-            <img src={% static 'main/images/icons8-skull-96.png' alt='skull' %}>
-            <h3>Death</h3>
+          <a class="hexagon-link-main" href="{% url 'worlddata:'|add:page.title %}">
+            <img src={{page.icon.url}} alt={{page.title}}>
+            <h3>{{page.title}}</h3>
           </a>
         </div>
       </li>
-      <li class="hexagon-data">
-        <div class="hexagon-item">
-          <a class="hexagon-link-main" href="{% url 'worlddata:sustainability' %}">
-            <img src={% static 'main/images/icons8-globe-96.png' alt='globe' %}>
-            <h3>Sustainability</h3>
-          </a>
-        </div>
-      </li>
-      <li class="hexagon-data">
-        <div class="hexagon-item">
-          <a class="hexagon-link-main" href="{% url 'worlddata:biodiversity' %}">
-            <img src={% static 'main/images/icons8-grass-96.png' alt='grass' %}>
-            <h3>Biodiversity</h3>
-          </a>
-        </div>
-      </li>
-      <li class="hexagon-data">
-        <div class="hexagon-item">
-          <a class="hexagon-link-main" href="{% url 'worlddata:migration' %}">
-            <img src={% static 'main/images/icons8-traveler-96.png' alt='traveler' %}>
-            <h3>Migration</h3>
-          </a>
-        </div>
-      </li>
+      {% endfor %}
     </ul>
   </div>
   <div class="data-text v-align">

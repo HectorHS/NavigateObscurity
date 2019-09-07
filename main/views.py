@@ -1,10 +1,17 @@
-from django.shortcuts import render
-from django.http import HttpResponse
-from django.template import loader
+from django.views.generic import TemplateView
+
+from main.models import Page
 
 # Create your views here.
 
 
-def home(request):
+class HomeView(TemplateView):
 
-    return render(request, 'main/home.html')
+    template_name = 'main/home.html'
+
+    def get_context_data(self, **kwargs):
+        data_pages = Page.objects.filter(parent='worlddata')
+        context = {
+            'data_pages': data_pages
+        }
+        return context
