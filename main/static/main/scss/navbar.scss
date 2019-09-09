@@ -19,7 +19,7 @@
 }
 nav {
   float: right;
-  padding: 50px 0 15px;
+  padding: $nav-height 0 15px;
   width: 100%;
   @media screen and (min-width: $mobile-breakpoint) {
     padding: 0;
@@ -103,7 +103,6 @@ nav {
   }
 }
 .nav-dropdown {
-  display: none;
   z-index: 1;
   box-shadow: 0 3px 12px rgba(0, 0, 0, 0.15);
   @media screen and (min-width: $mobile-breakpoint) {

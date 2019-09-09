@@ -1,6 +1,6 @@
 @charset "UTF-8";
 .hexagon-link-main, button, .button {
-  z-index: 1;
+  z-index: 10;
 }
 
 .hexagon-link-main:before, button:before, .button:before {
@@ -402,7 +402,7 @@ template {
 
 nav {
   float: right;
-  padding: 50px 0 15px;
+  padding: 40px 0 15px;
   width: 100%;
 }
 
@@ -511,7 +511,6 @@ nav ul li ul li a {
 }
 
 .nav-dropdown {
-  display: none;
   z-index: 1;
   box-shadow: 0 3px 12px rgba(0, 0, 0, 0.15);
 }
@@ -654,7 +653,7 @@ nav ul li ul li a {
   max-width: 150px;
 }
 
-.hexagon-data, .hexagon-notes, .hexagon-data-index {
+.hexagon-data, .hexagon-notes, .hexagon-data-index, .hexagon-node-index {
   grid-column-end: span 2;
   position: relative;
   visibility: hidden;
@@ -662,7 +661,7 @@ nav ul li ul li a {
   /* fix for jagged edges in FF on hover transition */
 }
 
-.hexagon-data img, .hexagon-notes img, .hexagon-data-index img {
+.hexagon-data img, .hexagon-notes img, .hexagon-data-index img, .hexagon-node-index img {
   left: -100%;
   right: -100%;
   width: auto;
@@ -672,7 +671,7 @@ nav ul li ul li a {
   transform: rotate(0deg);
 }
 
-.hexagon-data h3, .hexagon-notes h3, .hexagon-data-index h3 {
+.hexagon-data h3, .hexagon-notes h3, .hexagon-data-index h3, .hexagon-node-index h3 {
   width: 100%;
   margin: 0;
   overflow-wrap: break-word;
@@ -681,87 +680,87 @@ nav ul li ul li a {
 }
 
 @media (min-width: 768px) {
-  .hexagon-data h3, .hexagon-notes h3, .hexagon-data-index h3 {
+  .hexagon-data h3, .hexagon-notes h3, .hexagon-data-index h3, .hexagon-node-index h3 {
     font-size: 2vw;
   }
 }
 
 @media (min-width: 768px) and (min-width: 850px) {
-  .hexagon-data h3, .hexagon-notes h3, .hexagon-data-index h3 {
+  .hexagon-data h3, .hexagon-notes h3, .hexagon-data-index h3, .hexagon-node-index h3 {
     font-size: 1.5vw;
   }
 }
 
 @media (min-width: 768px) and (min-width: 850px) and (min-width: 1025px) {
-  .hexagon-data h3, .hexagon-notes h3, .hexagon-data-index h3 {
+  .hexagon-data h3, .hexagon-notes h3, .hexagon-data-index h3, .hexagon-node-index h3 {
     display: none;
   }
 }
 
-.hexagon-data:after, .hexagon-notes:after, .hexagon-data-index:after {
+.hexagon-data:after, .hexagon-notes:after, .hexagon-data-index:after, .hexagon-node-index:after {
   content: '';
   display: block;
   padding-bottom: 86.602%;
   /* =  100 / tan(60) * 1.5 */
 }
 
-.hexagon-data:nth-child(5n+1) .hexagon-link-main, .hexagon-notes:nth-child(5n+1) .hexagon-link-main, .hexagon-data-index:nth-child(5n+1) .hexagon-link-main {
+.hexagon-data:nth-child(5n+1) .hexagon-link-main, .hexagon-notes:nth-child(5n+1) .hexagon-link-main, .hexagon-data-index:nth-child(5n+1) .hexagon-link-main, .hexagon-node-index:nth-child(5n+1) .hexagon-link-main {
   background-image: linear-gradient(to top right, #59acd9, #3984ac);
 }
 
-.hexagon-data:nth-child(5n+2) .hexagon-link-main, .hexagon-notes:nth-child(5n+2) .hexagon-link-main, .hexagon-data-index:nth-child(5n+2) .hexagon-link-main {
+.hexagon-data:nth-child(5n+2) .hexagon-link-main, .hexagon-notes:nth-child(5n+2) .hexagon-link-main, .hexagon-data-index:nth-child(5n+2) .hexagon-link-main, .hexagon-node-index:nth-child(5n+2) .hexagon-link-main {
   background-image: linear-gradient(to top right, #277daa, #204960);
 }
 
-.hexagon-data:nth-child(5n+3) .hexagon-link-main, .hexagon-notes:nth-child(5n+3) .hexagon-link-main, .hexagon-data-index:nth-child(5n+3) .hexagon-link-main {
+.hexagon-data:nth-child(5n+3) .hexagon-link-main, .hexagon-notes:nth-child(5n+3) .hexagon-link-main, .hexagon-data-index:nth-child(5n+3) .hexagon-link-main, .hexagon-node-index:nth-child(5n+3) .hexagon-link-main {
   background-image: linear-gradient(to top right, #fbc99d, #539dc6);
 }
 
-.hexagon-data:nth-child(5n+4) .hexagon-link-main, .hexagon-notes:nth-child(5n+4) .hexagon-link-main, .hexagon-data-index:nth-child(5n+4) .hexagon-link-main {
+.hexagon-data:nth-child(5n+4) .hexagon-link-main, .hexagon-notes:nth-child(5n+4) .hexagon-link-main, .hexagon-data-index:nth-child(5n+4) .hexagon-link-main, .hexagon-node-index:nth-child(5n+4) .hexagon-link-main {
   background-image: linear-gradient(to top right, #2f98d0, #2d6786);
 }
 
-.hexagon-data:nth-child(5n+5) .hexagon-link-main, .hexagon-notes:nth-child(5n+5) .hexagon-link-main, .hexagon-data-index:nth-child(5n+5) .hexagon-link-main {
+.hexagon-data:nth-child(5n+5) .hexagon-link-main, .hexagon-notes:nth-child(5n+5) .hexagon-link-main, .hexagon-data-index:nth-child(5n+5) .hexagon-link-main, .hexagon-node-index:nth-child(5n+5) .hexagon-link-main {
   background-image: linear-gradient(to top right, #216a91, #132c39);
 }
 
 @media (min-width: 1025px) {
-  .hexagon-data, .hexagon-notes, .hexagon-data-index {
+  .hexagon-data, .hexagon-notes, .hexagon-data-index, .hexagon-node-index {
     /* <- 2-3  hexagons per row */
   }
-  .hexagon-data:nth-child(5n+1), .hexagon-notes:nth-child(5n+1), .hexagon-data-index:nth-child(5n+1) {
+  .hexagon-data:nth-child(5n+1), .hexagon-notes:nth-child(5n+1), .hexagon-data-index:nth-child(5n+1), .hexagon-node-index:nth-child(5n+1) {
     /* first hexagon of odd rows */
     grid-column-start: 2;
   }
 }
 
 @media (min-width: 768px) and (max-width: 1024px) {
-  .hexagon-data, .hexagon-notes, .hexagon-data-index {
+  .hexagon-data, .hexagon-notes, .hexagon-data-index, .hexagon-node-index {
     /* <- 2-1  hexagons per row */
   }
-  .hexagon-data:nth-child(3n+3), .hexagon-notes:nth-child(3n+3), .hexagon-data-index:nth-child(3n+3) {
+  .hexagon-data:nth-child(3n+3), .hexagon-notes:nth-child(3n+3), .hexagon-data-index:nth-child(3n+3), .hexagon-node-index:nth-child(3n+3) {
     /* first hexagon of even rows */
     grid-column-start: 2;
   }
-  .hexagon-data:nth-child(5n+1) .hexagon-link-main, .hexagon-notes:nth-child(5n+1) .hexagon-link-main, .hexagon-data-index:nth-child(5n+1) .hexagon-link-main {
+  .hexagon-data:nth-child(5n+1) .hexagon-link-main, .hexagon-notes:nth-child(5n+1) .hexagon-link-main, .hexagon-data-index:nth-child(5n+1) .hexagon-link-main, .hexagon-node-index:nth-child(5n+1) .hexagon-link-main {
     background-image: linear-gradient(to top right, #fbc99d, #539dc6);
   }
-  .hexagon-data:nth-child(5n+2) .hexagon-link-main, .hexagon-notes:nth-child(5n+2) .hexagon-link-main, .hexagon-data-index:nth-child(5n+2) .hexagon-link-main {
+  .hexagon-data:nth-child(5n+2) .hexagon-link-main, .hexagon-notes:nth-child(5n+2) .hexagon-link-main, .hexagon-data-index:nth-child(5n+2) .hexagon-link-main, .hexagon-node-index:nth-child(5n+2) .hexagon-link-main {
     background-image: linear-gradient(to top right, #59acd9, #3984ac);
   }
-  .hexagon-data:nth-child(5n+3) .hexagon-link-main, .hexagon-notes:nth-child(5n+3) .hexagon-link-main, .hexagon-data-index:nth-child(5n+3) .hexagon-link-main {
+  .hexagon-data:nth-child(5n+3) .hexagon-link-main, .hexagon-notes:nth-child(5n+3) .hexagon-link-main, .hexagon-data-index:nth-child(5n+3) .hexagon-link-main, .hexagon-node-index:nth-child(5n+3) .hexagon-link-main {
     background-image: linear-gradient(to top right, #2f98d0, #2d6786);
   }
-  .hexagon-data:nth-child(5n+4) .hexagon-link-main, .hexagon-notes:nth-child(5n+4) .hexagon-link-main, .hexagon-data-index:nth-child(5n+4) .hexagon-link-main {
+  .hexagon-data:nth-child(5n+4) .hexagon-link-main, .hexagon-notes:nth-child(5n+4) .hexagon-link-main, .hexagon-data-index:nth-child(5n+4) .hexagon-link-main, .hexagon-node-index:nth-child(5n+4) .hexagon-link-main {
     background-image: linear-gradient(to top right, #277daa, #204960);
   }
-  .hexagon-data:nth-child(5n+5) .hexagon-link-main, .hexagon-notes:nth-child(5n+5) .hexagon-link-main, .hexagon-data-index:nth-child(5n+5) .hexagon-link-main {
+  .hexagon-data:nth-child(5n+5) .hexagon-link-main, .hexagon-notes:nth-child(5n+5) .hexagon-link-main, .hexagon-data-index:nth-child(5n+5) .hexagon-link-main, .hexagon-node-index:nth-child(5n+5) .hexagon-link-main {
     background-image: linear-gradient(to top right, #216a91, #132c39);
   }
 }
 
 @media (max-width: 767px) {
-  .hexagon-data:nth-child(5n+1), .hexagon-notes:nth-child(5n+1), .hexagon-data-index:nth-child(5n+1) {
+  .hexagon-data:nth-child(5n+1), .hexagon-notes:nth-child(5n+1), .hexagon-data-index:nth-child(5n+1), .hexagon-node-index:nth-child(5n+1) {
     /* first hexagon of odd rows */
     grid-column-start: 2;
   }
@@ -783,6 +782,10 @@ nav ul li ul li a {
 
 .hexagon-data-index img {
   height: 60%;
+}
+
+.hexagon-node-index img {
+  width: 100%;
 }
 
 .hexagon-item {
@@ -1011,6 +1014,18 @@ hr {
 @media (min-width: 768px) and (min-width: 1025px) {
   .comment-form-container {
     padding: 0 15%;
+  }
+}
+
+.two-column-text {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-gap: 50px;
+}
+
+@media (min-width: 768px) {
+  .two-column-text {
+    grid-template-columns: 1fr 1fr;
   }
 }
 

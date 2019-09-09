@@ -2,7 +2,7 @@ from django.http import HttpResponseRedirect
 from django.shortcuts import get_object_or_404
 from django.views.generic import TemplateView
 
-from main.models import Comment, Page
+from main.models import Page
 from main.forms import CommentForm
 
 # Create your views here.

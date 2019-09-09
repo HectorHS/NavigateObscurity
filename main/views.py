@@ -1,8 +1,4 @@
-from django.template import RequestContext
 from django.views.generic import TemplateView
-
-from main.models import Page
-from .context import Context
 
 # Create your views here.
 

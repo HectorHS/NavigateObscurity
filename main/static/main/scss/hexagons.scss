@@ -130,6 +130,12 @@
     height: 60%;
   }
 }
+.hexagon-node-index {
+  @extend %hexagon;
+  img {
+    width: 100%;
+  }
+}
 .hexagon-item{
   visibility: hidden;
   position: absolute;

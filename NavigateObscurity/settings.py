@@ -32,6 +32,7 @@ ALLOWED_HOSTS = []
 
 INSTALLED_APPS = [
     'main',
+    'nodes',
     'worlddata',
     'django_sass',
     'django.contrib.admin',

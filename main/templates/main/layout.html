@@ -38,9 +38,11 @@
                         {% endfor %}
                     </ul>
                 </li>
-                <li><a href="#!">Notes</a>
+                <li><a href="{% url 'nodes:index' %}">Notes</a>
                     <ul class="nav-dropdown">
-                        <li><a href="#">Head Strong</a></li>
+                        {% for page in node_pages %}
+                        <li><a href="{% url 'nodes:'|add:page.slug %}">{{page.title}}</a></li>
+                        {% endfor %}
                     </ul>
                 </li>
             </ul>

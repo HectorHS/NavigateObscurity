@@ -7,10 +7,10 @@
       $('.dropdown').not($(this).siblings()).hide();
       e.stopPropagation();
     });
-    // Collapse dropdowns
-    $('html').click(function() {
-      $('.nav-dropdown').hide();
-    });
+    // // Collapse dropdowns
+    // $('html').click(function() {
+    //   $('.nav-dropdown').hide();
+    // });
     // // Reveal mobile menu on click
     $('#nav-toggle').click(function() {
       $('nav ul').slideToggle();

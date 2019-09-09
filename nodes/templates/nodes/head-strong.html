@@ -1,0 +1,75 @@
+{% extends 'main/layout.html' %}
+{% load static %}
+
+{% block styles %}
+<link rel='stylesheet' type="text/css" href={% static "nodes/css/nodes.css" %}>
+{% endblock %}
+
+{% block content %}
+<section class="banner-container">
+    <h1 class="header-title-banner">Head strong by Dave Asprey</h1>
+</section>
+
+<section>
+    <div class="container limited-width">
+        <p>
+            Everything we do, from breathing, to exercising and daydreaming requires energy. All energy is produced in
+            the cellular level, and is produced on demand – it cannot be stored. Therefore, everything you do always
+            antagonises this limited resource of energy. Higher level functions such as creativity and rational thinking
+            are not essential for surviving – at least not like breathing, moving and digestion are – and as a result
+            they score lower in the energy priority list. At the same time, such higher level functions require a lot of
+            energy. So how do you achieve and maintain peak mental performance and clarity of thought? By boosting your
+            energy production and minimising the energy expenditure of other functions.
+        </p>
+
+    </div>
+    <div class="graph-container">
+        <iframe width='100%' height='500' style='height: 500px; color:#fff'
+            src='https://infranodus.com/hector/headstrong?background=dark&most_influential=bc&hide_always=1&show_text=1&hide_edit=1&background=dark&maxnodes='
+            frameborder='0' allowfullscreen></iframe>
+    </div>
+    <div class="two-column-text container graph-instructions">
+        <ul>
+            <li> Click on a node to see what other nodes it connects to and to read relevant notes. </li>
+            <li> Click on an already selected node to deselect it. </li>
+            <li> Use the search function on the top right to find a node. </li>
+        </ul>
+        <ul>
+            <li> Click on a second node to only see notes related to both nodes. </li>
+            <li> All selected nodes are also visible on the top right as labels and can be deselected from there. Or
+                even temporarily removed from the graph. </li>
+        </ul>
+    </div>
+</section>
+<section>
+    <div class="container">
+        <hr>
+        <div class="comment-container">
+            {% for comment in comments %}
+            {% if comment.approved_comment %}
+            <div class="comment-author">{{ comment.author }}</div>
+            <div class="comment-date">{{ comment.created_date }}</div>
+            {{ comment.message|linebreaks }}
+            {% endif %}
+            {% empty %}
+            <p>No comments here yet :(</p>
+            {% endfor %}
+        </div>
+        <hr>
+        <div class="comment-form-container">
+            <h3>Leave a comment</h3>
+            <form method="post">
+                {% csrf_token %}
+                <div>
+                    {{comment_form.author}}
+                </div>
+                <div>
+                    {{ comment_form.message }}
+                </div>
+                <div>
+                    <button type="submit" formmethod="post">Post comment</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</section> {% endblock %}

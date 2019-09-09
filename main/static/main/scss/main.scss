@@ -150,6 +150,15 @@ hr {
     }
   }
 }
+.two-column-text {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-gap: 50px;
+  
+  @media (min-width: $mobile-breakpoint) {
+    grid-template-columns: 1fr 1fr; 
+  }
+}
 
 // Utility
 

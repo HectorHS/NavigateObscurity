@@ -42,21 +42,23 @@
 <section class="container notes-container">
   <div>
     <ul id="hexagon-grid">
+      {% for page in node_pages %}
       <li class="hexagon-notes">
         <div class="hexagon-item">
-          <a class="hexagon-link-main" href="#">
-            <img class="hexagon-img-note" src={% static 'main/images/head strong.jpg' alt='head strong' %}>
-            <h3>Head strong</h3>
+          <a class="hexagon-link-main" href="{% url 'nodes:'|add:page.slug %}">
+            <img class="hexagon-img-note" src={{page.icon.url}} alt='{{page.title}}'>
+            <h3>{{page.title}}</h3>
           </a>
         </div>
       </li>
+      {% endfor %}
     </ul>
   </div>
   <div class="v-align">
     <div>
       <p>I read books and then I forget about them. So I take notes. But then I never go through the notes again. So I
         am trying to find nicer ways to revisit notes and themes from books in a more engaging and non linear way.</p>
-      <button>Browse all notes</button>
+      <a class="button" href="{% url 'nodes:index' %}">Browse all notes</a>
     </div>
   </div>
 </section>

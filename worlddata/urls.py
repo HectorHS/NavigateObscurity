@@ -1,4 +1,4 @@
-from django.urls import include, path
+from django.urls import path
 from .views import BiodiversityView, DeathView, IndexView, MigrationView, SustainabilityView
 
 app_name = 'worlddata'

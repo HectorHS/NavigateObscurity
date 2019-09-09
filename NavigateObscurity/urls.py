@@ -9,6 +9,7 @@ urlpatterns = [
     path('', HomeView.as_view(), name='home'),
     path('admin/', admin.site.urls),
     path('data/', include('worlddata.urls'), name='data'),
+    path('notes/', include('nodes.urls'), name='notes'),
 ]
 
 if settings.DEBUG:

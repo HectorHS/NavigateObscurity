@@ -1,0 +1,48 @@
+{% extends 'main/layout.html' %}
+{% load static %}
+
+{% block styles %}
+<link rel='stylesheet' type="text/css" href={% static "nodes/css/nodes.css" %}>
+{% endblock %}
+
+{% block content %}
+<section class="banner-container">
+    <h1 class="header-title-banner">I read books. I take notes. I visualise them.</h1>
+</section>
+
+
+
+<section class="container limited-width">
+    <p>
+        I read books and then I forget about them. So I take notes. But then I never go through the notes again. So I am
+        trying to find nicer ways to revisit notes and themes from books in a more engaging and non linear way. The
+        notes are complimentary, and in no way a substitute of the books. Therefore reading the original material first
+        is highly recommended.  Click on the book covers to explore them.
+    </p>
+</section>
+<section class="container node-index-container">
+    <ul>
+        {% for page in node_pages %}
+        <li class="node-box-container">
+            <div>
+                <ul id="hexagon-grid-data-index">
+                    <li class="hexagon-node-index">
+                        <div class="hexagon-item">
+                            <div class="hexagon-link-single">
+                                <img src={{page.icon.url}} alt={{page.title}}>
+                            </div>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+            <div class="node-box-text">
+                <p>{{page.abstract}}</p>
+                <a class="button" href="{% url 'nodes:'|add:page.slug %}">Explore {{page.title}}</a>
+
+            </div>
+        </li>
+        {% endfor %}
+    </ul>
+</section>
+
+{% endblock %}
