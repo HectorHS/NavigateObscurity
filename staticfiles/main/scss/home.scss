@@ -1,0 +1,59 @@
+@import 'variables';
+@import 'mixins';
+@import 'parents';
+
+@import 'hexagons';
+
+.header-container { 
+  height: 100%;
+  background-image: url(../images/background2.jpg);
+  @extend  %container-image;
+}
+.header-title-main {
+  bottom:50px;
+  left:50px;
+  @extend %header-title;
+}
+.data-container {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-gap: 50px;
+  
+  @media (min-width: $mobile-breakpoint) {
+    grid-template-columns: 1fr 1fr; 
+    @media (min-width: $tablet-breakpoint) {
+      grid-template-columns: 2fr 1fr; 
+      @media (min-width: $desktop-breakpoint) {
+        grid-template-columns: 1fr 1fr; 
+      }
+    }
+  }
+}
+.data-hexagons {
+  @media (min-width: $mobile-breakpoint) {
+    grid-column-start: 2;
+  }
+}
+.data-text {
+  @media (min-width: $mobile-breakpoint) {
+    grid-column-start: 1;
+    grid-row-start: 1;
+  }
+}
+.notes-container {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-gap: 50px;
+  
+  @media (min-width: $mobile-breakpoint) {
+    grid-template-columns: 1fr 1fr; 
+    @media (min-width: $tablet-breakpoint) {
+      grid-template-columns: 1fr 2fr; 
+      @media (min-width: $desktop-breakpoint) {
+        grid-template-columns: 1fr 1fr; 
+      }
+    }
+  }
+}
+
+
