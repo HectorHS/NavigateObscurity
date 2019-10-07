@@ -66,3 +66,76 @@
       color: $bright-blue;
     }
   }
+
+  .chart-container {
+display: flex;
+flex-direction: column;
+background-color: $dark-grey;
+padding: 20px;
+@media only screen and (min-width: $mobile-breakpoint)
+    {
+      flex-direction: row;
+      padding: 50px;
+    }
+
+.chart {
+  flex:1;
+  @media only screen and (min-width: $mobile-breakpoint)
+    {
+      flex:3;
+    }
+}
+
+  #chart-options {
+    flex: 1;
+    //max-width:200px;
+    display: flex;
+    flex-direction: column;
+    color: $almost-white;
+    padding: 10px;
+
+    @media only screen and (min-width: $mobile-breakpoint)
+    {
+      max-width:200px;
+    }
+
+    .chart-legend {
+      display: flex;
+      flex-direction: row;
+      //padding: 0 20px;
+      flex-wrap: wrap;
+
+      @media only screen and (min-width: $mobile-breakpoint)
+      {
+        flex-direction: column;
+      }
+
+      .legend-item {
+        display: inline-flex;
+        margin-bottom: 5px;
+        margin-right: 20px;
+        cursor: pointer;
+      }
+  
+      .dot {
+        height: 25px;
+        width: 25px;
+        border-radius: 50%;
+        display: inline-block;
+        margin-right: 10px;
+      }
+    }
+
+    .chart-filters {
+      margin-bottom: 20px;
+      
+      select {
+        background-color: $dark-grey;
+        color: $almost-white;
+        padding: 5px;
+        margin-bottom: 5px;
+        margin-right: 10px;
+      }
+    }
+  }
+}

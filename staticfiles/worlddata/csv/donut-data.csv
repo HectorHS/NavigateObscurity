@@ -1,0 +1,49 @@
+Taxon,Category,Territory,Biomass,Abundance
+All,plants,Terrestrial,450,1013
+All,plants,All,450,1013
+All,bacteria,Terrestrial deep subsurface,60,1030
+All,bacteria,Marine deep subsurface,7,1029
+All,bacteria,Terrestrial,7,1029
+All,bacteria,Marine,1.3,1029
+All,bacteria,All,75.3,1030
+All,fungi,Terrestrial,12,1027
+All,fungi,Marine,0.3,
+All,fungi,All,12.3,1027
+All,Archaea,Terrestrial deep subsurface,4,1029
+All,Archaea,Marine deep subsurface,3,1029
+All,Archaea,Terrestrial,0.5,1028
+All,Archaea,Marine,0.3,1028
+All,Archaea,All,7.8,1029
+All,Protists,Terrestrial,1.6,
+All,Protists,Marine,2,
+All,Protists,All,3.6,
+All,Animals,Terrestrial,0.5,
+All,Animals,Marine,2,
+All,Animals,All,2.5,
+Animals,Fish,Marine,0.7,1015
+Animals,Fish,All,0.7,
+Animals,Livestock,Terrestrial,0.1,1010
+Animals,Livestock,All,0.1,
+Animals,Humans,Terrestrial,0.06,1010
+Animals,Humans,All,0.06,
+Animals,Wild mammals,Terrestrial,0.007,
+Animals,Wild mammals,All,0.007,
+Animals,Wild birds,Terrestrial,0.002,1011
+Animals,Wild birds,All,0.002,
+Animals,Arthropods,Terrestrial,0.2,1018
+Animals,Arthropods,Marine,1,1020
+Animals,Arthropods,All,1.2,
+Animals,Annelids,Terrestrial,0.2,1018
+Animals,Annelids,All,0.2,
+Animals,Molluscs,Marine,0.2,1018
+Animals,Molluscs,All,0.2,
+Animals,Cnidarians,Marine,0.1,1016
+Animals,Cnidarians,All,0.1,
+Animals,Nematodes,Terrestrial,0.006,
+Animals,Nematodes,Marine,0.01,
+Animals,Nematodes,All,0.016,
+All,Viruses,Terrestrial,0.01,1029
+All,Viruses,Marine,0.04,1030
+All,Viruses,Marine deep subsurface,0.1,1030
+All,Viruses,Terrestrial deep subsurface,0.04,1030
+All,Viruses,All,0.2,

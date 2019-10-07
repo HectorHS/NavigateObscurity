@@ -2,7 +2,13 @@
 {% load static %}
 
 {% block styles %}
+<script src="https://d3js.org/d3.v5.js"></script>
+
+<script src="https://code.highcharts.com/highcharts.js"></script>
+
+
 <link rel='stylesheet' type="text/css" href={% static "worlddata/css/data.css" %}>
+<link rel='stylesheet' type="text/css" href={% static "worlddata/css/highcharts.css" %}>
 {% endblock %}
 
 {% block content %}
@@ -29,28 +35,14 @@
             without tree trunks and stems, plants still dominate the global biomass of Earth with 150 gt.
         </p>
     </div>
-    <div class="tableau-almost-big">
-        <div class='tableauPlaceholder' id='viz1542570186958' style='position: relative'><noscript><a href='#'><img
-                        alt=' '
-                        src='https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;bi&#47;biomass-taxonsandterritories&#47;Dashboard1&#47;1_rss.png'
-                        style='border: none' /></a></noscript><object class='tableauViz' style='display:none;'>
-                <param name='host_url' value='https%3A%2F%2Fpublic.tableau.com%2F' />
-                <param name='embed_code_version' value='3' />
-                <param name='site_root' value='' />
-                <param name='name' value='biomass-taxonsandterritories&#47;Dashboard1' />
-                <param name='tabs' value='no' />
-                <param name='toolbar' value='yes' />
-                <param name='static_image'
-                    value='https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;bi&#47;biomass-taxonsandterritories&#47;Dashboard1&#47;1.png' />
-                <param name='animate_transition' value='yes' />
-                <param name='display_static_image' value='yes' />
-                <param name='display_spinner' value='yes' />
-                <param name='display_overlay' value='yes' />
-                <param name='display_count' value='yes' />
-                <param name='filter' value='publish=yes' /></object></div>
-        <script
-            type='text/javascript'>                    var divElement = document.getElementById('viz1542570186958'); var vizElement = divElement.getElementsByTagName('object')[0]; vizElement.style.minWidth = '200px'; vizElement.style.maxWidth = '2500px'; vizElement.style.width = '100%'; vizElement.style.height = '557px'; var scriptElement = document.createElement('script'); scriptElement.src = 'https://public.tableau.com/javascripts/api/viz_v1.js'; vizElement.parentNode.insertBefore(scriptElement, vizElement);                </script>
+    <div class="chart-container biomass-pie">
+        <div id="pie_chart" class="chart" style="width:100%; height:400px;"></div>
+        <div id="chart-options">
+            <div class="chart-filters"></div>
+            <div class="chart-legend"></div>
+        </div>
     </div>
+
     <div class="source-text">
         <p>
             *Source:
@@ -97,6 +89,7 @@
         </p>
     </div>
 </section>
+<!-- Comments -->
 <section>
     <div class="container">
         <hr>
@@ -128,4 +121,213 @@
             </form>
         </div>
     </div>
-</section> {% endblock %}
+</section>
+
+
+<script>
+    var static_url = "{% get_static_prefix %}";
+    file_path = "worlddata/csv/donut-data.csv";
+    path = static_url + file_path;
+
+    var pieChart = d3.csv(path)
+        .then(function (data) {
+
+            // Get unique values for various columns of data
+            const all_taxons = [...new Set(data.map(d => d.Taxon))].sort()
+            const all_territories = [...new Set(data.map(d => d.Territory))].sort()
+            const all_categories = [...new Set(data.map(d => d.Category))].sort()
+
+            var defaultTaxon = "All";
+            var defaultTerritory = "All";
+            var taxon = defaultTaxon;
+            var territory = defaultTerritory;
+
+            function get_data() {
+                var new_data = [];
+
+                for (let row of data) {
+                    if ((row.Taxon == taxon) && (row.Territory == territory)) {
+                        new_data.push({ name: row.Category, y: +row.Biomass });
+                    }
+                }
+                return new_data;
+            }
+
+            initial_data = get_data();
+
+            var chart = Highcharts.chart('pie_chart', {
+
+                chart: {
+                    plotBackgroundColor: null,
+                    plotBorderWidth: null,
+                    plotShadow: false,
+                    styledMode: true,
+                    type: 'pie',
+                },
+                title: {
+                    text: null
+                },
+                tooltip: {
+                    formatter: function () {
+                        var title = fCapital(this.key);
+                        var sName = this.series.name;
+                        var sValue = this.y;
+                        var per = this.percentage.toFixed(1);
+
+                        var str = '<span style="font-size:1.2em"><strong>' + title + '</strong></span><br>' + sName + ': ' + sValue + 'gt <br> Percentage: ' + per + '%';
+                        return str;
+                    }
+                    //headerFormat: '{fCapital(point.key)}',
+                    // pointFormat: '{series.name}: {point.y}gt <br> Percentage: {point.percentage:.1f}%'
+                },
+
+                plotOptions: {
+                    pie: {
+                        allowPointSelect: true,
+                        cursor: 'pointer',
+                        dataLabels: {
+                            enabled: false,
+                            //format: '<b>{point.name}</b>: {point.percentage:.1f} %'
+                        }
+                    }
+                },
+                series: [{
+                    name: "Biomass",
+                    colorByPoint: true,
+                    innerSize: '30%',
+                    data: initial_data
+                }],
+                credits: {
+                    enabled: false
+                },
+                annotations: [{
+                    //visible: true, by default the annotation is visible
+                    labels: [{
+                        point: '0'
+                    }]
+                }, {
+                    visible: false,
+                }]
+            },
+            )
+            var legend = createLegend(chart);
+
+            // Dropdowns    
+            // Define dropdown container
+            var options = document.querySelector(".chart-filters");
+
+            // Create and append taxon list
+            var taxonSelect = document.createElement("select");
+            taxonSelect.id = "taxonSelect";
+            taxonSelect.onchange = taxonChange;
+            options.appendChild(taxonSelect);
+
+            // Create and append the options
+            for (var i = 0; i < all_taxons.length; i++) {
+                var option = document.createElement("option");
+                option.value = all_taxons[i];
+                option.text = all_taxons[i];
+                taxonSelect.appendChild(option);
+            }
+
+            //Create and append territory list
+            var territorySelect = document.createElement("select");
+            territorySelect.id = "territorySelect";
+            territorySelect.onchange = territoryChange;
+            options.appendChild(territorySelect);
+
+            //Create and append the options
+            for (var i = 0; i < all_territories.length; i++) {
+                var option = document.createElement("option");
+                option.value = all_territories[i];
+                option.text = all_territories[i];
+                territorySelect.appendChild(option);
+            }
+
+            // Update chart data on taxon change
+            function taxonChange() {
+                taxon = document.getElementById("taxonSelect").value;
+                chart.series[0].setData(get_data());
+                createLegend(chart);
+            }
+
+            // Update chart data on territory change
+            function territoryChange() {
+                territory = document.getElementById("territorySelect").value;
+                chart.series[0].setData(get_data());
+                createLegend(chart);
+            }
+
+            // Add labels
+            function createLegend(chart) {
+
+                // Remove old legend items if they exist
+                document.querySelectorAll('.biomass-pie .legend-item').forEach(function (a) {
+                    a.remove()
+                })
+
+                $legend = $('.chart-legend');
+                // Append legend items
+                $.each(chart.series[0].data, function (j, data) {
+                    $legend.append('<div class="legend-item"><div class="dot legend-color-' + data.colorIndex + '" ></div><div class="serieName" id="">' + fCapital(data.name) + '</div></div>');
+                });
+
+                // Click effect for legend
+                $('.chart-legend .legend-item').click(function () {
+                    var inx = $(this).index(),
+                        point = chart.series[0].data[inx];
+
+                    if (point.visible) {
+                        point.select();
+                    }
+                    else {
+                        point.setVisible(true);
+                    }
+                });
+                // Hover effect for legend
+                $('.chart-legend .legend-item').mouseenter(function () {
+                    var inx = $(this).index(),
+                        points = chart.series[0].data,
+                        i = 0;
+
+                    for (i = 0; i < points.length; i++) {
+                        if (i == inx) {
+                            points[i].setState('hover');
+                        } else {
+                            points[i].setState('inactive');
+                        }
+                    }
+                });
+                $('.chart-legend .legend-item').mouseout(function (event) {
+
+                    var e = event.toElement || event.relatedTarget;
+                    if (e.parentNode == this || e == this) {
+                        return;
+                    }
+
+                    points = chart.series[0].data,
+                        i = 0;
+
+                    for (i = 0; i < points.length; i++) {
+                        points[i].setState('');
+                    }
+                });
+            }
+
+        })
+        .catch(function (error) {
+            console.log(error);
+        })
+
+    function fCapital2(to) {
+        var it = to;
+        //return string.charAt(0).toUpperCase() + string.slice(1);
+    }
+    function fCapital(string) {
+        return string.charAt(0).toUpperCase() + string.slice(1);
+    }
+
+
+</script>
+
+{% endblock %}
