@@ -128,6 +128,7 @@ padding: 20px;
 
     .chart-filters {
       margin-bottom: 20px;
+      overflow: hidden;
       
       select {
         background-color: $dark-grey;

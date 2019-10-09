@@ -2,10 +2,14 @@
 {% load static %}
 
 {% block styles %}
-<script src="https://d3js.org/d3.v5.js"></script>
+<!-- We use d3 libraries to load data -->
+<script src="https://d3js.org/d3-dsv.v1.min.js"></script>
+<script src="https://d3js.org/d3-fetch.v1.min.js"></script>
 
+<!-- We use highcharts for visualizations -->
 <script src="https://code.highcharts.com/highcharts.js"></script>
 
+<script src={% static "worlddata/js/chart-helpers.js" %}></script>
 
 <link rel='stylesheet' type="text/css" href={% static "worlddata/css/data.css" %}>
 <link rel='stylesheet' type="text/css" href={% static "worlddata/css/highcharts.css" %}>
@@ -15,7 +19,7 @@
 <section class="banner-container">
     <h1 class="header-title-banner">Biodiversity</h1>
 </section>
-
+<!-- Biomass pie -->
 <section>
     <div class="container limited-width">
         <p>
@@ -37,7 +41,7 @@
     </div>
     <div class="chart-container biomass-pie">
         <div id="pie_chart" class="chart" style="width:100%; height:400px;"></div>
-        <div id="chart-options">
+        <div id="chart-options" style="max-width:260px">
             <div class="chart-filters"></div>
             <div class="chart-legend"></div>
         </div>
@@ -51,35 +55,21 @@
                 America.</a>
         </p>
     </div>
+</section>
+<!-- Biomass and population scatter plot -->
+<section>
     <div class="container limited-width">
         <p>
             Here you can see the correlation between the total population of taxa, and their corresponding biomass. Note
             that populations are presented in powers of ten, so every step indicates a tenfold increase of population. 
         </p>
     </div>
-    <div class="tableau-almost-big">
-        <div class='tableauPlaceholder' id='viz1551349080037' style='position: relative'><noscript><a
-                    href='https:&#47;&#47;www.navigateobscurity.com&#47;data&#47;biodiversity&#47;'><img alt=' '
-                        src='https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;Bi&#47;Biomassandpopulation&#47;Dashboard1&#47;1_rss.png'
-                        style='border: none' /></a></noscript><object class='tableauViz' style='display:none;'>
-                <param name='host_url' value='https%3A%2F%2Fpublic.tableau.com%2F' />
-                <param name='embed_code_version' value='3' />
-                <param name='site_root' value='' />
-                <param name='name' value='Biomassandpopulation&#47;Dashboard1' />
-                <param name='tabs' value='no' />
-                <param name='toolbar' value='yes' />
-                <param name='static_image'
-                    value='https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;Bi&#47;Biomassandpopulation&#47;Dashboard1&#47;1.png' />
-                <param name='animate_transition' value='yes' />
-                <param name='display_static_image' value='yes' />
-                <param name='display_spinner' value='yes' />
-                <param name='display_overlay' value='yes' />
-                <param name='display_count' value='yes' />
-                <param name='filter' value='publish=yes' /></object></div>
-        <script
-            type='text/javascript'>                    var divElement = document.getElementById('viz1551349080037'); var vizElement = divElement.getElementsByTagName('object')[0]; if (divElement.offsetWidth > 800) { vizElement.style.minWidth = '200px'; vizElement.style.maxWidth = '2500px'; vizElement.style.width = '100%'; vizElement.style.height = '557px'; } else if (divElement.offsetWidth > 500) { vizElement.style.minWidth = '200px'; vizElement.style.maxWidth = '2500px'; vizElement.style.width = '100%'; vizElement.style.height = '557px'; } else { vizElement.style.width = '100%'; vizElement.style.height = '557px'; } var scriptElement = document.createElement('script'); scriptElement.src = 'https://public.tableau.com/javascripts/api/viz_v1.js'; vizElement.parentNode.insertBefore(scriptElement, vizElement);                </script>
+    <div class="chart-container biomass-scatter">
+        <div id="scatter_plot" class="chart scatter" style="width:100%; height:400px;"></div>
+        <div id="chart-options">
+            <div class="chart-legend"></div>
+        </div>
     </div>
-
     <div class="source-text">
         <p>
             *Source:
@@ -126,10 +116,12 @@
 
 <script>
     var static_url = "{% get_static_prefix %}";
-    file_path = "worlddata/csv/donut-data.csv";
-    path = static_url + file_path;
+    file_donut = "worlddata/csv/donut-data.csv";
+    donut_path = static_url + file_donut;
+    file_scatter = "worlddata/csv/biomass-scatter.csv";
+    scatter_path = static_url + file_scatter;
 
-    var pieChart = d3.csv(path)
+    var pieChart = d3.csv(donut_path)
         .then(function (data) {
 
             // Get unique values for various columns of data
@@ -141,6 +133,8 @@
             var defaultTerritory = "All";
             var taxon = defaultTaxon;
             var territory = defaultTerritory;
+
+            var parentContainer = '.biomass-pie';
 
             function get_data() {
                 var new_data = [];
@@ -156,7 +150,6 @@
             initial_data = get_data();
 
             var chart = Highcharts.chart('pie_chart', {
-
                 chart: {
                     plotBackgroundColor: null,
                     plotBorderWidth: null,
@@ -174,13 +167,10 @@
                         var sValue = this.y;
                         var per = this.percentage.toFixed(1);
 
-                        var str = '<span style="font-size:1.2em"><strong>' + title + '</strong></span><br>' + sName + ': ' + sValue + 'gt <br> Percentage: ' + per + '%';
-                        return str;
-                    }
-                    //headerFormat: '{fCapital(point.key)}',
-                    // pointFormat: '{series.name}: {point.y}gt <br> Percentage: {point.percentage:.1f}%'
+                        return '<text><span style="font-size: 1.1em"><strong>' + title + '</strong></span><br>' + sName + ': ' + sValue + 'gt <br> Percentage: ' + per + '%</text>';
+                    },
+                    useHTML: true
                 },
-
                 plotOptions: {
                     pie: {
                         allowPointSelect: true,
@@ -201,7 +191,6 @@
                     enabled: false
                 },
                 annotations: [{
-                    //visible: true, by default the annotation is visible
                     labels: [{
                         point: '0'
                     }]
@@ -210,9 +199,9 @@
                 }]
             },
             )
-            var legend = createLegend(chart);
+            var legend = createLegend(chart, parentContainer);
 
-            // Dropdowns    
+            // Dropdowns
             // Define dropdown container
             var options = document.querySelector(".chart-filters");
 
@@ -258,75 +247,108 @@
                 createLegend(chart);
             }
 
-            // Add labels
-            function createLegend(chart) {
-
-                // Remove old legend items if they exist
-                document.querySelectorAll('.biomass-pie .legend-item').forEach(function (a) {
-                    a.remove()
-                })
-
-                $legend = $('.chart-legend');
-                // Append legend items
-                $.each(chart.series[0].data, function (j, data) {
-                    $legend.append('<div class="legend-item"><div class="dot legend-color-' + data.colorIndex + '" ></div><div class="serieName" id="">' + fCapital(data.name) + '</div></div>');
-                });
-
-                // Click effect for legend
-                $('.chart-legend .legend-item').click(function () {
-                    var inx = $(this).index(),
-                        point = chart.series[0].data[inx];
-
-                    if (point.visible) {
-                        point.select();
-                    }
-                    else {
-                        point.setVisible(true);
-                    }
-                });
-                // Hover effect for legend
-                $('.chart-legend .legend-item').mouseenter(function () {
-                    var inx = $(this).index(),
-                        points = chart.series[0].data,
-                        i = 0;
-
-                    for (i = 0; i < points.length; i++) {
-                        if (i == inx) {
-                            points[i].setState('hover');
-                        } else {
-                            points[i].setState('inactive');
-                        }
-                    }
-                });
-                $('.chart-legend .legend-item').mouseout(function (event) {
-
-                    var e = event.toElement || event.relatedTarget;
-                    if (e.parentNode == this || e == this) {
-                        return;
-                    }
-
-                    points = chart.series[0].data,
-                        i = 0;
-
-                    for (i = 0; i < points.length; i++) {
-                        points[i].setState('');
-                    }
-                });
-            }
-
         })
         .catch(function (error) {
             console.log(error);
         })
 
-    function fCapital2(to) {
-        var it = to;
-        //return string.charAt(0).toUpperCase() + string.slice(1);
-    }
-    function fCapital(string) {
-        return string.charAt(0).toUpperCase() + string.slice(1);
-    }
+    var scatterPlot = d3.csv(scatter_path)
+        .then(function (data) {
 
+            // Get unique values for various columns of data
+            const all_categories = [...new Set(data.map(d => d.group))].sort()
+
+            var parentContainer = '.biomass-scatter';
+
+            function get_data() {
+                var new_data = [];
+                var i = 0;
+                for (let row of data) {
+                    new_data.push({ name: row.group, y: +row.Mass, x: +row.power, colorIndex: i });
+                    i += 1;
+                }
+                return new_data;
+            }
+
+            initial_data = get_data();
+
+            var chart = Highcharts.chart('scatter_plot', {
+                chart: {
+                    styledMode: true,
+                    type: 'scatter',
+                    zoomType: 'xy',
+                },
+                title: {
+                    text: null
+                },
+                tooltip: {
+                    useHTML: true
+                },
+                xAxis: {
+                    labels: {
+                        formatter: function () {
+                            return ('<div class="highcharts-axis-html-labels"><text>10<sup >' + this.value + '</sup></text></div>')
+                        },
+                        useHTML: true,
+                    },
+                    title: {
+                        enabled: true,
+                        text: 'Population'
+                    },
+                    startOnTick: true,
+                    endOnTick: true,
+                },
+                yAxis: {
+                    title: {
+                        text: 'Biomass (gt of C)'
+                    }
+                },
+                plotOptions: {
+                    scatter: {
+                        marker: {
+                            radius: 30,
+                            states: {
+                                hover: {
+                                    enabled: true,
+                                    radiusPlus: 10,
+                                },
+                                select: {
+                                    enabled: true,
+                                    radiusPlus: 10
+                                }
+                            }
+                        },
+                        opacity: 0.6,
+                        tooltip: {
+                            headerFormat: '',
+                            pointFormatter: function () {
+                                var sName = fCapital(this.name);
+                                var biomass = this.y;
+                                var populance = this.x;
+
+                                return '<text><span style="font-size:1.1em"><strong>' + sName + '</strong></span><br>Biomass: ' + biomass + 'gt <br> Population: 10<sup>' + populance + '</sup> organisms</text>';
+                            },
+                            useHTML: true
+                        },
+                        stickyTracking: false
+                    }
+                },
+                series: [{
+                    allowPointSelect: true,
+                    data: initial_data,
+                    showInLegend: false
+                }],
+                credits: {
+                    enabled: false
+                },
+            })
+
+            var legend = createLegend(chart, parentContainer);
+
+        })
+        .catch(function (error) {
+            console.log(error);
+        })
 
 </script>
 

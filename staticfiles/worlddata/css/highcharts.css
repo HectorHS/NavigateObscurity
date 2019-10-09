@@ -8,8 +8,8 @@
   z-index: 0;
   /* #1072 */
   -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
-  font-family: "Lucida Grande", "Lucida Sans Unicode", Arial, Helvetica, sans-serif;
-  font-size: 12px;
+  font-family: "Poppins", Helvetica, sans-serif;
+  font-size: 15px;
 }
 
 .highcharts-root {
@@ -74,6 +74,7 @@
 .highcharts-axis-line {
   fill: none;
   stroke: #ccd6eb;
+  opacity: 0.1;
 }
 
 .highcharts-yaxis .highcharts-axis-line {
@@ -93,14 +94,14 @@
 .highcharts-grid-line {
   fill: none;
   stroke: #e6e6e6;
-}
-
-.highcharts-xaxis-grid .highcharts-grid-line {
-  stroke-width: 0px;
+  opacity: 0.1;
+  stroke-width: 1px;
+  stroke: #e6e6e6;
 }
 
 .highcharts-tick {
   stroke: #ccd6eb;
+  stroke-width: 0;
 }
 
 .highcharts-yaxis .highcharts-tick {
@@ -182,14 +183,14 @@ div.highcharts-tooltip {
 }
 
 .highcharts-point-inactive {
-  opacity: 0.2;
-  transition: opacity 50ms;
+  opacity: 0.3;
+  transition: opacity 100ms;
   /* quick in */
 }
 
 .highcharts-series-inactive {
-  opacity: 0.2;
-  transition: opacity 50ms;
+  opacity: 0.3;
+  transition: opacity 100ms;
   /* quick in */
 }
 
@@ -199,7 +200,7 @@ div.highcharts-tooltip {
 }
 
 .highcharts-state-normal path {
-  transition: stroke-width 250ms;
+  transition: stroke-width 50ms;
   /* slow out */
 }
 
@@ -208,116 +209,160 @@ g.highcharts-series,
 .highcharts-point,
 .highcharts-markers,
 .highcharts-data-labels {
-  transition: opacity 250ms;
+  transition: opacity 150ms;
 }
 
 .highcharts-legend-series-active g.highcharts-series:not(.highcharts-series-hover),
 .highcharts-legend-point-active .highcharts-point:not(.highcharts-point-hover),
 .highcharts-legend-series-active .highcharts-markers:not(.highcharts-series-hover),
 .highcharts-legend-series-active .highcharts-data-labels:not(.highcharts-series-hover) {
-  opacity: 0.2;
+  opacity: 0.3;
 }
 
 /* Series options */
 /* Default colors */
 .highcharts-color-0 {
-  fill: #e6194B;
-  stroke: #e6194B;
+  fill: #0074D9;
+  stroke: #0074D9;
+}
+
+.legend-color-0 {
+  background-color: #0074D9;
 }
 
 .highcharts-color-1 {
-  fill: #3cb44b;
-  stroke: #3cb44b;
+  fill: #FF4136;
+  stroke: #FF4136;
+}
+
+.legend-color-1 {
+  background-color: #FF4136;
 }
 
 .highcharts-color-2 {
-  fill: #ffe119;
-  stroke: #ffe119;
+  fill: #7FDBFF;
+  stroke: #7FDBFF;
+}
+
+.legend-color-2 {
+  background-color: #7FDBFF;
 }
 
 .highcharts-color-3 {
-  fill: #4363d8;
-  stroke: #4363d8;
+  fill: #85144B;
+  stroke: #85144B;
+}
+
+.legend-color-3 {
+  background-color: #85144B;
 }
 
 .highcharts-color-4 {
-  fill: #f58231;
-  stroke: #f58231;
+  fill: #001F3F;
+  stroke: #001F3F;
+}
+
+.legend-color-4 {
+  background-color: #001F3F;
 }
 
 .highcharts-color-5 {
-  fill: #911eb4;
-  stroke: #911eb4;
+  fill: #FFDC00;
+  stroke: #FFDC00;
+}
+
+.legend-color-5 {
+  background-color: #FFDC00;
 }
 
 .highcharts-color-6 {
-  fill: #42d4f4;
-  stroke: #42d4f4;
+  fill: #3D9970;
+  stroke: #3D9970;
+}
+
+.legend-color-6 {
+  background-color: #3D9970;
 }
 
 .highcharts-color-7 {
-  fill: #f032e6;
-  stroke: #f032e6;
+  fill: #B10DC9;
+  stroke: #B10DC9;
+}
+
+.legend-color-7 {
+  background-color: #B10DC9;
 }
 
 .highcharts-color-8 {
-  fill: #bfef45;
-  stroke: #bfef45;
+  fill: #AAAAAA;
+  stroke: #AAAAAA;
+}
+
+.legend-color-8 {
+  background-color: #AAAAAA;
 }
 
 .highcharts-color-9 {
-  fill: #fabebe;
-  stroke: #fabebe;
+  fill: #FF851B;
+  stroke: #FF851B;
+}
+
+.legend-color-9 {
+  background-color: #FF851B;
 }
 
 .highcharts-color-10 {
-  fill: #469990;
-  stroke: #469990;
+  fill: #39CCCC;
+  stroke: #39CCCC;
+}
+
+.legend-color-10 {
+  background-color: #39CCCC;
 }
 
 .highcharts-color-11 {
-  fill: #e6beff;
-  stroke: #e6beff;
+  fill: #F012BE;
+  stroke: #F012BE;
+}
+
+.legend-color-11 {
+  background-color: #F012BE;
 }
 
 .highcharts-color-12 {
-  fill: #9A6324;
-  stroke: #9A6324;
+  fill: #2ECC40;
+  stroke: #2ECC40;
+}
+
+.legend-color-12 {
+  background-color: #2ECC40;
 }
 
 .highcharts-color-13 {
-  fill: #fffac8;
-  stroke: #fffac8;
+  fill: #85144B;
+  stroke: #85144B;
+}
+
+.legend-color-13 {
+  background-color: #85144B;
 }
 
 .highcharts-color-14 {
-  fill: #800000;
-  stroke: #800000;
+  fill: #DDDDDD;
+  stroke: #DDDDDD;
+}
+
+.legend-color-14 {
+  background-color: #DDDDDD;
 }
 
 .highcharts-color-15 {
-  fill: #aaffc3;
-  stroke: #aaffc3;
+  fill: #01FF70;
+  stroke: #01FF70;
 }
 
-.highcharts-color-16 {
-  fill: #808000;
-  stroke: #808000;
-}
-
-.highcharts-color-17 {
-  fill: #ffd8b1;
-  stroke: #ffd8b1;
-}
-
-.highcharts-color-18 {
-  fill: #000075;
-  stroke: #000075;
-}
-
-.highcharts-color-19 {
-  fill: #a9a9a9;
-  stroke: #a9a9a9;
+.legend-color-15 {
+  background-color: #01FF70;
 }
 
 .highcharts-area {
@@ -331,7 +376,7 @@ g.highcharts-series,
 }
 
 .highcharts-point {
-  stroke-width: 1px;
+  stroke-width: 0px;
 }
 
 .highcharts-dense-data .highcharts-point {
@@ -357,14 +402,8 @@ g.highcharts-series,
 }
 
 .highcharts-halo {
-  fill-opacity: 0.25;
+  fill-opacity: 1;
   stroke-width: 0;
-}
-
-.highcharts-series:not(.highcharts-pie-series) .highcharts-point-select,
-.highcharts-markers .highcharts-point-select {
-  fill: #cccccc;
-  stroke: #dffcff;
 }
 
 .highcharts-column-series rect.highcharts-point {
@@ -383,10 +422,11 @@ g.highcharts-series,
 .highcharts-pie-series .highcharts-point {
   stroke-linejoin: round;
   stroke: #2e3838;
+  fill-opacity: 1;
 }
 
 .highcharts-pie-series .highcharts-point-hover {
-  fill-opacity: 0.75;
+  fill-opacity: 1;
   transition: fill-opacity 50ms;
 }
 
@@ -656,17 +696,8 @@ circle.highcharts-legend-nav-active, circle.highcharts-legend-nav-inactive {
   stroke-width: 0;
 }
 
-.highcharts-navigator-xaxis .highcharts-grid-line {
-  stroke-width: 1px;
-  stroke: #e6e6e6;
-}
-
 .highcharts-navigator-xaxis.highcharts-axis-labels {
   fill: #dffcff;
-}
-
-.highcharts-navigator-yaxis .highcharts-grid-line {
-  stroke-width: 0;
 }
 
 .highcharts-scrollbar-thumb {
@@ -961,4 +992,16 @@ text.highcharts-drilldown-data-label,
 
 .highcharts-grid-axis .highcharts-axis-line {
   stroke-width: 1px;
+}
+
+.scatter .highcharts-point {
+  opacity: 0.6;
+}
+
+.scatter .highcharts-point-hover {
+  opacity: 1;
+}
+
+.scatter .highcharts-point-select {
+  opacity: 1;
 }

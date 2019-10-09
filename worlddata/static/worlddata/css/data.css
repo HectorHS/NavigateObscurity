@@ -144,6 +144,7 @@
 
 .chart-container #chart-options .chart-filters {
   margin-bottom: 20px;
+  overflow: hidden;
 }
 
 .chart-container #chart-options .chart-filters select {
