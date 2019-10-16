@@ -9,7 +9,7 @@
   /* #1072 */
   -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
   font-family: "Poppins", Helvetica, sans-serif;
-  font-size: 15px;
+  font-size: 0.9em;
 }
 
 .highcharts-root {
@@ -91,6 +91,11 @@
   font-size: 0.9em;
 }
 
+.highcharts-axis-html-labels {
+  color: #dffcff;
+  font-size: 0.9em;
+}
+
 .highcharts-grid-line {
   fill: none;
   stroke: #e6e6e6;
@@ -145,6 +150,7 @@
 
 .highcharts-tooltip text {
   fill: #dffcff;
+  color: #dffcff;
 }
 
 .highcharts-tooltip .highcharts-header {

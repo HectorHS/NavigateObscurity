@@ -46,7 +46,6 @@
             <div class="chart-legend"></div>
         </div>
     </div>
-
     <div class="source-text">
         <p>
             *Source:
@@ -203,48 +202,52 @@
 
             // Dropdowns
             // Define dropdown container
-            var options = document.querySelector(".chart-filters");
+            var filters = document.querySelector(".chart-filters");
 
             // Create and append taxon list
             var taxonSelect = document.createElement("select");
             taxonSelect.id = "taxonSelect";
             taxonSelect.onchange = taxonChange;
-            options.appendChild(taxonSelect);
+            filters.appendChild(taxonSelect);
 
             // Create and append the options
-            for (var i = 0; i < all_taxons.length; i++) {
-                var option = document.createElement("option");
-                option.value = all_taxons[i];
-                option.text = all_taxons[i];
-                taxonSelect.appendChild(option);
+            addOptions(taxonSelect, all_taxons, taxon);
+
+            // Update chart data on taxon change
+            function taxonChange() {
+                taxon = document.getElementById("taxonSelect").value;
+                chart.series[0].setData(get_data());
+                createLegend(chart, parentContainer);
             }
 
             //Create and append territory list
             var territorySelect = document.createElement("select");
             territorySelect.id = "territorySelect";
             territorySelect.onchange = territoryChange;
-            options.appendChild(territorySelect);
+            filters.appendChild(territorySelect);
 
             //Create and append the options
-            for (var i = 0; i < all_territories.length; i++) {
-                var option = document.createElement("option");
-                option.value = all_territories[i];
-                option.text = all_territories[i];
-                territorySelect.appendChild(option);
-            }
-
-            // Update chart data on taxon change
-            function taxonChange() {
-                taxon = document.getElementById("taxonSelect").value;
-                chart.series[0].setData(get_data());
-                createLegend(chart);
-            }
+            addOptions(territorySelect, all_territories, territory);
 
             // Update chart data on territory change
             function territoryChange() {
                 territory = document.getElementById("territorySelect").value;
                 chart.series[0].setData(get_data());
-                createLegend(chart);
+                createLegend(chart, parentContainer);
+            }
+
+            function addOptions(parent, options, defaultValue) {
+                // Create and append the options
+                for (var i = 0; i < options.length; i++) {
+                    var option = document.createElement("option");
+                    option.value = options[i];
+                    option.text = options[i];
+                    // Setting default value to selected
+                    if (option.value == defaultValue) {
+                        option.selected = "selected";
+                    }
+                    parent.appendChild(option);
+                }
             }
 
         })

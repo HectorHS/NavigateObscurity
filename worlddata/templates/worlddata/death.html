@@ -2,7 +2,19 @@
 {% load static %}
 
 {% block styles %}
+<!-- We use d3 libraries to load data -->
+<script src="https://d3js.org/d3-dsv.v1.min.js"></script>
+<script src="https://d3js.org/d3-fetch.v1.min.js"></script>
+
+<!-- We use highcharts for visualizations -->
+<script src="https://code.highcharts.com/highcharts.js"></script>
+<script src="https://code.highcharts.com/modules/treemap.js"></script>
+<script src="https://code.highcharts.com/modules/data.js"></script>
+
+<script src={% static "worlddata/js/chart-helpers.js" %}></script>
+
 <link rel='stylesheet' type="text/css" href={% static "worlddata/css/data.css" %}>
+<link rel='stylesheet' type="text/css" href={% static "worlddata/css/highcharts.css" %}>
 {% endblock %}
 
 {% block content %}
@@ -19,70 +31,24 @@
             income level, age and sex.
         </p>
         <p>
-            All data is from 2016. Numbers are actual total numbers.
-            The measures available below are death – total number of casualties,
-            YLLs – years of life lost calculated against life expectancy,
-            YLDs – years lived with disability caused by the particular disease, and finally,
-            DALYs – disability adjusted life years lost which are calculated by adding YLLs & YLDs,
+            All data is from 2017. Numbers are actual total numbers.
+            The measures available below are death – total number of casualties, and
+            DALYs – disability adjusted life years lost which are calculated by adding years lived with disability
+            (YLLs) & years lived with disability (YLDs),
             so basically healthy years lost due to the particular cause.
         </p>
-    </div>
-    <div class="tableau-big">
-        <div class='tableauPlaceholder' id='viz1541114386415' style='position: relative'><noscript><a href='#'><img
-                        alt=' '
-                        src='https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;de&#47;death2016&#47;Dashboard1&#47;1_rss.png'
-                        style='border: none' /></a></noscript><object class='tableauViz' style='display:none;'>
-                <param name='host_url' value='https%3A%2F%2Fpublic.tableau.com%2F' />
-                <param name='embed_code_version' value='3' />
-                <param name='site_root' value='' />
-                <param name='name' value='death2016&#47;Dashboard1' />
-                <param name='tabs' value='no' />
-                <param name='toolbar' value='yes' />
-                <param name='static_image'
-                    value='https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;de&#47;death2016&#47;Dashboard1&#47;1.png' />
-                <param name='animate_transition' value='yes' />
-                <param name='display_static_image' value='yes' />
-                <param name='display_spinner' value='yes' />
-                <param name='display_overlay' value='yes' />
-                <param name='display_count' value='yes' />
-                <param name='filter' value='publish=yes' /></object></div>
-        <script type='text/javascript'>                    var divElement = document.getElementById('viz1541114386415'); var vizElement = divElement.getElementsByTagName('object')[0]; vizElement.style.minWidth = '200px'; vizElement.style.maxWidth = '2500px'; vizElement.style.width = '100%'; vizElement.style.height = '619px'; var scriptElement = document.createElement('script'); scriptElement.src = 'https://public.tableau.com/javascripts/api/viz_v1.js'; vizElement.parentNode.insertBefore(scriptElement, vizElement);                
-        </script>
-    </div>
-    <div class="source-text">
         <p>
-            *Source:
-            <a href="http://ghdx.healthdata.org/gbd-results-tool">The Global Health Data Exchange</a>
+            Many of the causes are clickable so you can see the breakdowns of each cause category.
         </p>
     </div>
-    <!-- Viz 2 - Breakdown of cancer -->
-    <div class="container limited-width">
-        <p>
-            And this is how cancer is broken down.
-        </p>
+    <div class="chart-container death-tree">
+        <div id="chart-options" style="max-width:100%">
+            <div class="chart-filters"></div>
+            <div class="chart-legend"></div>
+        </div>
+        <div id="death_tree" class="treemap" style="width:100%;"></div>
     </div>
-    <div class="tableau-big">
-        <div class='tableauPlaceholder' id='viz1551344512704' style='position: relative'><noscript><a
-                    href='https:&#47;&#47;www.navigateobscurity.com&#47;data&#47;death&#47;'><img alt=' '
-                        src='https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;ca&#47;cancerbreakdown&#47;Dashboard1&#47;1_rss.png'
-                        style='border: none' /></a></noscript><object class='tableauViz' style='display:none;'>
-                <param name='host_url' value='https%3A%2F%2Fpublic.tableau.com%2F' />
-                <param name='embed_code_version' value='3' />
-                <param name='site_root' value='' />
-                <param name='name' value='cancerbreakdown&#47;Dashboard1' />
-                <param name='tabs' value='no' />
-                <param name='toolbar' value='yes' />
-                <param name='static_image'
-                    value='https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;ca&#47;cancerbreakdown&#47;Dashboard1&#47;1.png' />
-                <param name='animate_transition' value='yes' />
-                <param name='display_static_image' value='yes' />
-                <param name='display_spinner' value='yes' />
-                <param name='display_overlay' value='yes' />
-                <param name='display_count' value='yes' />
-                <param name='filter' value='publish=yes' /></object></div>
-        <script type='text/javascript'>                    var divElement = document.getElementById('viz1551344512704'); var vizElement = divElement.getElementsByTagName('object')[0]; if (divElement.offsetWidth > 800) { vizElement.style.minWidth = '200px'; vizElement.style.maxWidth = '2500px'; vizElement.style.width = '100%'; vizElement.style.height = '619px'; } else if (divElement.offsetWidth > 500) { vizElement.style.minWidth = '200px'; vizElement.style.maxWidth = '2500px'; vizElement.style.width = '100%'; vizElement.style.height = '619px'; } else { vizElement.style.width = '100%'; vizElement.style.height = '619px'; } var scriptElement = document.createElement('script'); scriptElement.src = 'https://public.tableau.com/javascripts/api/viz_v1.js'; vizElement.parentNode.insertBefore(scriptElement, vizElement);                
-        </script>
-    </div>
+
 
     <div class="source-text">
         <p>
@@ -90,7 +56,8 @@
             <a href="http://ghdx.healthdata.org/gbd-results-tool">The Global Health Data Exchange</a>
         </p>
     </div>
-    <!-- Viz 3 - Historical causes of death -->
+
+    <!-- Viz 2 - Historical causes of death -->
     <div class="container limited-width">
         <p>
             Unfortunately we do not have equally good data for older periods,
@@ -98,26 +65,8 @@
             for the US in 1900.
         </p>
     </div>
-    <div class="tableau-small">
-        <div class='tableauPlaceholder' id='viz1551298082324' style='position: relative'><noscript><a
-                    href='https:&#47;&#47;www.navigateobscurity.com&#47;data&#47;death&#47;'><img alt=' '
-                        src='https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;Ca&#47;CausesOfDeath-US1900&#47;Dashboard1&#47;1_rss.png'
-                        style='border: none' /></a></noscript><object class='tableauViz' style='display:none;'>
-                <param name='host_url' value='https%3A%2F%2Fpublic.tableau.com%2F' />
-                <param name='embed_code_version' value='3' />
-                <param name='site_root' value='' />
-                <param name='name' value='CausesOfDeath-US1900&#47;Dashboard1' />
-                <param name='tabs' value='no' />
-                <param name='toolbar' value='yes' />
-                <param name='static_image'
-                    value='https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;Ca&#47;CausesOfDeath-US1900&#47;Dashboard1&#47;1.png' />
-                <param name='animate_transition' value='yes' />
-                <param name='display_static_image' value='yes' />
-                <param name='display_spinner' value='yes' />
-                <param name='display_overlay' value='yes' />
-                <param name='display_count' value='yes' /></object></div>
-        <script
-            type='text/javascript'>                    var divElement = document.getElementById('viz1551298082324'); var vizElement = divElement.getElementsByTagName('object')[0]; vizElement.style.minWidth = '200px'; vizElement.style.maxWidth = '2500px'; vizElement.style.width = '100%'; vizElement.style.height = '277px'; var scriptElement = document.createElement('script'); scriptElement.src = 'https://public.tableau.com/javascripts/api/viz_v1.js'; vizElement.parentNode.insertBefore(scriptElement, vizElement);                </script>
+    <div class="chart-container old-death-tree">
+        <div id="old_death_tree" class="treemap" style="width:100%;"></div>
     </div>
     <div class="source-text">
         <p>
@@ -125,7 +74,7 @@
             <a href="https://www.nejm.org/doi/full/10.1056/NEJMp1113569">The New England Journal of Medicine</a>
         </p>
     </div>
-    <!-- Viz 4 - Causes of death by geography -->
+    <!-- Viz 3 - Causes of death by geography -->
     <div class="container limited-width">
         <p>
             Causes of death differ wildly according to geography -
@@ -135,27 +84,12 @@
             or nutritional deficiencies.
         </p>
     </div>
-    <div class="tableau-big">
-        <div class='tableauPlaceholder' id='viz1540477426648' style='position: relative'><noscript><a href='#'><img
-                        alt=' '
-                        src='https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;Ca&#47;Causeofdeathbycountry&#47;Dashboard2&#47;1_rss.png'
-                        style='border: none' /></a></noscript><object class='tableauViz' style='display:none;'>
-                <param name='host_url' value='https%3A%2F%2Fpublic.tableau.com%2F' />
-                <param name='embed_code_version' value='3' />
-                <param name='site_root' value='' />
-                <param name='name' value='Causeofdeathbycountry&#47;Dashboard2' />
-                <param name='tabs' value='no' />
-                <param name='toolbar' value='yes' />
-                <param name='static_image'
-                    value='https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;Ca&#47;Causeofdeathbycountry&#47;Dashboard2&#47;1.png' />
-                <param name='animate_transition' value='yes' />
-                <param name='display_static_image' value='yes' />
-                <param name='display_spinner' value='yes' />
-                <param name='display_overlay' value='yes' />
-                <param name='display_count' value='yes' />
-                <param name='filter' value='publish=yes' /></object></div>
-        <script
-            type='text/javascript'>                    var divElement = document.getElementById('viz1540477426648'); var vizElement = divElement.getElementsByTagName('object')[0]; vizElement.style.minWidth = '200px'; vizElement.style.maxWidth = '2500px'; vizElement.style.width = '100%'; vizElement.style.height = '619px'; var scriptElement = document.createElement('script'); scriptElement.src = 'https://public.tableau.com/javascripts/api/viz_v1.js'; vizElement.parentNode.insertBefore(scriptElement, vizElement);                </script>
+    <div class="chart-container death-map">
+        <div id="death_map" class="chart" style="width:100%; height:600px;"></div>
+        <div id="chart-options" style="max-width:260px">
+            <div class="chart-filters"></div>
+            <div class="chart-legend"></div>
+        </div>
     </div>
     <div class="source-text">
         <p>
@@ -163,7 +97,7 @@
             <a href="http://ghdx.healthdata.org/gbd-results-tool">The Global Health Data Exchange</a>
         </p>
     </div>
-    <!-- Viz 5 - Risks for causes of death -->
+    <!-- Viz 4 - Risks for causes of death -->
     <div class="container limited-width">
         <p>
             Below you can see risks that have been identified as causes of
@@ -174,41 +108,12 @@
             but it definitely helps.
         </p>
     </div>
-    <div class="tableau-592-800">
-        <div class='tableauPlaceholder' id='viz1541121330532' style='position: relative'>
-            <noscript><a href='#'>
-                    <img alt=' '
-                        src='https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;Ri&#47;Riskandcausesofdeath2016&#47;Dashboard1&#47;1_rss.png'
-                        style='border: none' />
-                </a>
-            </noscript>
-            <object class='tableauViz' style='display:none;'>
-                <param name='host_url' value='https%3A%2F%2Fpublic.tableau.com%2F' />
-                <param name='embed_code_version' value='3' />
-                <param name='site_root' value='' />
-                <param name='name' value='Riskandcausesofdeath2016&#47;Dashboard1' />
-                <param name='tabs' value='no' />
-                <param name='toolbar' value='yes' />
-                <param name='static_image'
-                    value='https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;Ri&#47;Riskandcausesofdeath2016&#47;Dashboard1&#47;1.png' />
-                <param name='animate_transition' value='yes' />
-                <param name='display_static_image' value='yes' />
-                <param name='display_spinner' value='yes' />
-                <param name='display_overlay' value='yes' />
-                <param name='display_count' value='yes' />
-                <param name='filter' value='publish=yes' />
-            </object>
+    <div class="chart-container death-bars">
+        <div id="death_bars" class="chart" style="width:100%; height:600px;"></div>
+        <div id="chart-options options-below" style="max-width:280px">
+            <div class="chart-filters"></div>
+            <div class="chart-legend"></div>
         </div>
-        <script type='text/javascript'>
-            var divElement = document.getElementById('viz1541121330532');
-            var vizElement = divElement.getElementsByTagName('object')[0];
-            if (divElement.offsetWidth > 800) { vizElement.style.minWidth = '200px'; vizElement.style.maxWidth = '2500px'; vizElement.style.width = '100%'; vizElement.style.height = '619px'; }
-            else if (divElement.offsetWidth > 500) { vizElement.style.minWidth = '200px'; vizElement.style.maxWidth = '2500px'; vizElement.style.width = '100%'; vizElement.style.height = '619px'; }
-            else { vizElement.style.width = '100%'; vizElement.style.height = '927px'; }
-            var scriptElement = document.createElement('script');
-            scriptElement.src = 'https://public.tableau.com/javascripts/api/viz_v1.js';
-            vizElement.parentNode.insertBefore(scriptElement, vizElement);                
-        </script>
     </div>
     <div class="source-text">
         <p>
@@ -249,4 +154,447 @@
             </form>
         </div>
     </div>
-</section> {% endblock %}
+</section>
+<script>
+    var static_url = "{% get_static_prefix %}";
+    file_old_death = "worlddata/csv/death-old.csv";
+    old_death_path = static_url + file_old_death;
+    file_treemap_death = "worlddata/csv/death-tree-2017.csv";
+    death_treemap_path = static_url + file_treemap_death;
+
+    var DeathTree = d3.csv(death_treemap_path)
+        .then(function (data) {
+            // All filterable options
+            const all_measures = [...new Set(data.map(d => d.measure))].sort()
+            const all_locations = [...new Set(data.map(d => d.location))].sort()
+            const all_sexes = [...new Set(data.map(d => d.sex))].sort()
+            const all_ages = [...new Set(data.map(d => d.age))].sort()
+
+            //Default values for filters
+            var measure = "Deaths",
+                location = "Global",
+                sex = "Both",
+                age = "All Ages";
+
+            var container_class = ".death-tree";
+            var initial_data = [];
+
+            // To keep color of causes consistent
+            var getColor = {
+                'Cardiovascular diseases': '0',
+                'Cancer': '1',
+                'Chronic respiratory diseases': '2',
+                'Respiratory infections and tuberculosis': '3',
+                'Neurological disorders': '4',
+                'Diabetes and kidney diseases': '5',
+                'Digestive diseases': '6',
+                'Maternal and neonatal disorders': '7',
+                'Unintentional injuries': '8',
+                'Enteric infections': '9',
+                'Transport injuries': '10',
+                'Other non-communicable diseases': '11',
+                'HIV/AIDS': '12',
+                'Other infectious diseases': '13',
+                'Self-harm': '14',
+                'Neglected tropical diseases and malaria': '15',
+                'Interpersonal violence': '16',
+                'Substance use disorders': '17',
+                'Nutritional deficiencies': '18',
+                'Conflict and terrorism': '19',
+                'Musculoskeletal disorders': '20',
+                'Sexually transmitted infections excluding HIV': '21',
+                'Skin and subcutaneous diseases': '22',
+                'Executions and police conflict': '23'
+
+            };
+
+            function get_data() {
+                var new_data = [];
+                var i = 0;
+                var parent = "";
+                for (let row of data) {
+                    if (row.age == age && row.sex == sex && row.measure == measure && row.location == location) {
+                        var parent = "";
+                        if (row.cause == "Tuberculosis"
+                            || row.cause == "Lower respiratory infections"
+                            || row.cause == "Upper respiratory infections"
+                            || row.cause == "Otitis media") {
+                            parent = "Respiratory infections and tuberculosis";
+                        } else if (row.cause == "Diarrheal diseases"
+                            || row.cause == "Typhoid and paratyphoid"
+                            || row.cause == "Other intestinal infectious diseases"
+                            || row.cause == "Invasive Non-typhoidal Salmonella (iNTS)") {
+                            parent = "Enteric infections";
+                        } else if (row.cause == "Malaria"
+                            || row.cause == "Chagas disease"
+                            || row.cause == "Leishmaniasis"
+                            || row.cause == "African trypanosomiasis"
+                            || row.cause == "Schistosomiasis"
+                            || row.cause == "Cystic echinococcosis"
+                            || row.cause == "Cysticercosis"
+                            || row.cause == "Lymphatic filariasis"
+                            || row.cause == "Onchocerciasis"
+                            || row.cause == "Trachoma"
+                            || row.cause == "Dengue"
+                            || row.cause == "Yellow fever"
+                            || row.cause == "Rabies"
+                            || row.cause == "Intestinal nematode infections"
+                            || row.cause == "Leprosy"
+                            || row.cause == "Food-borne trematodiases"
+                            || row.cause == "Ebola"
+                            || row.cause == "Zika virus"
+                            || row.cause == "Other neglected tropical diseases") {
+                            parent = "Neglected tropical diseases and malaria";
+                        } else if (row.cause == "Bladder cancer"
+                            || row.cause == "Brain and nervous system cancer"
+                            || row.cause == "Breast cancer"
+                            || row.cause == "Cervical cancer"
+                            || row.cause == "Colon and rectum cancer"
+                            || row.cause == "Esophageal cancer"
+                            || row.cause == "Gallbladder and biliary tract cancer"
+                            || row.cause == "Kidney cancer"
+                            || row.cause == "Larynx cancer"
+                            || row.cause == "Leukemia"
+                            || row.cause == "Lip and oral cavity cancer"
+                            || row.cause == "Liver cancer"
+                            || row.cause == "Malignant skin melanoma"
+                            || row.cause == "Nasopharynx cancer"
+                            || row.cause == "Non-melanoma skin cancer"
+                            || row.cause == "Other pharynx cancer"
+                            || row.cause == "Ovarian cancer"
+                            || row.cause == "Pancreatic cancer"
+                            || row.cause == "Prostate cancer"
+                            || row.cause == "Stomach cancer"
+                            || row.cause == "Testicular cancer"
+                            || row.cause == "Thyroid cancer"
+                            || row.cause == "Tracheal, bronchus, and lung cancer"
+                            || row.cause == "Uterine cancer"
+                            || row.cause == "Mesothelioma"
+                            || row.cause == "Hodgkin lymphoma"
+                            || row.cause == "Non-Hodgkin lymphoma"
+                            || row.cause == "Multiple myeloma"
+                            || row.cause == "Other malignant neoplasms"
+                            || row.cause == "Other neoplasms") {
+                            parent = "Cancer";
+                        } else if (row.cause == "Ischemic heart disease"
+                            || row.cause == "Rheumatic heart disease"
+                            || row.cause == "Non-rheumatic valvular heart disease"
+                            || row.cause == "Stroke"
+                            || row.cause == "Hypertensive heart disease"
+                            || row.cause == "Cardiomyopathy and myocarditis"
+                            || row.cause == "Aortic aneurysm"
+                            || row.cause == "Atrial fibrillation and flutter"
+                            || row.cause == "Endocarditis"
+                            || row.cause == "Peripheral artery disease"
+                            || row.cause == "Other cardiovascular and circulatory diseases") {
+                            parent = "Cardiovascular diseases";
+                        } else if (row.cause == "Alzheimer's disease and other dementias"
+                            || row.cause == "Motor neuron disease"
+                            || row.cause == "Multiple sclerosis"
+                            || row.cause == "Other neurological disorders"
+                            || row.cause == "Parkinson's disease"
+                            || row.cause == "Epilepsy"
+                            || row.cause == "Headache disorders") {
+                            parent = "Neurological disorders";
+                        } else if (row.cause == "Anxiety disorders"
+                            || row.cause == "Attention-deficit/hyperactivity disorder"
+                            || row.cause == "Autism spectrum disorders"
+                            || row.cause == "Bipolar disorder"
+                            || row.cause == "Depressive disorders"
+                            || row.cause == "Idiopathic developmental intellectual disability"
+                            || row.cause == "Other mental disorders"
+                            || row.cause == "Schizophrenia"
+                            || row.cause == "Conduct disorder"
+                            || row.cause == "Eating disorders") {
+                            parent = "Mental disorders";
+                        } else if (row.cause == "Alcohol use disorders"
+                            || row.cause == "Drug use disorders") {
+                            parent = "Substance use disorders";
+                        } else if (row.cause == "Acute glomerulonephritis"
+                            || row.cause == "Diabetes mellitus"
+                            || row.cause == "Chronic kidney disease") {
+                            parent = "Diabetes and kidney diseases";
+                        } else if (row.cause == "Road injuries"
+                            || row.cause == "Other transport injuries") {
+                            parent = "Transport injuries";
+                        } else if (row.cause == "Animal contact"
+                            || row.cause == "Drowning"
+                            || row.cause == "Environmental heat and cold exposure"
+                            || row.cause == "Exposure to forces of nature"
+                            || row.cause == "Exposure to mechanical forces"
+                            || row.cause == "Falls"
+                            || row.cause == "Fire, heat, and hot substances"
+                            || row.cause == "Foreign body"
+                            || row.cause == "Poisonings"
+                            || row.cause == "Other unintentional injuries"
+                            || row.cause == "Adverse effects of medical treatment") {
+                            parent = "Unintentional injuries";
+                        } else {
+                            parent = "";
+                        }
+
+                        if (parent == "") {
+                            var one = getColor["Cancer"];
+                            var two = getColor[row.cause];
+                            new_data.push({ id: row.cause, name: row.cause, value: +row.val, colorIndex: getColor[row.cause] });
+                        } else {
+                            new_data.push({ id: row.cause, name: row.cause, parent: parent, value: +row.val });
+                        }
+                    }
+
+                }
+                return new_data;
+            }
+
+            initial_data = get_data();
+
+            var chart = Highcharts.chart('death_tree', {
+                chart: {
+                    styledMode: true,
+                    type: 'treemap',
+                    height: 500
+                },
+                title: {
+                    text: null
+                },
+                tooltip: {
+                    formatter: function () {
+                        var title = fCapital(this.key);
+                        var deaths = numberFormatterInteger(this.point.value);
+                        var perc = this.point.value / this.series.tree.val * 100;
+                        var per = numberFormatterPercentage(perc);
+                        if (measure == "Deaths") {
+                            return '<text><span style="font-size: 1.1em"><strong>' + title + '</strong></span><br>Total number of deaths: ' + deaths + '<br> Percentage: ' + per + '%</text>';
+                        } else {
+                            return '<text><span style="font-size: 1.1em"><strong>' + title + '</strong></span><br>Total number of years lost: ' + deaths + '<br> Percentage: ' + per + '%</text>';
+                        }
+                    },
+                    useHTML: true
+                },
+                plotOptions: {
+                    treemap: {
+                        dataLabels: {
+                            formatter: function () {
+                                var boxWidth = this.point.shapeArgs.width;
+                                var boxHeight = this.point.shapeArgs.height;
+                                var maxLineHeight = (Math.floor(boxHeight / 20)) - 1;
+                                var maxLineLength = boxWidth / 8;
+                                var nameParts = this.point.name.split(" ");
+                                var name = [];
+                                var newLine = "";
+                                var oldLine = "";
+                                var i = 0;
+                                var words = 0;
+                                for (var n in nameParts) {
+                                    i = +1;
+                                    // If we have reached the line number (height) limit,
+                                    // try to append ... dots on remaining name element
+                                    // and break the for loop
+                                    if (name.length == maxLineHeight) {
+                                        newLine = oldLine.concat("...");
+                                        if (newLine.length > maxLineLength) {
+                                            newLine = "..."
+                                        }
+                                        oldLine = newLine;
+                                        break;
+                                    } else {
+                                        // We keep adding name elements until we hit the width limit
+                                        newLine = oldLine.concat(nameParts[n]).concat(" ");
+                                        if (newLine.length > maxLineLength) {
+                                            // once we hit the limit, we add previous name that was 
+                                            // still under limit
+                                            name.push(oldLine);
+                                            // We replace so that we don't lose current element on next loop
+                                            oldLine = nameParts[n].concat(" ");
+                                            // There is a chance that the current element is too large and cannot 
+                                            // be displayed on its own. In such cases we just want to return ... 
+                                            // and exit the loop
+                                            if (oldLine.length > maxLineLength) {
+                                                oldLine = ("...");
+                                                break;
+                                            }
+                                        } else {
+                                            // if limit is not hit, newline becomes the oldline
+                                            oldLine = newLine;
+                                        }
+                                    }
+                                }
+                                name.push(oldLine);
+                                return name.join("<br/>");
+                            },
+                            padding: 0
+                        },
+                        levels: [{
+                            level: 1,
+                            colorKey: 'colorValue',
+                        }]
+                    }
+                },
+                series: [{
+                    type: 'treemap',
+                    layoutAlgorithm: 'squarified',
+                    allowTraversingTree: true,
+                    animationLimit: 1000,
+                    dataLabels: {
+                        enabled: false,
+                    },
+                    levelIsConstant: false,
+                    levels: [{
+                        level: 1,
+                        dataLabels: {
+                            enabled: true,
+                        }
+                    }],
+                    data: initial_data
+                }],
+                credits: {
+                    enabled: false
+                },
+            });
+
+            // Dropdowns
+            // Define dropdown container
+            var filters = document.querySelector(container_class + " .chart-filters");
+
+            // Create and append measures list
+            var measureSelect = document.createElement("select");
+            measureSelect.id = "measureSelect";
+            measureSelect.onchange = measureChange;
+            filters.appendChild(measureSelect);
+
+            // Create and append the options
+            addOptions(measureSelect, all_measures, measure);
+
+            // Update chart data on location change
+            function measureChange() {
+                measure = document.getElementById("measureSelect").value;
+                chart.series[0].setData(get_data());
+            }
+
+            // Create and append location list
+            var locationSelect = document.createElement("select");
+            locationSelect.id = "locationSelect";
+            locationSelect.onchange = locationChange;
+            filters.appendChild(locationSelect);
+
+            // Create and append the options
+            addOptions(locationSelect, all_locations, location);
+
+            // Update chart data on location change
+            function locationChange() {
+                location = document.getElementById("locationSelect").value;
+                chart.series[0].setData(get_data());
+            }
+
+            // Create and append sexes list
+            var sexSelect = document.createElement("select");
+            sexSelect.id = "sexSelect";
+            sexSelect.onchange = sexChange;
+            filters.appendChild(sexSelect);
+
+            // Create and append the options
+            addOptions(sexSelect, all_sexes, sex);
+
+            // Update chart data on sex change
+            function sexChange() {
+                sex = document.getElementById("sexSelect").value;
+                chart.series[0].setData(get_data());
+            }
+
+            // Create and append ages list
+            var ageSelect = document.createElement("select");
+            ageSelect.id = "ageSelect";
+            ageSelect.onchange = ageChange;
+            filters.appendChild(ageSelect);
+
+            // Create and append the options
+            addOptions(ageSelect, all_ages, age);
+
+            // Update chart data on location change
+            function ageChange() {
+                age = document.getElementById("ageSelect").value;
+                chart.series[0].setData(get_data());
+            }
+
+            function addOptions(parent, options, defaultValue) {
+                // Create and append the options
+                for (var i = 0; i < options.length; i++) {
+                    var option = document.createElement("option");
+                    option.value = options[i];
+                    option.text = options[i];
+                    // Setting default value to selected
+                    if (option.value == defaultValue) {
+                        option.selected = "selected";
+                    }
+                    parent.appendChild(option);
+                }
+            }
+
+        })
+        .catch(function (error) {
+            console.log(error);
+        })
+
+    var oldDeathTree = d3.csv(old_death_path)
+        .then(function (data) {
+
+            // To keep color of causes consistent
+            var getColor = {
+                'Cardiovascular diseases': '0',
+                'Cancer': '1',
+                'Pneumonia or influenza': '2',
+                'Tuberculosis': '3',
+                'Senility': '4',
+                'Nephropathies': '5',
+                'Accidents': '8',
+                'Gastrointestinal infections': '9',
+                'Diphtheria': '15',
+            };
+
+            function get_data() {
+                var new_data = [];
+                var i = 0;
+                for (let row of data) {
+                    new_data.push({ name: row.Cause, value: +row.Number, colorIndex: getColor[row.Cause] });
+                    i += 1;
+                }
+                return new_data;
+            }
+
+            initial_data = get_data();
+
+            var chart = Highcharts.chart('old_death_tree', {
+                chart: {
+                    styledMode: true,
+                    type: 'treemap',
+                    height: 300
+                },
+                title: {
+                    text: null
+                },
+                tooltip: {
+                    formatter: function () {
+                        var title = fCapital(this.key);
+                        var deaths = numberFormatterInteger(this.point.value);
+                        var perc = this.point.value / this.series.tree.val * 100;
+                        var per = numberFormatterPercentage(perc);
+                        return '<text><span style="font-size: 1.1em"><strong>' + title + '</strong></span><br>Total number of deaths: ' + deaths + '<br> Percentage: ' + per + '%</text>';
+                    },
+                    useHTML: true
+                },
+                series: [{
+                    type: 'treemap',
+                    layoutAlgorithm: 'squarified',
+                    data: initial_data
+                }],
+                credits: {
+                    enabled: false
+                },
+            });
+        })
+        .catch(function (error) {
+            console.log(error);
+        })
+
+</script>
+{% endblock %}

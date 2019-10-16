@@ -3,6 +3,14 @@
 function fCapital(string) {
     return string.charAt(0).toUpperCase() + string.slice(1);
 }
+function numberFormatterInteger(number) {
+    var value = number.toLocaleString(undefined, { maximumFractionDigits: 0 });
+    return value;
+}
+function numberFormatterPercentage(number) {
+    var value = number.toLocaleString(undefined, { maximumFractionDigits: 2 });
+    return value;
+}
 
 // Create legend
 function createLegend(chart, parentContainer) {

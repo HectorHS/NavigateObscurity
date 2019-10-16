@@ -6,30 +6,46 @@ $colors:
 // #9467bd  #8c564b  #e377c2   #bcbd22  #17becf  
 // #aec7e8 #ffbb78  #98df8a #ff9896 #c5b0d5 #c49c94 #f7b6d2 #c7c7c7 
 // #dbdb8d #9edae5 
-//#e6194B #3cb44b #ffe119 #4363d8 #f58231 #911eb4 #42d4f4 #f032e6 #bfef45 #fabebe
-//#469990 #e6beff #9A6324 #fffac8 #800000 #aaffc3 #808000 #ffd8b1 #000075 #a9a9a9
 
- #0074D9
- #FF4136
- #7FDBFF
- #85144B
- #001F3F
- #FFDC00
- #3D9970
- #B10DC9
- #AAAAAA
- #FF851B
- #39CCCC
- #F012BE
- #2ECC40
- #85144B
- #DDDDDD
- #01FF70
+#0074D9
+#F012BE
+#39CCCC
+#85144b
+#33805d
+#FF851B
+#FF4136
+#01FF70
+#DDDDDD
+#001F3F
+#FFDC00
+#B10DC9
+#2ECC40
 
+#000075 #a9a9a9 #9A6324 #e6194B #aaffc3 #f032e6 #469990 #bfef45 #e6beff
+#3cb44b #911eb4 #42d4f4 #808000 #fffac8 #800000 #4363d8 #f58231
+
+//  #0074D9
+//  #FF4136
+//  #001F3F
+//  #85144B
+//  #3D9970
+//  #B10DC9
+
+ 
+//  #7FDBFF
+//  #FFDC00
+//  #AAAAAA
+//  #FF851B
+//  #39CCCC
+//  #F012BE
+//  #2ECC40
+//  #DDDDDD
+//  #01FF70
 
 
 
 !default;
+
 // Chart background, point stroke for markers and columns etc
 $background-color: $dark-grey !default;
 
@@ -50,6 +66,40 @@ $highlight-color-80: #335cad !default; // Selection marker, menu hover, button h
 $highlight-color-60: #6685c2 !default; // Navigator mask fill.
 $highlight-color-20: #ccd6eb !default; // Ticks and axis line.
 $highlight-color-10: #e6ebf5 !default; // Pressed button, color axis min color.
+
+// Color map for labels
+$text-colors: (
+0:$neutral-color-80, 
+1:$neutral-color-80,
+2:$dark-grey,
+3:$neutral-color-80,
+4:$neutral-color-80,
+5:$dark-grey,
+6:$neutral-color-80,
+7:$dark-grey,
+8:$dark-grey,
+9:$neutral-color-80,
+10:$dark-grey,
+11:$neutral-color-80,
+12:$dark-grey,
+13:$neutral-color-80,
+14:$dark-grey,
+15:$neutral-color-80,
+16:$neutral-color-80,
+17:$dark-grey,
+18:$dark-grey,
+19:$neutral-color-80,
+20:$dark-grey,
+21:$dark-grey,
+22:$neutral-color-80,
+23:$neutral-color-80,
+24:$dark-grey,
+25:$neutral-color-80,
+26:$dark-grey,
+27:$neutral-color-80,
+28:$neutral-color-80,
+29:$dark-grey
+);
 
 // Fonts
 $font-family: $main-font !default;
@@ -228,10 +278,11 @@ $indicator-negative-line: #F21313;
     pointer-events: none;
     white-space: nowrap;
     transition: stroke 150ms;
-}
-.highcharts-tooltip text {
-    fill: $neutral-color-80;
-    color: $neutral-color-80;
+    text {
+        fill: $neutral-color-80;
+        color: $neutral-color-80;
+        word-spacing: 0.1em;
+    }
 }
 .highcharts-tooltip .highcharts-header {
     font-size: 0.85em;
@@ -324,8 +375,9 @@ g.highcharts-series,
 }
 
 .highcharts-data-label {
-    font-size: 0.9em;
-    font-weight: bold;
+    font-size: 0.8em;
+    font-weight: 600;
+    letter-spacing: 0.1em;
 }
 .highcharts-data-label-box {
     fill: none;
@@ -341,6 +393,11 @@ g.highcharts-series,
     fill-opacity: 1;
     stroke-width: 0;
 }
+// .highcharts-series:not(.highcharts-pie-series) .highcharts-point-select,
+// .highcharts-markers .highcharts-point-select {
+//     fill: $neutral-color-20;
+//     stroke: $neutral-color-100;
+// }
 .highcharts-column-series rect.highcharts-point {
     // rect to prevent stroke on 3D columns
     stroke: $background-color;
@@ -389,13 +446,15 @@ g.highcharts-series,
     stroke-width: 0;
 }
 .highcharts-treemap-series .highcharts-point {
-    stroke-width: 1px;
-    stroke: $neutral-color-10;
+    stroke-width: 2px;
+    stroke: $background-color;
     transition: stroke 250ms, fill 250ms, fill-opacity 250ms;
+    opacity: 0.8;
 }
 .highcharts-treemap-series .highcharts-point-hover {
     stroke: $neutral-color-40;
     transition: stroke 25ms, fill 25ms, fill-opacity 25ms;
+    opacity: 1;
 }
 
 .highcharts-treemap-series .highcharts-above-level {
@@ -847,3 +906,15 @@ text.highcharts-drilldown-data-label,
         opacity:1;
     }
  }
+
+ .highcharts-xaxis-grid .highcharts-grid-line  {
+     stroke-width: $grid-line-width;
+ }
+
+ @for $i from 1 through length($colors) {
+    $color: nth($colors, $i);
+    .highcharts-data-label-color-#{$i - 1} text{
+      fill: map-get($text-colors, ($i - 1));
+
+    }
+}

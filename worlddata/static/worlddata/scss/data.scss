@@ -67,24 +67,24 @@
     }
   }
 
-  .chart-container {
-display: flex;
-flex-direction: column;
-background-color: $dark-grey;
-padding: 20px;
-@media only screen and (min-width: $mobile-breakpoint)
-    {
-      flex-direction: row;
-      padding: 50px;
-    }
-
-.chart {
-  flex:1;
+.chart-container {
+  display: flex;
+  flex-direction: column;
+  background-color: $dark-grey;
+  padding: 0 20px;
   @media only screen and (min-width: $mobile-breakpoint)
-    {
-      flex:3;
+      {
+        flex-direction: row;
+        padding: 0 50px;
+      }
+
+  .chart {
+    flex:1;
+    @media only screen and (min-width: $mobile-breakpoint)
+      {
+        flex:3;
+      }
     }
-}
 
   #chart-options {
     flex: 1;
@@ -93,6 +93,10 @@ padding: 20px;
     flex-direction: column;
     color: $almost-white;
     padding: 10px;
+
+    .options-below {
+      flex-direction: row;
+    }
 
     @media only screen and (min-width: $mobile-breakpoint)
     {
@@ -137,6 +141,16 @@ padding: 20px;
         margin-bottom: 5px;
         margin-right: 10px;
       }
+    }
+  }
+}
+
+.death-tree.chart-container {
+  flex-direction: column;
+  #chart-options{
+    padding-bottom: 0;
+    .chart-filters {
+      margin-bottom: 0;
     }
   }
 }
