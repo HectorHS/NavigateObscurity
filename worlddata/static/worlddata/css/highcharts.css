@@ -877,12 +877,12 @@ circle.highcharts-legend-nav-active, circle.highcharts-legend-nav-inactive {
 
 .highcharts-button-hover {
   transition: fill 0ms;
-  fill: #e6e6e6;
+  fill: #dffcff;
   stroke: #cccccc;
 }
 
 .highcharts-button-hover text {
-  fill: #dffcff;
+  fill: #2e3838;
 }
 
 .highcharts-button-pressed {
@@ -998,8 +998,15 @@ input.highcharts-range-selector {
 
 .highcharts-map-navigation {
   font-size: 1.3em;
-  font-weight: bold;
   text-align: center;
+}
+
+.highcharts-zoom-in text {
+  transform: translateX(3px) translateY(-2px);
+}
+
+.highcharts-zoom-out text {
+  transform: translateX(4px) translateY(-2px);
 }
 
 .highcharts-coloraxis {
@@ -1011,7 +1018,7 @@ input.highcharts-range-selector {
 }
 
 .highcharts-null-point {
-  fill: #2e3838;
+  fill: #2e3838 !important;
 }
 
 /* 3d charts */

@@ -159,14 +159,14 @@
   margin-right: 10px;
 }
 
-.death-tree.chart-container {
+.filters-on-top.chart-container {
   flex-direction: column;
 }
 
-.death-tree.chart-container #chart-options {
+.filters-on-top.chart-container #chart-options {
   padding-bottom: 0;
 }
 
-.death-tree.chart-container #chart-options .chart-filters {
+.filters-on-top.chart-container #chart-options .chart-filters {
   margin-bottom: 0;
 }

@@ -8,8 +8,11 @@
 
 <!-- We use highcharts for visualizations -->
 <script src="https://code.highcharts.com/highcharts.js"></script>
+<script src="https://code.highcharts.com/maps/modules/map.js"></script>
 <script src="https://code.highcharts.com/modules/treemap.js"></script>
 <script src="https://code.highcharts.com/modules/data.js"></script>
+
+<script src="https://code.highcharts.com/mapdata/custom/world.js"></script>
 
 <script src={% static "worlddata/js/chart-helpers.js" %}></script>
 
@@ -41,7 +44,7 @@
             Many of the causes are clickable so you can see the breakdowns of each cause category.
         </p>
     </div>
-    <div class="chart-container death-tree">
+    <div class="chart-container death-tree filters-on-top">
         <div id="chart-options" style="max-width:100%">
             <div class="chart-filters"></div>
             <div class="chart-legend"></div>
@@ -84,12 +87,12 @@
             or nutritional deficiencies.
         </p>
     </div>
-    <div class="chart-container death-map">
-        <div id="death_map" class="chart" style="width:100%; height:600px;"></div>
-        <div id="chart-options" style="max-width:260px">
+    <div class="chart-container death-map filters-on-top">
+        <div id="chart-options" style="max-width:100%">
             <div class="chart-filters"></div>
             <div class="chart-legend"></div>
         </div>
+        <div id="death_map" class="map" style="width:100%;"></div>
     </div>
     <div class="source-text">
         <p>
@@ -123,6 +126,7 @@
     </div>
 
 </section>
+<!-- Comments -->
 <section>
     <div class="container">
         <hr>
@@ -161,6 +165,8 @@
     old_death_path = static_url + file_old_death;
     file_treemap_death = "worlddata/csv/death-tree-2017.csv";
     death_treemap_path = static_url + file_treemap_death;
+    file_map_death = "worlddata/csv/death-map-2017.csv";
+    death_map_path = static_url + file_map_death;
 
     var DeathTree = d3.csv(death_treemap_path)
         .then(function (data) {
@@ -245,7 +251,11 @@
                             || row.cause == "Zika virus"
                             || row.cause == "Other neglected tropical diseases") {
                             parent = "Neglected tropical diseases and malaria";
-                        } else if (row.cause == "Bladder cancer"
+                        } else if (row.cause == "Neonatal disorders"
+                            || row.cause == "Maternal disorders") {
+                            parent = "Maternal and neonatal disorders";
+                        }
+                        else if (row.cause == "Bladder cancer"
                             || row.cause == "Brain and nervous system cancer"
                             || row.cause == "Breast cancer"
                             || row.cause == "Cervical cancer"
@@ -334,8 +344,6 @@
                         }
 
                         if (parent == "") {
-                            var one = getColor["Cancer"];
-                            var two = getColor[row.cause];
                             new_data.push({ id: row.cause, name: row.cause, value: +row.val, colorIndex: getColor[row.cause] });
                         } else {
                             new_data.push({ id: row.cause, name: row.cause, parent: parent, value: +row.val });
@@ -553,10 +561,8 @@
 
             function get_data() {
                 var new_data = [];
-                var i = 0;
                 for (let row of data) {
                     new_data.push({ name: row.Cause, value: +row.Number, colorIndex: getColor[row.Cause] });
-                    i += 1;
                 }
                 return new_data;
             }
@@ -595,6 +601,162 @@
         .catch(function (error) {
             console.log(error);
         })
+
+    var DeathMap = d3.csv(death_map_path)
+        .then(function (data) {
+            // All filterable options
+            const all_causes = [...new Set(data.map(d => d.cause))].sort()
+            const all_years = [...new Set(data.map(d => d.year))].sort()
+            const all_sexes = [...new Set(data.map(d => d.sex))].sort()
+            const all_ages = [...new Set(data.map(d => d.age))].sort()
+
+            // Default values
+            var age = "All Ages",
+                sex = "Both",
+                cause = "HIV/AIDS",
+                year = "2017";
+
+            var container_class = ".death-map";
+            var initial_data = [];
+
+            function get_data() {
+                var new_data = [];
+                for (let row of data) {
+                    if (row.age == age && row.sex == sex && row.cause == cause && row.year == year) {
+                        new_data.push({ country: getCountryCode(row.location), value: +(row.val * 100) });
+                    }
+                }
+                return new_data;
+            }
+
+            intial_data = get_data();
+
+            // Initiate the chart
+            var chart = Highcharts.mapChart('death_map', {
+                chart: {
+                    styledMode: true,
+                    height: 500
+                },
+                title: {
+                    text: null
+                },
+                mapNavigation: {
+                    enabled: true,
+                    enableMouseWheelZoom: false,
+                    enableButtons: true,
+                },
+                colorAxis: {
+                    tickPixelInterval: 100,
+                    stops: [
+                        [0, '#0074D9'],
+                        [0.25, '#2ECC40'],
+                        [0.5, '#DDDDDD'],
+                        [0.75, '#FFDC00'],
+                        [0.95, '#FF4136']
+                    ],
+                },
+                tooltip: {
+                    formatter: function () {
+                        var title = fCapital(this.key);
+                        var per = numberFormatterPercentage(this.point.value);
+                        return '<text><span style="font-size: 1.1em"><strong>' + title + '</strong></span><br>Percentage of total deaths: ' + per + '%</text>';
+                    },
+                    useHTML: true
+                },
+                credits: {
+                    enabled: false
+                },
+                series: [{
+                    mapData: Highcharts.maps['custom/world'],
+                    data: intial_data,
+                    joinBy: ['iso-a3', 'country'], // first var: type of geographical data, second: data column name
+                }]
+            });
+
+            // Dropdowns
+            // Define dropdown container
+            var filters = document.querySelector(container_class + " .chart-filters");
+
+            // Create and append cause list
+            var causeSelect = document.createElement("select");
+            causeSelect.id = "mapCauseSelect";
+            causeSelect.onchange = causeChange;
+            filters.appendChild(causeSelect);
+
+            // Create and append the options
+            addOptions(causeSelect, all_causes, cause);
+
+            // Update chart data on cause change
+            function causeChange() {
+                cause = document.getElementById("mapCauseSelect").value;
+                chart.series[0].setData(get_data());
+            }
+
+            // Create and append sexes list
+            var sexSelect = document.createElement("select");
+            sexSelect.id = "mapSexSelect";
+            sexSelect.onchange = sexChange;
+            filters.appendChild(sexSelect);
+
+            // Create and append the options
+            addOptions(sexSelect, all_sexes, sex);
+
+            // Update chart data on sex change
+            function sexChange() {
+                sex = document.getElementById("mapSexSelect").value;
+                chart.series[0].setData(get_data());
+            }
+
+            // Create and append ages list
+            var ageSelect = document.createElement("select");
+            ageSelect.id = "mapAgeSelect";
+            ageSelect.onchange = ageChange;
+            filters.appendChild(ageSelect);
+
+            // Create and append the options
+            addOptions(ageSelect, all_ages, age);
+
+            // Update chart data on age change
+            function ageChange() {
+                age = document.getElementById("mapAgeSelect").value;
+                chart.series[0].setData(get_data());
+            }
+
+            // Create and append year list
+            var yearSelect = document.createElement("select");
+            yearSelect.id = "mapYearSelect";
+            yearSelect.onchange = yearChange;
+            filters.appendChild(yearSelect);
+
+            // Create and append the options
+            addOptions(yearSelect, all_years, year);
+
+            // Update chart data on year change
+            function yearChange() {
+                year = document.getElementById("mapYearSelect").value;
+                chart.series[0].setData(get_data());
+            }
+
+            function addOptions(parent, options, defaultValue) {
+                // Create and append the options
+                for (var i = 0; i < options.length; i++) {
+                    var option = document.createElement("option");
+                    option.value = options[i];
+                    option.text = options[i];
+                    // Setting default value to selected
+                    if (option.value == defaultValue) {
+                        option.selected = "selected";
+                    }
+                    parent.appendChild(option);
+                }
+            }
+        })
+        .catch(function (error) {
+            console.log(error);
+        })
+
+
+
 
 </script>
 {% endblock %}
