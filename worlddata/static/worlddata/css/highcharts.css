@@ -979,7 +979,8 @@ input.highcharts-range-selector {
 /* Highmaps */
 .highcharts-map-series .highcharts-point {
   transition: fill 500ms, fill-opacity 500ms, stroke-width 250ms;
-  stroke: #cccccc;
+  stroke: #2e3838;
+  stroke-width: 0.5px;
 }
 
 .highcharts-map-series .highcharts-point-hover {
