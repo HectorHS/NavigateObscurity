@@ -2,6 +2,19 @@
 {% load static %}
 
 {% block styles %}
+<!-- We use d3 libraries to load data -->
+<script src="https://d3js.org/d3-dsv.v1.min.js"></script>
+<script src="https://d3js.org/d3-fetch.v1.min.js"></script>
+
+<!-- We use highcharts for visualizations -->
+<script src="https://code.highcharts.com/highcharts.js"></script>
+<script src="https://code.highcharts.com/maps/modules/map.js"></script>
+
+<script src="https://code.highcharts.com/mapdata/custom/world.js"></script>
+
+<script src={% static "worlddata/js/chart-helpers.js" %}></script>
+
+<link rel='stylesheet' type="text/css" href={% static "worlddata/css/highcharts.css" %}>
 <link rel='stylesheet' type="text/css" href={% static "worlddata/css/data.css" %}>
 {% endblock %}
 
@@ -41,28 +54,12 @@
                 href="http://data.footprintnetwork.org/#/">Global Footprint Network</a>.
         </p>
     </div>
-    <div class="tableau-big">
-        <div class='tableauPlaceholder' id='viz1543704625758' style='position: relative'><noscript><a href='#'><img
-                        alt=' '
-                        src='https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;bi&#47;biocapacityandenvironmentalfootprintofconsumptionandproduction&#47;Dashboard1&#47;1_rss.png'
-                        style='border: none' /></a></noscript><object class='tableauViz' style='display:none;'>
-                <param name='host_url' value='https%3A%2F%2Fpublic.tableau.com%2F' />
-                <param name='embed_code_version' value='3' />
-                <param name='site_root' value='' />
-                <param name='name'
-                    value='biocapacityandenvironmentalfootprintofconsumptionandproduction&#47;Dashboard1' />
-                <param name='tabs' value='no' />
-                <param name='toolbar' value='yes' />
-                <param name='static_image'
-                    value='https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;bi&#47;biocapacityandenvironmentalfootprintofconsumptionandproduction&#47;Dashboard1&#47;1.png' />
-                <param name='animate_transition' value='yes' />
-                <param name='display_static_image' value='yes' />
-                <param name='display_spinner' value='yes' />
-                <param name='display_overlay' value='yes' />
-                <param name='display_count' value='yes' />
-                <param name='filter' value='publish=yes' /></object></div>
-        <script
-            type='text/javascript'>                    var divElement = document.getElementById('viz1543704625758'); var vizElement = divElement.getElementsByTagName('object')[0]; vizElement.style.minWidth = '200px'; vizElement.style.maxWidth = '2500px'; vizElement.style.width = '100%'; vizElement.style.height = '619px'; var scriptElement = document.createElement('script'); scriptElement.src = 'https://public.tableau.com/javascripts/api/viz_v1.js'; vizElement.parentNode.insertBefore(scriptElement, vizElement);                </script>
+    <div class="chart-container sustain-map filters-on-top">
+        <div id="chart-options" style="max-width:100%">
+            <div class="chart-filters"></div>
+            <div class="chart-legend"></div>
+        </div>
+        <div id="sustain_map" class="map" style="width:100%;"></div>
     </div>
     <div class="source-text">
         <p>
@@ -77,27 +74,12 @@
             data for each country. 
         </p>
     </div>
-    <div class="tableau-almost-big">
-        <div class='tableauPlaceholder' id='viz1547205701025' style='position: relative'><noscript><a href='#'><img
-                        alt=' '
-                        src='https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;hi&#47;historicalbiocapacityandfootpringbycountry&#47;Dashboard1&#47;1_rss.png'
-                        style='border: none' /></a></noscript><object class='tableauViz' style='display:none;'>
-                <param name='host_url' value='https%3A%2F%2Fpublic.tableau.com%2F' />
-                <param name='embed_code_version' value='3' />
-                <param name='site_root' value='' />
-                <param name='name' value='historicalbiocapacityandfootpringbycountry&#47;Dashboard1' />
-                <param name='tabs' value='no' />
-                <param name='toolbar' value='yes' />
-                <param name='static_image'
-                    value='https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;hi&#47;historicalbiocapacityandfootpringbycountry&#47;Dashboard1&#47;1.png' />
-                <param name='animate_transition' value='yes' />
-                <param name='display_static_image' value='yes' />
-                <param name='display_spinner' value='yes' />
-                <param name='display_overlay' value='yes' />
-                <param name='display_count' value='yes' />
-                <param name='filter' value='publish=yes' /></object></div>
-        <script
-            type='text/javascript'>                    var divElement = document.getElementById('viz1547205701025'); var vizElement = divElement.getElementsByTagName('object')[0]; vizElement.style.minWidth = '200px'; vizElement.style.maxWidth = '2500px'; vizElement.style.width = '100%'; vizElement.style.height = '557px'; var scriptElement = document.createElement('script'); scriptElement.src = 'https://public.tableau.com/javascripts/api/viz_v1.js'; vizElement.parentNode.insertBefore(scriptElement, vizElement);                </script>
+    <div class="chart-container sustan-are filters-on-top">
+        <div id="chart-options" style="max-width:100%">
+            <div class="chart-filters"></div>
+            <div class="chart-legend"></div>
+        </div>
+        <div id="sustan_area" class="map" style="width:100%;"></div>
     </div>
 
     <div class="source-text">
@@ -139,4 +121,352 @@
             </form>
         </div>
     </div>
-</section> {% endblock %}
+</section>
+<script>
+    var static_url = "{% get_static_prefix %}";
+    file_sustain_map = "worlddata/csv/sustainability-map.csv";
+    sustain_map_path = static_url + file_sustain_map;
+
+    var sustainabilityMap = d3.csv(sustain_map_path)
+        .then(function (data) {
+            // All filterable options
+            const all_measures = [...new Set(data.map(d => d.Measure))].sort()
+            const all_areas = [...new Set(data.map(d => d.Area))].sort()
+            const all_incomes = [...new Set(data.map(d => d.IncomeGroup))].sort()
+
+            // Remove empty value and add an All option for the filter
+            all_incomes.splice(0, 1);
+            all_incomes.unshift("All");
+
+            // Default values
+            var measure = "Ecological deficit or reserve",
+                area = "Total",
+                income = "All";
+
+            var container_class = ".sustain-map";
+            var initial_data = [];
+
+            function get_data() {
+                var new_data = [];
+                for (let row of data) {
+                    if (income == "All") {
+                        if (row.Measure == measure && row.Area == area) {
+                            new_data.push({ country: getCountryCode(row.Country), value: +row.Value });
+                        }
+                    } else {
+                        if (row.Measure == measure && row.Area == area && row.IncomeGroup == income) {
+                            new_data.push({ country: getCountryCode(row.Country), value: +row.Value });
+                        }
+                    }
+                }
+                return new_data;
+            }
+
+            intial_data = get_data();
+
+            // Initiate the chart
+            var chart = Highcharts.mapChart('sustain_map', {
+                chart: {
+                    styledMode: true,
+                    height: 500
+                },
+                title: {
+                    text: null
+                },
+                mapNavigation: {
+                    enabled: true,
+                    enableMouseWheelZoom: false,
+                    enableButtons: true,
+                },
+                colorAxis: {
+                    tickInterval: 2.5,
+                    max: 5,
+                    min: -5,
+                    stops: [
+                        [0, '#FF4136'],
+                        [0.35, '#FFDC00'],
+                        [0.5, '#DDDDDD'],
+                        [0.65, '#2ECC40'],
+                        [0.95, '#0074D9']
+                    ],
+                },
+                tooltip: {
+                    formatter: function () {
+                        var title = fCapital(this.key);
+                        var value = numberFormatterPercentage(this.point.value);
+                        var text = "";
+                        if (measure == "Biocapacity") {
+                            text = value + " gha per person <br>With a global average of " + getBiocapacityAverage[area];
+                        } else if (measure == "Ecological deficit or reserve") {
+                            if (value > 0) {
+                                text = value + " gha per person reserve (more biocapacity than consumption) <br>With a global average of " + getReserveAverage[area];
+                            } else {
+                                text = value + " gha per person deficit (more consumption than biocapacity) <br>With a global average of " + getReserveAverage[area];
+                            }
+                        } else if (measure == "Ecological footprint of consumption") {
+                            text = value + " gha per person <br>With a global average of " + getConsumptionAverage[area];
+                        }
+                        return '<text><span style="font-size: 1.1em"><strong>' + title + '</strong></span><br>' + text + '</text>';
+                    },
+                    useHTML: true
+                },
+                credits: {
+                    enabled: false
+                },
+                series: [{
+                    mapData: Highcharts.maps['custom/world'],
+                    data: intial_data,
+                    joinBy: ['iso-a3', 'country'], // first var: type of geographical data, second: data column name
+                }]
+            });
+
+            // Dropdowns
+            // Define dropdown container
+            var filters = document.querySelector(container_class + " .chart-filters");
+
+            // Create and append measure list
+            var measureSelect = document.createElement("select");
+            measureSelect.id = "mapMeasureSelect";
+            measureSelect.onchange = measureChange;
+            filters.appendChild(measureSelect);
+
+            // Create and append the options
+            addOptions(measureSelect, all_measures, measure);
+
+            // Update chart data on measure change
+            function measureChange() {
+                measure = document.getElementById("mapMeasureSelect").value;
+                updateColorOrder();
+                updateColorStops();
+                chart.series[0].setData(get_data());
+            }
+
+            // Create and append area list
+            var areaSelect = document.createElement("select");
+            areaSelect.id = "mapAreaSelect";
+            areaSelect.onchange = areaChange;
+            filters.appendChild(areaSelect);
+
+            // Create and append the options
+            addOptions(areaSelect, all_areas, area);
+
+            // Update chart data on area change
+            function areaChange() {
+                area = document.getElementById("mapAreaSelect").value;
+                updateColorStops();
+                chart.series[0].setData(get_data());
+            }
+
+            // Create and append income list
+            var incomeSelect = document.createElement("select");
+            incomeSelect.id = "mapIncomeSelect";
+            incomeSelect.onchange = incomeChange;
+            filters.appendChild(incomeSelect);
+
+            // Create and append the options
+            addOptions(incomeSelect, all_incomes, income);
+
+            // Update chart data on income change
+            function incomeChange() {
+                income = document.getElementById("mapIncomeSelect").value;
+                updateColorStops();
+                chart.series[0].setData(get_data());
+            }
+
+            function addOptions(parent, options, defaultValue) {
+                // Create and append the options
+                for (var i = 0; i < options.length; i++) {
+                    var option = document.createElement("option");
+                    option.value = options[i];
+                    option.text = options[i];
+                    // Setting default value to selected
+                    if (option.value == defaultValue) {
+                        option.selected = "selected";
+                    }
+                    parent.appendChild(option);
+                }
+            }
+
+            // To reverse color coding for biocapacity where larger numbers are better
+            function updateColorOrder() {
+                if (measure == "Biocapacity") {
+                    chart.colorAxis[0].update({
+                        stops: [
+                            [0, '#FF4136'],
+                            [0.35, '#FFDC00'],
+                            [0.5, '#DDDDDD'],
+                            [0.65, '#2ECC40'],
+                            [0.95, '#0074D9']
+                        ],
+                    }, false)
+                } else if (measure == "Ecological deficit or reserve") {
+                    chart.colorAxis[0].update({
+                        stops: [
+                            [0, '#FF4136'],
+                            [0.35, '#FFDC00'],
+                            [0.5, '#DDDDDD'],
+                            [0.65, '#2ECC40'],
+                            [0.95, '#0074D9']
+                        ],
+                    }, false)
+                } else if (measure == "Ecological footprint of consumption") {
+                    chart.colorAxis[0].update({
+                        stops: [
+                            [0, '#0074D9'],
+                            [0.35, '#2ECC40'],
+                            [0.5, '#DDDDDD'],
+                            [0.65, '#FFDC00'],
+                            [0.95, '#FF4136']
+                        ],
+                    }, false)
+                }
+            }
+
+            // To better centre and distribute colors. Max is always double the average value.
+            function updateColorStops() {
+
+                if (measure == "Biocapacity") {
+                    if (area == "Total") {
+                        chart.colorAxis[0].update({
+                            tickInterval: 0.7,
+                            max: 3.4,
+                            min: 0,
+                        }, false)
+                    } else if (area == "Built up land") {
+                        chart.colorAxis[0].update({
+                            tickInterval: 0.04,
+                            max: 0.12,
+                            min: 0,
+                        }, false)
+                    } else if (area == "Cropland") {
+                        chart.colorAxis[0].update({
+                            tickInterval: 0.4,
+                            max: 1.2,
+                            min: 0,
+                        }, false)
+                    } else if (area == "Fishing grounds") {
+                        chart.colorAxis[0].update({
+                            tickInterval: 0.1,
+                            max: 0.3,
+                            min: 0,
+                        }, false)
+                    } else if (area == "Forest") {
+                        chart.colorAxis[0].update({
+                            tickInterval: 0.35,
+                            max: 1.4,
+                            min: 0,
+                        }, false)
+                    } else if (area == "Grazing land") {
+                        chart.colorAxis[0].update({
+                            tickInterval: 0.1,
+                            max: 0.4,
+                            min: 0,
+                        }, false)
+                    }
+                } else if (measure == "Ecological deficit or reserve") {
+                    if (area == "Total") {
+                        chart.colorAxis[0].update({
+                            tickInterval: 2.5,
+                            max: 5,
+                            min: -5,
+                        }, false)
+                    } else if (area == "Built up land") {
+                    } else if (area == "Cropland") {
+                        chart.colorAxis[0].update({
+                            tickInterval: 0.5,
+                            max: 1,
+                            min: -1,
+                        }, false)
+                    } else if (area == "Fishing grounds") {
+                        chart.colorAxis[0].update({
+                            tickInterval: 0.5,
+                            max: 1,
+                            min: -1,
+                        }, false)
+                    } else if (area == "Forest") {
+                        chart.colorAxis[0].update({
+                            tickInterval: 2.5,
+                            max: 5,
+                            min: -5,
+                        }, false)
+                    } else if (area == "Grazing land") {
+                        chart.colorAxis[0].update({
+                            tickInterval: 0.5,
+                            max: 1,
+                            min: -1,
+                        }, false)
+                    }
+                } else if (measure == "Ecological footprint of consumption") {
+                    if (area == "Total") {
+                        chart.colorAxis[0].update({
+                            tickInterval: 1.4,
+                            max: 5.6,
+                            min: 0,
+                        }, false)
+                    } else if (area == "Built up land") {
+                        chart.colorAxis[0].update({
+                            tickInterval: 0.04,
+                            max: 0.12,
+                            min: 0,
+                        }, false)
+                    } else if (area == "Cropland") {
+                        chart.colorAxis[0].update({
+                            tickInterval: 0.30,
+                            max: 1.2,
+                            min: 0,
+                        }, false)
+                    } else if (area == "Fishing grounds") {
+                        chart.colorAxis[0].update({
+                            tickInterval: 0.05,
+                            max: 0.2,
+                            min: 0,
+                        }, false)
+                    } else if (area == "Forest") {
+                        chart.colorAxis[0].update({
+                            tickInterval: 1,
+                            max: 4,
+                            min: 0,
+                        }, false)
+                    } else if (area == "Grazing land") {
+                        chart.colorAxis[0].update({
+                            tickInterval: 0.1,
+                            max: 0.3,
+                            min: 0,
+                        }, false)
+                    }
+                }
+            }
+        })
+    var getBiocapacityAverage = {
+        'Total': '1.68',
+        'Built up land': '0.06',
+        'Cropland': '0.55',
+        'Fishing grounds': '0.15',
+        'Forest': '0.70',
+        'Grazing land': '0.2'
+    }
+    var getReserveAverage = {
+        'Total': '-1.15',
+        'Built up land': '0',
+        'Cropland': '0',
+        'Fishing grounds': '0.06',
+        'Forest': '-1.28',
+        'Grazing land': '0.06'
+    }
+    var getConsumptionAverage = {
+        'Total': '2.84',
+        'Built up land': '0.06',
+        'Cropland': '0.55',
+        'Fishing grounds': '0.09',
+        'Forest': '1.99',
+        'Grazing land': '0.14'
+    }
+        .catch(function (error) {
+            console.log(error);
+        })
+
+
+
+</script>
+
+{% endblock %}
