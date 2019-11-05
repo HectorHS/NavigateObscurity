@@ -483,6 +483,9 @@ g.highcharts-series,
 
 
 /* Legend */
+.highcharts-legend {
+    height: 100px;
+}
 .highcharts-legend-box {
     fill: none;
     stroke-width: 0;

@@ -16,8 +16,8 @@
 
 <script src={% static "worlddata/js/chart-helpers.js" %}></script>
 
-<link rel='stylesheet' type="text/css" href={% static "worlddata/css/data.css" %}>
 <link rel='stylesheet' type="text/css" href={% static "worlddata/css/highcharts.css" %}>
+<link rel='stylesheet' type="text/css" href={% static "worlddata/css/data.css" %}>
 {% endblock %}
 
 {% block content %}
@@ -111,12 +111,12 @@
             but it definitely helps.
         </p>
     </div>
-    <div class="chart-container death-bars">
-        <div id="death_bars" class="chart" style="width:100%; height:600px;"></div>
-        <div id="chart-options options-below" style="max-width:280px">
+    <div class="chart-container death-bars filters-on-top">
+        <div id="chart-options" style="max-width:100%">
             <div class="chart-filters"></div>
             <div class="chart-legend"></div>
         </div>
+        <div id="death_bars" class="chart" style="width:100%;"></div>
     </div>
     <div class="source-text">
         <p>
@@ -167,6 +167,8 @@
     death_treemap_path = static_url + file_treemap_death;
     file_map_death = "worlddata/csv/death-map-2017.csv";
     death_map_path = static_url + file_map_death;
+    file_bars_death = "worlddata/csv/death-bars-2017.csv";
+    death_bars_path = static_url + file_bars_death;
 
     var DeathTree = d3.csv(death_treemap_path)
         .then(function (data) {
@@ -185,34 +187,7 @@
             var container_class = ".death-tree";
             var initial_data = [];
 
-            // To keep color of causes consistent
-            var getColor = {
-                'Cardiovascular diseases': '0',
-                'Cancer': '1',
-                'Chronic respiratory diseases': '2',
-                'Respiratory infections and tuberculosis': '3',
-                'Neurological disorders': '4',
-                'Diabetes and kidney diseases': '5',
-                'Digestive diseases': '6',
-                'Maternal and neonatal disorders': '7',
-                'Unintentional injuries': '8',
-                'Enteric infections': '9',
-                'Transport injuries': '10',
-                'Other non-communicable diseases': '11',
-                'HIV/AIDS': '12',
-                'Other infectious diseases': '13',
-                'Self-harm': '14',
-                'Neglected tropical diseases and malaria': '15',
-                'Interpersonal violence': '16',
-                'Substance use disorders': '17',
-                'Nutritional deficiencies': '18',
-                'Conflict and terrorism': '19',
-                'Musculoskeletal disorders': '20',
-                'Sexually transmitted infections excluding HIV': '21',
-                'Skin and subcutaneous diseases': '22',
-                'Executions and police conflict': '23'
 
-            };
 
             function get_data() {
                 var new_data = [];
@@ -546,18 +521,7 @@
     var oldDeathTree = d3.csv(old_death_path)
         .then(function (data) {
 
-            // To keep color of causes consistent
-            var getColor = {
-                'Cardiovascular diseases': '0',
-                'Cancer': '1',
-                'Pneumonia or influenza': '2',
-                'Tuberculosis': '3',
-                'Senility': '4',
-                'Nephropathies': '5',
-                'Accidents': '8',
-                'Gastrointestinal infections': '9',
-                'Diphtheria': '15',
-            };
+
 
             function get_data() {
                 var new_data = [];
@@ -754,9 +718,227 @@
         .catch(function (error) {
             console.log(error);
         })
+    var DeathBars = d3.csv(death_bars_path)
+        .then(function (data) {
+            // All filterable options
+            const all_causes = [...new Set(data.map(d => d.cause))].sort()
+            const all_risks = [...new Set(data.map(d => d.rei))].sort()
+            const all_sexes = [...new Set(data.map(d => d.sex))].sort()
+            const all_locations = [...new Set(data.map(d => d.location))].sort()
+            const all_measures = [...new Set(data.map(d => d.measure))].sort()
 
+            // Default values
+            var sex = "Both",
+                measure = "Deaths",
+                location = "Global";
 
+            var container_class = ".death-bars";
+            var initial_data = [];
 
+            function getBlankData() {
+                return [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0];
+            }
 
+            function get_data() {
+                var new_data = [];
+                // First we create the structure by getting each cause, setting a color and providing empty data for it
+                for (let cause of all_causes) {
+                    var te = getColor[cause];
+                    new_data.push({ name: cause, data: getBlankData(), colorIndex: getColor[cause] })
+                }
+                // Then we update risk data where appropriate
+                for (let row of data) {
+                    if (row.measure == measure && row.sex == sex && row.location == location) {
+                        var data_index = new_data.findIndex(x => x.name == row.cause);
+                        var risk_index = all_risks.findIndex(x => x == row.rei);
+
+                        new_data[data_index].data[risk_index] = +row.val;
+                    }
+                }
+                return new_data;
+            }
+
+            initial_data = get_data();
+
+            var chart = Highcharts.chart('death_bars', {
+                chart: {
+                    type: 'bar',
+                    height: 500,
+                    styledMode: true,
+                },
+                title: {
+                    text: null
+                },
+                xAxis: {
+                    categories: all_risks
+                },
+                yAxis: {
+                    min: 0,
+                    title: null
+                },
+                legend: {
+                    enabled: false,
+                    width: '100%',
+                    itemWidth: 350
+                },
+                tooltip: {
+                    formatter: function () {
+                        var cause = fCapital(this.point.series.name);
+                        var risk = fCapital(this.key);
+                        var val = numberFormatterInteger(this.y);
+                        return '<text><span style="font-size: 1.1em"><strong>' + cause + '</strong></span><br>' + risk + ' is associated with<br>' + val + ' ' + measure + '</text>';
+                    },
+                    useHTML: true
+                },
+                credits: {
+                    enabled: false
+                },
+                plotOptions: {
+                    series: {
+                        stacking: 'normal'
+                    }
+                },
+                series: initial_data
+            });
+
+            // Dropdowns
+            // Define dropdown container
+            var filters = document.querySelector(container_class + " .chart-filters");
+
+            // Create and append cause list
+            var measureSelect = document.createElement("select");
+            measureSelect.id = "barsMeasureSelect";
+            measureSelect.onchange = measureChange;
+            filters.appendChild(measureSelect);
+
+            // Create and append the options
+            addOptions(measureSelect, all_measures, measure);
+
+            // Update chart data on cause change
+            function measureChange() {
+                measure = document.getElementById("barsMeasureSelect").value;
+                var loops = chart.series.length;
+                var updated_data = get_data();
+
+                // First empty the existing data
+                for (var i = 0; i < loops; i++) {
+                    chart.series[0].remove(false);
+                }
+                // Then add the updated data
+                for (var i = 0; i < updated_data.length; i++) {
+                    chart.addSeries(updated_data[i], false);
+                }
+                chart.redraw();
+            }
+
+            // Create and append ages list
+            var locationSelect = document.createElement("select");
+            locationSelect.id = "barslocationSelect";
+            locationSelect.onchange = locationChange;
+            filters.appendChild(locationSelect);
+
+            // Create and append the options
+            addOptions(locationSelect, all_locations, location);
+
+            // Update chart data on age change
+            function locationChange() {
+                location = document.getElementById("barslocationSelect").value;
+                var loops = chart.series.length;
+                var updated_data = get_data();
+
+                // First empty the existing data
+                for (var i = 0; i < loops; i++) {
+                    chart.series[0].remove(false);
+                }
+                // Then add the updated data
+                for (var i = 0; i < updated_data.length; i++) {
+                    chart.addSeries(updated_data[i], false);
+                }
+                chart.redraw();
+            }
+
+            // Create and append sexes list
+            var sexSelect = document.createElement("select");
+            sexSelect.id = "barsSexSelect";
+            sexSelect.onchange = sexChange;
+            filters.appendChild(sexSelect);
+
+            // Create and append the options
+            addOptions(sexSelect, all_sexes, sex);
+
+            // Update chart data on sex change
+            function sexChange() {
+                sex = document.getElementById("barsSexSelect").value;
+                var loops = chart.series.length;
+                var updated_data = get_data();
+
+                // First empty the existing data
+                for (var i = 0; i < loops; i++) {
+                    chart.series[0].remove(false);
+                }
+                // Then add the updated data
+                for (var i = 0; i < updated_data.length; i++) {
+                    chart.addSeries(updated_data[i], false);
+                }
+                chart.redraw();
+            }
+
+            function addOptions(parent, options, defaultValue) {
+                // Create and append the options
+                for (var i = 0; i < options.length; i++) {
+                    var option = document.createElement("option");
+                    option.value = options[i];
+                    option.text = options[i];
+                    // Setting default value to selected
+                    if (option.value == defaultValue) {
+                        option.selected = "selected";
+                    }
+                    parent.appendChild(option);
+                }
+            }
+
+        })
+        .catch(function (error) {
+            console.log(error);
+        })
+
+    // To keep color of causes consistent
+    var getColor = {
+        'Cardiovascular diseases': '0',
+        'Cancer': '1',
+        'Chronic respiratory diseases': '2',
+        'Pneumonia or influenza': '2',
+        'Respiratory infections and tuberculosis': '3',
+        'Tuberculosis': '3',
+        'Neurological disorders': '4',
+        'Senility': '4',
+        'Diabetes and kidney diseases': '5',
+        'Nephropathies': '5',
+        'Digestive diseases': '6',
+        'Maternal and neonatal disorders': '7',
+        'Maternal disorders': '7',
+        'Neonatal disorders': '27',
+        'Unintentional injuries': '8',
+        'Accidents': '8',
+        'Enteric infections': '9',
+        'Gastrointestinal infections': '9',
+        'Transport injuries': '10',
+        'Other non-communicable diseases': '11',
+        'HIV/AIDS': '12',
+        'Other infectious diseases': '13',
+        'Self-harm': '14',
+        'Neglected tropical diseases and malaria': '15',
+        'Diphtheria': '15',
+        'Interpersonal violence': '16',
+        'Substance use disorders': '17',
+        'Nutritional deficiencies': '18',
+        'Conflict and terrorism': '19',
+        'Musculoskeletal disorders': '20',
+        'Sexually transmitted infections excluding HIV': '21',
+        'Skin and subcutaneous diseases': '22',
+        'Executions and police conflict': '23',
+        'Mental disorders': '25',
+        'Sense organ diseases': '26'
+    };
 </script>
 {% endblock %}
