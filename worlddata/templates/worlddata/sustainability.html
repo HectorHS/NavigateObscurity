@@ -74,12 +74,12 @@
             data for each country. 
         </p>
     </div>
-    <div class="chart-container sustan-are filters-on-top">
+    <div class="chart-container sustain-area filters-on-top">
         <div id="chart-options" style="max-width:100%">
             <div class="chart-filters"></div>
             <div class="chart-legend"></div>
         </div>
-        <div id="sustan_area" class="map" style="width:100%;"></div>
+        <div id="sustain_area" class="map" style="width:100%;"></div>
     </div>
 
     <div class="source-text">
@@ -126,6 +126,8 @@
     var static_url = "{% get_static_prefix %}";
     file_sustain_map = "worlddata/csv/sustainability-map.csv";
     sustain_map_path = static_url + file_sustain_map;
+    file_sustain_area = "worlddata/csv/sustainability-area.csv";
+    sustain_area_path = static_url + file_sustain_area;
 
     var sustainabilityMap = d3.csv(sustain_map_path)
         .then(function (data) {
@@ -436,36 +438,222 @@
                     }
                 }
             }
+            var getBiocapacityAverage = {
+                'Total': '1.68',
+                'Built up land': '0.06',
+                'Cropland': '0.55',
+                'Fishing grounds': '0.15',
+                'Forest': '0.70',
+                'Grazing land': '0.2'
+            }
+            var getReserveAverage = {
+                'Total': '-1.15',
+                'Built up land': '0',
+                'Cropland': '0',
+                'Fishing grounds': '0.06',
+                'Forest': '-1.28',
+                'Grazing land': '0.06'
+            }
+            var getConsumptionAverage = {
+                'Total': '2.84',
+                'Built up land': '0.06',
+                'Cropland': '0.55',
+                'Fishing grounds': '0.09',
+                'Forest': '1.99',
+                'Grazing land': '0.14'
+            }
         })
-    var getBiocapacityAverage = {
-        'Total': '1.68',
-        'Built up land': '0.06',
-        'Cropland': '0.55',
-        'Fishing grounds': '0.15',
-        'Forest': '0.70',
-        'Grazing land': '0.2'
-    }
-    var getReserveAverage = {
-        'Total': '-1.15',
-        'Built up land': '0',
-        'Cropland': '0',
-        'Fishing grounds': '0.06',
-        'Forest': '-1.28',
-        'Grazing land': '0.06'
-    }
-    var getConsumptionAverage = {
-        'Total': '2.84',
-        'Built up land': '0.06',
-        'Cropland': '0.55',
-        'Fishing grounds': '0.09',
-        'Forest': '1.99',
-        'Grazing land': '0.14'
-    }
+
+
         .catch(function (error) {
             console.log(error);
         })
 
+    var sustainabilityArea = d3.csv(sustain_area_path)
+        .then(function (data) {
+            // All filterable options
+            const all_measures = [...new Set(data.map(d => d.record))].sort()
+            const all_countries = [...new Set(data.map(d => d.country))].sort()
 
+            const all_years = [...new Set(data.map(d => d.year))].sort()
+            const all_areas = ["Built up land", "Crop land", "Fishing grounds", "Forest land", "Grazing land"];
+
+            // Default values
+            var measure = "Ecological Footprint of Consumption",
+                country = "World";
+
+            var container_class = ".sustain-area";
+            var initial_data = [];
+
+            function getBlankData() {
+                return [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0];
+            }
+
+            var getColor = {
+                "Built up land": "8",
+                "Crop land": "5",
+                "Fishing grounds": "0",
+                "Forest land": "4",
+                "Grazing land": "3"
+            };
+
+            function get_data() {
+                var new_data = [];
+                // First we create the structure by getting each area, setting a color and providing empty data for it
+                for (let area of all_areas) {
+                    new_data.push({ name: area, data: getBlankData(), colorIndex: getColor[area] })
+                }
+                for (let row of data) {
+                    if (row.record == measure && row.country == country) {
+                        //var area_index = new_data.findIndex(x => x.name == row.cause);
+                        var year_index = all_years.findIndex(x => x == row.year);
+
+                        new_data[0].data[year_index] = +row.built_up_land;
+                        new_data[1].data[year_index] = +row.crop_land;
+                        new_data[2].data[year_index] = +row.fishing_ground;
+                        new_data[3].data[year_index] = +row.forest_land;
+                        new_data[4].data[year_index] = +row.grazing_land;
+                    }
+                }
+                return new_data;
+            }
+
+            initial_data = get_data();
+
+            var chart = Highcharts.chart('sustain_area', {
+                chart: {
+                    type: 'area',
+                    styledMode: true,
+                    height: 500
+                },
+                title: {
+                    text: null
+                },
+                xAxis: {
+                    categories: all_years,
+                    tickInterval: 5,
+                    title: {
+                        enabled: false
+                    }
+                },
+                yAxis: {
+                    title: {
+                        text: 'Global Hectares (gha)'
+                    },
+                    labels: {
+                        formatter: function () {
+                            return this.value / 1000;
+                        }
+                    }
+                },
+                tooltip: {
+                    split: false,
+                    valueSuffix: ' millions'
+                },
+                plotOptions: {
+                    area: {
+                        stacking: 'normal',
+                        findNearestPointBy: 'xy',
+                        fillOpacity: 0.8,
+                        marker: {
+                            enabled: false,
+                        }
+                    }
+                },
+                tooltip: {
+                    formatter: function () {
+                        var title = fCapital(this.key);
+                        var value = numberFormatterPercentage(this.y);
+                        var area = fCapital(this.series.name);
+
+                        return '<text><span style="font-size: 1.1em"><strong>' + title + '</strong></span><br>' + area + ": " + value + ' gha</text>';
+                    },
+                    useHTML: true
+                },
+                credits: {
+                    enabled: false
+                },
+                series: initial_data
+            });
+
+            // Dropdowns
+            // Define dropdown container
+            var filters = document.querySelector(container_class + " .chart-filters");
+
+            // Create and append measure list
+            var measureSelect = document.createElement("select");
+            measureSelect.id = "areaMeasureSelect";
+            measureSelect.onchange = measureChange;
+            filters.appendChild(measureSelect);
+
+            // Create and append the options
+            addOptions(measureSelect, all_measures, measure);
+
+            // Update chart data on measure change
+            function measureChange() {
+                measure = document.getElementById("areaMeasureSelect").value;
+
+                var loops = chart.series.length;
+                var updated_data = get_data();
+
+                // First empty the existing data
+                for (var i = 0; i < loops; i++) {
+                    chart.series[0].remove(false);
+                }
+                // Then add the updated data
+                for (var i = 0; i < updated_data.length; i++) {
+                    chart.addSeries(updated_data[i], false);
+                }
+                chart.redraw();
+            }
+
+            // Create and append country list
+            var countrySelect = document.createElement("select");
+            countrySelect.id = "areaCountrySelect";
+            countrySelect.onchange = countryChange;
+            filters.appendChild(countrySelect);
+
+            // Create and append the options
+            addOptions(countrySelect, all_countries, country);
+
+            // Update chart data on country change
+            function countryChange() {
+                country = document.getElementById("areaCountrySelect").value;
+
+                var loops = chart.series.length;
+                var updated_data = get_data();
+
+                // First empty the existing data
+                for (var i = 0; i < loops; i++) {
+                    chart.series[0].remove(false);
+                }
+                // Then add the updated data
+                for (var i = 0; i < updated_data.length; i++) {
+                    chart.addSeries(updated_data[i], false);
+                }
+                chart.redraw();
+            }
+
+            function addOptions(parent, options, defaultValue) {
+                // Create and append the options
+                for (var i = 0; i < options.length; i++) {
+                    var option = document.createElement("option");
+                    option.value = options[i];
+                    option.text = options[i];
+                    // Setting default value to selected
+                    if (option.value == defaultValue) {
+                        option.selected = "selected";
+                    }
+                    parent.appendChild(option);
+                }
+            }
+
+
+        })
+
+        .catch(function (error) {
+            console.log(error);
+        })
 
 </script>
 
