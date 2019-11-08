@@ -55,9 +55,8 @@
         </p>
     </div>
     <div class="chart-container sustain-map filters-on-top">
-        <div id="chart-options" style="max-width:100%">
+        <div class="chart-options" style="max-width:100%">
             <div class="chart-filters"></div>
-            <div class="chart-legend"></div>
         </div>
         <div id="sustain_map" class="map" style="width:100%;"></div>
     </div>
@@ -75,11 +74,13 @@
         </p>
     </div>
     <div class="chart-container sustain-area filters-on-top">
-        <div id="chart-options" style="max-width:100%">
+        <div class="chart-options" style="max-width:100%">
             <div class="chart-filters"></div>
+        </div>
+        <div id="sustain_area" clas="scatter" style="width:100%;"></div>
+        <div class="chart-options" style="max-width:100%">
             <div class="chart-legend"></div>
         </div>
-        <div id="sustain_area" class="map" style="width:100%;"></div>
     </div>
 
     <div class="source-text">
@@ -540,11 +541,6 @@
                     title: {
                         text: 'Global Hectares (gha)'
                     },
-                    labels: {
-                        formatter: function () {
-                            return this.value / 1000;
-                        }
-                    }
                 },
                 tooltip: {
                     split: false,
@@ -557,8 +553,10 @@
                         fillOpacity: 0.8,
                         marker: {
                             enabled: false,
-                        }
-                    }
+
+                        },
+                        trackByArea: true
+                    },
                 },
                 tooltip: {
                     formatter: function () {
@@ -570,12 +568,16 @@
                     },
                     useHTML: true
                 },
+                series: initial_data,
                 credits: {
                     enabled: false
                 },
-                series: initial_data
+                legend: {
+                    enabled: false
+                }
             });
 
+            var legend = createLegend(chart, container_class, "stacked");
             // Dropdowns
             // Define dropdown container
             var filters = document.querySelector(container_class + " .chart-filters");

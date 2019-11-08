@@ -243,7 +243,7 @@ function getCountryCode(country) {
 }
 
 // Create legend
-function createLegend(chart, parentContainer) {
+function createLegend(chart, parentContainer, type) {
 
     // Remove old legend items if they exist
     document.querySelectorAll(parentContainer + ' .legend-item').forEach(function (a) {
@@ -252,21 +252,36 @@ function createLegend(chart, parentContainer) {
 
     $legend = $(parentContainer + ' .chart-legend');
     // Append legend items
-    $.each(chart.series[0].data, function (j, data) {
-        $legend.append('<div class="legend-item"><div class="dot legend-color-' + data.colorIndex + '" ></div><div class="serieName" id="">' + fCapital(data.name) + '</div></div>');
-    });
+    if (type == "stacked") {
+        $.each(chart.series, function (j, data) {
+            $legend.append('<div class="legend-item"><div class="dot legend-color-' + data.colorIndex + '" ></div><div class="serieName" id="">' + fCapital(data.name) + '</div></div>');
+        });
+    } else {
+        $.each(chart.series[0].data, function (j, data) {
+            $legend.append('<div class="legend-item"><div class="dot legend-color-' + data.colorIndex + '" ></div><div class="serieName" id="">' + fCapital(data.name) + '</div></div>');
+        });
+    }
+
 
     // Click effect for legend
     $(parentContainer + ' .legend-item').click(function () {
         var inx = $(this).index();
-        chart.series[0].data[inx].select();
+        if (type == "stacked") {
+            chart.series[inx].select();
+        } else {
+            chart.series[0].data[inx].select();
+        }
     });
 
     // Hover effect for legend
     $(parentContainer + ' .legend-item').mouseenter(function () {
         var inx = $(this).index(),
-            points = chart.series[0].data,
             i = 0;
+        if (type == "stacked") {
+            var points = chart.series;
+        } else {
+            var points = chart.series[0].data;
+        }
 
         for (i = 0; i < points.length; i++) {
             if (i == inx) {
@@ -276,6 +291,7 @@ function createLegend(chart, parentContainer) {
             }
         }
     });
+
     $(parentContainer + ' .legend-item').mouseout(function (event) {
 
         var e = event.toElement || event.relatedTarget;
@@ -283,8 +299,13 @@ function createLegend(chart, parentContainer) {
             return;
         }
 
-        points = chart.series[0].data,
-            i = 0;
+        if (type == "stacked") {
+            var points = chart.series;
+        } else {
+            var points = chart.series[0].data;
+        }
+
+        var i = 0;
 
         for (i = 0; i < points.length; i++) {
             points[i].setState('');

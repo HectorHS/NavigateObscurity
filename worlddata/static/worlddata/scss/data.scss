@@ -36,26 +36,6 @@
   .data-box-text {
     max-width:600px;
   }
-  .tableau-big {
-    height: 592px;
-    overflow: hidden;
-  }
-  .tableau-small {
-    height: 250px;
-    overflow: hidden;
-  }
-  .tableau-almost-big {
-    height: 530px;
-    overflow: hidden;
-  }
-  .tableau-592-800 {
-    height: 800px;
-    overflow: hidden;
-    @media only screen and (min-width: $mobile-breakpoint)
-    {
-      height: 592px;
-    }
-  }
   .source-text {
     background-color: $dark-grey;
     color: $almost-white;
@@ -78,15 +58,7 @@
         padding: 0 50px;
       }
 
-  .chart {
-    flex:1;
-    @media only screen and (min-width: $mobile-breakpoint)
-      {
-        flex:3;
-      }
-    }
-
-  #chart-options {
+  .chart-options {
     flex: 1;
     //max-width:200px;
     display: flex;
@@ -97,23 +69,12 @@
     .options-below {
       flex-direction: row;
     }
-
-    @media only screen and (min-width: $mobile-breakpoint)
-    {
-      max-width:200px;
-    }
-
     .chart-legend {
       display: flex;
-      flex-direction: row;
+      //flex-direction: row;
       //padding: 0 20px;
       flex-wrap: wrap;
-
-      @media only screen and (min-width: $mobile-breakpoint)
-      {
-        flex-direction: column;
-      }
-
+      justify-content: center;
       .legend-item {
         display: inline-flex;
         margin-bottom: 5px;
@@ -129,10 +90,14 @@
         margin-right: 10px;
       }
     }
-
     .chart-filters {
       margin-bottom: 20px;
       overflow: hidden;
+      text-align: center;
+      @media only screen and (min-width: $mobile-breakpoint)
+      {
+        text-align: start;
+      }
       
       select {
         background-color: $dark-grey;
@@ -145,12 +110,50 @@
   }
 }
 
+.legend-right {
+  .chart-options {
+    @media only screen and (min-width: $mobile-breakpoint)
+    {
+      max-width:200px;
+    }
+  }
+  .chart-legend {
+    flex-direction: row;
+    @media only screen and (min-width: $mobile-breakpoint) {
+      flex-direction: column;
+    }
+  }
+}
+.legend-below {
+  flex-direction: column;
+  .chart-legend {
+    flex-direction: row;
+  }
+}
+
 .filters-on-top.chart-container {
   flex-direction: column;
-  #chart-options{
+  .chart-options{
     padding-bottom: 0;
     .chart-filters {
       margin-bottom: 0;
     }
   }
 }
+
+.mobile-legend {
+  @media only screen and (min-width: $mobile-breakpoint) {
+    display:none !important; 
+  }
+}
+.wide-screen-legend{
+  @media only screen and (max-width: $mobile-breakpoint) {
+    display:none !important; 
+  }
+}
+.filters-right {
+  @media only screen and (min-width: $mobile-breakpoint) {
+    flex-direction: row-reverse;
+  }
+}
+
