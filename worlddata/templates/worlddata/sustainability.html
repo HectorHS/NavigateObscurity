@@ -502,7 +502,7 @@
                 var new_data = [];
                 // First we create the structure by getting each area, setting a color and providing empty data for it
                 for (let area of all_areas) {
-                    new_data.push({ name: area, data: getBlankData(), colorIndex: getColor[area] })
+                    new_data.push({ id: area, name: area, data: getBlankData(), colorIndex: getColor[area] })
                 }
                 for (let row of data) {
                     if (row.record == measure && row.country == country) {
@@ -598,6 +598,7 @@
                 var loops = chart.series.length;
                 var updated_data = get_data();
 
+                chart.series[0].setVisible(false);
                 // First empty the existing data
                 for (var i = 0; i < loops; i++) {
                     chart.series[0].remove(false);
@@ -606,7 +607,7 @@
                 for (var i = 0; i < updated_data.length; i++) {
                     chart.addSeries(updated_data[i], false);
                 }
-                chart.redraw();
+                chart.series[0].setVisible(true, true);
             }
 
             // Create and append country list

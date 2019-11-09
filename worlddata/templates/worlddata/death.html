@@ -741,7 +741,7 @@
                 var new_data = [];
                 // First we create the structure by getting each cause, setting a color and providing empty data for it
                 for (let cause of all_causes) {
-                    new_data.push({ name: cause, data: getBlankData(), colorIndex: getColor[cause] })
+                    new_data.push({ id: cause, name: cause, data: getBlankData(), colorIndex: getColor[cause] })
                 }
                 // Then we update risk data where appropriate
                 for (let row of data) {

@@ -1,14 +1,14 @@
 Taxon,Category,Territory,Biomass,Abundance
-All,plants,Terrestrial,450,1013
-All,plants,All,450,1013
-All,bacteria,Terrestrial deep subsurface,60,1030
-All,bacteria,Marine deep subsurface,7,1029
-All,bacteria,Terrestrial,7,1029
-All,bacteria,Marine,1.3,1029
-All,bacteria,All,75.3,1030
-All,fungi,Terrestrial,12,1027
-All,fungi,Marine,0.3,
-All,fungi,All,12.3,1027
+All,Plants,Terrestrial,450,1013
+All,Plants,All,450,1013
+All,Bacteria,Terrestrial deep subsurface,60,1030
+All,Bacteria,Marine deep subsurface,7,1029
+All,Bacteria,Terrestrial,7,1029
+All,Bacteria,Marine,1.3,1029
+All,Bacteria,All,75.3,1030
+All,Fungi,Terrestrial,12,1027
+All,Fungi,Marine,0.3,
+All,Fungi,All,12.3,1027
 All,Archaea,Terrestrial deep subsurface,4,1029
 All,Archaea,Marine deep subsurface,3,1029
 All,Archaea,Terrestrial,0.5,1028

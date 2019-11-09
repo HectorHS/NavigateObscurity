@@ -118,7 +118,7 @@
 
 <script>
     var static_url = "{% get_static_prefix %}";
-    file_donut = "worlddata/csv/donut-data.csv";
+    file_donut = "worlddata/csv/biodiversity-pie.csv";
     donut_path = static_url + file_donut;
     file_scatter = "worlddata/csv/biomass-scatter.csv";
     scatter_path = static_url + file_scatter;
@@ -143,7 +143,7 @@
 
                 for (let row of data) {
                     if ((row.Taxon == taxon) && (row.Territory == territory)) {
-                        new_data.push({ name: row.Category, y: +row.Biomass });
+                        new_data.push({ id: row.Category, name: row.Category, y: +row.Biomass, colorIndex: getColor[row.Category] });
                     }
                 }
                 return new_data;
@@ -186,7 +186,6 @@
                 },
                 series: [{
                     name: "Biomass",
-                    colorByPoint: true,
                     innerSize: '30%',
                     data: initial_data
                 }],
@@ -271,7 +270,7 @@
                 var new_data = [];
                 var i = 0;
                 for (let row of data) {
-                    new_data.push({ name: row.group, y: +row.Mass, x: +row.power, colorIndex: i });
+                    new_data.push({ name: row.group, y: +row.Mass, x: +row.power, colorIndex: getColor[row.group] });
                     i += 1;
                 }
                 return new_data;
@@ -358,6 +357,26 @@
             console.log(error);
         })
 
+    // To keep colors consistent
+    var getColor = {
+        'Plants': '4',
+        'Bacteria': '0',
+        'Fungi': '8',
+        'Archaea': '1',
+        'Protists': '2',
+        'Animals': '6',
+        'Viruses': '3',
+        'Fish': '0',
+        'Livestock': '5',
+        'Humans': '3',
+        'Wild mammals': '6',
+        'Wild birds': '9',
+        'Arthropods': '1',
+        'Annelids': '2',
+        'Molluscs': '4',
+        'Cnidarians': '7',
+        'Nematodes': '8'
+    };
 </script>
 
 {% endblock %}
