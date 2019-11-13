@@ -2,6 +2,19 @@
 {% load static %}
 
 {% block styles %}
+<!-- We use d3 libraries to load data -->
+<script src="https://d3js.org/d3-dsv.v1.min.js"></script>
+<script src="https://d3js.org/d3-fetch.v1.min.js"></script>
+
+<!-- We use highcharts for visualizations -->
+<script src="https://code.highcharts.com/highcharts.js"></script>
+<script src="https://code.highcharts.com/maps/modules/map.js"></script>
+
+<script src="https://code.highcharts.com/mapdata/custom/world.js"></script>
+
+<script src={% static "worlddata/js/chart-helpers.js" %}></script>
+
+<link rel='stylesheet' type="text/css" href={% static "worlddata/css/highcharts.css" %}>
 <link rel='stylesheet' type="text/css" href={% static "worlddata/css/data.css" %}>
 {% endblock %}
 
@@ -15,42 +28,19 @@
         <p>
             In this interactive map you can get a glimpse on how many migrants and refugees are hosted in each country
             (destination of) and where they are coming from (origin of). The colours of the visualisations are based on
-            population percentages. Use the parameters to switch between destination and origin visualisations, see data
-            for different years, or slice them according to income levels. You can also use the slider (% of population)
-            to exclude ranges of values and focus on the ones you want.
-        </p>
-        <p>
-            I have removed the Vatican from this visualisation (Holy See), as migration is stuck at 100% there. Also
-            removed a few years’ worth of data from the Caribbean Netherlands for being an extreme outlier (over 300%
-            migration during the 90’s, partly due to a tiny 14 thousand local population).
-        </p>
-        <p>
-            I was surprised by two things here. One, how most countries end up having a very similar colour shade –
-            meaning they are quite similar in their capacity to produce and absorb migrants. I actually had to introduce
-            multiple colours here because the usual 2 colour spectrum came out too flat. Two, how certain countries
-            spectacularly stand out, like Lebanon, Jordan, Syria, UAE and Kuwait.
+            population percentages. The neutral (grey color) is set to the global average (for instance, about 3.5% of
+            the global population has migrated away from their country), and the max is set to double that value. This
+            helps in giving us a broad idea of migration but does not highlight the extreme outliers as countries with
+            a 10% and a 50% migration are painted with the same color. To find those, use the slider provided to exclude
+            small values. Additionally, use the parameters to switch between destination and origin visualisations, see
+            data for different years, or slice them according to income levels.
         </p>
     </div>
-    <div class="tableau-big">
-        <div class='tableauPlaceholder' id='viz1550760534992' style='position: relative'><noscript><a href='#'><img
-                        alt=' '
-                        src='https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;Mi&#47;Migration_33&#47;Dashboard1&#47;1_rss.png'
-                        style='border: none' /></a></noscript><object class='tableauViz' style='display:none;'>
-                <param name='host_url' value='https%3A%2F%2Fpublic.tableau.com%2F' />
-                <param name='embed_code_version' value='3' />
-                <param name='site_root' value='' />
-                <param name='name' value='Migration_33&#47;Dashboard1' />
-                <param name='tabs' value='no' />
-                <param name='toolbar' value='yes' />
-                <param name='static_image'
-                    value='https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;Mi&#47;Migration_33&#47;Dashboard1&#47;1.png' />
-                <param name='animate_transition' value='yes' />
-                <param name='display_static_image' value='yes' />
-                <param name='display_spinner' value='yes' />
-                <param name='display_overlay' value='yes' />
-                <param name='display_count' value='yes' /></object></div>
-        <script
-            type='text/javascript'>                    var divElement = document.getElementById('viz1550760534992'); var vizElement = divElement.getElementsByTagName('object')[0]; vizElement.style.minWidth = '200px'; vizElement.style.maxWidth = '2500px'; vizElement.style.width = '100%'; vizElement.style.height = '619px'; var scriptElement = document.createElement('script'); scriptElement.src = 'https://public.tableau.com/javascripts/api/viz_v1.js'; vizElement.parentNode.insertBefore(scriptElement, vizElement);                </script>
+    <div class="chart-container migration-map filters-on-top">
+        <div class="chart-options" style="max-width:100%">
+            <div class="chart-filters"></div>
+        </div>
+        <div id="migration_map" class="map" style="width:100%;"></div>
     </div>
     <div class="source-text">
         <p>
@@ -66,28 +56,7 @@
             don’t mean anything - just there for show.
         </p>
     </div>
-    <div class="tableau-almost-big">
-        <div class='tableauPlaceholder' id='viz1550764777406' style='position: relative'><noscript><a href='#'><img
-                        alt=' '
-                        src='https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;Mi&#47;Migrationbreakdownbycountry&#47;Dashboard2&#47;1_rss.png'
-                        style='border: none' /></a></noscript><object class='tableauViz' style='display:none;'>
-                <param name='host_url' value='https%3A%2F%2Fpublic.tableau.com%2F' />
-                <param name='embed_code_version' value='3' />
-                <param name='site_root' value='' />
-                <param name='name' value='Migrationbreakdownbycountry&#47;Dashboard2' />
-                <param name='tabs' value='no' />
-                <param name='toolbar' value='yes' />
-                <param name='static_image'
-                    value='https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;Mi&#47;Migrationbreakdownbycountry&#47;Dashboard2&#47;1.png' />
-                <param name='animate_transition' value='yes' />
-                <param name='display_static_image' value='yes' />
-                <param name='display_spinner' value='yes' />
-                <param name='display_overlay' value='yes' />
-                <param name='display_count' value='yes' />
-                <param name='filter' value='publish=yes' /></object></div>
-        <script
-            type='text/javascript'>                    var divElement = document.getElementById('viz1550764777406'); var vizElement = divElement.getElementsByTagName('object')[0]; vizElement.style.minWidth = '200px'; vizElement.style.maxWidth = '2500px'; vizElement.style.width = '100%'; vizElement.style.height = '587px'; var scriptElement = document.createElement('script'); scriptElement.src = 'https://public.tableau.com/javascripts/api/viz_v1.js'; vizElement.parentNode.insertBefore(scriptElement, vizElement);                </script>
-    </div>
+
 
     <div class="source-text">
         <p>
@@ -109,27 +78,7 @@
             It is slow, so bear with it.
         </p>
     </div>
-    <div class="tableau-592-800">
-        <div class='tableauPlaceholder' id='viz1550593927924' style='position: relative'><noscript><a href='#'><img
-                        alt=' '
-                        src='https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;Mi&#47;Migrationflow&#47;ChordDiagramBarChart&#47;1_rss.png'
-                        style='border: none' /></a></noscript><object class='tableauViz' style='display:none;'>
-                <param name='host_url' value='https%3A%2F%2Fpublic.tableau.com%2F' />
-                <param name='embed_code_version' value='3' />
-                <param name='site_root' value='' />
-                <param name='name' value='Migrationflow&#47;ChordDiagramBarChart' />
-                <param name='tabs' value='no' />
-                <param name='toolbar' value='yes' />
-                <param name='static_image'
-                    value='https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;Mi&#47;Migrationflow&#47;ChordDiagramBarChart&#47;1.png' />
-                <param name='animate_transition' value='yes' />
-                <param name='display_static_image' value='yes' />
-                <param name='display_spinner' value='yes' />
-                <param name='display_overlay' value='yes' />
-                <param name='display_count' value='yes' /></object></div>
-        <script
-            type='text/javascript'>                    var divElement = document.getElementById('viz1550593927924'); var vizElement = divElement.getElementsByTagName('object')[0]; if (divElement.offsetWidth > 800) { vizElement.style.minWidth = '200px'; vizElement.style.maxWidth = '2500px'; vizElement.style.width = '100%'; vizElement.style.height = '619px'; } else if (divElement.offsetWidth > 500) { vizElement.style.minWidth = '200px'; vizElement.style.maxWidth = '2500px'; vizElement.style.width = '100%'; vizElement.style.height = '619px'; } else { vizElement.style.width = '100%'; vizElement.style.height = '927px'; } var scriptElement = document.createElement('script'); scriptElement.src = 'https://public.tableau.com/javascripts/api/viz_v1.js'; vizElement.parentNode.insertBefore(scriptElement, vizElement);                </script>
-    </div>
+
 
     <div class="source-text">
         <p>
@@ -175,4 +124,232 @@
             </form>
         </div>
     </div>
-</section> {% endblock %}
+</section>
+<script>
+    var static_url = "{% get_static_prefix %}";
+    file_migration_map = "worlddata/csv/migration-map.csv";
+    migration_map_path = static_url + file_migration_map;
+
+
+    var migrationMap = d3.csv(migration_map_path)
+        .then(function (data) {
+            // All filterable options
+            const all_years = [...new Set(data.map(d => d.year))].sort();
+            const all_incomes = [...new Set(data.map(d => d.income_level))].sort();
+            const all_measures = ["Destination of migration", "Origin of migration", "Destination of refugees"];
+
+            // Remove empty value and add an All option for the filter
+            all_incomes.splice(0, 1);
+            all_incomes.unshift("All");
+
+            // Default values
+            var measure = "Destination of migration",
+                year = "2017",
+                income = "All",
+                percentage = "0";
+
+            var container_class = ".migration-map",
+                initial_data = [];
+
+            function get_data() {
+                var new_data = [],
+                    per = parseFloat(percentage),
+                    val = 0,
+                    abs = 0;
+                for (let row of data) {
+                    if (measure == "Destination of migration") {
+                        val = +row.migrants_destination_per;
+                        abs = +row.migrants_destination;
+                    } else if (measure == "Origin of migration") {
+                        val = +row.migrants_origin_per;
+                        abs = +row.migrants_origin;
+                    } else if (measure == "Destination of refugees") {
+                        val = +row.refugees_destination_per;
+                        abs = +row.refugees_destination;
+                    }
+                    if (income == "All") { //All is not an option in our raw data
+                        if (row.year == year && val > per) {
+                            new_data.push({ id: row.country, country: getCountryCode(row.country), value: val, absolute: abs });
+                        }
+                    } else {
+                        if (row.year == year && val > per && income == row.income_level) {
+                            new_data.push({ id: row.country, country: getCountryCode(row.country), value: val, absolute: abs });
+                        }
+                    }
+                }
+                return new_data;
+            }
+
+            intial_data = get_data();
+
+            // Initiate the chart
+            var chart = Highcharts.mapChart('migration_map', {
+                chart: {
+                    styledMode: true,
+                    height: 500
+                },
+                title: {
+                    text: null
+                },
+                mapNavigation: {
+                    enabled: true,
+                    enableMouseWheelZoom: false,
+                    enableButtons: true,
+                },
+                colorAxis: {
+                    tickInterval: 1,
+                    max: 7,
+                    min: 0,
+                    stops: [
+                        [0, '#0074D9'],
+                        [0.35, '#2ECC40'],
+                        [0.5, '#DDDDDD'],
+                        [0.65, '#FFDC00'],
+                        [0.95, '#FF4136']
+                    ],
+                },
+                tooltip: {
+                    formatter: function () {
+                        var title = fCapital(this.key);
+                        var value = numberFormatterPercentage(this.point.value);
+                        var text = "";
+                        var abs = numberFormatterInteger(this.point.absolute);
+                        if (measure == "Destination of migration") {
+                            text = abs + " migrated into the country, <br>consisting " + value + "% of local population";
+                        } else if (measure == "Origin of migration") {
+                            text = abs + " migrated out of the country, <br>consisting " + value + "% of local population";
+                        } else if (measure == "Destination of refugees") {
+                            text = abs + " recognised refugees have arrived into the country, <br>consisting " + value + "% of local population";
+                        }
+                        return '<text><span style="font-size: 1.1em"><strong>' + title + '</strong></span><br>' + text + '</text>';
+                    },
+                    useHTML: true
+                },
+                credits: {
+                    enabled: false
+                },
+                series: [{
+                    mapData: Highcharts.maps['custom/world'],
+                    data: intial_data,
+                    joinBy: ['iso-a3', 'country'], // first var: type of geographical data, second: data column name
+                }]
+            });
+
+            // Dropdowns
+            // Define dropdown container
+            var filters = document.querySelector(container_class + " .chart-filters");
+
+            // Create and append measure list
+            var measureSelect = document.createElement("select");
+            measureSelect.id = "mapMeasureSelect";
+            measureSelect.onchange = measureChange;
+            filters.appendChild(measureSelect);
+
+            // Create and append the options
+            addOptions(measureSelect, all_measures, measure);
+
+            // Update chart data on measure change
+            function measureChange() {
+                measure = document.getElementById("mapMeasureSelect").value;
+                updateColorStops();
+                chart.series[0].setData(get_data());
+            }
+
+            // Create and append year list
+            var yearSelect = document.createElement("select");
+            yearSelect.id = "yearAreaSelect";
+            yearSelect.onchange = yearChange;
+            filters.appendChild(yearSelect);
+
+            // Create and append the options
+            addOptions(yearSelect, all_years, year);
+
+            // Update chart data on year change
+            function yearChange() {
+                year = document.getElementById("yearAreaSelect").value;
+                chart.series[0].setData(get_data());
+            }
+
+            // Create and append income list
+            var incomeSelect = document.createElement("select");
+            incomeSelect.id = "mapIncomeSelect";
+            incomeSelect.onchange = incomeChange;
+            filters.appendChild(incomeSelect);
+
+            // Create and append the options
+            addOptions(incomeSelect, all_incomes, income);
+
+            // Update chart data on income change
+            function incomeChange() {
+                income = document.getElementById("mapIncomeSelect").value;
+                chart.series[0].setData(get_data());
+            }
+
+            // Create a slider
+            var percentageSlider = document.createElement("input");
+            percentageSlider.id = "mapPercentageSlider";
+            percentageSlider.type = "range";
+            percentageSlider.min = "0";
+            percentageSlider.max = "50";
+            percentageSlider.value = "0";
+            percentageSlider.classList.add("slider");
+            percentageSlider.onchange = percentageChange;
+            filters.appendChild(percentageSlider);
+
+            // Add a span to show the slider's value
+            var percentageSliderOutput = document.createElement("span");
+            percentageSliderOutput.id = "mapPercentageSliderOutput";
+            //percentageSliderOutput.for = "mapPercentageSlider";
+            percentageSliderOutput.classList.add("slider-output");
+            percentageSliderOutput.innerHTML = "0%";
+            filters.appendChild(percentageSliderOutput);
+
+            // Update chart data on percentage change
+            function percentageChange() {
+                percentage = document.getElementById("mapPercentageSlider").value;
+                document.getElementById("mapPercentageSliderOutput").innerHTML = percentage + "%";
+                chart.series[0].setData(get_data());
+            }
+
+            function addOptions(parent, options, defaultValue) {
+                // Create and append the options
+                for (var i = 0; i < options.length; i++) {
+                    var option = document.createElement("option");
+                    option.value = options[i];
+                    option.text = options[i];
+                    // Setting default value to selected
+                    if (option.value == defaultValue) {
+                        option.selected = "selected";
+                    }
+                    parent.appendChild(option);
+                }
+            }
+
+            function updateColorStops() {
+                if (measure == "Destination of migration") {
+                    chart.colorAxis[0].update({
+                        tickInterval: 1,
+                        max: 7,
+                        min: 0,
+                    }, false)
+                } else if (measure == "Origin of migration") {
+                    chart.colorAxis[0].update({
+                        tickInterval: 1,
+                        max: 7,
+                        min: 0,
+                    }, false)
+                } else if (measure == "Destination of refugees") {
+                    chart.colorAxis[0].update({
+                        tickInterval: 0.1,
+                        max: 0.7,
+                        min: 0,
+                    }, false)
+                }
+            }
+
+        })
+        .catch(function (error) {
+            console.log(error);
+        })
+</script>
+{% endblock %}
