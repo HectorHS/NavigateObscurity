@@ -116,6 +116,81 @@
   padding: 5px;
   margin-bottom: 5px;
   margin-right: 10px;
+  border-radius: 5px;
+  border-color: #9dafaf;
+}
+
+.chart-container .chart-options .chart-filters .slider {
+  -webkit-appearance: none;
+  width: 150px;
+  height: 3px;
+  vertical-align: middle;
+  background: #9dafaf;
+  border-radius: 5px;
+  outline: none;
+  -webkit-transition: .2s;
+  transition: opacity .2s;
+}
+
+.chart-container .chart-options .chart-filters .slider::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 25px;
+  height: 25px;
+  background: #2e3838;
+  border-width: 2px;
+  border-color: #9dafaf;
+  border-style: solid;
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+.chart-container .chart-options .chart-filters .slider::-webkit-slider-thumb:hover {
+  background: #277daa;
+  border-color: #277daa;
+}
+
+.chart-container .chart-options .chart-filters .slider::-moz-range-thumb {
+  width: 25px;
+  height: 25px;
+  border-radius: 50%;
+  background: #2e3838;
+  border-width: 2px;
+  border-color: #9dafaf;
+  border-style: solid;
+  cursor: pointer;
+}
+
+.chart-container .chart-options .chart-filters .slider::-moz-range-thumb:hover {
+  background: #277daa;
+  border-color: #277daa;
+}
+
+.chart-container .chart-options .chart-filters .slider-output {
+  display: inline-block;
+  position: relative;
+  width: 50px;
+  color: #dffcff;
+  line-height: 20px;
+  text-align: center;
+  border-radius: 5px;
+  border-style: solid;
+  border-width: 1px;
+  border-color: #9dafaf;
+  padding: 5px 10px;
+  margin-left: 15px;
+}
+
+.chart-container .chart-options .chart-filters .slider-output:after {
+  position: absolute;
+  top: 8px;
+  left: -7px;
+  width: 0;
+  height: 0;
+  border-top: 7px solid transparent;
+  border-right: 7px solid #9dafaf;
+  border-bottom: 7px solid transparent;
+  content: '';
 }
 
 @media only screen and (min-width: 768px) {
