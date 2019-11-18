@@ -239,90 +239,53 @@
             // Define dropdown container
             var filters = document.querySelector(container_class + " .chart-filters");
 
-            // Create and append measure list
-            var measureSelect = document.createElement("select");
-            measureSelect.id = "mapMeasureSelect";
-            measureSelect.onchange = measureChange;
-            filters.appendChild(measureSelect);
-
-            // Create and append the options
-            addOptions(measureSelect, all_measures, measure);
+            // Create a measure dropdown
+            var measureName = "area-measure",
+                measuerWidth = "250px";
+            addDropdown(filters, measureName, measuerWidth, measureChange, all_measures, measure);
 
             // Update chart data on measure change
             function measureChange() {
-                measure = document.getElementById("mapMeasureSelect").value;
+                measure = document.getElementById("area-measure-select").value;
                 updateColorStops();
                 chart.series[0].setData(get_data());
             }
 
-            // Create and append year list
-            var yearSelect = document.createElement("select");
-            yearSelect.id = "yearAreaSelect";
-            yearSelect.onchange = yearChange;
-            filters.appendChild(yearSelect);
-
-            // Create and append the options
-            addOptions(yearSelect, all_years, year);
+            // Create a year dropdown
+            var yearName = "area-year",
+                yearWidth = "80px";
+            addDropdown(filters, yearName, yearWidth, yearChange, all_years, year);
 
             // Update chart data on year change
             function yearChange() {
-                year = document.getElementById("yearAreaSelect").value;
+                year = document.getElementById("area-year-select").value;
                 chart.series[0].setData(get_data());
             }
 
-            // Create and append income list
-            var incomeSelect = document.createElement("select");
-            incomeSelect.id = "mapIncomeSelect";
-            incomeSelect.onchange = incomeChange;
-            filters.appendChild(incomeSelect);
-
-            // Create and append the options
-            addOptions(incomeSelect, all_incomes, income);
+            // Create a income dropdown
+            var incomeName = "area-income",
+                incomeWidth = "150px";
+            addDropdown(filters, incomeName, incomeWidth, incomeChange, all_incomes, income);
 
             // Update chart data on income change
             function incomeChange() {
-                income = document.getElementById("mapIncomeSelect").value;
+                income = document.getElementById("area-income-select").value;
                 chart.series[0].setData(get_data());
             }
 
             // Create a slider
-            var percentageSlider = document.createElement("input");
-            percentageSlider.id = "mapPercentageSlider";
-            percentageSlider.type = "range";
-            percentageSlider.min = "0";
-            percentageSlider.max = "50";
-            percentageSlider.value = "0";
-            percentageSlider.classList.add("slider");
-            percentageSlider.onchange = percentageChange;
-            filters.appendChild(percentageSlider);
+            var percentageName = "map-percentage",
+                min = "0",
+                max = "50",
+                value = "0";
+            addSlider(filters, percentageName, min, max, value, percentageChange);
 
-            // Add a span to show the slider's value
-            var percentageSliderOutput = document.createElement("span");
-            percentageSliderOutput.id = "mapPercentageSliderOutput";
-            //percentageSliderOutput.for = "mapPercentageSlider";
-            percentageSliderOutput.classList.add("slider-output");
-            percentageSliderOutput.innerHTML = "0%";
-            filters.appendChild(percentageSliderOutput);
 
             // Update chart data on percentage change
             function percentageChange() {
-                percentage = document.getElementById("mapPercentageSlider").value;
-                document.getElementById("mapPercentageSliderOutput").innerHTML = percentage + "%";
+                percentage = document.getElementById(percentageName + "-slider").value;
+                document.getElementById(percentageName + "-slider-output").innerHTML = percentage + "%";
                 chart.series[0].setData(get_data());
-            }
-
-            function addOptions(parent, options, defaultValue) {
-                // Create and append the options
-                for (var i = 0; i < options.length; i++) {
-                    var option = document.createElement("option");
-                    option.value = options[i];
-                    option.text = options[i];
-                    // Setting default value to selected
-                    if (option.value == defaultValue) {
-                        option.selected = "selected";
-                    }
-                    parent.appendChild(option);
-                }
             }
 
             function updateColorStops() {
@@ -351,5 +314,7 @@
         .catch(function (error) {
             console.log(error);
         })
+
+
 </script>
 {% endblock %}

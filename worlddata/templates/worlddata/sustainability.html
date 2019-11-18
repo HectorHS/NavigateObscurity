@@ -227,67 +227,42 @@
             // Define dropdown container
             var filters = document.querySelector(container_class + " .chart-filters");
 
-            // Create and append measure list
-            var measureSelect = document.createElement("select");
-            measureSelect.id = "mapMeasureSelect";
-            measureSelect.onchange = measureChange;
-            filters.appendChild(measureSelect);
 
-            // Create and append the options
-            addOptions(measureSelect, all_measures, measure);
+            // Create a measure dropdown
+            var measureName = "map-measure",
+                measureWidth = "320px";
+            addDropdown(filters, measureName, measureWidth, measureChange, all_measures, measure);
 
             // Update chart data on measure change
             function measureChange() {
-                measure = document.getElementById("mapMeasureSelect").value;
+                measure = document.getElementById(measureName + "-select").value;
                 updateColorOrder();
                 updateColorStops();
                 chart.series[0].setData(get_data());
             }
 
-            // Create and append area list
-            var areaSelect = document.createElement("select");
-            areaSelect.id = "mapAreaSelect";
-            areaSelect.onchange = areaChange;
-            filters.appendChild(areaSelect);
-
-            // Create and append the options
-            addOptions(areaSelect, all_areas, area);
+            // Create a area dropdown
+            var areaName = "map-area",
+                areaWidth = "170px";
+            addDropdown(filters, areaName, areaWidth, areaChange, all_areas, area);
 
             // Update chart data on area change
             function areaChange() {
-                area = document.getElementById("mapAreaSelect").value;
+                area = document.getElementById(areaName + "-select").value;
                 updateColorStops();
                 chart.series[0].setData(get_data());
             }
 
-            // Create and append income list
-            var incomeSelect = document.createElement("select");
-            incomeSelect.id = "mapIncomeSelect";
-            incomeSelect.onchange = incomeChange;
-            filters.appendChild(incomeSelect);
-
-            // Create and append the options
-            addOptions(incomeSelect, all_incomes, income);
+            // Create a income dropdown
+            var incomeName = "map-income",
+                incomeWidth = "50px";
+            addDropdown(filters, incomeName, incomeWidth, incomeChange, all_incomes, income);
 
             // Update chart data on income change
             function incomeChange() {
-                income = document.getElementById("mapIncomeSelect").value;
+                income = document.getElementById(incomeName + "-select").value;
                 updateColorStops();
                 chart.series[0].setData(get_data());
-            }
-
-            function addOptions(parent, options, defaultValue) {
-                // Create and append the options
-                for (var i = 0; i < options.length; i++) {
-                    var option = document.createElement("option");
-                    option.value = options[i];
-                    option.text = options[i];
-                    // Setting default value to selected
-                    if (option.value == defaultValue) {
-                        option.selected = "selected";
-                    }
-                    parent.appendChild(option);
-                }
             }
 
             // To reverse color coding for biocapacity where larger numbers are better
@@ -582,18 +557,14 @@
             // Define dropdown container
             var filters = document.querySelector(container_class + " .chart-filters");
 
-            // Create and append measure list
-            var measureSelect = document.createElement("select");
-            measureSelect.id = "areaMeasureSelect";
-            measureSelect.onchange = measureChange;
-            filters.appendChild(measureSelect);
-
-            // Create and append the options
-            addOptions(measureSelect, all_measures, measure);
+            // Create a measure dropdown
+            var measureName = "area-measure",
+                measureWidth = "420px";
+            addDropdown(filters, measureName, measureWidth, measureChange, all_measures, measure);
 
             // Update chart data on measure change
             function measureChange() {
-                measure = document.getElementById("areaMeasureSelect").value;
+                measure = document.getElementById(measureName + "-select").value;
 
                 var loops = chart.series.length;
                 var updated_data = get_data();
@@ -610,18 +581,15 @@
                 chart.series[0].setVisible(true, true);
             }
 
-            // Create and append country list
-            var countrySelect = document.createElement("select");
-            countrySelect.id = "areaCountrySelect";
-            countrySelect.onchange = countryChange;
-            filters.appendChild(countrySelect);
+            // Create a country dropdown
+            var countryName = "area-country",
+                countryWidth = "350px";
+            addDropdown(filters, countryName, countryWidth, countryChange, all_countries, country);
 
-            // Create and append the options
-            addOptions(countrySelect, all_countries, country);
 
             // Update chart data on country change
             function countryChange() {
-                country = document.getElementById("areaCountrySelect").value;
+                country = document.getElementById(countryName + "-select").value;
 
                 var loops = chart.series.length;
                 var updated_data = get_data();
@@ -636,22 +604,6 @@
                 }
                 chart.redraw();
             }
-
-            function addOptions(parent, options, defaultValue) {
-                // Create and append the options
-                for (var i = 0; i < options.length; i++) {
-                    var option = document.createElement("option");
-                    option.value = options[i];
-                    option.text = options[i];
-                    // Setting default value to selected
-                    if (option.value == defaultValue) {
-                        option.selected = "selected";
-                    }
-                    parent.appendChild(option);
-                }
-            }
-
-
         })
 
         .catch(function (error) {

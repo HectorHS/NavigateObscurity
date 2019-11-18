@@ -437,80 +437,49 @@
             // Define dropdown container
             var filters = document.querySelector(container_class + " .chart-filters");
 
-            // Create and append measures list
-            var measureSelect = document.createElement("select");
-            measureSelect.id = "measureSelect";
-            measureSelect.onchange = measureChange;
-            filters.appendChild(measureSelect);
-
-            // Create and append the options
-            addOptions(measureSelect, all_measures, measure);
+            // Create a measure dropdown
+            var measureName = "tree-measure",
+                measureWidth = "320px";
+            addDropdown(filters, measureName, measureWidth, measureChange, all_measures, measure);
 
             // Update chart data on location change
             function measureChange() {
-                measure = document.getElementById("measureSelect").value;
+                measure = document.getElementById(measureName + "-select").value;
                 chart.series[0].setData(get_data());
             }
 
-            // Create and append location list
-            var locationSelect = document.createElement("select");
-            locationSelect.id = "locationSelect";
-            locationSelect.onchange = locationChange;
-            filters.appendChild(locationSelect);
-
-            // Create and append the options
-            addOptions(locationSelect, all_locations, location);
+            // Create a location dropdown
+            var locationName = "tree-location",
+                locationWidth = "300px";
+            addDropdown(filters, locationName, locationWidth, locationChange, all_locations, location);
 
             // Update chart data on location change
             function locationChange() {
-                location = document.getElementById("locationSelect").value;
+                location = document.getElementById(locationName + "-select").value;
                 chart.series[0].setData(get_data());
             }
 
-            // Create and append sexes list
-            var sexSelect = document.createElement("select");
-            sexSelect.id = "sexSelect";
-            sexSelect.onchange = sexChange;
-            filters.appendChild(sexSelect);
-
-            // Create and append the options
-            addOptions(sexSelect, all_sexes, sex);
+            // Create a sex dropdown
+            var sexName = "tree-sex",
+                sexWidth = "100px";
+            addDropdown(filters, sexName, sexWidth, sexChange, all_sexes, sex);
 
             // Update chart data on sex change
             function sexChange() {
-                sex = document.getElementById("sexSelect").value;
+                sex = document.getElementById(sexName + "-select").value;
                 chart.series[0].setData(get_data());
             }
 
-            // Create and append ages list
-            var ageSelect = document.createElement("select");
-            ageSelect.id = "ageSelect";
-            ageSelect.onchange = ageChange;
-            filters.appendChild(ageSelect);
-
-            // Create and append the options
-            addOptions(ageSelect, all_ages, age);
+            // Create a age dropdown
+            var ageName = "tree-age",
+                ageWidth = "120px";
+            addDropdown(filters, ageName, ageWidth, ageChange, all_ages, age);
 
             // Update chart data on location change
             function ageChange() {
-                age = document.getElementById("ageSelect").value;
+                age = document.getElementById(ageName + "-select").value;
                 chart.series[0].setData(get_data());
             }
-
-            function addOptions(parent, options, defaultValue) {
-                // Create and append the options
-                for (var i = 0; i < options.length; i++) {
-                    var option = document.createElement("option");
-                    option.value = options[i];
-                    option.text = options[i];
-                    // Setting default value to selected
-                    if (option.value == defaultValue) {
-                        option.selected = "selected";
-                    }
-                    parent.appendChild(option);
-                }
-            }
-
         })
         .catch(function (error) {
             console.log(error);
@@ -518,8 +487,6 @@
 
     var oldDeathTree = d3.csv(old_death_path)
         .then(function (data) {
-
-
 
             function get_data() {
                 var new_data = [];
@@ -639,78 +606,46 @@
             // Define dropdown container
             var filters = document.querySelector(container_class + " .chart-filters");
 
-            // Create and append cause list
-            var causeSelect = document.createElement("select");
-            causeSelect.id = "mapCauseSelect";
-            causeSelect.onchange = causeChange;
-            filters.appendChild(causeSelect);
-
-            // Create and append the options
-            addOptions(causeSelect, all_causes, cause);
+            // Create a cause dropdown
+            var causeName = "map-cause",
+                causeWidth = "400px";
+            addDropdown(filters, causeName, causeWidth, causeChange, all_causes, cause);
 
             // Update chart data on cause change
             function causeChange() {
-                cause = document.getElementById("mapCauseSelect").value;
+                cause = document.getElementById(causeName + "-select").value;
                 chart.series[0].setData(get_data());
             }
-
-            // Create and append sexes list
-            var sexSelect = document.createElement("select");
-            sexSelect.id = "mapSexSelect";
-            sexSelect.onchange = sexChange;
-            filters.appendChild(sexSelect);
-
-            // Create and append the options
-            addOptions(sexSelect, all_sexes, sex);
+            // Create a sex dropdown
+            var sexName = "map-sex",
+                sexWidth = "100px";
+            addDropdown(filters, sexName, sexWidth, sexChange, all_sexes, sex);
 
             // Update chart data on sex change
             function sexChange() {
-                sex = document.getElementById("mapSexSelect").value;
+                sex = document.getElementById(sexName + "-select").value;
                 chart.series[0].setData(get_data());
             }
-
-            // Create and append ages list
-            var ageSelect = document.createElement("select");
-            ageSelect.id = "mapAgeSelect";
-            ageSelect.onchange = ageChange;
-            filters.appendChild(ageSelect);
-
-            // Create and append the options
-            addOptions(ageSelect, all_ages, age);
+            // Create a age dropdown
+            var ageName = "map-age",
+                ageWidth = "120px";
+            addDropdown(filters, ageName, ageWidth, ageChange, all_ages, age);
 
             // Update chart data on age change
             function ageChange() {
-                age = document.getElementById("mapAgeSelect").value;
+                age = document.getElementById(ageName + "-select").value;
                 chart.series[0].setData(get_data());
             }
 
-            // Create and append year list
-            var yearSelect = document.createElement("select");
-            yearSelect.id = "mapYearSelect";
-            yearSelect.onchange = yearChange;
-            filters.appendChild(yearSelect);
-
-            // Create and append the options
-            addOptions(yearSelect, all_years, year);
+            // Create a year dropdown
+            var yearName = "map-year",
+                yearWidth = "80px";
+            addDropdown(filters, yearName, yearWidth, yearChange, all_years, year);
 
             // Update chart data on year change
             function yearChange() {
-                year = document.getElementById("mapYearSelect").value;
+                year = document.getElementById(yearName + "-select").value;
                 chart.series[0].setData(get_data());
-            }
-
-            function addOptions(parent, options, defaultValue) {
-                // Create and append the options
-                for (var i = 0; i < options.length; i++) {
-                    var option = document.createElement("option");
-                    option.value = options[i];
-                    option.text = options[i];
-                    // Setting default value to selected
-                    if (option.value == defaultValue) {
-                        option.selected = "selected";
-                    }
-                    parent.appendChild(option);
-                }
             }
         })
         .catch(function (error) {
@@ -802,18 +737,14 @@
             // Define dropdown container
             var filters = document.querySelector(container_class + " .chart-filters");
 
-            // Create and append cause list
-            var measureSelect = document.createElement("select");
-            measureSelect.id = "barsMeasureSelect";
-            measureSelect.onchange = measureChange;
-            filters.appendChild(measureSelect);
-
-            // Create and append the options
-            addOptions(measureSelect, all_measures, measure);
+            // Create a measure dropdown
+            var measureName = "bars-measure",
+                measureWidth = "320px";
+            addDropdown(filters, measureName, measureWidth, measureChange, all_measures, measure);
 
             // Update chart data on cause change
             function measureChange() {
-                measure = document.getElementById("barsMeasureSelect").value;
+                measure = document.getElementById(measureName + "-select").value;
                 var loops = chart.series.length;
                 var updated_data = get_data();
 
@@ -828,18 +759,14 @@
                 chart.redraw();
             }
 
-            // Create and append ages list
-            var locationSelect = document.createElement("select");
-            locationSelect.id = "barslocationSelect";
-            locationSelect.onchange = locationChange;
-            filters.appendChild(locationSelect);
-
-            // Create and append the options
-            addOptions(locationSelect, all_locations, location);
+            // Create a location dropdown
+            var locationName = "bars-location",
+                locationWidth = "300px";
+            addDropdown(filters, locationName, locationWidth, locationChange, all_locations, location);
 
             // Update chart data on age change
             function locationChange() {
-                location = document.getElementById("barslocationSelect").value;
+                location = document.getElementById(locationName + "-select").value;
                 var loops = chart.series.length;
                 var updated_data = get_data();
 
@@ -854,18 +781,15 @@
                 chart.redraw();
             }
 
-            // Create and append sexes list
-            var sexSelect = document.createElement("select");
-            sexSelect.id = "barsSexSelect";
-            sexSelect.onchange = sexChange;
-            filters.appendChild(sexSelect);
+            // Create a sex dropdown
+            var sexName = "bars-sex",
+                sexWidth = "120px";
+            addDropdown(filters, sexName, sexWidth, sexChange, all_sexes, sex);
 
-            // Create and append the options
-            addOptions(sexSelect, all_sexes, sex);
 
             // Update chart data on sex change
             function sexChange() {
-                sex = document.getElementById("barsSexSelect").value;
+                sex = document.getElementById(sexName + "-select").value;
                 var loops = chart.series.length;
                 var updated_data = get_data();
 
@@ -879,21 +803,6 @@
                 }
                 chart.redraw();
             }
-
-            function addOptions(parent, options, defaultValue) {
-                // Create and append the options
-                for (var i = 0; i < options.length; i++) {
-                    var option = document.createElement("option");
-                    option.value = options[i];
-                    option.text = options[i];
-                    // Setting default value to selected
-                    if (option.value == defaultValue) {
-                        option.selected = "selected";
-                    }
-                    parent.appendChild(option);
-                }
-            }
-
         })
         .catch(function (error) {
             console.log(error);

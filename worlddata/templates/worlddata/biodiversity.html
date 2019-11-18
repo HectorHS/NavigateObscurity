@@ -207,52 +207,29 @@
             // Define dropdown container
             var filters = document.querySelector(".chart-filters");
 
-            // Create and append taxon list
-            var taxonSelect = document.createElement("select");
-            taxonSelect.id = "taxonSelect";
-            taxonSelect.onchange = taxonChange;
-            filters.appendChild(taxonSelect);
-
-            // Create and append the options
-            addOptions(taxonSelect, all_taxons, taxon);
+            // Create a taxon dropdown
+            var taxonName = "taxon",
+                taxonWidth = "100px";
+            addDropdown(filters, taxonName, taxonWidth, taxonChange, all_taxons, taxon);
 
             // Update chart data on taxon change
             function taxonChange() {
-                taxon = document.getElementById("taxonSelect").value;
+                taxon = document.getElementById(taxonName + "-select").value;
                 chart.series[0].setData(get_data());
                 createLegend(chart, parentContainer);
             }
 
-            //Create and append territory list
-            var territorySelect = document.createElement("select");
-            territorySelect.id = "territorySelect";
-            territorySelect.onchange = territoryChange;
-            filters.appendChild(territorySelect);
-
-            //Create and append the options
-            addOptions(territorySelect, all_territories, territory);
+            // Create a territory dropdown
+            var territoryName = "territory",
+                territoryWidth = "250px";
+            addDropdown(filters, territoryName, territoryWidth, territoryChange, all_territories, territory);
 
             // Update chart data on territory change
             function territoryChange() {
-                territory = document.getElementById("territorySelect").value;
+                territory = document.getElementById(territoryName + "-select").value;
                 chart.series[0].setData(get_data());
                 createLegend(chart, parentContainer);
             }
-
-            function addOptions(parent, options, defaultValue) {
-                // Create and append the options
-                for (var i = 0; i < options.length; i++) {
-                    var option = document.createElement("option");
-                    option.value = options[i];
-                    option.text = options[i];
-                    // Setting default value to selected
-                    if (option.value == defaultValue) {
-                        option.selected = "selected";
-                    }
-                    parent.appendChild(option);
-                }
-            }
-
         })
         .catch(function (error) {
             console.log(error);
@@ -377,6 +354,7 @@
         'Cnidarians': '7',
         'Nematodes': '8'
     };
+
 </script>
 
 {% endblock %}

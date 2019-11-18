@@ -352,3 +352,52 @@ function createLegend(chart, parentContainer, type) {
         }
     })
 }
+
+function addDropdown(parent, name, width, taxonChange, options, selected) {
+    var selectContainer = document.createElement("div");
+    selectContainer.classList.add("dropdown-container");
+    selectContainer.style.width = width;
+    parent.appendChild(selectContainer);
+
+    // Create and append taxon list
+    var select = document.createElement("select");
+    select.id = name + "-select";
+    select.onchange = taxonChange;
+    selectContainer.appendChild(select);
+
+    // Create and append the options
+    for (var i = 0; i < options.length; i++) {
+        var option = document.createElement("option");
+        option.value = options[i];
+        option.text = options[i];
+        // Setting default value to selected
+        if (option.value == selected) {
+            option.selected = "selected";
+        }
+        select.appendChild(option);
+    }
+}
+
+function addSlider(parent, name, min, max, value, onChange) {
+    var sliderContainer = document.createElement("div");
+    sliderContainer.classList.add("slider-container");
+    parent.appendChild(sliderContainer);
+
+    var slider = document.createElement("input");
+    slider.id = name + "-slider";
+    slider.type = "range";
+    slider.min = min;
+    slider.max = max;
+    slider.value = value;
+    slider.classList.add("slider");
+    slider.onchange = onChange;
+    sliderContainer.appendChild(slider);
+
+    // Add a span to show the slider's value
+    var sliderOutput = document.createElement("span");
+    sliderOutput.id = name + "-slider-output";
+    //percentageSliderOutput.for = "mapPercentageSlider";
+    sliderOutput.classList.add("slider-output");
+    sliderOutput.innerHTML = value;
+    sliderContainer.appendChild(sliderOutput);
+}
