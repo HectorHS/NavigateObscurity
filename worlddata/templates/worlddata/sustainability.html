@@ -552,7 +552,8 @@
                 }
             });
 
-            var legend = createLegend(chart, container_class, "stacked");
+            chart_points = chart.series;
+            var legend = createLegend(chart_points, chart_points, container_class);
             // Dropdowns
             // Define dropdown container
             var filters = document.querySelector(container_class + " .chart-filters");

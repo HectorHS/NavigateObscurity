@@ -71,17 +71,20 @@
     }
     .chart-legend {
       display: flex;
-      //flex-direction: row;
-      //padding: 0 20px;
       flex-wrap: wrap;
       justify-content: center;
+      h4 {
+        // margin-top: 0;
+        // margin-right: 10px;
+        // margin-bottom: 5px;
+        margin: 0 10px 5px 0;
+      }
       .legend-item {
         display: inline-flex;
         margin-bottom: 5px;
         margin-right: 20px;
         cursor: pointer;
       }
-  
       .dot {
         height: 25px;
         width: 25px;
@@ -89,6 +92,7 @@
         display: inline-block;
         margin-right: 10px;
       }
+
     }
     .chart-filters {
       align-items: center;

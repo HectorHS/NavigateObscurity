@@ -1142,15 +1142,15 @@ text.highcharts-drilldown-data-label,
   stroke-width: 1px;
 }
 
-.scatter .highcharts-point {
+.scatter .highcharts-point, .bubbles .highcharts-point {
   opacity: 0.6;
 }
 
-.scatter .highcharts-point-hover {
+.scatter .highcharts-point-hover, .bubbles .highcharts-point-hover {
   opacity: 1;
 }
 
-.scatter .highcharts-point-select {
+.scatter .highcharts-point-select, .bubbles .highcharts-point-select {
   opacity: 1;
 }
 

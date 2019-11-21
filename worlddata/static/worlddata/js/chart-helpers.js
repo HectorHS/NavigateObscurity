@@ -283,7 +283,8 @@ function getCountryCode(country) {
 }
 
 // Create legend
-function createLegend(chart, parentContainer, type) {
+function createLegend(chart_points, data, parentContainer) {
+    // Chart points and data will difer in cases where we only want to show a subset on the legend
 
     // Remove old legend items if they exist
     document.querySelectorAll(parentContainer + ' .legend-item').forEach(function (a) {
@@ -292,63 +293,44 @@ function createLegend(chart, parentContainer, type) {
 
     $legend = $(parentContainer + ' .chart-legend');
     // Append legend items
-    if (type == "stacked") {
-        $.each(chart.series, function (j, data) {
-            $legend.append('<div class="legend-item"><div class="dot legend-color-' + data.colorIndex + '" ></div><div class="serieName" id="">' + fCapital(data.name) + '</div></div>');
-        });
-    } else {
-        $.each(chart.series[0].data, function (j, data) {
-            $legend.append('<div class="legend-item"><div class="dot legend-color-' + data.colorIndex + '" ></div><div class="serieName" id="">' + fCapital(data.name) + '</div></div>');
-        });
+    for (let point of data) {
+        $legend.append('<div class="legend-item"><div class="dot legend-color-' + point.colorIndex + '" ></div><div class="serieName" id="">' + fCapital(point.name) + '</div></div>');
     }
-
 
     // Click effect for legend
     $(parentContainer + ' .legend-item').click(function () {
-        var inx = $(this).index();
-        if (type == "stacked") {
-            chart.series[inx].select();
-        } else {
-            chart.series[0].data[inx].select();
-        }
+        var name = this.textContent;
+        chart_points.filter(obj => {
+            return obj.name === name
+        })[0].select();
     });
 
     // Hover effect for legend
     $(parentContainer + ' .legend-item').mouseenter(function () {
-        var inx = $(this).index(),
-            i = 0;
-        if (type == "stacked") {
-            var points = chart.series;
-        } else {
-            var points = chart.series[0].data;
-        }
+        var name = this.textContent;
+        var inx = chart_points.filter(obj => {
+            return obj.name === name
+        })[0].index;
+        var i = 0;
 
-        for (i = 0; i < points.length; i++) {
+        for (i = 0; i < chart_points.length; i++) {
             if (i == inx) {
-                points[i].setState('hover');
+                chart_points[i].setState('hover');
             } else {
-                points[i].setState('inactive');
+                chart_points[i].setState('inactive');
             }
         }
     });
 
     $(parentContainer + ' .legend-item').mouseout(function (event) {
-
-        var e = event.toElement || event.relatedTarget;
+        var e = event.toElement || event.relatedTarget,
+            i = 0;
         if (e.parentNode == this || e == this) {
             return;
         }
 
-        if (type == "stacked") {
-            var points = chart.series;
-        } else {
-            var points = chart.series[0].data;
-        }
-
-        var i = 0;
-
-        for (i = 0; i < points.length; i++) {
-            points[i].setState('');
+        for (i = 0; i < chart_points.length; i++) {
+            chart_points[i].setState('');
         }
     })
 }

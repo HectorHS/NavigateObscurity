@@ -9,6 +9,7 @@
 <!-- We use highcharts for visualizations -->
 <script src="https://code.highcharts.com/highcharts.js"></script>
 <script src="https://code.highcharts.com/maps/modules/map.js"></script>
+<script src="https://code.highcharts.com/highcharts-more.js"></script>
 
 <script src="https://code.highcharts.com/mapdata/custom/world.js"></script>
 
@@ -51,12 +52,26 @@
     </div>
     <div class="container limited-width">
         <p>
-            And here is a breakdown of the immigrants living in each country. The size indicates larger populations, but
+            And here is a breakdown of the origin of immigrants living in each country. The size indicates larger
+            populations, but
             you can also check the exact numbers by hovering over them. The colours have been randomly assigned and
-            don’t mean anything - just there for show.
+            don’t mean anything - just there for show. On the legend are highlighted the top five countries of origin.
         </p>
     </div>
-
+    <div class="chart-container migration-bubbles legend-right filters-right">
+        <div class="chart-options" style="min-width:260px">
+            <div class="chart-filters"></div>
+            <div class="chart-legend wide-screen-legend">
+                <h4>Top five:</h4>
+            </div>
+        </div>
+        <div id="migration_bubbles" class="bubbles" style="width:100%;"></div>
+        <div class="chart-options mobile-legend" style="min-width:260px">
+            <div class="chart-legend">
+                <h4>Top five:</h4>
+            </div>
+        </div>
+    </div>
 
     <div class="source-text">
         <p>
@@ -126,9 +141,12 @@
     </div>
 </section>
 <script>
-    var static_url = "{% get_static_prefix %}";
-    file_migration_map = "worlddata/csv/migration-map.csv";
-    migration_map_path = static_url + file_migration_map;
+    var static_url = "{% get_static_prefix %}",
+        file_migration_map = "worlddata/csv/migration-map.csv",
+        migration_map_path = static_url + file_migration_map,
+        file_migration_bubbles = "worlddata/csv/migration-bubbles.csv",
+        migration_bubbles_path = static_url + file_migration_bubbles;
+
 
 
     var migrationMap = d3.csv(migration_map_path)
@@ -246,7 +264,7 @@
 
             // Update chart data on measure change
             function measureChange() {
-                measure = document.getElementById("area-measure-select").value;
+                measure = document.getElementById(measureName + "-select").value;
                 updateColorStops();
                 chart.series[0].setData(get_data());
             }
@@ -258,7 +276,7 @@
 
             // Update chart data on year change
             function yearChange() {
-                year = document.getElementById("area-year-select").value;
+                year = document.getElementById(yearName + "-select").value;
                 chart.series[0].setData(get_data());
             }
 
@@ -269,7 +287,7 @@
 
             // Update chart data on income change
             function incomeChange() {
-                income = document.getElementById("area-income-select").value;
+                income = document.getElementById(incomeName + "-select").value;
                 chart.series[0].setData(get_data());
             }
 
@@ -314,6 +332,156 @@
         .catch(function (error) {
             console.log(error);
         })
+
+    var migrationBubbles = d3.csv(migration_bubbles_path)
+        .then(function (data) {
+
+            const all_countries = [...new Set(data.map(d => d.country_host))].sort(),
+                all_years = [...new Set(data.map(d => d.year))].sort();
+
+            var country = "Lebanon",
+                year = "2017";
+
+            var container_class = ".migration-bubbles",
+                initial_data = [],
+                empty_data = [],
+                colors_max = 30;
+
+
+            function get_data() {
+                var new_data = [],
+                    i = 0,
+                    total_migrants = 0;
+                for (let row of data) {
+                    if (country == row.country_host && year == row.year) {
+                        new_data.push({ id: row.country_origin, name: row.country_origin, absolute: +row.population, value: 0, colorIndex: i });
+                        if (i == 30) {
+                            i = 0;
+                        } else {
+                            i++;
+                        }
+                        total_migrants += +row.population;
+                    }
+                }
+                // We are calculating percentages to keep bubble sizes consistent
+                for (let i in new_data) {
+                    new_data[i].value = (new_data[i].absolute / total_migrants) * 100;
+                }
+                return new_data;
+            }
+
+            initial_data = get_data();
+
+            var chart = Highcharts.chart('migration_bubbles', {
+                chart: {
+                    styledMode: true,
+                    type: 'packedbubble',
+                    height: '500px'
+                },
+                title: {
+                    text: null
+                },
+                tooltip: {
+                    useHTML: true,
+                    headerFormat: '',
+                    pointFormatter: function () {
+                        var sName = fCapital(this.name);
+                        var population = numberFormatterInteger(this.absolute);
+
+                        return '<text><span style="font-size:1.1em"><strong>' + sName + '</strong></span><br>' + population + ' migrants</text>';
+                    },
+                },
+                plotOptions: {
+                    packedbubble: {
+                        animation:
+                        {
+                            duration: 100
+                        },
+                        animationLimit: 50,
+                        clip: false,
+                        initialPositions: 'random',
+                        minSize: 1, // These two control the min and max size of the bubbles
+                        maxSize: 600,
+                        zMax: 100, // These two define the scale, to keep it consistent across different variables
+                        zMin: 1,   // without them, maxsize would be the biggest bubble regardless of actual value - so it could be 95% or 15% and would look the same
+                        marker: {
+                            states: {
+                                hover: {
+                                    enabled: true,
+                                    radiusPlus: 10,
+                                },
+
+                            }
+                        },
+                        layoutAlgorithm: {
+                            enableSimulation: true,
+                            friction: 0.7,
+                            gravitationalConstant: 0.02, //make the movement slower
+                            maxIterations: 200, // total animation time
+                            maxSpeed: 8
+                        }
+                    }
+                },
+                credits: {
+                    enabled: false
+                },
+                legend: {
+                    enabled: false
+                },
+                series: [{
+                    name: 'Migrants',
+                    data: initial_data,
+                    allowPointSelect: true
+
+                }]
+            });
+
+            var legend_data = initial_data.sort((a, b) => b.value - a.value).slice(0, 5);
+            chart_points = chart.series[0].data;
+            createLegend(chart_points, legend_data, container_class);
+
+            // Dropdowns
+            // Define dropdown container
+            var filters = document.querySelector(container_class + " .chart-filters");
+
+            // Create a country dropdown
+            var countryName = "bubbles-country",
+                countryWidth = "250px";
+            addDropdown(filters, countryName, countryWidth, countryChange, all_countries, country);
+
+            // Update chart data on year change
+            function countryChange() {
+                country = document.getElementById(countryName + "-select").value;
+
+                var new_data = get_data(),
+                    legend_data = new_data.sort((a, b) => b.value - a.value).slice(0, 5);// only going for a top five
+                chart.series[0].setData(new_data);
+                chart_points = chart.series[0].data;
+                createLegend(chart_points, legend_data, container_class);
+            }
+
+            // Create a year dropdown
+            var yearName = "bubbles-year",
+                yearWidth = "80px";
+            addDropdown(filters, yearName, yearWidth, yearChange, all_years, year);
+
+            // Update chart data on year change
+            function yearChange() {
+                year = document.getElementById(yearName + "-select").value;
+
+                var new_data = get_data(),
+                    legend_data = new_data.sort((a, b) => b.value - a.value).slice(0, 5);
+
+                chart.series[0].setData(new_data);
+                chart_points = chart.series[0].data;
+                createLegend(chart_points, legend_data, container_class);
+            }
+
+        })
+        .catch(function (error) {
+            console.log(error);
+        })
+
 
 
 </script>

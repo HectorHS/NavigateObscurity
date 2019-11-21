@@ -83,6 +83,10 @@
   justify-content: center;
 }
 
+.chart-container .chart-options .chart-legend h4 {
+  margin: 0 10px 5px 0;
+}
+
 .chart-container .chart-options .chart-legend .legend-item {
   display: inline-flex;
   margin-bottom: 5px;

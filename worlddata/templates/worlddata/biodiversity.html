@@ -136,7 +136,7 @@
             var taxon = defaultTaxon;
             var territory = defaultTerritory;
 
-            var parentContainer = '.biomass-pie';
+            var container_class = '.biomass-pie';
 
             function get_data() {
                 var new_data = [];
@@ -201,7 +201,9 @@
                 }]
             },
             )
-            var legend = createLegend(chart, parentContainer, "");
+            // Initialise legend
+            chart_points = chart.series[0].data;
+            createLegend(chart_points, chart_points, container_class);
 
             // Dropdowns
             // Define dropdown container
@@ -216,7 +218,8 @@
             function taxonChange() {
                 taxon = document.getElementById(taxonName + "-select").value;
                 chart.series[0].setData(get_data());
-                createLegend(chart, parentContainer);
+                var legend_data = chart.series[0].data;
+                createLegend(legend_data, legend_data, container_class);
             }
 
             // Create a territory dropdown
@@ -228,7 +231,8 @@
             function territoryChange() {
                 territory = document.getElementById(territoryName + "-select").value;
                 chart.series[0].setData(get_data());
-                createLegend(chart, parentContainer);
+                var legend_data = chart.series[0].data;
+                createLegend(legend_data, legend_data, container_class);
             }
         })
         .catch(function (error) {
@@ -241,7 +245,7 @@
             // Get unique values for various columns of data
             const all_categories = [...new Set(data.map(d => d.group))].sort()
 
-            var parentContainer = '.biomass-scatter';
+            var container_class = '.biomass-scatter';
 
             function get_data() {
                 var new_data = [];
@@ -327,8 +331,8 @@
                 },
             })
 
-            var legend = createLegend(chart, parentContainer, "");
-
+            chart_points = chart.series[0].data;
+            createLegend(chart_points, chart_points, container_class);
         })
         .catch(function (error) {
             console.log(error);

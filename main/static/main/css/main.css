@@ -912,6 +912,10 @@ h3 {
   word-spacing: 0.1em;
 }
 
+h4 {
+  font-size: 110%;
+}
+
 hr {
   width: 94%;
   margin-top: 50px;
