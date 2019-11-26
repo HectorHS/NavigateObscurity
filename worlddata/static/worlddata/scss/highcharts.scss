@@ -21,8 +21,23 @@ $colors:
 #B10DC9
 #2ECC40
 
-#000075 #a9a9a9 #9A6324 #e6194B #aaffc3 #f032e6 #469990 #bfef45 #e6beff
-#3cb44b #911eb4 #42d4f4 #808000 #fffac8 #800000 #4363d8 #f58231
+#000075 
+#a9a9a9 
+#9A6324 
+#e6194B
+#aaffc3
+#f032e6
+#469990
+#bfef45
+#e6beff
+#3cb44b
+#911eb4
+#42d4f4
+#808000
+#fffac8
+#800000
+#4363d8
+#f58231
 
 //  #0074D9
 //  #FF4136
@@ -904,15 +919,24 @@ text.highcharts-drilldown-data-label,
 }
 
 // Custom settings
- .scatter, .bubbles {
+ .scatter, .bubbles, .wheel {
     .highcharts-point {
-        opacity: 0.6;
+        opacity: 0.7;
     }
     .highcharts-point-hover {
         opacity: 1;
     }
     .highcharts-point-select {
         opacity:1;
+    }
+ }
+
+ .wheel {
+    .highcharts-point {
+        stroke-width: 1px;
+    } 
+    .highcharts-node {
+        opacity: 1;
     }
  }
 

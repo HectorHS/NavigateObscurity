@@ -10,6 +10,8 @@
 <script src="https://code.highcharts.com/highcharts.js"></script>
 <script src="https://code.highcharts.com/maps/modules/map.js"></script>
 <script src="https://code.highcharts.com/highcharts-more.js"></script>
+<script src="https://code.highcharts.com/modules/sankey.js"></script>
+<script src="https://code.highcharts.com/modules/dependency-wheel.js"></script>
 
 <script src="https://code.highcharts.com/mapdata/custom/world.js"></script>
 
@@ -52,10 +54,11 @@
     </div>
     <div class="container limited-width">
         <p>
-            And here is a breakdown of the origin of immigrants living in each country. The size indicates larger
-            populations, but
-            you can also check the exact numbers by hovering over them. The colours have been randomly assigned and
-            don’t mean anything - just there for show. On the legend are highlighted the top five countries of origin.
+            And here is a breakdown of migrants by country. You can switch between "Destination" to see the breakdown of
+            immigrants living in a destination country, and "Origin" to see where people of a particular origin country
+            emigrated to. The size indicates larger populations, but you can also check the exact numbers by hovering
+            over them. The colours have been randomly assigned and don’t mean anything - just there for show. On the
+            legend are highlighted the top five results.
         </p>
     </div>
     <div class="chart-container migration-bubbles legend-right filters-right">
@@ -82,29 +85,28 @@
     </div>
     <div class="container limited-width">
         <p>
-            Below you can see my puny attempt to roughly visualise the flow of migration between larger areas (otherwise
-            it gets even more complicated). On the right (or top if you are on a mobile), the first bar chart shows how
-            many people have emigrated from large areas (origin) with the colours indicating where they ended up
-            (destination). The second bar chart shows the opposite – how many immigrants are living in large areas
-            (destination) with the colours indicating where they came from (origin). The circular visualisation shows
-            these flows with the outer bases representing the destination of immigration. Recommended way to figure it
-            all out is to select an area from the bottom of the visualisation (Asia is currently selected), wait for
-            parts of the visualisation to stand out, and then hover over the highlighted areas and inspect the numbers.
-            It is slow, so bear with it.
+            Below you can see a rough visualization of the flow of migration between larger areas. You can choose
+            between continents and regions - anything more specific gets too convoluted. The outer bases represent the
+            total of migrants - people moving both in and out of the region - and the inside lines visualize their
+            movement. Movements are coloured according to the region of origin.
         </p>
     </div>
-
+    <div class="chart-container migration-wheel legend-right filters-right">
+        <div class="chart-options" style="min-width:260px">
+            <div class="chart-filters"></div>
+            <div class="chart-legend wide-screen-legend"></div>
+        </div>
+        <div id="migration_wheel" class="wheel" style="width:100%;"></div>
+        <div class="chart-options mobile-legend" style="min-width:260px">
+            <div class="chart-legend"></div>
+        </div>
+    </div>
 
     <div class="source-text">
         <p>
             *Source:
             <a href="http://www.un.org/en/development/desa/population/migration/data/index.shtml">United Nations </a>
             (retrieved 02/02/2019)
-        </p>
-        <p>
-            Chord diagram visualisation based on amazing work by
-            <a href="http://www.datablick.com/blog/2015/08/27/diy-chord-diagrams-in-tableau-by-noah-salvaterra"> Noah
-                Salvaterra</a>
         </p>
     </div>
 </section>
@@ -145,7 +147,9 @@
         file_migration_map = "worlddata/csv/migration-map.csv",
         migration_map_path = static_url + file_migration_map,
         file_migration_bubbles = "worlddata/csv/migration-bubbles.csv",
-        migration_bubbles_path = static_url + file_migration_bubbles;
+        migration_bubbles_path = static_url + file_migration_bubbles,
+        file_migration_wheel = "worlddata/csv/migration-wheel.csv",
+        migration_wheel_path = static_url + file_migration_wheel;
 
 
 
@@ -337,10 +341,12 @@
         .then(function (data) {
 
             const all_countries = [...new Set(data.map(d => d.country_host))].sort(),
-                all_years = [...new Set(data.map(d => d.year))].sort();
+                all_years = [...new Set(data.map(d => d.year))].sort(),
+                all_parameters = ["Destination", "Origin"];
 
             var country = "Lebanon",
-                year = "2017";
+                year = "2017",
+                parameter = "Destination";
 
             var container_class = ".migration-bubbles",
                 initial_data = [],
@@ -352,15 +358,29 @@
                 var new_data = [],
                     i = 0,
                     total_migrants = 0;
-                for (let row of data) {
-                    if (country == row.country_host && year == row.year) {
-                        new_data.push({ id: row.country_origin, name: row.country_origin, absolute: +row.population, value: 0, colorIndex: i });
-                        if (i == 30) {
-                            i = 0;
-                        } else {
-                            i++;
+                if (parameter == "Destination") {
+                    for (let row of data) {
+                        if (country == row.country_host && year == row.year) {
+                            new_data.push({ id: row.country_origin, name: row.country_origin, absolute: +row.population, value: 0, colorIndex: i });
+                            if (i == 30) {
+                                i = 0;
+                            } else {
+                                i++;
+                            }
+                            total_migrants += +row.population;
                         }
-                        total_migrants += +row.population;
+                    }
+                } else {
+                    for (let row of data) {
+                        if (country == row.country_origin && year == row.year) {
+                            new_data.push({ id: row.country_host, name: row.country_host, absolute: +row.population, value: 0, colorIndex: i });
+                            if (i == 30) {
+                                i = 0;
+                            } else {
+                                i++;
+                            }
+                            total_migrants += +row.population;
+                        }
                     }
                 }
                 // We are calculating percentages to keep bubble sizes consistent
@@ -385,10 +405,15 @@
                     useHTML: true,
                     headerFormat: '',
                     pointFormatter: function () {
-                        var sName = fCapital(this.name);
-                        var population = numberFormatterInteger(this.absolute);
-
-                        return '<text><span style="font-size:1.1em"><strong>' + sName + '</strong></span><br>' + population + ' migrants</text>';
+                        var sName = fCapital(this.name),
+                            population = numberFormatterInteger(this.absolute),
+                            text = "";
+                        if (parameter == "Destination") {
+                            text = population + ' people have migrated to ' + country;
+                        } else {
+                            text = population + ' people have migrated from ' + country;
+                        }
+                        return '<text><span style="font-size:1.1em"><strong>' + sName + '</strong></span><br>' + text + '</text>';
                     },
                 },
                 plotOptions: {
@@ -410,7 +435,10 @@
                                     enabled: true,
                                     radiusPlus: 10,
                                 },
-
+                                select: {
+                                    enabled: true,
+                                    radiusPlus: 10,
+                                }
                             }
                         },
                         layoutAlgorithm: {
@@ -443,6 +471,22 @@
             // Dropdowns
             // Define dropdown container
             var filters = document.querySelector(container_class + " .chart-filters");
+
+            // Create a parameter dropdown
+            var parameterName = "bubbles-parameter",
+                parameterWidth = "250px";
+            addDropdown(filters, parameterName, parameterWidth, parameterChange, all_parameters, parameter);
+
+            // Update chart data on year change
+            function parameterChange() {
+                parameter = document.getElementById(parameterName + "-select").value;
+
+                var new_data = get_data(),
+                    legend_data = new_data.sort((a, b) => b.value - a.value).slice(0, 5);// only going for a top five
+                chart.series[0].setData(new_data);
+                chart_points = chart.series[0].data;
+                createLegend(chart_points, legend_data, container_class);
+            }
 
             // Create a country dropdown
             var countryName = "bubbles-country",
@@ -477,6 +521,274 @@
                 createLegend(chart_points, legend_data, container_class);
             }
 
+        })
+        .catch(function (error) {
+            console.log(error);
+        })
+
+    var migrationWheel = d3.csv(migration_wheel_path)
+        .then(function (data) {
+            // fix for bug of self referencing points
+            (function (H) {
+                var base = H.seriesTypes.sankey.prototype;
+
+                H.seriesTypes.dependencywheel.prototype.createNode = function (id) {
+                    var node = base.createNode.call(this, id);
+                    node.index = this.nodes.length - 1;
+                    /**
+                     * Return the sum of incoming and outgoing links.
+                     * @private
+                     */
+                    node.getSum = function () {
+                        return node.linksFrom
+                            .concat(node.linksTo)
+                            .filter(function (link, i, links) {
+                                return links.indexOf(link) === i;
+                            })
+                            .reduce(function (acc, link) {
+                                return acc + link.weight;
+                            }, 0);
+                    };
+                    /**
+                     * Get the offset in weight values of a point/link.
+                     * @private
+                     */
+                    node.offset = function (point) {
+                        var offset = 0,
+                            i,
+                            links = node.linksFrom.concat(node.linksTo),
+                            sliced;
+                        /**
+                         * @private
+                         */
+                        function otherNode(link) {
+                            if (link.fromNode === node) {
+                                return link.toNode;
+                            }
+                            return link.fromNode;
+                        }
+                        // Sort and slice the links to avoid links going out of each
+                        // node crossing each other.
+                        links.sort(function (a, b) {
+                            return otherNode(a).index - otherNode(b).index;
+                        });
+                        for (i = 0; i < links.length; i++) {
+                            if (otherNode(links[i]).index > node.index) {
+                                links = links.slice(0, i).reverse().concat(links.slice(i).reverse());
+                                sliced = true;
+                                break;
+                            }
+                        }
+                        if (!sliced) {
+                            links.reverse();
+                        }
+                        for (i = 0; i < links.length; i++) {
+                            if (links[i] === point) {
+                                return offset;
+                            }
+                            if (links.indexOf(links[i]) === i) {
+                                offset += links[i].weight;
+                            }
+                        }
+                    };
+                    return node;
+                }
+            })(Highcharts);
+            // All filterable options
+            const all_parameters = [...new Set(data.map(d => d.Parameter))].sort();
+            const all_regions = [...new Set(data.map(d => d.Destination))].sort();
+
+            // Default values
+            var parameter = "Continent";
+
+            var container_class = ".migration-wheel",
+                initial_data = [];
+
+            var getColor = {
+                "Africa": "5",
+                "Asia": "1",
+                "Europe": "0",
+                "Latin America and the Caribbean": "7",
+                "Northern America": "6",
+                "Oceania": "8",
+                "Eastern Africa": "20",
+                "Middle Africa": "10",
+                "Northern Africa": "29",
+                "Southern Africa": "5",
+                "Western Africa": "15",
+                "Central Asia": "18",
+                "Eastern Asia": "1",
+                "Southern Asia": "11",
+                "South-Eastern Asia": "16",
+                "Western Asia": "3",
+                "Eastern Europe": "2",
+                "Northern Europe": "0",
+                "Southern Europe": "13",
+                "Western Europe": "9",
+                "Caribbean": "7",
+                "Central America": "12",
+                "South America": "4",
+            };
+
+            function get_data() {
+                var new_data = [];
+
+                for (let row of data) {
+                    if (parameter == row.Parameter) {
+                        new_data.push({ from: row.Origin, to: row.Destination, weight: +row.Population, colorIndex: getColor[row.Origin] });
+                    }
+                }
+                return new_data;
+            }
+
+            initial_data = get_data();
+
+            var chart = Highcharts.chart('migration_wheel', {
+                chart: {
+                    styledMode: true,
+                    height: '500px'
+                },
+                title: {
+                    text: null
+                },
+                tooltip: {
+                    useHTML: true,
+                    headerFormat: '',
+                    formatter: function () {
+                        var point = this.point;
+                        var text = "";
+                        if (this.point.formatPrefix == "node") {
+                            var region = fCapital(point.name),
+                                population = numberFormatterInteger(point.sum);
+
+                            text = "<strong>" + region + "</strong>: " + population;
+                        } else {
+                            var from = fCapital(point.from),
+                                to = fCapital(point.to),
+                                population = numberFormatterInteger(point.weight);
+                            text = from + " &#8594; " + to + ": " + population;
+                        }
+                        return '<text>' + text + '</text>';
+                    },
+                },
+                plotOptions: {
+                    dependencywheel: {
+                        allowPointSelect: true,
+                        curveFactor: 0.6,
+                        linkOpacity: 0.2,
+                        nodePadding: 0,
+                    }
+                },
+                credits: {
+                    enabled: false
+                },
+                series: [{
+                    data: initial_data,
+                    type: 'dependencywheel',
+                    name: 'Migration flow',
+                    dataLabels: {
+                        enabled: false
+                    },
+                    size: '95%',
+                    nodes: [{
+                        id: "Africa",
+                        colorIndex: 5,
+                    }, {
+                        id: "Asia",
+                        colorIndex: 1,
+                    }, {
+                        id: "Europe",
+                        colorIndex: 0,
+                    }, {
+                        id: "Latin America and the Caribbean",
+                        colorIndex: 7,
+                    }, {
+                        id: "Northern America",
+                        colorIndex: 6,
+                    }, {
+                        id: "Oceania",
+                        colorIndex: 8,
+                    }, {
+                        id: "Eastern Africa",
+                        colorIndex: 20
+                    }, {
+                        id: "Middle Africa",
+                        colorIndex: 10
+                    }, {
+                        id: "Northern Africa",
+                        colorIndex: 29
+                    }, {
+                        id: "Southern Africa",
+                        colorIndex: 5
+                    }, {
+                        id: "Western Africa",
+                        colorIndex: 15
+                    }, {
+                        id: "Central Asia",
+                        colorIndex: 18
+                    }, {
+                        id: "Eastern Asia",
+                        colorIndex: 1
+                    }, {
+                        id: "Southern Asia",
+                        colorIndex: 11
+                    }, {
+                        id: "South-Eastern Asia",
+                        colorIndex: 16
+                    }, {
+                        id: "Western Asia",
+                        colorIndex: 3
+                    }, {
+                        id: "Eastern Europe",
+                        colorIndex: 2
+                    }, {
+                        id: "Northern Europe",
+                        colorIndex: 0
+                    }, {
+                        id: "Southern Europe",
+                        colorIndex: 13
+                    }, {
+                        id: "Western Europe",
+                        colorIndex: 9
+                    }, {
+                        id: "Caribbean",
+                        colorIndex: 7
+                    }, {
+                        id: "Central America",
+                        colorIndex: 12
+                    }, {
+                        id: "South America",
+                        colorIndex: 4
+                    }]
+                }],
+            });
+
+            // for some reason rearragnes the chart and its prettier
+            chart.setSize();
+            // Add a legend
+            chart_nodes = chart.series[0].nodes;
+            chart_points = chart.series[0].data;
+            createLegend(chart_points, chart_nodes, container_class);
+
+            // Dropdowns
+            // Define dropdown container
+            var filters = document.querySelector(container_class + " .chart-filters");
+            // Create a parameter dropdown
+            var parameterName = "wheel-parameter",
+                parameterWidth = "150px";
+            addDropdown(filters, parameterName, parameterWidth, parameterChange, all_parameters, parameter);
+
+            // Update chart data on parameter change
+            function parameterChange() {
+                parameter = document.getElementById(parameterName + "-select").value;
+
+                chart.series[0].setData(get_data());
+                chart.setSize();
+
+                chart_nodes = chart.series[0].nodes;
+                chart_points = chart.series[0].data;
+                createLegend(chart_points, chart_nodes, container_class);
+            }
         })
         .catch(function (error) {
             console.log(error);

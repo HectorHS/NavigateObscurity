@@ -1,0 +1,398 @@
+Destination,Origin,Parameter,Population
+Africa,Oceania,Continent,21135
+Africa,Northern America,Continent,65946
+Africa,Latin America and the Caribbean,Continent,30924
+Africa,Europe,Continent,713041
+Africa,Asia,Continent,1225453
+Africa,Africa,Continent,19359848
+Asia,Oceania,Continent,94532
+Asia,Northern America,Continent,504368
+Asia,Latin America and the Caribbean,Continent,444714
+Asia,Europe,Continent,7008802
+Asia,Asia,Continent,63277439
+Asia,Africa,Continent,4430864
+Europe,Oceania,Continent,350508
+Europe,Northern America,Continent,1030770
+Europe,Latin America and the Caribbean,Continent,4361993
+Europe,Europe,Continent,39782081
+Europe,Asia,Continent,20463256
+Europe,Africa,Continent,9322904
+Latin America and the Caribbean,Oceania,Continent,11346
+Latin America and the Caribbean,Northern America,Continent,1361188
+Latin America and the Caribbean,Latin America and the Caribbean,Continent,5975626
+Latin America and the Caribbean,Europe,Continent,1162073
+Latin America and the Caribbean,Asia,Continent,349538
+Latin America and the Caribbean,Africa,Continent,55825
+Northern America,Oceania,Continent,283215
+Northern America,Northern America,Continent,1217801
+Northern America,Latin America and the Caribbean,Continent,25303474
+Northern America,Europe,Continent,7341071
+Northern America,Asia,Continent,17201010
+Northern America,Africa,Continent,2571436
+Oceania,Oceania,Continent,1122789
+Oceania,Northern America,Continent,233215
+Oceania,Latin America and the Caribbean,Continent,160237
+Oceania,Europe,Continent,2996696
+Oceania,Asia,Continent,3167398
+Oceania,Africa,Continent,525551
+Eastern Africa,Oceania,Region,327
+Eastern Africa,Northern America,Region,4968
+Eastern Africa,South America,Region,0
+Eastern Africa,Central America,Region,0
+Eastern Africa,Caribbean,Region,43
+Eastern Africa,Western Europe,Region,3265
+Eastern Africa,Southern Europe,Region,6638
+Eastern Africa,Northern Europe,Region,14521
+Eastern Africa,Eastern Europe,Region,592
+Eastern Africa,Western Asia,Region,8567
+Eastern Africa,South-Eastern Asia,Region,1156
+Eastern Africa,Southern Asia,Region,57866
+Eastern Africa,Eastern Asia,Region,8257
+Eastern Africa,Central Asia,Region,0
+Eastern Africa,Western Africa,Region,12476
+Eastern Africa,Southern Africa,Region,56850
+Eastern Africa,Northern Africa,Region,708778
+Eastern Africa,Middle Africa,Region,1037586
+Eastern Africa,Eastern Africa,Region,4916062
+Middle Africa,Oceania,Region,10
+Middle Africa,Northern America,Region,2616
+Middle Africa,South America,Region,0
+Middle Africa,Central America,Region,0
+Middle Africa,Caribbean,Region,544
+Middle Africa,Western Europe,Region,1688
+Middle Africa,Southern Europe,Region,96649
+Middle Africa,Northern Europe,Region,301
+Middle Africa,Eastern Europe,Region,2761
+Middle Africa,Western Asia,Region,2918
+Middle Africa,South-Eastern Asia,Region,0
+Middle Africa,Southern Asia,Region,0
+Middle Africa,Eastern Asia,Region,1430
+Middle Africa,Central Asia,Region,0
+Middle Africa,Western Africa,Region,432891
+Middle Africa,Southern Africa,Region,48799
+Middle Africa,Northern Africa,Region,373531
+Middle Africa,Middle Africa,Region,1728206
+Middle Africa,Eastern Africa,Region,393170
+Northern Africa,Oceania,Region,1293
+Northern Africa,Northern America,Region,22880
+Northern Africa,South America,Region,741
+Northern Africa,Central America,Region,994
+Northern Africa,Caribbean,Region,30
+Northern Africa,Western Europe,Region,27516
+Northern Africa,Southern Europe,Region,25988
+Northern Africa,Northern Europe,Region,16210
+Northern Africa,Eastern Europe,Region,20083
+Northern Africa,Western Asia,Region,902416
+Northern Africa,South-Eastern Asia,Region,39488
+Northern Africa,Southern Asia,Region,13938
+Northern Africa,Eastern Asia,Region,8411
+Northern Africa,Central Asia,Region,2669
+Northern Africa,Western Africa,Region,40192
+Northern Africa,Southern Africa,Region,1122
+Northern Africa,Northern Africa,Region,321879
+Northern Africa,Middle Africa,Region,109832
+Northern Africa,Eastern Africa,Region,721361
+Southern Africa,Oceania,Region,18429
+Southern Africa,Northern America,Region,29487
+Southern Africa,South America,Region,12981
+Southern Africa,Central America,Region,892
+Southern Africa,Caribbean,Region,4125
+Southern Africa,Western Europe,Region,164380
+Southern Africa,Southern Europe,Region,112934
+Southern Africa,Northern Europe,Region,165529
+Southern Africa,Eastern Europe,Region,42650
+Southern Africa,Western Asia,Region,21792
+Southern Africa,South-Eastern Asia,Region,10011
+Southern Africa,Southern Asia,Region,77769
+Southern Africa,Eastern Asia,Region,54829
+Southern Africa,Central Asia,Region,59
+Southern Africa,Western Africa,Region,50418
+Southern Africa,Southern Africa,Region,712601
+Southern Africa,Northern Africa,Region,16444
+Southern Africa,Middle Africa,Region,199402
+Southern Africa,Eastern Africa,Region,1440938
+Western Africa,Oceania,Region,1076
+Western Africa,Northern America,Region,5995
+Western Africa,South America,Region,3854
+Western Africa,Central America,Region,414
+Western Africa,Caribbean,Region,6306
+Western Africa,Western Europe,Region,2167
+Western Africa,Southern Europe,Region,4400
+Western Africa,Northern Europe,Region,2986
+Western Africa,Eastern Europe,Region,1783
+Western Africa,Western Asia,Region,7777
+Western Africa,South-Eastern Asia,Region,100
+Western Africa,Southern Asia,Region,2153
+Western Africa,Eastern Asia,Region,3847
+Western Africa,Central Asia,Region,0
+Western Africa,Western Africa,Region,5820457
+Western Africa,Southern Africa,Region,1634
+Western Africa,Northern Africa,Region,56437
+Western Africa,Middle Africa,Region,154760
+Western Africa,Eastern Africa,Region,4022
+Central Asia,Oceania,Region,112
+Central Asia,Northern America,Region,331
+Central Asia,South America,Region,0
+Central Asia,Central America,Region,0
+Central Asia,Caribbean,Region,22
+Central Asia,Western Europe,Region,236247
+Central Asia,Southern Europe,Region,8041
+Central Asia,Northern Europe,Region,11384
+Central Asia,Eastern Europe,Region,4355179
+Central Asia,Western Asia,Region,163979
+Central Asia,South-Eastern Asia,Region,127
+Central Asia,Southern Asia,Region,12734
+Central Asia,Eastern Asia,Region,100503
+Central Asia,Central Asia,Region,490866
+Central Asia,Western Africa,Region,25
+Central Asia,Southern Africa,Region,0
+Central Asia,Northern Africa,Region,133
+Central Asia,Middle Africa,Region,0
+Central Asia,Eastern Africa,Region,23
+Eastern Asia,Oceania,Region,38370
+Eastern Asia,Northern America,Region,218703
+Eastern Asia,South America,Region,358519
+Eastern Asia,Central America,Region,2199
+Eastern Asia,Caribbean,Region,0
+Eastern Asia,Western Europe,Region,15582
+Eastern Asia,Southern Europe,Region,8973
+Eastern Asia,Northern Europe,Region,55093
+Eastern Asia,Eastern Europe,Region,20391
+Eastern Asia,Western Asia,Region,204
+Eastern Asia,South-Eastern Asia,Region,1156530
+Eastern Asia,Southern Asia,Region,181540
+Eastern Asia,Eastern Asia,Region,5291533
+Eastern Asia,Central Asia,Region,27730
+Eastern Asia,Western Africa,Region,6388
+Eastern Asia,Southern Africa,Region,1938
+Eastern Asia,Northern Africa,Region,1754
+Eastern Asia,Middle Africa,Region,0
+Eastern Asia,Eastern Africa,Region,0
+Southern Asia,Oceania,Region,1561
+Southern Asia,Northern America,Region,52606
+Southern Asia,South America,Region,15274
+Southern Asia,Central America,Region,0
+Southern Asia,Caribbean,Region,37
+Southern Asia,Western Europe,Region,3454
+Southern Asia,Southern Europe,Region,5666
+Southern Asia,Northern Europe,Region,55476
+Southern Asia,Eastern Europe,Region,1484
+Southern Asia,Western Asia,Region,162818
+Southern Asia,South-Eastern Asia,Region,863285
+Southern Asia,Southern Asia,Region,11448610
+Southern Asia,Eastern Asia,Region,213956
+Southern Asia,Central Asia,Region,11336
+Southern Asia,Western Africa,Region,639
+Southern Asia,Southern Africa,Region,263
+Southern Asia,Northern Africa,Region,209
+Southern Asia,Middle Africa,Region,0
+Southern Asia,Eastern Africa,Region,4051
+South-Eastern Asia,Oceania,Region,43877
+South-Eastern Asia,Northern America,Region,89770
+South-Eastern Asia,South America,Region,1498
+South-Eastern Asia,Central America,Region,224
+South-Eastern Asia,Caribbean,Region,230
+South-Eastern Asia,Western Europe,Region,18071
+South-Eastern Asia,Southern Europe,Region,5006
+South-Eastern Asia,Northern Europe,Region,56534
+South-Eastern Asia,Eastern Europe,Region,499
+South-Eastern Asia,Western Asia,Region,21739
+South-Eastern Asia,South-Eastern Asia,Region,6834499
+South-Eastern Asia,Southern Asia,Region,1251250
+South-Eastern Asia,Eastern Asia,Region,919812
+South-Eastern Asia,Central Asia,Region,0
+South-Eastern Asia,Western Africa,Region,387
+South-Eastern Asia,Southern Africa,Region,838
+South-Eastern Asia,Northern Africa,Region,3655
+South-Eastern Asia,Middle Africa,Region,672
+South-Eastern Asia,Eastern Africa,Region,1181
+Western Asia,Oceania,Region,10612
+Western Asia,Northern America,Region,142958
+Western Asia,South America,Region,63538
+Western Asia,Central America,Region,2895
+Western Asia,Caribbean,Region,278
+Western Asia,Western Europe,Region,446513
+Western Asia,Southern Europe,Region,294870
+Western Asia,Northern Europe,Region,170952
+Western Asia,Eastern Europe,Region,1239387
+Western Asia,Western Asia,Region,12934851
+Western Asia,South-Eastern Asia,Region,3953796
+Western Asia,Southern Asia,Region,17111237
+Western Asia,Eastern Asia,Region,31556
+Western Asia,Central Asia,Region,92948
+Western Asia,Western Africa,Region,28019
+Western Asia,Southern Africa,Region,17252
+Western Asia,Northern Africa,Region,3754799
+Western Asia,Middle Africa,Region,8406
+Western Asia,Eastern Africa,Region,600232
+Eastern Europe,Oceania,Region,4876
+Eastern Europe,Northern America,Region,50954
+Eastern Europe,South America,Region,7819
+Eastern Europe,Central America,Region,2081
+Eastern Europe,Caribbean,Region,4426
+Eastern Europe,Western Europe,Region,342082
+Eastern Europe,Southern Europe,Region,245055
+Eastern Europe,Northern Europe,Region,466079
+Eastern Europe,Eastern Europe,Region,10473823
+Eastern Europe,Western Asia,Region,2073273
+Eastern Europe,South-Eastern Asia,Region,101440
+Eastern Europe,Southern Asia,Region,38650
+Eastern Europe,Eastern Asia,Region,146137
+Eastern Europe,Central Asia,Region,5606199
+Eastern Europe,Western Africa,Region,6959
+Eastern Europe,Southern Africa,Region,2020
+Eastern Europe,Northern Africa,Region,17566
+Eastern Europe,Middle Africa,Region,3234
+Eastern Europe,Eastern Africa,Region,4663
+Northern Europe,Oceania,Region,226324
+Northern Europe,Northern America,Region,420913
+Northern Europe,South America,Region,268966
+Northern Europe,Central America,Region,29088
+Northern Europe,Caribbean,Region,239228
+Northern Europe,Western Europe,Region,691414
+Northern Europe,Southern Europe,Region,886661
+Northern Europe,Northern Europe,Region,2004672
+Northern Europe,Eastern Europe,Region,2624912
+Northern Europe,Western Asia,Region,883722
+Northern Europe,South-Eastern Asia,Region,586404
+Northern Europe,Southern Asia,Region,2340107
+Northern Europe,Eastern Asia,Region,502926
+Northern Europe,Central Asia,Region,40817
+Northern Europe,Western Africa,Region,452200
+Northern Europe,Southern Africa,Region,236391
+Northern Europe,Northern Africa,Region,199837
+Northern Europe,Middle Africa,Region,69556
+Northern Europe,Eastern Africa,Region,846527
+Southern Europe,Oceania,Region,59761
+Southern Europe,Northern America,Region,194059
+Southern Europe,South America,Region,2506315
+Southern Europe,Central America,Region,167497
+Southern Europe,Caribbean,Region,177478
+Southern Europe,Western Europe,Region,1138688
+Southern Europe,Southern Europe,Region,3053096
+Southern Europe,Northern Europe,Region,584094
+Southern Europe,Eastern Europe,Region,3189078
+Southern Europe,Western Asia,Region,319272
+Southern Europe,South-Eastern Asia,Region,232825
+Southern Europe,Southern Asia,Region,616792
+Southern Europe,Eastern Asia,Region,407229
+Southern Europe,Central Asia,Region,48770
+Southern Europe,Western Africa,Region,531888
+Southern Europe,Southern Africa,Region,28212
+Southern Europe,Northern Africa,Region,1533944
+Southern Europe,Middle Africa,Region,241551
+Southern Europe,Eastern Africa,Region,199405
+Western Europe,Oceania,Region,59547
+Western Europe,Northern America,Region,364844
+Western Europe,South America,Region,727858
+Western Europe,Central America,Region,70779
+Western Europe,Caribbean,Region,160458
+Western Europe,Western Europe,Region,2373801
+Western Europe,Southern Europe,Region,4947636
+Western Europe,Northern Europe,Region,768673
+Western Europe,Eastern Europe,Region,5992317
+Western Europe,Western Asia,Region,3119131
+Western Europe,South-Eastern Asia,Region,849120
+Western Europe,Southern Asia,Region,865546
+Western Europe,Eastern Asia,Region,484219
+Western Europe,Central Asia,Region,1200677
+Western Europe,Western Africa,Region,648643
+Western Europe,Southern Africa,Region,52516
+Western Europe,Northern Africa,Region,3425065
+Western Europe,Middle Africa,Region,404773
+Western Europe,Eastern Africa,Region,417954
+Caribbean,Oceania,Region,3828
+Caribbean,Northern America,Region,256780
+Caribbean,South America,Region,103142
+Caribbean,Central America,Region,16267
+Caribbean,Caribbean,Region,625193
+Caribbean,Western Europe,Region,28838
+Caribbean,Southern Europe,Region,26257
+Caribbean,Northern Europe,Region,21014
+Caribbean,Eastern Europe,Region,3975
+Caribbean,Western Asia,Region,2372
+Caribbean,South-Eastern Asia,Region,5077
+Caribbean,Southern Asia,Region,6482
+Caribbean,Eastern Asia,Region,8899
+Caribbean,Central Asia,Region,11
+Caribbean,Western Africa,Region,1042
+Caribbean,Southern Africa,Region,234
+Caribbean,Northern Africa,Region,411
+Caribbean,Middle Africa,Region,254
+Caribbean,Eastern Africa,Region,1032
+Central America,Oceania,Region,1313
+Central America,Northern America,Region,976380
+Central America,South America,Region,213471
+Central America,Central America,Region,649000
+Central America,Caribbean,Region,36597
+Central America,Western Europe,Region,23510
+Central America,Southern Europe,Region,48225
+Central America,Northern Europe,Region,9930
+Central America,Eastern Europe,Region,9023
+Central America,Western Asia,Region,6703
+Central America,South-Eastern Asia,Region,3811
+Central America,Southern Asia,Region,7468
+Central America,Eastern Asia,Region,52900
+Central America,Central Asia,Region,6
+Central America,Western Africa,Region,583
+Central America,Southern Africa,Region,376
+Central America,Northern Africa,Region,1059
+Central America,Middle Africa,Region,300
+Central America,Eastern Africa,Region,241
+South America,Oceania,Region,6205
+South America,Northern America,Region,128028
+South America,South America,Region,4212500
+South America,Central America,Region,52562
+South America,Caribbean,Region,66894
+South America,Western Europe,Region,97200
+South America,Southern Europe,Region,797835
+South America,Northern Europe,Region,48505
+South America,Eastern Europe,Region,47761
+South America,Western Asia,Region,60884
+South America,South-Eastern Asia,Region,5738
+South America,Southern Asia,Region,5351
+South America,Eastern Asia,Region,183685
+South America,Central Asia,Region,151
+South America,Western Africa,Region,6368
+South America,Southern Africa,Region,23840
+South America,Northern Africa,Region,7978
+South America,Middle Africa,Region,9098
+South America,Eastern Africa,Region,3009
+Northern America,Oceania,Region,283215
+Northern America,Northern America,Region,1217801
+Northern America,South America,Region,3419032
+Northern America,Central America,Region,16363748
+Northern America,Caribbean,Region,5520694
+Northern America,Western Europe,Region,1225997
+Northern America,Southern Europe,Region,1945924
+Northern America,Northern Europe,Region,1826058
+Northern America,Eastern Europe,Region,2343092
+Northern America,Western Asia,Region,1707582
+Northern America,South-Eastern Asia,Region,5328448
+Northern America,Southern Asia,Region,4697270
+Northern America,Eastern Asia,Region,5345853
+Northern America,Central Asia,Region,121857
+Northern America,Western Africa,Region,808958
+Northern America,Southern Africa,Region,148446
+Northern America,Northern Africa,Region,667171
+Northern America,Middle Africa,Region,125384
+Northern America,Eastern Africa,Region,821477
+Oceania,Oceania,Region,1122789
+Oceania,Northern America,Region,233215
+Oceania,South America,Region,129264
+Oceania,Central America,Region,20072
+Oceania,Caribbean,Region,10901
+Oceania,Western Europe,Region,323621
+Oceania,Southern Europe,Region,678258
+Oceania,Northern Europe,Region,1800623
+Oceania,Eastern Europe,Region,194194
+Oceania,Western Asia,Region,314345
+Oceania,South-Eastern Asia,Region,1113139
+Oceania,Southern Asia,Region,840661
+Oceania,Eastern Asia,Region,895097
+Oceania,Central Asia,Region,4156
+Oceania,Western Africa,Region,22623
+Oceania,Southern Africa,Region,253543
+Oceania,Northern Africa,Region,85082
+Oceania,Middle Africa,Region,6412
+Oceania,Eastern Africa,Region,157891

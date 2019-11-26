@@ -60,7 +60,6 @@
 
   .chart-options {
     flex: 1;
-    //max-width:200px;
     display: flex;
     flex-direction: column;
     color: $almost-white;
@@ -74,9 +73,6 @@
       flex-wrap: wrap;
       justify-content: center;
       h4 {
-        // margin-top: 0;
-        // margin-right: 10px;
-        // margin-bottom: 5px;
         margin: 0 10px 5px 0;
       }
       .legend-item {
@@ -84,6 +80,7 @@
         margin-bottom: 5px;
         margin-right: 20px;
         cursor: pointer;
+        white-space: nowrap;
       }
       .dot {
         height: 25px;
@@ -123,7 +120,7 @@
           left: -1px;
           width: calc(100% + 2px);
           height: 36px;    
-          padding: 5px;
+          padding: 0 10px;
           font-size: 16px;
           border-radius:5px;
           -webkit-appearance: none;

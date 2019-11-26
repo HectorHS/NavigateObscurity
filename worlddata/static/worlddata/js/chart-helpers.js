@@ -300,28 +300,27 @@ function createLegend(chart_points, data, parentContainer) {
     // Click effect for legend
     $(parentContainer + ' .legend-item').click(function () {
         var name = this.textContent;
-        chart_points.filter(obj => {
-            return obj.name === name
-        })[0].select();
+        for (let point of chart_points) {
+            if (point.name === name || point.from === name) {
+                point.select(true, false);
+            }
+        }
     });
 
     // Hover effect for legend
     $(parentContainer + ' .legend-item').mouseenter(function () {
         var name = this.textContent;
-        var inx = chart_points.filter(obj => {
-            return obj.name === name
-        })[0].index;
-        var i = 0;
 
-        for (i = 0; i < chart_points.length; i++) {
-            if (i == inx) {
-                chart_points[i].setState('hover');
+        for (let point of chart_points) {
+            if (point.name === name || point.from === name) { // from is for dependency wheel
+                point.setState('hover');
             } else {
-                chart_points[i].setState('inactive');
+                point.setState('inactive');
             }
         }
     });
 
+    // Remove all states on mouse out
     $(parentContainer + ' .legend-item').mouseout(function (event) {
         var e = event.toElement || event.relatedTarget,
             i = 0;
@@ -329,8 +328,8 @@ function createLegend(chart_points, data, parentContainer) {
             return;
         }
 
-        for (i = 0; i < chart_points.length; i++) {
-            chart_points[i].setState('');
+        for (let point of chart_points) {
+            point.setState('');
         }
     })
 }
