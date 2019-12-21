@@ -19,10 +19,150 @@
   max-width: 600px;
 }
 
-.graph-container {
-  display: flex;
+.graph-instructions {
+  border-style: solid;
+  border-width: 1px;
+  border-radius: 10px;
+  padding: 0 20px;
+}
+
+.graph-instructions h5 {
+  margin: 10px 0 0;
 }
 
 .graph-instructions li {
   padding-bottom: 10px;
+}
+
+.graph-instructions .notes {
+  font-size: 80%;
+}
+
+.node-container {
+  display: flex;
+  flex-direction: row;
+  background-color: #2e3838;
+  padding: 0 50px;
+  height: 85vh;
+}
+
+.node-container #context-container {
+  flex: 1;
+  color: #dffcff;
+  background-color: #222a2a;
+  max-width: 100%;
+  border-radius: 20px;
+}
+
+.node-container #context-container h4 {
+  margin-top: 0;
+}
+
+.node-container #context-container .simplebar-scrollbar:before {
+  background-color: #fff;
+}
+
+.node-container #context-container #context-wrapper {
+  max-height: 85vh;
+  padding: 20px;
+}
+
+.node-container .simplebar-vertical {
+  margin: 10px 5px;
+}
+
+.node-container .nodes {
+  flex: 2;
+}
+
+.node-container #graph-container .search-container {
+  border-radius: 10px;
+  border-width: 1px;
+  border-style: solid;
+  position: relative;
+  display: block;
+  right: -50px;
+  float: right;
+  z-index: 10;
+  color: #dffcff;
+  overflow: hidden;
+  height: 34px;
+}
+
+.node-container #graph-container .search-container:hover {
+  border-color: #277daa;
+}
+
+.node-container #graph-container input {
+  color: #dffcff;
+  border: none;
+  height: 34px;
+  position: relative;
+  padding: 0 10px;
+  display: block;
+  background-color: rgba(46, 56, 56, 0.8);
+}
+
+.node-container #selected-nodes {
+  position: absolute;
+  z-index: 10;
+}
+
+.node-container #selected-nodes .selected-node {
+  background-color: #216a91;
+  padding: 3px 10px;
+  border-radius: 20px;
+  margin: 5px;
+}
+
+.node-container .zoom-button {
+  position: relative;
+  cursor: pointer;
+  z-index: 10;
+  color: #dffcff;
+  background-color: rgba(46, 56, 56, 0.8);
+  font-size: 20px;
+  border-style: solid;
+  border-width: 1px;
+  border-color: #dffcff;
+  float: right;
+}
+
+.node-container .zoom-button:hover {
+  color: #2e3838;
+  background-color: #dffcff;
+}
+
+.node-container .zoom-in {
+  top: 50px;
+  right: 20px;
+  padding: 5px 10px;
+}
+
+.node-container .zoom-out {
+  top: 84px;
+  right: -14px;
+  padding: 5px 11.5px;
+}
+
+#node-legend {
+  background-color: #2e3838;
+  padding: 20px 50px;
+  color: #dffcff;
+  text-align: center;
+}
+
+#node-legend .legend-dot {
+  height: 25px;
+  width: 25px;
+  border-radius: 50%;
+  display: inline-block;
+  margin-right: 10px;
+}
+
+#node-legend .legend-item {
+  display: inline-flex;
+  margin-bottom: 5px;
+  margin-right: 20px;
+  white-space: nowrap;
 }

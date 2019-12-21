@@ -1,9 +1,9 @@
 @charset "UTF-8";
-.hexagon-link-main, button, .button {
+.hexagon-link-main, .button {
   z-index: 10;
 }
 
-.hexagon-link-main:before, button:before, .button:before {
+.hexagon-link-main:before, .button:before {
   position: absolute;
   content: "";
   top: 0;
@@ -15,7 +15,7 @@
   opacity: 0;
 }
 
-.hexagon-link-main:hover:before, button:hover::before, .button:hover::before {
+.hexagon-link-main:hover:before, .button:hover::before {
   opacity: 1;
 }
 
@@ -876,7 +876,7 @@ textarea {
   color: #dffcff;
 }
 
-button, .button {
+.button {
   display: inline-block;
   position: relative;
   padding: 15px;
@@ -895,7 +895,7 @@ button, .button {
   letter-spacing: 0.05em;
 }
 
-button:before, .button:before {
+.button:before {
   background-image: linear-gradient(to top right, rgba(255, 0, 0, 0) 0%, #d66808 60%);
   border: 0.0001px solid #2e3838;
   border-radius: 35px;

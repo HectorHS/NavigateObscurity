@@ -40,7 +40,7 @@ textarea {
   font: 100% $main-font;
   color: $almost-white;
 }
-button, .button {
+.button {
   @extend %gradient-transition-main;
   display: inline-block;
   position: relative;

@@ -2,74 +2,332 @@
 {% load static %}
 
 {% block styles %}
+<!-- We use d3 libraries to load data -->
+<script src="https://d3js.org/d3-dsv.v1.min.js"></script>
+<script src="https://d3js.org/d3-fetch.v1.min.js"></script>
+<!-- simplebar for custom styled scroll bars -->
+<link rel="stylesheet" href="https://unpkg.com/simplebar@latest/dist/simplebar.css" />
+<script src="https://unpkg.com/simplebar@latest/dist/simplebar.min.js"></script>
+<!-- We use sigma to visualise the graph -->
+<script src={% static "nodes/js/sigma.min.js" %}></script>
+<script src={% static "nodes/js/sigma.parsers.gexf.min.js" %}></script>
+<script src={% static "nodes/js/sigma.renderers.parallelEdges.min.js" %}></script>
+
+<script src={% static "nodes/js/node-helpers.js" %}></script>
+
 <link rel='stylesheet' type="text/css" href={% static "nodes/css/nodes.css" %}>
+<noscript>
+  <style>
+    /**
+    * Reinstate scrolling for non-JS clients
+    */
+    .simplebar-content-wrapper {
+      overflow: auto;
+    }
+  </style>
+</noscript>
 {% endblock %}
 
 {% block content %}
 <section class="banner-container">
-    <h1 class="header-title-banner">Head strong by Dave Asprey</h1>
+  <h1 class="header-title-banner">Head strong by Dave Asprey</h1>
+</section>
+<!-- Intro -->
+<section>
+  <div class="container limited-width">
+    <p>
+      Everything we do, from breathing, to exercising and daydreaming requires energy. All energy is produced in
+      the cellular level, and is produced on demand – it cannot be stored. Therefore, everything you do always
+      antagonises this limited resource of energy. Higher level functions such as creativity and rational thinking
+      are not essential for surviving – at least not like breathing, moving and digestion are – and as a result
+      they score lower in the energy priority list. At the same time, such higher level functions require a lot of
+      energy. So how do you achieve and maintain peak mental performance and clarity of thought? By boosting your
+      energy production and minimising the energy expenditure of other functions.
+    </p>
+
+  </div>
+</section>
+<!-- How to use -->
+<section class="container">
+  <div class="graph-instructions">
+    <h5>How to use:</h5>
+    <div class="two-column-text notes">
+      <ul>
+        <li> Hover over a node to see its name, and which other nodes it connects to. </li>
+        <li> Click on a node to see all relevant notes. </li>
+        <li> Click on a second node to only see notes related to both nodes. </li>
+        <li> Click on the background to reset all selections. </li>
+      </ul>
+      <ul>
+        <li> Use the search box to find a node - suggestions will be shown when you start typing. </li>
+        <li> Click on the + / - buttons to zoom in and out. </li>
+        <li> Click and drag the background to move the view of the graph.</li>
+      </ul>
+    </div>
+  </div>
 </section>
 
-<section>
-    <div class="container limited-width">
-        <p>
-            Everything we do, from breathing, to exercising and daydreaming requires energy. All energy is produced in
-            the cellular level, and is produced on demand – it cannot be stored. Therefore, everything you do always
-            antagonises this limited resource of energy. Higher level functions such as creativity and rational thinking
-            are not essential for surviving – at least not like breathing, moving and digestion are – and as a result
-            they score lower in the energy priority list. At the same time, such higher level functions require a lot of
-            energy. So how do you achieve and maintain peak mental performance and clarity of thought? By boosting your
-            energy production and minimising the energy expenditure of other functions.
-        </p>
-
+<!-- Graph -->
+<section class="node-container">
+  <div id="context-container" class="nodes-text"> </div>
+  <div id="graph-container" class="nodes" style="width:100%;">
+    <div id="selected-nodes"></div>
+    <button type="button" id="zoom-in-button" class="zoom-button zoom-in">+</button>
+    <button type="button" id="zoom-out-button" class="zoom-button zoom-out">-</button>
+    <div class="search-container">
+      <input id="search-input" list="nodes-datalist" placeholder="Search for a node">
     </div>
-    <div class="graph-container">
-        <iframe width='100%' height='500' style='height: 500px; color:#fff'
-            src='https://infranodus.com/hector/headstrong?background=dark&most_influential=bc&hide_always=1&show_text=1&hide_edit=1&background=dark&maxnodes='
-            frameborder='0' allowfullscreen></iframe>
-    </div>
-    <div class="two-column-text container graph-instructions">
-        <ul>
-            <li> Click on a node to see what other nodes it connects to and to read relevant notes. </li>
-            <li> Click on an already selected node to deselect it. </li>
-            <li> Use the search function on the top right to find a node. </li>
-        </ul>
-        <ul>
-            <li> Click on a second node to only see notes related to both nodes. </li>
-            <li> All selected nodes are also visible on the top right as labels and can be deselected from there. Or
-                even temporarily removed from the graph. </li>
-        </ul>
-    </div>
+    <datalist id="nodes-datalist"></datalist>
+  </div>
 </section>
+<!-- Legend -->
+<section id="node-legend">
+</section>
+<!-- Comments -->
 <section>
-    <div class="container">
-        <hr>
-        <div class="comment-container">
-            {% for comment in comments %}
-            {% if comment.approved_comment %}
-            <div class="comment-author">{{ comment.author }}</div>
-            <div class="comment-date">{{ comment.created_date }}</div>
-            {{ comment.message|linebreaks }}
-            {% endif %}
-            {% empty %}
-            <p>No comments here yet :(</p>
-            {% endfor %}
-        </div>
-        <hr>
-        <div class="comment-form-container">
-            <h3>Leave a comment</h3>
-            <form method="post">
-                {% csrf_token %}
-                <div>
-                    {{comment_form.author}}
-                </div>
-                <div>
-                    {{ comment_form.message }}
-                </div>
-                <div>
-                    <button type="submit" formmethod="post">Post comment</button>
-                </div>
-            </form>
-        </div>
+  <div class="container">
+    <hr>
+    <div class="comment-container">
+      {% for comment in comments %}
+      {% if comment.approved_comment %}
+      <div class="comment-author">{{ comment.author }}</div>
+      <div class="comment-date">{{ comment.created_date }}</div>
+      {{ comment.message|linebreaks }}
+      {% endif %}
+      {% empty %}
+      <p>No comments here yet :(</p>
+      {% endfor %}
     </div>
-</section> {% endblock %}
+    <hr>
+    <div class="comment-form-container">
+      <h3>Leave a comment</h3>
+      <form method="post">
+        {% csrf_token %}
+        <div>
+          {{comment_form.author}}
+        </div>
+        <div>
+          {{ comment_form.message }}
+        </div>
+        <div>
+          <button class="button" type="submit" formmethod="post">Post comment</button>
+        </div>
+      </form>
+    </div>
+  </div>
+</section>
+
+<script>
+  var static_url = "{% get_static_prefix %}",
+    head_strong = "nodes/gexf/head-strong.gexf",
+    head_strong_gexf = static_url + head_strong,
+    context = "nodes/csv/context.csv",
+    head_strong_context = static_url + context,
+    context_links = "nodes/csv/context-links.csv",
+    head_strong_context_links = static_url + context_links;
+
+  var selected = [];
+  MiniBarOptions = {
+    barType: "default",
+    minBarSize: 100,
+    alwaysShowBars: true,
+  };
+
+  sigma.classes.graph.addMethod('neighbors', function (nodeId) {
+    var k,
+      neighbors = {},
+      index = this.allNeighborsIndex[nodeId] || {};
+
+    for (k in index)
+      neighbors[k] = this.nodesIndex[k];
+
+    return neighbors;
+  });
+
+  // Initialise sigma with settings
+  var s = new sigma({
+    renderers: [
+      {
+        type: 'canvas',
+        container: document.getElementById('graph-container'),
+        freeStyle: true
+      }
+    ],
+    settings: {
+      minNodeSize: 1,
+      maxNodeSize: 20,
+      minEdgeSize: 0.1,
+      maxEdgeSize: 0.5,
+      defaultEdgeType: "curve", // only works on canvas renderer
+      labelColor: "node",
+      labelHoverBGColor: "default",
+      defaultHoverLabelBGColor: "#171c1c",
+      defaultLabelHoverColor: "#fff",
+      font: "Poppins",
+      drawLabels: false,
+      mouseWheelEnabled: false,
+      doubleClickEnabled: false,
+    },
+  });
+
+  // Load all notes
+  Promise.all([
+    d3.csv(head_strong_context),
+    d3.csv(head_strong_context_links),
+  ]).then(function (files) {
+
+    var contexts = files[0],
+      context_links = files[1];
+
+    // Load data to the graph
+    sigma.parsers.gexf(head_strong_gexf, s,
+      function (s) {
+        // Add various parameters to nodes and edges
+        s.graph.nodes().forEach(function (n) {
+          n.label = fCapital(n.label);
+          n.color = getColor[n.attributes["modularity class"]];
+          n.originalColor = n.color;
+          n.inactiveColor = "#455454";
+          n.selectedColor = "#DDDDDD";
+        });
+        s.graph.edges().forEach(function (e) {
+          e.originalColor = e.color;
+          e.inactiveColor = "#455454";
+        });
+        s.refresh();
+        populateSearchList(s.graph.nodes());
+
+        // Add event listeners to buttons
+        var inputBox = document.getElementById('search-input');
+        inputBox.addEventListener("change", searchChange);
+
+        var zoomInButton = document.getElementById('zoom-in-button');
+        zoomInButton.addEventListener("click", zoomIn);
+        var zoomOutButton = document.getElementById('zoom-out-button');
+        zoomOutButton.addEventListener("click", zoomOut);
+      });
+
+    updateContextText(contexts, context_links, selected);
+    createLegend();
+
+    function searchChange(e) {
+      var value = e.target.value;
+
+      // Add node to selected
+      s.graph.nodes().forEach(function (n) {
+        if (n.label == value) {
+          if (!selected[n.id]) {
+            selected[n.id] = n;
+          }
+        }
+      });
+      nodeSelect(s, selected, contexts, context_links);
+    }
+
+    function zoomIn() {
+      var c = s.camera;
+      c.goTo({
+        ratio: c.ratio / c.settings('zoomingRatio')
+      });
+    }
+
+    function zoomOut() {
+      var c = s.camera;
+      c.goTo({
+        ratio: c.ratio * c.settings('zoomingRatio')
+      });
+    }
+
+    // Click event for node
+    s.bind('clickNode', function (e) {
+      // Add or remove from selected array
+      if (!selected[e.data.node.id]) {
+        selected[e.data.node.id] = e.data.node;
+      } else {
+        delete selected[e.data.node.id];
+      }
+
+      nodeSelect(s, selected, contexts, context_links);
+    });
+
+    // Mouse over event
+    s.bind('overNode', function (e) {
+      nodeHover(s, e.data.node, selected);
+    });
+
+    // Mouse out event
+    s.bind('outNode', function (e) {
+      nodeHoverOut(s, selected);
+    });
+
+    // When the background is clicked, we reset the graph
+    s.bind('clickStage', function (e) {
+      selected = [];
+      resetStates(s);
+      showSelectedNodes(selected);
+      updateContextText(contexts, context_links, selected);
+      s.refresh();
+    });
+
+    function createLegend() {
+      var categories = [
+        { class: "7", name: "Cellular" },
+        { class: "4", name: "Physiological" },
+        { class: "9", name: "Hormonal" },
+        { class: "5", name: "Neurological" },
+        { class: "3", name: "Mental" },
+        { class: "2", name: "Habits" },
+        { class: "1", name: "Foods" },
+        { class: "0", name: "Food components" },
+        { class: "6", name: "Toxins" },
+        { class: "8", name: "Environment" }
+      ];
+
+      var container = document.getElementById('node-legend');
+
+      //Object.keys(categories).forEach(function (key) {
+      for (var cat of categories) {
+        var legend_item = document.createElement("div");
+        legend_item.classList.add('legend-item');
+
+        var legend_dot = document.createElement("div");
+        legend_dot.classList.add('legend-dot');
+        legend_dot.style["background-color"] = getColor[cat.class];
+        legend_item.appendChild(legend_dot);
+
+        var legend_label = document.createElement("div");
+        legend_label.classList.add('legend-label');
+        legend_label.innerHTML = cat.name;
+        legend_item.appendChild(legend_label);
+
+        container.appendChild(legend_item);
+      }
+    }
+
+    function populateSearchList(nodes) {
+      var container = document.getElementById('nodes-datalist');
+      nodes.forEach(function (n) {
+        var item = document.createElement('option');
+        item.value = n.label;
+        container.appendChild(item);
+      });
+    }
+
+  }).catch(function (error) {
+    console.log(error);
+  })
+
+  getColor = {
+    "0": "#F012BE",
+    "1": "#85144b",
+    "2": "#2ECC40",
+    "3": "#39CCCC",
+    "4": "#33805d",
+    "5": "#0074D9",
+    "6": "#FF4136",
+    "7": "#001F3F",
+    "8": "#FFDC00",
+    "9": "#FF851B ",
+  };
+</script>
+{% endblock %}
