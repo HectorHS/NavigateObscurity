@@ -27,7 +27,9 @@ SECRET_KEY = os.environ['SECRET_KEY']
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
 
-ALLOWED_HOSTS = ['.navigateobscurity.com']
+ALLOWED_HOSTS = [
+    '.navigateobscurity.com'
+]
 
 
 # Application definition
@@ -36,7 +38,6 @@ INSTALLED_APPS = [
     'main',
     'nodes',
     'worlddata',
-    'django_sass',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -133,7 +134,7 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/2.2/howto/static-files/
 # TODO: update on deployment
 
-STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
+STATIC_ROOT = os.path.join(BASE_DIR, 'static')
 STATIC_URL = '/static/'
 
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
