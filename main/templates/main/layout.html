@@ -8,6 +8,7 @@
         rel="stylesheet">
     {% load static %}
     <link rel='stylesheet' type="text/css" href={% static "main/css/main.css" %}>
+    <link rel="shortcut icon" type="image/png" href={% static "main/images/favicon.ico" %} />
     {% block styles %}
     {% endblock %}
     <title>Navigate Obscurity</title>
@@ -19,7 +20,7 @@
     <section class="nav-bar">
         <div class="logo">
             <a href="">
-                <img src={% static "main/images/logo.png" alt='navigate obscurity logo' %}></a>
+                <img src={% static "main/images/logo.svg" alt='navigate obscurity logo' %}></a>
         </div>
         <nav role="navigation">
             <div class="nav-mobile">
@@ -61,7 +62,7 @@
                 Get in touch at hector@navigateobscurity.com</h2>
         </div>
         <div class="bottom-bar">
-            <p>Navigate Obscurity 2019</p>
+            <p>Navigate Obscurity 2020</p>
         </div>
     </section>
     <!-- TODO move dependencies on better place? -->

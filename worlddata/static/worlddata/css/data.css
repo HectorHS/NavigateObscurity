@@ -48,13 +48,16 @@
 }
 
 .source-text a {
-  color: #277daa;
+  color: #2f98d0;
 }
 
 .chart-container {
   display: flex;
   flex-direction: column;
   background-color: #2e3838;
+  background-image: url(../images/spinner.gif);
+  background-repeat: no-repeat;
+  background-position: center;
   padding: 0 20px;
 }
 
@@ -160,7 +163,7 @@
 }
 
 .chart-container .chart-options .chart-filters .dropdown-container:hover {
-  border: 1px solid #277daa;
+  border: 1px solid #2f98d0;
 }
 
 .chart-container .chart-options .chart-filters .slider-container {
@@ -196,8 +199,8 @@
 }
 
 .chart-container .chart-options .chart-filters .slider-container .slider::-webkit-slider-thumb:hover {
-  background: #277daa;
-  border-color: #277daa;
+  background: #2f98d0;
+  border-color: #2f98d0;
 }
 
 .chart-container .chart-options .chart-filters .slider-container .slider::-moz-range-thumb {
@@ -212,8 +215,8 @@
 }
 
 .chart-container .chart-options .chart-filters .slider-container .slider::-moz-range-thumb:hover {
-  background: #277daa;
-  border-color: #277daa;
+  background: #2f98d0;
+  border-color: #2f98d0;
 }
 
 .chart-container .chart-options .chart-filters .slider-container .slider-output {
@@ -295,4 +298,16 @@
   .filters-right {
     flex-direction: row-reverse;
   }
+}
+
+.old-death-tree {
+  min-height: 300px;
+}
+
+.biomass-pie, .biomass-scatter {
+  min-height: 400px;
+}
+
+.death-tree, .death-map, .death-bars, .migration-map, .migration-bubbles, .migration-wheel, .sustain-map, .sustain-area {
+  min-height: 500px;
 }

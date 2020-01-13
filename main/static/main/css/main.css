@@ -31,8 +31,8 @@
 .header-title-banner {
   position: absolute;
   padding-left: 10px;
-  border-left: 5px solid #277daa;
-  color: #277daa;
+  border-left: 5px solid #2f98d0;
+  color: #2f98d0;
   font-size: 1.5em;
   font-weight: 500;
   letter-spacing: 2px;
@@ -454,7 +454,7 @@ nav ul li a, nav ul li a:visited {
 }
 
 nav ul li a:hover, nav ul li a:visited:hover {
-  background: #277daa;
+  background: #2f98d0;
   color: #dffcff;
 }
 
@@ -579,7 +579,7 @@ nav ul li ul li a {
 .footer-container {
   position: relative;
   height: 500px;
-  background-image: url(../images/footer2.jpg);
+  background-image: url(../images/footer.jpg);
   background-position: center;
   background-repeat: no-repeat;
   -webkit-background-size: cover;
@@ -593,7 +593,7 @@ nav ul li ul li a {
   bottom: 50px;
   left: 50px;
   padding-left: 10px;
-  border-left: 5px solid #277daa;
+  border-left: 5px solid #2f98d0;
   color: #222a2a;
   font-size: 150%;
   font-weight: 600;
@@ -885,12 +885,11 @@ textarea {
   border-radius: 35px;
   border: 0.0001px solid #2e3838;
   transition: background-image 0.5s ease;
-  background-image: linear-gradient(to top right, #2e3838 0%, #277daa 60%);
+  background-image: linear-gradient(to top right, #2e3838 0%, #2f98d0 60%);
   cursor: pointer;
   color: #222a2a;
   font-size: 110%;
   font-weight: 800;
-  text-transform: uppercase;
   text-decoration: none;
   letter-spacing: 0.05em;
 }
@@ -902,11 +901,11 @@ textarea {
 }
 
 a {
-  color: #277daa;
+  color: #2f98d0;
 }
 
 h3 {
-  color: #277daa;
+  color: #2f98d0;
   font-size: 150%;
   letter-spacing: 0.05em;
   word-spacing: 0.1em;
@@ -921,7 +920,7 @@ hr {
   margin-top: 50px;
   margin-bottom: 20px;
   border-width: 1px;
-  border-color: #277daa;
+  border-color: #2f98d0;
   background-color: #2e3838;
 }
 
