@@ -88,7 +88,7 @@ DATABASES = {
     # }
     'default': {
         'ENGINE': 'django.db.backends.mysql',
-        'NAME': 'navigateobscurity',
+        'NAME': 'namextlv_navigateobscurityDB',
         'USER': '',
         'PASSWORD': '',
         'HOST': 'localhost',
