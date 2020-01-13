@@ -36,26 +36,6 @@
   .data-box-text {
     max-width:600px;
   }
-  .tableau-big {
-    height: 592px;
-    overflow: hidden;
-  }
-  .tableau-small {
-    height: 250px;
-    overflow: hidden;
-  }
-  .tableau-almost-big {
-    height: 530px;
-    overflow: hidden;
-  }
-  .tableau-592-800 {
-    height: 800px;
-    overflow: hidden;
-    @media only screen and (min-width: $mobile-breakpoint)
-    {
-      height: 592px;
-    }
-  }
   .source-text {
     background-color: $dark-grey;
     color: $almost-white;
@@ -67,56 +47,44 @@
     }
   }
 
-  .chart-container {
-display: flex;
-flex-direction: column;
-background-color: $dark-grey;
-padding: 20px;
-@media only screen and (min-width: $mobile-breakpoint)
-    {
-      flex-direction: row;
-      padding: 50px;
-    }
-
-.chart {
-  flex:1;
+.chart-container {
+  display: flex;
+  flex-direction: column;
+  background-color: $dark-grey;
+  background-image: url(../images/spinner.gif);
+  background-repeat: no-repeat;
+  background-position: center;
+  padding: 0 20px;
   @media only screen and (min-width: $mobile-breakpoint)
-    {
-      flex:3;
-    }
-}
+      {
+        flex-direction: row;
+        padding: 0 50px;
+      }
 
-  #chart-options {
+  .chart-options {
     flex: 1;
-    //max-width:200px;
     display: flex;
     flex-direction: column;
     color: $almost-white;
     padding: 10px;
 
-    @media only screen and (min-width: $mobile-breakpoint)
-    {
-      max-width:200px;
+    .options-below {
+      flex-direction: row;
     }
-
     .chart-legend {
       display: flex;
-      flex-direction: row;
-      //padding: 0 20px;
       flex-wrap: wrap;
-
-      @media only screen and (min-width: $mobile-breakpoint)
-      {
-        flex-direction: column;
+      justify-content: center;
+      h4 {
+        margin: 0 10px 5px 0;
       }
-
       .legend-item {
         display: inline-flex;
         margin-bottom: 5px;
         margin-right: 20px;
         cursor: pointer;
+        white-space: nowrap;
       }
-  
       .dot {
         height: 25px;
         width: 25px;
@@ -124,19 +92,196 @@ padding: 20px;
         display: inline-block;
         margin-right: 10px;
       }
-    }
 
+    }
     .chart-filters {
+      align-items: center;
       margin-bottom: 20px;
-      overflow: hidden;
+      overflow: visible;
+      text-align: center;
       
-      select {
-        background-color: $dark-grey;
-        color: $almost-white;
-        padding: 5px;
-        margin-bottom: 5px;
+      @media only screen and (min-width: $mobile-breakpoint)
+      {
+        text-align: start;
+      }
+      
+      .dropdown-container{
+        display: inline-block;
+        position: relative;
+        top: 5px;
+        left: 5px;
+        height: 34px;
+        overflow: hidden;
+        border: 1px solid $light-grey;
+        border-radius: 5px;
         margin-right: 10px;
+        select {
+          position: relative;
+          background: $dark-grey;
+          color: $almost-white;
+          top: -1px;
+          left: -1px;
+          width: calc(100% + 2px);
+          height: 36px;    
+          padding: 0 10px;
+          font-size: 16px;
+          border-radius:5px;
+          -webkit-appearance: none;
+          -moz-appearance: none;
+          appearance: none;
+          border-style: none;
+          border-radius: 5px;
+        }
+        &:after {
+          position: absolute;
+          pointer-events: none;
+          content: "\25BC";
+          height: 1em;
+          font-size: .625em;
+          line-height: 1;
+          right: 1.2em;
+          top: 50%;
+          margin-top: -.5em;
+          color: $almost-white;
+        }
+        &:hover {
+          border: 1px solid $bright-blue;
+        }
+      }
+
+      .slider-container {
+        display: inline-block;
+        width: 250px;
+        position: relative;
+        bottom: 8px;
+      
+        .slider {
+          -webkit-appearance: none;
+          width: 150px;
+          height: 3px;
+          vertical-align: middle;
+          background: $light-grey;
+          border-radius: 5px;
+          outline: none;
+          -webkit-transition: .2s;
+          transition: opacity .2s;
+          &::-webkit-slider-thumb {
+            -webkit-appearance: none;
+            appearance: none;
+            width: 25px;
+            height: 25px;
+            background: $dark-grey;
+            border-width:2px;
+            border-color: $light-grey;
+            border-style: solid;
+            border-radius: 50%;
+            cursor: pointer;
+            &:hover {
+              background: $bright-blue;
+              border-color: $bright-blue;
+            }
+          }
+
+          &::-moz-range-thumb {
+            width: 25px;
+            height: 25px;
+            border-radius: 50%;
+            background: $dark-grey;
+            border-width:2px;
+            border-color: $light-grey;
+            border-style: solid;
+            cursor: pointer;
+            &:hover {
+              background: $bright-blue;
+              border-color: $bright-blue;
+            }
+          }
+        }
+
+        .slider-output {
+          display: inline-block;
+          position: relative;
+          width: 50px;
+          color: $almost-white;
+          line-height: 20px;
+          text-align: center;
+          border-radius: 5px;
+          border-style: solid;
+          border-width: 1px;
+          border-color: $light-grey;
+          padding: 5px 10px;
+          margin-left: 15px;
+        
+          &:after {
+            position: absolute;
+            top: 8px;
+            left: -7px;
+            width: 0;
+            height: 0;
+            border-top: 7px solid transparent;
+            border-right: 7px solid $light-grey;
+            border-bottom: 7px solid transparent;
+            content: '';
+          }
+        }
       }
     }
   }
+}
+
+.legend-right {
+  .chart-options {
+    @media only screen and (min-width: $mobile-breakpoint)
+    {
+      max-width:200px;
+    }
+  }
+  .chart-legend {
+    flex-direction: row;
+    @media only screen and (min-width: $mobile-breakpoint) {
+      flex-direction: column;
+    }
+  }
+}
+.legend-below {
+  flex-direction: column;
+  .chart-legend {
+    flex-direction: row;
+  }
+}
+
+.filters-on-top.chart-container {
+  flex-direction: column;
+  .chart-options{
+    padding-bottom: 0;
+    .chart-filters {
+      margin-bottom: 0;
+    }
+  }
+}
+
+.mobile-legend {
+  @media only screen and (min-width: $mobile-breakpoint) {
+    display:none !important; 
+  }
+}
+.wide-screen-legend{
+  @media only screen and (max-width: $mobile-breakpoint) {
+    display:none !important; 
+  }
+}
+.filters-right {
+  @media only screen and (min-width: $mobile-breakpoint) {
+    flex-direction: row-reverse;
+  }
+}
+
+.old-death-tree {
+  min-height:300px;
+}
+.biomass-pie, .biomass-scatter {
+  min-height:400px;
+}
+.death-tree, .death-map, .death-bars, .migration-map, .migration-bubbles, .migration-wheel, .sustain-map, .sustain-area {
+  min-height:500px;
 }

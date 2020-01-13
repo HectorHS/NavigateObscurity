@@ -21,11 +21,130 @@
 .node-box-text {
 max-width:600px;
 }
-.graph-container {
-  display: flex;
-}
 .graph-instructions {
+  border-style: solid;
+  border-width: 1px;
+  border-radius: 10px;
+  padding: 0 20px;
+  h5 {
+    margin: 10px 0 0;
+  }
   li{
     padding-bottom: 10px;
+  }
+  .notes {
+    font-size: 80%;
+  }
+}
+.node-container {
+  display: flex;
+  flex-direction: row;
+  background-color: $dark-grey;
+  padding: 0 50px;
+  height: 85vh;
+  #context-container {
+    flex: 1;
+    color: $almost-white;
+    background-color: $darker-grey;
+    max-width:100%;
+    border-radius: 20px;
+    h4 {
+      margin-top:0;
+    }
+    .simplebar-scrollbar:before {
+      background-color:#fff;
+    }
+    #context-wrapper {
+      max-height: 85vh;
+      padding:20px;
+    }
+  }
+  .simplebar-vertical {
+    margin: 10px 5px;
+  }
+  .nodes {
+    flex:2;
+  }
+  #graph-container {
+    .search-container {
+      border-radius: 10px;
+      border-width: 1px;
+      border-style: solid;
+      position: relative;
+      display: block;
+      right: -50px;
+      float: right;
+      z-index: 10;
+      color: $almost-white;
+      overflow: hidden;
+      height: 34px;
+      &:hover {
+        border-color: $bright-blue;
+      }
+    }
+    input {
+      color: $almost-white;
+      border: none;
+      height: 34px;
+      position: relative;
+      padding: 0 10px;
+      display: block;
+      background-color: $dark-grey-opacity;
+    }
+  }
+  #selected-nodes {
+    position: absolute;
+    z-index: 10;
+    .selected-node {
+      background-color: $blue;
+      padding: 3px 10px;
+      border-radius: 20px;
+      margin: 5px;
+    }
+  }
+  .zoom-button {
+    position: relative;
+    cursor: pointer;
+    z-index: 10;
+    color: $almost-white;
+    background-color: $dark-grey-opacity;
+    font-size: 20px;
+    border-style: solid;
+    border-width: 1px;
+    border-color: $almost-white;
+    float: right;
+  }
+  .zoom-button:hover {
+    color: $dark-grey;
+    background-color: $almost-white;
+  }
+  .zoom-in {
+    top: 50px;
+    right: 20px;
+    padding: 5px 10px;
+  }
+  .zoom-out {
+    top: 84px;
+    right: -14px;
+    padding: 5px 11.5px;
+  }
+}
+#node-legend{
+background-color: $dark-grey;
+padding: 20px 50px;
+color: $almost-white;
+text-align: center;
+  .legend-dot{
+      height: 25px;
+      width: 25px;
+      border-radius: 50%;
+      display: inline-block;
+      margin-right: 10px;
+  }
+  .legend-item {
+    display: inline-flex;
+    margin-bottom: 5px;
+    margin-right: 20px;
+    white-space: nowrap;
   }
 }

@@ -17,7 +17,7 @@ body {
 }
 input {
   font: 100% $main-font;
-  background-color: $dark-grey !important;
+  background-color: $dark-grey;
   color: $almost-white;
   &:-webkit-autofill {
     -webkit-box-shadow:0 0 0 50px $dark-grey inset;
@@ -40,7 +40,7 @@ textarea {
   font: 100% $main-font;
   color: $almost-white;
 }
-button, .button {
+.button {
   @extend %gradient-transition-main;
   display: inline-block;
   position: relative;
@@ -55,7 +55,6 @@ button, .button {
   color: $darker-grey;
   font-size: 110%;
   font-weight: 800;
-  text-transform: uppercase;
   text-decoration: none;
   letter-spacing: 0.05em;
   &:before {
@@ -76,6 +75,9 @@ h3 {
   font-size: 150%;
   letter-spacing: 0.05em;
   word-spacing: 0.1em;
+}
+h4 {
+  font-size: 110%;
 }
 hr {
   width: 94%;

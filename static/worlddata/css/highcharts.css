@@ -151,6 +151,7 @@
 .highcharts-tooltip text {
   fill: #dffcff;
   color: #dffcff;
+  word-spacing: 0.1em;
 }
 
 .highcharts-tooltip .highcharts-header {
@@ -237,102 +238,102 @@ g.highcharts-series,
 }
 
 .highcharts-color-1 {
-  fill: #FF4136;
-  stroke: #FF4136;
-}
-
-.legend-color-1 {
-  background-color: #FF4136;
-}
-
-.highcharts-color-2 {
-  fill: #7FDBFF;
-  stroke: #7FDBFF;
-}
-
-.legend-color-2 {
-  background-color: #7FDBFF;
-}
-
-.highcharts-color-3 {
-  fill: #85144B;
-  stroke: #85144B;
-}
-
-.legend-color-3 {
-  background-color: #85144B;
-}
-
-.highcharts-color-4 {
-  fill: #001F3F;
-  stroke: #001F3F;
-}
-
-.legend-color-4 {
-  background-color: #001F3F;
-}
-
-.highcharts-color-5 {
-  fill: #FFDC00;
-  stroke: #FFDC00;
-}
-
-.legend-color-5 {
-  background-color: #FFDC00;
-}
-
-.highcharts-color-6 {
-  fill: #3D9970;
-  stroke: #3D9970;
-}
-
-.legend-color-6 {
-  background-color: #3D9970;
-}
-
-.highcharts-color-7 {
-  fill: #B10DC9;
-  stroke: #B10DC9;
-}
-
-.legend-color-7 {
-  background-color: #B10DC9;
-}
-
-.highcharts-color-8 {
-  fill: #AAAAAA;
-  stroke: #AAAAAA;
-}
-
-.legend-color-8 {
-  background-color: #AAAAAA;
-}
-
-.highcharts-color-9 {
-  fill: #FF851B;
-  stroke: #FF851B;
-}
-
-.legend-color-9 {
-  background-color: #FF851B;
-}
-
-.highcharts-color-10 {
-  fill: #39CCCC;
-  stroke: #39CCCC;
-}
-
-.legend-color-10 {
-  background-color: #39CCCC;
-}
-
-.highcharts-color-11 {
   fill: #F012BE;
   stroke: #F012BE;
 }
 
-.legend-color-11 {
+.legend-color-1 {
   background-color: #F012BE;
+}
+
+.highcharts-color-2 {
+  fill: #39CCCC;
+  stroke: #39CCCC;
+}
+
+.legend-color-2 {
+  background-color: #39CCCC;
+}
+
+.highcharts-color-3 {
+  fill: #85144b;
+  stroke: #85144b;
+}
+
+.legend-color-3 {
+  background-color: #85144b;
+}
+
+.highcharts-color-4 {
+  fill: #33805d;
+  stroke: #33805d;
+}
+
+.legend-color-4 {
+  background-color: #33805d;
+}
+
+.highcharts-color-5 {
+  fill: #FF851B;
+  stroke: #FF851B;
+}
+
+.legend-color-5 {
+  background-color: #FF851B;
+}
+
+.highcharts-color-6 {
+  fill: #FF4136;
+  stroke: #FF4136;
+}
+
+.legend-color-6 {
+  background-color: #FF4136;
+}
+
+.highcharts-color-7 {
+  fill: #01FF70;
+  stroke: #01FF70;
+}
+
+.legend-color-7 {
+  background-color: #01FF70;
+}
+
+.highcharts-color-8 {
+  fill: #DDDDDD;
+  stroke: #DDDDDD;
+}
+
+.legend-color-8 {
+  background-color: #DDDDDD;
+}
+
+.highcharts-color-9 {
+  fill: #001F3F;
+  stroke: #001F3F;
+}
+
+.legend-color-9 {
+  background-color: #001F3F;
+}
+
+.highcharts-color-10 {
+  fill: #FFDC00;
+  stroke: #FFDC00;
+}
+
+.legend-color-10 {
+  background-color: #FFDC00;
+}
+
+.highcharts-color-11 {
+  fill: #B10DC9;
+  stroke: #B10DC9;
+}
+
+.legend-color-11 {
+  background-color: #B10DC9;
 }
 
 .highcharts-color-12 {
@@ -345,30 +346,156 @@ g.highcharts-series,
 }
 
 .highcharts-color-13 {
-  fill: #85144B;
-  stroke: #85144B;
+  fill: #000075;
+  stroke: #000075;
 }
 
 .legend-color-13 {
-  background-color: #85144B;
+  background-color: #000075;
 }
 
 .highcharts-color-14 {
-  fill: #DDDDDD;
-  stroke: #DDDDDD;
+  fill: #a9a9a9;
+  stroke: #a9a9a9;
 }
 
 .legend-color-14 {
-  background-color: #DDDDDD;
+  background-color: #a9a9a9;
 }
 
 .highcharts-color-15 {
-  fill: #01FF70;
-  stroke: #01FF70;
+  fill: #9A6324;
+  stroke: #9A6324;
 }
 
 .legend-color-15 {
-  background-color: #01FF70;
+  background-color: #9A6324;
+}
+
+.highcharts-color-16 {
+  fill: #e6194B;
+  stroke: #e6194B;
+}
+
+.legend-color-16 {
+  background-color: #e6194B;
+}
+
+.highcharts-color-17 {
+  fill: #aaffc3;
+  stroke: #aaffc3;
+}
+
+.legend-color-17 {
+  background-color: #aaffc3;
+}
+
+.highcharts-color-18 {
+  fill: #f032e6;
+  stroke: #f032e6;
+}
+
+.legend-color-18 {
+  background-color: #f032e6;
+}
+
+.highcharts-color-19 {
+  fill: #469990;
+  stroke: #469990;
+}
+
+.legend-color-19 {
+  background-color: #469990;
+}
+
+.highcharts-color-20 {
+  fill: #bfef45;
+  stroke: #bfef45;
+}
+
+.legend-color-20 {
+  background-color: #bfef45;
+}
+
+.highcharts-color-21 {
+  fill: #e6beff;
+  stroke: #e6beff;
+}
+
+.legend-color-21 {
+  background-color: #e6beff;
+}
+
+.highcharts-color-22 {
+  fill: #3cb44b;
+  stroke: #3cb44b;
+}
+
+.legend-color-22 {
+  background-color: #3cb44b;
+}
+
+.highcharts-color-23 {
+  fill: #911eb4;
+  stroke: #911eb4;
+}
+
+.legend-color-23 {
+  background-color: #911eb4;
+}
+
+.highcharts-color-24 {
+  fill: #42d4f4;
+  stroke: #42d4f4;
+}
+
+.legend-color-24 {
+  background-color: #42d4f4;
+}
+
+.highcharts-color-25 {
+  fill: #808000;
+  stroke: #808000;
+}
+
+.legend-color-25 {
+  background-color: #808000;
+}
+
+.highcharts-color-26 {
+  fill: #fffac8;
+  stroke: #fffac8;
+}
+
+.legend-color-26 {
+  background-color: #fffac8;
+}
+
+.highcharts-color-27 {
+  fill: #800000;
+  stroke: #800000;
+}
+
+.legend-color-27 {
+  background-color: #800000;
+}
+
+.highcharts-color-28 {
+  fill: #4363d8;
+  stroke: #4363d8;
+}
+
+.legend-color-28 {
+  background-color: #4363d8;
+}
+
+.highcharts-color-29 {
+  fill: #f58231;
+  stroke: #f58231;
+}
+
+.legend-color-29 {
+  background-color: #f58231;
 }
 
 .highcharts-area {
@@ -390,8 +517,9 @@ g.highcharts-series,
 }
 
 .highcharts-data-label {
-  font-size: 0.9em;
-  font-weight: bold;
+  font-size: 0.8em;
+  font-weight: 600;
+  letter-spacing: 0.1em;
 }
 
 .highcharts-data-label-box {
@@ -471,14 +599,16 @@ g.highcharts-series,
 }
 
 .highcharts-treemap-series .highcharts-point {
-  stroke-width: 1px;
-  stroke: #e6e6e6;
+  stroke-width: 2px;
+  stroke: #2e3838;
   transition: stroke 250ms, fill 250ms, fill-opacity 250ms;
+  opacity: 0.8;
 }
 
 .highcharts-treemap-series .highcharts-point-hover {
   stroke: #dffcff;
   transition: stroke 25ms, fill 25ms, fill-opacity 25ms;
+  opacity: 1;
 }
 
 .highcharts-treemap-series .highcharts-above-level {
@@ -509,6 +639,10 @@ g.highcharts-series,
 }
 
 /* Legend */
+.highcharts-legend {
+  height: 100px;
+}
+
 .highcharts-legend-box {
   fill: none;
   stroke-width: 0;
@@ -747,12 +881,12 @@ circle.highcharts-legend-nav-active, circle.highcharts-legend-nav-inactive {
 
 .highcharts-button-hover {
   transition: fill 0ms;
-  fill: #e6e6e6;
+  fill: #dffcff;
   stroke: #cccccc;
 }
 
 .highcharts-button-hover text {
-  fill: #dffcff;
+  fill: #2e3838;
 }
 
 .highcharts-button-pressed {
@@ -849,7 +983,8 @@ input.highcharts-range-selector {
 /* Highmaps */
 .highcharts-map-series .highcharts-point {
   transition: fill 500ms, fill-opacity 500ms, stroke-width 250ms;
-  stroke: #cccccc;
+  stroke: #2e3838;
+  stroke-width: 0.5px;
 }
 
 .highcharts-map-series .highcharts-point-hover {
@@ -868,8 +1003,15 @@ input.highcharts-range-selector {
 
 .highcharts-map-navigation {
   font-size: 1.3em;
-  font-weight: bold;
   text-align: center;
+}
+
+.highcharts-zoom-in text {
+  transform: translateX(3px) translateY(-2px);
+}
+
+.highcharts-zoom-out text {
+  transform: translateX(4px) translateY(-2px);
 }
 
 .highcharts-coloraxis {
@@ -881,7 +1023,7 @@ input.highcharts-range-selector {
 }
 
 .highcharts-null-point {
-  fill: #2e3838;
+  fill: #2e3838 !important;
 }
 
 /* 3d charts */
@@ -1000,14 +1142,146 @@ text.highcharts-drilldown-data-label,
   stroke-width: 1px;
 }
 
-.scatter .highcharts-point {
-  opacity: 0.6;
+.scatter .highcharts-point, .bubbles .highcharts-point, .wheel .highcharts-point {
+  opacity: 0.7;
 }
 
-.scatter .highcharts-point-hover {
+.scatter .highcharts-point-hover, .bubbles .highcharts-point-hover, .wheel .highcharts-point-hover {
   opacity: 1;
 }
 
-.scatter .highcharts-point-select {
+.scatter .highcharts-point-select, .bubbles .highcharts-point-select, .wheel .highcharts-point-select {
   opacity: 1;
+}
+
+.wheel .highcharts-point {
+  stroke-width: 1px;
+}
+
+.wheel .highcharts-node {
+  opacity: 1;
+}
+
+.highcharts-xaxis-grid .highcharts-grid-line {
+  stroke-width: 1px;
+}
+
+.highcharts-data-label-color-0 text {
+  fill: #dffcff;
+}
+
+.highcharts-data-label-color-1 text {
+  fill: #dffcff;
+}
+
+.highcharts-data-label-color-2 text {
+  fill: #2e3838;
+}
+
+.highcharts-data-label-color-3 text {
+  fill: #dffcff;
+}
+
+.highcharts-data-label-color-4 text {
+  fill: #dffcff;
+}
+
+.highcharts-data-label-color-5 text {
+  fill: #2e3838;
+}
+
+.highcharts-data-label-color-6 text {
+  fill: #dffcff;
+}
+
+.highcharts-data-label-color-7 text {
+  fill: #2e3838;
+}
+
+.highcharts-data-label-color-8 text {
+  fill: #2e3838;
+}
+
+.highcharts-data-label-color-9 text {
+  fill: #dffcff;
+}
+
+.highcharts-data-label-color-10 text {
+  fill: #2e3838;
+}
+
+.highcharts-data-label-color-11 text {
+  fill: #dffcff;
+}
+
+.highcharts-data-label-color-12 text {
+  fill: #2e3838;
+}
+
+.highcharts-data-label-color-13 text {
+  fill: #dffcff;
+}
+
+.highcharts-data-label-color-14 text {
+  fill: #2e3838;
+}
+
+.highcharts-data-label-color-15 text {
+  fill: #dffcff;
+}
+
+.highcharts-data-label-color-16 text {
+  fill: #dffcff;
+}
+
+.highcharts-data-label-color-17 text {
+  fill: #2e3838;
+}
+
+.highcharts-data-label-color-18 text {
+  fill: #2e3838;
+}
+
+.highcharts-data-label-color-19 text {
+  fill: #dffcff;
+}
+
+.highcharts-data-label-color-20 text {
+  fill: #2e3838;
+}
+
+.highcharts-data-label-color-21 text {
+  fill: #2e3838;
+}
+
+.highcharts-data-label-color-22 text {
+  fill: #dffcff;
+}
+
+.highcharts-data-label-color-23 text {
+  fill: #dffcff;
+}
+
+.highcharts-data-label-color-24 text {
+  fill: #2e3838;
+}
+
+.highcharts-data-label-color-25 text {
+  fill: #dffcff;
+}
+
+.highcharts-data-label-color-26 text {
+  fill: #2e3838;
+}
+
+.highcharts-data-label-color-27 text {
+  fill: #dffcff;
+}
+
+.highcharts-data-label-color-28 text {
+  fill: #dffcff;
+}
+
+.highcharts-data-label-color-29 text {
+  fill: #2e3838;
 }
