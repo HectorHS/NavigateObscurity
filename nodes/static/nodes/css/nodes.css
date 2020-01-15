@@ -30,6 +30,26 @@
   margin: 10px 0 0;
 }
 
+.graph-instructions ul:nth-child(1) {
+  margin-bottom: 0;
+}
+
+@media only screen and (min-width: 768px) {
+  .graph-instructions ul:nth-child(1) {
+    margin-bottom: 13px;
+  }
+}
+
+.graph-instructions ul:nth-child(2) {
+  margin-top: 0;
+}
+
+@media only screen and (min-width: 768px) {
+  .graph-instructions ul:nth-child(2) {
+    margin-top: 13px;
+  }
+}
+
 .graph-instructions li {
   padding-bottom: 10px;
 }
@@ -40,10 +60,18 @@
 
 .node-container {
   display: flex;
-  flex-direction: row;
+  flex-direction: column-reverse;
   background-color: #2e3838;
-  padding: 0 50px;
-  height: 85vh;
+  padding: 0 20px;
+  height: 150vh;
+}
+
+@media only screen and (min-width: 768px) {
+  .node-container {
+    height: 85vh;
+    flex-direction: row;
+    padding: 0 50px;
+  }
 }
 
 .node-container #context-container {

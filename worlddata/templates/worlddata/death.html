@@ -2,6 +2,18 @@
 {% load static %}
 
 {% block styles %}
+<!-- Meta -->
+<title>{{ title }} - Navigate Obscurity</title>
+<meta name="description" content="{{ abstract }}">
+<meta property="og:image" content={% static "worlddata/images/death-social.jpg" %} />
+<meta property="og:title" content="{{ title }} - Navigate Obscurity" />
+<meta property="og:url" content="https://www.navigateobscurity.com/data/death" />
+<meta name="twitter:card" content="summary" />
+<meta name="twitter:url" content="https://www.navigateobscurity.com/data/death" />
+<meta name="twitter:title" content="{{ title }} - Navigate Obscurity" />
+<meta name="twitter:description" content="{{ abstract }}" />
+<meta name="twitter:image" content={% static "worlddata/images/death-social.jpg" %} />
+
 <!-- We use d3 libraries to load data -->
 <script src="https://d3js.org/d3-dsv.v1.min.js"></script>
 <script src="https://d3js.org/d3-fetch.v1.min.js"></script>
@@ -22,7 +34,7 @@
 
 {% block content %}
 <section class="banner-container">
-    <h1 class="header-title-banner">Death</h1>
+    <h1 class="header-title-banner">{{title}}</h1>
 </section>
 
 <section>
@@ -44,7 +56,7 @@
             Many of the causes are clickable so you can see the breakdowns of each cause category.
         </p>
     </div>
-    <div class="chart-container death-tree filters-on-top">
+    <div class="container chart-container death-tree filters-on-top">
         <div class="chart-options" style="max-width:100%">
             <div class="chart-filters"></div>
         </div>
@@ -67,7 +79,7 @@
             for the US in 1900.
         </p>
     </div>
-    <div class="chart-container old-death-tree">
+    <div class="container chart-container old-death-tree">
         <div id="old_death_tree" class="treemap" style="width:100%;"></div>
     </div>
     <div class="source-text">
@@ -86,7 +98,7 @@
             or nutritional deficiencies.
         </p>
     </div>
-    <div class="chart-container death-map filters-on-top">
+    <div class="container chart-container death-map filters-on-top">
         <div class="chart-options" style="max-width:100%">
             <div class="chart-filters"></div>
         </div>
@@ -109,7 +121,7 @@
             but it definitely helps.
         </p>
     </div>
-    <div class="chart-container death-bars filters-on-top">
+    <div class="container chart-container death-bars filters-on-top">
         <div class="chart-options" style="max-width:100%">
             <div class="chart-filters"></div>
             <div class="chart-legend"></div>

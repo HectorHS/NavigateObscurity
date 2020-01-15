@@ -2,6 +2,18 @@
 {% load static %}
 
 {% block styles %}
+<!-- Meta -->
+<title>{{ title }} - Navigate Obscurity</title>
+<meta name="description" content="{{ abstract }}">
+<meta property="og:image" content={% static "worlddata/images/biodiversity-social.jpg" %} />
+<meta property="og:title" content="{{ title }} - Navigate Obscurity" />
+<meta property="og:url" content="https://www.navigateobscurity.com/data/biodiversity" />
+<meta name="twitter:card" content="summary" />
+<meta name="twitter:url" content="https://www.navigateobscurity.com/data/biodiversity" />
+<meta name="twitter:title" content="{{ title }} - Navigate Obscurity" />
+<meta name="twitter:description" content="{{ abstract }}" />
+<meta name="twitter:image" content={% static "worlddata/images/biodiversity-social.jpg" %} />
+
 <!-- We use d3 libraries to load data -->
 <script src="https://d3js.org/d3-dsv.v1.min.js"></script>
 <script src="https://d3js.org/d3-fetch.v1.min.js"></script>
@@ -17,7 +29,7 @@
 
 {% block content %}
 <section class="banner-container">
-    <h1 class="header-title-banner">Biodiversity</h1>
+    <h1 class="header-title-banner">{{title}}</h1>
 </section>
 <!-- Biomass pie -->
 <section>
@@ -39,7 +51,7 @@
             without tree trunks and stems, plants still dominate the global biomass of Earth with 150 gt.
         </p>
     </div>
-    <div class="chart-container biomass-pie legend-right filters-right">
+    <div class="container chart-container biomass-pie legend-right filters-right">
         <div class="chart-options" style="min-width:260px">
             <div class="chart-filters"></div>
             <div class="chart-legend wide-screen-legend"></div>
@@ -66,7 +78,7 @@
             that populations are presented in powers of ten, so every step indicates a tenfold increase of population. 
         </p>
     </div>
-    <div class="chart-container biomass-scatter legend-below">
+    <div class="container chart-container biomass-scatter legend-below">
         <div id="scatter_plot" class="scatter" style="width:100%;"></div>
         <div class="chart-options">
             <div class="chart-legend"></div>

@@ -2,6 +2,18 @@
 {% load static %}
 
 {% block styles %}
+<!-- Meta -->
+<title>{{ title }} - Navigate Obscurity</title>
+<meta name="description" content="{{ abstract }}">
+<meta property="og:image" content={% static "worlddata/images/sustainability-social.jpg" %} />
+<meta property="og:title" content="{{ title }} - Navigate Obscurity" />
+<meta property="og:url" content="https://www.navigateobscurity.com/data/sustainability" />
+<meta name="twitter:card" content="summary" />
+<meta name="twitter:url" content="https://www.navigateobscurity.com/data/sustainability" />
+<meta name="twitter:title" content="{{ title }} - Navigate Obscurity" />
+<meta name="twitter:description" content="{{ abstract }}" />
+<meta name="twitter:image" content={% static "worlddata/images/sustainability-social.jpg" %} />
+
 <!-- We use d3 libraries to load data -->
 <script src="https://d3js.org/d3-dsv.v1.min.js"></script>
 <script src="https://d3js.org/d3-fetch.v1.min.js"></script>
@@ -20,7 +32,7 @@
 
 {% block content %}
 <section class="banner-container">
-    <h1 class="header-title-banner">Sustainability</h1>
+    <h1 class="header-title-banner">{{title}}</h1>
 </section>
 
 <section>
@@ -54,7 +66,7 @@
                 href="http://data.footprintnetwork.org/#/">Global Footprint Network</a>.
         </p>
     </div>
-    <div class="chart-container sustain-map filters-on-top">
+    <div class="container chart-container sustain-map filters-on-top">
         <div class="chart-options" style="max-width:100%">
             <div class="chart-filters"></div>
         </div>
@@ -73,7 +85,7 @@
             data for each country. 
         </p>
     </div>
-    <div class="chart-container sustain-area filters-on-top">
+    <div class="container chart-container sustain-area filters-on-top">
         <div class="chart-options" style="max-width:100%">
             <div class="chart-filters"></div>
         </div>

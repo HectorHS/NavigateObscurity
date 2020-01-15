@@ -50,15 +50,12 @@
 .chart-container {
   display: flex;
   flex-direction: column;
-  background-color: $dark-grey;
   background-image: url(../images/spinner.gif);
   background-repeat: no-repeat;
   background-position: center;
-  padding: 0 20px;
   @media only screen and (min-width: $mobile-breakpoint)
       {
         flex-direction: row;
-        padding: 0 50px;
       }
 
   .chart-options {
@@ -111,6 +108,7 @@
         top: 5px;
         left: 5px;
         height: 34px;
+        max-width: 450px;
         overflow: hidden;
         border: 1px solid $light-grey;
         border-radius: 5px;

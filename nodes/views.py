@@ -24,7 +24,9 @@ class HeadStrongView(TemplateView):
         comment_form = CommentForm()
         context = {
             'comments': comments,
-            'comment_form': comment_form
+            'comment_form': comment_form,
+            'title': self.page.title,
+            'abstract': self.page.abstract
         }
         return context
 

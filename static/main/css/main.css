@@ -392,7 +392,13 @@ template {
   position: absolute;
   float: left;
   line-height: 40px;
-  padding-left: 50px;
+  padding-left: 20px;
+}
+
+@media (min-width: 768px) {
+  .logo {
+    padding-left: 50px;
+  }
 }
 
 .logo a img {
@@ -526,7 +532,7 @@ nav ul li ul li a {
   display: block;
   position: absolute;
   top: 5px;
-  right: 80px;
+  right: 60px;
 }
 
 @media screen and (min-width: 768px) {
@@ -578,7 +584,7 @@ nav ul li ul li a {
 
 .footer-container {
   position: relative;
-  height: 500px;
+  height: 100vh;
   background-image: url(../images/footer.jpg);
   background-position: center;
   background-repeat: no-repeat;
@@ -590,8 +596,8 @@ nav ul li ul li a {
 
 .footer-title {
   position: absolute;
-  bottom: 50px;
-  left: 50px;
+  bottom: 5vh;
+  left: 20px;
   padding-left: 10px;
   border-left: 5px solid #2f98d0;
   color: #222a2a;
@@ -599,6 +605,13 @@ nav ul li ul li a {
   font-weight: 600;
   letter-spacing: 1px;
   word-spacing: 3px;
+  word-break: break-word;
+}
+
+@media (min-width: 768px) {
+  .footer-title {
+    left: 50px;
+  }
 }
 
 .bottom-bar {
@@ -937,19 +950,31 @@ hr {
 }
 
 .container {
-  padding: 50px;
+  padding: 20px;
   background-color: #2e3838;
   color: #dffcff;
 }
 
+@media (min-width: 768px) {
+  .container {
+    padding: 50px;
+  }
+}
+
 .banner-container {
-  height: 300px;
+  height: 50vh;
   background-image: url(../images/banner.jpg);
 }
 
 .header-title-banner {
-  top: 230px;
-  left: 50px;
+  top: 35vh;
+  left: 20px;
+}
+
+@media (min-width: 768px) {
+  .header-title-banner {
+    left: 50px;
+  }
 }
 
 .comment-container {
@@ -1023,12 +1048,12 @@ hr {
 .two-column-text {
   display: grid;
   grid-template-columns: 1fr;
-  grid-gap: 50px;
 }
 
 @media (min-width: 768px) {
   .two-column-text {
     grid-template-columns: 1fr 1fr;
+    grid-gap: 50px;
   }
 }
 
@@ -1053,6 +1078,8 @@ hr {
   align-items: center;
 }
 
-.limited-width {
-  padding-right: 30%;
+@media (min-width: 768px) {
+  .limited-width {
+    padding-right: 30%;
+  }
 }

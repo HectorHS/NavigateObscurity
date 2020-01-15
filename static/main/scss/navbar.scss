@@ -11,7 +11,10 @@
   position: absolute;
   float: left;
   line-height: $nav-height;
-  padding-left: $nav-padding;
+  padding-left: 20px;
+  @media (min-width: $mobile-breakpoint) {
+    padding-left:50px;
+  }
   a img {
     margin-top:2px;
       max-height: $nav-height - 4px;
@@ -99,7 +102,7 @@ nav {
   display: none;
   @media screen and (min-width: $mobile-breakpoint) {
       display: block !important;
-      padding-right: $nav-padding;
+      padding-right: 50px;
   }
 }
 .nav-dropdown {
@@ -114,7 +117,7 @@ nav {
   display: block;
   position: absolute;
   top: 5px;
-  right: 80px;
+  right: 60px;
   @media screen and (min-width: $mobile-breakpoint) {
     display: none;
   }

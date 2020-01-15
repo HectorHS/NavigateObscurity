@@ -5,14 +5,17 @@
 @import 'hexagons';
 
 .header-container { 
-  height: 100%;
+  height: 100vh;
   background-image: url(../images/header.jpg);
   @extend  %container-image;
 }
 .header-title-main {
-  bottom:50px;
-  left:50px;
+  bottom: 5vh;
+  left:20px;
   @extend %header-title;
+  @media (min-width: $mobile-breakpoint) {
+    left:50px;
+  }
 }
 .data-container {
   display: grid;

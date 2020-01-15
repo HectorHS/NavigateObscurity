@@ -29,6 +29,20 @@ max-width:600px;
   h5 {
     margin: 10px 0 0;
   }
+  ul {
+  &:nth-child(1) {
+    margin-bottom: 0;
+    @media only screen and (min-width: $mobile-breakpoint) {
+      margin-bottom: 13px;
+    }
+  }
+    &:nth-child(2) {
+      margin-top: 0;
+      @media only screen and (min-width: $mobile-breakpoint) {
+        margin-top: 13px;
+      }
+    }
+  }
   li{
     padding-bottom: 10px;
   }
@@ -38,10 +52,15 @@ max-width:600px;
 }
 .node-container {
   display: flex;
-  flex-direction: row;
+  flex-direction: column-reverse;
   background-color: $dark-grey;
-  padding: 0 50px;
-  height: 85vh;
+  padding: 0 20px;
+  height: 150vh;
+  @media only screen and (min-width: $mobile-breakpoint) {
+    height: 85vh; 
+    flex-direction: row;
+    padding: 0 50px;
+  }
   #context-container {
     flex: 1;
     color: $almost-white;

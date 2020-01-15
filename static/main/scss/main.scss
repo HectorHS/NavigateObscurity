@@ -94,19 +94,25 @@ hr {
   }
 }
 .container {
-  padding:50px;
+  padding:20px;
   background-color: $dark-grey;
   color: $almost-white;
+  @media (min-width: $mobile-breakpoint) {
+    padding:50px;
+  }
 }
 .banner-container {
-  height: 300px;
+  height: 50vh;
   background-image: url(../images/banner.jpg);
   @extend  %container-image;
 }
 .header-title-banner {
-  top:230px;
-  left:50px;
+  top:35vh;
+  left:20px;
   @extend %header-title;
+  @media (min-width: $mobile-breakpoint) {
+    left:50px;
+  }
 }
 .comment-container {
   padding: 0 3%;
@@ -155,10 +161,10 @@ hr {
 .two-column-text {
   display: grid;
   grid-template-columns: 1fr;
-  grid-gap: 50px;
   
   @media (min-width: $mobile-breakpoint) {
     grid-template-columns: 1fr 1fr; 
+    grid-gap: 50px;
   }
 }
 
@@ -182,7 +188,9 @@ hr {
   align-items: center;
 }
  .limited-width {
-  padding-right: 30%;
+  @media (min-width: $mobile-breakpoint) {
+    padding-right: 30%;
+  }
 }
  
 

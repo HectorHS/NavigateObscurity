@@ -1,6 +1,6 @@
 .footer-container {
     position: relative;
-    height: 500px;
+    height: 100vh;
     background-image: url(../images/footer.jpg);
     background-position: center;
     background-repeat: no-repeat;
@@ -8,8 +8,8 @@
   }
   .footer-title {
     position: absolute;
-    bottom:50px;
-    left:50px;
+    bottom: 5vh;
+    left: 20px;
     padding-left: 10px;
     border-left: 5px solid $bright-blue;
     color: $darker-grey;
@@ -17,6 +17,10 @@
     font-weight: 600;
     letter-spacing: 1px;
     word-spacing: 3px;
+    word-break: break-word;
+    @media (min-width: $mobile-breakpoint) {
+      left:50px;
+    }
   }
   .bottom-bar {
     background-color: black;
