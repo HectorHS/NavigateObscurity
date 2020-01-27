@@ -516,6 +516,14 @@ nav ul li ul li a {
   }
 }
 
+.nav-list-mobile {
+  display: none;
+}
+
+.nav-list-mobile li ul {
+  display: none;
+}
+
 .nav-dropdown {
   z-index: 1;
   box-shadow: 0 3px 12px rgba(0, 0, 0, 0.15);

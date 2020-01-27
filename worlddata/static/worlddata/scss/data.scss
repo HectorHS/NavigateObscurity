@@ -2,6 +2,9 @@
 @import '../../../../main/static/main/scss/mixins.scss';
 @import '../../../../main/static/main/scss/parents.scss';
 
+figure {
+  margin: 0;
+}
 .data-box-container {
     display: grid;
     grid-gap: 50px;

@@ -46,6 +46,23 @@
                     </ul>
                 </li>
             </ul>
+            <ul class="nav-list-mobile">
+                <li><a href="{% url 'home' %}">Home</a></li>
+                <li><a id="data_toggle">Data</a>
+                    <ul class="nav-dropdown-mobile data-dropdown">
+                        {% for page in data_pages %}
+                        <li><a href="{% url 'worlddata:'|add:page.slug %}">{{page.title}}</a></li>
+                        {% endfor %}
+                    </ul>
+                </li>
+                <li><a id="notes_toggle">Notes</a>
+                    <ul class="nav-dropdown-mobile notes-dropdown">
+                        {% for page in node_pages %}
+                        <li><a href="{% url 'nodes:'|add:page.slug %}">{{page.title}}</a></li>
+                        {% endfor %}
+                    </ul>
+                </li>
+            </ul>
         </nav>
     </section>
 

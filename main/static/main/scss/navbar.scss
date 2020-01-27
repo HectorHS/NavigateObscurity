@@ -105,6 +105,14 @@ nav {
       padding-right: 50px;
   }
 }
+.nav-list-mobile {
+  display: none;
+  li {
+    ul {
+      display:none;
+    }
+  }
+}
 .nav-dropdown {
   z-index: 1;
   box-shadow: 0 3px 12px rgba(0, 0, 0, 0.15);
@@ -123,8 +131,7 @@ nav {
   }
 }
   
-  //Mobile menu hamburger
-  
+//Mobile menu hamburger
 #nav-toggle {
   position: absolute;
   top: 2px;
