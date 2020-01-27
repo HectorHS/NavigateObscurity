@@ -85,18 +85,23 @@ max-width:600px;
     flex:2;
   }
   #graph-container {
+    .node-controls {
+      display: flex;
+      flex-direction: column;
+      float: right;
+    }
     .search-container {
       border-radius: 10px;
       border-width: 1px;
       border-style: solid;
       position: relative;
       display: block;
-      right: -50px;
-      float: right;
       z-index: 10;
       color: $almost-white;
       overflow: hidden;
       height: 34px;
+      align-self: flex-end;
+      margin-bottom: 10px;
       &:hover {
         border-color: $bright-blue;
       }
@@ -114,11 +119,15 @@ max-width:600px;
   #selected-nodes {
     position: absolute;
     z-index: 10;
+    padding-top: 40px;
     .selected-node {
       background-color: $blue;
       padding: 3px 10px;
       border-radius: 20px;
       margin: 5px;
+    }
+    @media only screen and (min-width: $mobile-breakpoint) {
+      padding-top: 0px;
     }
   }
   .zoom-button {
@@ -131,21 +140,13 @@ max-width:600px;
     border-style: solid;
     border-width: 1px;
     border-color: $almost-white;
-    float: right;
+    align-self: flex-end;
+    height: 40px;
+    width: 40px;
   }
   .zoom-button:hover {
     color: $dark-grey;
     background-color: $almost-white;
-  }
-  .zoom-in {
-    top: 50px;
-    right: 20px;
-    padding: 5px 10px;
-  }
-  .zoom-out {
-    top: 84px;
-    right: -14px;
-    padding: 5px 11.5px;
   }
 }
 #node-legend{

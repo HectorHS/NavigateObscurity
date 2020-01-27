@@ -340,23 +340,19 @@ function addDropdown(parent, name, width, taxonChange, options, selected) {
     selectContainer.style.width = width;
     parent.appendChild(selectContainer);
 
-    // Create and append taxon list
+    // Create and append list
     var select = document.createElement("select");
     select.id = name + "-select";
     select.onchange = taxonChange;
     selectContainer.appendChild(select);
 
     // Create and append the options
+    var template = '<option value="tempvalue">tempvalue</option>';
+    var placeholder = [];
     for (var i = 0; i < options.length; i++) {
-        var option = document.createElement("option");
-        option.value = options[i];
-        option.text = options[i];
-        // Setting default value to selected
-        if (option.value == selected) {
-            option.selected = "selected";
-        }
-        select.appendChild(option);
+        placeholder.push(template.replace(/tempvalue/g, options[i]));
     }
+    select.innerHTML = placeholder.join('');
 }
 
 function addSlider(parent, name, min, max, value, onChange) {

@@ -69,7 +69,7 @@
         </p>
     </div>
     <div class="container chart-container sustain-map filters-on-top">
-        <div class="chart-options" style="max-width:100%">
+        <div class="chart-options chart-options-map" style="max-width:100%">
             <div class="chart-filters"></div>
         </div>
         <div id="sustain_map" class="map" style="width:100%;"></div>
@@ -469,7 +469,7 @@
             const all_areas = ["Built up land", "Crop land", "Fishing grounds", "Forest land", "Grazing land"];
 
             // Default values
-            var measure = "Ecological Footprint of Consumption",
+            var measure = "Footprint of Consumption",
                 country = "World";
 
             var container_class = ".sustain-area";
@@ -574,7 +574,7 @@
 
             // Create a measure dropdown
             var measureName = "area-measure",
-                measureWidth = "420px";
+                measureWidth = "320px";
             addDropdown(filters, measureName, measureWidth, measureChange, all_measures, measure);
 
             // Update chart data on measure change
@@ -598,7 +598,7 @@
 
             // Create a country dropdown
             var countryName = "area-country",
-                countryWidth = "350px";
+                countryWidth = "320px";
             addDropdown(filters, countryName, countryWidth, countryChange, all_countries, country);
 
 

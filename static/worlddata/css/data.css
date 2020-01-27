@@ -168,7 +168,12 @@
   display: inline-block;
   width: 250px;
   position: relative;
-  bottom: 8px;
+}
+
+@media only screen and (min-width: 768px) {
+  .chart-container .chart-options .chart-filters .slider-container {
+    bottom: 8px;
+  }
 }
 
 .chart-container .chart-options .chart-filters .slider-container .slider {
@@ -242,6 +247,10 @@
   border-right: 7px solid #9dafaf;
   border-bottom: 7px solid transparent;
   content: '';
+}
+
+.chart-container .chart-options-map {
+  padding-left: 0;
 }
 
 @media only screen and (min-width: 768px) {

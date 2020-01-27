@@ -151,7 +151,11 @@
         display: inline-block;
         width: 250px;
         position: relative;
-        bottom: 8px;
+        
+        @media only screen and (min-width: $mobile-breakpoint)
+        {
+          bottom: 8px;
+        }
       
         .slider {
           -webkit-appearance: none;
@@ -224,6 +228,9 @@
         }
       }
     }
+  }
+  .chart-options-map {
+    padding-left: 0;
   }
 }
 

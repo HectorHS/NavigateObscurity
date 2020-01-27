@@ -84,12 +84,15 @@
   <div id="context-container" class="nodes-text"> </div>
   <div id="graph-container" class="nodes" style="width:100%;">
     <div id="selected-nodes"></div>
-    <button type="button" id="zoom-in-button" class="zoom-button zoom-in">+</button>
-    <button type="button" id="zoom-out-button" class="zoom-button zoom-out">-</button>
-    <div class="search-container">
-      <input id="search-input" list="nodes-datalist" placeholder="Search for a node">
+    <div class="node-controls">
+      <div class="search-container">
+        <input id="search-input" list="nodes-datalist" placeholder="Search for a node">
+      </div>
+      <datalist id="nodes-datalist"></datalist>
+      <button type="button" id="zoom-in-button" class="zoom-button zoom-in">+</button>
+      <button type="button" id="zoom-out-button" class="zoom-button zoom-out">-</button>
     </div>
-    <datalist id="nodes-datalist"></datalist>
+
   </div>
 </section>
 <!-- Legend -->
@@ -179,6 +182,7 @@
       drawLabels: false,
       mouseWheelEnabled: false,
       doubleClickEnabled: false,
+      touchEnabled: false,
     },
   });
 
