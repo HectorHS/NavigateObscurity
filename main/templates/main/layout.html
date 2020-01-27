@@ -19,7 +19,7 @@
     <!--  Navigation bar -->
     <section class="nav-bar">
         <div class="logo">
-            <a href="">
+            <a href="{% url 'home' %}">
                 <img src={% static "main/images/logo.svg" alt='navigate obscurity logo' %}></a>
         </div>
         <nav role="navigation">
@@ -79,7 +79,10 @@
                 Get in touch at hector@navigateobscurity.com</h2>
         </div>
         <div class="bottom-bar">
-            <p>Navigate Obscurity 2020</p>
+            <p>Navigate Obscurity 2020 | Created by the </p>
+            <a href="https://virtual-alchemist.com"> Virtual Alchemist
+                <img src={% static "main/images/VA-logo.png" alt='virtual alchemist logo' %}>
+            </a>
         </div>
     </section>
     <!-- TODO move dependencies on better place? -->
