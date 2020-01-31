@@ -359,8 +359,9 @@
         .then(function (data) {
 
             const all_countries = [...new Set(data.map(d => d.country_host))].sort(),
-                all_years = [...new Set(data.map(d => d.year))].sort(),
-                all_parameters = ["Destination", "Origin"];
+
+                all_parameters = ["Destination", "Origin"],
+                all_years = ["1990", "1995", "2000", "2005", "2010", "2015", "2017"];
 
             var country = "Lebanon",
                 year = "2017",
@@ -378,26 +379,26 @@
                     total_migrants = 0;
                 if (parameter == "Destination") {
                     for (let row of data) {
-                        if (country == row.country_host && year == row.year) {
-                            new_data.push({ id: row.country_origin, name: row.country_origin, absolute: +row.population, value: 0, colorIndex: i });
+                        if (country == row.country_host) {
+                            new_data.push({ id: row.country_origin, name: row.country_origin, absolute: +row[year], value: 0, colorIndex: i });
                             if (i == 30) {
                                 i = 0;
                             } else {
                                 i++;
                             }
-                            total_migrants += +row.population;
+                            total_migrants += +row[year];
                         }
                     }
                 } else {
                     for (let row of data) {
-                        if (country == row.country_origin && year == row.year) {
-                            new_data.push({ id: row.country_host, name: row.country_host, absolute: +row.population, value: 0, colorIndex: i });
+                        if (country == row.country_origin) {
+                            new_data.push({ id: row.country_host, name: row.country_host, absolute: +row[year], value: 0, colorIndex: i });
                             if (i == 30) {
                                 i = 0;
                             } else {
                                 i++;
                             }
-                            total_migrants += +row.population;
+                            total_migrants += +row[year];
                         }
                     }
                 }

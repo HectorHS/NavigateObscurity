@@ -198,6 +198,138 @@
             const all_locations = [...new Set(data.map(d => d.location))].sort()
             const all_sexes = [...new Set(data.map(d => d.sex))].sort()
             const all_ages = [...new Set(data.map(d => d.age))].sort()
+            const all_causes = ["Acute glomerulonephritis",
+                "Adverse effects of medical treatment",
+                "African trypanosomiasis",
+                "Alcohol use disorders",
+                "Alzheimer's disease and other dementias",
+                "Animal contact",
+                "Anxiety disorders",
+                "Aortic aneurysm",
+                "Atrial fibrillation and flutter",
+                "Attention-deficit/hyperactivity disorder",
+                "Autism spectrum disorders",
+                "Bipolar disorder",
+                "Bladder cancer",
+                "Brain and nervous system cancer",
+                "Breast cancer",
+                "Cancer",
+                "Cardiomyopathy and myocarditis",
+                "Cardiovascular diseases",
+                "Cervical cancer",
+                "Chagas disease",
+                "Chronic kidney disease",
+                "Chronic respiratory diseases",
+                "Colon and rectum cancer",
+                "Conduct disorder",
+                "Conflict and terrorism",
+                "Cystic echinococcosis",
+                "Cysticercosis",
+                "Dengue",
+                "Depressive disorders",
+                "Diabetes and kidney diseases",
+                "Diabetes mellitus",
+                "Diarrheal diseases",
+                "Digestive diseases",
+                "Drowning",
+                "Drug use disorders",
+                "Eating disorders",
+                "Ebola",
+                "Endocarditis",
+                "Enteric infections",
+                "Environmental heat and cold exposure",
+                "Epilepsy",
+                "Esophageal cancer",
+                "Executions and police conflict",
+                "Exposure to forces of nature",
+                "Exposure to mechanical forces",
+                "Falls",
+                "Fire, heat, and hot substances",
+                "Food-borne trematodiases",
+                "Foreign body",
+                "Gallbladder and biliary tract cancer",
+                "Headache disorders",
+                "HIV/AIDS",
+                "Hodgkin lymphoma",
+                "Hypertensive heart disease",
+                "Idiopathic developmental intellectual disability",
+                "Interpersonal violence",
+                "Intestinal nematode infections",
+                "Invasive Non-typhoidal Salmonella (iNTS)",
+                "Ischemic heart disease",
+                "Kidney cancer",
+                "Larynx cancer",
+                "Leishmaniasis",
+                "Leprosy",
+                "Leukemia",
+                "Lip and oral cavity cancer",
+                "Liver cancer",
+                "Lower respiratory infections",
+                "Lymphatic filariasis",
+                "Malaria",
+                "Malignant skin melanoma",
+                "Maternal and neonatal disorders",
+                "Maternal disorders",
+                "Mental disorders",
+                "Mesothelioma",
+                "Motor neuron disease",
+                "Multiple myeloma",
+                "Multiple sclerosis",
+                "Musculoskeletal disorders",
+                "Nasopharynx cancer",
+                "Neglected tropical diseases and malaria",
+                "Neonatal disorders",
+                "Neurological disorders",
+                "Non-Hodgkin lymphoma",
+                "Non-melanoma skin cancer",
+                "Non-rheumatic valvular heart disease",
+                "Nutritional deficiencies",
+                "Onchocerciasis",
+                "Other cardiovascular and circulatory diseases",
+                "Other infectious diseases",
+                "Other intestinal infectious diseases",
+                "Other malignant neoplasms",
+                "Other mental disorders",
+                "Other neglected tropical diseases",
+                "Other neoplasms",
+                "Other neurological disorders",
+                "Other non-communicable diseases",
+                "Other pharynx cancer",
+                "Other transport injuries",
+                "Other unintentional injuries",
+                "Otitis media",
+                "Ovarian cancer",
+                "Pancreatic cancer",
+                "Parkinson's disease",
+                "Peripheral artery disease",
+                "Poisonings",
+                "Prostate cancer",
+                "Rabies",
+                "Respiratory infections and tuberculosis",
+                "Rheumatic heart disease",
+                "Road injuries",
+                "Schistosomiasis",
+                "Schizophrenia",
+                "Self-harm",
+                "Sense organ diseases",
+                "Sexually transmitted infections excluding HIV",
+                "Skin and subcutaneous diseases",
+                "Stomach cancer",
+                "Stroke",
+                "Substance use disorders",
+                "Testicular cancer",
+                "Thyroid cancer",
+                "Tracheal, bronchus, and lung cancer",
+                "Trachoma",
+                "Transport injuries",
+                "Tuberculosis",
+                "Typhoid and paratyphoid",
+                "Unintentional injuries",
+                "Upper respiratory infections",
+                "Uterine cancer",
+                "Yellow fever",
+                "Zika virus",
+            ]
 
             //Default values for filters
             var measure = "Deaths",
@@ -208,144 +340,145 @@
             var container_class = ".death-tree";
             var initial_data = [];
 
-
-
             function get_data() {
                 var new_data = [];
                 var i = 0;
                 var parent = "";
                 for (let row of data) {
                     if (row.age == age && row.sex == sex && row.measure == measure && row.location == location) {
-                        var parent = "";
-                        if (row.cause == "Tuberculosis"
-                            || row.cause == "Lower respiratory infections"
-                            || row.cause == "Upper respiratory infections"
-                            || row.cause == "Otitis media") {
-                            parent = "Respiratory infections and tuberculosis";
-                        } else if (row.cause == "Diarrheal diseases"
-                            || row.cause == "Typhoid and paratyphoid"
-                            || row.cause == "Other intestinal infectious diseases"
-                            || row.cause == "Invasive Non-typhoidal Salmonella (iNTS)") {
-                            parent = "Enteric infections";
-                        } else if (row.cause == "Malaria"
-                            || row.cause == "Chagas disease"
-                            || row.cause == "Leishmaniasis"
-                            || row.cause == "African trypanosomiasis"
-                            || row.cause == "Schistosomiasis"
-                            || row.cause == "Cystic echinococcosis"
-                            || row.cause == "Cysticercosis"
-                            || row.cause == "Lymphatic filariasis"
-                            || row.cause == "Onchocerciasis"
-                            || row.cause == "Trachoma"
-                            || row.cause == "Dengue"
-                            || row.cause == "Yellow fever"
-                            || row.cause == "Rabies"
-                            || row.cause == "Intestinal nematode infections"
-                            || row.cause == "Leprosy"
-                            || row.cause == "Food-borne trematodiases"
-                            || row.cause == "Ebola"
-                            || row.cause == "Zika virus"
-                            || row.cause == "Other neglected tropical diseases") {
-                            parent = "Neglected tropical diseases and malaria";
-                        } else if (row.cause == "Neonatal disorders"
-                            || row.cause == "Maternal disorders") {
-                            parent = "Maternal and neonatal disorders";
-                        }
-                        else if (row.cause == "Bladder cancer"
-                            || row.cause == "Brain and nervous system cancer"
-                            || row.cause == "Breast cancer"
-                            || row.cause == "Cervical cancer"
-                            || row.cause == "Colon and rectum cancer"
-                            || row.cause == "Esophageal cancer"
-                            || row.cause == "Gallbladder and biliary tract cancer"
-                            || row.cause == "Kidney cancer"
-                            || row.cause == "Larynx cancer"
-                            || row.cause == "Leukemia"
-                            || row.cause == "Lip and oral cavity cancer"
-                            || row.cause == "Liver cancer"
-                            || row.cause == "Malignant skin melanoma"
-                            || row.cause == "Nasopharynx cancer"
-                            || row.cause == "Non-melanoma skin cancer"
-                            || row.cause == "Other pharynx cancer"
-                            || row.cause == "Ovarian cancer"
-                            || row.cause == "Pancreatic cancer"
-                            || row.cause == "Prostate cancer"
-                            || row.cause == "Stomach cancer"
-                            || row.cause == "Testicular cancer"
-                            || row.cause == "Thyroid cancer"
-                            || row.cause == "Tracheal, bronchus, and lung cancer"
-                            || row.cause == "Uterine cancer"
-                            || row.cause == "Mesothelioma"
-                            || row.cause == "Hodgkin lymphoma"
-                            || row.cause == "Non-Hodgkin lymphoma"
-                            || row.cause == "Multiple myeloma"
-                            || row.cause == "Other malignant neoplasms"
-                            || row.cause == "Other neoplasms") {
-                            parent = "Cancer";
-                        } else if (row.cause == "Ischemic heart disease"
-                            || row.cause == "Rheumatic heart disease"
-                            || row.cause == "Non-rheumatic valvular heart disease"
-                            || row.cause == "Stroke"
-                            || row.cause == "Hypertensive heart disease"
-                            || row.cause == "Cardiomyopathy and myocarditis"
-                            || row.cause == "Aortic aneurysm"
-                            || row.cause == "Atrial fibrillation and flutter"
-                            || row.cause == "Endocarditis"
-                            || row.cause == "Peripheral artery disease"
-                            || row.cause == "Other cardiovascular and circulatory diseases") {
-                            parent = "Cardiovascular diseases";
-                        } else if (row.cause == "Alzheimer's disease and other dementias"
-                            || row.cause == "Motor neuron disease"
-                            || row.cause == "Multiple sclerosis"
-                            || row.cause == "Other neurological disorders"
-                            || row.cause == "Parkinson's disease"
-                            || row.cause == "Epilepsy"
-                            || row.cause == "Headache disorders") {
-                            parent = "Neurological disorders";
-                        } else if (row.cause == "Anxiety disorders"
-                            || row.cause == "Attention-deficit/hyperactivity disorder"
-                            || row.cause == "Autism spectrum disorders"
-                            || row.cause == "Bipolar disorder"
-                            || row.cause == "Depressive disorders"
-                            || row.cause == "Idiopathic developmental intellectual disability"
-                            || row.cause == "Other mental disorders"
-                            || row.cause == "Schizophrenia"
-                            || row.cause == "Conduct disorder"
-                            || row.cause == "Eating disorders") {
-                            parent = "Mental disorders";
-                        } else if (row.cause == "Alcohol use disorders"
-                            || row.cause == "Drug use disorders") {
-                            parent = "Substance use disorders";
-                        } else if (row.cause == "Acute glomerulonephritis"
-                            || row.cause == "Diabetes mellitus"
-                            || row.cause == "Chronic kidney disease") {
-                            parent = "Diabetes and kidney diseases";
-                        } else if (row.cause == "Road injuries"
-                            || row.cause == "Other transport injuries") {
-                            parent = "Transport injuries";
-                        } else if (row.cause == "Animal contact"
-                            || row.cause == "Drowning"
-                            || row.cause == "Environmental heat and cold exposure"
-                            || row.cause == "Exposure to forces of nature"
-                            || row.cause == "Exposure to mechanical forces"
-                            || row.cause == "Falls"
-                            || row.cause == "Fire, heat, and hot substances"
-                            || row.cause == "Foreign body"
-                            || row.cause == "Poisonings"
-                            || row.cause == "Other unintentional injuries"
-                            || row.cause == "Adverse effects of medical treatment") {
-                            parent = "Unintentional injuries";
-                        } else {
-                            parent = "";
-                        }
+                        for (cause of all_causes) {
+                            if (row[cause] > 0) {
+                                var parent = "";
+                                if (cause == "Tuberculosis"
+                                    || cause == "Lower respiratory infections"
+                                    || cause == "Upper respiratory infections"
+                                    || cause == "Otitis media") {
+                                    parent = "Respiratory infections and tuberculosis";
+                                } else if (cause == "Diarrheal diseases"
+                                    || cause == "Typhoid and paratyphoid"
+                                    || cause == "Other intestinal infectious diseases"
+                                    || cause == "Invasive Non-typhoidal Salmonella (iNTS)") {
+                                    parent = "Enteric infections";
+                                } else if (cause == "Malaria"
+                                    || cause == "Chagas disease"
+                                    || cause == "Leishmaniasis"
+                                    || cause == "African trypanosomiasis"
+                                    || cause == "Schistosomiasis"
+                                    || cause == "Cystic echinococcosis"
+                                    || cause == "Cysticercosis"
+                                    || cause == "Lymphatic filariasis"
+                                    || cause == "Onchocerciasis"
+                                    || cause == "Trachoma"
+                                    || cause == "Dengue"
+                                    || cause == "Yellow fever"
+                                    || cause == "Rabies"
+                                    || cause == "Intestinal nematode infections"
+                                    || cause == "Leprosy"
+                                    || cause == "Food-borne trematodiases"
+                                    || cause == "Ebola"
+                                    || cause == "Zika virus"
+                                    || cause == "Other neglected tropical diseases") {
+                                    parent = "Neglected tropical diseases and malaria";
+                                } else if (cause == "Neonatal disorders"
+                                    || cause == "Maternal disorders") {
+                                    parent = "Maternal and neonatal disorders";
+                                }
+                                else if (cause == "Bladder cancer"
+                                    || cause == "Brain and nervous system cancer"
+                                    || cause == "Breast cancer"
+                                    || cause == "Cervical cancer"
+                                    || cause == "Colon and rectum cancer"
+                                    || cause == "Esophageal cancer"
+                                    || cause == "Gallbladder and biliary tract cancer"
+                                    || cause == "Kidney cancer"
+                                    || cause == "Larynx cancer"
+                                    || cause == "Leukemia"
+                                    || cause == "Lip and oral cavity cancer"
+                                    || cause == "Liver cancer"
+                                    || cause == "Malignant skin melanoma"
+                                    || cause == "Nasopharynx cancer"
+                                    || cause == "Non-melanoma skin cancer"
+                                    || cause == "Other pharynx cancer"
+                                    || cause == "Ovarian cancer"
+                                    || cause == "Pancreatic cancer"
+                                    || cause == "Prostate cancer"
+                                    || cause == "Stomach cancer"
+                                    || cause == "Testicular cancer"
+                                    || cause == "Thyroid cancer"
+                                    || cause == "Tracheal, bronchus, and lung cancer"
+                                    || cause == "Uterine cancer"
+                                    || cause == "Mesothelioma"
+                                    || cause == "Hodgkin lymphoma"
+                                    || cause == "Non-Hodgkin lymphoma"
+                                    || cause == "Multiple myeloma"
+                                    || cause == "Other malignant neoplasms"
+                                    || cause == "Other neoplasms") {
+                                    parent = "Cancer";
+                                } else if (cause == "Ischemic heart disease"
+                                    || cause == "Rheumatic heart disease"
+                                    || cause == "Non-rheumatic valvular heart disease"
+                                    || cause == "Stroke"
+                                    || cause == "Hypertensive heart disease"
+                                    || cause == "Cardiomyopathy and myocarditis"
+                                    || cause == "Aortic aneurysm"
+                                    || cause == "Atrial fibrillation and flutter"
+                                    || cause == "Endocarditis"
+                                    || cause == "Peripheral artery disease"
+                                    || cause == "Other cardiovascular and circulatory diseases") {
+                                    parent = "Cardiovascular diseases";
+                                } else if (cause == "Alzheimer's disease and other dementias"
+                                    || cause == "Motor neuron disease"
+                                    || cause == "Multiple sclerosis"
+                                    || cause == "Other neurological disorders"
+                                    || cause == "Parkinson's disease"
+                                    || cause == "Epilepsy"
+                                    || cause == "Headache disorders") {
+                                    parent = "Neurological disorders";
+                                } else if (cause == "Anxiety disorders"
+                                    || cause == "Attention-deficit/hyperactivity disorder"
+                                    || cause == "Autism spectrum disorders"
+                                    || cause == "Bipolar disorder"
+                                    || cause == "Depressive disorders"
+                                    || cause == "Idiopathic developmental intellectual disability"
+                                    || cause == "Other mental disorders"
+                                    || cause == "Schizophrenia"
+                                    || cause == "Conduct disorder"
+                                    || cause == "Eating disorders") {
+                                    parent = "Mental disorders";
+                                } else if (cause == "Alcohol use disorders"
+                                    || cause == "Drug use disorders") {
+                                    parent = "Substance use disorders";
+                                } else if (cause == "Acute glomerulonephritis"
+                                    || cause == "Diabetes mellitus"
+                                    || cause == "Chronic kidney disease") {
+                                    parent = "Diabetes and kidney diseases";
+                                } else if (cause == "Road injuries"
+                                    || cause == "Other transport injuries") {
+                                    parent = "Transport injuries";
+                                } else if (cause == "Animal contact"
+                                    || cause == "Drowning"
+                                    || cause == "Environmental heat and cold exposure"
+                                    || cause == "Exposure to forces of nature"
+                                    || cause == "Exposure to mechanical forces"
+                                    || cause == "Falls"
+                                    || cause == "Fire, heat, and hot substances"
+                                    || cause == "Foreign body"
+                                    || cause == "Poisonings"
+                                    || cause == "Other unintentional injuries"
+                                    || cause == "Adverse effects of medical treatment") {
+                                    parent = "Unintentional injuries";
+                                } else {
+                                    parent = "";
+                                }
 
-                        if (parent == "") {
-                            new_data.push({ id: row.cause, name: row.cause, value: +row.val, colorIndex: getColor[row.cause] });
-                        } else {
-                            new_data.push({ id: row.cause, name: row.cause, parent: parent, value: +row.val });
+                                if (parent == "") {
+                                    new_data.push({ id: cause, name: cause, value: +row[cause], colorIndex: getColor[cause] });
+                                } else {
+                                    new_data.push({ id: cause, name: cause, parent: parent, value: +row[cause] });
+                                }
+                            }
                         }
                     }
-
                 }
                 return new_data;
             }
@@ -462,7 +595,7 @@
 
             // Create a measure dropdown
             var measureName = "tree-measure",
-                measureWidth = "320px";
+                measureWidth = "120px";
             addDropdown(filters, measureName, measureWidth, measureChange, all_measures, measure);
 
             // Update chart data on location change
@@ -557,10 +690,206 @@
     var DeathMap = d3.csv(death_map_path)
         .then(function (data) {
             // All filterable options
-            const all_causes = [...new Set(data.map(d => d.cause))].sort()
-            const all_years = [...new Set(data.map(d => d.year))].sort()
-            const all_sexes = [...new Set(data.map(d => d.sex))].sort()
-            const all_ages = [...new Set(data.map(d => d.age))].sort()
+            const all_causes = [...new Set(data.map(d => d.cause))].sort();
+            const all_years = [...new Set(data.map(d => d.year))].sort();
+            const all_sexes = [...new Set(data.map(d => d.sex))].sort();
+            const all_ages = [...new Set(data.map(d => d.age))].sort();
+            const all_locations = ["Afghanistan",
+                "Albania",
+                "Algeria",
+                "American Samoa",
+                "Andorra",
+                "Angola",
+                "Antigua and Barbuda",
+                "Argentina",
+                "Armenia",
+                "Australia",
+                "Austria",
+                "Azerbaijan",
+                "Bahrain",
+                "Bangladesh",
+                "Barbados",
+                "Belarus",
+                "Belgium",
+                "Belize",
+                "Benin",
+                "Bermuda",
+                "Bhutan",
+                "Bolivia",
+                "Bosnia and Herzegovina",
+                "Botswana",
+                "Brazil",
+                "Brunei",
+                "Bulgaria",
+                "Burkina Faso",
+                "Burundi",
+                "Cambodia",
+                "Cameroon",
+                "Canada",
+                "Cape Verde",
+                "Central African Republic",
+                "Chad",
+                "Chile",
+                "China",
+                "Colombia",
+                "Comoros",
+                "Congo",
+                "Costa Rica",
+                "Cote d'Ivoire",
+                "Croatia",
+                "Cuba",
+                "Cyprus",
+                "Czech Republic",
+                "Democratic Republic of the Congo",
+                "Denmark",
+                "Djibouti",
+                "Dominica",
+                "Dominican Republic",
+                "Ecuador",
+                "Egypt",
+                "El Salvador",
+                "Equatorial Guinea",
+                "Eritrea",
+                "Estonia",
+                "Ethiopia",
+                "Federated States of Micronesia",
+                "Fiji",
+                "Finland",
+                "France",
+                "Gabon",
+                "Georgia",
+                "Germany",
+                "Ghana",
+                "Greece",
+                "Greenland",
+                "Grenada",
+                "Guam",
+                "Guatemala",
+                "Guinea",
+                "Guinea-Bissau",
+                "Guyana",
+                "Haiti",
+                "Honduras",
+                "Hungary",
+                "Iceland",
+                "India",
+                "Indonesia",
+                "Iran",
+                "Iraq",
+                "Ireland",
+                "Israel",
+                "Italy",
+                "Jamaica",
+                "Japan",
+                "Jordan",
+                "Kazakhstan",
+                "Kenya",
+                "Kiribati",
+                "Kuwait",
+                "Kyrgyzstan",
+                "Laos",
+                "Latvia",
+                "Lebanon",
+                "Lesotho",
+                "Liberia",
+                "Libya",
+                "Lithuania",
+                "Luxembourg",
+                "Macedonia",
+                "Madagascar",
+                "Malawi",
+                "Malaysia",
+                "Maldives",
+                "Mali",
+                "Malta",
+                "Marshall Islands",
+                "Mauritania",
+                "Mauritius",
+                "Mexico",
+                "Moldova",
+                "Mongolia",
+                "Montenegro",
+                "Morocco",
+                "Mozambique",
+                "Myanmar",
+                "Namibia",
+                "Nepal",
+                "Netherlands",
+                "New Zealand",
+                "Nicaragua",
+                "Niger",
+                "Nigeria",
+                "North Korea",
+                "Northern Mariana Islands",
+                "Norway",
+                "Oman",
+                "Pakistan",
+                "Palestine",
+                "Panama",
+                "Papua New Guinea",
+                "Paraguay",
+                "Peru",
+                "Philippines",
+                "Poland",
+                "Portugal",
+                "Puerto Rico",
+                "Qatar",
+                "Romania",
+                "Russian Federation",
+                "Rwanda",
+                "Saint Lucia",
+                "Saint Vincent and the Grenadines",
+                "Samoa",
+                "Sao Tome and Principe",
+                "Saudi Arabia",
+                "Senegal",
+                "Serbia",
+                "Seychelles",
+                "Sierra Leone",
+                "Singapore",
+                "Slovakia",
+                "Slovenia",
+                "Solomon Islands",
+                "Somalia",
+                "South Africa",
+                "South Korea",
+                "South Sudan",
+                "Spain",
+                "Sri Lanka",
+                "Sudan",
+                "Suriname",
+                "Swaziland",
+                "Sweden",
+                "Switzerland",
+                "Syria",
+                "Taiwan (Province of China)",
+                "Tajikistan",
+                "Tanzania",
+                "Thailand",
+                "The Bahamas",
+                "The Gambia",
+                "Timor-Leste",
+                "Togo",
+                "Tonga",
+                "Trinidad and Tobago",
+                "Tunisia",
+                "Turkey",
+                "Turkmenistan",
+                "Uganda",
+                "Ukraine",
+                "United Arab Emirates",
+                "United Kingdom",
+                "United States",
+                "Uruguay",
+                "Uzbekistan",
+                "Vanuatu",
+                "Venezuela",
+                "Vietnam",
+                "Virgin Islands, U.S.",
+                "Yemen",
+                "Zambia",
+                "Zimbabwe",
+            ]
 
             // Default values
             var age = "All Ages",
@@ -575,7 +904,9 @@
                 var new_data = [];
                 for (let row of data) {
                     if (row.age == age && row.sex == sex && row.cause == cause && row.year == year) {
-                        new_data.push({ country: getCountryCode(row.location), value: +(row.val * 100) });
+                        for (loc of all_locations) {
+                            new_data.push({ country: getCountryCode(loc), value: +row[loc] });
+                        }
                     }
                 }
                 return new_data;
@@ -677,11 +1008,34 @@
     var DeathBars = d3.csv(death_bars_path)
         .then(function (data) {
             // All filterable options
-            const all_causes = [...new Set(data.map(d => d.cause))].sort()
             const all_risks = [...new Set(data.map(d => d.rei))].sort()
             const all_sexes = [...new Set(data.map(d => d.sex))].sort()
             const all_locations = [...new Set(data.map(d => d.location))].sort()
             const all_measures = [...new Set(data.map(d => d.measure))].sort()
+            const all_causes = ["Cancer",
+                "Cardiovascular diseases",
+                "Chronic respiratory diseases",
+                "Diabetes and kidney diseases",
+                "Digestive diseases",
+                "Enteric infections",
+                "HIV/AIDS",
+                "Interpersonal violence",
+                "Maternal disorders",
+                "Mental disorders",
+                "Musculoskeletal disorders",
+                "Neonatal disorders",
+                "Neurological disorders",
+                "Nutritional deficiencies",
+                "Other infectious diseases",
+                "Other non-communicable diseases",
+                "Respiratory infections and tuberculosis",
+                "Self-harm",
+                "Sense organ diseases",
+                "Sexually transmitted infections excluding HIV",
+                "Substance use disorders",
+                "Transport injuries",
+                "Unintentional injuries",
+            ]
 
             // Default values
             var sex = "Both",
@@ -704,10 +1058,12 @@
                 // Then we update risk data where appropriate
                 for (let row of data) {
                     if (row.measure == measure && row.sex == sex && row.location == location) {
-                        var data_index = new_data.findIndex(x => x.name == row.cause);
-                        var risk_index = all_risks.findIndex(x => x == row.rei);
+                        for (let cause of all_causes) {
+                            var data_index = new_data.findIndex(x => x.name == cause);
+                            var risk_index = all_risks.findIndex(x => x == row.rei);
 
-                        new_data[data_index].data[risk_index] = +row.val;
+                            new_data[data_index].data[risk_index] = +row[cause];
+                        }
                     }
                 }
                 return new_data;
@@ -762,7 +1118,7 @@
 
             // Create a measure dropdown
             var measureName = "bars-measure",
-                measureWidth = "320px";
+                measureWidth = "120px";
             addDropdown(filters, measureName, measureWidth, measureChange, all_measures, measure);
 
             // Update chart data on cause change
