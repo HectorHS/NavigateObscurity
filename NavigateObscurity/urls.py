@@ -4,7 +4,7 @@ from django.urls import include, path
 from django.conf.urls.static import static
 from django.contrib.sitemaps.views import sitemap
 from main.sitemap import MainSitemap
-from main.views import HomeView
+from main.views import HomeView, ErrView
 
 sitemaps = {
     'main': MainSitemap
@@ -21,3 +21,5 @@ urlpatterns = [
 if settings.DEBUG:
     urlpatterns += static(settings.MEDIA_URL,
                           document_root=settings.MEDIA_ROOT)
+
+handler404 = ErrView.as_view()

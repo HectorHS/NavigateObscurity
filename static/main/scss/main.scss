@@ -192,5 +192,14 @@ hr {
     padding-right: 30%;
   }
 }
+
+.error404 {
+  background-color: $dark-grey;
+  color: $almost-white;
+  text-align: center;
+  img {
+      height:200px;
+  }
+}
  
 

@@ -1106,3 +1106,13 @@ hr {
     padding-right: 30%;
   }
 }
+
+.error404 {
+  background-color: #2e3838;
+  color: #dffcff;
+  text-align: center;
+}
+
+.error404 img {
+  height: 200px;
+}

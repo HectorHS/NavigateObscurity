@@ -1,0 +1,21 @@
+{% extends 'main/layout.html' %}
+{% load static %}
+
+{% block styles %}
+{% endblock %}
+
+{% block content %}
+<section class="error404">
+
+
+    <div class="spacer" style="height:20vh"></div>
+    <div style="background-color: #2e3838; height:60vh;">
+
+        <img src={% static "main/images/logo-large.svg" alt='navigate obscurity logo' %}>
+        <h2> Sorry, this address was too obscure to navigate to.</h2>
+        <a class="button" href="{% url 'home' %}">Back to home</a>
+    </div>
+    <div class="spacer" style="height:20vh"></div>
+</section>
+
+{% endblock %}

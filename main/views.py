@@ -4,8 +4,8 @@ from django.views.generic import TemplateView
 
 
 class HomeView(TemplateView):
-
     template_name = 'main/home.html'
 
-    # def get_context_data(self, **kwargs):
-    #     return Context().context
+
+class ErrView(TemplateView):
+    template_name = 'main/404.html'
