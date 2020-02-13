@@ -45,6 +45,7 @@
                         {% endfor %}
                     </ul>
                 </li>
+                <li><a href="{% url 'about' %}">About</a></li>
             </ul>
             <ul class="nav-list-mobile">
                 <li><a href="{% url 'home' %}">Home</a></li>
@@ -62,6 +63,7 @@
                         {% endfor %}
                     </ul>
                 </li>
+                <li><a href="{% url 'about' %}">About</a></li>
             </ul>
         </nav>
     </section>
@@ -80,7 +82,7 @@
         </div>
         <div class="bottom-bar">
             <p>Navigate Obscurity 2020 | Created by the </p>
-            <a href="https://virtual-alchemist.com"> Virtual Alchemist
+            <a href="https://virtual-alchemist.com" target="_blank"> Virtual Alchemist
                 <img src={% static "main/images/VA-logo.png" alt='virtual alchemist logo' %}>
             </a>
         </div>

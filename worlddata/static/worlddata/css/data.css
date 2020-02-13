@@ -43,18 +43,6 @@ figure {
   max-width: 600px;
 }
 
-.source-text {
-  background-color: #2e3838;
-  color: #dffcff;
-  text-align: right;
-  font-size: 80%;
-  padding: 10px;
-}
-
-.source-text a {
-  color: #2f98d0;
-}
-
 .chart-container {
   display: flex;
   flex-direction: column;

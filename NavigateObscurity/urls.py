@@ -4,7 +4,7 @@ from django.urls import include, path
 from django.conf.urls.static import static
 from django.contrib.sitemaps.views import sitemap
 from main.sitemap import MainSitemap
-from main.views import HomeView, ErrView
+from main.views import HomeView, ErrView, AboutView
 
 sitemaps = {
     'main': MainSitemap
@@ -15,6 +15,7 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('data/', include('worlddata.urls'), name='data'),
     path('notes/', include('nodes.urls'), name='notes'),
+    path('about/', AboutView.as_view(), name='about'),
     path('sitemap.xml', sitemap, {'sitemaps': sitemaps}),
 ] + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
 
