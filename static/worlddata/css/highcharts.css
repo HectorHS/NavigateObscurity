@@ -238,264 +238,246 @@ g.highcharts-series,
 }
 
 .highcharts-color-1 {
-  fill: #F012BE;
-  stroke: #F012BE;
+  fill: #ff3299;
+  stroke: #ff3299;
 }
 
 .legend-color-1 {
-  background-color: #F012BE;
+  background-color: #ff3299;
 }
 
 .highcharts-color-2 {
-  fill: #39CCCC;
-  stroke: #39CCCC;
+  fill: #DDC3C3;
+  stroke: #DDC3C3;
 }
 
 .legend-color-2 {
-  background-color: #39CCCC;
+  background-color: #DDC3C3;
 }
 
 .highcharts-color-3 {
-  fill: #85144b;
-  stroke: #85144b;
+  fill: #051d33;
+  stroke: #051d33;
 }
 
 .legend-color-3 {
-  background-color: #85144b;
+  background-color: #051d33;
 }
 
 .highcharts-color-4 {
-  fill: #33805d;
-  stroke: #33805d;
+  fill: #ffdc00;
+  stroke: #ffdc00;
 }
 
 .legend-color-4 {
-  background-color: #33805d;
+  background-color: #ffdc00;
 }
 
 .highcharts-color-5 {
-  fill: #FF851B;
-  stroke: #FF851B;
+  fill: #0b4272;
+  stroke: #0b4272;
 }
 
 .legend-color-5 {
-  background-color: #FF851B;
+  background-color: #0b4272;
 }
 
 .highcharts-color-6 {
-  fill: #FF4136;
-  stroke: #FF4136;
+  fill: #ff3d32;
+  stroke: #ff3d32;
 }
 
 .legend-color-6 {
-  background-color: #FF4136;
+  background-color: #ff3d32;
 }
 
 .highcharts-color-7 {
-  fill: #01FF70;
-  stroke: #01FF70;
+  fill: #59b1ff;
+  stroke: #59b1ff;
 }
 
 .legend-color-7 {
-  background-color: #01FF70;
+  background-color: #59b1ff;
 }
 
 .highcharts-color-8 {
-  fill: #DDDDDD;
-  stroke: #DDDDDD;
+  fill: #8c1c54;
+  stroke: #8c1c54;
 }
 
 .legend-color-8 {
-  background-color: #DDDDDD;
+  background-color: #8c1c54;
 }
 
 .highcharts-color-9 {
-  fill: #001F3F;
-  stroke: #001F3F;
+  fill: #28cc5c;
+  stroke: #28cc5c;
 }
 
 .legend-color-9 {
-  background-color: #001F3F;
+  background-color: #28cc5c;
 }
 
 .highcharts-color-10 {
-  fill: #FFDC00;
-  stroke: #FFDC00;
+  fill: #101414;
+  stroke: #101414;
 }
 
 .legend-color-10 {
-  background-color: #FFDC00;
+  background-color: #101414;
 }
 
 .highcharts-color-11 {
-  fill: #B10DC9;
-  stroke: #B10DC9;
+  fill: #a52721;
+  stroke: #a52721;
 }
 
 .legend-color-11 {
-  background-color: #B10DC9;
+  background-color: #a52721;
 }
 
 .highcharts-color-12 {
-  fill: #2ECC40;
-  stroke: #2ECC40;
+  fill: #677f7f;
+  stroke: #677f7f;
 }
 
 .legend-color-12 {
-  background-color: #2ECC40;
+  background-color: #677f7f;
 }
 
 .highcharts-color-13 {
-  fill: #000075;
-  stroke: #000075;
+  fill: #0a3316;
+  stroke: #0a3316;
 }
 
 .legend-color-13 {
-  background-color: #000075;
+  background-color: #0a3316;
 }
 
 .highcharts-color-14 {
-  fill: #a9a9a9;
-  stroke: #a9a9a9;
+  fill: #a59110;
+  stroke: #a59110;
 }
 
 .legend-color-14 {
-  background-color: #a9a9a9;
+  background-color: #a59110;
 }
 
 .highcharts-color-15 {
-  fill: #9A6324;
-  stroke: #9A6324;
+  fill: #99373f;
+  stroke: #99373f;
 }
 
 .legend-color-15 {
-  background-color: #9A6324;
+  background-color: #99373f;
 }
 
 .highcharts-color-16 {
-  fill: #e6194B;
-  stroke: #e6194B;
+  fill: #5cf28b;
+  stroke: #5cf28b;
 }
 
 .legend-color-16 {
-  background-color: #e6194B;
+  background-color: #5cf28b;
 }
 
 .highcharts-color-17 {
-  fill: #aaffc3;
-  stroke: #aaffc3;
+  fill: #22162b;
+  stroke: #22162b;
 }
 
 .legend-color-17 {
-  background-color: #aaffc3;
+  background-color: #22162b;
 }
 
 .highcharts-color-18 {
-  fill: #f032e6;
-  stroke: #f032e6;
+  fill: #e58939;
+  stroke: #e58939;
 }
 
 .legend-color-18 {
-  background-color: #f032e6;
+  background-color: #e58939;
 }
 
 .highcharts-color-19 {
-  fill: #469990;
-  stroke: #469990;
+  fill: #167234;
+  stroke: #167234;
 }
 
 .legend-color-19 {
-  background-color: #469990;
+  background-color: #167234;
 }
 
 .highcharts-color-20 {
-  fill: #bfef45;
-  stroke: #bfef45;
+  fill: #cc7097;
+  stroke: #cc7097;
 }
 
 .legend-color-20 {
-  background-color: #bfef45;
+  background-color: #cc7097;
 }
 
 .highcharts-color-21 {
-  fill: #e6beff;
-  stroke: #e6beff;
+  fill: #4c1b1f;
+  stroke: #4c1b1f;
 }
 
 .legend-color-21 {
-  background-color: #e6beff;
+  background-color: #4c1b1f;
 }
 
 .highcharts-color-22 {
-  fill: #3cb44b;
-  stroke: #3cb44b;
+  fill: #3f380c;
+  stroke: #3f380c;
 }
 
 .legend-color-22 {
-  background-color: #3cb44b;
+  background-color: #3f380c;
 }
 
 .highcharts-color-23 {
-  fill: #911eb4;
-  stroke: #911eb4;
+  fill: #d8c756;
+  stroke: #d8c756;
 }
 
 .legend-color-23 {
-  background-color: #911eb4;
+  background-color: #d8c756;
 }
 
 .highcharts-color-24 {
-  fill: #42d4f4;
-  stroke: #42d4f4;
+  fill: #4c2033;
+  stroke: #4c2033;
 }
 
 .legend-color-24 {
-  background-color: #42d4f4;
+  background-color: #4c2033;
 }
 
 .highcharts-color-25 {
-  fill: #808000;
-  stroke: #808000;
+  fill: #875121;
+  stroke: #875121;
 }
 
 .legend-color-25 {
-  background-color: #808000;
+  background-color: #875121;
 }
 
 .highcharts-color-26 {
-  fill: #fffac8;
-  stroke: #fffac8;
+  fill: #660e0a;
+  stroke: #660e0a;
 }
 
 .legend-color-26 {
-  background-color: #fffac8;
+  background-color: #660e0a;
 }
 
 .highcharts-color-27 {
-  fill: #800000;
-  stroke: #800000;
+  fill: #794f99;
+  stroke: #794f99;
 }
 
 .legend-color-27 {
-  background-color: #800000;
-}
-
-.highcharts-color-28 {
-  fill: #4363d8;
-  stroke: #4363d8;
-}
-
-.legend-color-28 {
-  background-color: #4363d8;
-}
-
-.highcharts-color-29 {
-  fill: #f58231;
-  stroke: #f58231;
-}
-
-.legend-color-29 {
-  background-color: #f58231;
+  background-color: #794f99;
 }
 
 .highcharts-area {
@@ -1183,11 +1165,11 @@ text.highcharts-drilldown-data-label,
 }
 
 .highcharts-data-label-color-4 text {
-  fill: #dffcff;
+  fill: #2e3838;
 }
 
 .highcharts-data-label-color-5 text {
-  fill: #2e3838;
+  fill: #dffcff;
 }
 
 .highcharts-data-label-color-6 text {
@@ -1195,11 +1177,11 @@ text.highcharts-drilldown-data-label,
 }
 
 .highcharts-data-label-color-7 text {
-  fill: #2e3838;
+  fill: #dffcff;
 }
 
 .highcharts-data-label-color-8 text {
-  fill: #2e3838;
+  fill: #dffcff;
 }
 
 .highcharts-data-label-color-9 text {
@@ -1207,7 +1189,7 @@ text.highcharts-drilldown-data-label,
 }
 
 .highcharts-data-label-color-10 text {
-  fill: #2e3838;
+  fill: #dffcff;
 }
 
 .highcharts-data-label-color-11 text {
@@ -1215,7 +1197,7 @@ text.highcharts-drilldown-data-label,
 }
 
 .highcharts-data-label-color-12 text {
-  fill: #2e3838;
+  fill: #dffcff;
 }
 
 .highcharts-data-label-color-13 text {
@@ -1231,11 +1213,11 @@ text.highcharts-drilldown-data-label,
 }
 
 .highcharts-data-label-color-16 text {
-  fill: #dffcff;
+  fill: #2e3838;
 }
 
 .highcharts-data-label-color-17 text {
-  fill: #2e3838;
+  fill: #dffcff;
 }
 
 .highcharts-data-label-color-18 text {
@@ -1247,7 +1229,7 @@ text.highcharts-drilldown-data-label,
 }
 
 .highcharts-data-label-color-20 text {
-  fill: #2e3838;
+  fill: #dffcff;
 }
 
 .highcharts-data-label-color-21 text {
@@ -1259,29 +1241,9 @@ text.highcharts-drilldown-data-label,
 }
 
 .highcharts-data-label-color-23 text {
-  fill: #dffcff;
+  fill: #2e3838;
 }
 
 .highcharts-data-label-color-24 text {
-  fill: #2e3838;
-}
-
-.highcharts-data-label-color-25 text {
-  fill: #dffcff;
-}
-
-.highcharts-data-label-color-26 text {
-  fill: #2e3838;
-}
-
-.highcharts-data-label-color-27 text {
-  fill: #dffcff;
-}
-
-.highcharts-data-label-color-28 text {
-  fill: #dffcff;
-}
-
-.highcharts-data-label-color-29 text {
   fill: #2e3838;
 }

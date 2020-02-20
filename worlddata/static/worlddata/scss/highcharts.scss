@@ -2,63 +2,39 @@
 
 // Colors for data series and points.
 $colors: 
-// #1f77b4 #ff7f0e  #2ca02c #d62728  #f45b5b 
-// #9467bd  #8c564b  #e377c2   #bcbd22  #17becf  
-// #aec7e8 #ffbb78  #98df8a #ff9896 #c5b0d5 #c49c94 #f7b6d2 #c7c7c7 
-// #dbdb8d #9edae5 
+
+
+
+
 
 #0074D9
-#F012BE
-#39CCCC
-#85144b
-#33805d
-#FF851B
-#FF4136
-#01FF70
-#DDDDDD
-#001F3F
-#FFDC00
-#B10DC9
-#2ECC40
-
-#000075 
-#a9a9a9 
-#9A6324 
-#e6194B
-#aaffc3
-#f032e6
-#469990
-#bfef45
-#e6beff
-#3cb44b
-#911eb4
-#42d4f4
-#808000
-#fffac8
-#800000
-#4363d8
-#f58231
-
-//  #0074D9
-//  #FF4136
-//  #001F3F
-//  #85144B
-//  #3D9970
-//  #B10DC9
-
- 
-//  #7FDBFF
-//  #FFDC00
-//  #AAAAAA
-//  #FF851B
-//  #39CCCC
-//  #F012BE
-//  #2ECC40
-//  #DDDDDD
-//  #01FF70
-
-
-
+#ff3299
+#DDC3C3
+#051d33
+#ffdc00
+#0b4272
+#ff3d32
+#59b1ff
+#8c1c54
+#28cc5c
+#101414
+#a52721
+#677f7f
+#0a3316
+#a59110
+#99373f
+#5cf28b
+#22162b
+#e58939
+#167234
+#cc7097
+#4c1b1f
+#3f380c
+#d8c756
+#4c2033
+#875121
+#660e0a
+#794f99
 !default;
 
 // Chart background, point stroke for markers and columns etc
@@ -88,32 +64,27 @@ $text-colors: (
 1:$neutral-color-80,
 2:$dark-grey,
 3:$neutral-color-80,
-4:$neutral-color-80,
-5:$dark-grey,
+4:$dark-grey,
+5:$neutral-color-80,
 6:$neutral-color-80,
-7:$dark-grey,
-8:$dark-grey,
+7:$neutral-color-80,
+8:$neutral-color-80,
 9:$neutral-color-80,
-10:$dark-grey,
+10:$neutral-color-80,
 11:$neutral-color-80,
-12:$dark-grey,
+12:$neutral-color-80,
 13:$neutral-color-80,
 14:$dark-grey,
 15:$neutral-color-80,
-16:$neutral-color-80,
-17:$dark-grey,
+16:$dark-grey,
+17:$neutral-color-80,
 18:$dark-grey,
 19:$neutral-color-80,
-20:$dark-grey,
+20:$neutral-color-80,
 21:$dark-grey,
 22:$neutral-color-80,
-23:$neutral-color-80,
-24:$dark-grey,
-25:$neutral-color-80,
-26:$dark-grey,
-27:$neutral-color-80,
-28:$neutral-color-80,
-29:$dark-grey
+23:$dark-grey,
+24:$dark-grey
 );
 
 // Fonts
