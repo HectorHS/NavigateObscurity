@@ -11,6 +11,9 @@ function numberFormatterPercentage(number) {
     var value = number.toLocaleString(undefined, { maximumFractionDigits: 2 });
     return value;
 }
+function numberFormatterSeparator(number) {
+        return number.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+}
 function getCountryCode(country) {
     var countryCode = {
         "Afghanistan": "AFG",
@@ -39,6 +42,7 @@ function getCountryCode(country) {
         "Bhutan": "BTN",
         "Bolivia": "BOL",
         "Bolivia (Plurinational State of)": "BOL",
+        "Bonaire, Sint Eustatius and Saba": "BES",
         "Bosnia and Herzegovina": "BIH",
         "Botswana": "BWA",
         "Brazil": "BRA",
@@ -87,6 +91,7 @@ function getCountryCode(country) {
         "Estonia": "EST",
         "Ethiopia": "ETH",
         "Faeroe Islands": "FRO",
+        "Faroe Islands": "FRO",
         "Falkland Islands (Malvinas)": "FLK",
         "Fiji": "FJI",
         'Finland': 'FIN',
@@ -149,6 +154,7 @@ function getCountryCode(country) {
         "Macedonia": "MKD",
         "Macedonia TFYR": "MKD",
         "TFYR Macedonia": "MKD",
+        "North Macedonia": "MKD",
         "Madagascar": "MDG",
         "Malawi": "MWI",
         "Malaysia": "MYS",
@@ -206,10 +212,12 @@ function getCountryCode(country) {
         "Romania": "ROU",
         "Russian Federation": "RUS",
         "Rwanda": "RWA",
+        "Saint Barthelemy": "BLM",
         "Saint Helena": "SHN",
         "Saint Kitts and Nevis": "KNA",
         "Saint Lucia": "LCA",
-        "Sint Maarten (Dutch part)": "MAF",
+        "Sint Maarten (Dutch part)": "SXM",
+        "Saint Martin (French part)": "MAF",
         "Saint Pierre and Miquelon": "SPM",
         "Saint Vincent and the Grenadines": "VCT",
         "Samoa": "WSM",
@@ -233,11 +241,13 @@ function getCountryCode(country) {
         "Sudan": "SDN",
         "Suriname": "SUR",
         "Swaziland": "SWZ",
+        "Eswatini": "SWZ",
         "Sweden": "SWE",
         "Switzerland": "CHE",
         "Syria": "SYR",
         "Syrian Arab Republic": "SYR",
         "Taiwan (Province of China)": "TWN",
+        "China, Taiwan Province of China": "TWN",
         "Tajikistan": "TJK",
         "Tanzania": "TZA",
         "Tanzania, United Republic of": "TZA",
@@ -279,7 +289,9 @@ function getCountryCode(country) {
     };
 
     var code = countryCode[country];
-    if (!code) { console.log("Code not found for " + country) }
+    if (!code) {
+        console.log("Code not found for " + country)
+    }
     return code;
 }
 

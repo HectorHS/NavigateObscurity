@@ -97,7 +97,7 @@ hr {
 .container {
   padding:20px;
   @media (min-width: $mobile-breakpoint) {
-    padding:50px;
+    padding: 20px 50px;
   }
 }
 .banner-container {
@@ -195,7 +195,10 @@ hr {
 .source-text {
   text-align: right;
   font-size: 80%;
-  padding: 10px;
+  padding: 0 10px;
+  p {
+    margin: 0;
+  }
   a {
     color: $bright-blue;
   }

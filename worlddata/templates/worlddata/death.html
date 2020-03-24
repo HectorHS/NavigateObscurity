@@ -36,7 +36,146 @@
 <section class="banner-container">
     <h1 class="header-title-banner">{{title}}</h1>
 </section>
+<!-- Viz 1 - Total population, births, deaths -->
+<section>
 
+    <div class="container limited-width">
+        <p>
+            First, a quick visualization to get a perspective of where people live, and how many people get born and die
+            each year. Each line represents 10 million people.
+        </p>
+        <p>
+            More people die each year (57m) than the entire populations of Australia and New Zealand (43m), and more
+            than twice that many are being born each year (140m). The populations of Europe and Latin America are
+            relatively similar (747m and 653m), and each of which is about twice the population of North America (369m),
+            and half the population of Africa (1.3b). Asia (4.6b) makes up more than half of the total population of
+            Earth (7.8b).
+        </p>
+    </div>
+    <!-- births: 14
+    Africa: 134
+    Asia: 464
+    Europe: 75
+    Latin America and the Caribbean: 65
+    Northern America: 37
+    Oceania: 4
+    deaths: 6
+    Values are in 10s of millions
+     -->
+    <div class="container">
+        {% for item in "x"|ljust:"134" %}
+        <div class="population-line pl-africa"></div>
+        {% endfor %}
+        {% for item in "x"|ljust:"464" %}
+        <div class="population-line pl-asia"></div>
+        {% endfor %}
+        {% for item in "x"|ljust:"75" %}
+        <div class="population-line pl-europe"></div>
+        {% endfor %}
+        {% for item in "x"|ljust:"65" %}
+        <div class="population-line pl-lac"></div>
+        {% endfor %}
+        {% for item in "x"|ljust:"37" %}
+        <div class="population-line pl-na"></div>
+        {% endfor %}
+        {% for item in "x"|ljust:"4" %}
+        <div class="population-line pl-oceania"></div>
+        {% endfor %}
+        <div class="births-container">
+            <p>+</p>
+            {% for item in "x"|ljust:"14" %}
+            <div class="population-line pl-births"></div>
+            {% endfor %}
+        </div>
+        <div class="deaths-container">
+            <p>-</p>
+            {% for item in "x"|ljust:"6" %}
+            <div class="population-line pl-deaths"></div>
+            {% endfor %}
+        </div>
+
+        <div class="chart-legend" style="padding-top: 10px">
+            <div class="legend-item">
+                <div class="dot legend-color-4"></div>
+                <div class="serieName">Africa</div>
+            </div>
+            <div class="legend-item">
+                <div class="dot legend-color-1"></div>
+                <div class="serieName">Asia</div>
+            </div>
+            <div class="legend-item">
+                <div class="dot legend-color-0"></div>
+                <div class="serieName">Europe</div>
+            </div>
+            <div class="legend-item">
+                <div class="dot legend-color-9"></div>
+                <div class="serieName">Latin America and the Caribbean</div>
+            </div>
+            <div class="legend-item">
+                <div class="dot legend-color-6"></div>
+                <div class="serieName">Northern America</div>
+            </div>
+            <div class="legend-item">
+                <div class="dot legend-color-18"></div>
+                <div class="serieName">Oceania</div>
+            </div>
+            <div class="legend-item">
+                <div class="dot legend-color-2"></div>
+                <div class="serieName">Births</div>
+            </div>
+            <div class="legend-item">
+                <div class="dot legend-color-10"></div>
+                <div class="serieName">Deaths</div>
+            </div>
+        </div>
+        <div class="source-text">
+            <p>
+                *Source:
+                <a href="https://population.un.org/wpp/Download/Standard/Population/" target="_blank">United Nations.
+                </a>
+                Downloaded 21/02/2020.
+            </p>
+        </div>
+    </div>
+</section>
+<!-- Viz 2 - Map - population, life expectancy, fertility rate, median age -->
+<section>
+    <div class="container limited-width">
+        <p>
+            Apart from the total populations of each country and region, it's interesting to note a few more factors.
+            Population density, which measures how many people live per square kilometre, so basically, how crowded is
+            it there. Fertility rate which indicates how many children on average are born per woman. A number of around
+            2 would indicate a stable population, with a larger number signalling a population increase and vice versa.
+            Life expectancy is the number of years someone can expect to live being born on the given year and place.
+            Median age is an indicator of how old a population is, with smaller numbers indicating younger populations
+            and vice versa. Lastly, mortality percentage is the percentage of the total population that dies each year.
+        </p>
+        <p>
+            It’s hopeful that there seems to be an optimistic trend in all parameters, with life expectancy stealing the
+            show. Despite the fact that fertility rates have been dropping in most of the world, the world’s population
+            has soared mostly due to the impressive increase in life expectancy. We are getting more simply by getting
+            older. And with so low median ages and high fertility rates, we can expect much more growth coming in the
+            following years from Africa.
+        </p>
+    </div>
+    <figure>
+        <div class="container chart-container life-map filters-on-top">
+            <div class="chart-options chart-options-map" style="max-width:100%">
+                <div class="chart-filters"></div>
+            </div>
+            <div id="life_map" class="map" style="width:100%;"></div>
+
+            <div class="source-text">
+                <p>
+                    *Source:
+                    <a href="http://data.un.org/" target="_blank">United Nations. </a>
+                    Downloaded 26/02/2020.
+                </p>
+            </div>
+        </div>
+    </figure>
+
+</section>
 <section>
     <!-- Viz 1 - Causes of death -->
     <div class="container limited-width">
@@ -62,16 +201,17 @@
                 <div class="chart-filters"></div>
             </div>
             <div id="death_tree" class="treemap" style="width:100%;"></div>
+
+            <div class="source-text">
+                <p>
+                    *Source:
+                    <a href="http://ghdx.healthdata.org/gbd-results-tool" target="_blank">The Global Health Data
+                        Exchange. </a>
+                    Downloaded 19/10/2019.
+                </p>
+            </div>
         </div>
     </figure>
-
-    <div class="source-text">
-        <p>
-            *Source:
-            <a href="http://ghdx.healthdata.org/gbd-results-tool" target="_blank">The Global Health Data Exchange. </a>
-            Downloaded 19/10/2019.
-        </p>
-    </div>
 
     <!-- Viz 2 - Historical causes of death -->
     <div class="container limited-width">
@@ -82,18 +222,20 @@
         </p>
     </div>
     <figure>
-        <div class="container chart-container old-death-tree">
+        <div class="container chart-container old-death-tree filters-on-top">
             <div id="old_death_tree" class="treemap" style="width:100%;"></div>
+
+            <div class="source-text">
+                <p>
+                    *Source:
+                    <a href="https://www.nejm.org/doi/full/10.1056/NEJMp1113569" target="_blank">The New England Journal
+                        of
+                        Medicine. </a>
+                    Downloaded 06/11/2018.
+                </p>
+            </div>
         </div>
     </figure>
-    <div class="source-text">
-        <p>
-            *Source:
-            <a href="https://www.nejm.org/doi/full/10.1056/NEJMp1113569" target="_blank">The New England Journal of
-                Medicine. </a>
-            Downloaded 06/11/2018.
-        </p>
-    </div>
     <!-- Viz 3 - Causes of death by geography -->
     <div class="container limited-width">
         <p>
@@ -110,15 +252,17 @@
                 <div class="chart-filters"></div>
             </div>
             <div id="death_map" class="map" style="width:100%;"></div>
+
+            <div class="source-text">
+                <p>
+                    *Source:
+                    <a href="http://ghdx.healthdata.org/gbd-results-tool" target="_blank">The Global Health Data
+                        Exchange. </a>
+                    Downloaded 19/10/2019.
+                </p>
+            </div>
         </div>
     </figure>
-    <div class="source-text">
-        <p>
-            *Source:
-            <a href="http://ghdx.healthdata.org/gbd-results-tool" target="_blank">The Global Health Data Exchange. </a>
-            Downloaded 19/10/2019.
-        </p>
-    </div>
     <!-- Viz 4 - Risks for causes of death -->
     <div class="container limited-width">
         <p>
@@ -137,15 +281,17 @@
                 <div class="chart-legend"></div>
             </div>
             <div id="death_bars" class="chart" style="width:100%;"></div>
+
+            <div class="source-text">
+                <p>
+                    *Source:
+                    <a href="http://ghdx.healthdata.org/gbd-results-tool" target="_blank">The Global Health Data
+                        Exchange. </a>
+                    Downloaded 19/10/2019.
+                </p>
+            </div>
         </div>
     </figure>
-    <div class="source-text">
-        <p>
-            *Source:
-            <a href="http://ghdx.healthdata.org/gbd-results-tool" target="_blank">The Global Health Data Exchange. </a>
-            Downloaded 19/10/2019.
-        </p>
-    </div>
 
 </section>
 <!-- Comments -->
@@ -183,6 +329,8 @@
 </section>
 <script>
     var static_url = "{% get_static_prefix %}";
+    file_map_life = "worlddata/csv/life-map.csv";
+    life_map_path = static_url + file_map_life;
     file_old_death = "worlddata/csv/death-old.csv";
     old_death_path = static_url + file_old_death;
     file_treemap_death = "worlddata/csv/death-tree-2017.csv";
@@ -191,6 +339,407 @@
     death_map_path = static_url + file_map_death;
     file_bars_death = "worlddata/csv/death-bars-2017.csv";
     death_bars_path = static_url + file_bars_death;
+
+    var LifeMap = d3.csv(life_map_path)
+        .then(function (data) {
+            // All filterable options
+            const all_parameters = [...new Set(data.map(d => d.Parameter))].sort();
+            const all_years = [...new Set(data.map(d => d.Year))].sort();
+            const all_locations = ["Afghanistan",
+                "Albania",
+                "Algeria",
+                "American Samoa",
+                "Andorra",
+                "Angola",
+                "Anguilla",
+                "Antigua and Barbuda",
+                "Argentina",
+                "Armenia",
+                "Aruba",
+                "Australia",
+                "Austria",
+                "Azerbaijan",
+                "Bahamas",
+                "Bahrain",
+                "Bangladesh",
+                "Barbados",
+                "Belarus",
+                "Belgium",
+                "Belize",
+                "Benin",
+                "Bermuda",
+                "Bhutan",
+                "Bolivia (Plurinational State of)",
+                "Bonaire, Sint Eustatius and Saba",
+                "Bosnia and Herzegovina",
+                "Botswana",
+                "Brazil",
+                "British Virgin Islands",
+                "Brunei Darussalam",
+                "Bulgaria",
+                "Burkina Faso",
+                "Burundi",
+                "Cabo Verde",
+                "Cambodia",
+                "Cameroon",
+                "Canada",
+                "Cayman Islands",
+                "Central African Republic",
+                "Chad",
+                "Channel Islands",
+                "Chile",
+                "China",
+                "China, Hong Kong SAR",
+                "China, Macao SAR",
+                "China, Taiwan Province of China",
+                "Colombia",
+                "Comoros",
+                "Congo",
+                "Cook Islands",
+                "Costa Rica",
+                "Cote d'Ivoire",
+                "Croatia",
+                "Cuba",
+                "Curacao",
+                "Cyprus",
+                "Czechia",
+                "Dem. People's Republic of Korea",
+                "Democratic Republic of the Congo",
+                "Denmark",
+                "Djibouti",
+                "Dominica",
+                "Dominican Republic",
+                "Ecuador",
+                "Egypt",
+                "El Salvador",
+                "Equatorial Guinea",
+                "Eritrea",
+                "Estonia",
+                "Eswatini",
+                "Ethiopia",
+                "Falkland Islands (Malvinas)",
+                "Faroe Islands",
+                "Fiji",
+                "Finland",
+                "France",
+                "French Guiana",
+                "French Polynesia",
+                "Gabon",
+                "Gambia",
+                "Georgia",
+                "Germany",
+                "Ghana",
+                "Gibraltar",
+                "Greece",
+                "Greenland",
+                "Grenada",
+                "Guadeloupe",
+                "Guam",
+                "Guatemala",
+                "Guinea",
+                "Guinea-Bissau",
+                "Guyana",
+                "Haiti",
+                "Holy See",
+                "Honduras",
+                "Hungary",
+                "Iceland",
+                "India",
+                "Indonesia",
+                "Iran (Islamic Republic of)",
+                "Iraq",
+                "Ireland",
+                "Isle of Man",
+                "Israel",
+                "Italy",
+                "Jamaica",
+                "Japan",
+                "Jordan",
+                "Kazakhstan",
+                "Kenya",
+                "Kiribati",
+                "Kuwait",
+                "Kyrgyzstan",
+                "Lao People's Democratic Republic",
+                "Latvia",
+                "Lebanon",
+                "Lesotho",
+                "Liberia",
+                "Libya",
+                "Liechtenstein",
+                "Lithuania",
+                "Luxembourg",
+                "Madagascar",
+                "Malawi",
+                "Malaysia",
+                "Maldives",
+                "Mali",
+                "Malta",
+                "Marshall Islands",
+                "Martinique",
+                "Mauritania",
+                "Mauritius",
+                "Mayotte",
+                "Mexico",
+                "Micronesia (Fed. States of)",
+                "Monaco",
+                "Mongolia",
+                "Montenegro",
+                "Montserrat",
+                "Morocco",
+                "Mozambique",
+                "Myanmar",
+                "Namibia",
+                "Nauru",
+                "Nepal",
+                "Netherlands",
+                "New Caledonia",
+                "New Zealand",
+                "Nicaragua",
+                "Niger",
+                "Nigeria",
+                "Niue",
+                "North Macedonia",
+                "Northern Mariana Islands",
+                "Norway",
+                "Oman",
+                "Pakistan",
+                "Palau",
+                "Panama",
+                "Papua New Guinea",
+                "Paraguay",
+                "Peru",
+                "Philippines",
+                "Poland",
+                "Portugal",
+                "Puerto Rico",
+                "Qatar",
+                "Republic of Korea",
+                "Republic of Moldova",
+                "Reunion",
+                "Romania",
+                "Russian Federation",
+                "Rwanda",
+                "Saint Barthelemy",
+                "Saint Helena",
+                "Saint Kitts and Nevis",
+                "Saint Lucia",
+                "Saint Martin (French part)",
+                "Saint Pierre and Miquelon",
+                "Saint Vincent and the Grenadines",
+                "Samoa",
+                "San Marino",
+                "Sao Tome and Principe",
+                "Saudi Arabia",
+                "Senegal",
+                "Serbia",
+                "Seychelles",
+                "Sierra Leone",
+                "Singapore",
+                "Sint Maarten (Dutch part)",
+                "Slovakia",
+                "Slovenia",
+                "Solomon Islands",
+                "Somalia",
+                "South Africa",
+                "South Sudan",
+                "Spain",
+                "Sri Lanka",
+                "State of Palestine",
+                "Sudan",
+                "Suriname",
+                "Sweden",
+                "Switzerland",
+                "Syrian Arab Republic",
+                "Tajikistan",
+                "Thailand",
+                "Timor-Leste",
+                "Togo",
+                "Tokelau",
+                "Tonga",
+                "Trinidad and Tobago",
+                "Tunisia",
+                "Turkey",
+                "Turkmenistan",
+                "Turks and Caicos Islands",
+                "Tuvalu",
+                "Uganda",
+                "Ukraine",
+                "United Arab Emirates",
+                "United Kingdom",
+                "United Republic of Tanzania",
+                "United States Virgin Islands",
+                "United States of America",
+                "Uruguay",
+                "Uzbekistan",
+                "Vanuatu",
+                "Venezuela (Bolivarian Republic of)",
+                "Viet Nam",
+                "Wallis and Futuna Islands",
+                "Western Sahara",
+                "Yemen",
+                "Zambia",
+                "Zimbabwe",
+            ];
+
+            // Default values
+            var parameter = "Life expectancy",
+                year = "2020";
+
+            var container_class = ".life-map";
+            var initial_data = [];
+
+            function get_data() {
+                var new_data = [];
+                for (let row of data) {
+                    if (row.Parameter == parameter && row.Year == year) {
+                        for (loc of all_locations) {
+                            if (row[loc]) {
+                                new_data.push({ country: getCountryCode(loc), value: +row[loc] });
+                            }
+                        }
+                    }
+                }
+                return new_data;
+            }
+
+            intial_data = get_data();
+
+            // Initiate the chart
+            var chart = Highcharts.mapChart('life_map', {
+                chart: {
+                    styledMode: true,
+                    height: 500
+                },
+                title: {
+                    text: null
+                },
+                mapNavigation: {
+                    enabled: true,
+                    enableMouseWheelZoom: false,
+                    enableButtons: true,
+                },
+                colorAxis: {
+                    tickInterval: 10,
+                    max: 80,
+                    min: 30,
+                    stops: [
+                        [0, '#0074D9'],
+                        [0.35, '#2ECC40'],
+                        [0.5, '#DDDDDD'],
+                        [0.65, '#FFDC00'],
+                        [0.95, '#FF4136']
+                    ],
+                },
+                tooltip: {
+                    formatter: function () {
+                        var title = fCapital(this.key);
+                        var value = this.point.value;
+                        var text = "";
+                        if (parameter == "Fertility rate") {
+                            let val = numberFormatterPercentage(value);
+                            text = val + " births per woman";
+                        } else if (parameter == "Life expectancy") {
+                            text = "Life expectancy at birth is " + value + " years";
+                        } else if (parameter == "Median age") {
+                            let val = numberFormatterPercentage(value);
+                            text = "Median age of the whole population is " + val + " years old";
+                        } else if (parameter == "Mortality percentage") {
+                            let val = numberFormatterPercentage(value);
+                            text = "Total amount of deaths this year amounts to " + val + "% of the total population";
+                        } else if (parameter == "Population") {
+                            let val = numberFormatterSeparator(value);
+                            text = "Total population of the country is " + val;
+                        } else if (parameter == "Population density") {
+                            text = value + " people living per square kilometer";
+                        }
+                        return '<text><span style="font-size: 1.1em"><strong>' + title + '</strong></span><br>' + text + '</text>';
+                    },
+                    useHTML: true
+                },
+                credits: {
+                    enabled: false
+                },
+                series: [{
+                    mapData: Highcharts.maps['custom/world'],
+                    data: intial_data,
+                    joinBy: ['iso-a3', 'country'], // first var: type of geographical data, second: data column name
+                }]
+            });
+
+            // Dropdowns
+            // Define dropdown container
+            var filters = document.querySelector(container_class + " .chart-filters");
+
+            // Create a parameter dropdown
+            var parameterName = "life-map-parameter",
+                parameterWidth = "300px";
+            addDropdown(filters, parameterName, parameterWidth, parameterChange, all_parameters, parameter);
+
+            // Update chart data on cause change
+            function parameterChange() {
+                parameter = document.getElementById(parameterName + "-select").value;
+                updateColorStops();
+                chart.series[0].setData(get_data());
+            }
+            // Create a year dropdown
+            var yearName = "life-map-year",
+                yearWidth = "100px";
+            addDropdown(filters, yearName, yearWidth, yearChange, all_years, year);
+
+            // Update chart data on sex change
+            function yearChange() {
+                year = document.getElementById(yearName + "-select").value;
+                updateColorStops();
+                chart.series[0].setData(get_data());
+            }
+            // adjust color stops according to parameter
+            function updateColorStops() {
+                if (parameter == "Fertility rate") {
+                    chart.colorAxis[0].update({
+                        tickInterval: 1,
+                        max: 3,
+                        min: 1,
+                    }, false)
+                } else if (parameter == "Life expectancy") {
+                    chart.colorAxis[0].update({
+                        tickInterval: 10,
+                        max: 80,
+                        min: 30,
+                    }, false)
+                } else if (parameter == "Median age") {
+                    chart.colorAxis[0].update({
+                        tickInterval: 15,
+                        max: 45,
+                        min: 15,
+                    }, false)
+                } else if (parameter == "Mortality percentage") {
+                    chart.colorAxis[0].update({
+                        tickInterval: 0.5,
+                        max: 2.25,
+                        min: 0.25,
+                    }, false)
+                } else if (parameter == "Population") {
+                    chart.colorAxis[0].update({
+                        // tickInterval: 200000000,
+                        // startOnTick: false,
+                        max: 500000000,
+                        min: 1000000,
+                    }, false)
+                } else if (parameter == "Population density") {
+                    chart.colorAxis[0].update({
+                        tickInterval: 200,
+                        max: 400,
+                        min: 0,
+                    }, false)
+                }
+            }
+
+
+        })
+        .catch(function (error) {
+            console.log(error);
+        })
 
     var DeathTree = d3.csv(death_treemap_path)
         .then(function (data) {

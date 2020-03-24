@@ -56,33 +56,10 @@ figure {
     display: flex;
     flex-direction: column;
     color: $almost-white;
-    padding: 10px;
+    padding: 0 10px;
 
     .options-below {
       flex-direction: row;
-    }
-    .chart-legend {
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: center;
-      h4 {
-        margin: 0 10px 5px 0;
-      }
-      .legend-item {
-        display: inline-flex;
-        margin-bottom: 5px;
-        margin-right: 20px;
-        cursor: pointer;
-        white-space: nowrap;
-      }
-      .dot {
-        height: 25px;
-        width: 25px;
-        border-radius: 50%;
-        display: inline-block;
-        margin-right: 10px;
-      }
-
     }
     .chart-filters {
       align-items: center;
@@ -227,6 +204,29 @@ figure {
   }
 }
 
+.chart-legend {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  h4 {
+    margin: 0 10px 5px 0;
+  }
+  .legend-item {
+    display: inline-flex;
+    margin-bottom: 5px;
+    margin-right: 20px;
+    cursor: pointer;
+    white-space: nowrap;
+  }
+  .dot {
+    height: 25px;
+    width: 25px;
+    border-radius: 50%;
+    display: inline-block;
+    margin-right: 10px;
+  }
+}
+
 .legend-right {
   .chart-options {
     @media only screen and (min-width: $mobile-breakpoint)
@@ -251,7 +251,6 @@ figure {
 .filters-on-top.chart-container {
   flex-direction: column;
   .chart-options{
-    padding-bottom: 0;
     .chart-filters {
       margin-bottom: 0;
     }
@@ -282,4 +281,58 @@ figure {
 }
 .death-tree, .death-map, .death-bars, .migration-map, .migration-bubbles, .migration-wheel, .sustain-map, .sustain-area {
   min-height:500px;
+}
+.population-line {
+  display: inline-block;
+  height: 20px;
+  width:5px;
+  border-radius: 5px;
+}
+.pl-africa {
+  background-color: #ffdc00 ;
+}
+.pl-asia {
+  background-color: #ff3299;
+}
+.pl-europe {
+  background-color: #0074D9;
+}
+.pl-lac {
+  background-color: #28cc5c;
+}
+.pl-na {
+  background-color: #ff3d32;
+}
+.pl-oceania {
+  background-color: #e58939;
+}
+.pl-births {
+  background-color: #DDC3C3;
+
+}
+.pl-deaths {
+  background-color: #101414;
+
+}
+.births-container {
+display: inline-block;
+margin-left: 20px;
+  p {
+    display: inline-block;
+    font-size: 150%;
+    margin: 0;
+    color: #DDC3C3;
+    line-height: 0.8;
+  }
+}
+.deaths-container {
+  display: inline-block;
+  margin-left: 20px;
+  p {
+    display: inline-block;
+    font-size: 150%;
+    margin: 0;
+    color: #101414;
+    line-height: 0.8;
+  }
 }
