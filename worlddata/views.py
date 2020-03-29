@@ -110,3 +110,28 @@ class MigrationView(TemplateView):
             comment.page = self.page
             comment.save()
         return HttpResponseRedirect(self.request.path_info)
+
+
+class Covid19View(TemplateView):
+    template_name = 'worlddata/covid19.html'
+    page = get_object_or_404(Page, title="Covid-19")
+
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        comments = self.page.comments.all()
+        comment_form = CommentForm()
+        context = {
+            'comments': comments,
+            'comment_form': comment_form,
+            'title': self.page.title,
+            'abstract': self.page.abstract
+        }
+        return context
+
+    def post(self, request, *args, **kwargs):
+        form = CommentForm(request.POST)
+        if form.is_valid():
+            comment = form.save(commit=False)
+            comment.page = self.page
+            comment.save()
+        return HttpResponseRedirect(self.request.path_info)
