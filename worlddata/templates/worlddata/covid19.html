@@ -37,13 +37,14 @@
 <!-- Viz 1 - Map - Today values -->
 <section>
     <div class="container limited-width">
-        <p> <strong>Last updated 31/03/2020.</strong></p>
+        <p> <strong>Last updated 01/04/2020.</strong></p>
         <p>
             Below you can see a snapshot of the current situation. Due to some data gathering lag, the data is about 1-2
             days older than the last update date. The 4 main metrics are the confirmed coronavirus cases (Confirmed),
             deaths following a coronavirus infection (Deaths), complete recoveries following a coronavirus infection
             (Recovered), and currently infected people (Active), i.e. confirmed cases that have not been fatal, nor have
-            they recovered yet. Apart from absolute numbers, I am also providing these metrics per 10,000 people to get
+            they recovered yet. Apart from absolute numbers, I am also providing these metrics per 1 million people to
+            get
             a better idea of how impacted a country is. 1000 deaths in a country with a 5m population means something
             very different to the same number of deaths in a country with a 500m population. Lastly, I am providing two
             rates, death rate: the ratio of cases that develop to fatalities, and recovery rate: the ratio of recovered
@@ -80,7 +81,7 @@
                 <p>
                     *Source:
                     <a href="https://github.com/CSSEGISandData/COVID-19" target="_blank">Johns Hopkins University.</a>
-                    Last updated 31/03/2020.
+                    Last updated 01/04/2020.
                 </p>
             </div>
         </div>
@@ -131,17 +132,17 @@
         .then(function (data) {
             // All filterable options
             const all_parameters = ["Confirmed cases",
-                "Confirmed cases per 10,000",
+                "Confirmed cases per 1 million",
                 "Deaths",
-                "Deaths per 10,000",
+                "Deaths per 1 million",
                 "Death rate",
                 "Recovered",
                 "Recovery rate",
                 "Active",
-                "Active per 10,000"];
+                "Active per 1 million"];
 
             // Default values
-            var parameter = "Confirmed cases per 10,000";
+            var parameter = "Active per 1 million";
 
             var container_class = ".covid-map";
             var initial_data = [];
@@ -153,11 +154,11 @@
                     if (row.Country != "World") {
                         if (parameter == "Confirmed cases") {
                             val = row.Confirmed;
-                        } else if (parameter == "Confirmed cases per 10,000") {
+                        } else if (parameter == "Confirmed cases per 1 million") {
                             val = row.Confirmed_pc;
                         } else if (parameter == "Deaths") {
                             val = row.Deaths;
-                        } else if (parameter == "Deaths per 10,000") {
+                        } else if (parameter == "Deaths per 1 million") {
                             val = row.Deaths_pc;
                         } else if (parameter == "Death rate") {
                             val = row.Death_rate;
@@ -167,7 +168,7 @@
                             val = row.Recovered_rate;
                         } else if (parameter == "Active") {
                             val = row.Active;
-                        } else if (parameter == "Active per 10,000") {
+                        } else if (parameter == "Active per 1 million") {
                             val = row.Active_pc;
                         }
 
@@ -194,8 +195,8 @@
                     enableButtons: true,
                 },
                 colorAxis: {
-                    tickInterval: 2,
-                    max: 10,
+                    tickInterval: 200,
+                    max: 1000,
                     min: 0,
                     stops: [
                         [0, '#0074D9'],
@@ -213,15 +214,15 @@
                         if (parameter == "Confirmed cases") {
                             let val = numberFormatterSeparator(value);
                             text = val + " confirmed cases";
-                        } else if (parameter == "Confirmed cases per 10,000") {
+                        } else if (parameter == "Confirmed cases per 1 million") {
                             let val = numberFormatterPercentage(value);
-                            text = val + " confirmed cases per 10,000 people";
+                            text = val + " confirmed cases per 1 million people";
                         } else if (parameter == "Deaths") {
                             let val = numberFormatterSeparator(value);
                             text = val + " deaths";
-                        } else if (parameter == "Deaths per 10,000") {
+                        } else if (parameter == "Deaths per 1 million") {
                             let val = numberFormatterPercentage(value);
-                            text = val + " deaths per 10,000 people";
+                            text = val + " deaths per 1 million people";
                         } else if (parameter == "Death rate") {
                             let val = numberFormatterPercentage(value);
                             text = val + "% of confirmed cases have escalated to death";
@@ -234,9 +235,9 @@
                         } else if (parameter == "Active") {
                             let val = numberFormatterSeparator(value);
                             text = val + " are currently infected";
-                        } else if (parameter == "Active per 10,000") {
+                        } else if (parameter == "Active per 1 million") {
                             let val = numberFormatterPercentage(value);
-                            text = val + " are currently infected per 10,000";
+                            text = val + " are currently infected per 1 million people";
                         }
                         return '<text><span style="font-size: 1.1em"><strong>' + title + '</strong></span><br>' + text + '</text>';
                     },
@@ -277,10 +278,10 @@
                         max: 100000,
                         min: 0,
                     }, false)
-                } else if (parameter == "Confirmed cases per 10,000") {
+                } else if (parameter == "Confirmed cases per 1 million") {
                     chart.colorAxis[0].update({
-                        tickInterval: 2,
-                        max: 10,
+                        tickInterval: 200,
+                        max: 1000,
                         min: 0,
                     }, false)
                 } else if (parameter == "Deaths") {
@@ -289,10 +290,10 @@
                         max: 5000,
                         min: 0,
                     }, false)
-                } else if (parameter == "Deaths per 10,000") {
+                } else if (parameter == "Deaths per 1 million") {
                     chart.colorAxis[0].update({
-                        tickInterval: 0.25,
-                        max: 1,
+                        tickInterval: 25,
+                        max: 100,
                         min: 0,
                     }, false)
                 } else if (parameter == "Death rate") {
@@ -319,10 +320,10 @@
                         max: 50000,
                         min: 0,
                     }, false)
-                } else if (parameter == "Active per 10,000") {
+                } else if (parameter == "Active per 1 million") {
                     chart.colorAxis[0].update({
-                        tickInterval: 2,
-                        max: 10,
+                        tickInterval: 200,
+                        max: 1000,
                         min: 0,
                     }, false)
                 }
@@ -431,3 +432,34 @@
 
 </script>
 {% endblock %}
+
+<div class='tableauPlaceholder' id='viz1578485271937' style='position: relative'><noscript><a href='#'><img alt=' '
+                src='https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;La&#47;Labourmarketbriefing_15623405456440&#47;FIG1&#47;1_rss.png'
+                style='border: none' /></a></noscript><object class='tableauViz' style='display:none;'>
+        <param name='host_url' value='https%3A%2F%2Fpublic.tableau.com%2F' />
+        <param name='embed_code_version' value='3' />
+        <param name='site_root' value='' />
+        <param name='name' value='Labourmarketbriefing_15623405456440&#47;FIG1' />
+        <param name='tabs' value='no' />
+        <param name='toolbar' value='yes' />
+        <param name='static_image'
+            value='https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;La&#47;Labourmarketbriefing_15623405456440&#47;FIG1&#47;1.png' />
+        <param name='animate_transition' value='yes' />
+        <param name='display_static_image' value='yes' />
+        <param name='display_spinner' value='yes' />
+        <param name='display_overlay' value='yes' />
+        <param name='display_count' value='yes' /></object></div>
+<script type='text/javascript'>
+    var divElement = document.getElementById('viz1578485271937');
+    var vizElement = divElement.getElementsByTagName('object')[0]; if (divElement.offsetWidth > 800) {
+        vizElement.style.width = '100%'; vizElement.style.height = '627px';
+    } else if (divElement.offsetWidth > 500) {
+        vizElement.style.width = '100%'; vizElement.style.height = '627px';
+    } else {
+        vizElement.style.width = '100%';
+        vizElement.style.height = (divElement.offsetWidth * 1.77) + 'px';
+    }
+    var scriptElement = document.createElement('script');
+    scriptElement.src = 'https://public.tableau.com/javascripts/api/viz_v1.js';
+    vizElement.parentNode.insertBefore(scriptElement, vizElement);                
+</script>
