@@ -361,7 +361,7 @@ function createLegend(chart_points, data, parentContainer) {
     })
 }
 
-// Create legend
+// Create legend for multiple charts
 function createMultiLegend(chart1_points, chart2_points, parentContainer) {
 
     // Remove old legend items if they exist

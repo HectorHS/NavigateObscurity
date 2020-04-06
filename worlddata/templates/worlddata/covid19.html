@@ -37,7 +37,7 @@
 <!-- Viz 1 - Map - Today values -->
 <section>
     <div class="container limited-width">
-        <p> <strong>Last updated 04/04/2020.</strong></p>
+        <p> <strong>Last updated 06/04/2020.</strong></p>
         <p>
             Below you can see a snapshot of the current situation. Due to some data gathering lag, the data is about 1-2
             days older than the last update date. The 4 main metrics are the confirmed coronavirus cases (Confirmed),
@@ -81,7 +81,7 @@
                 <p>
                     *Source:
                     <a href="https://github.com/CSSEGISandData/COVID-19" target="_blank">Johns Hopkins University.</a>
-                    Last updated 04/04/2020.
+                    Last updated 06/04/2020.
                 </p>
             </div>
         </div>
@@ -111,8 +111,8 @@
         </p>
         <p>
             Hopefully it will all make more sense visually. To see what a hopeful visualisation looks like, just select
-            China, or South Korea (Korea, South) from the dropdown. For a less hopeful visualisation just have a look at
-            World data.
+            China, or South Korea (Korea, South) from the dropdown. For a less hopeful visualisation have a look at
+            USA.
 
         </p>
     </div>
@@ -134,7 +134,7 @@
             <p>
                 *Source:
                 <a href="https://github.com/CSSEGISandData/COVID-19" target="_blank">Johns Hopkins University.</a>
-                Last updated 04/04/2020.
+                Last updated 06/04/2020.
             </p>
         </div>
     </figure>
@@ -555,7 +555,13 @@
                 "27/03/2020",
                 "28/03/2020",
                 "29/03/2020",
-                "30/03/2020"];
+                "30/03/2020",
+                "31/03/2020",
+                "01/04/2020",
+                "02/04/2020",
+                "03/04/2020",
+                "04/04/2020",
+                "05/04/2020"];
 
 
             // Default values
@@ -662,10 +668,12 @@
                 tooltip: {
                     formatter: function () {
                         var title = fCapital(this.key);
-                        var value = numberFormatterPercentage(this.y);
+                        var value = numberFormatterInteger(this.y);
+                        var total = numberFormatterInteger(this.total);
                         var area = fCapital(this.series.name);
 
-                        return '<text><span style="font-size: 1.1em"><strong>' + title + '</strong></span><br>' + area + " (accumulative): " + value;
+                        return '<text><span style="font-size: 1.1em"><strong>' + title + '</strong></span><br>' + area + " (accumulative): " + value +
+                            '<br/> With total confirmed cases: ' + total;
                     },
                     useHTML: true
                 },
