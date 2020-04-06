@@ -371,3 +371,11 @@ figure {
   color: #101414;
   line-height: 0.8;
 }
+
+.covid-area {
+  padding-bottom: 0;
+}
+
+.covid-bars {
+  padding-top: 0;
+}

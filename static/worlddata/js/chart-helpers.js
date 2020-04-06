@@ -3,6 +3,9 @@
 function fCapital(string) {
     return string.charAt(0).toUpperCase() + string.slice(1);
 }
+function fLower(string) {
+    return string.charAt(0).toLowerCase() + string.slice(1);
+}
 function numberFormatterInteger(number) {
     var value = number.toLocaleString(undefined, { maximumFractionDigits: 0 });
     return value;
@@ -12,7 +15,7 @@ function numberFormatterPercentage(number) {
     return value;
 }
 function numberFormatterSeparator(number) {
-        return number.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+    return number.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
 }
 function getCountryCode(country) {
     var countryCode = {
@@ -353,6 +356,88 @@ function createLegend(chart_points, data, parentContainer) {
         }
 
         for (let point of chart_points) {
+            point.setState('');
+        }
+    })
+}
+
+// Create legend
+function createMultiLegend(chart1_points, chart2_points, parentContainer) {
+
+    // Remove old legend items if they exist
+    document.querySelectorAll(parentContainer + ' .legend-item').forEach(function (a) {
+        a.remove()
+    })
+
+    pointNames = [];
+
+    for (point of chart1_points) {
+        var nam = point.userOptions.name;
+        var po = { name: nam, color: point.userOptions.colorIndex };
+        pointNames.push(po);
+    }
+
+    for (point of chart2_points) {
+        var nam = point.userOptions.name;
+        if (pointNames.filter(pointNames => pointNames.name === nam).length == 0) {
+            var po = { name: nam, color: point.userOptions.colorIndex };
+            pointNames.unshift(po);
+        }
+    }
+
+    $legend = $(parentContainer + ' .chart-legend');
+    // Append legend items
+    for (let point of pointNames) {
+        $legend.append('<div class="legend-item"><div class="dot legend-color-' + point.color + '" ></div><div class="serieName" id="">' + fCapital(point.name) + '</div></div>');
+    }
+
+    // Click effect for legend
+    $(parentContainer + ' .legend-item').click(function () {
+        var name = this.textContent;
+        for (let point of chart1_points) {
+            if (point.name === name || point.from === name) {
+                point.select(true, false);
+            }
+        }
+        for (let point of chart2_points) {
+            if (point.name === name || point.from === name) {
+                point.select(true, false);
+            }
+        }
+    });
+
+    // Hover effect for legend
+    $(parentContainer + ' .legend-item').mouseenter(function () {
+        var name = this.textContent;
+
+        for (let point of chart1_points) {
+            if (point.name === name || point.from === name) { // from is for dependency wheel
+                point.setState('hover');
+            } else {
+                point.setState('inactive');
+            }
+        }
+        for (let point of chart2_points) {
+            if (point.name === name || point.from === name) { // from is for dependency wheel
+                point.setState('hover');
+            } else {
+                point.setState('inactive');
+            }
+        }
+    });
+
+    // Remove all states on mouse out
+    $(parentContainer + ' .legend-item').mouseout(function (event) {
+        var e = event.toElement || event.relatedTarget,
+            i = 0;
+        if (e.parentNode == this || e == this) {
+            return;
+        }
+
+        for (let point of chart1_points) {
+            point.setState('');
+        }
+        for (let point of chart2_points) {
             point.setState('');
         }
     })

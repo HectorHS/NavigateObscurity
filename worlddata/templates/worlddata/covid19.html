@@ -89,6 +89,56 @@
 
 </section>
 
+<!-- Viz 2 area -->
+<section>
+    <div class="container limited-width">
+        <p>
+            The map above gives us a snapshot of the situation and a comparative view for the different countries, but
+            does not help us understand how the epidemic is progressing. For that, we will need to track and visualise
+            change. In the charts below you can see day by day change in two ways. On the top chart you can see the
+            accumulating numbers for the different parameters. Visualised are the “active”, “recovered” and “death”
+            cases, which when added up make up the "confirmed" cases. So, the whole visualised area represents the total
+            confirmed cases. Since the numbers are accumulating, the total area will only go up, so the points of
+            interest here are how steep the increase is, and when the “active” cases number starts flattening out and
+            eventually reducing being replaced by “recovered” cases.
+        </p>
+        <p>
+            On the bottom chart, you can see the day by day (non accumulative) change on the same metrics. The new
+            “confirmed” cases minus the new “recovered” cases and “death” cases gives us the new “active” cases. So,
+            this chart can be read as a change of “active” cases per day. The first positive indication here is the
+            flattening of new “confirmed” cases, and then eventually, having more “recoveries” than “confirmed” cases in
+            a daily basis.
+        </p>
+        <p>
+            Hopefully it will all make more sense visually. To see what a hopeful visualisation looks like, just select
+            China, or South Korea (Korea, South) from the dropdown. For a less hopeful visualisation just have a look at
+            World data.
+
+        </p>
+    </div>
+    <figure>
+        <div class="container chart-container covid-area filters-on-top">
+            <div class="chart-options" style="max-width:100%">
+                <div class="chart-filters"></div>
+            </div>
+            <div id="covid_area" style="width:100%;"></div>
+
+        </div>
+        <div class="container chart-container covid-bars filters-on-top">
+            <div id="covid_bars" style="width:100%;"></div>
+            <div class="chart-options" style="max-width:100%">
+                <div class="chart-legend"></div>
+            </div>
+        </div>
+        <div class="source-text">
+            <p>
+                *Source:
+                <a href="https://github.com/CSSEGISandData/COVID-19" target="_blank">Johns Hopkins University.</a>
+                Last updated 04/04/2020.
+            </p>
+        </div>
+    </figure>
+</section>
 <!-- Comments -->
 <section>
     <div class="container">
@@ -126,7 +176,8 @@
     var static_url = "{% get_static_prefix %}";
     file_map_covid = "worlddata/csv/covid-map.csv";
     covid_map_path = static_url + file_map_covid;
-
+    file_area_covid = "worlddata/csv/covid-time.csv";
+    covid_area_path = static_url + file_area_covid;
 
     var CovidMap = d3.csv(covid_map_path)
         .then(function (data) {
@@ -429,37 +480,320 @@
             console.log(error);
         })
 
+    var covidArea = d3.csv(covid_area_path)
+        .then(function (data) {
+            // All filterable options
+            const all_measures = [...new Set(data.map(d => d.Parameter))].sort()
+            const all_countries = [...new Set(data.map(d => d.Country))].sort()
+            const all_metrics = [...new Set(data.map(d => d.Value))].sort()
+
+            const all_dates = ["22/01/2020",
+                "23/01/2020",
+                "24/01/2020",
+                "25/01/2020",
+                "26/01/2020",
+                "27/01/2020",
+                "28/01/2020",
+                "29/01/2020",
+                "30/01/2020",
+                "31/01/2020",
+                "01/02/2020",
+                "02/02/2020",
+                "03/02/2020",
+                "04/02/2020",
+                "05/02/2020",
+                "06/02/2020",
+                "07/02/2020",
+                "08/02/2020",
+                "09/02/2020",
+                "10/02/2020",
+                "11/02/2020",
+                "12/02/2020",
+                "13/02/2020",
+                "14/02/2020",
+                "15/02/2020",
+                "16/02/2020",
+                "17/02/2020",
+                "18/02/2020",
+                "19/02/2020",
+                "20/02/2020",
+                "21/02/2020",
+                "22/02/2020",
+                "23/02/2020",
+                "24/02/2020",
+                "25/02/2020",
+                "26/02/2020",
+                "27/02/2020",
+                "28/02/2020",
+                "29/02/2020",
+                "01/03/2020",
+                "02/03/2020",
+                "03/03/2020",
+                "04/03/2020",
+                "05/03/2020",
+                "06/03/2020",
+                "07/03/2020",
+                "08/03/2020",
+                "09/03/2020",
+                "10/03/2020",
+                "11/03/2020",
+                "12/03/2020",
+                "13/03/2020",
+                "14/03/2020",
+                "15/03/2020",
+                "16/03/2020",
+                "17/03/2020",
+                "18/03/2020",
+                "19/03/2020",
+                "20/03/2020",
+                "21/03/2020",
+                "22/03/2020",
+                "23/03/2020",
+                "24/03/2020",
+                "25/03/2020",
+                "26/03/2020",
+                "27/03/2020",
+                "28/03/2020",
+                "29/03/2020",
+                "30/03/2020"];
+
+
+            // Default values
+            var metric = "absolute",
+                country = "World";
+
+            var area_container_class = ".covid-area";
+            var bar_container_class = ".covid-bars";
+            var initial_data = [];
+            var initial_bar_data = [];
+
+            function getBlankData() {
+                return [0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+                    0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+                    0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+                    0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+                    0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+                    0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+                    0, 0, 0, 0, 0, 0, 0, 0, 0];
+            }
+
+            var getColor = {
+                "Active": "4",
+                "Deaths": "6",
+                "Recovered": "9",
+                "Confirmed": "0"
+            };
+
+            function get_data() {
+                var new_data = [];
+                for (let row of data) {
+                    if (row.Value == metric && row.Country == country && row.Parameter != "Confirmed") {
+                        var day_data = [];
+                        for (let day in all_dates) {
+                            day_data[day] = +row[all_dates[day]];
+                        }
+                        new_data.push({ id: row.Parameter, name: row.Parameter, data: day_data, colorIndex: getColor[row.Parameter] })
+                    }
+                }
+                return new_data;
+            }
+
+            function get_bar_data() {
+                var new_data = [];
+                for (let row of data) {
+                    if (row.Value == "change" && row.Country == country && row.Parameter != "Active") {
+                        var day_data = [];
+                        if (row.Parameter == "Confirmed") {
+                            for (let day in all_dates) {
+                                day_data[day] = +row[all_dates[day]];
+                            }
+                        } else {
+                            for (let day in all_dates) {
+                                day_data[day] = +row[all_dates[day]] * -1;
+                            }
+                        }
+                        new_data.push({ id: row.Parameter, name: row.Parameter, data: day_data, colorIndex: getColor[row.Parameter] })
+                    }
+                }
+                return new_data;
+            }
+
+            initial_data = get_data();
+            initial_bar_data = get_bar_data();
+
+            var area_chart = Highcharts.chart('covid_area', {
+                chart: {
+                    type: 'area',
+                    styledMode: true,
+                    height: 300,
+                    marginBottom: 20
+                },
+                title: {
+                    text: null
+                },
+                xAxis: {
+                    categories: all_dates,
+                    tickInterval: 10,
+                    title: {
+                        enabled: false
+                    }
+                },
+                yAxis: {
+                    title: {
+                        text: 'Accumulative number of cases'
+                    },
+                },
+                tooltip: {
+                    split: false,
+                    valueSuffix: ' millions'
+                },
+                plotOptions: {
+                    area: {
+                        stacking: 'normal',
+                        findNearestPointBy: 'xy',
+                        fillOpacity: 0.8,
+                        marker: {
+                            enabled: false,
+
+                        },
+                        trackByArea: true
+                    },
+                },
+                tooltip: {
+                    formatter: function () {
+                        var title = fCapital(this.key);
+                        var value = numberFormatterPercentage(this.y);
+                        var area = fCapital(this.series.name);
+
+                        return '<text><span style="font-size: 1.1em"><strong>' + title + '</strong></span><br>' + area + " (accumulative): " + value;
+                    },
+                    useHTML: true
+                },
+                series: initial_data,
+                credits: {
+                    enabled: false
+                },
+                legend: {
+                    enabled: false
+                }
+            });
+
+
+            var bar_chart = Highcharts.chart('covid_bars', {
+                chart: {
+                    type: 'column',
+                    styledMode: true,
+                    height: 300,
+                    marginLeft: 95
+                },
+                title: {
+                    text: null
+                },
+                xAxis: {
+                    categories: all_dates,
+                    tickInterval: 10,
+                    labels: {
+                        enabled: false
+                    },
+                    title: {
+                        enabled: false
+                    },
+                },
+                yAxis: {
+                    title: {
+                        text: 'Daily change in "active" cases'
+                    },
+                },
+                tooltip: {
+                    formatter: function () {
+                        var sum = 0,
+                            cont = this,
+                            series = cont.series.chart.series,
+                            each = Highcharts.each,
+                            ind = 0;
+                        each(series, function (p, i) {
+                            ind = all_dates.indexOf(cont.x)
+                            sum += p.yData[ind];
+                        });
+                        var title = fCapital(this.x),
+                            name = (this.series.name == "Deaths") ? "death" : fLower(this.series.name),
+                            value = (this.y >= 0) ? numberFormatterInteger(this.y) : numberFormatterInteger(this.y * -1),
+                            total = numberFormatterInteger(sum);
+
+                        if (sum < 0) {
+                            return '<b>' + title + '</b><br/>Daily increase in ' + name + ' cases: ' + value + '<br/>' +
+                                'Total change to active cases: ' + total;
+                        } else {
+                            return '<b>' + title + '</b><br/>Daily increase in ' + name + ' cases: ' + value + '<br/>' +
+                                'Total change to active cases: +' + total;
+                        }
+                    },
+                    useHTML: true,
+                },
+                plotOptions: {
+                    column: {
+                        stacking: 'normal',
+                        borderRadius: 3,
+                        pointPadding: 0
+                    },
+                    series: {
+                        groupPadding: 0.1,
+                    }
+                },
+                series: initial_bar_data,
+                credits: {
+                    enabled: false
+                },
+                legend: {
+                    enabled: false
+                }
+            });
+
+
+            area_chart_points = area_chart.series;
+            bar_chart_points = bar_chart.series;
+            var legend = createMultiLegend(area_chart_points, bar_chart_points, bar_container_class);
+            // Dropdowns
+            // Define dropdown container
+            var filters = document.querySelector(area_container_class + " .chart-filters");
+
+            // Create a country dropdown
+            var countryName = "area-country",
+                countryWidth = "320px";
+            addDropdown(filters, countryName, countryWidth, countryChange, all_countries, country);
+
+            // Update chart data on country change
+            function countryChange() {
+                country = document.getElementById(countryName + "-select").value;
+
+                var area_loops = area_chart.series.length;
+                var bar_loops = bar_chart.series.length;
+                var updated_area_data = get_data();
+                var updated_bar_data = get_bar_data();
+
+                // First empty the existing data
+                for (var i = 0; i < area_loops; i++) {
+                    area_chart.series[0].remove(false);
+                }
+                for (var i = 0; i < bar_loops; i++) {
+                    bar_chart.series[0].remove(false);
+                }
+                // Then add the updated data
+                for (var i = 0; i < updated_area_data.length; i++) {
+                    area_chart.addSeries(updated_area_data[i], false);
+                }
+                for (var i = 0; i < updated_bar_data.length; i++) {
+                    bar_chart.addSeries(updated_bar_data[i], false);
+                }
+                area_chart.redraw();
+                bar_chart.redraw();
+            }
+        })
+
+        .catch(function (error) {
+            console.log(error);
+        })
+
 
 </script>
 {% endblock %}
-
-<div class='tableauPlaceholder' id='viz1578485271937' style='position: relative'><noscript><a href='#'><img alt=' '
-                src='https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;La&#47;Labourmarketbriefing_15623405456440&#47;FIG1&#47;1_rss.png'
-                style='border: none' /></a></noscript><object class='tableauViz' style='display:none;'>
-        <param name='host_url' value='https%3A%2F%2Fpublic.tableau.com%2F' />
-        <param name='embed_code_version' value='3' />
-        <param name='site_root' value='' />
-        <param name='name' value='Labourmarketbriefing_15623405456440&#47;FIG1' />
-        <param name='tabs' value='no' />
-        <param name='toolbar' value='yes' />
-        <param name='static_image'
-            value='https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;La&#47;Labourmarketbriefing_15623405456440&#47;FIG1&#47;1.png' />
-        <param name='animate_transition' value='yes' />
-        <param name='display_static_image' value='yes' />
-        <param name='display_spinner' value='yes' />
-        <param name='display_overlay' value='yes' />
-        <param name='display_count' value='yes' /></object></div>
-<script type='text/javascript'>
-    var divElement = document.getElementById('viz1578485271937');
-    var vizElement = divElement.getElementsByTagName('object')[0]; if (divElement.offsetWidth > 800) {
-        vizElement.style.width = '100%'; vizElement.style.height = '627px';
-    } else if (divElement.offsetWidth > 500) {
-        vizElement.style.width = '100%'; vizElement.style.height = '627px';
-    } else {
-        vizElement.style.width = '100%';
-        vizElement.style.height = (divElement.offsetWidth * 1.77) + 'px';
-    }
-    var scriptElement = document.createElement('script');
-    scriptElement.src = 'https://public.tableau.com/javascripts/api/viz_v1.js';
-    vizElement.parentNode.insertBefore(scriptElement, vizElement);                
-</script>
