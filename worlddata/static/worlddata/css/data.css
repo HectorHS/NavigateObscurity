@@ -219,17 +219,17 @@ figure {
   padding-left: 0;
 }
 
-.chart-legend {
+.chart-legend, .secondary-legend {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
 }
 
-.chart-legend h4 {
+.chart-legend h4, .secondary-legend h4 {
   margin: 0 10px 5px 0;
 }
 
-.chart-legend .legend-item {
+.chart-legend .legend-item, .secondary-legend .legend-item {
   display: inline-flex;
   margin-bottom: 5px;
   margin-right: 20px;
@@ -237,7 +237,7 @@ figure {
   white-space: nowrap;
 }
 
-.chart-legend .dot {
+.chart-legend .dot, .secondary-legend .dot {
   height: 25px;
   width: 25px;
   border-radius: 50%;
@@ -378,4 +378,20 @@ figure {
 
 .covid-bars {
   padding-top: 0;
+}
+
+.covid-bars .restricted-band {
+  fill: #e58939;
+}
+
+.covid-bars .curfew-band {
+  fill: #794f99;
+}
+
+.covid-bars .lockdown-band {
+  fill: #a52721;
+}
+
+.covid-bars .secondary-legend .dot {
+  opacity: 0.4;
 }

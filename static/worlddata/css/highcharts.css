@@ -480,6 +480,15 @@ g.highcharts-series,
   background-color: #794f99;
 }
 
+.highcharts-color-28 {
+  fill: #DDDDDD;
+  stroke: #DDDDDD;
+}
+
+.legend-color-28 {
+  background-color: #DDDDDD;
+}
+
 .highcharts-area {
   fill-opacity: 0.75;
   stroke-width: 0;
@@ -707,7 +716,7 @@ circle.highcharts-legend-nav-active, circle.highcharts-legend-nav-inactive {
 /* Plot bands and polar pane backgrounds */
 .highcharts-plot-band, .highcharts-pane {
   fill: #dffcff;
-  fill-opacity: 0.05;
+  fill-opacity: 0.3;
 }
 
 .highcharts-plot-line {

@@ -81,7 +81,7 @@
                 <p>
                     *Source:
                     <a href="https://github.com/CSSEGISandData/COVID-19" target="_blank">Johns Hopkins University.</a>
-                    Last updated 20/04/2020.
+                    Downloaded 20/04/2020.
                 </p>
             </div>
         </div>
@@ -89,7 +89,7 @@
 
 </section>
 
-<!-- Viz 2 area -->
+<!-- Viz 2 tracking change -->
 <section>
     <div class="container limited-width">
         <p>
@@ -107,7 +107,10 @@
             “confirmed” cases minus the new “recovered” cases and “death” cases gives us the new “active” cases. So,
             this chart can be read as a change of “active” cases per day. The first positive indication here is the
             flattening of new “confirmed” cases, and then eventually, having more “recoveries” than “confirmed” cases in
-            a daily basis.
+            a daily basis. You might see the background of the chart changing colours. This reflects a change in the
+            government response regarding restrictions of movement. What each colour means is shown on the legend, and
+            further information on each category can be found on the section below where a map is provided for the
+            different government responses.
         </p>
         <p>
             Hopefully it will all make more sense visually. To see what a hopeful visualisation looks like, just select
@@ -128,14 +131,54 @@
             <div id="covid_bars" style="width:100%;"></div>
             <div class="chart-options" style="max-width:100%">
                 <div class="chart-legend"></div>
+                <div class="secondary-legend"></div>
             </div>
         </div>
         <div class="source-text">
             <p>
-                *Source:
-                <a href="https://github.com/CSSEGISandData/COVID-19" target="_blank">Johns Hopkins University.</a>
-                Last updated 20/04/2020.
+                *Sources:
+                <a href="https://github.com/CSSEGISandData/COVID-19" target="_blank">Johns Hopkins University</a> (cases
+                data).
+                Downloaded 20/04/2020. <br>
+                <a href="https://github.com/OxCGRT/covid-policy-tracker" target="_blank">Oxford University</a>
+                (government response
+                data).
+                Downloaded 18/04/2020
+
             </p>
+        </div>
+    </figure>
+</section>
+<!-- Viz 3 - lockdown map -->
+<div class="container limited-width">
+    <p>
+        One of the main ways governments have tried to contain the virus is via imposing social distancing and movement
+        restrictions to their citizens. Although approaches vary greatly, I have simplified responses to four
+        categories and visualised them below. The categories are non-universal restrictions of movement, as in
+        restricting movement in a particular part of the country, or for specific parts of the population. Curfews where
+        movement is universally forbidden in specific hours of the day. Lockdowns, where movement is restricted at
+        all times with specific exceptions. And a no restrictions category that includes all countries where measures
+        are not enforced, even if governments have provided relevant recommendations.
+    </p>
+</div>
+<section>
+    <figure>
+        <div class="container chart-container lockdown-map filters-on-top">
+            <div class="chart-options chart-options-map" style="max-width:100%">
+                <div class="chart-filters"></div>
+            </div>
+            <div id="lockdown_map" class="map" style="width:100%;"></div>
+            <div class="chart-options" style="max-width:100%">
+                <div class="secondary-legend"></div>
+            </div>
+
+            <div class="source-text">
+                <p>
+                    *Source:
+                    <a href="https://github.com/OxCGRT/covid-policy-tracker" target="_blank">Oxford University.</a>
+                    Downloaded 18/04/2020
+                </p>
+            </div>
         </div>
     </figure>
 </section>
@@ -178,6 +221,8 @@
     covid_map_path = static_url + file_map_covid;
     file_area_covid = "worlddata/csv/covid-time.csv";
     covid_area_path = static_url + file_area_covid;
+    file_covid_lockdown = "worlddata/csv/covid-lockdown.csv";
+    covid_lockdown_path = static_url + file_covid_lockdown;
 
     var CovidMap = d3.csv(covid_map_path)
         .then(function (data) {
@@ -480,13 +525,426 @@
             console.log(error);
         })
 
-    var covidArea = d3.csv(covid_area_path)
+    var covidArea = Promise.all([
+        d3.csv(covid_area_path),
+        d3.csv(covid_lockdown_path),
+    ]).then(function (files) {
+        // d3.csv(covid_area_path)
+        //     .then(function (data) {
+        // All filterable options
+        const all_measures = [...new Set(files[0].map(d => d.Parameter))].sort()
+        const all_countries = [...new Set(files[0].map(d => d.Country))].sort()
+        const all_metrics = [...new Set(files[0].map(d => d.Value))].sort()
+
+        const all_dates = ["22/01/2020",
+            "23/01/2020",
+            "24/01/2020",
+            "25/01/2020",
+            "26/01/2020",
+            "27/01/2020",
+            "28/01/2020",
+            "29/01/2020",
+            "30/01/2020",
+            "31/01/2020",
+            "01/02/2020",
+            "02/02/2020",
+            "03/02/2020",
+            "04/02/2020",
+            "05/02/2020",
+            "06/02/2020",
+            "07/02/2020",
+            "08/02/2020",
+            "09/02/2020",
+            "10/02/2020",
+            "11/02/2020",
+            "12/02/2020",
+            "13/02/2020",
+            "14/02/2020",
+            "15/02/2020",
+            "16/02/2020",
+            "17/02/2020",
+            "18/02/2020",
+            "19/02/2020",
+            "20/02/2020",
+            "21/02/2020",
+            "22/02/2020",
+            "23/02/2020",
+            "24/02/2020",
+            "25/02/2020",
+            "26/02/2020",
+            "27/02/2020",
+            "28/02/2020",
+            "29/02/2020",
+            "01/03/2020",
+            "02/03/2020",
+            "03/03/2020",
+            "04/03/2020",
+            "05/03/2020",
+            "06/03/2020",
+            "07/03/2020",
+            "08/03/2020",
+            "09/03/2020",
+            "10/03/2020",
+            "11/03/2020",
+            "12/03/2020",
+            "13/03/2020",
+            "14/03/2020",
+            "15/03/2020",
+            "16/03/2020",
+            "17/03/2020",
+            "18/03/2020",
+            "19/03/2020",
+            "20/03/2020",
+            "21/03/2020",
+            "22/03/2020",
+            "23/03/2020",
+            "24/03/2020",
+            "25/03/2020",
+            "26/03/2020",
+            "27/03/2020",
+            "28/03/2020",
+            "29/03/2020",
+            "30/03/2020",
+            "31/03/2020",
+            "01/04/2020",
+            "02/04/2020",
+            "03/04/2020",
+            "04/04/2020",
+            "05/04/2020",
+            "06/04/2020",
+            "07/04/2020",
+            "08/04/2020",
+            "09/04/2020",
+            "10/04/2020",
+            "11/04/2020",
+            "12/04/2020",
+            "13/04/2020",
+            "14/04/2020",
+            "15/04/2020",
+            "16/04/2020",
+            "17/04/2020",
+            "18/04/2020",
+            "19/04/2020"];
+
+
+        // Default values
+        var metric = "absolute",
+            country = "World";
+
+        var area_container_class = ".covid-area";
+        var bar_container_class = ".covid-bars";
+        var initial_data = [];
+        var initial_bar_data = [];
+        var xAxisBands = [];
+
+        function getBlankData() {
+            return [0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+                0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+                0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+                0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+                0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+                0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+                0, 0, 0, 0, 0, 0, 0, 0, 0];
+        }
+
+        var getColor = {
+            "Active": "4",
+            "Deaths": "6",
+            "Recovered": "9",
+            "Confirmed": "0"
+        };
+
+        function get_data() {
+            var new_data = [];
+            for (let row of files[0]) {
+                if (row.Value == metric && row.Country == country && row.Parameter != "Confirmed") {
+                    var day_data = [];
+                    for (let day in all_dates) {
+                        day_data[day] = +row[all_dates[day]];
+                    }
+                    new_data.push({ id: row.Parameter, name: row.Parameter, data: day_data, colorIndex: getColor[row.Parameter] })
+                }
+            }
+            return new_data;
+        }
+
+        function get_bar_data() {
+            var new_data = [];
+            for (let row of files[0]) {
+                if (row.Value == "change" && row.Country == country && row.Parameter != "Active") {
+                    var day_data = [];
+                    if (row.Parameter == "Confirmed") {
+                        for (let day in all_dates) {
+                            day_data[day] = +row[all_dates[day]];
+                        }
+                    } else {
+                        for (let day in all_dates) {
+                            day_data[day] = +row[all_dates[day]] * -1;
+                        }
+                    }
+                    new_data.push({ id: row.Parameter, name: row.Parameter, data: day_data, colorIndex: getColor[row.Parameter] })
+                }
+            }
+            return new_data;
+        }
+
+        function get_bands() {
+            var new_bands = [];
+            for (let row of files[1]) {
+                if (row.Country == country) {
+                    var oldDayValue = 0,
+                        newDayValue = 0,
+                        from = 0,
+                        to = 0,
+                        started = false,
+                        cssClass = '';
+
+                    var i;
+                    for (i = 0; i < all_dates.length; i++) {
+                        newDayValue = row[all_dates[i]];
+                        if (newDayValue != oldDayValue) {
+                            if (!started) {
+                                started = true;
+                                from = i;
+                                if (newDayValue == 1) {
+                                    cssClass = 'restricted-band'
+                                } else if (newDayValue == 2) {
+                                    cssClass = 'curfew-band'
+                                } else {
+                                    cssClass = 'lockdown-band'
+                                }
+                            } else {
+                                to = i;
+                                new_bands.push({ from: from, to: to, className: cssClass })
+                                if (newDayValue != 0) {
+                                    from = i;
+                                    to = 0;
+                                    if (newDayValue == 1) {
+                                        cssClass = 'restricted-band'
+                                    } else if (newDayValue == 2) {
+                                        cssClass = 'curfew-band'
+                                    } else {
+                                        cssClass = 'lockdown-band'
+                                    }
+                                } else {
+                                    started = false;
+                                }
+                            }
+                        }
+                        oldDayValue = newDayValue;
+                    }
+                    if (started && to == 0) {
+                        new_bands.push({ from: from, to: all_dates.length, className: cssClass })
+                    }
+                }
+            }
+            return new_bands;
+        }
+
+        xAxisBands = get_bands();
+        initial_data = get_data();
+        initial_bar_data = get_bar_data();
+
+        var area_chart = Highcharts.chart('covid_area', {
+            chart: {
+                type: 'area',
+                styledMode: true,
+                height: 300,
+                marginBottom: 20
+            },
+            title: {
+                text: null
+            },
+            xAxis: {
+                categories: all_dates,
+                tickInterval: 10,
+                title: {
+                    enabled: false
+                }
+            },
+            yAxis: {
+                title: {
+                    text: 'Accumulative number of cases'
+                },
+            },
+            tooltip: {
+                split: false,
+                valueSuffix: ' millions'
+            },
+            plotOptions: {
+                area: {
+                    stacking: 'normal',
+                    findNearestPointBy: 'xy',
+                    fillOpacity: 0.8,
+                    marker: {
+                        enabled: false,
+
+                    },
+                    trackByArea: true
+                },
+            },
+            tooltip: {
+                formatter: function () {
+                    var title = fCapital(this.key);
+                    var value = numberFormatterInteger(this.y);
+                    var total = numberFormatterInteger(this.total);
+                    var area = fCapital(this.series.name);
+
+                    return '<text><span style="font-size: 1.1em"><strong>' + title + '</strong></span><br>' + area + " (accumulative): " + value +
+                        '<br/> With total confirmed cases: ' + total;
+                },
+                useHTML: true
+            },
+            series: initial_data,
+            credits: {
+                enabled: false
+            },
+            legend: {
+                enabled: false
+            }
+        });
+        var chartXAxis = {
+            categories: all_dates,
+            tickInterval: 10,
+            labels: {
+                enabled: false
+            },
+            title: {
+                enabled: false
+            },
+            plotBands: xAxisBands,
+        };
+
+        var bar_chart = Highcharts.chart('covid_bars', {
+            chart: {
+                type: 'column',
+                styledMode: true,
+                height: 300,
+                marginLeft: 95,
+            },
+            title: {
+                text: null
+            },
+            xAxis: chartXAxis,
+            yAxis: {
+                title: {
+                    text: 'Daily change in "active" cases'
+                },
+            },
+            tooltip: {
+                formatter: function () {
+                    var sum = 0,
+                        cont = this,
+                        series = cont.series.chart.series,
+                        each = Highcharts.each,
+                        ind = 0;
+                    each(series, function (p, i) {
+                        ind = all_dates.indexOf(cont.x)
+                        sum += p.yData[ind];
+                    });
+                    var title = fCapital(this.x),
+                        name = (this.series.name == "Deaths") ? "death" : fLower(this.series.name),
+                        value = (this.y >= 0) ? numberFormatterInteger(this.y) : numberFormatterInteger(this.y * -1),
+                        total = numberFormatterInteger(sum);
+
+                    if (sum < 0) {
+                        return '<b>' + title + '</b><br/>Daily increase in ' + name + ' cases: ' + value + '<br/>' +
+                            'Total change to active cases: ' + total;
+                    } else {
+                        return '<b>' + title + '</b><br/>Daily increase in ' + name + ' cases: ' + value + '<br/>' +
+                            'Total change to active cases: +' + total;
+                    }
+                },
+                useHTML: true,
+            },
+            plotOptions: {
+                column: {
+                    stacking: 'normal',
+                    borderRadius: 3,
+                    pointPadding: 0
+                },
+                series: {
+                    groupPadding: 0.1,
+                }
+            },
+            series: initial_bar_data,
+
+            credits: {
+                enabled: false
+            },
+            legend: {
+                enabled: false
+            }
+        });
+
+
+        area_chart_points = area_chart.series;
+        bar_chart_points = bar_chart.series;
+        var legend = createMultiLegend(area_chart_points, bar_chart_points, bar_container_class);
+
+        // legend for background - lockdown info
+        $legend2Container = $('.covid-bars .secondary-legend');
+        var legendItems = [{ name: 'Some movement restrictions', colorIndex: 27 },
+        { name: 'Curfew', colorIndex: 18 },
+        { name: 'Lockdown', colorIndex: 11 }];
+
+        // Append legend items
+        $legend2Container.append('<div>Background: &nbsp &nbsp</div>')
+        for (let point of legendItems) {
+            $legend2Container.append('<div class="legend-item"><div class="dot legend-color-' + point.colorIndex + '" ></div><div class="serieName" id="">' + fCapital(point.name) + '</div></div>');
+        }
+
+        // Dropdowns
+        // Define dropdown container
+        var filters = document.querySelector(area_container_class + " .chart-filters");
+
+        // Create a country dropdown
+        var countryName = "area-country",
+            countryWidth = "320px";
+        addDropdown(filters, countryName, countryWidth, countryChange, all_countries, country);
+
+        // Update chart data on country change
+        function countryChange() {
+            country = document.getElementById(countryName + "-select").value;
+
+            var area_loops = area_chart.series.length;
+            var bar_loops = bar_chart.series.length;
+            var updated_area_data = get_data();
+            var updated_bar_data = get_bar_data();
+            var updated_plot_bands = get_bands();
+
+            // First empty the existing data
+            for (var i = 0; i < area_loops; i++) {
+                area_chart.series[0].remove(false);
+            }
+            for (var i = 0; i < bar_loops; i++) {
+                bar_chart.series[0].remove(false);
+            }
+            // Then add the updated data
+            for (var i = 0; i < updated_area_data.length; i++) {
+                area_chart.addSeries(updated_area_data[i], false);
+            }
+            for (var i = 0; i < updated_bar_data.length; i++) {
+                bar_chart.addSeries(updated_bar_data[i], false);
+            }
+            chartXAxis.plotBands = updated_plot_bands;
+            bar_chart.update({
+                xAxis: chartXAxis
+            });
+
+            area_chart.redraw();
+            bar_chart.redraw();
+        }
+    })
+
+        .catch(function (error) {
+            console.log(error);
+        })
+
+    var LockdownMap = d3.csv(covid_lockdown_path)
         .then(function (data) {
             // All filterable options
-            const all_measures = [...new Set(data.map(d => d.Parameter))].sort()
             const all_countries = [...new Set(data.map(d => d.Country))].sort()
-            const all_metrics = [...new Set(data.map(d => d.Value))].sort()
-
             const all_dates = ["22/01/2020",
                 "23/01/2020",
                 "24/01/2020",
@@ -573,245 +1031,107 @@
                 "14/04/2020",
                 "15/04/2020",
                 "16/04/2020",
-            "17/04/2020",
-            "18/04/2020",
-            "19/04/2020"];
-
+                "17/04/2020",
+                "18/04/2020",
+                "19/04/2020"];
 
             // Default values
-            var metric = "absolute",
-                country = "World";
+            var date = "19/04/2020";
 
-            var area_container_class = ".covid-area";
-            var bar_container_class = ".covid-bars";
+            var container_class = ".lockdown-map";
             var initial_data = [];
-            var initial_bar_data = [];
-
-            function getBlankData() {
-                return [0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
-                    0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
-                    0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
-                    0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
-                    0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
-                    0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
-                    0, 0, 0, 0, 0, 0, 0, 0, 0];
-            }
-
-            var getColor = {
-                "Active": "4",
-                "Deaths": "6",
-                "Recovered": "9",
-                "Confirmed": "0"
-            };
 
             function get_data() {
                 var new_data = [];
                 for (let row of data) {
-                    if (row.Value == metric && row.Country == country && row.Parameter != "Confirmed") {
-                        var day_data = [];
-                        for (let day in all_dates) {
-                            day_data[day] = +row[all_dates[day]];
-                        }
-                        new_data.push({ id: row.Parameter, name: row.Parameter, data: day_data, colorIndex: getColor[row.Parameter] })
+                    if (row.Country != "World") {
+                        var val = row[date];
+                        new_data.push({ country: getCountryCode(row.Country), value: +val });
                     }
                 }
                 return new_data;
             }
 
-            function get_bar_data() {
-                var new_data = [];
-                for (let row of data) {
-                    if (row.Value == "change" && row.Country == country && row.Parameter != "Active") {
-                        var day_data = [];
-                        if (row.Parameter == "Confirmed") {
-                            for (let day in all_dates) {
-                                day_data[day] = +row[all_dates[day]];
-                            }
-                        } else {
-                            for (let day in all_dates) {
-                                day_data[day] = +row[all_dates[day]] * -1;
-                            }
-                        }
-                        new_data.push({ id: row.Parameter, name: row.Parameter, data: day_data, colorIndex: getColor[row.Parameter] })
-                    }
-                }
-                return new_data;
-            }
+            intial_data = get_data();
 
-            initial_data = get_data();
-            initial_bar_data = get_bar_data();
-
-            var area_chart = Highcharts.chart('covid_area', {
+            // Initiate the chart
+            var chart = Highcharts.mapChart('lockdown_map', {
                 chart: {
-                    type: 'area',
                     styledMode: true,
-                    height: 300,
-                    marginBottom: 20
+                    height: 500
                 },
                 title: {
                     text: null
                 },
-                xAxis: {
-                    categories: all_dates,
-                    tickInterval: 10,
-                    title: {
-                        enabled: false
-                    }
+                mapNavigation: {
+                    enabled: true,
+                    enableMouseWheelZoom: false,
+                    enableButtons: true,
                 },
-                yAxis: {
-                    title: {
-                        text: 'Accumulative number of cases'
-                    },
-                },
-                tooltip: {
-                    split: false,
-                    valueSuffix: ' millions'
-                },
-                plotOptions: {
-                    area: {
-                        stacking: 'normal',
-                        findNearestPointBy: 'xy',
-                        fillOpacity: 0.8,
-                        marker: {
-                            enabled: false,
-
-                        },
-                        trackByArea: true
-                    },
+                colorAxis: {
+                    tickInterval: 1,
+                    max: 3,
+                    min: 0,
+                    stops: [
+                        [0, '#DDDDDD'],
+                        [0.33, '#794f99'],
+                        [0.66, '#e58939'],
+                        [0.95, '#a52721']
+                    ],
                 },
                 tooltip: {
                     formatter: function () {
                         var title = fCapital(this.key);
-                        var value = numberFormatterInteger(this.y);
-                        var total = numberFormatterInteger(this.total);
-                        var area = fCapital(this.series.name);
+                        var value = this.point.value;
+                        var text = '';
+                        if (value == 1) { text = "Some movement restrictions applied, but not universally" }
+                        else if (value == 2) { text = "Under curfew" }
+                        else if (value == 3) { text = "Under lockdown" }
+                        else if (value == 0) { text = "No movement restrictions enforced" }
 
-                        return '<text><span style="font-size: 1.1em"><strong>' + title + '</strong></span><br>' + area + " (accumulative): " + value +
-                            '<br/> With total confirmed cases: ' + total;
+                        return '<text><span style="font-size: 1.1em"><strong>' + title + '</strong></span><br>' + text + '</text>';
                     },
                     useHTML: true
                 },
-                series: initial_data,
                 credits: {
                     enabled: false
                 },
                 legend: {
                     enabled: false
-                }
+                },
+                series: [{
+                    mapData: Highcharts.maps['custom/world'],
+                    data: intial_data,
+                    joinBy: ['iso-a3', 'country'], // first var: type of geographical data, second: data column name
+                }]
             });
+            // Create legend
+            $legendContainer = $('.lockdown-map .secondary-legend');
+            var legendItems = [{ name: "No restrictions", colorIndex: 28 },
+            { name: 'Some movement restrictions', colorIndex: 27 },
+            { name: 'Curfew', colorIndex: 18 },
+            { name: 'Lockdown', colorIndex: 11 }];
 
+            // Append legend items
+            for (let point of legendItems) {
+                $legendContainer.append('<div class="legend-item"><div class="dot legend-color-' + point.colorIndex + '" ></div><div class="serieName" id="">' + fCapital(point.name) + '</div></div>');
+            }
 
-            var bar_chart = Highcharts.chart('covid_bars', {
-                chart: {
-                    type: 'column',
-                    styledMode: true,
-                    height: 300,
-                    marginLeft: 95
-                },
-                title: {
-                    text: null
-                },
-                xAxis: {
-                    categories: all_dates,
-                    tickInterval: 10,
-                    labels: {
-                        enabled: false
-                    },
-                    title: {
-                        enabled: false
-                    },
-                },
-                yAxis: {
-                    title: {
-                        text: 'Daily change in "active" cases'
-                    },
-                },
-                tooltip: {
-                    formatter: function () {
-                        var sum = 0,
-                            cont = this,
-                            series = cont.series.chart.series,
-                            each = Highcharts.each,
-                            ind = 0;
-                        each(series, function (p, i) {
-                            ind = all_dates.indexOf(cont.x)
-                            sum += p.yData[ind];
-                        });
-                        var title = fCapital(this.x),
-                            name = (this.series.name == "Deaths") ? "death" : fLower(this.series.name),
-                            value = (this.y >= 0) ? numberFormatterInteger(this.y) : numberFormatterInteger(this.y * -1),
-                            total = numberFormatterInteger(sum);
-
-                        if (sum < 0) {
-                            return '<b>' + title + '</b><br/>Daily increase in ' + name + ' cases: ' + value + '<br/>' +
-                                'Total change to active cases: ' + total;
-                        } else {
-                            return '<b>' + title + '</b><br/>Daily increase in ' + name + ' cases: ' + value + '<br/>' +
-                                'Total change to active cases: +' + total;
-                        }
-                    },
-                    useHTML: true,
-                },
-                plotOptions: {
-                    column: {
-                        stacking: 'normal',
-                        borderRadius: 3,
-                        pointPadding: 0
-                    },
-                    series: {
-                        groupPadding: 0.1,
-                    }
-                },
-                series: initial_bar_data,
-                credits: {
-                    enabled: false
-                },
-                legend: {
-                    enabled: false
-                }
-            });
-
-
-            area_chart_points = area_chart.series;
-            bar_chart_points = bar_chart.series;
-            var legend = createMultiLegend(area_chart_points, bar_chart_points, bar_container_class);
             // Dropdowns
             // Define dropdown container
-            var filters = document.querySelector(area_container_class + " .chart-filters");
+            var filters = document.querySelector(container_class + " .chart-filters");
 
-            // Create a country dropdown
-            var countryName = "area-country",
-                countryWidth = "320px";
-            addDropdown(filters, countryName, countryWidth, countryChange, all_countries, country);
+            // // Create a date dropdown
+            var dateName = "lockdown-map-date",
+                dateWidth = "300px";
+            addDropdown(filters, dateName, dateWidth, dateChange, all_dates, date);
 
-            // Update chart data on country change
-            function countryChange() {
-                country = document.getElementById(countryName + "-select").value;
-
-                var area_loops = area_chart.series.length;
-                var bar_loops = bar_chart.series.length;
-                var updated_area_data = get_data();
-                var updated_bar_data = get_bar_data();
-
-                // First empty the existing data
-                for (var i = 0; i < area_loops; i++) {
-                    area_chart.series[0].remove(false);
-                }
-                for (var i = 0; i < bar_loops; i++) {
-                    bar_chart.series[0].remove(false);
-                }
-                // Then add the updated data
-                for (var i = 0; i < updated_area_data.length; i++) {
-                    area_chart.addSeries(updated_area_data[i], false);
-                }
-                for (var i = 0; i < updated_bar_data.length; i++) {
-                    bar_chart.addSeries(updated_bar_data[i], false);
-                }
-                area_chart.redraw();
-                bar_chart.redraw();
+            // // Update chart data on date change
+            function dateChange() {
+                date = document.getElementById(dateName + "-select").value;
+                chart.series[0].setData(get_data());
             }
         })
-
         .catch(function (error) {
             console.log(error);
         })

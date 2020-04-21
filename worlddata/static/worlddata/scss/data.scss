@@ -204,7 +204,7 @@ figure {
   }
 }
 
-.chart-legend {
+.chart-legend, .secondary-legend {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
@@ -341,4 +341,16 @@ margin-left: 20px;
 }
 .covid-bars {
   padding-top: 0;
+  .restricted-band {
+    fill: #e58939;
+  }
+  .curfew-band {
+    fill: #794f99;
+  }
+  .lockdown-band {
+    fill: #a52721;
+  }
+  .secondary-legend .dot{
+    opacity: 0.4;
+  }
 }
