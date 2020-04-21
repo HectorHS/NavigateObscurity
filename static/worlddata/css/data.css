@@ -381,11 +381,11 @@ figure {
 }
 
 .covid-bars .restricted-band {
-  fill: #e58939;
+  fill: #794f99;
 }
 
 .covid-bars .curfew-band {
-  fill: #794f99;
+  fill: #e58939;
 }
 
 .covid-bars .lockdown-band {
