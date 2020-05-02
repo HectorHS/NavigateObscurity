@@ -17,6 +17,28 @@ function numberFormatterPercentage(number) {
 function numberFormatterSeparator(number) {
     return number.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
 }
+function addLineBreaks(input, lineSize) {
+    var returnText = [];
+    var workingText = input;
+    if (input.length <= lineSize) {
+        returnText.push(input);
+    } else {
+        while (workingText.length > lineSize) {
+            var line = workingText.substring(0, lineSize)
+
+            // Find the latest white space and try to break there
+            var lastSpaceRgx = /\s(?!.*\s)/;
+            var idx = line.search(lastSpaceRgx);
+            if (idx > 0) {
+                line = line.substring(0, idx);
+                workingText = workingText.substring(idx);
+            }
+            returnText.push(line);
+        }
+        returnText.push(workingText);
+    }
+    return returnText;
+}
 function getCountryCode(country) {
     var countryCode = {
         "Afghanistan": "AFG",

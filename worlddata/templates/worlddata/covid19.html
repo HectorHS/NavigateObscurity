@@ -152,13 +152,15 @@
 <!-- Viz 3 - lockdown map -->
 <div class="container limited-width">
     <p>
-        One of the main ways governments have tried to contain the virus is via imposing social distancing and movement
-        restrictions to their citizens. Although approaches vary greatly, I have simplified responses to four
-        categories and visualised them below. The categories are non-universal restrictions of movement, as in
-        restricting movement in a particular part of the country, or for specific parts of the population. Curfews where
-        movement is universally forbidden in specific hours of the day. Lockdowns, where movement is restricted at
-        all times with specific exceptions. And a no restrictions category that includes all countries where measures
-        are not enforced, even if governments have provided relevant recommendations.
+        Wherever you were, chances are that sometime during March or April you were told to stay home. Some governments
+        merely outlined recommendations for the public, but most enforced rules to make citizens comply. Here you can
+        see a rough visualization of government responses when it came to public movement restriction. For simplicity I
+        am only using 4 broad categories of responses, but you can find more specific information by hovering over each
+        country. The four categories range from no restrictions imposed (although recommendations are always made), to
+        movement restrictions only in parts of the country, to restrictions for the whole country but only in particular
+        times (curfew), to restrictions in the whole country all of the time (lockdown). Of course, many more government
+        responses were put in place at the same time like banning gatherings, imposing social distancing rules, closing
+        businesses etc, but the scope of this visualisation remains solely the movement restriction policies.
     </p>
 </div>
 <section>
@@ -223,6 +225,8 @@
     covid_area_path = static_url + file_area_covid;
     file_covid_lockdown = "worlddata/csv/covid-lockdown.csv";
     covid_lockdown_path = static_url + file_covid_lockdown;
+    file_covid_lockdown_notes = "worlddata/csv/covid-lockdown-notes.csv";
+    covid_lockdown_notes_path = static_url + file_covid_lockdown_notes;
 
     var CovidMap = d3.csv(covid_map_path)
         .then(function (data) {
@@ -942,10 +946,13 @@
             console.log(error);
         })
 
-    var LockdownMap = d3.csv(covid_lockdown_path)
-        .then(function (data) {
+    var LockdownMap = Promise.all([
+        d3.csv(covid_lockdown_path),
+        d3.csv(covid_lockdown_notes_path),
+    ])
+        .then(function (files) {
             // All filterable options
-            const all_countries = [...new Set(data.map(d => d.Country))].sort()
+            const all_countries = [...new Set(files[0].map(d => d.Country))].sort()
             const all_dates = ["22/01/2020",
                 "23/01/2020",
                 "24/01/2020",
@@ -1055,13 +1062,28 @@
 
             function get_data() {
                 var new_data = [];
-                for (let row of data) {
+                for (let row of files[0]) {
                     if (row.Country != "World") {
                         var val = row[date];
                         new_data.push({ country: getCountryCode(row.Country), value: +val });
                     }
                 }
                 return new_data;
+            }
+
+            function get_note(country, code) {
+                var note = "";
+                for (let row of files[1]) {
+                    if (getCountryCode(row.Country) == country && row.Code == code) {
+                        note = row.Note;
+                    }
+                }
+                if (note == "" && code == 1) { note = "Some movement restrictions applied, but not universally." }
+                else if (note == "" && code == 2) { note = "General curfew in place." }
+                else if (note == "" && code == 3) { note = "Under lockdown." }
+                else if (note == "" && code == 0) { note = "No known movement restrictions enforced." }
+
+                return note;
             }
 
             intial_data = get_data();
@@ -1095,12 +1117,14 @@
                     formatter: function () {
                         var title = fCapital(this.key);
                         var value = this.point.value;
-                        var text = '';
-                        if (value == 1) { text = "Some movement restrictions applied, but not universally" }
-                        else if (value == 2) { text = "Under curfew" }
-                        else if (value == 3) { text = "Under lockdown" }
-                        else if (value == 0) { text = "No movement restrictions enforced" }
-
+                        var note = get_note(this.point.country, this.point.value);
+                        var textArray = addLineBreaks(note, 60);
+                        var text = textArray[0];
+                        if (textArray.length > 1) {
+                            for (i = 1; textArray.length > i; i++) {
+                                text = text + "<br/>" + textArray[i];
+                            }
+                        }
                         return '<text><span style="font-size: 1.1em"><strong>' + title + '</strong></span><br>' + text + '</text>';
                     },
                     useHTML: true
