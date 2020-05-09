@@ -40,20 +40,21 @@
         <p> <strong>Last updated 08/05/2020.</strong></p>
         <p>
             Below you can see a snapshot of the current situation. Due to some data gathering lag, the data is about 1-2
-            days older than the last update date. The 4 main metrics are the confirmed coronavirus cases (Confirmed),
-            deaths following a coronavirus infection (Deaths), complete recoveries following a coronavirus infection
-            (Recovered), and currently infected people (Active), i.e. confirmed cases that have not been fatal, nor have
-            they recovered yet. Apart from absolute numbers, I am also providing these metrics per 1 million people to
-            get
-            a better idea of how impacted a country is. 1000 deaths in a country with a 5m population means something
-            very different to the same number of deaths in a country with a 500m population. Lastly, I am providing two
-            rates, death rate: the ratio of cases that develop to fatalities, and recovery rate: the ratio of recovered
-            patients to the total cases.
+            days older than the last update date. The five main metrics are the confirmed coronavirus cases, deaths
+            following a coronavirus infection, complete recoveries following a coronavirus infection, people with active
+            infection of covid-19, i.e. confirmed cases that have not been fatal, nor have they recovered yet, and
+            number of tests. I am only providing these numbers per 1 million people so that data from different
+            countries can be more comparable. For absolute total numbers you can have a look at the visualization below
+            the map.
+            Lastly, I am providing two rates, death rate: the ratio of cases that develop to fatalities, and recovery
+            rate: the ratio of recovered patients to the total cases.
         </p>
         <p>
             Note that these numbers give us a decent overview of the situation, but are still far from accurate. The
             number of confirmed cases depends heavily on the extend of testing each country deploys and that varies
-            widely. In addition, there is mounting evidence that a large proportion of infected people never develop any
+            widely as you can see on the map. Not only is the number of tests very different, countries measure tests
+            differently (number of tests or number of people tested), and in many cases we don't have any reliable data
+            at all. In addition, there is mounting evidence that a large proportion of infected people never develop any
             symptoms (around
             <a href="https://www.buzzfeed.com/albertonardelli/coronavirus-testing-iceland" target="_blank">50% in
                 Iceland</a>,
@@ -66,7 +67,8 @@
             which means it’s less likely to even think to get tested. All this tells us that the actual cases are much
             more numerous than the confirmed cases (a study argues that about
             <a href="https://science.sciencemag.org/content/early/2020/03/24/science.abb3221" target="_blank">
-                86% of cases where undetected in pre lockdown Wuhan</a>).
+                86% of cases where undetected in pre lockdown Wuhan</a>), which makes the total confirmed cases
+            relatevely unreliable.
             The number of deaths, however, should be much more accurate.
         </p>
     </div>
@@ -80,7 +82,10 @@
             <div class="source-text">
                 <p>
                     *Source:
-                    <a href="https://github.com/CSSEGISandData/COVID-19" target="_blank">Johns Hopkins University.</a>
+                    Confirmed, deaths, recovered, active data: <a href="https://github.com/CSSEGISandData/COVID-19"
+                        target="_blank">Johns Hopkins University.</a>
+                    Downloaded 08/05/2020. <br />
+                    Test data: <a href="https://github.com/owid/covid-19-data" target="_blank">Our World in Data.</a>
                     Downloaded 08/05/2020.
                 </p>
             </div>
@@ -231,15 +236,12 @@
     var CovidMap = d3.csv(covid_map_path)
         .then(function (data) {
             // All filterable options
-            const all_parameters = ["Confirmed cases",
-                "Confirmed cases per 1 million",
-                "Deaths",
+            const all_parameters = ["Confirmed cases per 1 million",
                 "Deaths per 1 million",
                 "Death rate",
-                "Recovered",
                 "Recovery rate",
-                "Active",
-                "Active per 1 million"];
+                "Active per 1 million",
+                "Tests per 1 million"];
 
             // Default values
             var parameter = "Deaths per 1 million";
@@ -270,6 +272,8 @@
                             val = row.Active;
                         } else if (parameter == "Active per 1 million") {
                             val = row.Active_pc;
+                        } else if (parameter == "Tests per 1 million") {
+                            val = row.Tested_pc;
                         }
 
                         new_data.push({ country: getCountryCode(row.Country), value: +val });
@@ -295,8 +299,8 @@
                     enableButtons: true,
                 },
                 colorAxis: {
-                    tickInterval: 25,
-                    max: 100,
+                    tickInterval: 50,
+                    max: 200,
                     min: 0,
                     stops: [
                         [0, '#0074D9'],
@@ -311,33 +315,28 @@
                         var title = fCapital(this.key);
                         var value = this.point.value;
                         var text = "";
-                        if (parameter == "Confirmed cases") {
-                            let val = numberFormatterSeparator(value);
-                            text = val + " confirmed cases";
-                        } else if (parameter == "Confirmed cases per 1 million") {
+                        if (parameter == "Confirmed cases per 1 million") {
                             let val = numberFormatterInteger(value);
                             text = val + " confirmed cases per 1 million people";
-                        } else if (parameter == "Deaths") {
-                            let val = numberFormatterSeparator(value);
-                            text = val + " deaths";
                         } else if (parameter == "Deaths per 1 million") {
                             let val = numberFormatterInteger(value);
                             text = val + " deaths per 1 million people";
                         } else if (parameter == "Death rate") {
                             let val = numberFormatterPercentage(value);
                             text = val + "% of confirmed cases have escalated to death";
-                        } else if (parameter == "Recovered") {
-                            let val = numberFormatterSeparator(value);
-                            text = val + " have recovered";
                         } else if (parameter == "Recovery rate") {
                             let val = numberFormatterPercentage(value);
                             text = val + "% of all confirmed cases have recovered";
-                        } else if (parameter == "Active") {
-                            let val = numberFormatterSeparator(value);
-                            text = val + " are currently infected";
                         } else if (parameter == "Active per 1 million") {
                             let val = numberFormatterInteger(value);
                             text = val + " are currently infected per 1 million people";
+                        } else if (parameter == "Tests per 1 million") {
+                            let val = numberFormatterInteger(value);
+                            if (val == 0) {
+                                text = "No testing data";
+                            } else {
+                                text = val + " tests have been carried out per 1 million people";
+                            }
                         }
                         return '<text><span style="font-size: 1.1em"><strong>' + title + '</strong></span><br>' + text + '</text>';
                     },
@@ -372,28 +371,16 @@
 
             // adjust color stops according to parameter
             function updateColorStops() {
-                if (parameter == "Confirmed cases") {
+                if (parameter == "Confirmed cases per 1 million") {
                     chart.colorAxis[0].update({
-                        tickInterval: 25000,
-                        max: 100000,
-                        min: 0,
-                    }, false)
-                } else if (parameter == "Confirmed cases per 1 million") {
-                    chart.colorAxis[0].update({
-                        tickInterval: 200,
-                        max: 1000,
-                        min: 0,
-                    }, false)
-                } else if (parameter == "Deaths") {
-                    chart.colorAxis[0].update({
-                        tickInterval: 1000,
-                        max: 5000,
+                        tickInterval: 500,
+                        max: 2000,
                         min: 0,
                     }, false)
                 } else if (parameter == "Deaths per 1 million") {
                     chart.colorAxis[0].update({
-                        tickInterval: 25,
-                        max: 100,
+                        tickInterval: 50,
+                        max: 200,
                         min: 0,
                     }, false)
                 } else if (parameter == "Death rate") {
@@ -402,22 +389,10 @@
                         max: 10,
                         min: 0,
                     }, false)
-                } else if (parameter == "Recovered") {
-                    chart.colorAxis[0].update({
-                        tickInterval: 2000,
-                        max: 10000,
-                        min: 0,
-                    }, false)
                 } else if (parameter == "Recovery rate") {
                     chart.colorAxis[0].update({
                         tickInterval: 10,
                         max: 50,
-                        min: 0,
-                    }, false)
-                } else if (parameter == "Active") {
-                    chart.colorAxis[0].update({
-                        tickInterval: 10000,
-                        max: 50000,
                         min: 0,
                     }, false)
                 } else if (parameter == "Active per 1 million") {
@@ -426,11 +401,17 @@
                         max: 1000,
                         min: 0,
                     }, false)
+                } else if (parameter == "Tests per 1 million") {
+                    chart.colorAxis[0].update({
+                        tickInterval: 10000,
+                        max: 30000,
+                        min: 0,
+                    }, false)
                 }
             }
 
             function updateColorOrder() {
-                if (parameter == "Confirmed cases") {
+                if (parameter == "Confirmed cases per 1 million") {
                     chart.colorAxis[0].update({
                         stops: [
                             [0, '#0074D9'],
@@ -440,27 +421,7 @@
                             [0.95, '#FF4136']
                         ],
                     }, false)
-                } else if (parameter == "Confirmed cases per 10,000") {
-                    chart.colorAxis[0].update({
-                        stops: [
-                            [0, '#0074D9'],
-                            [0.35, '#2ECC40'],
-                            [0.5, '#DDDDDD'],
-                            [0.65, '#FFDC00'],
-                            [0.95, '#FF4136']
-                        ],
-                    }, false)
-                } else if (parameter == "Deaths") {
-                    chart.colorAxis[0].update({
-                        stops: [
-                            [0, '#0074D9'],
-                            [0.35, '#2ECC40'],
-                            [0.5, '#DDDDDD'],
-                            [0.65, '#FFDC00'],
-                            [0.95, '#FF4136']
-                        ],
-                    }, false)
-                } else if (parameter == "Deaths per 10,000") {
+                } else if (parameter == "Deaths per 1 million") {
                     chart.colorAxis[0].update({
                         stops: [
                             [0, '#0074D9'],
@@ -480,16 +441,6 @@
                             [0.95, '#FF4136']
                         ],
                     }, false)
-                } else if (parameter == "Recovered") {
-                    chart.colorAxis[0].update({
-                        stops: [
-                            [0, '#FF4136'],
-                            [0.35, '#FFDC00'],
-                            [0.5, '#DDDDDD'],
-                            [0.65, '#2ECC40'],
-                            [0.95, '#0074D9']
-                        ],
-                    }, false)
                 } else if (parameter == "Recovery rate") {
                     chart.colorAxis[0].update({
                         stops: [
@@ -500,7 +451,7 @@
                             [0.95, '#0074D9']
                         ],
                     }, false)
-                } else if (parameter == "Active") {
+                } else if (parameter == "Active per 1 million") {
                     chart.colorAxis[0].update({
                         stops: [
                             [0, '#0074D9'],
@@ -510,14 +461,15 @@
                             [0.95, '#FF4136']
                         ],
                     }, false)
-                } else if (parameter == "Active per 10,000") {
+                } else if (parameter == "Tests per 1 million") {
                     chart.colorAxis[0].update({
                         stops: [
-                            [0, '#0074D9'],
-                            [0.35, '#2ECC40'],
+                            [0, '#101414'],
+                            [0.01, '#FF4136'],
+                            [0.35, '#FFDC00'],
                             [0.5, '#DDDDDD'],
-                            [0.65, '#FFDC00'],
-                            [0.95, '#FF4136']
+                            [0.65, '#2ECC40'],
+                            [0.95, '#0074D9']
                         ],
                     }, false)
                 }
