@@ -37,7 +37,7 @@
 <!-- Viz 1 - Map - Today values -->
 <section>
     <div class="container limited-width">
-        <p> <strong>Last updated 09/05/2020.</strong></p>
+        <p> <strong>Last updated 11/05/2020.</strong></p>
         <p>
             Below you can see a snapshot of the current situation. Due to some data gathering lag, the data is about 1-2
             days older than the last update date. The five main metrics are the confirmed coronavirus cases, deaths
@@ -84,9 +84,9 @@
                     *Source:
                     Confirmed, deaths, recovered, active data: <a href="https://github.com/CSSEGISandData/COVID-19"
                         target="_blank">Johns Hopkins University.</a>
-                    Downloaded 09/05/2020. <br />
+                    Downloaded 11/05/2020. <br />
                     Test data: <a href="https://github.com/owid/covid-19-data" target="_blank">Our World in Data.</a>
-                    Downloaded 09/05/2020.
+                    Downloaded 11/05/2020.
                 </p>
             </div>
         </div>
@@ -144,11 +144,11 @@
                 *Sources:
                 <a href="https://github.com/CSSEGISandData/COVID-19" target="_blank">Johns Hopkins University</a> (cases
                 data).
-                Downloaded 09/05/2020. <br>
+                Downloaded 11/05/2020. <br>
                 <a href="https://github.com/OxCGRT/covid-policy-tracker" target="_blank">Oxford University</a>
                 (government response
                 data).
-                Downloaded 30/04/2020
+                Downloaded 11/05/2020
 
             </p>
         </div>
@@ -183,7 +183,7 @@
                 <p>
                     *Source:
                     <a href="https://github.com/OxCGRT/covid-policy-tracker" target="_blank">Oxford University.</a>
-                    Downloaded 30/04/2020
+                    Downloaded 11/05/2020
                 </p>
             </div>
         </div>
@@ -599,7 +599,9 @@
             "05/05/2020",
             "06/05/2020",
             "07/05/2020",
-            "08/05/2020"];
+            "08/05/2020",
+            "09/05/2020",
+            "10/05/2020"];
 
 
         // Default values
@@ -656,7 +658,7 @@
         function get_bands() {
             var new_bands = [];
             for (let row of files[1]) {
-                if (row.Country == country) {
+                if (row.Country == country && row.Measure == "restriction") {
                     var oldDayValue = 0,
                         newDayValue = 0,
                         from = 0,
@@ -1020,38 +1022,49 @@
                 "05/05/2020",
                 "06/05/2020",
                 "07/05/2020",
-                "08/05/2020"];
+                "08/05/2020",
+                "09/05/2020",
+                "10/05/2020"];
 
             // Default values
-            var date = "08/05/2020";
+            var date = "10/05/2020";
 
             var container_class = ".lockdown-map";
             var initial_data = [];
 
+            function getNoteCode(country) {
+                for (let row of files[0]) {
+                    if (row.Measure == "note" && row.Country == country) {
+                        return row[date];
+                    }
+                }
+                console.log("No note code found for " + country);
+                return 0;
+            }
+
+            function getNote(code) {
+                for (let row of files[1]) {
+                    if (row.Code == code) {
+                        return row.Note;
+                    }
+                }
+                console.log("No note found for code " + code);
+                return "N/A";
+            }
+
             function get_data() {
                 var new_data = [];
                 for (let row of files[0]) {
-                    if (row.Country != "World") {
-                        var val = row[date];
-                        new_data.push({ country: getCountryCode(row.Country), value: +val });
+                    if (row.Country != "World" && row.Measure == "restriction") {
+                        var value = row[date];
+                        var country = getCountryCode(row.Country);
+                        var noteCode = getNoteCode(row.Country);
+                        var note = getNote(noteCode);
+
+                        new_data.push({ country: country, value: +value, note: note });
                     }
                 }
                 return new_data;
-            }
-
-            function get_note(country, code) {
-                var note = "";
-                for (let row of files[1]) {
-                    if (getCountryCode(row.Country) == country && row.Code == code) {
-                        note = row.Note;
-                    }
-                }
-                if (note == "" && code == 1) { note = "Some movement restrictions applied, but not universally." }
-                else if (note == "" && code == 2) { note = "General curfew in place." }
-                else if (note == "" && code == 3) { note = "Under lockdown." }
-                else if (note == "" && code == 0) { note = "No known movement restrictions enforced." }
-
-                return note;
             }
 
             intial_data = get_data();
@@ -1085,7 +1098,7 @@
                     formatter: function () {
                         var title = fCapital(this.key);
                         var value = this.point.value;
-                        var note = get_note(this.point.country, this.point.value);
+                        var note = this.point.note;
                         var textArray = addLineBreaks(note, 60);
                         var text = textArray[0];
                         if (textArray.length > 1) {
