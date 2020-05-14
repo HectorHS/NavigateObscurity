@@ -9,23 +9,23 @@ figure {
   padding: 30px 0;
 }
 
-.data-box-container:nth-child(5n+1) .hexagon-link-single {
+.data-box-container:nth-child(5n + 1) .hexagon-link-single {
   background-image: linear-gradient(to top right, #fbc99d, #539dc6);
 }
 
-.data-box-container:nth-child(5n+2) .hexagon-link-single {
+.data-box-container:nth-child(5n + 2) .hexagon-link-single {
   background-image: linear-gradient(to top right, #59acd9, #3984ac);
 }
 
-.data-box-container:nth-child(5n+3) .hexagon-link-single {
+.data-box-container:nth-child(5n + 3) .hexagon-link-single {
   background-image: linear-gradient(to top right, #2f98d0, #2d6786);
 }
 
-.data-box-container:nth-child(5n+4) .hexagon-link-single {
+.data-box-container:nth-child(5n + 4) .hexagon-link-single {
   background-image: linear-gradient(to top right, #277daa, #204960);
 }
 
-.data-box-container:nth-child(5n+5) .hexagon-link-single {
+.data-box-container:nth-child(5n + 5) .hexagon-link-single {
   background-image: linear-gradient(to top right, #216a91, #132c39);
 }
 
@@ -57,7 +57,11 @@ figure {
   }
 }
 
-.chart-container .chart-options {
+.chart-container .chart-options-map {
+  padding-left: 0;
+}
+
+.chart-options {
   flex: 1;
   display: flex;
   flex-direction: column;
@@ -65,11 +69,11 @@ figure {
   padding: 0 10px;
 }
 
-.chart-container .chart-options .options-below {
+.chart-options .options-below {
   flex-direction: row;
 }
 
-.chart-container .chart-options .chart-filters {
+.chart-options .chart-filters {
   align-items: center;
   margin-bottom: 20px;
   overflow: visible;
@@ -77,12 +81,12 @@ figure {
 }
 
 @media only screen and (min-width: 768px) {
-  .chart-container .chart-options .chart-filters {
+  .chart-options .chart-filters {
     text-align: start;
   }
 }
 
-.chart-container .chart-options .chart-filters .dropdown-container {
+.chart-options .chart-filters .dropdown-container {
   display: inline-block;
   position: relative;
   top: 5px;
@@ -95,7 +99,7 @@ figure {
   margin-right: 10px;
 }
 
-.chart-container .chart-options .chart-filters .dropdown-container select {
+.chart-options .chart-filters .dropdown-container select {
   position: relative;
   background: #2e3838;
   color: #dffcff;
@@ -113,36 +117,36 @@ figure {
   border-radius: 5px;
 }
 
-.chart-container .chart-options .chart-filters .dropdown-container:after {
+.chart-options .chart-filters .dropdown-container:after {
   position: absolute;
   pointer-events: none;
   content: "\25BC";
   height: 1em;
-  font-size: .625em;
+  font-size: 0.625em;
   line-height: 1;
   right: 1.2em;
   top: 50%;
-  margin-top: -.5em;
+  margin-top: -0.5em;
   color: #dffcff;
 }
 
-.chart-container .chart-options .chart-filters .dropdown-container:hover {
+.chart-options .chart-filters .dropdown-container:hover {
   border: 1px solid #2f98d0;
 }
 
-.chart-container .chart-options .chart-filters .slider-container {
+.chart-options .chart-filters .slider-container {
   display: inline-block;
   width: 250px;
   position: relative;
 }
 
 @media only screen and (min-width: 768px) {
-  .chart-container .chart-options .chart-filters .slider-container {
+  .chart-options .chart-filters .slider-container {
     bottom: 8px;
   }
 }
 
-.chart-container .chart-options .chart-filters .slider-container .slider {
+.chart-options .chart-filters .slider-container .slider {
   -webkit-appearance: none;
   width: 150px;
   height: 3px;
@@ -150,11 +154,11 @@ figure {
   background: #9dafaf;
   border-radius: 5px;
   outline: none;
-  -webkit-transition: .2s;
-  transition: opacity .2s;
+  -webkit-transition: 0.2s;
+  transition: opacity 0.2s;
 }
 
-.chart-container .chart-options .chart-filters .slider-container .slider::-webkit-slider-thumb {
+.chart-options .chart-filters .slider-container .slider::-webkit-slider-thumb {
   -webkit-appearance: none;
   appearance: none;
   width: 25px;
@@ -167,12 +171,12 @@ figure {
   cursor: pointer;
 }
 
-.chart-container .chart-options .chart-filters .slider-container .slider::-webkit-slider-thumb:hover {
+.chart-options .chart-filters .slider-container .slider::-webkit-slider-thumb:hover {
   background: #2f98d0;
   border-color: #2f98d0;
 }
 
-.chart-container .chart-options .chart-filters .slider-container .slider::-moz-range-thumb {
+.chart-options .chart-filters .slider-container .slider::-moz-range-thumb {
   width: 25px;
   height: 25px;
   border-radius: 50%;
@@ -183,12 +187,12 @@ figure {
   cursor: pointer;
 }
 
-.chart-container .chart-options .chart-filters .slider-container .slider::-moz-range-thumb:hover {
+.chart-options .chart-filters .slider-container .slider::-moz-range-thumb:hover {
   background: #2f98d0;
   border-color: #2f98d0;
 }
 
-.chart-container .chart-options .chart-filters .slider-container .slider-output {
+.chart-options .chart-filters .slider-container .slider-output {
   display: inline-block;
   position: relative;
   width: 50px;
@@ -203,7 +207,7 @@ figure {
   margin-left: 15px;
 }
 
-.chart-container .chart-options .chart-filters .slider-container .slider-output:after {
+.chart-options .chart-filters .slider-container .slider-output:after {
   position: absolute;
   top: 8px;
   left: -7px;
@@ -212,24 +216,83 @@ figure {
   border-top: 7px solid transparent;
   border-right: 7px solid #9dafaf;
   border-bottom: 7px solid transparent;
-  content: '';
+  content: "";
 }
 
-.chart-container .chart-options-map {
-  padding-left: 0;
+.chart-options .chart-filters .radio-container {
+  /* The container */
+  /* Hide the browser's default radio button */
+  /* Create a custom radio button */
+  /* Create the indicator (the dot/circle - hidden when checked) */
+  /* Style the indicator (dot/circle) */
 }
 
-.chart-legend, .secondary-legend {
+.chart-options .chart-filters .radio-container label {
+  display: block;
+  position: relative;
+  padding-left: 35px;
+  margin-bottom: 15px;
+  cursor: pointer;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  margin: 0;
+}
+
+.chart-options .chart-filters .radio-container label input {
+  position: absolute;
+  opacity: 0;
+  cursor: pointer;
+}
+
+.chart-options .chart-filters .radio-container .checkmark {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 20px;
+  width: 20px;
+  background-color: #2f98d0;
+  border-radius: 50%;
+}
+
+.chart-options .chart-filters .radio-container label input:checked ~ .checkmark {
+  background-color: #2f98d0;
+}
+
+.chart-options .chart-filters .radio-container .checkmark:after {
+  content: "";
+  position: absolute;
+  display: block;
+}
+
+.chart-options .chart-filters .radio-container label input:checked ~ .checkmark:after {
+  display: none;
+}
+
+.chart-options .chart-filters .radio-container label .checkmark:after {
+  top: 2px;
+  left: 2px;
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  background: #2e3838;
+}
+
+.chart-legend,
+.secondary-legend {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
 }
 
-.chart-legend h4, .secondary-legend h4 {
+.chart-legend h4,
+.secondary-legend h4 {
   margin: 0 10px 5px 0;
 }
 
-.chart-legend .legend-item, .secondary-legend .legend-item {
+.chart-legend .legend-item,
+.secondary-legend .legend-item {
   display: inline-flex;
   margin-bottom: 5px;
   margin-right: 20px;
@@ -237,7 +300,8 @@ figure {
   white-space: nowrap;
 }
 
-.chart-legend .dot, .secondary-legend .dot {
+.chart-legend .dot,
+.secondary-legend .dot {
   height: 25px;
   width: 25px;
   border-radius: 50%;
@@ -295,15 +359,61 @@ figure {
   }
 }
 
+.dashboard-side-50 {
+  width: 100%;
+}
+
+@media only screen and (min-width: 768px) {
+  .dashboard-side-50 {
+    width: 50%;
+  }
+}
+
+.dashboard-container-vertical {
+  display: flex;
+  flex-direction: column;
+}
+
+@media only screen and (min-width: 768px) {
+  .dashboard-container-vertical {
+    flex-direction: row;
+  }
+}
+
+.dashboard-container-horizontal {
+  display: flex;
+  flex-direction: column;
+}
+
+.chart-container-dashboard {
+  display: flex;
+  flex-direction: column;
+  background-image: url(../images/spinner-small.gif);
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.chart-container-dashboard .highcharts-title {
+  font-size: 1.2em;
+}
+
 .old-death-tree {
   min-height: 300px;
 }
 
-.biomass-pie, .biomass-scatter {
+.biomass-pie,
+.biomass-scatter {
   min-height: 400px;
 }
 
-.death-tree, .death-map, .death-bars, .migration-map, .migration-bubbles, .migration-wheel, .sustain-map, .sustain-area {
+.death-tree,
+.death-map,
+.death-bars,
+.migration-map,
+.migration-bubbles,
+.migration-wheel,
+.sustain-map,
+.sustain-area {
   min-height: 500px;
 }
 
@@ -323,7 +433,7 @@ figure {
 }
 
 .pl-europe {
-  background-color: #0074D9;
+  background-color: #0074d9;
 }
 
 .pl-lac {
@@ -339,7 +449,7 @@ figure {
 }
 
 .pl-births {
-  background-color: #DDC3C3;
+  background-color: #ddc3c3;
 }
 
 .pl-deaths {
@@ -355,7 +465,7 @@ figure {
   display: inline-block;
   font-size: 150%;
   margin: 0;
-  color: #DDC3C3;
+  color: #ddc3c3;
   line-height: 0.8;
 }
 
@@ -392,6 +502,56 @@ figure {
   fill: #a52721;
 }
 
-.covid-bars .secondary-legend .dot {
+.covid-dashboard .chart-legend {
+  font-size: 80%;
+}
+
+.covid-dashboard .dot {
+  height: 18px;
+  width: 18px;
+}
+
+.covid-dashboard .secondary-legend {
+  font-size: 80%;
+}
+
+.covid-dashboard .chart-options {
+  height: 70px;
+}
+
+.covid-dashboard .covid-map {
+  width: 100%;
+  height: 500px;
+}
+
+@media only screen and (min-width: 768px) {
+  .covid-dashboard .covid-map {
+    width: 50%;
+  }
+}
+
+.covid-dashboard .covid-area {
+  height: 150px;
+}
+
+.covid-dashboard .covid-bars {
+  height: 250px;
+}
+
+.covid-dashboard .secondary-legend .dot {
   opacity: 0.4;
+}
+
+.covid-dashboard .covid-dashboard-country {
+  color: #2f98d0;
+  font-size: 140%;
+  font-weight: 500;
+  margin: 0;
+  padding-right: 20px;
+}
+
+.covid-dashboard .covid-dashboard-options {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
 }

@@ -1,44 +1,44 @@
-@import '../../../../main/static/main/scss/variables.scss';
-@import '../../../../main/static/main/scss/mixins.scss';
-@import '../../../../main/static/main/scss/parents.scss';
+@import "../../../../main/static/main/scss/variables.scss";
+@import "../../../../main/static/main/scss/mixins.scss";
+@import "../../../../main/static/main/scss/parents.scss";
 
 figure {
   margin: 0;
 }
 .data-box-container {
-    display: grid;
-    grid-gap: 50px;
-    grid-template-columns: (1fr 3fr);
-    padding: 30px 0;
-    &:nth-child(5n+1) .hexagon-link-single { 
-      background-image: $blue-shade-1;
-    }
-    &:nth-child(5n+2) .hexagon-link-single { 
-      background-image: $blue-shade-2;
-    }
-    &:nth-child(5n+3) .hexagon-link-single { 
-      background-image: $blue-shade-3;
-    }
-    &:nth-child(5n+4) .hexagon-link-single { 
-      background-image: $blue-shade-4;
-    }
-    &:nth-child(5n+5) .hexagon-link-single { 
-      background-image: $blue-shade-5;
-    }
+  display: grid;
+  grid-gap: 50px;
+  grid-template-columns: (1fr 3fr);
+  padding: 30px 0;
+  &:nth-child(5n + 1) .hexagon-link-single {
+    background-image: $blue-shade-1;
   }
-  .data-index-container {
-    ul {
-      margin: 0;
-      padding: 0;
-      list-style-type: none;
-    }
-    p {
-      color: $almost-white;
-    }
+  &:nth-child(5n + 2) .hexagon-link-single {
+    background-image: $blue-shade-2;
   }
-  .data-box-text {
-    max-width:600px;
+  &:nth-child(5n + 3) .hexagon-link-single {
+    background-image: $blue-shade-3;
   }
+  &:nth-child(5n + 4) .hexagon-link-single {
+    background-image: $blue-shade-4;
+  }
+  &:nth-child(5n + 5) .hexagon-link-single {
+    background-image: $blue-shade-5;
+  }
+}
+.data-index-container {
+  ul {
+    margin: 0;
+    padding: 0;
+    list-style-type: none;
+  }
+  p {
+    color: $almost-white;
+  }
+}
+.data-box-text {
+  max-width: 600px;
+}
 
 .chart-container {
   display: flex;
@@ -46,165 +46,222 @@ figure {
   background-image: url(../images/spinner.gif);
   background-repeat: no-repeat;
   background-position: center;
-  @media only screen and (min-width: $mobile-breakpoint)
-      {
-        flex-direction: row;
-      }
-
-  .chart-options {
-    flex: 1;
-    display: flex;
-    flex-direction: column;
-    color: $almost-white;
-    padding: 0 10px;
-
-    .options-below {
-      flex-direction: row;
-    }
-    .chart-filters {
-      align-items: center;
-      margin-bottom: 20px;
-      overflow: visible;
-      text-align: center;
-      
-      @media only screen and (min-width: $mobile-breakpoint)
-      {
-        text-align: start;
-      }
-      
-      .dropdown-container{
-        display: inline-block;
-        position: relative;
-        top: 5px;
-        left: 5px;
-        height: 34px;
-        max-width: 450px;
-        overflow: hidden;
-        border: 1px solid $light-grey;
-        border-radius: 5px;
-        margin-right: 10px;
-        select {
-          position: relative;
-          background: $dark-grey;
-          color: $almost-white;
-          top: -1px;
-          left: -1px;
-          width: calc(100% + 2px);
-          height: 36px;    
-          padding: 0 10px;
-          font-size: 16px;
-          border-radius:5px;
-          -webkit-appearance: none;
-          -moz-appearance: none;
-          appearance: none;
-          border-style: none;
-          border-radius: 5px;
-        }
-        &:after {
-          position: absolute;
-          pointer-events: none;
-          content: "\25BC";
-          height: 1em;
-          font-size: .625em;
-          line-height: 1;
-          right: 1.2em;
-          top: 50%;
-          margin-top: -.5em;
-          color: $almost-white;
-        }
-        &:hover {
-          border: 1px solid $bright-blue;
-        }
-      }
-
-      .slider-container {
-        display: inline-block;
-        width: 250px;
-        position: relative;
-        
-        @media only screen and (min-width: $mobile-breakpoint)
-        {
-          bottom: 8px;
-        }
-      
-        .slider {
-          -webkit-appearance: none;
-          width: 150px;
-          height: 3px;
-          vertical-align: middle;
-          background: $light-grey;
-          border-radius: 5px;
-          outline: none;
-          -webkit-transition: .2s;
-          transition: opacity .2s;
-          &::-webkit-slider-thumb {
-            -webkit-appearance: none;
-            appearance: none;
-            width: 25px;
-            height: 25px;
-            background: $dark-grey;
-            border-width:2px;
-            border-color: $light-grey;
-            border-style: solid;
-            border-radius: 50%;
-            cursor: pointer;
-            &:hover {
-              background: $bright-blue;
-              border-color: $bright-blue;
-            }
-          }
-
-          &::-moz-range-thumb {
-            width: 25px;
-            height: 25px;
-            border-radius: 50%;
-            background: $dark-grey;
-            border-width:2px;
-            border-color: $light-grey;
-            border-style: solid;
-            cursor: pointer;
-            &:hover {
-              background: $bright-blue;
-              border-color: $bright-blue;
-            }
-          }
-        }
-
-        .slider-output {
-          display: inline-block;
-          position: relative;
-          width: 50px;
-          color: $almost-white;
-          line-height: 20px;
-          text-align: center;
-          border-radius: 5px;
-          border-style: solid;
-          border-width: 1px;
-          border-color: $light-grey;
-          padding: 5px 10px;
-          margin-left: 15px;
-        
-          &:after {
-            position: absolute;
-            top: 8px;
-            left: -7px;
-            width: 0;
-            height: 0;
-            border-top: 7px solid transparent;
-            border-right: 7px solid $light-grey;
-            border-bottom: 7px solid transparent;
-            content: '';
-          }
-        }
-      }
-    }
+  @media only screen and (min-width: $mobile-breakpoint) {
+    flex-direction: row;
   }
   .chart-options-map {
     padding-left: 0;
   }
 }
 
-.chart-legend, .secondary-legend {
+.chart-options {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  color: $almost-white;
+  padding: 0 10px;
+
+  .options-below {
+    flex-direction: row;
+  }
+  .chart-filters {
+    align-items: center;
+    margin-bottom: 20px;
+    overflow: visible;
+    text-align: center;
+
+    @media only screen and (min-width: $mobile-breakpoint) {
+      text-align: start;
+    }
+
+    .dropdown-container {
+      display: inline-block;
+      position: relative;
+      top: 5px;
+      left: 5px;
+      height: 34px;
+      max-width: 450px;
+      overflow: hidden;
+      border: 1px solid $light-grey;
+      border-radius: 5px;
+      margin-right: 10px;
+      select {
+        position: relative;
+        background: $dark-grey;
+        color: $almost-white;
+        top: -1px;
+        left: -1px;
+        width: calc(100% + 2px);
+        height: 36px;
+        padding: 0 10px;
+        font-size: 16px;
+        border-radius: 5px;
+        -webkit-appearance: none;
+        -moz-appearance: none;
+        appearance: none;
+        border-style: none;
+        border-radius: 5px;
+      }
+      &:after {
+        position: absolute;
+        pointer-events: none;
+        content: "\25BC";
+        height: 1em;
+        font-size: 0.625em;
+        line-height: 1;
+        right: 1.2em;
+        top: 50%;
+        margin-top: -0.5em;
+        color: $almost-white;
+      }
+      &:hover {
+        border: 1px solid $bright-blue;
+      }
+    }
+
+    .slider-container {
+      display: inline-block;
+      width: 250px;
+      position: relative;
+
+      @media only screen and (min-width: $mobile-breakpoint) {
+        bottom: 8px;
+      }
+
+      .slider {
+        -webkit-appearance: none;
+        width: 150px;
+        height: 3px;
+        vertical-align: middle;
+        background: $light-grey;
+        border-radius: 5px;
+        outline: none;
+        -webkit-transition: 0.2s;
+        transition: opacity 0.2s;
+        &::-webkit-slider-thumb {
+          -webkit-appearance: none;
+          appearance: none;
+          width: 25px;
+          height: 25px;
+          background: $dark-grey;
+          border-width: 2px;
+          border-color: $light-grey;
+          border-style: solid;
+          border-radius: 50%;
+          cursor: pointer;
+          &:hover {
+            background: $bright-blue;
+            border-color: $bright-blue;
+          }
+        }
+
+        &::-moz-range-thumb {
+          width: 25px;
+          height: 25px;
+          border-radius: 50%;
+          background: $dark-grey;
+          border-width: 2px;
+          border-color: $light-grey;
+          border-style: solid;
+          cursor: pointer;
+          &:hover {
+            background: $bright-blue;
+            border-color: $bright-blue;
+          }
+        }
+      }
+
+      .slider-output {
+        display: inline-block;
+        position: relative;
+        width: 50px;
+        color: $almost-white;
+        line-height: 20px;
+        text-align: center;
+        border-radius: 5px;
+        border-style: solid;
+        border-width: 1px;
+        border-color: $light-grey;
+        padding: 5px 10px;
+        margin-left: 15px;
+
+        &:after {
+          position: absolute;
+          top: 8px;
+          left: -7px;
+          width: 0;
+          height: 0;
+          border-top: 7px solid transparent;
+          border-right: 7px solid $light-grey;
+          border-bottom: 7px solid transparent;
+          content: "";
+        }
+      }
+    }
+
+    .radio-container {
+      /* The container */
+      label {
+        display: block;
+        position: relative;
+        padding-left: 35px;
+        margin-bottom: 15px;
+        cursor: pointer;
+        -webkit-user-select: none;
+        -moz-user-select: none;
+        -ms-user-select: none;
+        user-select: none;
+        margin: 0;
+      }
+
+      /* Hide the browser's default radio button */
+      label input {
+        position: absolute;
+        opacity: 0;
+        cursor: pointer;
+      }
+
+      /* Create a custom radio button */
+      .checkmark {
+        position: absolute;
+        top: 0;
+        left: 0;
+        height: 20px;
+        width: 20px;
+        background-color: $bright-blue;
+        border-radius: 50%;
+      }
+
+      label input:checked ~ .checkmark {
+        background-color: $bright-blue;
+      }
+
+      /* Create the indicator (the dot/circle - hidden when checked) */
+      .checkmark:after {
+        content: "";
+        position: absolute;
+        display: block;
+      }
+
+      label input:checked ~ .checkmark:after {
+        display: none;
+      }
+
+      /* Style the indicator (dot/circle) */
+      label .checkmark:after {
+        top: 2px;
+        left: 2px;
+        width: 16px;
+        height: 16px;
+        border-radius: 50%;
+        background: #2e3838;
+      }
+    }
+  }
+}
+
+.chart-legend,
+.secondary-legend {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
@@ -229,9 +286,8 @@ figure {
 
 .legend-right {
   .chart-options {
-    @media only screen and (min-width: $mobile-breakpoint)
-    {
-      max-width:200px;
+    @media only screen and (min-width: $mobile-breakpoint) {
+      max-width: 200px;
     }
   }
   .chart-legend {
@@ -250,7 +306,7 @@ figure {
 
 .filters-on-top.chart-container {
   flex-direction: column;
-  .chart-options{
+  .chart-options {
     .chart-filters {
       margin-bottom: 0;
     }
@@ -259,12 +315,12 @@ figure {
 
 .mobile-legend {
   @media only screen and (min-width: $mobile-breakpoint) {
-    display:none !important; 
+    display: none !important;
   }
 }
-.wide-screen-legend{
+.wide-screen-legend {
   @media only screen and (max-width: $mobile-breakpoint) {
-    display:none !important; 
+    display: none !important;
   }
 }
 .filters-right {
@@ -272,30 +328,67 @@ figure {
     flex-direction: row-reverse;
   }
 }
+// Dashboard
+.dashboard-side-50 {
+  width: 100%;
+  @media only screen and (min-width: $mobile-breakpoint) {
+    width: 50%;
+  }
+}
+.dashboard-container-vertical {
+  display: flex;
+  flex-direction: column;
+  @media only screen and (min-width: $mobile-breakpoint) {
+    flex-direction: row;
+  }
+}
+.dashboard-container-horizontal {
+  display: flex;
+  flex-direction: column;
+}
+.chart-container-dashboard {
+  display: flex;
+  flex-direction: column;
+  background-image: url(../images/spinner-small.gif);
+  background-repeat: no-repeat;
+  background-position: center;
+  .highcharts-title {
+    font-size: 1.2em;
+  }
+}
 
+// Specific charts
 .old-death-tree {
-  min-height:300px;
+  min-height: 300px;
 }
-.biomass-pie, .biomass-scatter {
-  min-height:400px;
+.biomass-pie,
+.biomass-scatter {
+  min-height: 400px;
 }
-.death-tree, .death-map, .death-bars, .migration-map, .migration-bubbles, .migration-wheel, .sustain-map, .sustain-area {
-  min-height:500px;
+.death-tree,
+.death-map,
+.death-bars,
+.migration-map,
+.migration-bubbles,
+.migration-wheel,
+.sustain-map,
+.sustain-area {
+  min-height: 500px;
 }
 .population-line {
   display: inline-block;
   height: 20px;
-  width:5px;
+  width: 5px;
   border-radius: 5px;
 }
 .pl-africa {
-  background-color: #ffdc00 ;
+  background-color: #ffdc00;
 }
 .pl-asia {
   background-color: #ff3299;
 }
 .pl-europe {
-  background-color: #0074D9;
+  background-color: #0074d9;
 }
 .pl-lac {
   background-color: #28cc5c;
@@ -307,21 +400,19 @@ figure {
   background-color: #e58939;
 }
 .pl-births {
-  background-color: #DDC3C3;
-
+  background-color: #ddc3c3;
 }
 .pl-deaths {
   background-color: #101414;
-
 }
 .births-container {
-display: inline-block;
-margin-left: 20px;
+  display: inline-block;
+  margin-left: 20px;
   p {
     display: inline-block;
     font-size: 150%;
     margin: 0;
-    color: #DDC3C3;
+    color: #ddc3c3;
     line-height: 0.8;
   }
 }
@@ -350,7 +441,48 @@ margin-left: 20px;
   .lockdown-band {
     fill: #a52721;
   }
-  .secondary-legend .dot{
+}
+
+.covid-dashboard {
+  .chart-legend {
+    font-size: 80%;
+  }
+  .dot {
+    height: 18px;
+    width: 18px;
+  }
+  .secondary-legend {
+    font-size: 80%;
+  }
+  .chart-options {
+    height: 70px;
+  }
+  .covid-map {
+    width: 100%;
+    height: 500px;
+    @media only screen and (min-width: $mobile-breakpoint) {
+      width: 50%;
+    }
+  }
+  .covid-area {
+    height: 150px;
+  }
+  .covid-bars {
+    height: 250px;
+  }
+  .secondary-legend .dot {
     opacity: 0.4;
+  }
+  .covid-dashboard-country {
+    color: $bright-blue;
+    font-size: 140%;
+    font-weight: 500;
+    margin: 0;
+    padding-right: 20px;
+  }
+  .covid-dashboard-options {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
   }
 }

@@ -34,20 +34,20 @@
 <section class="banner-container">
     <h1 class="header-title-banner">{{title}}</h1>
 </section>
-<!-- Viz 1 - Map - Today values -->
+
+<!-- Viz 1 - Dashboard with map, area and bars -->
 <section>
     <div class="container limited-width">
         <p> <strong>Last updated 13/05/2020.</strong></p>
         <p>
-            Below you can see a snapshot of the current situation. Due to some data gathering lag, the data is about 1-2
-            days older than the last update date. The five main metrics are the confirmed coronavirus cases, deaths
-            following a coronavirus infection, complete recoveries following a coronavirus infection, people with active
-            infection of covid-19, i.e. confirmed cases that have not been fatal, nor have they recovered yet, and
-            number of tests. I am only providing these numbers per 1 million people so that data from different
-            countries can be more comparable. For absolute total numbers you can have a look at the visualization below
-            the map.
-            Lastly, I am providing two rates, death rate: the ratio of cases that develop to fatalities, and recovery
-            rate: the ratio of recovered patients to the total cases.
+            On the dashboard below you can see information on five main metrics: confirmed coronavirus cases, deaths
+            following a coronavirus infection, complete recoveries following a coronavirus infection, and people with
+            active infection of covid-19, i.e. confirmed cases that have not been fatal, nor have they recovered yet. On
+            the map on the left you can see those numbers relevant to the population, and on the right you can see the
+            absolute numbers, their accumulation on the top chart, and day to day change on the bottom. On the map I am
+            also providing a death rate - the ratio of cases that develop to fatalities, - a recovery rate - the ratio
+            of recovered patients to the total cases – and tests performed. To get country specific information on the
+            right, simply click on a country on the map.
         </p>
         <p>
             Note that these numbers give us a decent overview of the situation, but are still far from accurate. The
@@ -63,30 +63,73 @@
             <a href="https://www.ijidonline.com/article/S1201-9712(20)30139-9/pdf" target="_blank">30% at a Japanese
                 case study</a>,
             <a href="https://www.eurosurveillance.org/content/10.2807/1560-7917.ES.2020.25.10.2000180"
-                target="_blank">18% in Princess Diamond</a>),
-            which means it’s less likely to even think to get tested. All this tells us that the actual cases are much
+                target="_blank">18%
+                in Princess Diamond</a>). All this tells us that the actual cases are much
             more numerous than the confirmed cases (a study argues that about
             <a href="https://science.sciencemag.org/content/early/2020/03/24/science.abb3221" target="_blank">
                 86% of cases where undetected in pre lockdown Wuhan</a>), which makes the total confirmed cases
-            relatevely unreliable.
-            The number of deaths, however, should be much more accurate.
+            relatevely unreliable. The number of deaths, should be much more accurate. But as countries sometimes change
+            their definitions or methodologies for gathering this data, numbers are sometimes added or removed
+            retroactively, so even death statistics are not safe. Have a look for example on China or the UK.
         </p>
     </div>
-    <figure>
-        <div class="container chart-container covid-map filters-on-top">
-            <div class="chart-options chart-options-map" style="max-width:100%">
-                <div class="chart-filters"></div>
-            </div>
-            <div id="covid_map" class="map" style="width:100%;"></div>
 
+    <figure>
+        <div class="container dashboard-container-horizontal covid-dashboard">
+            <div class="dashboard-container-vertical">
+                <div class="chart-container-dashboard covid-map filters-on-top">
+                    <div class="chart-options chart-options-map" style="max-width:100%">
+                        <div class="chart-filters"></div>
+                    </div>
+                    <div id="covid_map" class="map" style="width:100%; "></div>
+                </div>
+                <div class="dashboard-side-50">
+                    <div class="dashboard-container-vertical">
+                        <div class="chart-options" style="max-width:100%">
+                            <div class="chart-filters covid-dashboard-options">
+                                <div>
+                                    <div class="radio-container">
+                                        <label>All time
+                                            <input type="radio" class="timeframe-radio" checked="checked"
+                                                name="timeframe-radio" value="all">
+                                            <span class="checkmark"></span>
+                                        </label>
+                                        <label>Last 30 days
+                                            <input type="radio" class="timeframe-radio" name="timeframe-radio"
+                                                value="latest">
+                                            <span class="checkmark"></span>
+                                        </label>
+                                    </div>
+                                </div>
+                                <div>
+                                    <p class="covid-dashboard-country">World</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="chart-container-dashboard covid-area filters-on-top">
+                        <div id="covid_area" style="width:100%;"></div>
+                    </div>
+                    <div class="chart-container-dashboard covid-bars filters-on-top">
+                        <div id="covid_bars" style="width:100%;"></div>
+                    </div>
+                    <div class="chart-options" style="max-width:100%">
+                        <div class="chart-legend"></div>
+                        <div class="secondary-legend"></div>
+                    </div>
+                </div>
+            </div>
             <div class="source-text">
                 <p>
-                    *Source:
+                    *Sources:
                     Confirmed, deaths, recovered, active data: <a href="https://github.com/CSSEGISandData/COVID-19"
                         target="_blank">Johns Hopkins University.</a>
                     Downloaded 13/05/2020. <br />
                     Test data: <a href="https://github.com/owid/covid-19-data" target="_blank">Our World in Data.</a>
-                    Downloaded 13/05/2020.
+                    Downloaded 13/05/2020. <br />
+                    Government response data: <a href="https://github.com/OxCGRT/covid-policy-tracker"
+                        target="_blank">Oxford University.</a>
+                    Downloaded 11/05/2020.
                 </p>
             </div>
         </div>
@@ -94,67 +137,7 @@
 
 </section>
 
-<!-- Viz 2 tracking change -->
-<section>
-    <div class="container limited-width">
-        <p>
-            The map above gives us a snapshot of the situation and a comparative view for the different countries, but
-            does not help us understand how the epidemic is progressing. For that, we will need to track and visualise
-            change. In the charts below you can see day by day change in two ways. On the top chart you can see the
-            accumulating numbers for the different parameters. Visualised are the “active”, “recovered” and “death”
-            cases, which when added up make up the "confirmed" cases. So, the whole visualised area represents the total
-            confirmed cases. Since the numbers are accumulating, the total area will only go up, so the points of
-            interest here are how steep the increase is, and when the “active” cases number starts flattening out and
-            eventually reducing being replaced by “recovered” cases.
-        </p>
-        <p>
-            On the bottom chart, you can see the day by day (non accumulative) change on the same metrics. The new
-            “confirmed” cases minus the new “recovered” cases and “death” cases gives us the new “active” cases. So,
-            this chart can be read as a change of “active” cases per day. The first positive indication here is the
-            flattening of new “confirmed” cases, and then eventually, having more “recoveries” than “confirmed” cases in
-            a daily basis. You might see the background of the chart changing colours. This reflects a change in the
-            government response regarding restrictions of movement. What each colour means is shown on the legend, and
-            further information on each category can be found on the section below where a map is provided for the
-            different government responses.
-        </p>
-        <p>
-            Hopefully it will all make more sense visually. To see what a hopeful visualisation looks like, just select
-            China, or South Korea (Korea, South) from the dropdown. For a less hopeful visualisation have a look at
-            USA.
-
-        </p>
-    </div>
-    <figure>
-        <div class="container chart-container covid-area filters-on-top">
-            <div class="chart-options" style="max-width:100%">
-                <div class="chart-filters"></div>
-            </div>
-            <div id="covid_area" style="width:100%;"></div>
-
-        </div>
-        <div class="container chart-container covid-bars filters-on-top">
-            <div id="covid_bars" style="width:100%;"></div>
-            <div class="chart-options" style="max-width:100%">
-                <div class="chart-legend"></div>
-                <div class="secondary-legend"></div>
-            </div>
-        </div>
-        <div class="source-text">
-            <p>
-                *Sources:
-                <a href="https://github.com/CSSEGISandData/COVID-19" target="_blank">Johns Hopkins University</a> (cases
-                data).
-                Downloaded 13/05/2020. <br>
-                <a href="https://github.com/OxCGRT/covid-policy-tracker" target="_blank">Oxford University</a>
-                (government response
-                data).
-                Downloaded 11/05/2020
-
-            </p>
-        </div>
-    </figure>
-</section>
-<!-- Viz 3 - lockdown map -->
+<!-- Viz 2 - lockdown map -->
 <div class="container limited-width">
     <p>
         Wherever you were, chances are that sometime during March or April you were told to stay home. Some governments
@@ -233,264 +216,19 @@
     file_covid_lockdown_notes = "worlddata/csv/covid-lockdown-notes.csv";
     covid_lockdown_notes_path = static_url + file_covid_lockdown_notes;
 
-    var CovidMap = d3.csv(covid_map_path)
-        .then(function (data) {
-            // All filterable options
-            const all_parameters = ["Confirmed cases per 1 million",
-                "Deaths per 1 million",
-                "Death rate",
-                "Recovery rate",
-                "Active per 1 million",
-                "Tests per 1 million"];
-
-            // Default values
-            var parameter = "Deaths per 1 million";
-
-            var container_class = ".covid-map";
-            var initial_data = [];
-
-            function get_data() {
-                var new_data = [];
-                for (let row of data) {
-                    var val = 0;
-                    if (row.Country != "World") {
-                        if (parameter == "Confirmed cases") {
-                            val = row.Confirmed;
-                        } else if (parameter == "Confirmed cases per 1 million") {
-                            val = row.Confirmed_pc;
-                        } else if (parameter == "Deaths") {
-                            val = row.Deaths;
-                        } else if (parameter == "Deaths per 1 million") {
-                            val = row.Deaths_pc;
-                        } else if (parameter == "Death rate") {
-                            val = row.Death_rate;
-                        } else if (parameter == "Recovered") {
-                            val = row.Recovered;
-                        } else if (parameter == "Recovery rate") {
-                            val = row.Recovered_rate;
-                        } else if (parameter == "Active") {
-                            val = row.Active;
-                        } else if (parameter == "Active per 1 million") {
-                            val = row.Active_pc;
-                        } else if (parameter == "Tests per 1 million") {
-                            val = row.Tested_pc;
-                        }
-
-                        new_data.push({ country: getCountryCode(row.Country), value: +val });
-                    }
-                }
-                return new_data;
-            }
-
-            intial_data = get_data();
-
-            // Initiate the chart
-            var chart = Highcharts.mapChart('covid_map', {
-                chart: {
-                    styledMode: true,
-                    height: 500
-                },
-                title: {
-                    text: null
-                },
-                mapNavigation: {
-                    enabled: true,
-                    enableMouseWheelZoom: false,
-                    enableButtons: true,
-                },
-                colorAxis: {
-                    tickInterval: 50,
-                    max: 200,
-                    min: 0,
-                    stops: [
-                        [0, '#0074D9'],
-                        [0.35, '#2ECC40'],
-                        [0.5, '#DDDDDD'],
-                        [0.65, '#FFDC00'],
-                        [0.95, '#FF4136']
-                    ],
-                },
-                tooltip: {
-                    formatter: function () {
-                        var title = fCapital(this.key);
-                        var value = this.point.value;
-                        var text = "";
-                        if (parameter == "Confirmed cases per 1 million") {
-                            let val = numberFormatterInteger(value);
-                            text = val + " confirmed cases per 1 million people";
-                        } else if (parameter == "Deaths per 1 million") {
-                            let val = numberFormatterInteger(value);
-                            text = val + " deaths per 1 million people";
-                        } else if (parameter == "Death rate") {
-                            let val = numberFormatterPercentage(value);
-                            text = val + "% of confirmed cases have escalated to death";
-                        } else if (parameter == "Recovery rate") {
-                            let val = numberFormatterPercentage(value);
-                            text = val + "% of all confirmed cases have recovered";
-                        } else if (parameter == "Active per 1 million") {
-                            let val = numberFormatterInteger(value);
-                            text = val + " are currently infected per 1 million people";
-                        } else if (parameter == "Tests per 1 million") {
-                            let val = numberFormatterInteger(value);
-                            if (val == 0) {
-                                text = "No testing data";
-                            } else {
-                                text = val + " tests have been carried out per 1 million people";
-                            }
-                        }
-                        return '<text><span style="font-size: 1.1em"><strong>' + title + '</strong></span><br>' + text + '</text>';
-                    },
-                    useHTML: true
-                },
-                credits: {
-                    enabled: false
-                },
-                series: [{
-                    mapData: Highcharts.maps['custom/world'],
-                    data: intial_data,
-                    joinBy: ['iso-a3', 'country'], // first var: type of geographical data, second: data column name
-                }]
-            });
-
-            // Dropdowns
-            // Define dropdown container
-            var filters = document.querySelector(container_class + " .chart-filters");
-
-            // Create a parameter dropdown
-            var parameterName = "covid-map-parameter",
-                parameterWidth = "300px";
-            addDropdown(filters, parameterName, parameterWidth, parameterChange, all_parameters, parameter);
-
-            // Update chart data on cause change
-            function parameterChange() {
-                parameter = document.getElementById(parameterName + "-select").value;
-                updateColorOrder();
-                updateColorStops();
-                chart.series[0].setData(get_data());
-            }
-
-            // adjust color stops according to parameter
-            function updateColorStops() {
-                if (parameter == "Confirmed cases per 1 million") {
-                    chart.colorAxis[0].update({
-                        tickInterval: 500,
-                        max: 2000,
-                        min: 0,
-                    }, false)
-                } else if (parameter == "Deaths per 1 million") {
-                    chart.colorAxis[0].update({
-                        tickInterval: 50,
-                        max: 200,
-                        min: 0,
-                    }, false)
-                } else if (parameter == "Death rate") {
-                    chart.colorAxis[0].update({
-                        tickInterval: 2,
-                        max: 10,
-                        min: 0,
-                    }, false)
-                } else if (parameter == "Recovery rate") {
-                    chart.colorAxis[0].update({
-                        tickInterval: 10,
-                        max: 50,
-                        min: 0,
-                    }, false)
-                } else if (parameter == "Active per 1 million") {
-                    chart.colorAxis[0].update({
-                        tickInterval: 200,
-                        max: 1000,
-                        min: 0,
-                    }, false)
-                } else if (parameter == "Tests per 1 million") {
-                    chart.colorAxis[0].update({
-                        tickInterval: 10000,
-                        max: 30000,
-                        min: 0,
-                    }, false)
-                }
-            }
-
-            function updateColorOrder() {
-                if (parameter == "Confirmed cases per 1 million") {
-                    chart.colorAxis[0].update({
-                        stops: [
-                            [0, '#0074D9'],
-                            [0.35, '#2ECC40'],
-                            [0.5, '#DDDDDD'],
-                            [0.65, '#FFDC00'],
-                            [0.95, '#FF4136']
-                        ],
-                    }, false)
-                } else if (parameter == "Deaths per 1 million") {
-                    chart.colorAxis[0].update({
-                        stops: [
-                            [0, '#0074D9'],
-                            [0.35, '#2ECC40'],
-                            [0.5, '#DDDDDD'],
-                            [0.65, '#FFDC00'],
-                            [0.95, '#FF4136']
-                        ],
-                    }, false)
-                } else if (parameter == "Death rate") {
-                    chart.colorAxis[0].update({
-                        stops: [
-                            [0, '#0074D9'],
-                            [0.35, '#2ECC40'],
-                            [0.5, '#DDDDDD'],
-                            [0.65, '#FFDC00'],
-                            [0.95, '#FF4136']
-                        ],
-                    }, false)
-                } else if (parameter == "Recovery rate") {
-                    chart.colorAxis[0].update({
-                        stops: [
-                            [0, '#FF4136'],
-                            [0.35, '#FFDC00'],
-                            [0.5, '#DDDDDD'],
-                            [0.65, '#2ECC40'],
-                            [0.95, '#0074D9']
-                        ],
-                    }, false)
-                } else if (parameter == "Active per 1 million") {
-                    chart.colorAxis[0].update({
-                        stops: [
-                            [0, '#0074D9'],
-                            [0.35, '#2ECC40'],
-                            [0.5, '#DDDDDD'],
-                            [0.65, '#FFDC00'],
-                            [0.95, '#FF4136']
-                        ],
-                    }, false)
-                } else if (parameter == "Tests per 1 million") {
-                    chart.colorAxis[0].update({
-                        stops: [
-                            [0, '#101414'],
-                            [0.01, '#FF4136'],
-                            [0.35, '#FFDC00'],
-                            [0.5, '#DDDDDD'],
-                            [0.65, '#2ECC40'],
-                            [0.95, '#0074D9']
-                        ],
-                    }, false)
-                }
-            }
-
-
-        })
-        .catch(function (error) {
-            console.log(error);
-        })
-
-    var covidArea = Promise.all([
+    var CovidDashboard = Promise.all([
+        d3.csv(covid_map_path),
         d3.csv(covid_area_path),
         d3.csv(covid_lockdown_path),
     ]).then(function (files) {
-        // d3.csv(covid_area_path)
-        //     .then(function (data) {
         // All filterable options
-        const all_measures = [...new Set(files[0].map(d => d.Parameter))].sort()
+        const all_parameters = ["Confirmed cases per 1 million",
+            "Deaths per 1 million",
+            "Death rate",
+            "Recovery rate",
+            "Active per 1 million",
+            "Tests per 1 million"];
         const all_countries = [...new Set(files[0].map(d => d.Country))].sort()
-        const all_metrics = [...new Set(files[0].map(d => d.Value))].sort()
 
         const all_dates = ["22/01/2020",
             "23/01/2020",
@@ -603,29 +341,65 @@
             "09/05/2020",
             "10/05/2020",
             "11/05/2020",
-            "12/05/2020"]];
-
+            "12/05/2020"];
 
         // Default values
-        var metric = "absolute",
-            country = "World";
+        var parameter = "Deaths per 1 million",
+            metric = "absolute",
+            country = "World",
+            timeframe = "all";
 
-        var area_container_class = ".covid-area";
-        var bar_container_class = ".covid-bars";
-        var initial_data = [];
-        var initial_bar_data = [];
-        var xAxisBands = [];
+        var map_container_class = ".covid-map",
+            area_container_class = ".covid-area",
+            bar_container_class = ".covid-bars",
+            initial_map_data = [],
+            initial_area_data = [],
+            initial_bar_data = [],
+            xAxisBands = [];
 
         var getColor = {
-            "Active": "4",
-            "Deaths": "6",
-            "Recovered": "9",
-            "Confirmed": "0"
+            "Active": "5",
+            "Deaths": "3",
+            "Recovered": "2",
+            "Confirmed": "7"
         };
 
-        function get_data() {
+        function get_map_data() {
             var new_data = [];
             for (let row of files[0]) {
+                var val = 0;
+                if (row.Country != "World") {
+                    if (parameter == "Confirmed cases") {
+                        val = row.Confirmed;
+                    } else if (parameter == "Confirmed cases per 1 million") {
+                        val = row.Confirmed_pc;
+                    } else if (parameter == "Deaths") {
+                        val = row.Deaths;
+                    } else if (parameter == "Deaths per 1 million") {
+                        val = row.Deaths_pc;
+                    } else if (parameter == "Death rate") {
+                        val = row.Death_rate;
+                    } else if (parameter == "Recovered") {
+                        val = row.Recovered;
+                    } else if (parameter == "Recovery rate") {
+                        val = row.Recovered_rate;
+                    } else if (parameter == "Active") {
+                        val = row.Active;
+                    } else if (parameter == "Active per 1 million") {
+                        val = row.Active_pc;
+                    } else if (parameter == "Tests per 1 million") {
+                        val = row.Tested_pc;
+                    }
+
+                    new_data.push({ country: getCountryCode(row.Country), value: +val, originalName: row.Country });
+                }
+            }
+            return new_data;
+        }
+
+        function get_area_data() {
+            var new_data = [];
+            for (let row of files[1]) {
                 if (row.Value == metric && row.Country == country && row.Parameter != "Confirmed") {
                     var day_data = [];
                     for (let day in all_dates) {
@@ -634,12 +408,18 @@
                     new_data.push({ id: row.Parameter, name: row.Parameter, data: day_data, colorIndex: getColor[row.Parameter] })
                 }
             }
+            // if last 30 days radio button is selected, return last 30 days only.
+            if (timeframe == "latest") {
+                for (var i = 0; i < new_data.length; i++) {
+                    new_data[i].data = new_data[i].data.slice(Math.max(new_data[i].data.length - 30, 0));
+                }
+            }
             return new_data;
         }
 
         function get_bar_data() {
             var new_data = [];
-            for (let row of files[0]) {
+            for (let row of files[1]) {
                 if (row.Value == "change" && row.Country == country && row.Parameter != "Active") {
                     var day_data = [];
                     if (row.Parameter == "Confirmed") {
@@ -654,12 +434,25 @@
                     new_data.push({ id: row.Parameter, name: row.Parameter, data: day_data, colorIndex: getColor[row.Parameter] })
                 }
             }
+            // if last 30 days radio button is selected, return last 30 days only.
+            if (timeframe == "latest") {
+                for (var i = 0; i < new_data.length; i++) {
+                    new_data[i].data = new_data[i].data.slice(Math.max(new_data[i].data.length - 30, 0));
+                }
+            }
             return new_data;
         }
 
         function get_bands() {
             var new_bands = [];
-            for (let row of files[1]) {
+            var selectedDates = [];
+            if (timeframe == "all") {
+                selectedDates = all_dates;
+            } else {
+                selectedDates = all_dates.slice(Math.max(all_dates.length - 30, 0));
+            }
+
+            for (let row of files[2]) {
                 if (row.Country == country && row.Measure == "restriction") {
                     var oldDayValue = 0,
                         newDayValue = 0,
@@ -669,8 +462,8 @@
                         cssClass = '';
 
                     var i;
-                    for (i = 0; i < all_dates.length; i++) {
-                        newDayValue = row[all_dates[i]];
+                    for (i = 0; i < selectedDates.length; i++) {
+                        newDayValue = row[selectedDates[i]];
                         if (newDayValue != oldDayValue) {
                             if (!started) {
                                 started = true;
@@ -703,37 +496,162 @@
                         oldDayValue = newDayValue;
                     }
                     if (started && to == 0) {
-                        new_bands.push({ from: from, to: all_dates.length, className: cssClass })
+                        new_bands.push({ from: from, to: selectedDates.length, className: cssClass })
                     }
                 }
             }
             return new_bands;
         }
 
+        function area_bar_data_update() {
+            var area_loops = area_chart.series.length;
+            var bar_loops = bar_chart.series.length;
+            var updated_area_data = get_area_data();
+            var updated_bar_data = get_bar_data();
+            var updated_plot_bands = get_bands();
+
+            // First empty the existing data
+            for (var i = 0; i < area_loops; i++) {
+                area_chart.series[0].remove(false);
+            }
+            for (var i = 0; i < bar_loops; i++) {
+                bar_chart.series[0].remove(false);
+            }
+            // Then add the updated data
+            for (var i = 0; i < updated_area_data.length; i++) {
+                area_chart.addSeries(updated_area_data[i], false);
+            }
+            for (var i = 0; i < updated_bar_data.length; i++) {
+                bar_chart.addSeries(updated_bar_data[i], false);
+            }
+            chartXAxis.plotBands = updated_plot_bands;
+            bar_chart.update({
+                xAxis: chartXAxis
+            });
+
+            area_chart.redraw();
+            bar_chart.redraw();
+        }
+
+        function change_dashboard_country_text(country) {
+            var element = document.getElementsByClassName("covid-dashboard-country")[0];
+            element.innerHTML = country;
+        }
+
+        intial_map_data = get_map_data();
         xAxisBands = get_bands();
-        initial_data = get_data();
+        initial_area_data = get_area_data();
         initial_bar_data = get_bar_data();
+
+        // Initiate the map chart
+        var chart = Highcharts.mapChart('covid_map', {
+            chart: {
+                styledMode: true,
+                //height: 500
+                marginBottom: 20,
+                events: {
+                    click: function (e) {
+                        country = "World";
+                        change_dashboard_country_text(country);
+                        area_bar_data_update();
+                    }
+                }
+            },
+            title: {
+                text: null
+            },
+            mapNavigation: {
+                enabled: true,
+                enableMouseWheelZoom: false,
+                enableButtons: true,
+            },
+            colorAxis: {
+                tickInterval: 50,
+                max: 200,
+                min: 0,
+                stops: [
+                    [0, '#0074D9'],
+                    [0.35, '#2ECC40'],
+                    [0.5, '#DDDDDD'],
+                    [0.65, '#FFDC00'],
+                    [0.95, '#FF4136']
+                ],
+            },
+            tooltip: {
+                formatter: function () {
+                    var title = fCapital(this.key);
+                    var value = this.point.value;
+                    var text = "";
+                    if (parameter == "Confirmed cases per 1 million") {
+                        let val = numberFormatterInteger(value);
+                        text = val + " confirmed cases per 1 million people";
+                    } else if (parameter == "Deaths per 1 million") {
+                        let val = numberFormatterInteger(value);
+                        text = val + " deaths per 1 million people";
+                    } else if (parameter == "Death rate") {
+                        let val = numberFormatterPercentage(value);
+                        text = val + "% of confirmed cases have escalated to death";
+                    } else if (parameter == "Recovery rate") {
+                        let val = numberFormatterPercentage(value);
+                        text = val + "% of all confirmed cases have recovered";
+                    } else if (parameter == "Active per 1 million") {
+                        let val = numberFormatterInteger(value);
+                        text = val + " are currently infected per 1 million people";
+                    } else if (parameter == "Tests per 1 million") {
+                        let val = numberFormatterInteger(value);
+                        if (val == 0) {
+                            text = "No testing data";
+                        } else {
+                            text = val + " tests have been carried out per 1 million people";
+                        }
+                    }
+                    return '<text><span style="font-size: 1.1em"><strong>' + title + '</strong></span><br>' + text + '</text>';
+                },
+                useHTML: true
+            },
+            credits: {
+                enabled: false
+            },
+            series: [{
+                mapData: Highcharts.maps['custom/world'],
+                data: intial_map_data,
+                joinBy: ['iso-a3', 'country'], // first var: type of geographical data, second: data column name
+                events: {
+                    click: function (e) {
+                        country = e.point.originalName;
+                        change_dashboard_country_text(e.point.name);
+                        area_bar_data_update();
+                    }
+                }
+            }]
+        });
 
         var area_chart = Highcharts.chart('covid_area', {
             chart: {
                 type: 'area',
                 styledMode: true,
-                height: 300,
-                marginBottom: 20
+                //height: 300,
+                //marginBottom: 20
+                //margin: 0
             },
             title: {
-                text: null
+                align: 'left',
+                text: 'Accumulation of cases'
             },
             xAxis: {
                 categories: all_dates,
                 tickInterval: 10,
+                labels: {
+                    enabled: false
+                },
                 title: {
                     enabled: false
                 }
             },
             yAxis: {
                 title: {
-                    text: 'Accumulative number of cases'
+                    enabled: false
+                    //text: 'Accumulative number of cases'
                 },
             },
             tooltip: {
@@ -764,7 +682,7 @@
                 },
                 useHTML: true
             },
-            series: initial_data,
+            series: initial_area_data,
             credits: {
                 enabled: false
             },
@@ -772,11 +690,12 @@
                 enabled: false
             }
         });
+
         var chartXAxis = {
             categories: all_dates,
-            tickInterval: 10,
+            tickInterval: 20,
             labels: {
-                enabled: false
+                enabled: true
             },
             title: {
                 enabled: false
@@ -788,16 +707,19 @@
             chart: {
                 type: 'column',
                 styledMode: true,
-                height: 300,
-                marginLeft: 95,
+                //height: 300,
+                //marginLeft: 95,
+                //margin: 0
             },
             title: {
-                text: null
+                align: 'left',
+                text: 'Daily change in "active" cases'
             },
             xAxis: chartXAxis,
             yAxis: {
                 title: {
-                    text: 'Daily change in "active" cases'
+                    enabled: false
+                    // text: 'Daily change in "active" cases'
                 },
             },
             tooltip: {
@@ -846,13 +768,17 @@
             }
         });
 
+        // Otherwise these charts overflow their containers
+        area_chart.setSize();
+        bar_chart.setSize();
 
+        // Legend
         area_chart_points = area_chart.series;
         bar_chart_points = bar_chart.series;
-        var legend = createMultiLegend(area_chart_points, bar_chart_points, bar_container_class);
+        var legend = createMultiLegend(area_chart_points, bar_chart_points, ".dashboard-container-horizontal");
 
         // legend for background - lockdown info
-        $legend2Container = $('.covid-bars .secondary-legend');
+        $legend2Container = $('.dashboard-container-horizontal .secondary-legend');
         var legendItems = [{ name: 'Some movement restrictions', colorIndex: 27 },
         { name: 'Curfew', colorIndex: 18 },
         { name: 'Lockdown', colorIndex: 11 }];
@@ -865,45 +791,139 @@
 
         // Dropdowns
         // Define dropdown container
-        var filters = document.querySelector(area_container_class + " .chart-filters");
+        var map_filters = document.querySelector(map_container_class + " .chart-filters");
 
-        // Create a country dropdown
-        var countryName = "area-country",
-            countryWidth = "320px";
-        addDropdown(filters, countryName, countryWidth, countryChange, all_countries, country);
+        // Create a parameter dropdown for the map
+        var parameterName = "covid-map-parameter",
+            parameterWidth = "300px";
+        addDropdown(map_filters, parameterName, parameterWidth, parameterChange, all_parameters, parameter);
 
-        // Update chart data on country change
-        function countryChange() {
-            country = document.getElementById(countryName + "-select").value;
-
-            var area_loops = area_chart.series.length;
-            var bar_loops = bar_chart.series.length;
-            var updated_area_data = get_data();
-            var updated_bar_data = get_bar_data();
-            var updated_plot_bands = get_bands();
-
-            // First empty the existing data
-            for (var i = 0; i < area_loops; i++) {
-                area_chart.series[0].remove(false);
-            }
-            for (var i = 0; i < bar_loops; i++) {
-                bar_chart.series[0].remove(false);
-            }
-            // Then add the updated data
-            for (var i = 0; i < updated_area_data.length; i++) {
-                area_chart.addSeries(updated_area_data[i], false);
-            }
-            for (var i = 0; i < updated_bar_data.length; i++) {
-                bar_chart.addSeries(updated_bar_data[i], false);
-            }
-            chartXAxis.plotBands = updated_plot_bands;
-            bar_chart.update({
-                xAxis: chartXAxis
-            });
-
-            area_chart.redraw();
-            bar_chart.redraw();
+        // Update chart data on parameter change
+        function parameterChange() {
+            parameter = document.getElementById(parameterName + "-select").value;
+            updateColorOrder();
+            updateColorStops();
+            chart.series[0].setData(get_map_data());
         }
+
+        // Radio buttons for changing timeframe
+        var radios = document.getElementsByClassName('timeframe-radio');
+        for (var i = 0; i < radios.length; i++) {
+            radios[i].onchange = radioChange;
+        }
+
+        function radioChange() {
+            timeframe = document.querySelector('input[name="timeframe-radio"]:checked').value;
+            console.log(timeframe);
+            area_bar_data_update();
+        }
+
+        // adjust map color stops according to parameter
+        function updateColorStops() {
+            if (parameter == "Confirmed cases per 1 million") {
+                chart.colorAxis[0].update({
+                    tickInterval: 500,
+                    max: 2000,
+                    min: 0,
+                }, false)
+            } else if (parameter == "Deaths per 1 million") {
+                chart.colorAxis[0].update({
+                    tickInterval: 50,
+                    max: 200,
+                    min: 0,
+                }, false)
+            } else if (parameter == "Death rate") {
+                chart.colorAxis[0].update({
+                    tickInterval: 2,
+                    max: 10,
+                    min: 0,
+                }, false)
+            } else if (parameter == "Recovery rate") {
+                chart.colorAxis[0].update({
+                    tickInterval: 10,
+                    max: 50,
+                    min: 0,
+                }, false)
+            } else if (parameter == "Active per 1 million") {
+                chart.colorAxis[0].update({
+                    tickInterval: 200,
+                    max: 1000,
+                    min: 0,
+                }, false)
+            } else if (parameter == "Tests per 1 million") {
+                chart.colorAxis[0].update({
+                    tickInterval: 10000,
+                    max: 30000,
+                    min: 0,
+                }, false)
+            }
+        }
+
+        function updateColorOrder() {
+            if (parameter == "Confirmed cases per 1 million") {
+                chart.colorAxis[0].update({
+                    stops: [
+                        [0, '#0074D9'],
+                        [0.35, '#2ECC40'],
+                        [0.5, '#DDDDDD'],
+                        [0.65, '#FFDC00'],
+                        [0.95, '#FF4136']
+                    ],
+                }, false)
+            } else if (parameter == "Deaths per 1 million") {
+                chart.colorAxis[0].update({
+                    stops: [
+                        [0, '#0074D9'],
+                        [0.35, '#2ECC40'],
+                        [0.5, '#DDDDDD'],
+                        [0.65, '#FFDC00'],
+                        [0.95, '#FF4136']
+                    ],
+                }, false)
+            } else if (parameter == "Death rate") {
+                chart.colorAxis[0].update({
+                    stops: [
+                        [0, '#0074D9'],
+                        [0.35, '#2ECC40'],
+                        [0.5, '#DDDDDD'],
+                        [0.65, '#FFDC00'],
+                        [0.95, '#FF4136']
+                    ],
+                }, false)
+            } else if (parameter == "Recovery rate") {
+                chart.colorAxis[0].update({
+                    stops: [
+                        [0, '#FF4136'],
+                        [0.35, '#FFDC00'],
+                        [0.5, '#DDDDDD'],
+                        [0.65, '#2ECC40'],
+                        [0.95, '#0074D9']
+                    ],
+                }, false)
+            } else if (parameter == "Active per 1 million") {
+                chart.colorAxis[0].update({
+                    stops: [
+                        [0, '#0074D9'],
+                        [0.35, '#2ECC40'],
+                        [0.5, '#DDDDDD'],
+                        [0.65, '#FFDC00'],
+                        [0.95, '#FF4136']
+                    ],
+                }, false)
+            } else if (parameter == "Tests per 1 million") {
+                chart.colorAxis[0].update({
+                    stops: [
+                        [0, '#101414'],
+                        [0.01, '#FF4136'],
+                        [0.35, '#FFDC00'],
+                        [0.5, '#DDDDDD'],
+                        [0.65, '#2ECC40'],
+                        [0.95, '#0074D9']
+                    ],
+                }, false)
+            }
+        }
+
     })
 
         .catch(function (error) {
@@ -1033,7 +1053,7 @@
             // Default values
             var date = "12/05/2020";
 
-            var container_class = ".lockdown-map";
+            var map_container_class = ".lockdown-map";
             var initial_data = [];
 
             function getNoteCode(country) {
@@ -1140,7 +1160,7 @@
 
             // Dropdowns
             // Define dropdown container
-            var filters = document.querySelector(container_class + " .chart-filters");
+            var filters = document.querySelector(map_container_class + " .chart-filters");
 
             // // Create a date dropdown
             var dateName = "lockdown-map-date",
@@ -1156,6 +1176,8 @@
         .catch(function (error) {
             console.log(error);
         })
+
+
 
 
 </script>
