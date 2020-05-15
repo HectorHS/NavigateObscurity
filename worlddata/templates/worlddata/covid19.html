@@ -83,7 +83,7 @@
                     </div>
                     <div id="covid_map" class="map" style="width:100%; "></div>
                 </div>
-                <div class="dashboard-side-50">
+                <div class="dashboard-side-40">
                     <div class="dashboard-container-vertical">
                         <div class="chart-options" style="max-width:100%">
                             <div class="chart-filters covid-dashboard-options">
@@ -348,7 +348,8 @@
         var parameter = "Deaths per 1 million",
             metric = "absolute",
             country = "World",
-            timeframe = "all";
+            timeframe = "all",
+            current_dates = all_dates;
 
         var map_container_class = ".covid-map",
             area_container_class = ".covid-area",
@@ -403,8 +404,8 @@
             for (let row of files[1]) {
                 if (row.Value == metric && row.Country == country && row.Parameter != "Confirmed") {
                     var day_data = [];
-                    for (let day in all_dates) {
-                        day_data[day] = +row[all_dates[day]];
+                    for (let day in current_dates) {
+                        day_data[day] = +row[current_dates[day]];
                     }
                     new_data.push({ id: row.Parameter, name: row.Parameter, data: day_data, colorIndex: getColor[row.Parameter] })
                 }
@@ -424,12 +425,12 @@
                 if (row.Value == "change" && row.Country == country && row.Parameter != "Active") {
                     var day_data = [];
                     if (row.Parameter == "Confirmed") {
-                        for (let day in all_dates) {
-                            day_data[day] = +row[all_dates[day]];
+                        for (let day in current_dates) {
+                            day_data[day] = +row[current_dates[day]];
                         }
                     } else {
-                        for (let day in all_dates) {
-                            day_data[day] = +row[all_dates[day]] * -1;
+                        for (let day in current_dates) {
+                            day_data[day] = +row[current_dates[day]] * -1;
                         }
                     }
                     new_data.push({ id: row.Parameter, name: row.Parameter, data: day_data, colorIndex: getColor[row.Parameter] })
@@ -446,12 +447,6 @@
 
         function get_bands() {
             var new_bands = [];
-            var selectedDates = [];
-            if (timeframe == "all") {
-                selectedDates = all_dates;
-            } else {
-                selectedDates = all_dates.slice(Math.max(all_dates.length - 30, 0));
-            }
 
             for (let row of files[2]) {
                 if (row.Country == country && row.Measure == "restriction") {
@@ -463,8 +458,8 @@
                         cssClass = '';
 
                     var i;
-                    for (i = 0; i < selectedDates.length; i++) {
-                        newDayValue = row[selectedDates[i]];
+                    for (i = 0; i < current_dates.length; i++) {
+                        newDayValue = row[current_dates[i]];
                         if (newDayValue != oldDayValue) {
                             if (!started) {
                                 started = true;
@@ -497,7 +492,7 @@
                         oldDayValue = newDayValue;
                     }
                     if (started && to == 0) {
-                        new_bands.push({ from: from, to: selectedDates.length, className: cssClass })
+                        new_bands.push({ from: from, to: current_dates.length, className: cssClass })
                     }
                 }
             }
@@ -526,7 +521,11 @@
                 bar_chart.addSeries(updated_bar_data[i], false);
             }
             chartXAxis.plotBands = updated_plot_bands;
+            chartXAxis.categories = current_dates;
             bar_chart.update({
+                xAxis: chartXAxis
+            });
+            area_chart.update({
                 xAxis: chartXAxis
             });
 
@@ -627,6 +626,18 @@
             }]
         });
 
+        var chartXAxis = {
+            categories: current_dates,
+            tickInterval: 20,
+            labels: {
+                enabled: false
+            },
+            title: {
+                enabled: false
+            },
+            plotBands: xAxisBands,
+        };
+
         var area_chart = Highcharts.chart('covid_area', {
             chart: {
                 type: 'area',
@@ -639,16 +650,7 @@
                 align: 'left',
                 text: 'Accumulation of cases'
             },
-            xAxis: {
-                categories: all_dates,
-                tickInterval: 10,
-                labels: {
-                    enabled: false
-                },
-                title: {
-                    enabled: false
-                }
-            },
+            xAxis: chartXAxis,
             yAxis: {
                 title: {
                     enabled: false
@@ -692,18 +694,6 @@
             }
         });
 
-        var chartXAxis = {
-            categories: all_dates,
-            tickInterval: 20,
-            labels: {
-                enabled: true
-            },
-            title: {
-                enabled: false
-            },
-            plotBands: xAxisBands,
-        };
-
         var bar_chart = Highcharts.chart('covid_bars', {
             chart: {
                 type: 'column',
@@ -731,7 +721,7 @@
                         each = Highcharts.each,
                         ind = 0;
                     each(series, function (p, i) {
-                        ind = all_dates.indexOf(cont.x)
+                        ind = current_dates.indexOf(cont.x)
                         sum += p.yData[ind];
                     });
                     var title = fCapital(this.x),
@@ -781,8 +771,8 @@
         // legend for background - lockdown info
         $legend2Container = $('.dashboard-container-horizontal .secondary-legend');
         var legendItems = [{ name: 'Some movement restrictions', colorIndex: 27 },
-        { name: 'Curfew', colorIndex: 18 },
-        { name: 'Lockdown', colorIndex: 11 }];
+        { name: 'Curfew', colorIndex: 8 },
+        { name: 'Lockdown', colorIndex: 1 }];
 
         // Append legend items
         $legend2Container.append('<div>Background: &nbsp &nbsp</div>')
@@ -815,7 +805,13 @@
 
         function radioChange() {
             timeframe = document.querySelector('input[name="timeframe-radio"]:checked').value;
-            console.log(timeframe);
+            //console.log(timeframe);
+            if (timeframe == "all") {
+                current_dates = all_dates;
+            }
+            else {
+                current_dates = all_dates.slice(Math.max(all_dates.length - 30, 0));
+            }
             area_bar_data_update();
         }
 
@@ -1116,8 +1112,8 @@
                     stops: [
                         [0, '#DDDDDD'],
                         [0.33, '#794f99'],
-                        [0.66, '#e58939'],
-                        [0.95, '#a52721']
+                        [0.66, '#8c1c54'],
+                        [0.95, '#ff3299']
                     ],
                 },
                 tooltip: {
@@ -1152,8 +1148,8 @@
             $legendContainer = $('.lockdown-map .secondary-legend');
             var legendItems = [{ name: "No restrictions", colorIndex: 28 },
             { name: 'Some movement restrictions', colorIndex: 27 },
-            { name: 'Curfew', colorIndex: 18 },
-            { name: 'Lockdown', colorIndex: 11 }];
+            { name: 'Curfew', colorIndex: 8 },
+            { name: 'Lockdown', colorIndex: 1 }];
 
             // Append legend items
             for (let point of legendItems) {

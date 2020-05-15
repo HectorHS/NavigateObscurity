@@ -359,13 +359,13 @@ figure {
   }
 }
 
-.dashboard-side-50 {
+.dashboard-side-40 {
   width: 100%;
 }
 
-@media only screen and (min-width: 768px) {
-  .dashboard-side-50 {
-    width: 50%;
+@media only screen and (min-width: 850px) {
+  .dashboard-side-40 {
+    width: 40%;
   }
 }
 
@@ -374,7 +374,7 @@ figure {
   flex-direction: column;
 }
 
-@media only screen and (min-width: 768px) {
+@media only screen and (min-width: 850px) {
   .dashboard-container-vertical {
     flex-direction: row;
   }
@@ -486,20 +486,87 @@ figure {
   padding-bottom: 0;
 }
 
-.covid-bars {
+.covid-bars,
+.covid-area {
   padding-top: 0;
 }
 
-.covid-bars .restricted-band {
+.covid-bars .restricted-band,
+.covid-area .restricted-band {
   fill: #794f99;
 }
 
-.covid-bars .curfew-band {
-  fill: #e58939;
+.covid-bars .curfew-band,
+.covid-area .curfew-band {
+  fill: #8c1c54;
 }
 
-.covid-bars .lockdown-band {
-  fill: #a52721;
+.covid-bars .lockdown-band,
+.covid-area .lockdown-band {
+  fill: #ff3299;
+}
+
+.covid-dashboard .covid-dashboard-options {
+  display: flex;
+  flex-direction: column-reverse;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+
+@media (min-width: 1024px) {
+  .covid-dashboard .covid-dashboard-options {
+    flex-direction: row;
+  }
+}
+
+.covid-dashboard .chart-filters {
+  text-align: inherit;
+}
+
+@media (min-width: 1025px) {
+  .covid-dashboard .chart-filters {
+    height: 70px;
+  }
+}
+
+.covid-dashboard .covid-dashboard-country {
+  color: #2f98d0;
+  font-size: 140%;
+  font-weight: 500;
+  margin: 0;
+  padding-right: 20px;
+  margin-bottom: 10px;
+  text-align: start;
+}
+
+@media (min-width: 1025px) {
+  .covid-dashboard .covid-dashboard-country {
+    margin-bottom: 0px;
+    text-align: end;
+  }
+}
+
+.covid-dashboard .radio-container {
+  min-width: 140px;
+}
+
+.covid-dashboard .covid-map {
+  width: 100%;
+  height: 500px;
+}
+
+@media only screen and (min-width: 850px) {
+  .covid-dashboard .covid-map {
+    width: 60%;
+  }
+}
+
+.covid-dashboard .covid-area {
+  height: 150px;
+}
+
+.covid-dashboard .covid-bars {
+  height: 250px;
 }
 
 .covid-dashboard .chart-legend {
@@ -515,43 +582,6 @@ figure {
   font-size: 80%;
 }
 
-.covid-dashboard .chart-options {
-  height: 70px;
-}
-
-.covid-dashboard .covid-map {
-  width: 100%;
-  height: 500px;
-}
-
-@media only screen and (min-width: 768px) {
-  .covid-dashboard .covid-map {
-    width: 50%;
-  }
-}
-
-.covid-dashboard .covid-area {
-  height: 150px;
-}
-
-.covid-dashboard .covid-bars {
-  height: 250px;
-}
-
 .covid-dashboard .secondary-legend .dot {
   opacity: 0.4;
-}
-
-.covid-dashboard .covid-dashboard-country {
-  color: #2f98d0;
-  font-size: 140%;
-  font-weight: 500;
-  margin: 0;
-  padding-right: 20px;
-}
-
-.covid-dashboard .covid-dashboard-options {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
 }
