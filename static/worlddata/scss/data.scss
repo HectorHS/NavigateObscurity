@@ -249,10 +249,10 @@ figure {
 
       /* Style the indicator (dot/circle) */
       label .checkmark:after {
-        top: 2px;
-        left: 2px;
-        width: 16px;
-        height: 16px;
+        top: 3px;
+        left: 3px;
+        width: 14px;
+        height: 14px;
         border-radius: 50%;
         background: #2e3838;
       }
@@ -457,9 +457,10 @@ figure {
   }
   .chart-filters {
     text-align: inherit;
+    margin-bottom: 0;
 
     @media (min-width: $desktop-breakpoint) {
-      height: 70px;
+      //height: 70px;
     }
   }
   .covid-dashboard-country {
@@ -477,6 +478,12 @@ figure {
   }
   .radio-container {
     min-width: 140px;
+  }
+  .side-chart-container {
+    box-shadow: 2px 2px 7px $navbar-color;
+    margin-left: 5px;
+    margin-bottom: 10px;
+    padding: 10px;
   }
   .covid-map {
     width: 100%;

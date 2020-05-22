@@ -271,10 +271,10 @@ figure {
 }
 
 .chart-options .chart-filters .radio-container label .checkmark:after {
-  top: 2px;
-  left: 2px;
-  width: 16px;
-  height: 16px;
+  top: 3px;
+  left: 3px;
+  width: 14px;
+  height: 14px;
   border-radius: 50%;
   background: #2e3838;
 }
@@ -521,12 +521,7 @@ figure {
 
 .covid-dashboard .chart-filters {
   text-align: inherit;
-}
-
-@media (min-width: 1025px) {
-  .covid-dashboard .chart-filters {
-    height: 70px;
-  }
+  margin-bottom: 0;
 }
 
 .covid-dashboard .covid-dashboard-country {
@@ -548,6 +543,13 @@ figure {
 
 .covid-dashboard .radio-container {
   min-width: 140px;
+}
+
+.covid-dashboard .side-chart-container {
+  box-shadow: 2px 2px 7px rgba(23, 28, 28, 0.9);
+  margin-left: 5px;
+  margin-bottom: 10px;
+  padding: 10px;
 }
 
 .covid-dashboard .covid-map {
