@@ -16,7 +16,7 @@ Code,Country,Restriction,Note
 15,Bosnia and Herzegovina,1,Under 18's and over 65 only allowed out in certain days and times.
 16,Bosnia and Herzegovina,2,General curfew 20:00 - 05:00. Under 18's and over 65 not allowed out at all.
 17,Botswana,3,"Usual lockdown rules: going out of home is only allowed for certain pre-defined reasons (grocery shopping, helping someone in need, visit to doctor or pharmacy, exercising etc). Violators are fined."
-18,Brazil,1,Restrictions on travelling between cities. Sao Luis first major city to declare lockdown on 05/05.
+18,Brazil,1,Restrictions on travelling between cities. Sao Luis first major city to declare lockdown on 05/05. Other areas impose stay at home measures later on.
 19,Brunei,0,"No movement restrictions enforced, but social distancing rules in place."
 20,Bulgaria,1,Restricted travel in parts of the country and certain areas in Lockdown. 
 21,Burkina Faso,2,General curfew 19:00 - 05:00 (later changed to 21:00 - 04:00).
@@ -95,3 +95,8 @@ Code,Country,Restriction,Note
 94,Zambia,1,Lockdown in Kaufe district.
 95,All,1,Movement between cities/provinces/states is banned.
 96,All,0,"No movement restrictions enforced, but social distancing rules in place and many businesses closed."
+97,Aruba,2,General curfew 22:00 - 06:00 (later changed to 23:00 - 05:00). Most businesses closed and social distancing rules.
+98,Barbados,3,General curfew 20:00 - 05:00. Citizens can only go out for certain basic need activities.
+99,All,1,Phase one reopening. Free movement as long as social distancing is followed. Most businesses still closed.
+100,Burundi,0,"On 15th of May, Burundi expelled all WHO representatives in the country. They don't seem to have taken any social distancing measures."
+101,Cabo Verde,1,Some islands still in lockdown. Special restrictions for over 65's and other vulnerable groups. No loitering in public spaces.
