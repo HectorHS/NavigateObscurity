@@ -86,7 +86,7 @@ Code,Country,Restriction,Note
 85,Syria,1,Movement is banned between governates.
 86,Thailand,1,Curfew imposed in Nonthaburi.
 87,Thailand,2,General curfew 22:00 - 04:00.
-88,Turkey,1,People under 25 and over 65 in complete lockdown nationwide. Also in lockdown some provinces.
+88,Turkey,1,"People under 25 and over 65 in complete lockdown nationwide. Also, some provinces in lockdown."
 89,United Arab Emirates,2,"General curfew 20:00 - 06:00, Thursday to Sunday, plus stricter measures on a per Emirate basis."
 90,USA,1,"Varied responses among states, with most states imposing lockdown at some point."
 91,Vietnam,1,Certain areas in lockdown.
@@ -97,6 +97,11 @@ Code,Country,Restriction,Note
 96,All,0,"No movement restrictions enforced, but social distancing rules in place and many businesses closed."
 97,Aruba,2,General curfew 22:00 - 06:00 (later changed to 23:00 - 05:00). Most businesses closed and social distancing rules.
 98,Barbados,3,General curfew 20:00 - 05:00. Citizens can only go out for certain basic need activities.
-99,All,1,Phase one reopening. Free movement as long as social distancing is followed. Most businesses still closed.
+99,Cuba,3,"All citizens are required to stay at home, and only one member of the family is allowed to leave to do essential shopping."
 100,Burundi,0,"On 15th of May, Burundi expelled all WHO representatives in the country. They don't seem to have taken any social distancing measures."
 101,Cabo Verde,1,Some islands still in lockdown. Special restrictions for over 65's and other vulnerable groups. No loitering in public spaces.
+102,Croatia,1,Internal movement to the island of Brac restricted.
+103,Kyrgyz Republic,1,Restricted access to the Issyk-Kul province.
+104,Pakistan,1,Azad Jamu and Kashmir in self imposed lock down.
+105,Turkey,1,"People under 25 and over 65 only allowed out for four hours, once a week. Also, some provinces in lockdown."
+106,Uzbekistan,1,Three zones for three different alert levels each one defining different movement restrictions.
