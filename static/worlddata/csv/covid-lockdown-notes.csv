@@ -1,6 +1,6 @@
 Code,Country,Restriction,Note
 1,All,0,"No movement restrictions imposed, internal or external"
-2,All,1,Movement restictions impossed in part(s) of the country. 
+2,All,1,"Movement restictions (lockdonw, curfew etc) impossed in part(s) of the country. "
 3,All,2,General curfew.
 4,All,3,"Usual lockdown rules: going out of home is only allowed for certain pre-defined reasons (grocery shopping, helping someone in need, visit to doctor or pharmacy, exercising etc). Violators are fined."
 5,Afghanistan,1,Lockdown implemeted in certain areas like Kabul and Herat.
@@ -23,7 +23,7 @@ Code,Country,Restriction,Note
 22,Burma,1,"Travel restricted from and to certain areas, and curfew imposed in Sagaing region."
 23,Cabo Verde,1,Some islands still in lockdown.
 24,Canada,1,"Different policies for each territory, with most of them being under lockdown."
-25,Chad,1,"19:00 - 06:00 curfew to the cities of Mandella, Logone-Gana and N'Djamena-Farah."
+25,Chad,1,"19:00 - 06:00 curfew to various cities, prominently the capital N'Djamena, Mandella, and Logone-Gana."
 26,Chile,2,"General Curfew in place from 22:00 to 05:00. Over 80's completely restricted from going out, and lockdown in several parts of the country."
 27,China,1,Wuhan in lockdown.
 28,China,1,Shulan city in lockdown.
@@ -53,7 +53,7 @@ Code,Country,Restriction,Note
 52,Jamaica,2,"General lockdown 20:00 - 06:00 (later moved to 15:00 - 07:00). Additionally, lockdown in certain areas."
 53,Kazakhstan,1,Self imposed lockdown and curfews in several regions or cities.
 54,Kenya,2,"General curfew 19:00 - 05:00. Additionally, lockdown in certain areas of the country."
-55,Kosovo,3,"Usual lockdown rules: going out of home is only allowed for certain pre-defined reasons (grocery shopping, helping someone in need, visit to doctor or pharmacy, exercising etc). Violators are fined. People can only be out dureing a 1.5h window (later changed to 3-hour window)."
+55,Kosovo,3,"Usual lockdown rules: going out of home is only allowed for certain pre-defined reasons (grocery shopping, helping someone in need, visit to doctor or pharmacy, exercising etc). Violators are fined. People can only be out dureing a 1.5h window (later changed to 3-hour window, and then to a 4-hour window)."
 56,Kuwait,2,"General curefew 17:00 - 04:00 (later changed to 17:00 - 06:00). Additionally, lockdown is certain areas of the country."
 57,Kyrgyzstan,1,"Intercity travel banned, and many cities and regions under lockdown."
 58,Libya,2,"Opposing governing bodies controlling different parts of the country both declared movement restriction measures. The west is in lockdown, the east on a general curfew for 18:00 - 06:00."
@@ -114,7 +114,7 @@ Code,Country,Restriction,Note
 113,Sri Lanka,1,"Curfew still in force in Colombo, Gampaha, Kalutara and Puttalam."
 114,Thailand,1,Curfews and movement restrictions for certain areas
 115,all,4,"Borders closed, no external movement allowed."
-116,all,4,"Borders partially closes, external movement allowed for certain countries."
+116,all,4,"Borders partially closed, external movement allowed for certain countries."
 117,Algeria,1,Regional curfews in place for most regions
 118,Angola ,1,Lockdown for the capital Luanda.
 119,Bangladesh,3,"Stay at home required for red zones.     Outside the red zones, all the government, semi-government, autonomous and non-government offices would remain open in their respective arrangements on a limited scale while no one would be allowed to go out at night from 8:00pm to 6:00am without an emergency during the extended restriction period effective from today. "
@@ -130,7 +130,7 @@ Code,Country,Restriction,Note
 129,Liberia,1,lockdown imposed in parts of the country
 130,Mexico,1,"Stay at home requirements to be upheld according to ""traffic light system"" on a per state basis"
 131,Nepal,2,General curfew imposed 22:00-05:00
-132,Panama,2,"General curfew 19:00 - 05:00, and children only allowed outside with guardians. Stricter rules in some areas."
+132,Panama,2,"General curfew 19:00 - 05:00, and children only allowed outside with guardians. Total lockdown over the weekenday (and later just for Sunday). Stricter rules in some areas."
 133,Poland,1,Children under 18 cannot leave the house whithout adult supervision.
 134,Poland,1,Children under 13 cannot leave the house whithout adult supervision.
 135,Portugal,1,Parts of greater Lisbon in lockdown
@@ -142,3 +142,48 @@ Code,Country,Restriction,Note
 141,Suriname,2,General curfew imposed 22:00 - 05:00
 142,Togo,2,General curfew imposed 20:00 - 06:00
 143,Uganda,2,General curfew imposed 19:00 - 06:30
+144,Argentina,3,"Lockdown measures with residents only allowed out of their homes in certain days (depending on their national identity card number). Children are now allowed to socialise for a maximum of 1 hour, in certain days, following social distancing rules and wearing masks."
+145,Aruba,2,General curfew imposed 00:00 - 05:00
+146,Australia,1,Lockdown in Melbourne and other areas in Victoria
+147,British Virgin Islands,3,"Lockdown, with residents only allowed out for specified reasons, on on specific days based on the first letter of their surname."
+148,Belgium,1,"23:30 - 06:00 curfew in place for Antwerp, plus social distancing rules and strong recommendations to stay in and work from home."
+149,Belgium,1,"01:30 - 06:00 curfew in place for Antwerp, plus social distancing rules and strong recommendations to stay in and work from home."
+150,British Virgin Islands,2,General curfew from 13:00 to 06:00
+151,British Virgin Islands,2,General curfew from 19:00 to 06:00
+152,British Virgin Islands,2,General curfew from 22:00 to 06:00
+153,British Virgin Islands,2,General curfew from 00:00 to 06:00
+154,China,1,Certain citites / dstricts with confirmed cases under lockdown
+155,Cuba,1,Havana under partial lockdown
+156,Dominican Republic,2,"Night time curfews, with different times for different parts of the country"
+157,Ecuador,1,Restrictions based on a green-yellow-red zone system across the country
+158,Fiji,2,General curfew from 23:00 to 04:00
+159,Belize,2,General curfew from 21:00 to 05:00
+160,British Virgin Islands,2,General curfew from 17:00 to 05:00
+161,Cuba,2,General curfew from 19:00 to 05:00
+162,Gabon,2,General curfew from 20:00 to 05:00
+163,Gambia,2,General curfew from 22:00 to 05:00
+164,Guatemala,2,General curfew from 16:00 to 04:00
+165,Guatemala,2,General curfew from 21:00 to 04:00
+166,Guyana,2,General curfew from 18:00 to 06:00
+167,Haiti,2,General curfew from 20:00 to 05:00
+168,Jamaica,2,General curfew from 23:00 to 05:00
+169,Jamaica,2,General curfew from 21:00 to 05:00
+170,Kosovo,2,General curfew from 21:00 to 05:00
+171,Lebanon,2,General curfew from 18:00 to 06:00
+172,Madagascar,2,General curfew from 22:00 to 04:00
+173,Morocco,1,"Travelling banned to and from major cities: Marrakech, Fez, Casablanca, Tangier, Mecnes"
+174,Burma,2,General curfew from 00:00 to 04:00
+175,Namibia,2,General curfew from 20:00 to 05:00
+176,Nigeria,2,General curfew between 22:00 and 04:00.
+177,Oman,2,General curfew between 19:00 and 18:00.
+178,Paraguay,2,General curfew 23:00 - 05:00.
+179,Paraguay,2,General curfew 20:00 - 05:00.
+180,Peru,2,General curfew from 20:00 to 04:00
+181,South Sudan,2,General curfew from 22:00 to 06:00
+182,Suriname,2,General curfew imposed 20:00 - 05:00
+183,Turks and Caicos Islands,2,General curfew imposed 20:00 - 05:00 and 24h curfew on Sundays
+184,Turks and Caicos Islands,2,General curfew imposed 22:00 - 05:00
+185,Turks and Caicos Islands,2,General curfew imposed 20:00 - 05:00
+186,Ukraine,1,A four zone system implemented with different restrictions for each zone
+187,United Kingdom,1,Regional lockdown in Leicester
+188,Zimbabwe,2,General curfew from 18:00 to 06:00
