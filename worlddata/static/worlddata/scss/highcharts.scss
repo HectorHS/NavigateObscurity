@@ -61,31 +61,31 @@ $highlight-color-10: #e6ebf5 !default; // Pressed button, color axis min color.
 
 // Color map for labels
 $text-colors: (
-0:$neutral-color-80, 
-1:$neutral-color-80,
-2:$dark-grey,
-3:$neutral-color-80,
-4:$dark-grey,
-5:$neutral-color-80,
-6:$neutral-color-80,
-7:$neutral-color-80,
-8:$neutral-color-80,
-9:$neutral-color-80,
-10:$neutral-color-80,
-11:$neutral-color-80,
-12:$neutral-color-80,
-13:$neutral-color-80,
-14:$dark-grey,
-15:$neutral-color-80,
-16:$dark-grey,
-17:$neutral-color-80,
-18:$dark-grey,
-19:$neutral-color-80,
-20:$neutral-color-80,
-21:$dark-grey,
-22:$neutral-color-80,
-23:$dark-grey,
-24:$dark-grey
+    0: $neutral-color-80,
+    1: $neutral-color-80,
+    2: $dark-grey,
+    3: $neutral-color-80,
+    4: $dark-grey,
+    5: $neutral-color-80,
+    6: $neutral-color-80,
+    7: $neutral-color-80,
+    8: $neutral-color-80,
+    9: $neutral-color-80,
+    10: $neutral-color-80,
+    11: $neutral-color-80,
+    12: $neutral-color-80,
+    13: $neutral-color-80,
+    14: $dark-grey,
+    15: $neutral-color-80,
+    16: $dark-grey,
+    17: $neutral-color-80,
+    18: $dark-grey,
+    19: $neutral-color-80,
+    20: $neutral-color-80,
+    21: $dark-grey,
+    22: $neutral-color-80,
+    23: $dark-grey,
+    24: $dark-grey,
 );
 
 // Fonts
@@ -95,7 +95,6 @@ $title-font-size: 1.5em !default;
 $subtitle-font-size: 1em !default;
 $legend-font-size: 1em !default;
 $axis-labels-font-size: 0.9em !default;
-
 
 // Tooltip
 $tooltip-border: 1px !default;
@@ -118,15 +117,15 @@ $context-button-background: $background-color !default;
 
 $highcharts-button-background: $neutral-color-3 !default;
 $highcharts-button-border: $neutral-color-20 !default;
-$highcharts-button-text:  $neutral-color-80 !default;
+$highcharts-button-text: $neutral-color-80 !default;
 
 $highcharts-button-pressed-background: $highlight-color-10 !default;
 $highcharts-button-pressed-border: $neutral-color-20 !default;
-$highcharts-button-pressed-text:  $neutral-color-80 !default;
+$highcharts-button-pressed-text: $neutral-color-80 !default;
 
 $highcharts-button-hover-background: $neutral-color-80 !default;
 $highcharts-button-hover-border: $neutral-color-20 !default;
-$highcharts-button-hover-text:  $neutral-color-3 !default;
+$highcharts-button-hover-text: $neutral-color-3 !default;
 
 // Navigator
 $navigator-series-fill: $highlight-color-80 !default;
@@ -137,8 +136,8 @@ $scrollbar-track-background: $neutral-color-5 !default;
 $scrollbar-track-border: $neutral-color-5 !default;
 
 // Indicators
-$indicator-positive-line: #06B535;
-$indicator-negative-line: #F21313;
+$indicator-positive-line: #06b535;
+$indicator-negative-line: #f21313;
 
 .highcharts-container {
     position: relative;
@@ -148,7 +147,7 @@ $indicator-negative-line: #F21313;
     text-align: left;
     line-height: normal;
     z-index: 0; /* #1072 */
-    -webkit-tap-highlight-color: rgba(0,0,0,0);
+    -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
     font-family: $font-family;
     font-size: $container-font-size;
 }
@@ -170,7 +169,8 @@ $indicator-negative-line: #F21313;
 .highcharts-background {
     fill: $background-color;
 }
-.highcharts-plot-border, .highcharts-plot-background {
+.highcharts-plot-border,
+.highcharts-plot-background {
     fill: none;
 }
 .highcharts-label-box {
@@ -245,7 +245,6 @@ $indicator-negative-line: #F21313;
     stroke: $highlight-color-20;
     stroke-opacity: 0.25;
 }
-
 
 /* Credits */
 .highcharts-credits {
@@ -336,14 +335,14 @@ g.highcharts-series,
 
 /* Default colors */
 @for $i from 1 through length($colors) {
-  $color: nth($colors, $i);
-  .highcharts-color-#{$i - 1} {
-    fill: $color;
-    stroke: $color;
-  }
-  .legend-color-#{$i - 1} {
-      background-color: $color;
-  }
+    $color: nth($colors, $i);
+    .highcharts-color-#{$i - 1} {
+        fill: $color;
+        stroke: $color;
+    }
+    .legend-color-#{$i - 1} {
+        background-color: $color;
+    }
 }
 
 .highcharts-area {
@@ -370,7 +369,8 @@ g.highcharts-series,
     fill: none;
     stroke-width: 0;
 }
-.highcharts-data-label text, text.highcharts-data-label {
+.highcharts-data-label text,
+text.highcharts-data-label {
     fill: $data-label-color;
 }
 .highcharts-data-label-connector {
@@ -466,8 +466,7 @@ g.highcharts-series,
 .highcharts-windbarb-series .highcharts-point {
     fill: none;
     stroke-width: 2px;
- }
-
+}
 
 /* Legend */
 .highcharts-legend {
@@ -499,7 +498,9 @@ g.highcharts-series,
 .highcharts-legend-nav-inactive {
     fill: $neutral-color-20;
 }
-circle.highcharts-legend-nav-active, circle.highcharts-legend-nav-inactive { /* tracker */
+circle.highcharts-legend-nav-active,
+circle.highcharts-legend-nav-inactive {
+    /* tracker */
     fill: rgba(192, 192, 192, 0.0001);
 }
 .highcharts-legend-title-box {
@@ -541,7 +542,8 @@ circle.highcharts-legend-nav-active, circle.highcharts-legend-nav-inactive { /* 
 }
 
 /* Plot bands and polar pane backgrounds */
-.highcharts-plot-band, .highcharts-pane {
+.highcharts-plot-band,
+.highcharts-pane {
     fill: $neutral-color-100;
     fill-opacity: 0.3;
 }
@@ -703,7 +705,7 @@ circle.highcharts-legend-nav-active, circle.highcharts-legend-nav-inactive { /* 
     fill: $range-selector-input-text;
 }
 .highcharts-range-input {
-    stroke-width:1px;
+    stroke-width: 1px;
     stroke: $range-selector-input-border;
 }
 input.highcharts-range-selector {
@@ -722,7 +724,6 @@ input.highcharts-range-selector {
 .highcharts-crosshair-label .highcharts-label-box {
     fill: inherit;
 }
-
 
 .highcharts-candlestick-series .highcharts-point {
     stroke: $neutral-color-100;
@@ -857,11 +858,11 @@ text.highcharts-drilldown-data-label,
 
 /* Lineargauge type series */
 .highcharts-lineargauge-target {
-	stroke-width: 1px;
-	stroke: $neutral-color-80;
+    stroke-width: 1px;
+    stroke: $neutral-color-80;
 }
 .highcharts-lineargauge-target-line {
-	stroke-width: 1px;
+    stroke-width: 1px;
     stroke: $neutral-color-80;
 }
 
@@ -877,7 +878,8 @@ text.highcharts-drilldown-data-label,
 }
 
 /* Gantt */
-.highcharts-treegrid-node-collapsed, .highcharts-treegrid-node-expanded {
+.highcharts-treegrid-node-collapsed,
+.highcharts-treegrid-node-expanded {
     cursor: pointer;
 }
 .highcharts-point-connecting-path {
@@ -891,7 +893,9 @@ text.highcharts-drilldown-data-label,
 }
 
 // Custom settings
- .scatter, .bubbles, .wheel {
+.scatter,
+.bubbles,
+.wheel {
     .highcharts-point {
         opacity: 0.7;
     }
@@ -899,22 +903,22 @@ text.highcharts-drilldown-data-label,
         opacity: 1;
     }
     .highcharts-point-select {
-        opacity:1;
+        opacity: 1;
     }
- }
+}
 
- .wheel {
+.wheel {
     .highcharts-point {
         stroke-width: 1px;
-    } 
+    }
     .highcharts-node {
         opacity: 1;
     }
- }
+}
 
- .highcharts-xaxis-grid .highcharts-grid-line  {
-     stroke-width: $grid-line-width;
- }
+.highcharts-xaxis-grid .highcharts-grid-line {
+    stroke-width: $grid-line-width;
+}
 
 .bars,
 .area,
@@ -937,10 +941,10 @@ text.highcharts-drilldown-data-label,
         opacity: 0;
     }
 }
- @for $i from 1 through length($colors) {
-    $color: nth($colors, $i);
-    .highcharts-data-label-color-#{$i - 1} text{
-      fill: map-get($text-colors, ($i - 1));
 
+@for $i from 1 through length($colors) {
+    $color: nth($colors, $i);
+    .highcharts-data-label-color-#{$i - 1} text {
+        fill: map-get($text-colors, ($i - 1));
     }
 }

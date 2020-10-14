@@ -36,7 +36,8 @@
   fill: #2e3838;
 }
 
-.highcharts-plot-border, .highcharts-plot-background {
+.highcharts-plot-border,
+.highcharts-plot-background {
   fill: none;
 }
 
@@ -518,7 +519,8 @@ g.highcharts-series,
   stroke-width: 0;
 }
 
-.highcharts-data-label text, text.highcharts-data-label {
+.highcharts-data-label text,
+text.highcharts-data-label {
   fill: #dffcff;
 }
 
@@ -666,7 +668,8 @@ g.highcharts-series,
   fill: #cccccc;
 }
 
-circle.highcharts-legend-nav-active, circle.highcharts-legend-nav-inactive {
+circle.highcharts-legend-nav-active,
+circle.highcharts-legend-nav-inactive {
   /* tracker */
   fill: rgba(192, 192, 192, 0.0001);
 }
@@ -714,7 +717,8 @@ circle.highcharts-legend-nav-active, circle.highcharts-legend-nav-inactive {
 }
 
 /* Plot bands and polar pane backgrounds */
-.highcharts-plot-band, .highcharts-pane {
+.highcharts-plot-band,
+.highcharts-pane {
   fill: #dffcff;
   fill-opacity: 0.3;
 }
@@ -1117,7 +1121,8 @@ text.highcharts-drilldown-data-label,
 }
 
 /* Gantt */
-.highcharts-treegrid-node-collapsed, .highcharts-treegrid-node-expanded {
+.highcharts-treegrid-node-collapsed,
+.highcharts-treegrid-node-expanded {
   cursor: pointer;
 }
 
@@ -1133,15 +1138,21 @@ text.highcharts-drilldown-data-label,
   stroke-width: 1px;
 }
 
-.scatter .highcharts-point, .bubbles .highcharts-point, .wheel .highcharts-point {
+.scatter .highcharts-point,
+.bubbles .highcharts-point,
+.wheel .highcharts-point {
   opacity: 0.7;
 }
 
-.scatter .highcharts-point-hover, .bubbles .highcharts-point-hover, .wheel .highcharts-point-hover {
+.scatter .highcharts-point-hover,
+.bubbles .highcharts-point-hover,
+.wheel .highcharts-point-hover {
   opacity: 1;
 }
 
-.scatter .highcharts-point-select, .bubbles .highcharts-point-select, .wheel .highcharts-point-select {
+.scatter .highcharts-point-select,
+.bubbles .highcharts-point-select,
+.wheel .highcharts-point-select {
   opacity: 1;
 }
 
@@ -1155,6 +1166,30 @@ text.highcharts-drilldown-data-label,
 
 .highcharts-xaxis-grid .highcharts-grid-line {
   stroke-width: 1px;
+}
+
+.bars .highcharts-xaxis-grid .highcharts-grid-line,
+.area .highcharts-xaxis-grid .highcharts-grid-line,
+.bar-line .highcharts-xaxis-grid .highcharts-grid-line {
+  stroke-width: 0;
+}
+
+.bars .highcharts-axis-line,
+.area .highcharts-axis-line,
+.bar-line .highcharts-axis-line {
+  opacity: 0;
+}
+
+.h-bars .highcharts-xaxis-grid .highcharts-grid-line {
+  stroke-width: 0;
+}
+
+.h-bars .highcharts-yaxis-grid .highcharts-grid-line {
+  stroke-width: 0;
+}
+
+.h-bars .highcharts-axis-line {
+  opacity: 0;
 }
 
 .highcharts-data-label-color-0 text {

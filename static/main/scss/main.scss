@@ -1,32 +1,32 @@
-@import 'variables';
-@import 'mixins';
-@import 'parents';
+@import "variables";
+@import "mixins";
+@import "parents";
 
-@import 'normalise';
-@import 'navbar';
-@import 'footer';
-@import 'hexagons';
+@import "normalise";
+@import "navbar";
+@import "footer";
+@import "hexagons";
 
 html {
   height: 100%;
 }
 body {
-    font: 100% $main-font;
-    margin:0;
-    height: 100%;
-    background-color: $dark-grey;
-    color: $almost-white;
+  font: 100% $main-font;
+  margin: 0;
+  height: 100%;
+  background-color: $dark-grey;
+  color: $almost-white;
 }
 input {
   font: 100% $main-font;
   background-color: $dark-grey;
   color: $almost-white;
   &:-webkit-autofill {
-    -webkit-box-shadow:0 0 0 50px $dark-grey inset;
+    -webkit-box-shadow: 0 0 0 50px $dark-grey inset;
     -webkit-text-fill-color: $almost-white;
   }
   &:-webkit-autofill:focus {
-    -webkit-box-shadow:0 0 0 50px $dark-grey inset;
+    -webkit-box-shadow: 0 0 0 50px $dark-grey inset;
     -webkit-text-fill-color: $almost-white;
   }
 }
@@ -52,7 +52,7 @@ textarea {
   border: none;
   border-radius: 35px;
   transition: background-image 0.5s ease;
-  background-image: linear-gradient(to top right, $dark-grey 0%,$bright-blue 60%);
+  background-image: linear-gradient(to top right, $dark-grey 0%, $bright-blue 60%);
   cursor: pointer;
   color: $darker-grey;
   font-size: 110%;
@@ -94,7 +94,7 @@ hr {
   }
 }
 .container {
-  padding:20px;
+  padding: 20px;
   @media (min-width: $mobile-breakpoint) {
     padding: 20px 50px;
   }
@@ -102,14 +102,14 @@ hr {
 .banner-container {
   height: 50vh;
   background-image: url(../images/banner.jpg);
-  @extend  %container-image;
+  @extend %container-image;
 }
 .header-title-banner {
-  top:35vh;
-  left:20px;
+  top: 35vh;
+  left: 20px;
   @extend %header-title;
   @media (min-width: $mobile-breakpoint) {
-    left:50px;
+    left: 50px;
   }
 }
 .comment-container {
@@ -143,7 +143,7 @@ hr {
     border-color: $almost-white;
     border-radius: 5px;
     @media (min-width: $mobile-breakpoint) {
-      width: 50%; 
+      width: 50%;
       @media (min-width: $desktop-breakpoint) {
         width: 30%;
       }
@@ -159,9 +159,9 @@ hr {
 .two-column-text {
   display: grid;
   grid-template-columns: 1fr;
-  
+
   @media (min-width: $mobile-breakpoint) {
-    grid-template-columns: 1fr 1fr; 
+    grid-template-columns: 1fr 1fr;
     grid-gap: 50px;
   }
 }
@@ -182,10 +182,10 @@ hr {
   position: relative;
 }
 .v-align {
-  display:flex;
+  display: flex;
   align-items: center;
 }
- .limited-width {
+.limited-width {
   @media (min-width: $mobile-breakpoint) {
     padding-right: 30%;
   }
@@ -210,7 +210,7 @@ hr {
 .error404 {
   text-align: center;
   img {
-      height:200px;
+    height: 200px;
   }
 }
 

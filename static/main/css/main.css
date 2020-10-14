@@ -11,6 +11,10 @@
   bottom: 0;
   left: 0;
   z-index: -1;
+  -webkit-transition: opacity 0.2s ease;
+  -moz-transition: opacity 0.2s ease;
+  -ms-transition: opacity 0.2s ease;
+  -o-transition: opacity 0.2s ease;
   transition: opacity 0.2s ease;
   opacity: 0;
 }
@@ -920,8 +924,8 @@ textarea {
   padding: 15px;
   margin: 0;
   margin-top: 20px;
+  border: none;
   border-radius: 35px;
-  border: 0.0001px solid #2e3838;
   transition: background-image 0.5s ease;
   background-image: linear-gradient(to top right, #2e3838 0%, #2f98d0 60%);
   cursor: pointer;
@@ -934,7 +938,6 @@ textarea {
 
 .button:before {
   background-image: linear-gradient(to top right, rgba(255, 0, 0, 0) 0%, #d66808 60%);
-  border: 0.0001px solid #2e3838;
   border-radius: 35px;
 }
 
@@ -1110,6 +1113,7 @@ hr {
   text-align: right;
   font-size: 80%;
   padding: 0 10px;
+  align-self: flex-end;
 }
 
 .source-text p {
@@ -1120,10 +1124,20 @@ hr {
   color: #2f98d0;
 }
 
+@media (min-width: 850px) {
+  .source-text {
+    max-width: 70%;
+  }
+}
+
 .error404 {
   text-align: center;
 }
 
 .error404 img {
   height: 200px;
+}
+
+.hide {
+  display: none;
 }
