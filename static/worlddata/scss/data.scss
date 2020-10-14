@@ -5,6 +5,9 @@
 figure {
   margin: 0;
 }
+.dark-bg {
+  background-color: $dark-grey;
+}
 .data-box-container {
   display: grid;
   grid-gap: 50px;
@@ -38,6 +41,79 @@ figure {
 }
 .data-box-text {
   max-width: 600px;
+}
+.q-o-n-container {
+  display: flex;
+  flex-direction: column;
+  @media only screen and (min-width: $mobile-breakpoint) {
+    flex-direction: row;
+  }
+  .text-container {
+    padding: 20px 0;
+    @media only screen and (min-width: $mobile-breakpoint) {
+      width: 80%;
+      padding: 0 20px;
+    }
+  }
+
+  .tabs-container {
+    border-bottom: 5px solid $bright-blue;
+    display: flex;
+    flex-direction: row;
+    @media only screen and (min-width: $mobile-breakpoint) {
+      flex-direction: column;
+      border-right: 5px solid $bright-blue;
+      border-bottom: none;
+      width: 120px;
+    }
+    .tab-button {
+      @extend %gradient-transition-main;
+      @include transition(all 0.3s ease);
+      padding: 10px 10px 10px 15px;
+      margin-bottom: 5px;
+      margin-right: 5px;
+      border-radius: 20px 20px 0 0;
+      background-image: linear-gradient(to top right, $bright-blue-opacity 7%, $mid-grey 50%);
+      cursor: pointer;
+      position: relative;
+      &:before {
+        @extend %gradient-transition-before;
+        @include transition(all 0.3s ease);
+        background-image: linear-gradient(to top right, rgba(255, 0, 0, 0) 0%, $orange 60%);
+        border-radius: 20px 20px 0 0;
+      }
+      &:hover::before {
+        @extend %gradient-transition-hover;
+        @include transition(all 0.3s ease);
+      }
+      @media only screen and (min-width: $mobile-breakpoint) {
+        border-radius: 30px 0 0 30px;
+        &:before {
+          border-radius: 30px 0 0 30px;
+        }
+      }
+    }
+    .tab-active {
+      background-image: linear-gradient(to bottom right, $mid-grey 0%, $bright-blue 60%);
+      border-radius: 20px 20px 0 0;
+      color: $dark-grey;
+      font-weight: 600;
+      margin-bottom: 0;
+      &:before {
+        @extend %gradient-transition-before;
+        border-radius: 20px 20px 0 0;
+      }
+      @media only screen and (min-width: $mobile-breakpoint) {
+        background-image: linear-gradient(to top right, $mid-grey 0%, $bright-blue 60%);
+        border-radius: 30px 0 0 30px;
+        margin-right: 0;
+        margin-bottom: 5px;
+        &:before {
+          border-radius: 30px 0 0 30px;
+        }
+      }
+    }
+  }
 }
 
 .chart-container {
@@ -335,6 +411,15 @@ figure {
     width: 40%;
   }
 }
+.dashboard-side-60 {
+  width: 100%;
+  @media only screen and (min-width: $tablet-breakpoint) {
+    width: 60%;
+  }
+}
+.dashboard-side {
+  background-color: $mid-grey;
+}
 .dashboard-container-vertical {
   display: flex;
   flex-direction: column;
@@ -431,7 +516,8 @@ figure {
   padding-bottom: 0;
 }
 .covid-bars,
-.covid-area {
+.covid-area,
+.covid-excess {
   padding-top: 0;
   .restricted-band {
     fill: #794f99;
@@ -458,10 +544,6 @@ figure {
   .chart-filters {
     text-align: inherit;
     margin-bottom: 0;
-
-    @media (min-width: $desktop-breakpoint) {
-      //height: 70px;
-    }
   }
   .covid-dashboard-country {
     color: $bright-blue;
@@ -480,23 +562,38 @@ figure {
     min-width: 140px;
   }
   .side-chart-container {
-    box-shadow: 2px 2px 7px $navbar-color;
-    margin-left: 5px;
-    margin-bottom: 10px;
+    box-shadow: 2px 2px 8px $navbar-color;
     padding: 10px;
+    margin: 20px;
+    margin-bottom: 0px;
+    background-color: #2e3838;
+    border-radius: 30px;
+    @media only screen and (min-width: $tablet-breakpoint) {
+      margin-bottom: 20px;
+    }
   }
   .covid-map {
-    width: 100%;
-    height: 500px;
-    @media only screen and (min-width: $tablet-breakpoint) {
-      width: 60%;
+    height: 100%;
+  }
+  .covid-excess {
+    height: 350px;
+    margin-bottom: 20px;
+    .error {
+      position: absolute;
+      bottom: 300px;
+      text-align: center;
+      width: 90%;
+      font-size: 130%;
+      @media only screen and (min-width: $tablet-breakpoint) {
+        width: 35%;
+      }
     }
   }
   .covid-area {
     height: 150px;
   }
   .covid-bars {
-    height: 250px;
+    height: 205px;
   }
   .chart-legend {
     font-size: 80%;
@@ -509,6 +606,59 @@ figure {
     font-size: 80%;
     .dot {
       opacity: 0.4;
+    }
+  }
+  .dashboard-level-1 {
+    .dashboard-side-40 {
+      border-radius: 30px 30px 0px 0;
+      z-index: 1;
+      background-image: linear-gradient(to bottom left, $bright-blue-opacity 7%, $mid-grey 50%);
+    }
+  }
+  .dashboard-level-2 {
+    .covid-top-container {
+      @media only screen and (min-width: $tablet-breakpoint) {
+        border-radius: 30px 0px 0px 30px;
+        background-image: linear-gradient(to top right, $bright-blue-opacity 7%, $mid-grey 50%);
+      }
+    }
+    .dashboard-side-40 {
+      background-image: linear-gradient(to top right, $bright-blue-opacity 7%, $mid-grey 50%);
+      @media only screen and (min-width: $tablet-breakpoint) {
+        background-image: none;
+      }
+    }
+  }
+  .covid-top {
+    height: 350px;
+    .highcharts-data-label {
+      font-weight: 400;
+    }
+    @media only screen and (min-width: $tablet-breakpoint) {
+      width: 50%;
+      margin-right: 0px;
+    }
+  }
+  .dashboard-command {
+    margin-left: 20px;
+    &:before {
+      content: "\2BC8";
+      color: $almost-white;
+      margin-right: 5px;
+    }
+  }
+  .dark-bg {
+    height: inherit;
+    @media only screen and (min-width: $tablet-breakpoint) {
+      border-radius: 0 0 30px 0;
+    }
+  }
+  .dashboard-level-2 {
+    .dashboard-side-40 {
+      border-radius: 0px 0px 30px 30px;
+      @media only screen and (min-width: $tablet-breakpoint) {
+        border-radius: 0px 0px 30px 0;
+      }
     }
   }
 }

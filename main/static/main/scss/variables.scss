@@ -1,8 +1,10 @@
 $blue: #216a91;
 $orange: #d66808;
 $bright-blue: #2f98d0;
+$bright-blue-opacity: rgba(47, 152, 208, 0.4);
 $almost-white: #dffcff;
 $light-grey: hsl(180, 10%, 65%);
+$mid-grey: #3f5050;
 $dark-grey: #2e3838;
 $dark-grey-opacity: rgba(46, 56, 56, 0.8);
 $darker-grey: #222a2a;
@@ -18,7 +20,7 @@ $main-font:
 //  'Varela Round', sans-serif;
 // 'Source Sans Pro', sans-serif;
 // 'Ubuntu', sans-serif;
-'Poppins', Helvetica, sans-serif;
+    "Poppins", Helvetica, sans-serif;
 // 'Roboto', sans-serif;
 // 'Yantramanav', sans-serif;
 // 'Vollkorn', serif;

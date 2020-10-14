@@ -1,12 +1,25 @@
 @mixin background-size($property) {
-    -webkit-background-size: $property;
-    -moz-background-size: $property;
-    -o-background-size: $property;
-    background-size: $property;
-  }
-  @mixin transform($property) {
-    -webkit-transform: $property;
-    -ms-transform: $property;
-    transform: $property;
-  }
-  
+  -webkit-background-size: $property;
+  -moz-background-size: $property;
+  -o-background-size: $property;
+  background-size: $property;
+}
+@mixin transform($property) {
+  -webkit-transform: $property;
+  -ms-transform: $property;
+  transform: $property;
+}
+@mixin animation($property) {
+  -webkit-animation: #{$property};
+  -moz-animation: #{$property};
+  -ms-animation: #{$property};
+  -o-animation: #{$property};
+  animation: #{$property};
+}
+@mixin transition($args...) {
+  -webkit-transition: $args;
+  -moz-transition: $args;
+  -ms-transition: $args;
+  -o-transition: $args;
+  transition: $args;
+}

@@ -1,4 +1,4 @@
-@import '../../../../main/static/main/scss/variables.scss';
+@import "../../../../main/static/main/scss/variables.scss";
 
 // Colors for data series and points.
 $colors: 
@@ -916,6 +916,27 @@ text.highcharts-drilldown-data-label,
      stroke-width: $grid-line-width;
  }
 
+.bars,
+.area,
+.bar-line {
+    .highcharts-xaxis-grid .highcharts-grid-line {
+        stroke-width: 0;
+    }
+    .highcharts-axis-line {
+        opacity: 0;
+    }
+}
+.h-bars {
+    .highcharts-xaxis-grid .highcharts-grid-line {
+        stroke-width: 0;
+    }
+    .highcharts-yaxis-grid .highcharts-grid-line {
+        stroke-width: 0;
+    }
+    .highcharts-axis-line {
+        opacity: 0;
+    }
+}
  @for $i from 1 through length($colors) {
     $color: nth($colors, $i);
     .highcharts-data-label-color-#{$i - 1} text{
