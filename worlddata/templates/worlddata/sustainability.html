@@ -94,7 +94,7 @@
             <div class="chart-options" style="max-width:100%">
                 <div class="chart-filters"></div>
             </div>
-            <div id="sustain_area" clas="scatter" style="width:100%;"></div>
+            <div id="sustain_area" class="area" style="width:100%;"></div>
             <div class="chart-options" style="max-width:100%">
                 <div class="chart-legend"></div>
             </div>
@@ -188,7 +188,6 @@
             // Initiate the chart
             var chart = Highcharts.mapChart('sustain_map', {
                 chart: {
-                    styledMode: true,
                     height: 500
                 },
                 title: {
@@ -230,9 +229,6 @@
                         return '<text><span style="font-size: 1.1em"><strong>' + title + '</strong></span><br>' + text + '</text>';
                     },
                     useHTML: true
-                },
-                credits: {
-                    enabled: false
                 },
                 series: [{
                     mapData: Highcharts.maps['custom/world'],
@@ -524,7 +520,6 @@
                 "2013",
                 "2014"];
 
-
             // Default values
             var measure = "Footprint of Consumption",
                 country = "World";
@@ -563,7 +558,6 @@
             var chart = Highcharts.chart('sustain_area', {
                 chart: {
                     type: 'area',
-                    styledMode: true,
                     height: 500
                 },
                 title: {
@@ -608,9 +602,6 @@
                     useHTML: true
                 },
                 series: initial_data,
-                credits: {
-                    enabled: false
-                },
                 legend: {
                     enabled: false
                 }

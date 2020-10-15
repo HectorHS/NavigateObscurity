@@ -58,7 +58,7 @@
                 <div class="chart-filters"></div>
                 <div class="chart-legend wide-screen-legend"></div>
             </div>
-            <div id="pie_chart" style="width:100%"></div>
+            <div id="pie_chart" class="pie" style="width:100%"></div>
             <div class="chart-options mobile-legend" style="min-width:260px">
                 <div class="chart-legend"></div>
             </div>
@@ -175,7 +175,6 @@
                     plotBackgroundColor: null,
                     plotBorderWidth: null,
                     plotShadow: false,
-                    styledMode: true,
                     type: 'pie',
                     height: 400
                 },
@@ -208,9 +207,6 @@
                     innerSize: '30%',
                     data: initial_data
                 }],
-                credits: {
-                    enabled: false
-                },
                 annotations: [{
                     labels: [{
                         point: '0'
@@ -280,7 +276,6 @@
 
             var chart = Highcharts.chart('scatter_plot', {
                 chart: {
-                    styledMode: true,
                     type: 'scatter',
                     zoomType: 'xy',
                     height: 400
@@ -345,9 +340,6 @@
                     data: initial_data,
                     showInLegend: false
                 }],
-                credits: {
-                    enabled: false
-                },
             })
 
             chart_points = chart.series[0].data;

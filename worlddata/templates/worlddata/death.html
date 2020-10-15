@@ -280,7 +280,7 @@
                 <div class="chart-filters"></div>
                 <div class="chart-legend"></div>
             </div>
-            <div id="death_bars" class="chart" style="width:100%;"></div>
+            <div id="death_bars" class="chart bars" style="width:100%;"></div>
 
             <div class="source-text">
                 <p>
@@ -608,7 +608,6 @@
             // Initiate the chart
             var chart = Highcharts.mapChart('life_map', {
                 chart: {
-                    styledMode: true,
                     height: 500
                 },
                 title: {
@@ -656,9 +655,6 @@
                         return '<text><span style="font-size: 1.1em"><strong>' + title + '</strong></span><br>' + text + '</text>';
                     },
                     useHTML: true
-                },
-                credits: {
-                    enabled: false
                 },
                 series: [{
                     mapData: Highcharts.maps['custom/world'],
@@ -1037,7 +1033,6 @@
 
             var chart = Highcharts.chart('death_tree', {
                 chart: {
-                    styledMode: true,
                     type: 'treemap',
                     height: 500
                 },
@@ -1134,9 +1129,6 @@
                     }],
                     data: initial_data
                 }],
-                credits: {
-                    enabled: false
-                },
             });
 
             // Dropdowns
@@ -1206,7 +1198,6 @@
 
             var chart = Highcharts.chart('old_death_tree', {
                 chart: {
-                    styledMode: true,
                     type: 'treemap',
                     height: 300
                 },
@@ -1228,9 +1219,6 @@
                     layoutAlgorithm: 'squarified',
                     data: initial_data
                 }],
-                credits: {
-                    enabled: false
-                },
             });
         })
         .catch(function (error) {
@@ -1467,7 +1455,6 @@
             // Initiate the chart
             var chart = Highcharts.mapChart('death_map', {
                 chart: {
-                    styledMode: true,
                     height: 500
                 },
                 title: {
@@ -1495,9 +1482,6 @@
                         return '<text><span style="font-size: 1.1em"><strong>' + title + '</strong></span><br>Percentage of total deaths: ' + per + '%</text>';
                     },
                     useHTML: true
-                },
-                credits: {
-                    enabled: false
                 },
                 series: [{
                     mapData: Highcharts.maps['custom/world'],
@@ -1625,7 +1609,6 @@
                 chart: {
                     type: 'bar',
                     height: 500,
-                    styledMode: true,
                 },
                 title: {
                     text: null
@@ -1650,9 +1633,6 @@
                         return '<text><span style="font-size: 1.1em"><strong>' + cause + '</strong></span><br>' + risk + ' is associated with<br>' + val + ' ' + measure + '</text>';
                     },
                     useHTML: true
-                },
-                credits: {
-                    enabled: false
                 },
                 plotOptions: {
                     series: {

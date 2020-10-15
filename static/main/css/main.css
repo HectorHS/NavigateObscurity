@@ -1126,7 +1126,7 @@ hr {
 
 @media (min-width: 850px) {
   .source-text {
-    max-width: 70%;
+    margin-left: 30%;
   }
 }
 

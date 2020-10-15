@@ -1,43 +1,5 @@
 @import "../../../../main/static/main/scss/variables.scss";
 
-// Colors for data series and points.
-$colors: 
-
-
-
-
-
-#0074D9
-#ff3299
-#DDC3C3
-#051d33
-#ffdc00
-#0b4272
-#ff3d32
-#59b1ff
-#8c1c54
-#28cc5c
-#101414
-#a52721
-#677f7f
-#0a3316
-#a59110
-#99373f
-#5cf28b
-#22162b
-#e58939
-#167234
-#cc7097
-#4c1b1f
-#3f380c
-#d8c756
-#4c2033
-#875121
-#660e0a
-#794f99
-#DDDDDD
-!default;
-
 // Chart background, point stroke for markers and columns etc
 $background-color: $dark-grey !default;
 
@@ -186,7 +148,7 @@ $indicator-negative-line: #f21313;
     fill: none;
 }
 .highcharts-tracker-area {
-    fill: rgba(192, 192, 192, 0.0001);
+    // fill: rgba(192, 192, 192, 0.0001);
     stroke-width: 0;
 }
 
@@ -341,7 +303,33 @@ g.highcharts-series,
         stroke: $color;
     }
     .legend-color-#{$i - 1} {
-        background-color: $color;
+        background-image: linear-gradient(to top right, rgba(255, 0, 0, 0) 0%, $color 50%);
+    }
+}
+
+/* Default gradients */
+@for $i from 1 through length($colors) {
+    $color: nth($colors, $i);
+    #gradient-#{$i - 1} stop {
+        stop-color: $color;
+    }
+    #gradient-#{$i - 1} stop[offset="0"] {
+        stop-opacity: 1;
+    }
+    #gradient-#{$i - 1} stop[offset="1"] {
+        stop-opacity: 0.5;
+    }
+}
+@for $i from 1 through length($colors) {
+    $color: nth($colors, $i);
+    #gradient-area-#{$i - 1} stop {
+        stop-color: $color;
+    }
+    #gradient-area-#{$i - 1} stop[offset="0"] {
+        stop-opacity: 1;
+    }
+    #gradient-area-#{$i - 1} stop[offset="1"] {
+        stop-opacity: 0.1;
     }
 }
 
@@ -896,9 +884,6 @@ text.highcharts-drilldown-data-label,
 .scatter,
 .bubbles,
 .wheel {
-    .highcharts-point {
-        opacity: 0.7;
-    }
     .highcharts-point-hover {
         opacity: 1;
     }

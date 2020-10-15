@@ -282,10 +282,10 @@
                     </div>
                     <div class="side-chart-container" style="margin-bottom:0;">
                         <div class="chart-container-dashboard covid-area filters-on-top area">
-                            <div id="covid_area" style="width:100%;"></div>
+                            <div id="covid_area" class="area" style="width:100%;"></div>
                         </div>
                         <div class="chart-container-dashboard covid-bars filters-on-top bars">
-                            <div id="covid_bars" style="width:100%;"></div>
+                            <div id="covid_bars" class="bars" style="width:100%;"></div>
                         </div>
                         <div class="chart-options" style="max-width:100%">
                             <div class="chart-legend"></div>
@@ -299,11 +299,11 @@
                 <div class="dashboard-container-horizontal dashboard-side-60">
                     <div class="covid-top-container dashboard-container-vertical dashboard-side">
                         <div class="chart-container-dashboard side-chart-container covid-top covid-top-cases h-bars">
-                            <div id="covid_top_cases"></div>
+                            <div id="covid_top_cases" class="bars"></div>
                         </div>
                         <div class="chart-container-dashboard side-chart-container covid-top covid-top-deaths h-bars"
                             style="z-index: 1;">
-                            <div id="covid_top_deaths"></div>
+                            <div id="covid_top_deaths" class="bars"></div>
                         </div>
                     </div>
                 </div>
@@ -311,7 +311,7 @@
                     <div class=" filters-on-top">
                         <div
                             class="chart-container-dashboard side-chart-container covid-excess filters-on-top bar-line">
-                            <div id="excess_deaths" style="width:100%;"></div>
+                            <div id="excess_deaths" class="bars" style="width:100%;"></div>
                             <div class="chart-options" style="max-width:100%">
                                 <div class="chart-legend"></div>
                             </div>
@@ -791,6 +791,7 @@
                 top_deaths_values.push(d.deaths);
             }
         }
+
         function getCountryPopulation(country) {
             for (let poprow of files[4]) {
                 if (poprow.Country == country) {
@@ -907,10 +908,6 @@
         var area_chart = Highcharts.chart('covid_area', {
             chart: {
                 type: 'area',
-                styledMode: true,
-                //height: 300,
-                //marginBottom: 20
-                //margin: 0
             },
             title: {
                 align: 'left',
@@ -955,9 +952,6 @@
                 useHTML: true
             },
             series: initial_area_data,
-            credits: {
-                enabled: false
-            },
             legend: {
                 enabled: false
             }
@@ -966,10 +960,6 @@
         let bar_chart = Highcharts.chart('covid_bars', {
             chart: {
                 type: 'column',
-                styledMode: true,
-                //height: 300,
-                //marginLeft: 95,
-                //margin: 0
             },
             title: {
                 align: 'left',
@@ -1020,9 +1010,6 @@
             },
             series: initial_bar_data,
 
-            credits: {
-                enabled: false
-            },
             legend: {
                 enabled: false
             }
@@ -1031,7 +1018,6 @@
         let excess_chart = Highcharts.chart('excess_deaths', {
             chart: {
                 type: 'area',
-                styledMode: true,
             },
             title: {
                 align: "left",
@@ -1103,9 +1089,6 @@
                 data: initial_latest_excess_data
             },
             ],
-            credits: {
-                enabled: false
-            },
             legend: {
                 enabled: false
             }
@@ -1114,8 +1097,8 @@
         let top_cases_chart = Highcharts.chart('covid_top_cases', {
             chart: {
                 type: 'bar',
-                styledMode: true,
             },
+
             title: {
                 align: 'left',
                 text: "Countries with most new cases"
@@ -1171,9 +1154,6 @@
                 data: top_cases_values
             },
             ],
-            credits: {
-                enabled: false
-            },
             legend: {
                 enabled: false
             }
@@ -1182,7 +1162,6 @@
         let top_deaths_chart = Highcharts.chart('covid_top_deaths', {
             chart: {
                 type: 'bar',
-                styledMode: true,
             },
             title: {
                 align: "left",
@@ -1240,9 +1219,6 @@
                 data: top_deaths_values
             },
             ],
-            credits: {
-                enabled: false
-            },
             legend: {
                 enabled: false
             }
