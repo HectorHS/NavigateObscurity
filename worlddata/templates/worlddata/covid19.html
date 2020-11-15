@@ -26,9 +26,14 @@
 <script src="https://code.highcharts.com/mapdata/custom/world.js"></script>
 
 <script src={% static "worlddata/js/chart-helpers.js" %}></script>
+<script src={% static "worlddata/js/motion.js" %}></script>
 
 <link rel='stylesheet' type="text/css" href={% static "worlddata/css/highcharts.css" %}>
 <link rel='stylesheet' type="text/css" href={% static "worlddata/css/data.css" %}>
+
+<script src="https://kraaden.github.io/autocomplete/autocomplete.js"></script>
+<link rel="stylesheet" type="text/css" href="https://kraaden.github.io/autocomplete/autocomplete.css">
+
 {% endblock %}
 
 {% block content %}
@@ -335,7 +340,7 @@
                     Historical weekly death toll: <a href="https://www.mortality.org/" target="_blank">Human Mortality
                         Database. University of California, Berkeley (USA), and Max Planck Institute for Demographic
                         Research (Germany).</a>
-                    Downloaded at 18/10/2020.
+                    Downloaded at 15/11/2020.
                 </p>
             </div>
         </div>
@@ -359,22 +364,44 @@
 </div>
 <section>
     <figure>
-        <div class="container chart-container lockdown-map filters-on-top">
-            <div class="chart-options chart-options-map" style="max-width:100%">
-                <div class="chart-filters"></div>
+        <div class="container dashboard-container-vertical covid-dashboard">
+            <div class="dashboard-container-horizontal dashboard-side-60">
+                <div class="container chart-container lockdown-map filters-on-top">
+                    <div class="chart-options chart-options-map" style="max-width:100%">
+                        <div class="chart-filters">
+
+                        </div>
+                    </div>
+                    <div id="lockdown_map" class="map" style="width:100%;"></div>
+                    <div class="chart-options" style="max-width:100%">
+                        <div class="secondary-legend"></div>
+                    </div>
+                </div>
             </div>
-            <div id="lockdown_map" class="map" style="width:100%;"></div>
-            <div class="chart-options" style="max-width:100%">
-                <div class="secondary-legend"></div>
+            <div class="dashboard-side-40 dashboard-side">
+                <div class="side-chart-container" style="margin-bottom:0;">
+                    <div class="chart-container-dashboard covid-cases-time filters-on-top bars">
+                        <div id="covid_cases_time" class="bars" style="width:100%;"></div>
+                    </div>
+                </div>
+                <div class="side-chart-container" style="margin-bottom:0;">
+                    <div class="chart-container-dashboard covid-deaths-time filters-on-top bars">
+                        <div id="covid_deaths_time" class="bars" style="width:100%;"></div>
+                    </div>
+                </div>
+
             </div>
 
-            <div class="source-text">
-                <p>
-                    *Source:
-                    <a href="https://github.com/OxCGRT/covid-policy-tracker" target="_blank">Oxford University.</a>
-                    Downloaded at 19/09/2020
-                </p>
-            </div>
+
+        </div>
+
+
+        <div class="source-text">
+            <p>
+                *Source:
+                <a href="https://github.com/OxCGRT/covid-policy-tracker" target="_blank">Oxford University.</a>
+                Downloaded at 19/09/2020
+            </p>
         </div>
     </figure>
 </section>
@@ -431,7 +458,8 @@
         d3.csv(covid_area_path),
         d3.csv(covid_lockdown_path),
         d3.csv(covid_excess_deaths_path),
-        d3.csv(population_path)
+        d3.csv(population_path),
+        d3.csv(covid_lockdown_notes_path)
     ]).then(function (files) {
         // All filterable options
         const all_parameters = ["Confirmed cases per 1 million",
@@ -447,19 +475,28 @@
         let cols = files[1].columns;
         cols.splice(0, 3);
         const all_dates = cols;
+        // let date = all_dates[all_dates.length - 1];
+        let all_week_dates = [];
+        for (let i = 0; i < (all_dates.length - 1); i += 7) {
+            all_week_dates.push(all_dates[i]);
+        }
+        all_week_dates.push(all_dates[all_dates.length - 1]);
 
         // Default values
-        var parameter = "Deaths per 1 million",
+        let parameter = "Deaths per 1 million",
             metric = "absolute",
             country = "World",
             timeframe = "all",
             current_dates = all_dates,
-            total_excess = 0;
+            total_excess = 0,
+            date = all_week_dates[0];
+        let timer;
 
-        var map_container_class = ".covid-map",
+        let map_container_class = ".covid-map",
             area_container_class = ".covid-area",
             bar_container_class = ".covid-bars",
             excess_container_class = ".covid-excess",
+            map_response_container_class = ".lockdown-map",
             initial_map_data = [],
             initial_area_data = [],
             initial_bar_data = [],
@@ -470,7 +507,13 @@
             top_cases_countries = [],
             top_cases_values = [],
             top_deaths_countries = [],
-            top_deaths_values = [];
+            top_deaths_values = [],
+            top_cases_countries_time = [],
+            top_cases_values_time = [],
+            top_deaths_countries_time = [],
+            top_deaths_values_time = [],
+            initial_cases_time_data = [],
+            initial_map_response_data = [];
 
         var getColor = {
             "Active": "5",
@@ -792,6 +835,85 @@
             }
         }
 
+        function get_map_response_data() {
+            var new_data = [];
+            for (let row of files[2]) {
+                if (row.Country != "World" && row.Measure == "restriction") {
+                    var value = row[date];
+                    var country = getCountryCode(row.Country);
+                    var noteCode = +get_map_response_note_code(row.Country);
+                    var note = get_map_response_note(noteCode);
+
+                    new_data.push({ country: country, value: +value, note: note });
+                }
+            }
+            return new_data;
+        }
+
+        function get_map_response_note(code) {
+            for (let row of files[5]) {
+                if (row.Code == code) {
+                    return row.Note;
+                }
+            }
+            console.log("No note found for code " + code);
+            return "N/A";
+        }
+
+        function get_map_response_note_code(country) {
+            for (let row of files[2]) {
+                if (row.Measure == "note" && row.Country == country) {
+                    return row[date];
+                }
+            }
+            console.log("No note code found for " + country);
+            return 0;
+        }
+
+        function get_top_cases_time_data() {
+            let country_cases_data = [],
+                country_deaths_data = [],
+                top_cases = [],
+                top_deaths = [];
+            //let days = all_dates.slice(Math.max(all_dates.length - 5, 0))
+            for (let row of files[1]) {
+                if (row.Parameter == "Confirmed" && row.Value == "absolute" && row.Country != "World") {
+                    let pop = getCountryPopulation(row.Country)
+                    let con = row[date] / (pop / 1000000)
+                    country_cases_data.push({ id: row.Country, name: row.Country, y: +row[date], colorIndex: getCountryColor(row.Country) });
+                } else if (row.Parameter == "Deaths" && row.Value == "absolute" && row.Country != "World") {
+                    let pop = getCountryPopulation(row.Country)
+                    let dea = row[date] / (pop / 1000000)
+                    country_deaths_data.push({ country: row.Country, deaths: +row[date] });
+                }
+            }
+            // console.log(country_cases_data.length);
+            country_cases_data.sort((a, b) => parseFloat(a.y) - parseFloat(b.y));
+            country_cases_data.reverse();
+            let top_cases_data = country_cases_data.slice(0, 5);
+            // console.log(top_cases_data.length);
+
+            country_deaths_data.sort((a, b) => parseFloat(a.deaths) - parseFloat(b.deaths));
+            country_deaths_data.reverse();
+            let top_deaths_data = country_deaths_data.slice(0, 5);
+
+            for (let d of top_deaths_data) {
+                top_deaths.push([d.country, d.deaths]);
+            }
+            let test_data = [{ name: "USA", name: "USA", y: 2163290, colorIndex: 0 },
+            { name: "Brazil", name: "Brazil", y: 955377, colorIndex: 0 },
+            { name: "Russia", name: "Russia", y: 552549, colorIndex: 2 },
+            { name: "India", name: "India", y: 366946, colorIndex: 3 },
+            { name: "United Kingdom", name: "United Kingdom", y: 299251, colorIndex: 5 },
+            { name: "Spain", name: "Spain", y: 244683, colorIndex: 8 },
+            { name: "Peru", name: "Peru", y: 240908, colorIndex: 4 },
+            { name: "Italy", name: "Italy", y: 237828, colorIndex: 2 },
+            { name: "Chile", name: "Chile", y: 220628, colorIndex: 1 },
+            { name: "Iran", name: "Iran", y: 195051, colorIndex: 12 }]
+
+            return ([top_cases_data, top_deaths]);
+        }
+
         function getCountryPopulation(country) {
             for (let poprow of files[4]) {
                 if (poprow.Country == country) {
@@ -809,7 +931,12 @@
         initial_old_excess_data = get_old_excess_data();
         initial_latest_excess_data = get_latest_excess_data();
         initialise_top_cases_data();
+        initial_map_response_data = get_map_response_data();
+        let initial_time_data = get_top_cases_time_data();
+        initial_cases_time_data = initial_time_data[0];
+        initial_deaths_time_data = initial_time_data[1];
 
+        // Dashboard 1
         // Initiate the map chart
         var chart = Highcharts.mapChart('covid_map', {
             chart: {
@@ -1224,6 +1351,215 @@
             }
         });
 
+        // Dashboard 2
+        var map_repsonse_chart = Highcharts.mapChart('lockdown_map', {
+            chart: {
+                height: 500
+            },
+            title: {
+                text: null
+            },
+            mapNavigation: {
+                enabled: true,
+                enableMouseWheelZoom: false,
+                enableButtons: true,
+            },
+            colorAxis: {
+                tickInterval: 1,
+                max: 3,
+                min: 0,
+                stops: [
+                    [0, '#DDDDDD'],
+                    [0.33, '#794f99'],
+                    [0.66, '#8c1c54'],
+                    [0.95, '#ff3299']
+                ],
+            },
+            tooltip: {
+                formatter: function () {
+                    var title = fCapital(this.key);
+                    var value = this.point.value;
+                    var note = this.point.note;
+                    var textArray = addLineBreaks(note, 60);
+                    var text = textArray[0];
+                    if (textArray.length > 1) {
+                        for (i = 1; textArray.length > i; i++) {
+                            text = text + "<br/>" + textArray[i];
+                        }
+                    }
+                    return '<text><span style="font-size: 1.1em"><strong>' + title + '</strong></span><br>' + text + '</text>';
+                },
+                useHTML: true
+            },
+            legend: {
+                enabled: false
+            },
+            series: [{
+                mapData: Highcharts.maps['custom/world'],
+                data: initial_map_response_data,
+                joinBy: ['iso-a3', 'country'], // first var: type of geographical data, second: data column name
+            }]
+        });
+
+        let cases_time_chart = Highcharts.chart('covid_cases_time', {
+            chart: {
+                type: 'bar',
+            },
+
+            title: {
+                align: 'left',
+                text: "Confirmed cases per 1m people"
+            },
+            xAxis: {
+                type: 'category',
+                //categories: top_cases_countries_time,
+                title: {
+                    enabled: false
+                },
+            },
+            yAxis: {
+                title: {
+                    enabled: false
+                },
+                labels: {
+                    enabled: false
+                }
+            },
+            tooltip: {
+                split: false,
+            },
+            plotOptions: {
+                bar: {
+                    dataLabels: {
+                        enabled: true,
+                        // formatter: function () {
+                        //     return numberFormatterPercentage(this.y);
+                        // },
+
+                    },
+                    borderRadius: 3,
+                    pointPadding: 0,
+                },
+                series: {
+                    groupPadding: 0.1,
+                    //animation: false
+                    animation: {
+                        duration: 100
+                    },
+                    dataSorting: {
+                        enabled: true,
+                        // For some reason this is causing console errors
+                        //matchByName: true,
+                    },
+                    // dataLabels: [{
+                    //     enabled: true,
+                    //     formatter: function () {
+                    //         let val = numberFormatterPercentage(this.y);
+                    //         return val;
+                    //     },
+                    // }],
+                }
+            },
+            // tooltip: {
+            //     // formatter: function () {
+            //     //     var title = fCapital(this.key);
+            //     //     var value = numberFormatterPercentage(this.y);
+            //     //     return '<text><span style="font-size: 1.1em"><strong>' + title + '</strong></span><br>New cases per day per 1m people (5 day average): ' + value + '</text>';
+            //     // },
+            //     useHTML: true
+            // },
+            series: [{
+                id: "cases",
+                name: "cases",
+
+                // colorIndex: 7,
+                // colorByPoint: true,
+                data: initial_cases_time_data
+            },
+            ],
+            //series: initial_cases_time_data,
+            legend: {
+                enabled: false
+            }
+        });
+
+        let deaths_time_chart = Highcharts.chart('covid_deaths_time', {
+            chart: {
+                type: 'bar',
+            },
+
+            title: {
+                align: 'left',
+                text: "Confirmed deaths per 1m people"
+            },
+            xAxis: {
+                type: 'category',
+                //categories: top_cases_countries_time,
+                title: {
+                    enabled: false
+                },
+            },
+            yAxis: {
+                title: {
+                    enabled: false
+                },
+                labels: {
+                    enabled: false
+                }
+            },
+            tooltip: {
+                split: false,
+            },
+            plotOptions: {
+                bar: {
+                    dataLabels: {
+                        enabled: true,
+                        // formatter: function () {
+                        //     return numberFormatterPercentage(this.y);
+                        // },
+
+                    },
+                    borderRadius: 3,
+                    pointPadding: 0
+                },
+                series: {
+                    groupPadding: 0.1,
+                }
+            },
+            tooltip: {
+                // formatter: function () {
+                //     var title = fCapital(this.key);
+                //     var value = numberFormatterPercentage(this.y);
+                //     return '<text><span style="font-size: 1.1em"><strong>' + title + '</strong></span><br>New cases per day per 1m people (5 day average): ' + value + '</text>';
+                // },
+                useHTML: true
+            },
+            series: [{
+                id: "cases",
+                name: "cases",
+                dataSorting: {
+                    enabled: true,
+                    // For some reason this is causing console errors
+                    matchByName: true,
+                },
+                dataLabels: [{
+                    enabled: true,
+                    formatter: function () {
+                        let val = numberFormatterPercentage(this.y);
+                        return val;
+                    },
+                }],
+                // colorIndex: 7,
+                colorByPoint: true,
+                data: initial_deaths_time_data
+            },
+            ],
+            legend: {
+                enabled: false
+            }
+        });
+
+        // Dashboard 1
 
         // Otherwise these charts overflow their containers
         excess_chart.setSize();
@@ -1247,6 +1583,18 @@
         $legend2Container.append('<div>Background: &nbsp &nbsp</div>')
         for (let point of legendItems) {
             $legend2Container.append('<div class="legend-item"><div class="dot legend-color-' + point.colorIndex + '" ></div><div class="serieName" id="">' + fCapital(point.name) + '</div></div>');
+        }
+
+        // legend for response map
+        $responseLegendContainer = $('.lockdown-map .secondary-legend');
+        let responseLegendItems = [{ name: "No restrictions", colorIndex: 28 },
+        { name: 'Some movement restrictions', colorIndex: 27 },
+        { name: 'Curfew', colorIndex: 8 },
+        { name: 'Lockdown', colorIndex: 1 }];
+
+        // Append legend items
+        for (let point of responseLegendItems) {
+            $responseLegendContainer.append('<div class="legend-item"><div class="dot legend-color-' + point.colorIndex + '" ></div><div class="serieName" id="">' + fCapital(point.name) + '</div></div>');
         }
 
         // Dropdowns
@@ -1274,7 +1622,6 @@
 
         function radioChange() {
             timeframe = document.querySelector('input[name="timeframe-radio"]:checked').value;
-            //console.log(timeframe);
             if (timeframe == "all") {
                 current_dates = all_dates;
             }
@@ -1396,150 +1743,110 @@
             }
         }
 
+        // Dashboard 2
+        // Define filters / options for response map
+        var responseFilters = document.querySelector(map_response_container_class + " .chart-filters");
+
+
+        // Create play button
+        let playButton = document.createElement("div");
+        playButton.classList.add("play-button");
+        playButton.addEventListener("click", playToggle);
+        let playIcon = document.createElement("span");
+        playIcon.id = map_container_class + "-play-icon";
+        playIcon.classList.add("i-play");
+        playButton.appendChild(playIcon);
+        responseFilters.appendChild(playButton);
+
+        // Create a slider
+        var sliderName = "play-slider",
+            min = "0",
+            max = (all_week_dates.length - 1),
+            value = "0",
+            containerWidth = 400;
+        sliderWidth = 150;
+        addSlider(responseFilters, sliderName, min, max, value, containerWidth, sliderWidth, sliderDateChange);
+
+        let loopi = 0;
+        let slider = document.getElementById(sliderName + "-slider");
+        let shownDate = document.getElementById("play-slider-slider-output");
+        shownDate.innerHTML = date;
+        let playing = false;
+
+        // Update chart data on percentage change
+        function sliderDateChange() {
+            date = all_week_dates[slider.value];
+            loopi = slider.value;
+            shownDate.innerHTML = date;
+            dateChange()
+        }
+
+        function dateChange() {
+            map_repsonse_chart.series[0].setData(get_map_response_data());
+            let timeData = get_top_cases_time_data();
+
+            // to control the animation on change
+            let animation = {
+                duration: 300,
+                easing: 'linear'
+            }
+            // cases_time_chart.series[0].setData(timeData[0]);
+            let new_data = timeData[0];
+            console.log(new_data);
+            cases_time_chart.series[0].setData(new_data, false, false);
+            console.log(cases_time_chart.series[0].data);
+            // for (let j of new_data) {
+            //     console.log(j.name + ": " + j.y);
+            // }
+            // for (let i of cases_time_chart.series[0].data) {
+            //     console.log(i.name + ": " + i.y);
+            // }
+            cases_time_chart.redraw(animation);
+            // cases_time_chart.series[0].update({
+            //     data: timeData[0]
+            // });
+            //cases_time_chart.redraw(animation);
+            // deaths_time_chart.series[0].setData(timeData[1], false, false);
+            // deaths_time_chart.redraw(animation);
+            if (date == all_week_dates[all_week_dates.length - 1] && playing) {
+                stopPlaying();
+            }
+        }
+        function stopPlaying() {
+            let iSpan = document.getElementById(map_container_class + "-play-icon");
+            iSpan.classList.remove("i-pause");
+            iSpan.classList.add("i-play");
+            playing = false;
+            clearInterval(timer);
+        }
+
+        function playToggle() {
+            let iSpan = document.getElementById(map_container_class + "-play-icon");
+            if (playing) {
+                stopPlaying();
+            } else {
+                if (date == all_week_dates[(all_week_dates.length - 1)]) {
+                    loopi = 0;
+                }
+                playing = true;
+                iSpan.classList.remove("i-play");
+                iSpan.classList.add("i-pause");
+                timer = setInterval(function () {
+                    if (loopi < all_week_dates.length) {
+                        date = all_week_dates[loopi];
+                        shownDate.innerHTML = date;
+                        slider.value = loopi;
+                        dateChange();
+                        loopi++;
+                    }
+                }, 500);
+            }
+        }
     })
 
         .catch(function (error) {
             console.log(error);
         })
-
-    var LockdownMap = Promise.all([
-        d3.csv(covid_lockdown_path),
-        d3.csv(covid_lockdown_notes_path),
-    ])
-        .then(function (files) {
-            // All filterable options
-            const all_countries = [...new Set(files[0].map(d => d.Country))].sort()
-            let cols = files[0].columns;
-            cols.splice(0, 3)
-            const all_dates = cols;
-
-            // Default values
-            var date = all_dates[all_dates.length - 1];
-
-            var map_container_class = ".lockdown-map";
-            var initial_data = [];
-
-            function getNoteCode(country) {
-                for (let row of files[0]) {
-                    if (row.Measure == "note" && row.Country == country) {
-                        return row[date];
-                    }
-                }
-                console.log("No note code found for " + country);
-                return 0;
-            }
-
-            function getNote(code) {
-                for (let row of files[1]) {
-                    if (row.Code == code) {
-                        return row.Note;
-                    }
-                }
-                console.log("No note found for code " + code);
-                return "N/A";
-            }
-
-            function get_data() {
-                var new_data = [];
-                for (let row of files[0]) {
-                    if (row.Country != "World" && row.Measure == "restriction") {
-                        var value = row[date];
-                        var country = getCountryCode(row.Country);
-                        var noteCode = getNoteCode(row.Country);
-                        var note = getNote(noteCode);
-
-                        new_data.push({ country: country, value: +value, note: note });
-                    }
-                }
-                return new_data;
-            }
-
-            intial_data = get_data();
-
-            // Initiate the chart
-            var chart = Highcharts.mapChart('lockdown_map', {
-                chart: {
-                    styledMode: true,
-                    height: 500
-                },
-                title: {
-                    text: null
-                },
-                mapNavigation: {
-                    enabled: true,
-                    enableMouseWheelZoom: false,
-                    enableButtons: true,
-                },
-                colorAxis: {
-                    tickInterval: 1,
-                    max: 3,
-                    min: 0,
-                    stops: [
-                        [0, '#DDDDDD'],
-                        [0.33, '#794f99'],
-                        [0.66, '#8c1c54'],
-                        [0.95, '#ff3299']
-                    ],
-                },
-                tooltip: {
-                    formatter: function () {
-                        var title = fCapital(this.key);
-                        var value = this.point.value;
-                        var note = this.point.note;
-                        var textArray = addLineBreaks(note, 60);
-                        var text = textArray[0];
-                        if (textArray.length > 1) {
-                            for (i = 1; textArray.length > i; i++) {
-                                text = text + "<br/>" + textArray[i];
-                            }
-                        }
-                        return '<text><span style="font-size: 1.1em"><strong>' + title + '</strong></span><br>' + text + '</text>';
-                    },
-                    useHTML: true
-                },
-                credits: {
-                    enabled: false
-                },
-                legend: {
-                    enabled: false
-                },
-                series: [{
-                    mapData: Highcharts.maps['custom/world'],
-                    data: intial_data,
-                    joinBy: ['iso-a3', 'country'], // first var: type of geographical data, second: data column name
-                }]
-            });
-            // Create legend
-            $legendContainer = $('.lockdown-map .secondary-legend');
-            var legendItems = [{ name: "No restrictions", colorIndex: 28 },
-            { name: 'Some movement restrictions', colorIndex: 27 },
-            { name: 'Curfew', colorIndex: 8 },
-            { name: 'Lockdown', colorIndex: 1 }];
-
-            // Append legend items
-            for (let point of legendItems) {
-                $legendContainer.append('<div class="legend-item"><div class="dot legend-color-' + point.colorIndex + '" ></div><div class="serieName" id="">' + fCapital(point.name) + '</div></div>');
-            }
-
-            // Dropdowns
-            // Define dropdown container
-            var filters = document.querySelector(map_container_class + " .chart-filters");
-
-            // // Create a date dropdown
-            var dateName = "lockdown-map-date",
-                dateWidth = "300px";
-            addDropdown(filters, dateName, dateWidth, dateChange, all_dates, date);
-
-            // // Update chart data on date change
-            function dateChange() {
-                date = document.getElementById(dateName + "-select").value;
-                chart.series[0].setData(get_data());
-            }
-        })
-        .catch(function (error) {
-            console.log(error);
-        })
-
 
     function tabClickHandler(element) {
         if (!(element.classList.contains("tab-active"))) {
@@ -1576,6 +1883,238 @@
         }
     }
 
+    function getCountryColor(country) {
+        let africa = ["Angola",
+            "Benin",
+            "Botswana",
+            "Burkina Faso",
+            "Burundi",
+            "Cabo Verde",
+            "Cameroon",
+            "Central African Republic",
+            "Chad",
+            "Congo (Brazzaville)",
+            "Congo (Kinshasa)",
+            "Cote d'Ivoire",
+            "Equatorial Guinea",
+            "Eritrea",
+            "Eswatini",
+            "Ethiopia",
+            "Gabon",
+            "Gambia",
+            "Ghana",
+            "Guinea",
+            "Guinea-Bissau",
+            "Kenya",
+            "Lesotho",
+            "Liberia",
+            "Madagascar",
+            "Malawi",
+            "Mali",
+            "Mauritius",
+            "Mayotte",
+            "Mozambique",
+            "Namibia",
+            "Niger",
+            "Nigeria",
+            "Rwanda",
+            "Sao Tome and Principe",
+            "Senegal",
+            "Seychelles",
+            "Sierra Leone",
+            "South Africa",
+            "South Sudan",
+            "Tanzania",
+            "Togo",
+            "Uganda",
+            "Western Sahara",
+            "Zambia",
+            "Zimbabwe"]
+        let arab = ["Algeria",
+            "Bahrain",
+            "Comoros",
+            "Djibouti",
+            "Mauritania",
+            "Morocco",
+            "Somalia",
+            "Sudan",
+            "Tunisia",
+            "West Bank and Gaza"];
+        let apac = ["Afghanistan",
+            "Australia",
+            "Azerbaijan",
+            "Bangladesh",
+            "Bhutan",
+            "British Virgin Islands",
+            "Brunei",
+            "Burma",
+            "Cambodia",
+            "China",
+            "Fiji",
+            "French Polynesia",
+            "India",
+            "Indonesia",
+            "Japan",
+            "Kazakhstan",
+            "Korea, South",
+            "Kyrgyzstan",
+            "Laos",
+            "Malaysia",
+            "Maldives",
+            "Mongolia",
+            "Nepal",
+            "New Caledonia",
+            "New Zealand",
+            "Pakistan",
+            "Papua New Guinea",
+            "Philippines",
+            "Reunion",
+            "Singapore",
+            "Solomon Islands",
+            "Sri Lanka",
+            "Syria",
+            "Taiwan*",
+            "Tajikistan",
+            "Thailand",
+            "Timor-Leste",
+            "Uzbekistan",
+            "Vietnam"]
+        let europe = ["Albania",
+            "Andorra",
+            "Armenia",
+            "Austria",
+            "Belarus",
+            "Belgium",
+            "Bosnia and Herzegovina",
+            "Bulgaria",
+            "Channel Islands",
+            "Croatia",
+            "Cyprus",
+            "Czechia",
+            "Denmark",
+            "Estonia",
+            "Faroe Islands",
+            "Finland",
+            "France",
+            "Georgia",
+            "Germany",
+            "Gibraltar",
+            "Greece",
+            "Greenland",
+            "Holy See",
+            "Hungary",
+            "Iceland",
+            "Ireland",
+            "Isle of Man",
+            "Israel",
+            "Italy",
+            "Kosovo",
+            "Latvia",
+            "Liechtenstein",
+            "Lithuania",
+            "Luxembourg",
+            "Malta",
+            "Moldova",
+            "Monaco",
+            "Montenegro",
+            "Netherlands",
+            "North Macedonia",
+            "Norway",
+            "Poland",
+            "Portugal",
+            "Romania",
+            "Russia",
+            "San Marino",
+            "Serbia",
+            "Slovakia",
+            "Slovenia",
+            "Spain",
+            "Sweden",
+            "Switzerland",
+            "Turkey",
+            "Ukraine",
+            "United Kingdom"]
+        let meast = ["Egypt",
+            "Iran",
+            "Iraq",
+            "Jordan",
+            "Kuwait",
+            "Lebanon",
+            "Libya",
+            "Oman",
+            "Qatar",
+            "Saudi Arabia",
+            "United Arab Emirates",
+            "Yemen"]
+        let namerica = ["Bermuda",
+            "Canada",
+            "Saint Pierre and Miquelon",
+            "USA"]
+        let samerica = ["Anguilla",
+            "Antigua and Barbuda",
+            "Argentina",
+            "Aruba",
+            "Bahamas",
+            "Barbados",
+            "Belize",
+            "Bolivia",
+            "Bonaire, Sint Eustatius and Saba",
+            "Brazil",
+            "Cayman Islands",
+            "Chile",
+            "Colombia",
+            "Costa Rica",
+            "Cuba",
+            "Curacao",
+            "Dominica",
+            "Dominican Republic",
+            "Ecuador",
+            "El Salvador",
+            "Falkland Islands (Malvinas)",
+            "French Guiana",
+            "Grenada",
+            "Guadeloupe",
+            "Guatemala",
+            "Guyana",
+            "Haiti",
+            "Honduras",
+            "Jamaica",
+            "Martinique",
+            "Mexico",
+            "Montserrat",
+            "Nicaragua",
+            "Panama",
+            "Paraguay",
+            "Peru",
+            "Saint Barthelemy",
+            "Saint Kitts and Nevis",
+            "Saint Lucia",
+            "Saint Vincent and the Grenadines",
+            "Sint Maarten",
+            "St Martin",
+            "Suriname",
+            "Trinidad and Tobago",
+            "Turks and Caicos Islands",
+            "Uruguay",
+            "Venezuela"]
+
+        if (africa.includes(country)) {
+            return 4;
+        } else if (arab.includes(country)) {
+            return 2;
+        } else if (apac.includes(country)) {
+            return 1;
+        } else if (europe.includes(country)) {
+            return 0;
+        } else if (meast.includes(country)) {
+            return 18;
+        } else if (namerica.includes(country)) {
+            return 6;
+        } else if (samerica.includes(country)) {
+            return 9;
+        }
+    }
 
 </script>
+
 {% endblock %}
