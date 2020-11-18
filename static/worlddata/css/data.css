@@ -220,8 +220,6 @@ figure {
 .chart-options .chart-filters .dropdown-container {
   display: inline-block;
   position: relative;
-  top: 5px;
-  left: 5px;
   height: 34px;
   max-width: 450px;
   overflow: hidden;
@@ -267,21 +265,14 @@ figure {
 
 .chart-options .chart-filters .slider-container {
   display: inline-block;
-  width: 250px;
   position: relative;
-}
-
-@media only screen and (min-width: 768px) {
-  .chart-options .chart-filters .slider-container {
-    bottom: 8px;
-  }
+  top: -15px;
+  margin-top: 10px;
 }
 
 .chart-options .chart-filters .slider-container .slider {
   -webkit-appearance: none;
-  width: 150px;
   height: 3px;
-  vertical-align: middle;
   background: #9dafaf;
   border-radius: 5px;
   outline: none;
@@ -326,7 +317,7 @@ figure {
 .chart-options .chart-filters .slider-container .slider-output {
   display: inline-block;
   position: relative;
-  width: 50px;
+  top: 3px;
   color: #dffcff;
   line-height: 20px;
   text-align: center;
@@ -408,6 +399,28 @@ figure {
   height: 14px;
   border-radius: 50%;
   background: #2e3838;
+}
+
+.chart-options .chart-filters .play-button {
+  height: 34px;
+  width: 60px;
+  padding: 0;
+  margin: 0;
+  margin: 0;
+  margin-right: 20px;
+  border: 1px solid #9dafaf;
+  border-radius: 20px;
+  transition: background-image 0.5s ease;
+  display: inline-block;
+  text-align: center;
+  cursor: pointer;
+  color: #222a2a;
+  vertical-align: middle;
+  background-color: #2e3838;
+}
+
+.chart-options .chart-filters .play-button:hover {
+  background-image: linear-gradient(to top right, #2e3838 0%, #2f98d0 60%);
 }
 
 .chart-legend,
@@ -823,6 +836,10 @@ figure {
   .covid-dashboard .dashboard-level-2 .dashboard-side-40 {
     border-radius: 0px 0px 30px 0;
   }
+}
+
+.lockdown-map .slider-container {
+  top: 0 !important;
 }
 
 .bars,
@@ -1415,4 +1432,57 @@ figure {
 .wheel .highcharts-color-28.highcharts-series.highcharts-area-series,
 .wheel .highcharts-color-28.highcharts-point:not(.highcharts-node) {
   fill: url("#gradient-area-28");
+}
+
+#play_controls {
+  text-align: center;
+  min-width: 310px;
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 5px 0 1em 0;
+}
+
+#play_controls * {
+  display: inline-block;
+  vertical-align: middle;
+}
+
+#play_button {
+  width: 30px;
+  height: 30px;
+  text-align: center;
+  font-size: 15px;
+  cursor: pointer;
+  border: 1px solid silver;
+  border-radius: 3px;
+  background: #f8f8f8;
+}
+
+#play-range {
+  margin: 2.5%;
+  width: 70%;
+}
+
+.i-play {
+  background-image: url(../../../../static/main/icons/play.svg);
+  height: 16px;
+  width: 16px;
+  display: inline-block;
+  background-repeat: no-repeat;
+  vertical-align: middle;
+  vertical-align: -webkit-baseline-middle;
+  margin-left: 5px;
+  margin-bottom: 2px;
+}
+
+.i-pause {
+  background-image: url(../../../../static/main/icons/pause.svg);
+  height: 16px;
+  width: 16px;
+  display: inline-block;
+  background-repeat: no-repeat;
+  vertical-align: middle;
+  vertical-align: -webkit-baseline-middle;
+  margin-left: 5px;
+  margin-bottom: 2px;
 }

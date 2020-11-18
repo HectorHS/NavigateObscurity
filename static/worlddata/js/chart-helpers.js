@@ -491,9 +491,10 @@ function addDropdown(parent, name, width, taxonChange, options, selected) {
     select.innerHTML = placeholder.join('');
 }
 
-function addSlider(parent, name, min, max, value, onChange) {
+function addSlider(parent, name, min, max, value, containerWidth, width, onChange) {
     var sliderContainer = document.createElement("div");
     sliderContainer.classList.add("slider-container");
+    sliderContainer.style.width = containerWidth + "px";
     parent.appendChild(sliderContainer);
 
     var slider = document.createElement("input");
@@ -502,6 +503,7 @@ function addSlider(parent, name, min, max, value, onChange) {
     slider.min = min;
     slider.max = max;
     slider.value = value;
+    slider.style.width = (containerWidth - width - 40) + "px";
     slider.classList.add("slider");
     slider.onchange = onChange;
     sliderContainer.appendChild(slider);
@@ -512,6 +514,7 @@ function addSlider(parent, name, min, max, value, onChange) {
     //percentageSliderOutput.for = "mapPercentageSlider";
     sliderOutput.classList.add("slider-output");
     sliderOutput.innerHTML = value;
+    sliderOutput.style.width = width + "px";
     sliderContainer.appendChild(sliderOutput);
 }
 
