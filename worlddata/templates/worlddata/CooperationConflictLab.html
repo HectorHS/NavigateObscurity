@@ -243,7 +243,8 @@
             return array;
         }
         function getHeatmapAxis(parameter) {
-            let array = [...new Set(files[0].map(d => d[parameter]))].sort();
+            // fancy sorting to deal with numerical values
+            let array = [...new Set(files[0].map(d => +d[parameter]))].sort((a, b) => a - b);
             array = removeEmpty(array);
             return array;
         }
@@ -744,7 +745,8 @@
             return array;
         }
         function getHeatmapAxis(parameter) {
-            let array = [...new Set(files[0].map(d => d[parameter]))].sort();
+            // fancy sorting to deal with numerical values
+            let array = [...new Set(files[0].map(d => +d[parameter]))].sort((a, b) => a - b);
             array = removeEmpty(array);
             return array;
         }
