@@ -135,3 +135,8 @@ class Covid19View(TemplateView):
             comment.page = self.page
             comment.save()
         return HttpResponseRedirect(self.request.path_info)
+
+
+class CooperationConflictLabView(TemplateView):
+    template_name = 'worlddata/CooperationConflictLab.html'
+    

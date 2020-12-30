@@ -477,18 +477,11 @@ function addDropdown(parent, name, width, taxonChange, options, selected) {
     select.onchange = taxonChange;
     selectContainer.appendChild(select);
 
-    // Create and append the options
-    var template = '<option value="tempvalue">tempvalue</option>',
-        selectedTemplate = '<option selected = "selected" value="tempvalue">tempvalue</option>';
-    var placeholder = [];
-    for (var i = 0; i < options.length; i++) {
-        if (options[i] == selected) {
-            placeholder.push(selectedTemplate.replace(/tempvalue/g, options[i]));
-        } else {
-            placeholder.push(template.replace(/tempvalue/g, options[i]));
-        }
+    for (let op of options) {
+        select.add(new Option(op));
     }
-    select.innerHTML = placeholder.join('');
+    select.value = selected;
+
 }
 
 function addSlider(parent, name, min, max, value, containerWidth, width, onChange) {

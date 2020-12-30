@@ -349,6 +349,7 @@ figure {
   }
 }
 
+// legend
 .chart-legend,
 .secondary-legend {
   display: flex;
@@ -392,16 +393,6 @@ figure {
     flex-direction: row;
   }
 }
-
-.filters-on-top.chart-container {
-  flex-direction: column;
-  .chart-options {
-    .chart-filters {
-      margin-bottom: 0;
-    }
-  }
-}
-
 .mobile-legend {
   @media only screen and (min-width: $mobile-breakpoint) {
     display: none !important;
@@ -412,12 +403,26 @@ figure {
     display: none !important;
   }
 }
+
+// filters / options
+.filters-on-top.chart-container {
+  flex-direction: column;
+  .chart-options {
+    .chart-filters {
+      margin-bottom: 0;
+    }
+  }
+}
 .filters-right {
   @media only screen and (min-width: $mobile-breakpoint) {
     flex-direction: row-reverse;
   }
 }
 // Dashboard
+.dashboard-title {
+  font-size: 140%;
+  text-align: center;
+}
 .dashboard-side-40 {
   width: 100%;
   @media only screen and (min-width: $tablet-breakpoint) {
@@ -453,6 +458,40 @@ figure {
   .highcharts-title {
     font-size: 1.2em;
   }
+}
+
+// chart types
+.bars,
+.pie,
+.scatter {
+  /* Define gradients */
+  @for $i from 1 through length($colors) {
+    $color: nth($colors, $i);
+    .highcharts-color-#{$i - 1}.highcharts-point {
+      //fill-opacity: 1;
+      fill: url("#gradient-#{$i - 1}");
+    }
+  }
+}
+
+.area,
+.bubbles,
+.wheel {
+  /* Define gradients */
+  @for $i from 1 through length($colors) {
+    $color: nth($colors, $i);
+    .highcharts-color-#{$i - 1} {
+      stroke: none;
+      &.highcharts-series.highcharts-area-series,
+      &.highcharts-point:not(.highcharts-node) {
+        fill: url("#gradient-area-#{$i - 1}");
+      }
+    }
+  }
+}
+.heatmap .highcharts-grid-line,
+.heatmap .highcharts-axis-line {
+  stroke: none;
 }
 
 // Specific charts
@@ -682,60 +721,6 @@ figure {
   }
 }
 
-.bars,
-.pie,
-.scatter {
-  /* Define gradients */
-  @for $i from 1 through length($colors) {
-    $color: nth($colors, $i);
-    .highcharts-color-#{$i - 1}.highcharts-point {
-      //fill-opacity: 1;
-      fill: url("#gradient-#{$i - 1}");
-    }
-  }
-}
-
-.area,
-.bubbles,
-.wheel {
-  /* Define gradients */
-  @for $i from 1 through length($colors) {
-    $color: nth($colors, $i);
-    .highcharts-color-#{$i - 1} {
-      stroke: none;
-      &.highcharts-series.highcharts-area-series,
-      &.highcharts-point:not(.highcharts-node) {
-        fill: url("#gradient-area-#{$i - 1}");
-      }
-    }
-  }
-}
-
-#play_controls {
-  text-align: center;
-  min-width: 310px;
-  max-width: 800px;
-  margin: 0 auto;
-  padding: 5px 0 1em 0;
-}
-#play_controls * {
-  display: inline-block;
-  vertical-align: middle;
-}
-#play_button {
-  width: 30px;
-  height: 30px;
-  text-align: center;
-  font-size: 15px;
-  cursor: pointer;
-  border: 1px solid silver;
-  border-radius: 3px;
-  background: #f8f8f8;
-}
-#play-range {
-  margin: 2.5%;
-  width: 70%;
-}
 .i-play {
   background-image: url(../../../../static/main/icons/play.svg);
   height: 16px;
@@ -757,4 +742,63 @@ figure {
   vertical-align: -webkit-baseline-middle;
   margin-left: 5px;
   margin-bottom: 2px;
+}
+
+.CCLab-old-dashboard {
+  .covid-dashboard-options {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: flex-start;
+  }
+  .chart-filters {
+    text-align: inherit;
+    margin-bottom: 0;
+  }
+  .covid-dashboard-country {
+    color: $bright-blue;
+    font-size: 140%;
+    font-weight: 500;
+    margin: 0;
+    padding-right: 20px;
+    margin-bottom: 10px;
+    text-align: start;
+    @media (min-width: $desktop-breakpoint) {
+      margin-bottom: 0px;
+      text-align: end;
+    }
+  }
+  .side-chart-container {
+    box-shadow: 2px 2px 8px $navbar-color;
+    padding: 10px;
+    margin: 20px;
+    margin-bottom: 0px;
+    background-color: #2e3838;
+    border-radius: 30px;
+    @media only screen and (min-width: $tablet-breakpoint) {
+      margin-bottom: 20px;
+    }
+  }
+
+  .dashboard-level-1 {
+    .dashboard-side-40 {
+      border-radius: 30px 30px 0px 0;
+      z-index: 1;
+      background-image: linear-gradient(to bottom left, $bright-blue-opacity 7%, $mid-grey 50%);
+    }
+  }
+  .dashboard-level-2 {
+    .covid-top-container {
+      @media only screen and (min-width: $tablet-breakpoint) {
+        border-radius: 30px 0px 0px 30px;
+        background-image: linear-gradient(to top right, $bright-blue-opacity 7%, $mid-grey 50%);
+      }
+    }
+    .dashboard-side-40 {
+      background-image: linear-gradient(to top right, $bright-blue-opacity 7%, $mid-grey 50%);
+      @media only screen and (min-width: $tablet-breakpoint) {
+        background-image: none;
+      }
+    }
+  }
 }

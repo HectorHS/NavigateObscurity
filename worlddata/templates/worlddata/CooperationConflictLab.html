@@ -1,0 +1,1095 @@
+{% extends 'main/layout.html' %}
+{% load static %}
+
+{% block styles %}
+<!-- Meta -->
+<title>Cooperation & Conflict Lab - Navigate Obscurity</title>
+<meta name="description"
+    content="How do we navigate the fundamental tensions between cooperation and conflict that are inherent to social living? The Cooperation and Conflict Lab investigates these process across a variety of systems, from humans food sharing to cooperation in multicellularity and cancer.">
+<meta property="og:image"
+    content="https://www.navigateobscurity.com/static/worlddata/images/cooperation-conflict-lab.jpg" />
+<meta property="og:title" content="Cooperation & Conflict Lab - Navigate Obscurity" />
+<meta property="og:url" content="https://www.navigateobscurity.com/data/cooperation-conflict-lab" />
+<meta name="twitter:card" content="summary" />
+<meta name="twitter:url" content="https://www.navigateobscurity.com/data/cooperation-conflict-lab" />
+<meta name="twitter:title" content="Cooperation & Conflict Lab - Navigate Obscurity" />
+<meta name="twitter:description"
+    content="How do we navigate the fundamental tensions between cooperation and conflict that are inherent to social living? The Cooperation and Conflict Lab investigates these process across a variety of systems, from humans food sharing to cooperation in multicellularity and cancer." />
+<meta name="twitter:image"
+    content="https://www.navigateobscurity.com/static/worlddata/images/cooperation-conflict-lab.jpg" />
+
+<!-- We use d3 libraries to load data -->
+<script src="https://d3js.org/d3-dsv.v1.min.js"></script>
+<script src="https://d3js.org/d3-fetch.v1.min.js"></script>
+
+<!-- We use highcharts for visualizations -->
+<script src="https://code.highcharts.com/highcharts.js"></script>
+<script src="https://code.highcharts.com/modules/coloraxis.js"></script>
+<script src="https://code.highcharts.com/modules/heatmap.js"></script>
+
+<script src={% static "worlddata/js/chart-helpers.js" %}></script>
+
+<link rel='stylesheet' type="text/css" href={% static "worlddata/css/highcharts.css" %}>
+<link rel='stylesheet' type="text/css" href={% static "worlddata/css/data.css" %}>
+
+<style>
+    .highcharts-blue-gradient-0 rect {
+        fill: #cce7ff;
+        stroke: #cce7ff;
+    }
+
+    .highcharts-blue-gradient-1 rect {
+        fill: #80c3ff;
+        stroke: #80c3ff;
+    }
+
+    .highcharts-blue-gradient-2 rect {
+        fill: #33a0ff;
+        stroke: #33a0ff;
+    }
+
+    .highcharts-blue-gradient-3 rect {
+        fill: #007ae6;
+        stroke: #007ae6;
+    }
+
+    .highcharts-blue-gradient-4 rect {
+        fill: #005fb3;
+        stroke: #005fb3;
+    }
+
+    .highcharts-blue-gradient-5 rect {
+        fill: #003666;
+        stroke: #003666;
+    }
+
+    .highcharts-blue-gradient-6 rect {
+        fill: #000e1a;
+        stroke: #000e1a;
+    }
+</style>
+{% endblock %}
+
+{% block content %}
+<section class="banner-container">
+    <h1 class="header-title-banner">{{title}}</h1>
+</section>
+
+<!-- Viz 1 - Dashboard for newer data -->
+<section>
+    <div class="dashboard-title"> Data collected between September 26th and October 27th, 2020
+    </div>
+    <figure>
+        <div class="container dashboard-container-horizontal CCLab-old-dashboard" style="margin-bottom:100px;">
+            <div class="dashboard-container-vertical dashboard-level-1">
+                <div class="dashboard-container-horizontal dashboard-side-60">
+                    <div class="chart-container-dashboard covid-map filters-on-top">
+                        <div class="dashboard-side" style="height: inherit;">
+                            <div class="dark-bg">
+
+                                <div id="new_heatmap" class="heatmap" style="width:100%;padding-bottom: 20px;">
+                                </div>
+                                <div id="new_bars" class="" style="width:100%;"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="dashboard-side-40 dashboard-side" style="border-radius:30px">
+                    <div class="chart-options side-chart-container" style="max-width:100%; ">
+                        <div class="chart-filters covid-dashboard-options" style="margin: 0px 20px;">
+                            <div> Primary variable</div>
+                            <div id="new_var1_container" style="width:100%"></div>
+                            <div> Date</div>
+                            <div id="new_date_container" style="width:100%"></div>
+                            <div> Secondary variable</div>
+                            <div id="new_var2_container" style="width:100%"></div>
+                        </div>
+
+                    </div>
+                    <div class="side-chart-container" style="margin-bottom:0;">
+                        <div class="chart-container-dashboard filters-on-top">
+                            <div id="new_lines" class="lines" style="width:100%;"></div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </figure>
+</section>
+
+<!-- Viz 2 - Dashboard for older data -->
+<section>
+    <div class="dashboard-title"> Data collected between March 6th and August 22nd, 2020
+    </div>
+    <figure>
+        <div class="container dashboard-container-horizontal CCLab-old-dashboard">
+            <div class="dashboard-container-vertical dashboard-level-1">
+                <div class="dashboard-container-horizontal dashboard-side-60">
+                    <div class="chart-container-dashboard covid-map filters-on-top">
+                        <div class="dashboard-side" style="height: inherit;">
+                            <div class="dark-bg">
+
+                                <div id="old_heatmap" class="heatmap" style="width:100%;padding-bottom: 20px;">
+                                </div>
+                                <div id="old_bars" class="" style="width:100%;"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="dashboard-side-40 dashboard-side" style="border-radius:30px">
+                    <div class="chart-options side-chart-container" style="max-width:100%; ">
+                        <div class="chart-filters covid-dashboard-options" style="margin: 0px 20px;">
+                            <div> Primary variable</div>
+                            <div id="var1_container" style="width:100%"></div>
+                            <div> Date</div>
+                            <div id="date_container" style="width:100%"></div>
+                            <div> Secondary variable</div>
+                            <div id="var2_container" style="width:100%"></div>
+                        </div>
+
+                    </div>
+                    <div class="side-chart-container" style="margin-bottom:0;">
+                        <div class="chart-container-dashboard filters-on-top">
+                            <div id="old_lines" class="lines" style="width:100%;"></div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </figure>
+</section>
+
+
+<script>
+    var static_url = "{% get_static_prefix %}";
+    file_old = "worlddata/csv/CCLAB-old-ints.csv";
+    old_path = static_url + file_old;
+    file_old_vars = "worlddata/csv/CCLAB-old-variableLookup.csv";
+    old_vars_path = static_url + file_old_vars;
+    file_new = "worlddata/csv/CCLAB-new-ints.csv";
+    new_path = static_url + file_new;
+    file_new_vars = "worlddata/csv/CCLAB-new-variableLookup.csv";
+    new_vars_path = static_url + file_new_vars;
+
+    var CovidNewDashboard = Promise.all([
+        d3.csv(new_path),
+        d3.csv(new_vars_path)
+    ]).then(function (files) {
+        // All filterable options
+        const all_dates = [...new Set(files[0].map(d => d.Date))];
+        const all_variables = files[0].columns;
+
+        let variable1 = "Stress";
+        let variable2 = "PerceptionRisk";
+        let date = "09/26/2020";
+        let heatmapMax = 0;
+        let availableDates = [];
+        let availableVar2 = getVar2Values();
+
+        function getLinesData() {
+            let data = [];
+            slice1 = getLinesDataSlice(variable1);
+            slice2 = getLinesDataSlice(variable2);
+
+            data.push(slice1);
+            data.push(slice2);
+            return data;
+        }
+        function getLinesDataSlice(variable) {
+            let d1v = 0;
+            let d1c = 0;
+            let d2v = 0;
+            let d2c = 0;
+            let data = [];
+
+            // for (let date of all_dates) {
+            for (let row of files[0]) {
+                if (row.Date == "09/26/2020") {
+                    d1v += +row[variable];
+                    d1c++;
+                } else if (row.Date == "10/27/2020") {
+                    d2v += +row[variable];
+                    d2c++;
+                }
+            }
+            data.push(+numberFormatterPercentage(d1v / d1c));
+            data.push(+numberFormatterPercentage(d2v / d2c));
+
+            let slice = { name: variable, data: data };
+            return slice;
+        }
+        function getAvailableDates(var1) {
+            dates = [];
+            for (let row of files[1]) {
+                if (row.Name == var1) {
+                    for (let d of all_dates) {
+                        if (row[d] > 0) {
+                            dates.push(d);
+                        }
+                    }
+                }
+            }
+            return dates;
+        }
+        function removeEmpty(array) {
+            for (let i = 0; i < array.length; i++) {
+                if (array[i] == "" || array[i] == " ") {
+                    array.splice(i, 1);
+                    removeEmpty(array);
+                }
+            }
+            return array;
+        }
+        function getHeatmapAxis(parameter) {
+            let array = [...new Set(files[0].map(d => d[parameter]))].sort();
+            array = removeEmpty(array);
+            return array;
+        }
+        function getHeatmapData() {
+            let xaxis = getHeatmapAxis(variable1);
+            let yaxis = getHeatmapAxis(variable2);
+            heatmapMax = 0;
+
+            let data = [];
+            for (let x = 0; x < xaxis.length; x++) {
+                for (let y = 0; y < yaxis.length; y++) {
+                    let counter = 0;
+                    for (let row of files[0]) {
+                        if (row.Date == date && row[variable1] == xaxis[x] && row[variable2] == yaxis[y]) {
+                            counter++;
+                        }
+                    }
+                    data.push([x, y, counter]);
+                }
+            }
+            return data;
+        }
+        function getHeatmapMax(heatmapData) {
+            heatmapMax = 0;
+            for (let d of heatmapData) {
+                if (d[2] > heatmapMax) {
+                    heatmapMax = d[2];
+                }
+            }
+        }
+        function getBarsData(heatmap_data) {
+            let xaxis = getHeatmapAxis(variable1);
+            let yaxis = getHeatmapAxis(variable2);
+            let all_data = [];
+            let useGradient = false;
+
+            if (yaxis.length < 8) {
+                useGradient = true;
+            }
+
+            for (let i = 0; i < yaxis.length; i++) {
+                let name = variable2 + ": " + yaxis[i];
+                let data = [];
+                for (let d of heatmap_data) {
+                    if (d[1] == i) {
+                        data.push(d[2]);
+                    }
+                }
+                let slice;
+                if (useGradient) {
+                    slice = { name: name, data: data, className: 'highcharts-blue-gradient-' + i };
+
+                } else {
+                    slice = { name: name, data: data };
+                }
+                all_data.push(slice);
+            }
+
+            return all_data;
+        }
+        function getVar2Values() {
+            let data = [];
+            for (let row of files[1]) {
+                if (row[date] > 0) {
+                    data.push(row.Name);
+                }
+            }
+            return data;
+        }
+
+        let initial_lines_data = getLinesData();
+        let initial_heatmap_data = getHeatmapData();
+        let heatmap_xaxis_categories = getHeatmapAxis(variable1);
+        let heatmap_yaxis_categories = getHeatmapAxis(variable2);
+        let initial_bars = getBarsData(initial_heatmap_data);
+        heatmapMax = getHeatmapMax(initial_heatmap_data);
+        availableDates = getAvailableDates(variable1);
+        let heatmapXaxis = {
+            categories: heatmap_xaxis_categories,
+            title: {
+                text: variable1,
+            },
+        };
+        let heatmapYaxis = {
+            categories: heatmap_yaxis_categories,
+            title: {
+                text: variable2,
+            },
+        };
+        let heatmapColorAxis = {
+            min: 0,
+            max: heatmapMax,
+            minColor: '#2e3838',
+            maxColor: '#007ae6'
+        };
+
+        var lineChart = Highcharts.chart('new_lines', {
+            chart: {
+                height: 300
+            },
+            title: {
+                text: null
+            },
+            xAxis: {
+                categories: all_dates,
+            },
+            yAxis: {
+                title: {
+                    text: "Average score"
+                },
+            },
+            series: initial_lines_data,
+        });
+
+        let heatmap = Highcharts.chart('new_heatmap', {
+            chart: {
+                type: 'heatmap',
+                marginBottom: 80,
+                plotBorderWidth: 1,
+                height: 300
+            },
+            title: {
+                text: null
+            },
+            xAxis: heatmapXaxis,
+            yAxis: heatmapYaxis,
+            colorAxis: heatmapColorAxis,
+            legend: {
+                align: 'right',
+            },
+            tooltip: {
+                formatter: function () {
+                    return '<text>' + variable1 + ": " + heatmap_xaxis_categories[this.point.x] + "<br>" + variable2 + ": " + heatmap_yaxis_categories[this.point.y] + "<br>" + "# of individuals: " + this.point.value + '</text>';
+                },
+                useHTML: true
+            },
+
+            series: [{
+
+                data: initial_heatmap_data,
+            }],
+            dataLabels: {
+                enabled: true,
+                color: '#000000'
+            }
+
+        });
+
+        let bars = Highcharts.chart('new_bars', {
+            chart: {
+                type: 'column',
+                height: 300
+            },
+            title: {
+                text: null
+            },
+            xAxis: heatmapXaxis,
+            yAxis: {
+                min: 0,
+                title: {
+                    text: '# of individuals'
+                }
+            },
+            plotOptions: {
+                column: {
+                    borderRadius: 3,
+                    groupPadding: 0.05,
+                    // pointPadding: 0.2,
+                    // borderWidth: 0
+                }
+            },
+            tooltip: {
+                formatter: function () {
+                    return '<text>' + variable1 + ": " + heatmap_xaxis_categories[this.point.x] + "<br>" + this.series.name + "<br>" + "# of individuals: " + this.point.y + '</text>';
+                },
+                useHTML: true
+            },
+            series: initial_bars
+
+        });
+
+        // Dropdowns
+
+        // Variable 1 dropdown
+        var var1Name = "new-var1-measure",
+            var1Width = "100%",
+            var1Container = document.getElementById("new_var1_container");
+        addDropdown(var1Container, var1Name, var1Width, var1Change, all_variables, variable1);
+
+        // Update chart data on variable 1 change
+        function var1Change() {
+            // update variables
+            variable1 = document.getElementById(var1Name + "-select").value;
+            dateSelect = document.getElementById(dateName + "-select");
+
+            // update other dropdowns
+            updatedDateOptions();
+            updatedVar2Options();
+
+            // update chart options
+            let newHeatmapData = getHeatmapData();
+            heatmapXaxis.title.text = variable1;
+            heatmapXaxis.categories = getHeatmapAxis(variable1);
+            //in case variable 2 is force changed
+            heatmapYaxis.title.text = variable2;
+            heatmapYaxis.categories = getHeatmapAxis(variable2);
+            heatmapColorAxis.max = getHeatmapMax(newHeatmapData);
+            heatmap.update({
+                xAxis: heatmapXaxis
+            });
+            heatmap.update({
+                yAxis: heatmapYaxis
+            });
+            heatmap.update({
+                colorAxis: heatmapColorAxis
+            });
+
+            bars.update({
+                xAxis: heatmapXaxis
+            });
+
+            //update chart data
+            heatmap.series[0].setData(newHeatmapData);
+            updateBarsData(newHeatmapData);
+
+            newLineData = getLinesData();
+            lineChart.update({
+                series: newLineData
+            });
+        }
+
+        // date dropdown
+        var dateName = "new_date-measure",
+            dateWidth = "100%",
+            dateContainer = document.getElementById("new_date_container");
+        addDropdown(dateContainer, dateName, dateWidth, dateChange, availableDates, date);
+
+        function dateChange() {
+            // update variables
+            date = document.getElementById(dateName + "-select").value;
+            let newHeatmapData = getHeatmapData();
+            let oldVar2 = variable2;
+
+            // update other dropdowns
+            updatedVar2Options();
+
+            // update chart options
+            heatmapColorAxis.max = getHeatmapMax(newHeatmapData);
+            heatmap.update({
+                colorAxis: heatmapColorAxis
+            });
+            // in case var2 force changed
+            if (oldVar2 != variable2) {
+                var2Change();
+            } else {
+                //update chart data
+                heatmap.series[0].setData(newHeatmapData);
+                updateBarsData(newHeatmapData);
+            }
+        }
+
+        // variable 2 dropdown
+        // date dropdown
+        var var2Name = "new-var2-measure",
+            var2Width = "100%",
+            var2Container = document.getElementById("new_var2_container");
+        addDropdown(var2Container, var2Name, var2Width, var2Change, availableVar2, variable2);
+
+        function var2Change() {
+            // update variables
+            variable2 = document.getElementById(var2Name + "-select").value;
+
+            // update chart options
+            heatmapYaxis.title.text = variable2;
+            heatmapYaxis.categories = getHeatmapAxis(variable2);
+            heatmap.update({
+                yAxis: heatmapYaxis
+            });
+
+            //update chart data
+            let newHeatmapData = getHeatmapData();
+            heatmap.series[0].setData(newHeatmapData);
+            updateBarsData(newHeatmapData);
+
+            newLineData = getLinesData();
+            lineChart.update({
+                series: newLineData
+            });
+        }
+
+        function updatedDateOptions() {
+            let select = document.getElementById(dateName + "-select");
+            availableDates = getAvailableDates(variable1);
+            select.length = 0;
+            for (let o of availableDates) {
+                select.add(new Option(o));
+            }
+            // set selected value - if possible the previous date
+            if (availableDates.includes(date)) {
+                select.value = date;
+            } else {
+                select.value = availableDates[0];
+                date = availableDates[0];
+            }
+        }
+        function updatedVar2Options() {
+            let select = document.getElementById(var2Name + "-select");
+            select.length = 0;
+            availableVar2 = getVar2Values();
+            for (let o of availableVar2) {
+                select.add(new Option(o));
+            }
+            // set selected value - if possible the previous var2
+            if (availableVar2.includes(variable2)) {
+                select.value = variable2;
+            } else {
+                select.value = "PerceptionRisk";
+                variable2 = "PerceptionRisk";
+            }
+
+        }
+
+
+        function updateBarsData(newHeatmapData) {
+            let bars_loops = bars.series.length;
+            let updated_bars_data = getBarsData(newHeatmapData);
+
+            // First empty the existing data
+            for (let i = 0; i < bars_loops; i++) {
+                bars.series[0].remove(false);
+            }
+            // Then add the updated data
+            for (let i = 0; i < updated_bars_data.length; i++) {
+                bars.addSeries(updated_bars_data[i], false);
+            }
+
+            bars.redraw();
+        }
+
+
+    })
+        .catch(function (error) {
+            console.log(error);
+        })
+
+    var CovidDashboard = Promise.all([
+        d3.csv(old_path),
+        d3.csv(old_vars_path)
+    ]).then(function (files) {
+        // All filterable options
+        const all_dates = [...new Set(files[0].map(d => d.Date))];
+        const all_variables = files[0].columns;
+
+        let variable1 = "Stress";
+        let variable2 = "Anxiety";
+        let date = "04/03/2020";
+        let heatmapMax = 0;
+        let availableDates = [];
+        let availableVar2 = getVar2Values();
+
+        function getLinesData() {
+            let data = [];
+            slice1 = getLinesDataSlice(variable1);
+            slice2 = getLinesDataSlice(variable2);
+
+            data.push(slice1);
+            data.push(slice2);
+            return data;
+        }
+        function getLinesDataSlice(variable) {
+            let d1v = 0;
+            let d1c = 0;
+            let d2v = 0;
+            let d2c = 0;
+            let d3v = 0;
+            let d3c = 0;
+            let d4v = 0;
+            let d4c = 0;
+            let d5v = 0;
+            let d5c = 0;
+            let d6v = 0;
+            let d6c = 0;
+            let d7v = 0;
+            let d7c = 0;
+            let d8v = 0;
+            let d8c = 0;
+            let d9v = 0;
+            let d9c = 0;
+            let d10v = 0;
+            let d10c = 0;
+            let d11v = 0;
+            let d11c = 0;
+            let d12v = 0;
+            let d12c = 0;
+            let d13v = 0;
+            let d13c = 0;
+            let d14v = 0;
+            let d14c = 0;
+            let data = [];
+
+            // for (let date of all_dates) {
+            for (let row of files[0]) {
+                if (row.Date == "03/06/2020") {
+                    d1v += +row[variable];
+                    d1c++;
+                }
+                else if (row.Date == "03/14/2020") {
+                    d2v += +row[variable];
+                    d2c++;
+                }
+                else if (row.Date == "03/24/2020") {
+                    d3v += +row[variable];
+                    d3c++;
+                }
+                else if (row.Date == "04/03/2020") {
+                    d4v += +row[variable];
+                    d4c++;
+                }
+                else if (row.Date == "04/17/2020") {
+                    d5v += +row[variable];
+                    d5c++;
+                }
+                else if (row.Date == "05/02/2020") {
+                    d6v += +row[variable];
+                    d6c++;
+                }
+                else if (row.Date == "05/16/2020") {
+                    d7v += +row[variable];
+                    d7c++;
+                }
+                else if (row.Date == "05/30/2020") {
+                    d8v += +row[variable];
+                    d8c++;
+                }
+                else if (row.Date == "06/13/2020") {
+                    d9v += +row[variable];
+                    d9c++;
+                }
+                else if (row.Date == "06/27/2020") {
+                    d10v += +row[variable];
+                    d10c++;
+                }
+                else if (row.Date == "07/11/2020") {
+                    d11v += +row[variable];
+                    d11c++;
+                }
+                else if (row.Date == "07/25/2020") {
+                    d12v += +row[variable];
+                    d12c++;
+                }
+                else if (row.Date == "08/08/2020") {
+                    d13v += +row[variable];
+                    d13c++;
+                }
+                else if (row.Date == "08/22/2020") {
+                    d14v += +row[variable];
+                    d14c++;
+                }
+            }
+            data.push(+numberFormatterPercentage(d1v / d1c));
+            data.push(+numberFormatterPercentage(d2v / d2c));
+            data.push(+numberFormatterPercentage(d3v / d3c));
+            data.push(+numberFormatterPercentage(d4v / d4c));
+            data.push(+numberFormatterPercentage(d5v / d5c));
+            data.push(+numberFormatterPercentage(d6v / d6c));
+            data.push(+numberFormatterPercentage(d7v / d7c));
+            data.push(+numberFormatterPercentage(d8v / d8c));
+            data.push(+numberFormatterPercentage(d9v / d9c));
+            data.push(+numberFormatterPercentage(d10v / d10c));
+            data.push(+numberFormatterPercentage(d11v / d11c));
+            data.push(+numberFormatterPercentage(d12v / d12c));
+            data.push(+numberFormatterPercentage(d13v / d13c));
+            data.push(+numberFormatterPercentage(d14v / d14c));
+
+            let slice = { name: variable, data: data };
+            return slice;
+        }
+        function getAvailableDates(var1) {
+            dates = [];
+            for (let row of files[1]) {
+                if (row.Name == var1) {
+                    for (let d of all_dates) {
+                        if (row[d] > 0) {
+                            dates.push(d);
+                        }
+                    }
+                }
+            }
+            return dates;
+        }
+        function removeEmpty(array) {
+            for (let i = 0; i < array.length; i++) {
+                if (array[i] == "" || array[i] == " ") {
+                    array.splice(i, 1);
+                    removeEmpty(array);
+                }
+            }
+            return array;
+        }
+        function getHeatmapAxis(parameter) {
+            let array = [...new Set(files[0].map(d => d[parameter]))].sort();
+            array = removeEmpty(array);
+            return array;
+        }
+        function getHeatmapData() {
+            let xaxis = getHeatmapAxis(variable1);
+            let yaxis = getHeatmapAxis(variable2);
+            heatmapMax = 0;
+
+            let data = [];
+            for (let x = 0; x < xaxis.length; x++) {
+                for (let y = 0; y < yaxis.length; y++) {
+                    let counter = 0;
+                    for (let row of files[0]) {
+                        if (row.Date == date && row[variable1] == xaxis[x] && row[variable2] == yaxis[y]) {
+                            counter++;
+                        }
+                    }
+                    data.push([x, y, counter]);
+                }
+            }
+            return data;
+        }
+        function getHeatmapMax(heatmapData) {
+            heatmapMax = 0;
+            for (let d of heatmapData) {
+                if (d[2] > heatmapMax) {
+                    heatmapMax = d[2];
+                }
+            }
+        }
+        function getBarsData(heatmap_data) {
+            let xaxis = getHeatmapAxis(variable1);
+            let yaxis = getHeatmapAxis(variable2);
+            let all_data = [];
+            let useGradient = false;
+
+            if (yaxis.length < 8) {
+                useGradient = true;
+            }
+
+            for (let i = 0; i < yaxis.length; i++) {
+                let name = variable2 + ": " + yaxis[i];
+                let data = [];
+                for (let d of heatmap_data) {
+                    if (d[1] == i) {
+                        data.push(d[2]);
+                    }
+                }
+                let slice;
+                if (useGradient) {
+                    slice = { name: name, data: data, className: 'highcharts-blue-gradient-' + i };
+
+                } else {
+                    slice = { name: name, data: data };
+                }
+                all_data.push(slice);
+            }
+
+            return all_data;
+        }
+        function getVar2Values() {
+            let data = [];
+            for (let row of files[1]) {
+                if (row[date] > 0) {
+                    data.push(row.Name);
+                }
+            }
+            return data;
+        }
+
+        let initial_lines_data = getLinesData();
+        let initial_heatmap_data = getHeatmapData();
+        let heatmap_xaxis_categories = getHeatmapAxis(variable1);
+        let heatmap_yaxis_categories = getHeatmapAxis(variable2);
+        let initial_bars = getBarsData(initial_heatmap_data);
+        heatmapMax = getHeatmapMax(initial_heatmap_data);
+        availableDates = getAvailableDates(variable1);
+        let heatmapXaxis = {
+            categories: heatmap_xaxis_categories,
+            title: {
+                text: variable1,
+            },
+        };
+        let heatmapYaxis = {
+            categories: heatmap_yaxis_categories,
+            title: {
+                text: variable2,
+            },
+        };
+        let heatmapColorAxis = {
+            min: 0,
+            max: heatmapMax,
+            minColor: '#2e3838',
+            maxColor: '#007ae6'
+        };
+
+        var lineChart = Highcharts.chart('old_lines', {
+            chart: {
+                height: 300
+            },
+            title: {
+                text: null
+            },
+            xAxis: {
+                categories: all_dates,
+            },
+            yAxis: {
+                title: {
+                    text: "Average score"
+                },
+            },
+            series: initial_lines_data,
+        });
+
+        let heatmap = Highcharts.chart('old_heatmap', {
+            chart: {
+                type: 'heatmap',
+                marginBottom: 80,
+                plotBorderWidth: 1,
+                height: 300
+            },
+            title: {
+                text: null
+            },
+            xAxis: heatmapXaxis,
+            yAxis: heatmapYaxis,
+            colorAxis: heatmapColorAxis,
+            legend: {
+                align: 'right',
+            },
+            tooltip: {
+                formatter: function () {
+                    return '<text>' + variable1 + ": " + heatmap_xaxis_categories[this.point.x] + "<br>" + variable2 + ": " + heatmap_yaxis_categories[this.point.y] + "<br>" + "# of individuals: " + this.point.value + '</text>';
+                },
+                useHTML: true
+            },
+
+            series: [{
+
+                data: initial_heatmap_data,
+            }],
+            dataLabels: {
+                enabled: true,
+                color: '#000000'
+            }
+
+        });
+
+        let bars = Highcharts.chart('old_bars', {
+            chart: {
+                type: 'column',
+                height: 300
+            },
+            title: {
+                text: null
+            },
+            xAxis: heatmapXaxis,
+            yAxis: {
+                min: 0,
+                title: {
+                    text: '# of individuals'
+                }
+            },
+            plotOptions: {
+                column: {
+                    borderRadius: 3,
+                    groupPadding: 0.05,
+                    // pointPadding: 0.2,
+                    // borderWidth: 0
+                }
+            },
+            tooltip: {
+                formatter: function () {
+                    return '<text>' + variable1 + ": " + heatmap_xaxis_categories[this.point.x] + "<br>" + this.series.name + "<br>" + "# of individuals: " + this.point.y + '</text>';
+                },
+                useHTML: true
+            },
+            series: initial_bars
+
+        });
+
+        // Dropdowns
+
+        // Variable 1 dropdown
+        var var1Name = "var1-measure",
+            var1Width = "100%",
+            var1Container = document.getElementById("var1_container");
+        addDropdown(var1Container, var1Name, var1Width, var1Change, all_variables, variable1);
+
+        // Update chart data on variable 1 change
+        function var1Change() {
+            // update variables
+            variable1 = document.getElementById(var1Name + "-select").value;
+            dateSelect = document.getElementById(dateName + "-select");
+
+            // update other dropdowns
+            updatedDateOptions();
+            updatedVar2Options();
+
+            // update chart options
+            let newHeatmapData = getHeatmapData();
+            heatmapXaxis.title.text = variable1;
+            heatmapXaxis.categories = getHeatmapAxis(variable1);
+            //in case variable 2 is force changed
+            heatmapYaxis.title.text = variable2;
+            heatmapYaxis.categories = getHeatmapAxis(variable2);
+            heatmapColorAxis.max = getHeatmapMax(newHeatmapData);
+            heatmap.update({
+                xAxis: heatmapXaxis
+            });
+            heatmap.update({
+                yAxis: heatmapYaxis
+            });
+            heatmap.update({
+                colorAxis: heatmapColorAxis
+            });
+
+            bars.update({
+                xAxis: heatmapXaxis
+            });
+
+            //update chart data
+            heatmap.series[0].setData(newHeatmapData);
+            updateBarsData(newHeatmapData);
+
+            newLineData = getLinesData();
+            lineChart.update({
+                series: newLineData
+            });
+        }
+
+        // date dropdown
+        var dateName = "date-measure",
+            dateWidth = "100%",
+            dateContainer = document.getElementById("date_container");
+        addDropdown(dateContainer, dateName, dateWidth, dateChange, availableDates, date);
+
+        function dateChange() {
+            // update variables
+            date = document.getElementById(dateName + "-select").value;
+            let newHeatmapData = getHeatmapData();
+            let oldVar2 = variable2;
+
+            // update other dropdowns
+            updatedVar2Options();
+
+            // update chart options
+            heatmapColorAxis.max = getHeatmapMax(newHeatmapData);
+            heatmap.update({
+                colorAxis: heatmapColorAxis
+            });
+            // in case var2 force changed
+            if (oldVar2 != variable2) {
+                var2Change();
+            } else {
+                //update chart data
+                heatmap.series[0].setData(newHeatmapData);
+                updateBarsData(newHeatmapData);
+            }
+        }
+
+        // variable 2 dropdown
+        // date dropdown
+        var var2Name = "var2-measure",
+            var2Width = "100%",
+            var2Container = document.getElementById("var2_container");
+        addDropdown(var2Container, var2Name, var2Width, var2Change, availableVar2, variable2);
+
+        function var2Change() {
+            // update variables
+            variable2 = document.getElementById(var2Name + "-select").value;
+
+            // update chart options
+            heatmapYaxis.title.text = variable2;
+            heatmapYaxis.categories = getHeatmapAxis(variable2);
+            heatmap.update({
+                yAxis: heatmapYaxis
+            });
+
+            //update chart data
+            let newHeatmapData = getHeatmapData();
+            heatmap.series[0].setData(newHeatmapData);
+            updateBarsData(newHeatmapData);
+
+            newLineData = getLinesData();
+            lineChart.update({
+                series: newLineData
+            });
+        }
+
+        function updatedDateOptions() {
+            let select = document.getElementById(dateName + "-select");
+            availableDates = getAvailableDates(variable1);
+            select.length = 0;
+            for (let o of availableDates) {
+                select.add(new Option(o));
+            }
+            // set selected value - if possible the previous date
+            if (availableDates.includes(date)) {
+                select.value = date;
+            } else {
+                select.value = availableDates[0];
+                date = availableDates[0];
+            }
+        }
+        function updatedVar2Options() {
+            let select = document.getElementById(var2Name + "-select");
+            select.length = 0;
+            availableVar2 = getVar2Values();
+            for (let o of availableVar2) {
+                select.add(new Option(o));
+            }
+            // set selected value - if possible the previous var2
+            if (availableVar2.includes(variable2)) {
+                select.value = variable2;
+            } else {
+                select.value = "PerceptionsRisk";
+                variable2 = "PerceptionsRisk";
+            }
+
+        }
+
+
+        function updateBarsData(newHeatmapData) {
+            let bars_loops = bars.series.length;
+            let updated_bars_data = getBarsData(newHeatmapData);
+
+            // First empty the existing data
+            for (let i = 0; i < bars_loops; i++) {
+                bars.series[0].remove(false);
+            }
+            // Then add the updated data
+            for (let i = 0; i < updated_bars_data.length; i++) {
+                bars.addSeries(updated_bars_data[i], false);
+            }
+
+            bars.redraw();
+        }
+
+
+    })
+        .catch(function (error) {
+            console.log(error);
+        })
+
+</script>
+
+{% endblock %}
