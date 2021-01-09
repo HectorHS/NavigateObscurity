@@ -3,21 +3,21 @@
   background: $navbar-color;
   position: fixed;
   width: 100%;
-  top:0;
+  top: 0;
   box-shadow: 0 2px 40px black;
-  z-index:100;
-} 
+  z-index: 100;
+}
 .logo {
   position: absolute;
   float: left;
   line-height: $nav-height;
   padding-left: 20px;
   @media (min-width: $mobile-breakpoint) {
-    padding-left:50px;
+    padding-left: 50px;
   }
   a img {
-    margin-top:2px;
-      max-height: $nav-height - 4px;
+    margin-top: 2px;
+    max-height: $nav-height - 4px;
   }
 }
 nav {
@@ -29,17 +29,17 @@ nav {
     width: auto;
   }
   ul {
-  list-style: none;
-  margin: 0;
-  padding: 0;
+    list-style: none;
+    margin: 0;
+    padding: 0;
     li {
       float: none;
-      position: relative;
       min-width: 120px;
       @media screen and (min-width: $mobile-breakpoint) {
         float: left;
       }
-      a, a:visited {
+      a,
+      a:visited {
         display: block;
         padding: 15px;
         padding-left: 25%;
@@ -49,7 +49,7 @@ nav {
         font-weight: 400;
         letter-spacing: 2px;
         text-decoration: none;
-        
+
         font-size: 14px;
         @media screen and (min-width: $mobile-breakpoint) {
           padding: 0 20px;
@@ -58,20 +58,22 @@ nav {
           text-align: center;
         }
       }
-      a:hover, a:visited:hover {
+      a:hover,
+      a:visited:hover {
         background: $bright-blue;
         color: $almost-white;
       }
-      a:not(:only-child):after, a:visited:not(:only-child):after {
+      a:not(:only-child):after,
+      a:visited:not(:only-child):after {
         padding-left: 4px;
-        content: ' ▾';
+        content: " ▾";
       }
       ul {
         @media screen and (min-width: $mobile-breakpoint) {
           opacity: 0;
-            visibility: hidden;
-            display: none;
-            position: absolute;
+          visibility: hidden;
+          display: none;
+          position: absolute;
         }
         li {
           clear: both;
@@ -90,7 +92,8 @@ nav {
       }
     }
     @media screen and (min-width: $mobile-breakpoint) {
-      li:hover > ul, li ul:hover {
+      li:hover > ul,
+      li ul:hover {
         visibility: visible;
         opacity: 1;
         display: block;
@@ -101,15 +104,15 @@ nav {
 .nav-list {
   display: none;
   @media screen and (min-width: $mobile-breakpoint) {
-      display: block !important;
-      padding-right: 50px;
+    display: block !important;
+    padding-right: 50px;
   }
 }
 .nav-list-mobile {
   display: none;
   li {
     ul {
-      display:none;
+      display: none;
     }
   }
 }
@@ -130,7 +133,7 @@ nav {
     display: none;
   }
 }
-  
+
 //Mobile menu hamburger
 #nav-toggle {
   position: absolute;
@@ -138,7 +141,9 @@ nav {
   cursor: pointer;
   padding: 10px 35px 20px 0px;
 
-  span, span:before, span:after {
+  span,
+  span:before,
+  span:after {
     cursor: pointer;
     border-radius: 5px;
     height: 5px;
@@ -146,7 +151,7 @@ nav {
     background: $almost-white;
     position: absolute;
     display: block;
-    content: '';
+    content: "";
     transition: all 300ms ease-in-out;
   }
   span:before {
@@ -168,4 +173,3 @@ nav {
     transform: rotate(-45deg);
   }
 }
-

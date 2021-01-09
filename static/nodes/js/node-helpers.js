@@ -17,8 +17,8 @@ function showSelectedNodes(selected) {
 }
 
 // Only show notes relevant to selected nodes, or all notes if no nodes are selected
-function updateContextText(contexts, context_links, selected) {
-    var contextsToKeep,
+function updateContextText(contexts, context_links, selected, percent) {
+    let contextsToKeep,
         linksToKeep;
 
     // Remove old wrapper
@@ -27,38 +27,43 @@ function updateContextText(contexts, context_links, selected) {
     });
 
     // Initialise new wrapper
-    var context_container = document.getElementById('context-container');
-    var context_wrapper = document.createElement("div");
+    let context_container = document.getElementById('context-container');
+    let context_wrapper = document.createElement("div");
     context_wrapper.id = "context-wrapper";
     context_container.appendChild(context_wrapper);
 
     // Show only relevant contexts, or all contexts if none is selected
     if (Object.keys(selected).length > 0) {
+        let i = 0;
 
-        var i = 0;
         Object.keys(selected).forEach(function (key) {
             if (i == 0) {
                 linksToKeep = context_links.filter(l => l.Node == selected[key].id).map(l => l.Context);
             } else {
-                var tempLinks = context_links.filter(l => l.Node == selected[key].id).map(l => l.Context);
+                let tempLinks = context_links.filter(l => l.Node == selected[key].id).map(l => l.Context);
                 linksToKeep = returnMatchingArrayItems(linksToKeep, tempLinks);
             }
-
-            contextsToKeep = contexts.filter(c => linksToKeep.includes(c.Id));
             i++;
         });
+
+        contextsToKeep = contexts.filter(c => linksToKeep.includes(c.Id));
     } else {
         contextsToKeep = contexts;
     }
 
+    // if a percentage is provided, use it as filter
+    if (Number.isInteger(percent)) {
+        contextsToKeep = contextsToKeep.filter(c => +c.Percent <= percent);
+    }
+
     // Append a header
-    var context_header = document.createElement("h4");
+    let context_header = document.createElement("h4");
     context_header.innerHTML = "Notes:";
     context_wrapper.appendChild(context_header);
 
     // Append a p element for each context
     for (let context of contextsToKeep) {
-        var context_text = document.createElement("p");
+        let context_text = document.createElement("p");
         context_text.innerHTML = context.Context;
         context_wrapper.appendChild(context_text);
     }
@@ -70,7 +75,7 @@ function updateContextText(contexts, context_links, selected) {
 }
 
 // Toggle select a node
-function nodeSelect(s, selected, contexts, context_links) {
+function nodeSelect(s, selected, contexts, context_links, percent) {
     // Making sure we have at least one node selected
     if (Object.keys(selected).length > 0) {
         var toKeep = nodesToKeep(s, selected);
@@ -82,7 +87,7 @@ function nodeSelect(s, selected, contexts, context_links) {
         resetStates(s);
     }
     showSelectedNodes(selected);
-    updateContextText(contexts, context_links, selected);
+    updateContextText(contexts, context_links, selected, percent);
     s.refresh();
 }
 
@@ -201,4 +206,31 @@ function setEdgesToInactive(s, nodesToKeep) {
             e.color = e.inactiveColor;
         }
     });
+}
+
+function addSlider(parent, name, min, max, value, containerWidth, width, onChange) {
+    var sliderContainer = document.createElement("div");
+    sliderContainer.classList.add("slider-container");
+    sliderContainer.style.width = containerWidth + "px";
+    parent.appendChild(sliderContainer);
+
+    var slider = document.createElement("input");
+    slider.id = name + "-slider";
+    slider.type = "range";
+    slider.min = min;
+    slider.max = max;
+    slider.value = value;
+    slider.style.width = (containerWidth - width - 40) + "px";
+    slider.classList.add("slider");
+    slider.onchange = onChange;
+    sliderContainer.appendChild(slider);
+
+    // Add a span to show the slider's value
+    var sliderOutput = document.createElement("span");
+    sliderOutput.id = name + "-slider-output";
+    //percentageSliderOutput.for = "mapPercentageSlider";
+    sliderOutput.classList.add("slider-output");
+    sliderOutput.innerHTML = value + "% completion";
+    sliderOutput.style.width = width + "px";
+    sliderContainer.appendChild(sliderOutput);
 }

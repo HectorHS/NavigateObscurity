@@ -1,25 +1,25 @@
-@import '../../../../main/static/main/scss/variables.scss';
-@import '../../../../main/static/main/scss/mixins.scss';
-@import '../../../../main/static/main/scss/parents.scss';
+@import "../../../../main/static/main/scss/variables.scss";
+@import "../../../../main/static/main/scss/mixins.scss";
+@import "../../../../main/static/main/scss/parents.scss";
 
 .node-box-container {
-    display: grid;
-    grid-gap: 50px;
-    grid-template-columns: (1fr 3fr);
-    padding: 30px 0;
+  display: grid;
+  grid-gap: 50px;
+  grid-template-columns: (1fr 3fr);
+  padding: 30px 0;
 }
 .node-index-container {
-    ul {
-        margin: 0;
-        padding: 0;
-        list-style-type: none;
-    }
-    p {
-        color: $almost-white;
-    }
+  ul {
+    margin: 0;
+    padding: 0;
+    list-style-type: none;
+  }
+  p {
+    color: $almost-white;
+  }
 }
 .node-box-text {
-max-width:600px;
+  max-width: 600px;
 }
 .graph-instructions {
   border-style: solid;
@@ -30,12 +30,12 @@ max-width:600px;
     margin: 10px 0 0;
   }
   ul {
-  &:nth-child(1) {
-    margin-bottom: 0;
-    @media only screen and (min-width: $mobile-breakpoint) {
-      margin-bottom: 13px;
+    &:nth-child(1) {
+      margin-bottom: 0;
+      @media only screen and (min-width: $mobile-breakpoint) {
+        margin-bottom: 13px;
+      }
     }
-  }
     &:nth-child(2) {
       margin-top: 0;
       @media only screen and (min-width: $mobile-breakpoint) {
@@ -43,7 +43,7 @@ max-width:600px;
       }
     }
   }
-  li{
+  li {
     padding-bottom: 10px;
   }
   .notes {
@@ -57,7 +57,7 @@ max-width:600px;
   padding: 0 20px;
   height: 150vh;
   @media only screen and (min-width: $mobile-breakpoint) {
-    height: 85vh; 
+    height: 85vh;
     flex-direction: row;
     padding: 0 50px;
   }
@@ -65,24 +65,25 @@ max-width:600px;
     flex: 1;
     color: $almost-white;
     background-color: $darker-grey;
-    max-width:100%;
+    max-width: 100%;
     border-radius: 20px;
+    box-shadow: 2px 4px 10px $navbar-color;
     h4 {
-      margin-top:0;
+      margin-top: 0;
     }
     .simplebar-scrollbar:before {
-      background-color:#fff;
+      background-color: #fff;
     }
     #context-wrapper {
       max-height: 85vh;
-      padding:20px;
+      padding: 20px;
     }
   }
   .simplebar-vertical {
     margin: 10px 5px;
   }
   .nodes {
-    flex:2;
+    flex: 2;
   }
   #graph-container {
     .node-controls {
@@ -94,6 +95,7 @@ max-width:600px;
       border-radius: 10px;
       border-width: 1px;
       border-style: solid;
+      border-color: $light-grey;
       position: relative;
       display: block;
       z-index: 10;
@@ -105,15 +107,16 @@ max-width:600px;
       &:hover {
         border-color: $bright-blue;
       }
-    }
-    input {
-      color: $almost-white;
-      border: none;
-      height: 34px;
-      position: relative;
-      padding: 0 10px;
-      display: block;
-      background-color: $dark-grey-opacity;
+
+      input {
+        color: $almost-white;
+        border: none;
+        height: 34px;
+        position: relative;
+        padding: 0 10px;
+        display: block;
+        background-color: $dark-grey-opacity;
+      }
     }
   }
   #selected-nodes {
@@ -125,6 +128,7 @@ max-width:600px;
       padding: 3px 10px;
       border-radius: 20px;
       margin: 5px;
+      box-shadow: 0.5px 0.5px 5px $navbar-color;
     }
     @media only screen and (min-width: $mobile-breakpoint) {
       padding-top: 0px;
@@ -139,32 +143,118 @@ max-width:600px;
     font-size: 20px;
     border-style: solid;
     border-width: 1px;
-    border-color: $almost-white;
+    border-color: $light-grey;
     align-self: flex-end;
     height: 40px;
     width: 40px;
   }
+  .zoom-in {
+    border-radius: 10px 10px 0 0;
+  }
+  .zoom-out {
+    border-radius: 0 0 10px 10px;
+  }
   .zoom-button:hover {
     color: $dark-grey;
-    background-color: $almost-white;
+    background-color: $bright-blue;
+    border-color: $bright-blue;
   }
 }
-#node-legend{
-background-color: $dark-grey;
-padding: 20px 50px;
-color: $almost-white;
-text-align: center;
-  .legend-dot{
-      height: 25px;
-      width: 25px;
-      border-radius: 50%;
-      display: inline-block;
-      margin-right: 10px;
+#node-legend {
+  background-color: $dark-grey;
+  padding: 20px 50px;
+  color: $almost-white;
+  text-align: center;
+  .legend-dot {
+    height: 25px;
+    width: 25px;
+    border-radius: 50%;
+    display: inline-block;
+    margin-right: 10px;
   }
   .legend-item {
     display: inline-flex;
     margin-bottom: 5px;
     margin-right: 20px;
     white-space: nowrap;
+  }
+}
+
+#slider_container {
+  z-index: 10;
+}
+
+.slider-container {
+  display: inline-block;
+  position: relative;
+  top: -15px;
+  margin-top: 10px;
+
+  .slider {
+    -webkit-appearance: none;
+    height: 3px;
+    background: $light-grey;
+    border-radius: 5px;
+    outline: none;
+    -webkit-transition: 0.2s;
+    transition: opacity 0.2s;
+    &::-webkit-slider-thumb {
+      -webkit-appearance: none;
+      appearance: none;
+      width: 25px;
+      height: 25px;
+      background: $dark-grey;
+      border-width: 2px;
+      border-color: $light-grey;
+      border-style: solid;
+      border-radius: 50%;
+      cursor: pointer;
+      &:hover {
+        background: $bright-blue;
+        border-color: $bright-blue;
+      }
+    }
+
+    &::-moz-range-thumb {
+      width: 25px;
+      height: 25px;
+      border-radius: 50%;
+      background: $dark-grey;
+      border-width: 2px;
+      border-color: $light-grey;
+      border-style: solid;
+      cursor: pointer;
+      &:hover {
+        background: $bright-blue;
+        border-color: $bright-blue;
+      }
+    }
+  }
+
+  .slider-output {
+    display: inline-block;
+    position: relative;
+    top: 3px;
+    color: $almost-white;
+    line-height: 20px;
+    text-align: center;
+    border-radius: 10px;
+    border-style: solid;
+    border-width: 1px;
+    border-color: $light-grey;
+    padding: 5px 10px;
+    margin-left: 15px;
+
+    &:after {
+      position: absolute;
+      top: 8px;
+      left: -7px;
+      width: 0;
+      height: 0;
+      border-top: 7px solid transparent;
+      border-right: 7px solid $light-grey;
+      border-bottom: 7px solid transparent;
+      content: "";
+    }
   }
 }
