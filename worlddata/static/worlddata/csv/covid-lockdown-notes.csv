@@ -24,7 +24,7 @@ Code,Country,Restriction,Note
 23,Cabo Verde,1,Some islands still in lockdown.
 24,Canada,1,"Different policies for each territory, with most of them being under lockdown."
 25,Chad,1,"19:00 - 06:00 curfew to various cities, prominently the capital N'Djamena, Mandella, and Logone-Gana."
-26,Chile,2,"General Curfew in place from 22:00 to 05:00. Over 80's completely restricted from going out, and lockdown in several parts of the country."
+26,Chile,2,General Curfew in place from 22:00 to 05:00. Over 80's completely restricted from going out. Lockdown in several parts of the country where people are only allowed out with permits up to two times per week.
 27,China,1,Wuhan in lockdown.
 28,China,1,Shulan city in lockdown.
 29,Congo (Kinshasa),1,"Lockdowns in Goma, Butembo and Ben."
@@ -48,7 +48,7 @@ Code,Country,Restriction,Note
 47,Guyana,3,"Usual lockdown rules: going out of home is only allowed for certain pre-defined reasons (grocery shopping, helping someone in need, visit to doctor or pharmacy, exercising etc). Violators are fined. Additionally, a total ban in cars, motorcycles, boats etc."
 48,Honduras,3,24-hour curfew. Citizens can only go out 1 time per week according to their Id card number. No one allowed out on Weekends.
 49,Hungary,1,Lockdown still in place in Budapest and Pest country.
-50,India,2,"General lockdown 19:00 - 07:00. Additionally, stricter rules in certain areas."
+50,India,2,"General curfew 19:00 - 07:00. Additionally, stricter rules in certain areas."
 51,Italy,1,Localised quarantine in Lombardy 
 52,Jamaica,2,"General lockdown 20:00 - 06:00 (later moved to 15:00 - 07:00). Additionally, lockdown in certain areas."
 53,Kazakhstan,1,Self imposed lockdown and curfews in several regions or cities.
@@ -142,7 +142,7 @@ Code,Country,Restriction,Note
 141,Suriname,2,General curfew imposed 22:00 - 05:00
 142,Togo,2,General curfew imposed 20:00 - 06:00
 143,Uganda,2,General curfew imposed 19:00 - 06:30
-144,Argentina,3,"Lockdown measures with residents only allowed out of their homes in certain days (depending on their national identity card number). Children are now allowed to socialise for a maximum of 1 hour, in certain days, following social distancing rules and wearing masks."
+144,Argentina,1,"Provinces are given power to moderate their restriction measures - so restrictions vary. Some of the stricter measures in the capital include residents only being allowed out of their homes in certain days (depending on their national identity card number) and children not allowed  out at all (will later be allowed out for to socialise for a maximum of 1 hour, in certain days, following social distancing rules and wearing masks)."
 145,Aruba,2,General curfew imposed 00:00 - 05:00
 146,Australia,1,Lockdown in Melbourne and other areas in Victoria
 147,British Virgin Islands,3,"Lockdown, with residents only allowed out for specified reasons, on on specific days based on the first letter of their surname."
@@ -161,7 +161,7 @@ Code,Country,Restriction,Note
 160,British Virgin Islands,2,General curfew from 17:00 to 05:00
 161,Cuba,2,General curfew from 19:00 to 05:00
 162,Gabon,2,General curfew from 20:00 to 05:00
-163,Gambia,2,General curfew from 22:00 to 05:00
+163,Gambia,2,"General curfew from 22:00 to 05:00, and facemask use mandatory."
 164,Guatemala,2,General curfew from 16:00 to 04:00
 165,Guatemala,2,General curfew from 21:00 to 04:00
 166,Guyana,2,General curfew from 18:00 to 06:00
@@ -187,3 +187,70 @@ Code,Country,Restriction,Note
 186,Ukraine,1,A four zone system implemented with different restrictions for each zone
 187,United Kingdom,1,Regional lockdown in Leicester
 188,Zimbabwe,2,General curfew from 18:00 to 06:00
+189,Albania,2,General curdew from 22:00 to 06:00 with a couple of exceptions / vailable permits
+190,Albania,2,General curfew from 20:30 to 06:00
+191,Australia,1,Different policies for each territory. Melbourne and Victoria are now now allowing citizens to move freely as along as they stay inside a 25km radius from their homes.
+192,Australia,1,Lockdown in Sydney's Northern Beaches area
+193,Austria,1,Localised lockdowns.
+194,Austria,2,General curfew 20:00 - 06:00 with lockdown-like exceptions for movement during the restricted hours.
+195,Azerbaijan,1,Curfew in place in some regions.
+196,Azerbaijan,1,"Curfew in place in some regions, but mostly due to the conflict with Armenia, not due to COVID-19."
+197,Bahamas,2,General curfew between 21:00 and 05:00.
+198,Bahamas,2,General curfew between 22:00 and 05:00.
+199,Bahamas,2,General curfew between 19:00 and 05:00.
+200,Bangladesh,1,Color coded system for lockdowns and other COVID-19 measures.
+201,Barbados,2,General curfew between 00:00 and 05:00.
+202,Belgium,2,General curfew between 00:00 and 05:00.
+203,Benin,1,Some intercity travel restricted.
+204,Bermuda,2,General curfew between 23:00 and 06:00.
+205,Bosnia and Herzegovina,2,General curfew between 23:00 and 05:00.
+206,Botswana,1,some itnercity travel restricted (based in zones).
+207,Botswana,2,General curfew between 19:00 and 04:00.
+208,Canada,1,Some intercity / interstate travel restricted.
+209,Chad,2,General cufew between 23:00 and 05:00.
+210,Cyprus,2,General curfew between 21:00 and 05:00.
+211,Czechia,3,General lockdown and curfew from 21:00 to 05:00.
+212,Congo (Kinshasa),2,General curfew between 21:00 and 05:00.
+213,Denmark,0,Social distancing rules in place and external travel restricted.
+214,Dominica,2,General curfew imposed with different hours for different areas.
+215,Ecuador,2,General curfew between 22:00 and 04:00 and alcohol consumption prohibition.
+216,Eswatini,2,General curfew between 23:00 and 04:00.
+217,France,3,"General lockdown rules, plus a strictier 20:00 to 06:00 curfew."
+218,Greece,3,"General lockdown with usual rules, plus a more strict 21:00 - 5:00 curfew."
+219,Haiti,2,General curfew between 00:00 and 04:00.
+220,Honduras,3,General lockdown with citizens only allowed outside in certain days based on the last digit of their ID numbers.
+221,Hungary,2,General curfew between 00:00 and 05:00.
+221,Hungary,2,General curfew between 20:00 and 05:00.
+222,Jordan,2,General curfew between 01:00 and 06:00.
+223,Lebanon,2,General curfew between 01:00 and 06:00.
+224,Lebanon,2,General curfew between 01:00 and 06:00 plus a zone based system with additional restrictions for red / yellow zones.
+225,Lebanon,2,General curfew from 17:00 to 05:00.
+226,Lesotho,2,General curfew from 20:00 to 05:00.
+227,Luxemburg,2,General curfew between 23:00 and 06:00.
+228,Malaysia,1,Only two people of each household allowed out for buying necesities at a time in larger cities and intercity travel restricted.
+229,Moldova,1,Zone system with red areas having strict movement restrictions.
+230,Mongolia,3,General lockdown with movement only allowed between 07:00 - 10:00 and 17:00 - 20:00.
+231,Marocco,2,General curfew between 21:00 and 06:00.
+232,Namimbia,2,General curfew between 21:00 and 04:00.
+233,Nigeria,2,General curfew between 00:00 and 04:00.
+234,Oman,2,General curfew between 20:00 and 05:00.
+235,Panama,2,General curfew between 23:00 and 05:00.
+236,Panama,2,General curfew between 19:00 and 05:00.
+237,Paraguay,2,General curfew between 00:00 and 05:00.
+238,Peru,2,General curfew between 23:00 and 04:00.
+239,Romania,2,General curfew between 23:00 and 05:00.
+240,Rwanda,2,General curfew between 22:00 and 04:00.
+241,San Marino,2,General curfew between 00:30 and 06:00.
+242,Sierra Leone,2,General curfew between 23:00 and 05:00.
+243,Slovenia,2,General curfew between 21:00 and 06:00.
+244,Somalia,2,General curfew between 20:00 and 05:00.
+245,South Africa,2,General curfew between 00:00 and 04:00.
+246,South Africa,2,General curfew between 21:00 and 06:00.
+247,South Sudan,2,General curfew between 22:00 and 06:00.
+248,Spain,2,General curfew between 23:00 and 06:00.
+249,Suriname,2,General curfew between 23:00 and 05:00.
+250,Tunisia,2,General curfew between 20:00 and 05:00.
+251,Turkey,2,"Turkish citizens and residents are subject to a weekend curfew (Friday, 9 PM- Monday, 5 AM). Turkish citizens and residents aged 65 and older are restricted to their place of residence, and only allowed outside between 10:00 and 13:00. Turkish citizens and residents aged 20 and below are only allowed outside during the hours of 13:00 and 16:00.  "
+252,United Kingdom,1,Zone based system with different restrictions.
+253,Uzbekistan,1,Some restrictions to intercity travel.
+254,Yemen,1,Some travel restrictions in place. Ongoing conflict prevents a lot of otherwise normal activities like gatherings so excessive measures for COVID-19 probably not needed.

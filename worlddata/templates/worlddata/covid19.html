@@ -399,7 +399,7 @@
             <p>
                 *Source:
                 <a href="https://github.com/OxCGRT/covid-policy-tracker" target="_blank">Oxford University.</a>
-                Downloaded at 19/09/2020
+                Downloaded at 10/01/2021
             </p>
         </div>
     </figure>
@@ -471,7 +471,7 @@
         const all_countries_ex = [...new Set(files[3].map(d => d.Country))].sort()
         const all_weeks = [...new Set(files[3].map(d => d.Week))]
 
-        let cols = files[1].columns;
+        let cols = files[2].columns;
         cols.splice(0, 3);
         const all_dates = cols;
         // let date = all_dates[all_dates.length - 1];
