@@ -335,7 +335,7 @@
                     <span id="Test_date"> Downloaded</span> <br />
                     Government response data: <a href="https://github.com/OxCGRT/covid-policy-tracker"
                         target="_blank">Oxford University.</a>
-                    Downloaded at 19/09/2020.<br />
+                    Downloaded at 10/01/2021.<br />
                     Historical weekly death toll: <a href="https://www.mortality.org/" target="_blank">Human Mortality
                         Database. University of California, Berkeley (USA), and Max Planck Institute for Demographic
                         Research (Germany).</a>
@@ -471,15 +471,17 @@
         const all_countries_ex = [...new Set(files[3].map(d => d.Country))].sort()
         const all_weeks = [...new Set(files[3].map(d => d.Week))]
 
-        let cols = files[2].columns;
+        let cols = files[1].columns;
+        let lock_cols = files[2].columns;
         cols.splice(0, 3);
+        lock_cols.splice(0, 2);
         const all_dates = cols;
-        // let date = all_dates[all_dates.length - 1];
-        let all_week_dates = [];
-        for (let i = 0; i < (all_dates.length - 1); i += 7) {
-            all_week_dates.push(all_dates[i]);
+        const all_dates_lock = lock_cols;
+        let all_week_dates_lock = [];
+        for (let i = 0; i < (all_dates_lock.length - 1); i += 7) {
+            all_week_dates_lock.push(all_dates_lock[i]);
         }
-        all_week_dates.push(all_dates[all_dates.length - 1]);
+        all_week_dates_lock.push(all_dates_lock[all_dates_lock.length - 1]);
 
         // Default values
         let parameter = "Deaths per 1 million",
@@ -488,7 +490,7 @@
             timeframe = "all",
             current_dates = all_dates,
             total_excess = 0,
-            date = all_week_dates[0];
+            date_lock = all_week_dates_lock[all_week_dates_lock.length - 1];
         let timer;
 
         let map_container_class = ".covid-map",
@@ -623,8 +625,8 @@
                         cssClass = '';
 
                     var i;
-                    for (i = 0; i < current_dates.length; i++) {
-                        newDayValue = row[current_dates[i]];
+                    for (i = 0; i < all_dates_lock.length; i++) {
+                        newDayValue = row[all_dates_lock[i]];
                         if (newDayValue != oldDayValue) {
                             if (!started) {
                                 started = true;
@@ -651,13 +653,14 @@
                                     }
                                 } else {
                                     started = false;
+                                    to = 0;
                                 }
                             }
                         }
                         oldDayValue = newDayValue;
                     }
                     if (started && to == 0) {
-                        new_bands.push({ from: from, to: current_dates.length, className: cssClass })
+                        new_bands.push({ from: from, to: all_dates_lock.length, className: cssClass })
                     }
                 }
             }
@@ -838,7 +841,7 @@
             var new_data = [];
             for (let row of files[2]) {
                 if (row.Country != "World" && row.Measure == "restriction") {
-                    var value = row[date];
+                    var value = row[date_lock];
                     var country = getCountryCode(row.Country);
                     var noteCode = +get_map_response_note_code(row.Country);
                     var note = get_map_response_note(noteCode);
@@ -862,7 +865,7 @@
         function get_map_response_note_code(country) {
             for (let row of files[2]) {
                 if (row.Measure == "note" && row.Country == country) {
-                    return row[date];
+                    return row[date_lock];
                 }
             }
             console.log("No note code found for " + country);
@@ -1760,23 +1763,23 @@
         // Create a slider
         var sliderName = "play-slider",
             min = "0",
-            max = (all_week_dates.length - 1),
-            value = "0",
+            max = (all_week_dates_lock.length - 1),
+            value = max,
             containerWidth = 400;
-        sliderWidth = 150;
+        sliderWidth = 100;
         addSlider(responseFilters, sliderName, min, max, value, containerWidth, sliderWidth, sliderDateChange);
 
         let loopi = 0;
         let slider = document.getElementById(sliderName + "-slider");
         let shownDate = document.getElementById("play-slider-slider-output");
-        shownDate.innerHTML = date;
+        shownDate.innerHTML = date_lock;
         let playing = false;
 
         // Update chart data on slider change
         function sliderDateChange() {
-            date = all_week_dates[slider.value];
+            date_lock = all_week_dates_lock[slider.value];
             loopi = slider.value;
-            shownDate.innerHTML = date;
+            shownDate.innerHTML = date_lock;
             dateChange()
         }
 
@@ -1807,7 +1810,7 @@
             //cases_time_chart.redraw(animation);
             // deaths_time_chart.series[0].setData(timeData[1], false, false);
             // deaths_time_chart.redraw(animation);
-            if (date == all_week_dates[all_week_dates.length - 1] && playing) {
+            if (date_lock == all_week_dates_lock[all_week_dates_lock.length - 1] && playing) {
                 stopPlaying();
             }
         }
@@ -1824,16 +1827,16 @@
             if (playing) {
                 stopPlaying();
             } else {
-                if (date == all_week_dates[(all_week_dates.length - 1)]) {
+                if (date_lock == all_week_dates_lock[(all_week_dates_lock.length - 1)]) {
                     loopi = 0;
                 }
                 playing = true;
                 iSpan.classList.remove("i-play");
                 iSpan.classList.add("i-pause");
                 timer = setInterval(function () {
-                    if (loopi < all_week_dates.length) {
-                        date = all_week_dates[loopi];
-                        shownDate.innerHTML = date;
+                    if (loopi < all_week_dates_lock.length) {
+                        date_lock = all_week_dates_lock[loopi];
+                        shownDate.innerHTML = date_lock;
                         slider.value = loopi;
                         dateChange();
                         loopi++;
