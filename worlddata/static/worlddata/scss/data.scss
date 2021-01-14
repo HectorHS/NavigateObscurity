@@ -519,22 +519,22 @@ figure {
   border-radius: 5px;
 }
 .pl-africa {
-  background-color: #ffdc00;
+  background-color: #ffff1a;
 }
 .pl-asia {
-  background-color: #ff3299;
+  background-color: #d1158f;
 }
 .pl-europe {
-  background-color: #0074d9;
+  background-color: #0070d1;
 }
 .pl-lac {
-  background-color: #28cc5c;
+  background-color: #23ca23;
 }
 .pl-na {
-  background-color: #ff3d32;
+  background-color: #e63333;
 }
 .pl-oceania {
-  background-color: #e58939;
+  background-color: #772eb8;
 }
 .pl-births {
   background-color: #ddc3c3;
@@ -801,4 +801,8 @@ figure {
       }
     }
   }
+}
+
+#covid_top_cases .highcharts-data-label-color-1 text {
+  fill: #fff;
 }

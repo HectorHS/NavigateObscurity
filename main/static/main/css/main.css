@@ -19,7 +19,7 @@
   opacity: 0;
 }
 
-.hexagon-link-main:hover:before, .button:hover::before {
+.hexagon-link-main:hover:before, .button:hover:before {
   opacity: 1;
 }
 
@@ -35,8 +35,8 @@
 .header-title-banner {
   position: absolute;
   padding-left: 10px;
-  border-left: 5px solid #2f98d0;
-  color: #2f98d0;
+  border-left: 5px solid #1A94FF;
+  color: #1A94FF;
   font-size: 1.5em;
   font-weight: 500;
   letter-spacing: 2px;
@@ -466,7 +466,7 @@ nav ul li a:visited {
 
 nav ul li a:hover,
 nav ul li a:visited:hover {
-  background: #2f98d0;
+  background: #1A94FF;
   color: #dffcff;
 }
 
@@ -617,7 +617,7 @@ nav ul li ul li a {
   bottom: 5vh;
   left: 20px;
   padding-left: 10px;
-  border-left: 5px solid #2f98d0;
+  border-left: 5px solid #1A94FF;
   color: #222a2a;
   font-size: 150%;
   font-weight: 600;
@@ -744,37 +744,37 @@ nav ul li ul li a {
 }
 
 .hexagon-data:after, .hexagon-notes:after, .hexagon-data-index:after, .hexagon-node-index:after {
-  content: '';
+  content: "";
   display: block;
   padding-bottom: 86.602%;
   /* =  100 / tan(60) * 1.5 */
 }
 
-.hexagon-data:nth-child(5n+1) .hexagon-link-main, .hexagon-notes:nth-child(5n+1) .hexagon-link-main, .hexagon-data-index:nth-child(5n+1) .hexagon-link-main, .hexagon-node-index:nth-child(5n+1) .hexagon-link-main {
-  background-image: linear-gradient(to top right, #59acd9, #3984ac);
+.hexagon-data:nth-child(5n + 1) .hexagon-link-main, .hexagon-notes:nth-child(5n + 1) .hexagon-link-main, .hexagon-data-index:nth-child(5n + 1) .hexagon-link-main, .hexagon-node-index:nth-child(5n + 1) .hexagon-link-main {
+  background-image: linear-gradient(to top right, #66b8ff, #3984ac);
 }
 
-.hexagon-data:nth-child(5n+2) .hexagon-link-main, .hexagon-notes:nth-child(5n+2) .hexagon-link-main, .hexagon-data-index:nth-child(5n+2) .hexagon-link-main, .hexagon-node-index:nth-child(5n+2) .hexagon-link-main {
-  background-image: linear-gradient(to top right, #277daa, #204960);
+.hexagon-data:nth-child(5n + 2) .hexagon-link-main, .hexagon-notes:nth-child(5n + 2) .hexagon-link-main, .hexagon-data-index:nth-child(5n + 2) .hexagon-link-main, .hexagon-node-index:nth-child(5n + 2) .hexagon-link-main {
+  background-image: linear-gradient(to top right, #0088ff, #204960);
 }
 
-.hexagon-data:nth-child(5n+3) .hexagon-link-main, .hexagon-notes:nth-child(5n+3) .hexagon-link-main, .hexagon-data-index:nth-child(5n+3) .hexagon-link-main, .hexagon-node-index:nth-child(5n+3) .hexagon-link-main {
+.hexagon-data:nth-child(5n + 3) .hexagon-link-main, .hexagon-notes:nth-child(5n + 3) .hexagon-link-main, .hexagon-data-index:nth-child(5n + 3) .hexagon-link-main, .hexagon-node-index:nth-child(5n + 3) .hexagon-link-main {
   background-image: linear-gradient(to top right, #fbc99d, #539dc6);
 }
 
-.hexagon-data:nth-child(5n+4) .hexagon-link-main, .hexagon-notes:nth-child(5n+4) .hexagon-link-main, .hexagon-data-index:nth-child(5n+4) .hexagon-link-main, .hexagon-node-index:nth-child(5n+4) .hexagon-link-main {
-  background-image: linear-gradient(to top right, #2f98d0, #2d6786);
+.hexagon-data:nth-child(5n + 4) .hexagon-link-main, .hexagon-notes:nth-child(5n + 4) .hexagon-link-main, .hexagon-data-index:nth-child(5n + 4) .hexagon-link-main, .hexagon-node-index:nth-child(5n + 4) .hexagon-link-main {
+  background-image: linear-gradient(to top right, #33a0ff, #2d6786);
 }
 
-.hexagon-data:nth-child(5n+5) .hexagon-link-main, .hexagon-notes:nth-child(5n+5) .hexagon-link-main, .hexagon-data-index:nth-child(5n+5) .hexagon-link-main, .hexagon-node-index:nth-child(5n+5) .hexagon-link-main {
-  background-image: linear-gradient(to top right, #216a91, #132c39);
+.hexagon-data:nth-child(5n + 5) .hexagon-link-main, .hexagon-notes:nth-child(5n + 5) .hexagon-link-main, .hexagon-data-index:nth-child(5n + 5) .hexagon-link-main, .hexagon-node-index:nth-child(5n + 5) .hexagon-link-main {
+  background-image: linear-gradient(to top right, #0070D1, #132c39);
 }
 
 @media (min-width: 1025px) {
   .hexagon-data, .hexagon-notes, .hexagon-data-index, .hexagon-node-index {
     /* <- 2-3  hexagons per row */
   }
-  .hexagon-data:nth-child(5n+1), .hexagon-notes:nth-child(5n+1), .hexagon-data-index:nth-child(5n+1), .hexagon-node-index:nth-child(5n+1) {
+  .hexagon-data:nth-child(5n + 1), .hexagon-notes:nth-child(5n + 1), .hexagon-data-index:nth-child(5n + 1), .hexagon-node-index:nth-child(5n + 1) {
     /* first hexagon of odd rows */
     grid-column-start: 2;
   }
@@ -784,29 +784,29 @@ nav ul li ul li a {
   .hexagon-data, .hexagon-notes, .hexagon-data-index, .hexagon-node-index {
     /* <- 2-1  hexagons per row */
   }
-  .hexagon-data:nth-child(3n+3), .hexagon-notes:nth-child(3n+3), .hexagon-data-index:nth-child(3n+3), .hexagon-node-index:nth-child(3n+3) {
+  .hexagon-data:nth-child(3n + 3), .hexagon-notes:nth-child(3n + 3), .hexagon-data-index:nth-child(3n + 3), .hexagon-node-index:nth-child(3n + 3) {
     /* first hexagon of even rows */
     grid-column-start: 2;
   }
-  .hexagon-data:nth-child(5n+1) .hexagon-link-main, .hexagon-notes:nth-child(5n+1) .hexagon-link-main, .hexagon-data-index:nth-child(5n+1) .hexagon-link-main, .hexagon-node-index:nth-child(5n+1) .hexagon-link-main {
+  .hexagon-data:nth-child(5n + 1) .hexagon-link-main, .hexagon-notes:nth-child(5n + 1) .hexagon-link-main, .hexagon-data-index:nth-child(5n + 1) .hexagon-link-main, .hexagon-node-index:nth-child(5n + 1) .hexagon-link-main {
     background-image: linear-gradient(to top right, #fbc99d, #539dc6);
   }
-  .hexagon-data:nth-child(5n+2) .hexagon-link-main, .hexagon-notes:nth-child(5n+2) .hexagon-link-main, .hexagon-data-index:nth-child(5n+2) .hexagon-link-main, .hexagon-node-index:nth-child(5n+2) .hexagon-link-main {
-    background-image: linear-gradient(to top right, #59acd9, #3984ac);
+  .hexagon-data:nth-child(5n + 2) .hexagon-link-main, .hexagon-notes:nth-child(5n + 2) .hexagon-link-main, .hexagon-data-index:nth-child(5n + 2) .hexagon-link-main, .hexagon-node-index:nth-child(5n + 2) .hexagon-link-main {
+    background-image: linear-gradient(to top right, #66b8ff, #3984ac);
   }
-  .hexagon-data:nth-child(5n+3) .hexagon-link-main, .hexagon-notes:nth-child(5n+3) .hexagon-link-main, .hexagon-data-index:nth-child(5n+3) .hexagon-link-main, .hexagon-node-index:nth-child(5n+3) .hexagon-link-main {
-    background-image: linear-gradient(to top right, #2f98d0, #2d6786);
+  .hexagon-data:nth-child(5n + 3) .hexagon-link-main, .hexagon-notes:nth-child(5n + 3) .hexagon-link-main, .hexagon-data-index:nth-child(5n + 3) .hexagon-link-main, .hexagon-node-index:nth-child(5n + 3) .hexagon-link-main {
+    background-image: linear-gradient(to top right, #33a0ff, #2d6786);
   }
-  .hexagon-data:nth-child(5n+4) .hexagon-link-main, .hexagon-notes:nth-child(5n+4) .hexagon-link-main, .hexagon-data-index:nth-child(5n+4) .hexagon-link-main, .hexagon-node-index:nth-child(5n+4) .hexagon-link-main {
-    background-image: linear-gradient(to top right, #277daa, #204960);
+  .hexagon-data:nth-child(5n + 4) .hexagon-link-main, .hexagon-notes:nth-child(5n + 4) .hexagon-link-main, .hexagon-data-index:nth-child(5n + 4) .hexagon-link-main, .hexagon-node-index:nth-child(5n + 4) .hexagon-link-main {
+    background-image: linear-gradient(to top right, #0088ff, #204960);
   }
-  .hexagon-data:nth-child(5n+5) .hexagon-link-main, .hexagon-notes:nth-child(5n+5) .hexagon-link-main, .hexagon-data-index:nth-child(5n+5) .hexagon-link-main, .hexagon-node-index:nth-child(5n+5) .hexagon-link-main {
-    background-image: linear-gradient(to top right, #216a91, #132c39);
+  .hexagon-data:nth-child(5n + 5) .hexagon-link-main, .hexagon-notes:nth-child(5n + 5) .hexagon-link-main, .hexagon-data-index:nth-child(5n + 5) .hexagon-link-main, .hexagon-node-index:nth-child(5n + 5) .hexagon-link-main {
+    background-image: linear-gradient(to top right, #0070D1, #132c39);
   }
 }
 
 @media (max-width: 767px) {
-  .hexagon-data:nth-child(5n+1), .hexagon-notes:nth-child(5n+1), .hexagon-data-index:nth-child(5n+1), .hexagon-node-index:nth-child(5n+1) {
+  .hexagon-data:nth-child(5n + 1), .hexagon-notes:nth-child(5n + 1), .hexagon-data-index:nth-child(5n + 1), .hexagon-node-index:nth-child(5n + 1) {
     /* first hexagon of odd rows */
     grid-column-start: 2;
   }
@@ -826,6 +826,10 @@ nav ul li ul li a {
   display: none;
 }
 
+.hexagon-notes img {
+  width: 100%;
+}
+
 .hexagon-data-index img {
   height: 60%;
 }
@@ -838,7 +842,7 @@ nav ul li ul li a {
   visibility: hidden;
   position: absolute;
   width: 100%;
-  padding-bottom: 115.470%;
+  padding-bottom: 115.47%;
   /* =  width / sin(60) */
   overflow: hidden;
   outline: 1px solid transparent;
@@ -868,7 +872,7 @@ nav ul li ul li a {
 }
 
 .hexagon-link-main:before {
-  background-image: linear-gradient(to top right, rgba(255, 0, 0, 0) 0%, #d66808 80%);
+  background-image: linear-gradient(to top right, #1A94FF 5%, #d66808 70%);
 }
 
 .hexagon-link-main:hover h3 {
@@ -932,8 +936,9 @@ textarea {
   margin-top: 20px;
   border: none;
   border-radius: 35px;
+  box-shadow: 1px 1px 8px rgba(23, 28, 28, 0.9);
   transition: background-image 0.5s ease;
-  background-image: linear-gradient(to top right, #2e3838 0%, #2f98d0 60%);
+  background-image: linear-gradient(to top right, #2e3838 0%, #1A94FF 60%);
   cursor: pointer;
   color: #222a2a;
   font-size: 110%;
@@ -947,12 +952,16 @@ textarea {
   border-radius: 35px;
 }
 
+.button:hover {
+  box-shadow: 3px 3px 12px 5px rgba(23, 28, 28, 0.9);
+}
+
 a {
-  color: #2f98d0;
+  color: #1A94FF;
 }
 
 h3 {
-  color: #2f98d0;
+  color: #1A94FF;
   font-size: 150%;
   letter-spacing: 0.05em;
   word-spacing: 0.1em;
@@ -967,7 +976,7 @@ hr {
   margin-top: 50px;
   margin-bottom: 20px;
   border-width: 1px;
-  border-color: #2f98d0;
+  border-color: #1A94FF;
 }
 
 @media (min-width: 768px) {
@@ -1127,7 +1136,7 @@ hr {
 }
 
 .source-text a {
-  color: #2f98d0;
+  color: #1A94FF;
 }
 
 @media (min-width: 850px) {

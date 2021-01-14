@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <gexf xmlns="http://www.gexf.net/1.3" version="1.3" xmlns:viz="http://www.gexf.net/1.3/viz" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.gexf.net/1.3 http://www.gexf.net/1.3/gexf.xsd">
-  <meta lastmodifieddate="2020-08-22">
+  <meta lastmodifieddate="2021-01-14">
     <creator>Gephi 0.9</creator>
     <description></description>
   </meta>
@@ -9,405 +9,405 @@
       <attribute id="modularity class" title="modularity class" type="integer"></attribute>
     </attributes>
     <nodes>
-      <node id="paran" label="paran">
+      <node id="anomander" label="Anomander Rake">
+        <attvalues>
+          <attvalue for="modularity class" value="3"></attvalue>
+        </attvalues>
+        <viz:size value="100.0"></viz:size>
+        <viz:position x="-443.26846" y="555.0266"></viz:position>
+        <viz:color r="10" g="0" b="122"></viz:color>
+      </node>
+      <node id="paran" label="Ganoes Paran">
         <attvalues>
           <attvalue for="modularity class" value="0"></attvalue>
         </attvalues>
-        <viz:size value="33.26923"></viz:size>
-        <viz:position x="-310.1133" y="-158.34169"></viz:position>
+        <viz:size value="81.53846"></viz:size>
+        <viz:position x="-463.82693" y="-466.38715"></viz:position>
         <viz:color r="255" g="202" b="66"></viz:color>
       </node>
-      <node id="whiskeyjack" label="whiskeyjack">
+      <node id="lorn" label="Adjunct Lorn">
         <attvalues>
-          <attvalue for="modularity class" value="1"></attvalue>
+          <attvalue for="modularity class" value="0"></attvalue>
         </attvalues>
-        <viz:size value="22.5"></viz:size>
-        <viz:position x="217.78067" y="-300.08215"></viz:position>
-        <viz:color r="214" g="0" b="6"></viz:color>
+        <viz:size value="77.84615"></viz:size>
+        <viz:position x="-928.8362" y="-402.12433"></viz:position>
+        <viz:color r="255" g="202" b="66"></viz:color>
       </node>
-      <node id="shadowthrone" label="shadowthrone">
+      <node id="tattersail" label="Tattersail">
+        <attvalues>
+          <attvalue for="modularity class" value="0"></attvalue>
+        </attvalues>
+        <viz:size value="74.15385"></viz:size>
+        <viz:position x="-88.52504" y="-723.316"></viz:position>
+        <viz:color r="255" g="202" b="66"></viz:color>
+      </node>
+      <node id="crokus" label="Crokus">
+        <attvalues>
+          <attvalue for="modularity class" value="4"></attvalue>
+        </attvalues>
+        <viz:size value="74.15385"></viz:size>
+        <viz:position x="655.70703" y="341.13788"></viz:position>
+        <viz:color r="41" g="223" b="255"></viz:color>
+      </node>
+      <node id="sorry" label="Sorry">
         <attvalues>
           <attvalue for="modularity class" value="2"></attvalue>
         </attvalues>
-        <viz:size value="14.423078"></viz:size>
-        <viz:position x="95.34002" y="-463.35776"></viz:position>
+        <viz:size value="70.46154"></viz:size>
+        <viz:position x="221.70708" y="-280.1703"></viz:position>
         <viz:color r="0" g="199" b="2"></viz:color>
       </node>
-      <node id="sorry" label="sorry">
+      <node id="bridgeburners" label="Bridgeburners 9th squad">
+        <attvalues>
+          <attvalue for="modularity class" value="1"></attvalue>
+        </attvalues>
+        <viz:size value="70.46154"></viz:size>
+        <viz:position x="577.86163" y="-650.625"></viz:position>
+        <viz:color r="214" g="0" b="6"></viz:color>
+      </node>
+      <node id="kruppe" label="Kruppe">
+        <attvalues>
+          <attvalue for="modularity class" value="4"></attvalue>
+        </attvalues>
+        <viz:size value="63.076923"></viz:size>
+        <viz:position x="328.96402" y="230.85329"></viz:position>
+        <viz:color r="41" g="223" b="255"></viz:color>
+      </node>
+      <node id="kalam" label="Kalam">
+        <attvalues>
+          <attvalue for="modularity class" value="1"></attvalue>
+        </attvalues>
+        <viz:size value="59.38462"></viz:size>
+        <viz:position x="919.33966" y="-65.603516"></viz:position>
+        <viz:color r="214" g="0" b="6"></viz:color>
+      </node>
+      <node id="baruk" label="Baruk">
+        <attvalues>
+          <attvalue for="modularity class" value="4"></attvalue>
+        </attvalues>
+        <viz:size value="59.38462"></viz:size>
+        <viz:position x="51.595177" y="459.1886"></viz:position>
+        <viz:color r="41" g="223" b="255"></viz:color>
+      </node>
+      <node id="rallick" label="Rallick Nom">
+        <attvalues>
+          <attvalue for="modularity class" value="4"></attvalue>
+        </attvalues>
+        <viz:size value="59.38462"></viz:size>
+        <viz:position x="801.6407" y="569.605"></viz:position>
+        <viz:color r="41" g="223" b="255"></viz:color>
+      </node>
+      <node id="tayschrenn" label="Tayschrenn">
+        <attvalues>
+          <attvalue for="modularity class" value="0"></attvalue>
+        </attvalues>
+        <viz:size value="55.692314"></viz:size>
+        <viz:position x="-581.46716" y="-1295.1818"></viz:position>
+        <viz:color r="255" g="202" b="66"></viz:color>
+      </node>
+      <node id="whiskeyjack" label="Whiskeyjack">
+        <attvalues>
+          <attvalue for="modularity class" value="1"></attvalue>
+        </attvalues>
+        <viz:size value="52.0"></viz:size>
+        <viz:position x="984.11084" y="-855.161"></viz:position>
+        <viz:color r="214" g="0" b="6"></viz:color>
+      </node>
+      <node id="quick" label="Quick Ben">
+        <attvalues>
+          <attvalue for="modularity class" value="1"></attvalue>
+        </attvalues>
+        <viz:size value="48.307693"></viz:size>
+        <viz:position x="563.27875" y="-259.0552"></viz:position>
+        <viz:color r="214" g="0" b="6"></viz:color>
+      </node>
+      <node id="raest" label="Raest">
+        <attvalues>
+          <attvalue for="modularity class" value="6"></attvalue>
+        </attvalues>
+        <viz:size value="48.307693"></viz:size>
+        <viz:position x="-634.43353" y="138.26857"></viz:position>
+        <viz:color r="255" g="93" b="133"></viz:color>
+      </node>
+      <node id="oppon" label="Oppon">
         <attvalues>
           <attvalue for="modularity class" value="2"></attvalue>
         </attvalues>
-        <viz:size value="29.23077"></viz:size>
-        <viz:position x="-60.179047" y="-90.450134"></viz:position>
+        <viz:size value="44.61539"></viz:size>
+        <viz:position x="-347.6684" y="-185.91576"></viz:position>
         <viz:color r="0" g="199" b="2"></viz:color>
       </node>
-      <node id="hounds" label="hounds">
+      <node id="circle-breaker" label="Circle breaker">
+        <attvalues>
+          <attvalue for="modularity class" value="4"></attvalue>
+        </attvalues>
+        <viz:size value="44.61539"></viz:size>
+        <viz:position x="746.92676" y="831.6008"></viz:position>
+        <viz:color r="41" g="223" b="255"></viz:color>
+      </node>
+      <node id="hairlock" label="Hairlock">
+        <attvalues>
+          <attvalue for="modularity class" value="0"></attvalue>
+        </attvalues>
+        <viz:size value="40.923077"></viz:size>
+        <viz:position x="-187.91791" y="-1153.4751"></viz:position>
+        <viz:color r="255" g="202" b="66"></viz:color>
+      </node>
+      <node id="fiddler" label="Fiddler">
+        <attvalues>
+          <attvalue for="modularity class" value="1"></attvalue>
+        </attvalues>
+        <viz:size value="40.923077"></viz:size>
+        <viz:position x="1266.9902" y="-189.38208"></viz:position>
+        <viz:color r="214" g="0" b="6"></viz:color>
+      </node>
+      <node id="coll" label="Coll">
+        <attvalues>
+          <attvalue for="modularity class" value="4"></attvalue>
+        </attvalues>
+        <viz:size value="40.923077"></viz:size>
+        <viz:position x="688.35645" y="1049.5392"></viz:position>
+        <viz:color r="41" g="223" b="255"></viz:color>
+      </node>
+      <node id="tiste-andii" label="Tiste Andii">
+        <attvalues>
+          <attvalue for="modularity class" value="3"></attvalue>
+        </attvalues>
+        <viz:size value="37.23077"></viz:size>
+        <viz:position x="-631.87305" y="753.7294"></viz:position>
+        <viz:color r="10" g="0" b="122"></viz:color>
+      </node>
+      <node id="mallet" label="Mallet">
+        <attvalues>
+          <attvalue for="modularity class" value="1"></attvalue>
+        </attvalues>
+        <viz:size value="33.53846"></viz:size>
+        <viz:position x="1088.5486" y="-374.09113"></viz:position>
+        <viz:color r="214" g="0" b="6"></viz:color>
+      </node>
+      <node id="apsalar" label="Apsalar">
+        <attvalues>
+          <attvalue for="modularity class" value="6"></attvalue>
+        </attvalues>
+        <viz:size value="33.53846"></viz:size>
+        <viz:position x="443.5446" y="-52.910564"></viz:position>
+        <viz:color r="255" g="93" b="133"></viz:color>
+      </node>
+      <node id="shadowthrone" label="Shadowthrone (Ammanas)">
         <attvalues>
           <attvalue for="modularity class" value="2"></attvalue>
         </attvalues>
-        <viz:size value="11.730769"></viz:size>
-        <viz:position x="-29.394619" y="-384.34232"></viz:position>
+        <viz:size value="29.846157"></viz:size>
+        <viz:position x="648.2736" y="-1303.0027"></viz:position>
         <viz:color r="0" g="199" b="2"></viz:color>
       </node>
-      <node id="lorn" label="lorn">
-        <attvalues>
-          <attvalue for="modularity class" value="0"></attvalue>
-        </attvalues>
-        <viz:size value="31.923077"></viz:size>
-        <viz:position x="-479.64792" y="-134.91254"></viz:position>
-        <viz:color r="255" g="202" b="66"></viz:color>
-      </node>
-      <node id="tattersail" label="tattersail">
-        <attvalues>
-          <attvalue for="modularity class" value="0"></attvalue>
-        </attvalues>
-        <viz:size value="30.576923"></viz:size>
-        <viz:position x="-173.2845" y="-252.01367"></viz:position>
-        <viz:color r="255" g="202" b="66"></viz:color>
-      </node>
-      <node id="hairlock" label="hairlock">
-        <attvalues>
-          <attvalue for="modularity class" value="0"></attvalue>
-        </attvalues>
-        <viz:size value="18.461538"></viz:size>
-        <viz:position x="-209.52148" y="-408.8425"></viz:position>
-        <viz:color r="255" g="202" b="66"></viz:color>
-      </node>
-      <node id="kalam" label="kalam">
+      <node id="hedge" label="Hedge">
         <attvalues>
           <attvalue for="modularity class" value="1"></attvalue>
         </attvalues>
-        <viz:size value="25.192308"></viz:size>
-        <viz:position x="194.16617" y="-12.222666"></viz:position>
+        <viz:size value="29.846157"></viz:size>
+        <viz:position x="1353.1925" y="-597.5567"></viz:position>
         <viz:color r="214" g="0" b="6"></viz:color>
       </node>
-      <node id="quick" label="quick">
-        <attvalues>
-          <attvalue for="modularity class" value="1"></attvalue>
-        </attvalues>
-        <viz:size value="21.153847"></viz:size>
-        <viz:position x="64.352295" y="-82.75193"></viz:position>
-        <viz:color r="214" g="0" b="6"></viz:color>
-      </node>
-      <node id="fiddler" label="fiddler">
-        <attvalues>
-          <attvalue for="modularity class" value="1"></attvalue>
-        </attvalues>
-        <viz:size value="18.461538"></viz:size>
-        <viz:position x="320.91376" y="-57.35027"></viz:position>
-        <viz:color r="214" g="0" b="6"></viz:color>
-      </node>
-      <node id="mallet" label="mallet">
-        <attvalues>
-          <attvalue for="modularity class" value="1"></attvalue>
-        </attvalues>
-        <viz:size value="15.769231"></viz:size>
-        <viz:position x="255.85693" y="-124.69211"></viz:position>
-        <viz:color r="214" g="0" b="6"></viz:color>
-      </node>
-      <node id="trotts" label="trotts">
-        <attvalues>
-          <attvalue for="modularity class" value="1"></attvalue>
-        </attvalues>
-        <viz:size value="11.730769"></viz:size>
-        <viz:position x="255.08528" y="-220.0496"></viz:position>
-        <viz:color r="214" g="0" b="6"></viz:color>
-      </node>
-      <node id="hedge" label="hedge">
-        <attvalues>
-          <attvalue for="modularity class" value="1"></attvalue>
-        </attvalues>
-        <viz:size value="14.423078"></viz:size>
-        <viz:position x="352.3417" y="-206.16393"></viz:position>
-        <viz:color r="214" g="0" b="6"></viz:color>
-      </node>
-      <node id="tayschrenn" label="tayschrenn">
+      <node id="dujek" label="Dujek">
         <attvalues>
           <attvalue for="modularity class" value="0"></attvalue>
         </attvalues>
-        <viz:size value="23.846155"></viz:size>
-        <viz:position x="-353.003" y="-460.5064"></viz:position>
+        <viz:size value="29.846157"></viz:size>
+        <viz:position x="-149.52126" y="-1492.0813"></viz:position>
         <viz:color r="255" g="202" b="66"></viz:color>
       </node>
-      <node id="caladan" label="caladan">
-        <attvalues>
-          <attvalue for="modularity class" value="3"></attvalue>
-        </attvalues>
-        <viz:size value="13.076923"></viz:size>
-        <viz:position x="-601.3613" y="321.99854"></viz:position>
-        <viz:color r="10" g="0" b="122"></viz:color>
-      </node>
-      <node id="crimson-guard" label="crimson-guard">
-        <attvalues>
-          <attvalue for="modularity class" value="3"></attvalue>
-        </attvalues>
-        <viz:size value="9.038462"></viz:size>
-        <viz:position x="-457.25998" y="315.04242"></viz:position>
-        <viz:color r="10" g="0" b="122"></viz:color>
-      </node>
-      <node id="tiste-andii" label="tiste-andii">
-        <attvalues>
-          <attvalue for="modularity class" value="3"></attvalue>
-        </attvalues>
-        <viz:size value="17.115385"></viz:size>
-        <viz:position x="-371.38013" y="286.49243"></viz:position>
-        <viz:color r="10" g="0" b="122"></viz:color>
-      </node>
-      <node id="anomander" label="anomander">
-        <attvalues>
-          <attvalue for="modularity class" value="3"></attvalue>
-        </attvalues>
-        <viz:size value="40.0"></viz:size>
-        <viz:position x="-302.61804" y="214.04872"></viz:position>
-        <viz:color r="10" g="0" b="122"></viz:color>
-      </node>
-      <node id="nightchill" label="nightchill">
-        <attvalues>
-          <attvalue for="modularity class" value="0"></attvalue>
-        </attvalues>
-        <viz:size value="11.730769"></viz:size>
-        <viz:position x="-447.65533" y="-370.89493"></viz:position>
-        <viz:color r="255" g="202" b="66"></viz:color>
-      </node>
-      <node id="bellurdan" label="bellurdan">
-        <attvalues>
-          <attvalue for="modularity class" value="0"></attvalue>
-        </attvalues>
-        <viz:size value="13.076923"></viz:size>
-        <viz:position x="-571.017" y="-286.49997"></viz:position>
-        <viz:color r="255" g="202" b="66"></viz:color>
-      </node>
-      <node id="oppon" label="oppon">
-        <attvalues>
-          <attvalue for="modularity class" value="2"></attvalue>
-        </attvalues>
-        <viz:size value="19.807693"></viz:size>
-        <viz:position x="-267.76385" y="-56.086502"></viz:position>
-        <viz:color r="0" g="199" b="2"></viz:color>
-      </node>
-      <node id="toc" label="toc">
-        <attvalues>
-          <attvalue for="modularity class" value="0"></attvalue>
-        </attvalues>
-        <viz:size value="11.730769"></viz:size>
-        <viz:position x="-402.58057" y="-250.89093"></viz:position>
-        <viz:color r="255" g="202" b="66"></viz:color>
-      </node>
-      <node id="dujek" label="dujek">
-        <attvalues>
-          <attvalue for="modularity class" value="0"></attvalue>
-        </attvalues>
-        <viz:size value="14.423078"></viz:size>
-        <viz:position x="-195.5227" y="-532.2927"></viz:position>
-        <viz:color r="255" g="202" b="66"></viz:color>
-      </node>
-      <node id="kruppe" label="kruppe">
+      <node id="murillio" label="Murillio">
         <attvalues>
           <attvalue for="modularity class" value="4"></attvalue>
         </attvalues>
-        <viz:size value="26.538462"></viz:size>
-        <viz:position x="-21.07495" y="95.86054"></viz:position>
+        <viz:size value="29.846157"></viz:size>
+        <viz:position x="106.333755" y="745.8135"></viz:position>
         <viz:color r="41" g="223" b="255"></viz:color>
       </node>
-      <node id="crokus" label="crokus">
-        <attvalues>
-          <attvalue for="modularity class" value="4"></attvalue>
-        </attvalues>
-        <viz:size value="30.576923"></viz:size>
-        <viz:position x="98.050095" y="136.06847"></viz:position>
-        <viz:color r="41" g="223" b="255"></viz:color>
-      </node>
-      <node id="baruk" label="baruk">
-        <attvalues>
-          <attvalue for="modularity class" value="4"></attvalue>
-        </attvalues>
-        <viz:size value="25.192308"></viz:size>
-        <viz:position x="-122.199005" y="179.10779"></viz:position>
-        <viz:color r="41" g="223" b="255"></viz:color>
-      </node>
-      <node id="circle-breaker" label="circle-breaker">
-        <attvalues>
-          <attvalue for="modularity class" value="4"></attvalue>
-        </attvalues>
-        <viz:size value="19.807693"></viz:size>
-        <viz:position x="131.3073" y="314.8831"></viz:position>
-        <viz:color r="41" g="223" b="255"></viz:color>
-      </node>
-      <node id="eel" label="eel">
-        <attvalues>
-          <attvalue for="modularity class" value="4"></attvalue>
-        </attvalues>
-        <viz:size value="9.038462"></viz:size>
-        <viz:position x="-90.59263" y="108.95663"></viz:position>
-        <viz:color r="41" g="223" b="255"></viz:color>
-      </node>
-      <node id="crone" label="crone">
-        <attvalues>
-          <attvalue for="modularity class" value="3"></attvalue>
-        </attvalues>
-        <viz:size value="9.038462"></viz:size>
-        <viz:position x="-511.93585" y="366.60437"></viz:position>
-        <viz:color r="10" g="0" b="122"></viz:color>
-      </node>
-      <node id="turban-orr" label="turban-orr">
+      <node id="vorcan" label="Vorcan">
         <attvalues>
           <attvalue for="modularity class" value="5"></attvalue>
         </attvalues>
-        <viz:size value="10.384615"></viz:size>
-        <viz:position x="209.05333" y="497.5531"></viz:position>
+        <viz:size value="29.846157"></viz:size>
+        <viz:position x="-83.65147" y="1108.8569"></viz:position>
         <viz:color r="0" g="124" b="194"></viz:color>
       </node>
-      <node id="rallick" label="rallick">
+      <node id="caladan" label="Caladan Brood">
+        <attvalues>
+          <attvalue for="modularity class" value="3"></attvalue>
+        </attvalues>
+        <viz:size value="26.153847"></viz:size>
+        <viz:position x="-1262.6787" y="851.1175"></viz:position>
+        <viz:color r="10" g="0" b="122"></viz:color>
+      </node>
+      <node id="bellurdan" label="Bellurdan">
+        <attvalues>
+          <attvalue for="modularity class" value="0"></attvalue>
+        </attvalues>
+        <viz:size value="26.153847"></viz:size>
+        <viz:position x="-1179.4486" y="-817.907"></viz:position>
+        <viz:color r="255" g="202" b="66"></viz:color>
+      </node>
+      <node id="tool" label="Tool (Onos T'oolan)">
+        <attvalues>
+          <attvalue for="modularity class" value="6"></attvalue>
+        </attvalues>
+        <viz:size value="26.153847"></viz:size>
+        <viz:position x="-1235.116" y="-36.814957"></viz:position>
+        <viz:color r="255" g="93" b="133"></viz:color>
+      </node>
+      <node id="hounds" label="The hounds of Shadow">
+        <attvalues>
+          <attvalue for="modularity class" value="2"></attvalue>
+        </attvalues>
+        <viz:size value="22.461538"></viz:size>
+        <viz:position x="306.14435" y="-1086.2745"></viz:position>
+        <viz:color r="0" g="199" b="2"></viz:color>
+      </node>
+      <node id="trotts" label="Trotts">
+        <attvalues>
+          <attvalue for="modularity class" value="1"></attvalue>
+        </attvalues>
+        <viz:size value="22.461538"></viz:size>
+        <viz:position x="1086.4321" y="-635.6431"></viz:position>
+        <viz:color r="214" g="0" b="6"></viz:color>
+      </node>
+      <node id="nightchill" label="Nightchill">
+        <attvalues>
+          <attvalue for="modularity class" value="0"></attvalue>
+        </attvalues>
+        <viz:size value="22.461538"></viz:size>
+        <viz:position x="-841.0851" y="-1049.3903"></viz:position>
+        <viz:color r="255" g="202" b="66"></viz:color>
+      </node>
+      <node id="toc" label="Toc the younger">
+        <attvalues>
+          <attvalue for="modularity class" value="0"></attvalue>
+        </attvalues>
+        <viz:size value="22.461538"></viz:size>
+        <viz:position x="-717.4514" y="-720.2365"></viz:position>
+        <viz:color r="255" g="202" b="66"></viz:color>
+      </node>
+      <node id="turban-orr" label="Turban Orr">
+        <attvalues>
+          <attvalue for="modularity class" value="5"></attvalue>
+        </attvalues>
+        <viz:size value="18.76923"></viz:size>
+        <viz:position x="960.17303" y="1332.6387"></viz:position>
+        <viz:color r="0" g="124" b="194"></viz:color>
+      </node>
+      <node id="simtal" label="Simtal">
+        <attvalues>
+          <attvalue for="modularity class" value="5"></attvalue>
+        </attvalues>
+        <viz:size value="18.76923"></viz:size>
+        <viz:position x="795.84436" y="1222.372"></viz:position>
+        <viz:color r="0" g="124" b="194"></viz:color>
+      </node>
+      <node id="mammot" label="Mammot">
         <attvalues>
           <attvalue for="modularity class" value="4"></attvalue>
         </attvalues>
-        <viz:size value="25.192308"></viz:size>
-        <viz:position x="151.2551" y="219.36377"></viz:position>
+        <viz:size value="18.76923"></viz:size>
+        <viz:position x="260.6235" y="1207.6993"></viz:position>
         <viz:color r="41" g="223" b="255"></viz:color>
       </node>
-      <node id="simtal" label="simtal">
+      <node id="krul" label="K'rul">
+        <attvalues>
+          <attvalue for="modularity class" value="2"></attvalue>
+        </attvalues>
+        <viz:size value="18.76923"></viz:size>
+        <viz:position x="-1517.8926" y="356.96753"></viz:position>
+        <viz:color r="0" g="199" b="2"></viz:color>
+      </node>
+      <node id="crimson-guard" label="The Crimson Guard">
+        <attvalues>
+          <attvalue for="modularity class" value="3"></attvalue>
+        </attvalues>
+        <viz:size value="15.076923"></viz:size>
+        <viz:position x="-867.42926" y="832.0379"></viz:position>
+        <viz:color r="10" g="0" b="122"></viz:color>
+      </node>
+      <node id="eel" label="The Eel">
+        <attvalues>
+          <attvalue for="modularity class" value="4"></attvalue>
+        </attvalues>
+        <viz:size value="15.076923"></viz:size>
+        <viz:position x="138.28696" y="266.774"></viz:position>
+        <viz:color r="41" g="223" b="255"></viz:color>
+      </node>
+      <node id="crone" label="Crone">
+        <attvalues>
+          <attvalue for="modularity class" value="3"></attvalue>
+        </attvalues>
+        <viz:size value="15.076923"></viz:size>
+        <viz:position x="-1017.3974" y="973.46497"></viz:position>
+        <viz:color r="10" g="0" b="122"></viz:color>
+      </node>
+      <node id="irilta-meese" label="Irilta &amp; Meese">
+        <attvalues>
+          <attvalue for="modularity class" value="4"></attvalue>
+        </attvalues>
+        <viz:size value="15.076923"></viz:size>
+        <viz:position x="1189.4419" y="385.86862"></viz:position>
+        <viz:color r="41" g="223" b="255"></viz:color>
+      </node>
+      <node id="ocelot" label="Ocelot">
         <attvalues>
           <attvalue for="modularity class" value="5"></attvalue>
         </attvalues>
-        <viz:size value="10.384615"></viz:size>
-        <viz:position x="149.14185" y="457.3517"></viz:position>
+        <viz:size value="11.384615"></viz:size>
+        <viz:position x="1115.3484" y="1377.8917"></viz:position>
         <viz:color r="0" g="124" b="194"></viz:color>
       </node>
-      <node id="ocelot" label="ocelot">
+      <node id="pran-chole" label="Pran Chole">
         <attvalues>
-          <attvalue for="modularity class" value="5"></attvalue>
+          <attvalue for="modularity class" value="6"></attvalue>
+        </attvalues>
+        <viz:size value="11.384615"></viz:size>
+        <viz:position x="-933.53973" y="501.42902"></viz:position>
+        <viz:color r="255" g="93" b="133"></viz:color>
+      </node>
+      <node id="derudan" label="Derudan">
+        <attvalues>
+          <attvalue for="modularity class" value="4"></attvalue>
+        </attvalues>
+        <viz:size value="11.384615"></viz:size>
+        <viz:position x="1156.1526" y="627.48895"></viz:position>
+        <viz:color r="41" g="223" b="255"></viz:color>
+      </node>
+      <node id="akaronys" label="A'Karonys">
+        <attvalues>
+          <attvalue for="modularity class" value="0"></attvalue>
         </attvalues>
         <viz:size value="7.6923075"></viz:size>
-        <viz:position x="265.6277" y="514.05164"></viz:position>
-        <viz:color r="0" g="124" b="194"></viz:color>
-      </node>
-      <node id="murillio" label="murillio">
-        <attvalues>
-          <attvalue for="modularity class" value="4"></attvalue>
-        </attvalues>
-        <viz:size value="14.423078"></viz:size>
-        <viz:position x="-102.24223" y="283.60645"></viz:position>
-        <viz:color r="41" g="223" b="255"></viz:color>
-      </node>
-      <node id="coll" label="coll">
-        <attvalues>
-          <attvalue for="modularity class" value="4"></attvalue>
-        </attvalues>
-        <viz:size value="18.461538"></viz:size>
-        <viz:position x="109.95354" y="394.33978"></viz:position>
-        <viz:color r="41" g="223" b="255"></viz:color>
-      </node>
-      <node id="tool" label="tool">
-        <attvalues>
-          <attvalue for="modularity class" value="6"></attvalue>
-        </attvalues>
-        <viz:size value="13.076923"></viz:size>
-        <viz:position x="-591.31244" y="-1.7268372"></viz:position>
-        <viz:color r="255" g="93" b="133"></viz:color>
-      </node>
-      <node id="mammot" label="mammot">
-        <attvalues>
-          <attvalue for="modularity class" value="4"></attvalue>
-        </attvalues>
-        <viz:size value="10.384615"></viz:size>
-        <viz:position x="-45.99077" y="452.00232"></viz:position>
-        <viz:color r="41" g="223" b="255"></viz:color>
-      </node>
-      <node id="irilta-meese" label="irilta-meese">
-        <attvalues>
-          <attvalue for="modularity class" value="4"></attvalue>
-        </attvalues>
-        <viz:size value="9.038462"></viz:size>
-        <viz:position x="292.64096" y="152.37654"></viz:position>
-        <viz:color r="41" g="223" b="255"></viz:color>
-      </node>
-      <node id="vorcan" label="vorcan">
-        <attvalues>
-          <attvalue for="modularity class" value="5"></attvalue>
-        </attvalues>
-        <viz:size value="14.423078"></viz:size>
-        <viz:position x="-171.50768" y="415.96603"></viz:position>
-        <viz:color r="0" g="124" b="194"></viz:color>
-      </node>
-      <node id="raest" label="raest">
-        <attvalues>
-          <attvalue for="modularity class" value="6"></attvalue>
-        </attvalues>
-        <viz:size value="21.153847"></viz:size>
-        <viz:position x="-372.31363" y="62.105698"></viz:position>
-        <viz:color r="255" g="93" b="133"></viz:color>
-      </node>
-      <node id="apsalar" label="apsalar">
-        <attvalues>
-          <attvalue for="modularity class" value="6"></attvalue>
-        </attvalues>
-        <viz:size value="15.769231"></viz:size>
-        <viz:position x="20.6992" y="-7.595028"></viz:position>
-        <viz:color r="255" g="93" b="133"></viz:color>
-      </node>
-      <node id="icarium-mappo" label="icarium-mappo">
-        <attvalues>
-          <attvalue for="modularity class" value="6"></attvalue>
-        </attvalues>
-        <viz:size value="5.0"></viz:size>
-        <viz:position x="-303.55206" y="488.8755"></viz:position>
-        <viz:color r="255" g="93" b="133"></viz:color>
-      </node>
-      <node id="krul" label="krul">
-        <attvalues>
-          <attvalue for="modularity class" value="2"></attvalue>
-        </attvalues>
-        <viz:size value="10.384615"></viz:size>
-        <viz:position x="-694.4081" y="141.83969"></viz:position>
-        <viz:color r="0" g="199" b="2"></viz:color>
-      </node>
-      <node id="akaronys" label="akaronys">
-        <attvalues>
-          <attvalue for="modularity class" value="0"></attvalue>
-        </attvalues>
-        <viz:size value="6.3461537"></viz:size>
-        <viz:position x="-680.40234" y="-277.67645"></viz:position>
+        <viz:position x="-1479.4768" y="-793.7053"></viz:position>
         <viz:color r="255" g="202" b="66"></viz:color>
       </node>
-      <node id="calot" label="calot">
+      <node id="calot" label="Calot">
         <attvalues>
           <attvalue for="modularity class" value="0"></attvalue>
-        </attvalues>
-        <viz:size value="6.3461537"></viz:size>
-        <viz:position x="-672.8506" y="-374.35913"></viz:position>
-        <viz:color r="255" g="202" b="66"></viz:color>
-      </node>
-      <node id="laseen" label="laseen">
-        <attvalues>
-          <attvalue for="modularity class" value="0"></attvalue>
-        </attvalues>
-        <viz:size value="6.3461537"></viz:size>
-        <viz:position x="-490.17853" y="-529.0924"></viz:position>
-        <viz:color r="255" g="202" b="66"></viz:color>
-      </node>
-      <node id="bridgeburners" label="bridgeburners">
-        <attvalues>
-          <attvalue for="modularity class" value="1"></attvalue>
-        </attvalues>
-        <viz:size value="29.23077"></viz:size>
-        <viz:position x="69.66896" y="-225.51175"></viz:position>
-        <viz:color r="214" g="0" b="6"></viz:color>
-      </node>
-      <node id="pran-chole" label="pran-chole">
-        <attvalues>
-          <attvalue for="modularity class" value="6"></attvalue>
         </attvalues>
         <viz:size value="7.6923075"></viz:size>
-        <viz:position x="-481.36276" y="194.50793"></viz:position>
-        <viz:color r="255" g="93" b="133"></viz:color>
+        <viz:position x="-1458.7634" y="-1058.8921"></viz:position>
+        <viz:color r="255" g="202" b="66"></viz:color>
       </node>
-      <node id="derudan" label="derudan">
+      <node id="laseen" label="Empress Laseen">
         <attvalues>
-          <attvalue for="modularity class" value="4"></attvalue>
+          <attvalue for="modularity class" value="0"></attvalue>
         </attvalues>
         <viz:size value="7.6923075"></viz:size>
-        <viz:position x="280.5042" y="240.46729"></viz:position>
-        <viz:color r="41" g="223" b="255"></viz:color>
+        <viz:position x="-957.72015" y="-1483.3033"></viz:position>
+        <viz:color r="255" g="202" b="66"></viz:color>
+      </node>
+      <node id="icarium-mappo" label="Icarium &amp; Mappo">
+        <attvalues>
+          <attvalue for="modularity class" value="6"></attvalue>
+        </attvalues>
+        <viz:size value="4.0"></viz:size>
+        <viz:position x="-445.83035" y="1308.8372"></viz:position>
+        <viz:color r="255" g="93" b="133"></viz:color>
       </node>
     </nodes>
     <edges>

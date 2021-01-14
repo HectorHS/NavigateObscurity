@@ -350,11 +350,11 @@
 <!-- Viz 2 - lockdown map -->
 <div class="container limited-width">
     <p>
-        Wherever you were, chances are that sometime during March or April you were told to stay home. Some governments
+        Wherever you were, chances are that sometime during 2020 you were told to stay home. Some governments
         merely outlined recommendations for the public, but most enforced rules to make citizens comply. Here you can
-        see a rough visualization of government responses when it came to public movement restriction. For simplicity I
+        see a rough visualization of government responses when it came to public movement restrictions. For simplicity I
         am only using 4 broad categories of responses, but you can find more specific information by hovering over each
-        country. The four categories range from no restrictions imposed (although recommendations are always made), to
+        country. The four categories range from no restrictions imposed (although recommendations were typically made), to
         movement restrictions only in parts of the country, to restrictions for the whole country but only in particular
         times (curfew), to restrictions in the whole country all of the time (lockdown). Of course, many more government
         responses were put in place at the same time like banning gatherings, imposing social distancing rules, closing
@@ -375,23 +375,6 @@
             <div class="chart-options" style="max-width:100%">
                 <div class="secondary-legend"></div>
             </div>
-            <!-- </div>
-            </div> -->
-            <!-- <div class="dashboard-side-40 dashboard-side">
-                <div class="side-chart-container" style="margin-bottom:0;">
-                    <div class="chart-container-dashboard covid-cases-time filters-on-top bars">
-                        <div id="covid_cases_time" class="bars" style="width:100%;"></div>
-                    </div>
-                </div>
-                <div class="side-chart-container" style="margin-bottom:0;">
-                    <div class="chart-container-dashboard covid-deaths-time filters-on-top bars">
-                        <div id="covid_deaths_time" class="bars" style="width:100%;"></div>
-                    </div>
-                </div>
-
-            </div> -->
-
-
         </div>
 
 
@@ -517,10 +500,10 @@
             initial_map_response_data = [];
 
         var getColor = {
-            "Active": "5",
-            "Deaths": "3",
-            "Recovered": "2",
-            "Confirmed": "7"
+            "Active": "4",
+            "Deaths": "6",
+            "Recovered": "42",
+            "Confirmed": "1"
         };
 
         // Set html dates
@@ -872,50 +855,6 @@
             return 0;
         }
 
-        // function get_top_cases_time_data() {
-        //     let country_cases_data = [],
-        //         country_deaths_data = [],
-        //         top_cases = [],
-        //         top_deaths = [];
-        //     //let days = all_dates.slice(Math.max(all_dates.length - 5, 0))
-        //     for (let row of files[1]) {
-        //         if (row.Parameter == "Confirmed" && row.Value == "absolute" && row.Country != "World") {
-        //             let pop = getCountryPopulation(row.Country)
-        //             let con = row[date] / (pop / 1000000)
-        //             country_cases_data.push({ id: row.Country, name: row.Country, y: +row[date], colorIndex: getCountryColor(row.Country) });
-        //         } else if (row.Parameter == "Deaths" && row.Value == "absolute" && row.Country != "World") {
-        //             let pop = getCountryPopulation(row.Country)
-        //             let dea = row[date] / (pop / 1000000)
-        //             country_deaths_data.push({ country: row.Country, deaths: +row[date] });
-        //         }
-        //     }
-        //     // console.log(country_cases_data.length);
-        //     country_cases_data.sort((a, b) => parseFloat(a.y) - parseFloat(b.y));
-        //     country_cases_data.reverse();
-        //     let top_cases_data = country_cases_data.slice(0, 5);
-        //     // console.log(top_cases_data.length);
-
-        //     country_deaths_data.sort((a, b) => parseFloat(a.deaths) - parseFloat(b.deaths));
-        //     country_deaths_data.reverse();
-        //     let top_deaths_data = country_deaths_data.slice(0, 5);
-
-        //     for (let d of top_deaths_data) {
-        //         top_deaths.push([d.country, d.deaths]);
-        //     }
-        //     let test_data = [{ name: "USA", name: "USA", y: 2163290, colorIndex: 0 },
-        //     { name: "Brazil", name: "Brazil", y: 955377, colorIndex: 0 },
-        //     { name: "Russia", name: "Russia", y: 552549, colorIndex: 2 },
-        //     { name: "India", name: "India", y: 366946, colorIndex: 3 },
-        //     { name: "United Kingdom", name: "United Kingdom", y: 299251, colorIndex: 5 },
-        //     { name: "Spain", name: "Spain", y: 244683, colorIndex: 8 },
-        //     { name: "Peru", name: "Peru", y: 240908, colorIndex: 4 },
-        //     { name: "Italy", name: "Italy", y: 237828, colorIndex: 2 },
-        //     { name: "Chile", name: "Chile", y: 220628, colorIndex: 1 },
-        //     { name: "Iran", name: "Iran", y: 195051, colorIndex: 12 }]
-
-        //     return ([top_cases_data, top_deaths]);
-        // }
-
         function getCountryPopulation(country) {
             for (let poprow of files[4]) {
                 if (poprow.Country == country) {
@@ -934,9 +873,6 @@
         initial_latest_excess_data = get_latest_excess_data();
         initialise_top_cases_data();
         initial_map_response_data = get_map_response_data();
-        // let initial_time_data = get_top_cases_time_data();
-        // initial_cases_time_data = initial_time_data[0];
-        // initial_deaths_time_data = initial_time_data[1];
 
         // Dashboard 1
         // Initiate the map chart
@@ -966,11 +902,11 @@
                 max: 500,
                 min: 0,
                 stops: [
-                    [0, '#0074D9'],
-                    [0.35, '#2ECC40'],
+                    [0, '#0070D1'],
+                    [0.35, '#23CA23'],
                     [0.5, '#DDDDDD'],
-                    [0.65, '#FFDC00'],
-                    [0.95, '#FF4136']
+                    [0.65, '#FFFF1A'],
+                    [0.95, '#E63333']
                 ],
             },
             tooltip: {
@@ -1207,14 +1143,14 @@
                 id: "old",
                 name: "2015-9 average",
                 type: 'column',
-                colorIndex: 12,
+                colorIndex: 43,
                 data: initial_old_excess_data
             },
             {
                 id: "2020",
                 name: "2020",
                 type: 'spline',
-                colorIndex: 4,
+                colorIndex: 9,
                 data: initial_latest_excess_data
             },
             ],
@@ -1279,7 +1215,7 @@
             series: [{
                 id: "cases",
                 name: "cases",
-                colorIndex: 7,
+                colorIndex: 1,
                 data: top_cases_values
             },
             ],
@@ -1344,7 +1280,7 @@
             series: [{
                 id: "deaths",
                 name: "deaths",
-                colorIndex: 3,
+                colorIndex: 6,
                 data: top_deaths_values
             },
             ],
@@ -1372,9 +1308,9 @@
                 min: 0,
                 stops: [
                     [0, '#DDDDDD'],
-                    [0.33, '#794f99'],
-                    [0.66, '#8c1c54'],
-                    [0.95, '#ff3299']
+                    [0.33, '#9D61D1'],
+                    [0.66, '#ED45B2'],
+                    [0.95, '#970F67']
                 ],
             },
             tooltip: {
@@ -1403,163 +1339,6 @@
             }]
         });
 
-        // let cases_time_chart = Highcharts.chart('covid_cases_time', {
-        //     chart: {
-        //         type: 'bar',
-        //     },
-
-        //     title: {
-        //         align: 'left',
-        //         text: "Confirmed cases per 1m people"
-        //     },
-        //     xAxis: {
-        //         type: 'category',
-        //         //categories: top_cases_countries_time,
-        //         title: {
-        //             enabled: false
-        //         },
-        //     },
-        //     yAxis: {
-        //         title: {
-        //             enabled: false
-        //         },
-        //         labels: {
-        //             enabled: false
-        //         }
-        //     },
-        //     tooltip: {
-        //         split: false,
-        //     },
-        //     plotOptions: {
-        //         bar: {
-        //             dataLabels: {
-        //                 enabled: true,
-        //                 // formatter: function () {
-        //                 //     return numberFormatterPercentage(this.y);
-        //                 // },
-
-        //             },
-        //             borderRadius: 3,
-        //             pointPadding: 0,
-        //         },
-        //         series: {
-        //             groupPadding: 0.1,
-        //             //animation: false
-        //             animation: {
-        //                 duration: 100
-        //             },
-        //             dataSorting: {
-        //                 enabled: true,
-        //                 // For some reason this is causing console errors
-        //                 //matchByName: true,
-        //             },
-        //             // dataLabels: [{
-        //             //     enabled: true,
-        //             //     formatter: function () {
-        //             //         let val = numberFormatterPercentage(this.y);
-        //             //         return val;
-        //             //     },
-        //             // }],
-        //         }
-        //     },
-        //     // tooltip: {
-        //     //     // formatter: function () {
-        //     //     //     var title = fCapital(this.key);
-        //     //     //     var value = numberFormatterPercentage(this.y);
-        //     //     //     return '<text><span style="font-size: 1.1em"><strong>' + title + '</strong></span><br>New cases per day per 1m people (5 day average): ' + value + '</text>';
-        //     //     // },
-        //     //     useHTML: true
-        //     // },
-        //     series: [{
-        //         id: "cases",
-        //         name: "cases",
-
-        //         // colorIndex: 7,
-        //         // colorByPoint: true,
-        //         data: initial_cases_time_data
-        //     },
-        //     ],
-        //     //series: initial_cases_time_data,
-        //     legend: {
-        //         enabled: false
-        //     }
-        // });
-
-        // let deaths_time_chart = Highcharts.chart('covid_deaths_time', {
-        //     chart: {
-        //         type: 'bar',
-        //     },
-
-        //     title: {
-        //         align: 'left',
-        //         text: "Confirmed deaths per 1m people"
-        //     },
-        //     xAxis: {
-        //         type: 'category',
-        //         //categories: top_cases_countries_time,
-        //         title: {
-        //             enabled: false
-        //         },
-        //     },
-        //     yAxis: {
-        //         title: {
-        //             enabled: false
-        //         },
-        //         labels: {
-        //             enabled: false
-        //         }
-        //     },
-        //     tooltip: {
-        //         split: false,
-        //     },
-        //     plotOptions: {
-        //         bar: {
-        //             dataLabels: {
-        //                 enabled: true,
-        //                 // formatter: function () {
-        //                 //     return numberFormatterPercentage(this.y);
-        //                 // },
-
-        //             },
-        //             borderRadius: 3,
-        //             pointPadding: 0
-        //         },
-        //         series: {
-        //             groupPadding: 0.1,
-        //         }
-        //     },
-        //     tooltip: {
-        //         // formatter: function () {
-        //         //     var title = fCapital(this.key);
-        //         //     var value = numberFormatterPercentage(this.y);
-        //         //     return '<text><span style="font-size: 1.1em"><strong>' + title + '</strong></span><br>New cases per day per 1m people (5 day average): ' + value + '</text>';
-        //         // },
-        //         useHTML: true
-        //     },
-        //     series: [{
-        //         id: "cases",
-        //         name: "cases",
-        //         dataSorting: {
-        //             enabled: true,
-        //             // For some reason this is causing console errors
-        //             matchByName: true,
-        //         },
-        //         dataLabels: [{
-        //             enabled: true,
-        //             formatter: function () {
-        //                 let val = numberFormatterPercentage(this.y);
-        //                 return val;
-        //             },
-        //         }],
-        //         // colorIndex: 7,
-        //         colorByPoint: true,
-        //         data: initial_deaths_time_data
-        //     },
-        //     ],
-        //     legend: {
-        //         enabled: false
-        //     }
-        // });
 
         // Dashboard 1
 
@@ -1577,9 +1356,9 @@
 
         // legend for background - lockdown info
         $legend2Container = $('.dashboard-container-horizontal .secondary-legend');
-        var legendItems = [{ name: 'Some movement restrictions', colorIndex: 27 },
-        { name: 'Curfew', colorIndex: 8 },
-        { name: 'Lockdown', colorIndex: 1 }];
+        var legendItems = [{ name: 'Some movement restrictions', colorIndex: 37 },
+        { name: 'Curfew', colorIndex: 16 },
+        { name: 'Lockdown', colorIndex: 18 }];
 
         // Append legend items
         $legend2Container.append('<div>Background: &nbsp &nbsp</div>')
@@ -1587,17 +1366,7 @@
             $legend2Container.append('<div class="legend-item"><div class="dot legend-color-' + point.colorIndex + '" ></div><div class="serieName" id="">' + fCapital(point.name) + '</div></div>');
         }
 
-        // legend for response map
-        $responseLegendContainer = $('.lockdown-map .secondary-legend');
-        let responseLegendItems = [{ name: "No restrictions", colorIndex: 28 },
-        { name: 'Some movement restrictions', colorIndex: 27 },
-        { name: 'Curfew', colorIndex: 8 },
-        { name: 'Lockdown', colorIndex: 1 }];
 
-        // Append legend items
-        for (let point of responseLegendItems) {
-            $responseLegendContainer.append('<div class="legend-item"><div class="dot legend-color-' + point.colorIndex + '" ></div><div class="serieName" id="">' + fCapital(point.name) + '</div></div>');
-        }
 
         // Dropdowns
         // Define dropdown container
@@ -1749,6 +1518,17 @@
         // Define filters / options for response map
         var responseFilters = document.querySelector(map_response_container_class + " .chart-filters");
 
+        // legend for response map
+        $responseLegendContainer = $('.lockdown-map .secondary-legend');
+        let responseLegendItems = [{ name: "No restrictions", colorIndex: 45 },
+        { name: 'Some movement restrictions', colorIndex: 37 },
+        { name: 'Curfew', colorIndex: 16 },
+        { name: 'Lockdown', colorIndex: 18 }];
+
+        // Append legend items
+        for (let point of responseLegendItems) {
+            $responseLegendContainer.append('<div class="legend-item"><div class="dot legend-color-' + point.colorIndex + '" ></div><div class="serieName" id="">' + fCapital(point.name) + '</div></div>');
+        }
 
         // Create play button
         let playButton = document.createElement("div");

@@ -42,19 +42,19 @@ figure {
 }
 
 .data-box-container:nth-child(5n + 2) .hexagon-link-single {
-  background-image: linear-gradient(to top right, #59acd9, #3984ac);
+  background-image: linear-gradient(to top right, #66b8ff, #3984ac);
 }
 
 .data-box-container:nth-child(5n + 3) .hexagon-link-single {
-  background-image: linear-gradient(to top right, #2f98d0, #2d6786);
+  background-image: linear-gradient(to top right, #33a0ff, #2d6786);
 }
 
 .data-box-container:nth-child(5n + 4) .hexagon-link-single {
-  background-image: linear-gradient(to top right, #277daa, #204960);
+  background-image: linear-gradient(to top right, #0088ff, #204960);
 }
 
 .data-box-container:nth-child(5n + 5) .hexagon-link-single {
-  background-image: linear-gradient(to top right, #216a91, #132c39);
+  background-image: linear-gradient(to top right, #0070D1, #132c39);
 }
 
 .data-index-container ul {
@@ -94,7 +94,7 @@ figure {
 }
 
 .q-o-n-container .tabs-container {
-  border-bottom: 5px solid #2f98d0;
+  border-bottom: 5px solid #1A94FF;
   display: flex;
   flex-direction: row;
 }
@@ -102,7 +102,7 @@ figure {
 @media only screen and (min-width: 768px) {
   .q-o-n-container .tabs-container {
     flex-direction: column;
-    border-right: 5px solid #2f98d0;
+    border-right: 5px solid #1A94FF;
     border-bottom: none;
     width: 120px;
   }
@@ -151,7 +151,7 @@ figure {
 }
 
 .q-o-n-container .tabs-container .tab-active {
-  background-image: linear-gradient(to bottom right, #3f5050 0%, #2f98d0 60%);
+  background-image: linear-gradient(to bottom right, #3f5050 0%, #1A94FF 60%);
   border-radius: 20px 20px 0 0;
   color: #2e3838;
   font-weight: 600;
@@ -164,7 +164,7 @@ figure {
 
 @media only screen and (min-width: 768px) {
   .q-o-n-container .tabs-container .tab-active {
-    background-image: linear-gradient(to top right, #3f5050 0%, #2f98d0 60%);
+    background-image: linear-gradient(to top right, #3f5050 0%, #1A94FF 60%);
     border-radius: 30px 0 0 30px;
     margin-right: 0;
     margin-bottom: 5px;
@@ -260,7 +260,7 @@ figure {
 }
 
 .chart-options .chart-filters .dropdown-container:hover {
-  border: 1px solid #2f98d0;
+  border: 1px solid #1A94FF;
 }
 
 .chart-options .chart-filters .slider-container {
@@ -294,8 +294,8 @@ figure {
 }
 
 .chart-options .chart-filters .slider-container .slider::-webkit-slider-thumb:hover {
-  background: #2f98d0;
-  border-color: #2f98d0;
+  background: #1A94FF;
+  border-color: #1A94FF;
 }
 
 .chart-options .chart-filters .slider-container .slider::-moz-range-thumb {
@@ -310,8 +310,8 @@ figure {
 }
 
 .chart-options .chart-filters .slider-container .slider::-moz-range-thumb:hover {
-  background: #2f98d0;
-  border-color: #2f98d0;
+  background: #1A94FF;
+  border-color: #1A94FF;
 }
 
 .chart-options .chart-filters .slider-container .slider-output {
@@ -374,12 +374,12 @@ figure {
   left: 0;
   height: 20px;
   width: 20px;
-  background-color: #2f98d0;
+  background-color: #1A94FF;
   border-radius: 50%;
 }
 
 .chart-options .chart-filters .radio-container label input:checked ~ .checkmark {
-  background-color: #2f98d0;
+  background-color: #1A94FF;
 }
 
 .chart-options .chart-filters .radio-container .checkmark:after {
@@ -420,7 +420,7 @@ figure {
 }
 
 .chart-options .chart-filters .play-button:hover {
-  background-image: linear-gradient(to top right, #2e3838 0%, #2f98d0 60%);
+  background-image: linear-gradient(to top right, #2e3838 0%, #1A94FF 60%);
 }
 
 .chart-legend,
@@ -738,6 +738,108 @@ figure {
 .pie .highcharts-color-28.highcharts-point,
 .scatter .highcharts-color-28.highcharts-point {
   fill: url("#gradient-28");
+}
+
+.bars .highcharts-color-29.highcharts-point,
+.pie .highcharts-color-29.highcharts-point,
+.scatter .highcharts-color-29.highcharts-point {
+  fill: url("#gradient-29");
+}
+
+.bars .highcharts-color-30.highcharts-point,
+.pie .highcharts-color-30.highcharts-point,
+.scatter .highcharts-color-30.highcharts-point {
+  fill: url("#gradient-30");
+}
+
+.bars .highcharts-color-31.highcharts-point,
+.pie .highcharts-color-31.highcharts-point,
+.scatter .highcharts-color-31.highcharts-point {
+  fill: url("#gradient-31");
+}
+
+.bars .highcharts-color-32.highcharts-point,
+.pie .highcharts-color-32.highcharts-point,
+.scatter .highcharts-color-32.highcharts-point {
+  fill: url("#gradient-32");
+}
+
+.bars .highcharts-color-33.highcharts-point,
+.pie .highcharts-color-33.highcharts-point,
+.scatter .highcharts-color-33.highcharts-point {
+  fill: url("#gradient-33");
+}
+
+.bars .highcharts-color-34.highcharts-point,
+.pie .highcharts-color-34.highcharts-point,
+.scatter .highcharts-color-34.highcharts-point {
+  fill: url("#gradient-34");
+}
+
+.bars .highcharts-color-35.highcharts-point,
+.pie .highcharts-color-35.highcharts-point,
+.scatter .highcharts-color-35.highcharts-point {
+  fill: url("#gradient-35");
+}
+
+.bars .highcharts-color-36.highcharts-point,
+.pie .highcharts-color-36.highcharts-point,
+.scatter .highcharts-color-36.highcharts-point {
+  fill: url("#gradient-36");
+}
+
+.bars .highcharts-color-37.highcharts-point,
+.pie .highcharts-color-37.highcharts-point,
+.scatter .highcharts-color-37.highcharts-point {
+  fill: url("#gradient-37");
+}
+
+.bars .highcharts-color-38.highcharts-point,
+.pie .highcharts-color-38.highcharts-point,
+.scatter .highcharts-color-38.highcharts-point {
+  fill: url("#gradient-38");
+}
+
+.bars .highcharts-color-39.highcharts-point,
+.pie .highcharts-color-39.highcharts-point,
+.scatter .highcharts-color-39.highcharts-point {
+  fill: url("#gradient-39");
+}
+
+.bars .highcharts-color-40.highcharts-point,
+.pie .highcharts-color-40.highcharts-point,
+.scatter .highcharts-color-40.highcharts-point {
+  fill: url("#gradient-40");
+}
+
+.bars .highcharts-color-41.highcharts-point,
+.pie .highcharts-color-41.highcharts-point,
+.scatter .highcharts-color-41.highcharts-point {
+  fill: url("#gradient-41");
+}
+
+.bars .highcharts-color-42.highcharts-point,
+.pie .highcharts-color-42.highcharts-point,
+.scatter .highcharts-color-42.highcharts-point {
+  fill: url("#gradient-42");
+}
+
+.bars .highcharts-color-43.highcharts-point,
+.pie .highcharts-color-43.highcharts-point,
+.scatter .highcharts-color-43.highcharts-point {
+  fill: url("#gradient-43");
+}
+
+.bars .highcharts-color-44.highcharts-point,
+.pie .highcharts-color-44.highcharts-point,
+.scatter .highcharts-color-44.highcharts-point {
+  fill: url("#gradient-44");
+}
+
+.bars .highcharts-color-45.highcharts-point,
+.pie .highcharts-color-45.highcharts-point,
+.scatter .highcharts-color-45.highcharts-point {
+  fill: url("#gradient-45");
 }
 
 .area,
@@ -1152,6 +1254,244 @@ figure {
   fill: url("#gradient-area-28");
 }
 
+.area .highcharts-color-29,
+.bubbles .highcharts-color-29,
+.wheel .highcharts-color-29 {
+  stroke: none;
+}
+
+.area .highcharts-color-29.highcharts-series.highcharts-area-series, .area .highcharts-color-29.highcharts-point:not(.highcharts-node),
+.bubbles .highcharts-color-29.highcharts-series.highcharts-area-series,
+.bubbles .highcharts-color-29.highcharts-point:not(.highcharts-node),
+.wheel .highcharts-color-29.highcharts-series.highcharts-area-series,
+.wheel .highcharts-color-29.highcharts-point:not(.highcharts-node) {
+  fill: url("#gradient-area-29");
+}
+
+.area .highcharts-color-30,
+.bubbles .highcharts-color-30,
+.wheel .highcharts-color-30 {
+  stroke: none;
+}
+
+.area .highcharts-color-30.highcharts-series.highcharts-area-series, .area .highcharts-color-30.highcharts-point:not(.highcharts-node),
+.bubbles .highcharts-color-30.highcharts-series.highcharts-area-series,
+.bubbles .highcharts-color-30.highcharts-point:not(.highcharts-node),
+.wheel .highcharts-color-30.highcharts-series.highcharts-area-series,
+.wheel .highcharts-color-30.highcharts-point:not(.highcharts-node) {
+  fill: url("#gradient-area-30");
+}
+
+.area .highcharts-color-31,
+.bubbles .highcharts-color-31,
+.wheel .highcharts-color-31 {
+  stroke: none;
+}
+
+.area .highcharts-color-31.highcharts-series.highcharts-area-series, .area .highcharts-color-31.highcharts-point:not(.highcharts-node),
+.bubbles .highcharts-color-31.highcharts-series.highcharts-area-series,
+.bubbles .highcharts-color-31.highcharts-point:not(.highcharts-node),
+.wheel .highcharts-color-31.highcharts-series.highcharts-area-series,
+.wheel .highcharts-color-31.highcharts-point:not(.highcharts-node) {
+  fill: url("#gradient-area-31");
+}
+
+.area .highcharts-color-32,
+.bubbles .highcharts-color-32,
+.wheel .highcharts-color-32 {
+  stroke: none;
+}
+
+.area .highcharts-color-32.highcharts-series.highcharts-area-series, .area .highcharts-color-32.highcharts-point:not(.highcharts-node),
+.bubbles .highcharts-color-32.highcharts-series.highcharts-area-series,
+.bubbles .highcharts-color-32.highcharts-point:not(.highcharts-node),
+.wheel .highcharts-color-32.highcharts-series.highcharts-area-series,
+.wheel .highcharts-color-32.highcharts-point:not(.highcharts-node) {
+  fill: url("#gradient-area-32");
+}
+
+.area .highcharts-color-33,
+.bubbles .highcharts-color-33,
+.wheel .highcharts-color-33 {
+  stroke: none;
+}
+
+.area .highcharts-color-33.highcharts-series.highcharts-area-series, .area .highcharts-color-33.highcharts-point:not(.highcharts-node),
+.bubbles .highcharts-color-33.highcharts-series.highcharts-area-series,
+.bubbles .highcharts-color-33.highcharts-point:not(.highcharts-node),
+.wheel .highcharts-color-33.highcharts-series.highcharts-area-series,
+.wheel .highcharts-color-33.highcharts-point:not(.highcharts-node) {
+  fill: url("#gradient-area-33");
+}
+
+.area .highcharts-color-34,
+.bubbles .highcharts-color-34,
+.wheel .highcharts-color-34 {
+  stroke: none;
+}
+
+.area .highcharts-color-34.highcharts-series.highcharts-area-series, .area .highcharts-color-34.highcharts-point:not(.highcharts-node),
+.bubbles .highcharts-color-34.highcharts-series.highcharts-area-series,
+.bubbles .highcharts-color-34.highcharts-point:not(.highcharts-node),
+.wheel .highcharts-color-34.highcharts-series.highcharts-area-series,
+.wheel .highcharts-color-34.highcharts-point:not(.highcharts-node) {
+  fill: url("#gradient-area-34");
+}
+
+.area .highcharts-color-35,
+.bubbles .highcharts-color-35,
+.wheel .highcharts-color-35 {
+  stroke: none;
+}
+
+.area .highcharts-color-35.highcharts-series.highcharts-area-series, .area .highcharts-color-35.highcharts-point:not(.highcharts-node),
+.bubbles .highcharts-color-35.highcharts-series.highcharts-area-series,
+.bubbles .highcharts-color-35.highcharts-point:not(.highcharts-node),
+.wheel .highcharts-color-35.highcharts-series.highcharts-area-series,
+.wheel .highcharts-color-35.highcharts-point:not(.highcharts-node) {
+  fill: url("#gradient-area-35");
+}
+
+.area .highcharts-color-36,
+.bubbles .highcharts-color-36,
+.wheel .highcharts-color-36 {
+  stroke: none;
+}
+
+.area .highcharts-color-36.highcharts-series.highcharts-area-series, .area .highcharts-color-36.highcharts-point:not(.highcharts-node),
+.bubbles .highcharts-color-36.highcharts-series.highcharts-area-series,
+.bubbles .highcharts-color-36.highcharts-point:not(.highcharts-node),
+.wheel .highcharts-color-36.highcharts-series.highcharts-area-series,
+.wheel .highcharts-color-36.highcharts-point:not(.highcharts-node) {
+  fill: url("#gradient-area-36");
+}
+
+.area .highcharts-color-37,
+.bubbles .highcharts-color-37,
+.wheel .highcharts-color-37 {
+  stroke: none;
+}
+
+.area .highcharts-color-37.highcharts-series.highcharts-area-series, .area .highcharts-color-37.highcharts-point:not(.highcharts-node),
+.bubbles .highcharts-color-37.highcharts-series.highcharts-area-series,
+.bubbles .highcharts-color-37.highcharts-point:not(.highcharts-node),
+.wheel .highcharts-color-37.highcharts-series.highcharts-area-series,
+.wheel .highcharts-color-37.highcharts-point:not(.highcharts-node) {
+  fill: url("#gradient-area-37");
+}
+
+.area .highcharts-color-38,
+.bubbles .highcharts-color-38,
+.wheel .highcharts-color-38 {
+  stroke: none;
+}
+
+.area .highcharts-color-38.highcharts-series.highcharts-area-series, .area .highcharts-color-38.highcharts-point:not(.highcharts-node),
+.bubbles .highcharts-color-38.highcharts-series.highcharts-area-series,
+.bubbles .highcharts-color-38.highcharts-point:not(.highcharts-node),
+.wheel .highcharts-color-38.highcharts-series.highcharts-area-series,
+.wheel .highcharts-color-38.highcharts-point:not(.highcharts-node) {
+  fill: url("#gradient-area-38");
+}
+
+.area .highcharts-color-39,
+.bubbles .highcharts-color-39,
+.wheel .highcharts-color-39 {
+  stroke: none;
+}
+
+.area .highcharts-color-39.highcharts-series.highcharts-area-series, .area .highcharts-color-39.highcharts-point:not(.highcharts-node),
+.bubbles .highcharts-color-39.highcharts-series.highcharts-area-series,
+.bubbles .highcharts-color-39.highcharts-point:not(.highcharts-node),
+.wheel .highcharts-color-39.highcharts-series.highcharts-area-series,
+.wheel .highcharts-color-39.highcharts-point:not(.highcharts-node) {
+  fill: url("#gradient-area-39");
+}
+
+.area .highcharts-color-40,
+.bubbles .highcharts-color-40,
+.wheel .highcharts-color-40 {
+  stroke: none;
+}
+
+.area .highcharts-color-40.highcharts-series.highcharts-area-series, .area .highcharts-color-40.highcharts-point:not(.highcharts-node),
+.bubbles .highcharts-color-40.highcharts-series.highcharts-area-series,
+.bubbles .highcharts-color-40.highcharts-point:not(.highcharts-node),
+.wheel .highcharts-color-40.highcharts-series.highcharts-area-series,
+.wheel .highcharts-color-40.highcharts-point:not(.highcharts-node) {
+  fill: url("#gradient-area-40");
+}
+
+.area .highcharts-color-41,
+.bubbles .highcharts-color-41,
+.wheel .highcharts-color-41 {
+  stroke: none;
+}
+
+.area .highcharts-color-41.highcharts-series.highcharts-area-series, .area .highcharts-color-41.highcharts-point:not(.highcharts-node),
+.bubbles .highcharts-color-41.highcharts-series.highcharts-area-series,
+.bubbles .highcharts-color-41.highcharts-point:not(.highcharts-node),
+.wheel .highcharts-color-41.highcharts-series.highcharts-area-series,
+.wheel .highcharts-color-41.highcharts-point:not(.highcharts-node) {
+  fill: url("#gradient-area-41");
+}
+
+.area .highcharts-color-42,
+.bubbles .highcharts-color-42,
+.wheel .highcharts-color-42 {
+  stroke: none;
+}
+
+.area .highcharts-color-42.highcharts-series.highcharts-area-series, .area .highcharts-color-42.highcharts-point:not(.highcharts-node),
+.bubbles .highcharts-color-42.highcharts-series.highcharts-area-series,
+.bubbles .highcharts-color-42.highcharts-point:not(.highcharts-node),
+.wheel .highcharts-color-42.highcharts-series.highcharts-area-series,
+.wheel .highcharts-color-42.highcharts-point:not(.highcharts-node) {
+  fill: url("#gradient-area-42");
+}
+
+.area .highcharts-color-43,
+.bubbles .highcharts-color-43,
+.wheel .highcharts-color-43 {
+  stroke: none;
+}
+
+.area .highcharts-color-43.highcharts-series.highcharts-area-series, .area .highcharts-color-43.highcharts-point:not(.highcharts-node),
+.bubbles .highcharts-color-43.highcharts-series.highcharts-area-series,
+.bubbles .highcharts-color-43.highcharts-point:not(.highcharts-node),
+.wheel .highcharts-color-43.highcharts-series.highcharts-area-series,
+.wheel .highcharts-color-43.highcharts-point:not(.highcharts-node) {
+  fill: url("#gradient-area-43");
+}
+
+.area .highcharts-color-44,
+.bubbles .highcharts-color-44,
+.wheel .highcharts-color-44 {
+  stroke: none;
+}
+
+.area .highcharts-color-44.highcharts-series.highcharts-area-series, .area .highcharts-color-44.highcharts-point:not(.highcharts-node),
+.bubbles .highcharts-color-44.highcharts-series.highcharts-area-series,
+.bubbles .highcharts-color-44.highcharts-point:not(.highcharts-node),
+.wheel .highcharts-color-44.highcharts-series.highcharts-area-series,
+.wheel .highcharts-color-44.highcharts-point:not(.highcharts-node) {
+  fill: url("#gradient-area-44");
+}
+
+.area .highcharts-color-45,
+.bubbles .highcharts-color-45,
+.wheel .highcharts-color-45 {
+  stroke: none;
+}
+
+.area .highcharts-color-45.highcharts-series.highcharts-area-series, .area .highcharts-color-45.highcharts-point:not(.highcharts-node),
+.bubbles .highcharts-color-45.highcharts-series.highcharts-area-series,
+.bubbles .highcharts-color-45.highcharts-point:not(.highcharts-node),
+.wheel .highcharts-color-45.highcharts-series.highcharts-area-series,
+.wheel .highcharts-color-45.highcharts-point:not(.highcharts-node) {
+  fill: url("#gradient-area-45");
+}
+
 .heatmap .highcharts-grid-line,
 .heatmap .highcharts-axis-line {
   stroke: none;
@@ -1185,27 +1525,27 @@ figure {
 }
 
 .pl-africa {
-  background-color: #ffdc00;
+  background-color: #ffff1a;
 }
 
 .pl-asia {
-  background-color: #ff3299;
+  background-color: #d1158f;
 }
 
 .pl-europe {
-  background-color: #0074d9;
+  background-color: #0070d1;
 }
 
 .pl-lac {
-  background-color: #28cc5c;
+  background-color: #23ca23;
 }
 
 .pl-na {
-  background-color: #ff3d32;
+  background-color: #e63333;
 }
 
 .pl-oceania {
-  background-color: #e58939;
+  background-color: #772eb8;
 }
 
 .pl-births {
@@ -1289,7 +1629,7 @@ figure {
 }
 
 .covid-dashboard .covid-dashboard-country {
-  color: #2f98d0;
+  color: #1A94FF;
   font-size: 140%;
   font-weight: 500;
   margin: 0;
@@ -1481,7 +1821,7 @@ figure {
 }
 
 .CCLab-old-dashboard .covid-dashboard-country {
-  color: #2f98d0;
+  color: #1A94FF;
   font-size: 140%;
   font-weight: 500;
   margin: 0;
@@ -1533,4 +1873,8 @@ figure {
   .CCLab-old-dashboard .dashboard-level-2 .dashboard-side-40 {
     background-image: none;
   }
+}
+
+#covid_top_cases .highcharts-data-label-color-1 text {
+  fill: #fff;
 }

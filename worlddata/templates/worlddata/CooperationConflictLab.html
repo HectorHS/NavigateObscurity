@@ -180,6 +180,7 @@
         // All filterable options
         const all_dates = [...new Set(files[0].map(d => d.Date))];
         const all_variables = files[0].columns;
+        let random_colors = [3, 9, 18, 23, 31, 37, 1, 12, 15, 26, 29, 39, 42, 5, 8, 19, 22, 32, 38, 43, 2, 10, 17, 24, 30, 40, 4, 11, 16, 25, 33, 36, 54];
 
         let variable1 = "Stress";
         let variable2 = "PerceptionRisk";
@@ -190,14 +191,14 @@
 
         function getLinesData() {
             let data = [];
-            slice1 = getLinesDataSlice(variable1);
-            slice2 = getLinesDataSlice(variable2);
+            slice1 = getLinesDataSlice(variable1, 0);
+            slice2 = getLinesDataSlice(variable2, 1);
 
             data.push(slice1);
             data.push(slice2);
             return data;
         }
-        function getLinesDataSlice(variable) {
+        function getLinesDataSlice(variable, i) {
             let d1v = 0;
             let d1c = 0;
             let d2v = 0;
@@ -217,7 +218,7 @@
             data.push(+numberFormatterPercentage(d1v / d1c));
             data.push(+numberFormatterPercentage(d2v / d2c));
 
-            let slice = { name: variable, data: data };
+            let slice = { name: variable, data: data, colorIndex: random_colors[i] };
             return slice;
         }
         function getAvailableDates(var1) {
@@ -597,6 +598,7 @@
         // All filterable options
         const all_dates = [...new Set(files[0].map(d => d.Date))];
         const all_variables = files[0].columns;
+        let random_colors = [3, 9, 18, 23, 31, 37, 1, 12, 15, 26, 29, 39, 42, 5, 8, 19, 22, 32, 38, 43, 2, 10, 17, 24, 30, 40, 4, 11, 16, 25, 33, 36, 54];
 
         let variable1 = "Stress";
         let variable2 = "Anxiety";
@@ -607,14 +609,14 @@
 
         function getLinesData() {
             let data = [];
-            slice1 = getLinesDataSlice(variable1);
-            slice2 = getLinesDataSlice(variable2);
+            slice1 = getLinesDataSlice(variable1, 0);
+            slice2 = getLinesDataSlice(variable2, 1);
 
             data.push(slice1);
             data.push(slice2);
             return data;
         }
-        function getLinesDataSlice(variable) {
+        function getLinesDataSlice(variable, i) {
             let d1v = 0;
             let d1c = 0;
             let d2v = 0;
@@ -719,7 +721,7 @@
             data.push(+numberFormatterPercentage(d13v / d13c));
             data.push(+numberFormatterPercentage(d14v / d14c));
 
-            let slice = { name: variable, data: data };
+            let slice = { name: variable, data: data, colorIndex: random_colors[i] };
             return slice;
         }
         function getAvailableDates(var1) {

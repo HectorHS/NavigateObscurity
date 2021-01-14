@@ -203,11 +203,11 @@
                     max: 5,
                     min: -5,
                     stops: [
-                        [0, '#FF4136'],
-                        [0.35, '#ffdc00'],
+                        [0, '#E63333'],
+                        [0.35, '#FFFF1A'],
                         [0.5, '#DDDDDD'],
-                        [0.65, '#28cc5c'],
-                        [0.95, '#0074D9']
+                        [0.65, '#23CA23'],
+                        [0.95, '#0070D1']
                     ],
                 },
                 tooltip: {
@@ -284,31 +284,31 @@
                 if (measure == "Biocapacity") {
                     chart.colorAxis[0].update({
                         stops: [
-                            [0, '#FF4136'],
-                            [0.35, '#FFDC00'],
+                            [0, '#E63333'],
+                            [0.35, '#FFFF1A'],
                             [0.5, '#DDDDDD'],
-                            [0.65, '#2ECC40'],
-                            [0.95, '#0074D9']
+                            [0.65, '#23CA23'],
+                            [0.95, '#0070D1']
                         ],
                     }, false)
                 } else if (measure == "Ecological deficit or reserve") {
                     chart.colorAxis[0].update({
                         stops: [
-                            [0, '#FF4136'],
-                            [0.35, '#FFDC00'],
+                            [0, '#E63333'],
+                            [0.35, '#FFFF1A'],
                             [0.5, '#DDDDDD'],
-                            [0.65, '#2ECC40'],
-                            [0.95, '#0074D9']
+                            [0.65, '#23CA23'],
+                            [0.95, '#0070D1']
                         ],
                     }, false)
                 } else if (measure == "Ecological footprint of consumption") {
                     chart.colorAxis[0].update({
                         stops: [
-                            [0, '#0074D9'],
-                            [0.35, '#2ECC40'],
+                            [0, '#0070D1'],
+                            [0.35, '#23CA23'],
                             [0.5, '#DDDDDD'],
-                            [0.65, '#FFDC00'],
-                            [0.95, '#FF4136']
+                            [0.65, '#FFFF1A'],
+                            [0.95, '#E63333']
                         ],
                     }, false)
                 }
@@ -532,11 +532,11 @@
             }
 
             var getColor = {
-                "Built up land": "2",
-                "Crop land": "18",
-                "Fishing grounds": "0",
-                "Forest land": "19",
-                "Grazing land": "4"
+                "Built up land": "43",
+                "Crop land": "10",
+                "Fishing grounds": "3",
+                "Forest land": "25",
+                "Grazing land": "20"
             };
 
             function get_data() {

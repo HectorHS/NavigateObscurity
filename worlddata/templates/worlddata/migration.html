@@ -41,13 +41,20 @@
 <section>
     <div class="container limited-width">
         <p>
-            In this interactive map you can get a glimpse on how many migrants and refugees are hosted in each country
-            (destination of) and where they are coming from (origin of). The colours of the visualisations are based on
-            population percentages. The neutral (grey color) is set to the global average (for instance, about 3.5% of
-            the global population has migrated away from their country), and the max is set to double that value. This
-            helps in giving us a broad idea of migration but does not highlight the extreme outliers as countries with
-            a 10% and a 50% migration are painted with the same color. To find those, use the slider provided to exclude
-            small values. Additionally, use the parameters to switch between destination and origin visualisations, see
+            In this interactive map you can get a glimpse on how many migrants and refugees are hosted in each
+            country
+            (destination of) and where they are coming from (origin of). The colours of the visualisations are based
+            on
+            population percentages. The neutral (grey color) is set to the global average (for instance, about 3.5%
+            of
+            the global population has migrated away from their country), and the max is set to double that value.
+            This
+            helps in giving us a broad idea of migration but does not highlight the extreme outliers as countries
+            with
+            a 10% and a 50% migration are painted with the same color. To find those, use the slider provided to
+            exclude
+            small values. Additionally, use the parameters to switch between destination and origin visualisations,
+            see
             data for different years, or slice them according to income levels.
         </p>
     </div>
@@ -69,9 +76,12 @@
     </div>
     <div class="container limited-width">
         <p>
-            And here is a breakdown of migrants by country. You can switch between "Destination" to see the breakdown of
-            immigrants living in a destination country, and "Origin" to see where people of a particular origin country
-            emigrated to. The size indicates larger populations, but you can also check the exact numbers by hovering
+            And here is a breakdown of migrants by country. You can switch between "Destination" to see the
+            breakdown of
+            immigrants living in a destination country, and "Origin" to see where people of a particular origin
+            country
+            emigrated to. The size indicates larger populations, but you can also check the exact numbers by
+            hovering
             over them. The colours have been randomly assigned and don’t mean anything - just there for show. On the
             legend are highlighted the top five results.
         </p>
@@ -104,7 +114,8 @@
     <div class="container limited-width">
         <p>
             Below you can see a rough visualization of the flow of migration between larger areas. You can choose
-            between continents and regions - anything more specific gets too convoluted. The outer bases represent the
+            between continents and regions - anything more specific gets too convoluted. The outer bases represent
+            the
             total of migrants - people moving both in and out of the region - and the inside lines visualize their
             movement. Movements are coloured according to the region of origin.
         </p>
@@ -244,11 +255,11 @@
                     max: 7,
                     min: 0,
                     stops: [
-                        [0, '#0074D9'],
-                        [0.35, '#28cc5c'],
+                        [0, '#0070D1'],
+                        [0.35, '#23CA23'],
                         [0.5, '#DDDDDD'],
-                        [0.65, '#ffdc00'],
-                        [0.95, '#FF4136']
+                        [0.65, '#FFFF1A'],
+                        [0.95, '#E63333']
                     ],
                 },
                 tooltip: {
@@ -320,8 +331,10 @@
             var percentageName = "map-percentage",
                 min = "0",
                 max = "50",
-                value = "0";
-            addSlider(filters, percentageName, min, max, value, percentageChange);
+                value = "0",
+                containerWidth = 250,
+                sliderWidth = 40;
+            addSlider(filters, percentageName, min, max, value, containerWidth, sliderWidth, percentageChange);
 
 
             // Update chart data on percentage change
@@ -375,6 +388,8 @@
                 empty_data = [],
                 colors_max = 30;
 
+            let random_colors = [3, 9, 18, 23, 31, 37, 1, 12, 15, 26, 29, 39, 42, 5, 8, 19, 22, 32, 38, 43, 2, 10, 17, 24, 30, 40, 4, 11, 16, 25, 33, 36, 54];
+
 
             function get_data() {
                 var new_data = [],
@@ -383,8 +398,8 @@
                 if (parameter == "Destination") {
                     for (let row of data) {
                         if (country == row.country_host) {
-                            new_data.push({ id: row.country_origin, name: row.country_origin, absolute: +row[year], value: 0, colorIndex: i });
-                            if (i == 30) {
+                            new_data.push({ id: row.country_origin, name: row.country_origin, absolute: +row[year], value: 0, colorIndex: random_colors[i] });
+                            if (i == (random_colors.length - 1)) {
                                 i = 0;
                             } else {
                                 i++;
@@ -395,8 +410,8 @@
                 } else {
                     for (let row of data) {
                         if (country == row.country_origin) {
-                            new_data.push({ id: row.country_host, name: row.country_host, absolute: +row[year], value: 0, colorIndex: i });
-                            if (i == 30) {
+                            new_data.push({ id: row.country_host, name: row.country_host, absolute: +row[year], value: 0, colorIndex: random_colors[i] });
+                            if (i == (random_colors.length - 1)) {
                                 i = 0;
                             } else {
                                 i++;
@@ -627,29 +642,29 @@
                 initial_data = [];
 
             var getColor = {
-                "Africa": "4",
-                "Asia": "1",
-                "Europe": "0",
-                "Latin America and the Caribbean": "9",
-                "Northern America": "6",
-                "Oceania": "2",
-                "Eastern Africa": "23",
-                "Middle Africa": "4",
-                "Northern Africa": "18",
-                "Southern Africa": "14",
-                "Western Africa": "22",
-                "Central Asia": "20",
-                "Eastern Asia": "1",
-                "Southern Asia": "8",
-                "South-Eastern Asia": "15",
-                "Western Asia": "24",
-                "Eastern Europe": "7",
-                "Northern Europe": "0",
-                "Southern Europe": "5",
-                "Western Europe": "3",
-                "Caribbean": "9",
-                "Central America": "19",
-                "South America": "13",
+                "Africa": "9",
+                "Asia": "17",
+                "Europe": "3",
+                "Latin America and the Caribbean": "24",
+                "Northern America": "30",
+                "Oceania": "43",
+                "Eastern Africa": "8",
+                "Middle Africa": "9",
+                "Northern Africa": "10",
+                "Southern Africa": "11",
+                "Western Africa": "12",
+                "Eastern Asia": "15",
+                "South-Eastern Asia": "16",
+                "Southern Asia": "17",
+                "Central Asia": "18",
+                "Western Asia": "19",
+                "Eastern Europe": "2",
+                "Northern Europe": "3",
+                "Southern Europe": "4",
+                "Western Europe": "5",
+                "Caribbean": "22",
+                "Central America": "24",
+                "South America": "26",
             };
 
             function get_data() {
@@ -714,73 +729,73 @@
                     size: '95%',
                     nodes: [{
                         id: "Africa",
-                        colorIndex: 4,
+                        colorIndex: getColor["Africa"],
                     }, {
                         id: "Asia",
-                        colorIndex: 1,
+                        colorIndex: getColor["Asia"],
                     }, {
                         id: "Europe",
-                        colorIndex: 0,
+                        colorIndex: getColor["Europe"],
                     }, {
                         id: "Latin America and the Caribbean",
-                        colorIndex: 9,
+                        colorIndex: getColor["Latin America and the Caribbean"],
                     }, {
                         id: "Northern America",
-                        colorIndex: 6,
+                        colorIndex: getColor["Northern America"],
                     }, {
                         id: "Oceania",
-                        colorIndex: 2,
+                        colorIndex: getColor["Oceania"],
                     }, {
                         id: "Eastern Africa",
-                        colorIndex: 23
+                        colorIndex: getColor["Eastern Africa"]
                     }, {
                         id: "Middle Africa",
-                        colorIndex: 4
+                        colorIndex: getColor["Middle Africa"]
                     }, {
                         id: "Northern Africa",
-                        colorIndex: 18
+                        colorIndex: getColor["Northern Africa"]
                     }, {
                         id: "Southern Africa",
-                        colorIndex: 14
+                        colorIndex: getColor["Southern Africa"]
                     }, {
                         id: "Western Africa",
-                        colorIndex: 22
+                        colorIndex: getColor["Western Africa"]
                     }, {
                         id: "Central Asia",
-                        colorIndex: 20
+                        colorIndex: getColor["Central Asia"]
                     }, {
                         id: "Eastern Asia",
-                        colorIndex: 1
+                        colorIndex: getColor["Eastern Asia"]
                     }, {
                         id: "Southern Asia",
-                        colorIndex: 8
+                        colorIndex: getColor["Southern Asia"]
                     }, {
                         id: "South-Eastern Asia",
-                        colorIndex: 15
+                        colorIndex: getColor["South-Eastern Asia"]
                     }, {
                         id: "Western Asia",
-                        colorIndex: 24
+                        colorIndex: getColor["Western Asia"]
                     }, {
                         id: "Eastern Europe",
-                        colorIndex: 7
+                        colorIndex: getColor["Eastern Europe"]
                     }, {
                         id: "Northern Europe",
-                        colorIndex: 0
+                        colorIndex: getColor["Northern Europe"]
                     }, {
                         id: "Southern Europe",
-                        colorIndex: 5
+                        colorIndex: getColor["Southern Europe"]
                     }, {
                         id: "Western Europe",
-                        colorIndex: 3
+                        colorIndex: getColor["Western Europe"]
                     }, {
                         id: "Caribbean",
-                        colorIndex: 9
+                        colorIndex: getColor["Caribbean"]
                     }, {
                         id: "Central America",
-                        colorIndex: 19
+                        colorIndex: getColor["Central America"]
                     }, {
                         id: "South America",
-                        colorIndex: 13
+                        colorIndex: getColor["South America"]
                     }]
                 }],
             });

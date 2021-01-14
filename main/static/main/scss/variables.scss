@@ -1,37 +1,67 @@
-$colors:#0074D9
-#ff3299
-#DDC3C3
-#051d33
-#ffdc00
-#0b4272
-#ff3d32
-#59b1ff
-#8c1c54
-#28cc5c
+
+
+
+
+
+
+
+
+$colors:
+#B3DBFF
+#66B8FF
+#1A94FF
+#0070D1
+#005299
+#003666
+#001B33
+#FFFF99
+#FFFF4D
+#FFFF1A
+#C7C705
+#919108
+#5E5E08
+#2E2E05
+#FAD1EC
+#F48BCF
+#ED45B2
+#D1158F
+#970F67
+#5D0940
+#2E0520
+#7DE87D
+#52E052
+#23CA23
+#1B981B
+#136C13
+#0B410B
+#041604
+#F18E8E
+#EB6060
+#E63333
+#CC1919
+#881111
+#440808
+#170303
+#e7d7f4
+#C29CE2
+#9D61D1
+#772EB8
+#501980
+#360D59
+#1B042F
+#ddc3c3
+#8B9595
 #101414
-#a52721
-#677f7f
-#0a3316
-#a59110
-#99373f
-#5cf28b
-#22162b
-#e58939
-#167234
-#cc7097
-#4c1b1f
-#3f380c
-#d8c756
-#4c2033
-#875121
-#660e0a
-#794f99
 #DDDDDD
 !default;
 
-$blue: #216a91;
+
+
+
+
+$blue: #0070D1;
 $orange: #d66808;
-$bright-blue: #2f98d0;
+$bright-blue: #1A94FF;
 $bright-blue-opacity: rgba(47, 152, 208, 0.4);
 $almost-white: #dffcff;
 $light-grey: hsl(180, 10%, 65%);
@@ -40,10 +70,10 @@ $dark-grey: #2e3838;
 $dark-grey-opacity: rgba(46, 56, 56, 0.8);
 $darker-grey: #222a2a;
 $blue-shade-1: linear-gradient(to top right, #fbc99d, #539dc6);
-$blue-shade-2: linear-gradient(to top right, #59acd9, #3984ac);
-$blue-shade-3: linear-gradient(to top right, #2f98d0, #2d6786);
-$blue-shade-4: linear-gradient(to top right, #277daa, #204960);
-$blue-shade-5: linear-gradient(to top right, #216a91, #132c39);
+$blue-shade-2: linear-gradient(to top right, #66b8ff, #3984ac);
+$blue-shade-3: linear-gradient(to top right, #33a0ff, #2d6786);
+$blue-shade-4: linear-gradient(to top right, #0088ff, #204960);
+$blue-shade-5: linear-gradient(to top right, #0070D1, #132c39);
 $navbar-color: rgba(23, 28, 28, 0.9);
 $main-font: 
 // Noto Sans, sans-serif;

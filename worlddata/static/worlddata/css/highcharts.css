@@ -229,269 +229,422 @@ g.highcharts-series,
 /* Series options */
 /* Default colors */
 .highcharts-color-0 {
-  fill: #0074D9;
-  stroke: #0074D9;
+  fill: #B3DBFF;
+  stroke: #B3DBFF;
 }
 
 .legend-color-0 {
-  background-image: linear-gradient(to top right, rgba(255, 0, 0, 0) 0%, #0074D9 50%);
+  background-image: linear-gradient(to top right, rgba(255, 0, 0, 0) 0%, #B3DBFF 50%);
 }
 
 .highcharts-color-1 {
-  fill: #ff3299;
-  stroke: #ff3299;
+  fill: #66B8FF;
+  stroke: #66B8FF;
 }
 
 .legend-color-1 {
-  background-image: linear-gradient(to top right, rgba(255, 0, 0, 0) 0%, #ff3299 50%);
+  background-image: linear-gradient(to top right, rgba(255, 0, 0, 0) 0%, #66B8FF 50%);
 }
 
 .highcharts-color-2 {
-  fill: #DDC3C3;
-  stroke: #DDC3C3;
+  fill: #1A94FF;
+  stroke: #1A94FF;
 }
 
 .legend-color-2 {
-  background-image: linear-gradient(to top right, rgba(255, 0, 0, 0) 0%, #DDC3C3 50%);
+  background-image: linear-gradient(to top right, rgba(255, 0, 0, 0) 0%, #1A94FF 50%);
 }
 
 .highcharts-color-3 {
-  fill: #051d33;
-  stroke: #051d33;
+  fill: #0070D1;
+  stroke: #0070D1;
 }
 
 .legend-color-3 {
-  background-image: linear-gradient(to top right, rgba(255, 0, 0, 0) 0%, #051d33 50%);
+  background-image: linear-gradient(to top right, rgba(255, 0, 0, 0) 0%, #0070D1 50%);
 }
 
 .highcharts-color-4 {
-  fill: #ffdc00;
-  stroke: #ffdc00;
+  fill: #005299;
+  stroke: #005299;
 }
 
 .legend-color-4 {
-  background-image: linear-gradient(to top right, rgba(255, 0, 0, 0) 0%, #ffdc00 50%);
+  background-image: linear-gradient(to top right, rgba(255, 0, 0, 0) 0%, #005299 50%);
 }
 
 .highcharts-color-5 {
-  fill: #0b4272;
-  stroke: #0b4272;
+  fill: #003666;
+  stroke: #003666;
 }
 
 .legend-color-5 {
-  background-image: linear-gradient(to top right, rgba(255, 0, 0, 0) 0%, #0b4272 50%);
+  background-image: linear-gradient(to top right, rgba(255, 0, 0, 0) 0%, #003666 50%);
 }
 
 .highcharts-color-6 {
-  fill: #ff3d32;
-  stroke: #ff3d32;
+  fill: #001B33;
+  stroke: #001B33;
 }
 
 .legend-color-6 {
-  background-image: linear-gradient(to top right, rgba(255, 0, 0, 0) 0%, #ff3d32 50%);
+  background-image: linear-gradient(to top right, rgba(255, 0, 0, 0) 0%, #001B33 50%);
 }
 
 .highcharts-color-7 {
-  fill: #59b1ff;
-  stroke: #59b1ff;
+  fill: #FFFF99;
+  stroke: #FFFF99;
 }
 
 .legend-color-7 {
-  background-image: linear-gradient(to top right, rgba(255, 0, 0, 0) 0%, #59b1ff 50%);
+  background-image: linear-gradient(to top right, rgba(255, 0, 0, 0) 0%, #FFFF99 50%);
 }
 
 .highcharts-color-8 {
-  fill: #8c1c54;
-  stroke: #8c1c54;
+  fill: #FFFF4D;
+  stroke: #FFFF4D;
 }
 
 .legend-color-8 {
-  background-image: linear-gradient(to top right, rgba(255, 0, 0, 0) 0%, #8c1c54 50%);
+  background-image: linear-gradient(to top right, rgba(255, 0, 0, 0) 0%, #FFFF4D 50%);
 }
 
 .highcharts-color-9 {
-  fill: #28cc5c;
-  stroke: #28cc5c;
+  fill: #FFFF1A;
+  stroke: #FFFF1A;
 }
 
 .legend-color-9 {
-  background-image: linear-gradient(to top right, rgba(255, 0, 0, 0) 0%, #28cc5c 50%);
+  background-image: linear-gradient(to top right, rgba(255, 0, 0, 0) 0%, #FFFF1A 50%);
 }
 
 .highcharts-color-10 {
+  fill: #C7C705;
+  stroke: #C7C705;
+}
+
+.legend-color-10 {
+  background-image: linear-gradient(to top right, rgba(255, 0, 0, 0) 0%, #C7C705 50%);
+}
+
+.highcharts-color-11 {
+  fill: #919108;
+  stroke: #919108;
+}
+
+.legend-color-11 {
+  background-image: linear-gradient(to top right, rgba(255, 0, 0, 0) 0%, #919108 50%);
+}
+
+.highcharts-color-12 {
+  fill: #5E5E08;
+  stroke: #5E5E08;
+}
+
+.legend-color-12 {
+  background-image: linear-gradient(to top right, rgba(255, 0, 0, 0) 0%, #5E5E08 50%);
+}
+
+.highcharts-color-13 {
+  fill: #2E2E05;
+  stroke: #2E2E05;
+}
+
+.legend-color-13 {
+  background-image: linear-gradient(to top right, rgba(255, 0, 0, 0) 0%, #2E2E05 50%);
+}
+
+.highcharts-color-14 {
+  fill: #FAD1EC;
+  stroke: #FAD1EC;
+}
+
+.legend-color-14 {
+  background-image: linear-gradient(to top right, rgba(255, 0, 0, 0) 0%, #FAD1EC 50%);
+}
+
+.highcharts-color-15 {
+  fill: #F48BCF;
+  stroke: #F48BCF;
+}
+
+.legend-color-15 {
+  background-image: linear-gradient(to top right, rgba(255, 0, 0, 0) 0%, #F48BCF 50%);
+}
+
+.highcharts-color-16 {
+  fill: #ED45B2;
+  stroke: #ED45B2;
+}
+
+.legend-color-16 {
+  background-image: linear-gradient(to top right, rgba(255, 0, 0, 0) 0%, #ED45B2 50%);
+}
+
+.highcharts-color-17 {
+  fill: #D1158F;
+  stroke: #D1158F;
+}
+
+.legend-color-17 {
+  background-image: linear-gradient(to top right, rgba(255, 0, 0, 0) 0%, #D1158F 50%);
+}
+
+.highcharts-color-18 {
+  fill: #970F67;
+  stroke: #970F67;
+}
+
+.legend-color-18 {
+  background-image: linear-gradient(to top right, rgba(255, 0, 0, 0) 0%, #970F67 50%);
+}
+
+.highcharts-color-19 {
+  fill: #5D0940;
+  stroke: #5D0940;
+}
+
+.legend-color-19 {
+  background-image: linear-gradient(to top right, rgba(255, 0, 0, 0) 0%, #5D0940 50%);
+}
+
+.highcharts-color-20 {
+  fill: #2E0520;
+  stroke: #2E0520;
+}
+
+.legend-color-20 {
+  background-image: linear-gradient(to top right, rgba(255, 0, 0, 0) 0%, #2E0520 50%);
+}
+
+.highcharts-color-21 {
+  fill: #7DE87D;
+  stroke: #7DE87D;
+}
+
+.legend-color-21 {
+  background-image: linear-gradient(to top right, rgba(255, 0, 0, 0) 0%, #7DE87D 50%);
+}
+
+.highcharts-color-22 {
+  fill: #52E052;
+  stroke: #52E052;
+}
+
+.legend-color-22 {
+  background-image: linear-gradient(to top right, rgba(255, 0, 0, 0) 0%, #52E052 50%);
+}
+
+.highcharts-color-23 {
+  fill: #23CA23;
+  stroke: #23CA23;
+}
+
+.legend-color-23 {
+  background-image: linear-gradient(to top right, rgba(255, 0, 0, 0) 0%, #23CA23 50%);
+}
+
+.highcharts-color-24 {
+  fill: #1B981B;
+  stroke: #1B981B;
+}
+
+.legend-color-24 {
+  background-image: linear-gradient(to top right, rgba(255, 0, 0, 0) 0%, #1B981B 50%);
+}
+
+.highcharts-color-25 {
+  fill: #136C13;
+  stroke: #136C13;
+}
+
+.legend-color-25 {
+  background-image: linear-gradient(to top right, rgba(255, 0, 0, 0) 0%, #136C13 50%);
+}
+
+.highcharts-color-26 {
+  fill: #0B410B;
+  stroke: #0B410B;
+}
+
+.legend-color-26 {
+  background-image: linear-gradient(to top right, rgba(255, 0, 0, 0) 0%, #0B410B 50%);
+}
+
+.highcharts-color-27 {
+  fill: #041604;
+  stroke: #041604;
+}
+
+.legend-color-27 {
+  background-image: linear-gradient(to top right, rgba(255, 0, 0, 0) 0%, #041604 50%);
+}
+
+.highcharts-color-28 {
+  fill: #F18E8E;
+  stroke: #F18E8E;
+}
+
+.legend-color-28 {
+  background-image: linear-gradient(to top right, rgba(255, 0, 0, 0) 0%, #F18E8E 50%);
+}
+
+.highcharts-color-29 {
+  fill: #EB6060;
+  stroke: #EB6060;
+}
+
+.legend-color-29 {
+  background-image: linear-gradient(to top right, rgba(255, 0, 0, 0) 0%, #EB6060 50%);
+}
+
+.highcharts-color-30 {
+  fill: #E63333;
+  stroke: #E63333;
+}
+
+.legend-color-30 {
+  background-image: linear-gradient(to top right, rgba(255, 0, 0, 0) 0%, #E63333 50%);
+}
+
+.highcharts-color-31 {
+  fill: #CC1919;
+  stroke: #CC1919;
+}
+
+.legend-color-31 {
+  background-image: linear-gradient(to top right, rgba(255, 0, 0, 0) 0%, #CC1919 50%);
+}
+
+.highcharts-color-32 {
+  fill: #881111;
+  stroke: #881111;
+}
+
+.legend-color-32 {
+  background-image: linear-gradient(to top right, rgba(255, 0, 0, 0) 0%, #881111 50%);
+}
+
+.highcharts-color-33 {
+  fill: #440808;
+  stroke: #440808;
+}
+
+.legend-color-33 {
+  background-image: linear-gradient(to top right, rgba(255, 0, 0, 0) 0%, #440808 50%);
+}
+
+.highcharts-color-34 {
+  fill: #170303;
+  stroke: #170303;
+}
+
+.legend-color-34 {
+  background-image: linear-gradient(to top right, rgba(255, 0, 0, 0) 0%, #170303 50%);
+}
+
+.highcharts-color-35 {
+  fill: #e7d7f4;
+  stroke: #e7d7f4;
+}
+
+.legend-color-35 {
+  background-image: linear-gradient(to top right, rgba(255, 0, 0, 0) 0%, #e7d7f4 50%);
+}
+
+.highcharts-color-36 {
+  fill: #C29CE2;
+  stroke: #C29CE2;
+}
+
+.legend-color-36 {
+  background-image: linear-gradient(to top right, rgba(255, 0, 0, 0) 0%, #C29CE2 50%);
+}
+
+.highcharts-color-37 {
+  fill: #9D61D1;
+  stroke: #9D61D1;
+}
+
+.legend-color-37 {
+  background-image: linear-gradient(to top right, rgba(255, 0, 0, 0) 0%, #9D61D1 50%);
+}
+
+.highcharts-color-38 {
+  fill: #772EB8;
+  stroke: #772EB8;
+}
+
+.legend-color-38 {
+  background-image: linear-gradient(to top right, rgba(255, 0, 0, 0) 0%, #772EB8 50%);
+}
+
+.highcharts-color-39 {
+  fill: #501980;
+  stroke: #501980;
+}
+
+.legend-color-39 {
+  background-image: linear-gradient(to top right, rgba(255, 0, 0, 0) 0%, #501980 50%);
+}
+
+.highcharts-color-40 {
+  fill: #360D59;
+  stroke: #360D59;
+}
+
+.legend-color-40 {
+  background-image: linear-gradient(to top right, rgba(255, 0, 0, 0) 0%, #360D59 50%);
+}
+
+.highcharts-color-41 {
+  fill: #1B042F;
+  stroke: #1B042F;
+}
+
+.legend-color-41 {
+  background-image: linear-gradient(to top right, rgba(255, 0, 0, 0) 0%, #1B042F 50%);
+}
+
+.highcharts-color-42 {
+  fill: #ddc3c3;
+  stroke: #ddc3c3;
+}
+
+.legend-color-42 {
+  background-image: linear-gradient(to top right, rgba(255, 0, 0, 0) 0%, #ddc3c3 50%);
+}
+
+.highcharts-color-43 {
+  fill: #8B9595;
+  stroke: #8B9595;
+}
+
+.legend-color-43 {
+  background-image: linear-gradient(to top right, rgba(255, 0, 0, 0) 0%, #8B9595 50%);
+}
+
+.highcharts-color-44 {
   fill: #101414;
   stroke: #101414;
 }
 
-.legend-color-10 {
+.legend-color-44 {
   background-image: linear-gradient(to top right, rgba(255, 0, 0, 0) 0%, #101414 50%);
 }
 
-.highcharts-color-11 {
-  fill: #a52721;
-  stroke: #a52721;
-}
-
-.legend-color-11 {
-  background-image: linear-gradient(to top right, rgba(255, 0, 0, 0) 0%, #a52721 50%);
-}
-
-.highcharts-color-12 {
-  fill: #677f7f;
-  stroke: #677f7f;
-}
-
-.legend-color-12 {
-  background-image: linear-gradient(to top right, rgba(255, 0, 0, 0) 0%, #677f7f 50%);
-}
-
-.highcharts-color-13 {
-  fill: #0a3316;
-  stroke: #0a3316;
-}
-
-.legend-color-13 {
-  background-image: linear-gradient(to top right, rgba(255, 0, 0, 0) 0%, #0a3316 50%);
-}
-
-.highcharts-color-14 {
-  fill: #a59110;
-  stroke: #a59110;
-}
-
-.legend-color-14 {
-  background-image: linear-gradient(to top right, rgba(255, 0, 0, 0) 0%, #a59110 50%);
-}
-
-.highcharts-color-15 {
-  fill: #99373f;
-  stroke: #99373f;
-}
-
-.legend-color-15 {
-  background-image: linear-gradient(to top right, rgba(255, 0, 0, 0) 0%, #99373f 50%);
-}
-
-.highcharts-color-16 {
-  fill: #5cf28b;
-  stroke: #5cf28b;
-}
-
-.legend-color-16 {
-  background-image: linear-gradient(to top right, rgba(255, 0, 0, 0) 0%, #5cf28b 50%);
-}
-
-.highcharts-color-17 {
-  fill: #22162b;
-  stroke: #22162b;
-}
-
-.legend-color-17 {
-  background-image: linear-gradient(to top right, rgba(255, 0, 0, 0) 0%, #22162b 50%);
-}
-
-.highcharts-color-18 {
-  fill: #e58939;
-  stroke: #e58939;
-}
-
-.legend-color-18 {
-  background-image: linear-gradient(to top right, rgba(255, 0, 0, 0) 0%, #e58939 50%);
-}
-
-.highcharts-color-19 {
-  fill: #167234;
-  stroke: #167234;
-}
-
-.legend-color-19 {
-  background-image: linear-gradient(to top right, rgba(255, 0, 0, 0) 0%, #167234 50%);
-}
-
-.highcharts-color-20 {
-  fill: #cc7097;
-  stroke: #cc7097;
-}
-
-.legend-color-20 {
-  background-image: linear-gradient(to top right, rgba(255, 0, 0, 0) 0%, #cc7097 50%);
-}
-
-.highcharts-color-21 {
-  fill: #4c1b1f;
-  stroke: #4c1b1f;
-}
-
-.legend-color-21 {
-  background-image: linear-gradient(to top right, rgba(255, 0, 0, 0) 0%, #4c1b1f 50%);
-}
-
-.highcharts-color-22 {
-  fill: #3f380c;
-  stroke: #3f380c;
-}
-
-.legend-color-22 {
-  background-image: linear-gradient(to top right, rgba(255, 0, 0, 0) 0%, #3f380c 50%);
-}
-
-.highcharts-color-23 {
-  fill: #d8c756;
-  stroke: #d8c756;
-}
-
-.legend-color-23 {
-  background-image: linear-gradient(to top right, rgba(255, 0, 0, 0) 0%, #d8c756 50%);
-}
-
-.highcharts-color-24 {
-  fill: #4c2033;
-  stroke: #4c2033;
-}
-
-.legend-color-24 {
-  background-image: linear-gradient(to top right, rgba(255, 0, 0, 0) 0%, #4c2033 50%);
-}
-
-.highcharts-color-25 {
-  fill: #875121;
-  stroke: #875121;
-}
-
-.legend-color-25 {
-  background-image: linear-gradient(to top right, rgba(255, 0, 0, 0) 0%, #875121 50%);
-}
-
-.highcharts-color-26 {
-  fill: #660e0a;
-  stroke: #660e0a;
-}
-
-.legend-color-26 {
-  background-image: linear-gradient(to top right, rgba(255, 0, 0, 0) 0%, #660e0a 50%);
-}
-
-.highcharts-color-27 {
-  fill: #794f99;
-  stroke: #794f99;
-}
-
-.legend-color-27 {
-  background-image: linear-gradient(to top right, rgba(255, 0, 0, 0) 0%, #794f99 50%);
-}
-
-.highcharts-color-28 {
+.highcharts-color-45 {
   fill: #DDDDDD;
   stroke: #DDDDDD;
 }
 
-.legend-color-28 {
+.legend-color-45 {
   background-image: linear-gradient(to top right, rgba(255, 0, 0, 0) 0%, #DDDDDD 50%);
 }
 
 /* Default gradients */
 #gradient-0 stop {
-  stop-color: #0074D9;
+  stop-color: #B3DBFF;
 }
 
 #gradient-0 stop[offset="0"] {
@@ -503,7 +656,7 @@ g.highcharts-series,
 }
 
 #gradient-1 stop {
-  stop-color: #ff3299;
+  stop-color: #66B8FF;
 }
 
 #gradient-1 stop[offset="0"] {
@@ -515,7 +668,7 @@ g.highcharts-series,
 }
 
 #gradient-2 stop {
-  stop-color: #DDC3C3;
+  stop-color: #1A94FF;
 }
 
 #gradient-2 stop[offset="0"] {
@@ -527,7 +680,7 @@ g.highcharts-series,
 }
 
 #gradient-3 stop {
-  stop-color: #051d33;
+  stop-color: #0070D1;
 }
 
 #gradient-3 stop[offset="0"] {
@@ -539,7 +692,7 @@ g.highcharts-series,
 }
 
 #gradient-4 stop {
-  stop-color: #ffdc00;
+  stop-color: #005299;
 }
 
 #gradient-4 stop[offset="0"] {
@@ -551,7 +704,7 @@ g.highcharts-series,
 }
 
 #gradient-5 stop {
-  stop-color: #0b4272;
+  stop-color: #003666;
 }
 
 #gradient-5 stop[offset="0"] {
@@ -563,7 +716,7 @@ g.highcharts-series,
 }
 
 #gradient-6 stop {
-  stop-color: #ff3d32;
+  stop-color: #001B33;
 }
 
 #gradient-6 stop[offset="0"] {
@@ -575,7 +728,7 @@ g.highcharts-series,
 }
 
 #gradient-7 stop {
-  stop-color: #59b1ff;
+  stop-color: #FFFF99;
 }
 
 #gradient-7 stop[offset="0"] {
@@ -587,7 +740,7 @@ g.highcharts-series,
 }
 
 #gradient-8 stop {
-  stop-color: #8c1c54;
+  stop-color: #FFFF4D;
 }
 
 #gradient-8 stop[offset="0"] {
@@ -599,7 +752,7 @@ g.highcharts-series,
 }
 
 #gradient-9 stop {
-  stop-color: #28cc5c;
+  stop-color: #FFFF1A;
 }
 
 #gradient-9 stop[offset="0"] {
@@ -611,7 +764,7 @@ g.highcharts-series,
 }
 
 #gradient-10 stop {
-  stop-color: #101414;
+  stop-color: #C7C705;
 }
 
 #gradient-10 stop[offset="0"] {
@@ -623,7 +776,7 @@ g.highcharts-series,
 }
 
 #gradient-11 stop {
-  stop-color: #a52721;
+  stop-color: #919108;
 }
 
 #gradient-11 stop[offset="0"] {
@@ -635,7 +788,7 @@ g.highcharts-series,
 }
 
 #gradient-12 stop {
-  stop-color: #677f7f;
+  stop-color: #5E5E08;
 }
 
 #gradient-12 stop[offset="0"] {
@@ -647,7 +800,7 @@ g.highcharts-series,
 }
 
 #gradient-13 stop {
-  stop-color: #0a3316;
+  stop-color: #2E2E05;
 }
 
 #gradient-13 stop[offset="0"] {
@@ -659,7 +812,7 @@ g.highcharts-series,
 }
 
 #gradient-14 stop {
-  stop-color: #a59110;
+  stop-color: #FAD1EC;
 }
 
 #gradient-14 stop[offset="0"] {
@@ -671,7 +824,7 @@ g.highcharts-series,
 }
 
 #gradient-15 stop {
-  stop-color: #99373f;
+  stop-color: #F48BCF;
 }
 
 #gradient-15 stop[offset="0"] {
@@ -683,7 +836,7 @@ g.highcharts-series,
 }
 
 #gradient-16 stop {
-  stop-color: #5cf28b;
+  stop-color: #ED45B2;
 }
 
 #gradient-16 stop[offset="0"] {
@@ -695,7 +848,7 @@ g.highcharts-series,
 }
 
 #gradient-17 stop {
-  stop-color: #22162b;
+  stop-color: #D1158F;
 }
 
 #gradient-17 stop[offset="0"] {
@@ -707,7 +860,7 @@ g.highcharts-series,
 }
 
 #gradient-18 stop {
-  stop-color: #e58939;
+  stop-color: #970F67;
 }
 
 #gradient-18 stop[offset="0"] {
@@ -719,7 +872,7 @@ g.highcharts-series,
 }
 
 #gradient-19 stop {
-  stop-color: #167234;
+  stop-color: #5D0940;
 }
 
 #gradient-19 stop[offset="0"] {
@@ -731,7 +884,7 @@ g.highcharts-series,
 }
 
 #gradient-20 stop {
-  stop-color: #cc7097;
+  stop-color: #2E0520;
 }
 
 #gradient-20 stop[offset="0"] {
@@ -743,7 +896,7 @@ g.highcharts-series,
 }
 
 #gradient-21 stop {
-  stop-color: #4c1b1f;
+  stop-color: #7DE87D;
 }
 
 #gradient-21 stop[offset="0"] {
@@ -755,7 +908,7 @@ g.highcharts-series,
 }
 
 #gradient-22 stop {
-  stop-color: #3f380c;
+  stop-color: #52E052;
 }
 
 #gradient-22 stop[offset="0"] {
@@ -767,7 +920,7 @@ g.highcharts-series,
 }
 
 #gradient-23 stop {
-  stop-color: #d8c756;
+  stop-color: #23CA23;
 }
 
 #gradient-23 stop[offset="0"] {
@@ -779,7 +932,7 @@ g.highcharts-series,
 }
 
 #gradient-24 stop {
-  stop-color: #4c2033;
+  stop-color: #1B981B;
 }
 
 #gradient-24 stop[offset="0"] {
@@ -791,7 +944,7 @@ g.highcharts-series,
 }
 
 #gradient-25 stop {
-  stop-color: #875121;
+  stop-color: #136C13;
 }
 
 #gradient-25 stop[offset="0"] {
@@ -803,7 +956,7 @@ g.highcharts-series,
 }
 
 #gradient-26 stop {
-  stop-color: #660e0a;
+  stop-color: #0B410B;
 }
 
 #gradient-26 stop[offset="0"] {
@@ -815,7 +968,7 @@ g.highcharts-series,
 }
 
 #gradient-27 stop {
-  stop-color: #794f99;
+  stop-color: #041604;
 }
 
 #gradient-27 stop[offset="0"] {
@@ -827,7 +980,7 @@ g.highcharts-series,
 }
 
 #gradient-28 stop {
-  stop-color: #DDDDDD;
+  stop-color: #F18E8E;
 }
 
 #gradient-28 stop[offset="0"] {
@@ -838,8 +991,212 @@ g.highcharts-series,
   stop-opacity: 0.5;
 }
 
+#gradient-29 stop {
+  stop-color: #EB6060;
+}
+
+#gradient-29 stop[offset="0"] {
+  stop-opacity: 1;
+}
+
+#gradient-29 stop[offset="1"] {
+  stop-opacity: 0.5;
+}
+
+#gradient-30 stop {
+  stop-color: #E63333;
+}
+
+#gradient-30 stop[offset="0"] {
+  stop-opacity: 1;
+}
+
+#gradient-30 stop[offset="1"] {
+  stop-opacity: 0.5;
+}
+
+#gradient-31 stop {
+  stop-color: #CC1919;
+}
+
+#gradient-31 stop[offset="0"] {
+  stop-opacity: 1;
+}
+
+#gradient-31 stop[offset="1"] {
+  stop-opacity: 0.5;
+}
+
+#gradient-32 stop {
+  stop-color: #881111;
+}
+
+#gradient-32 stop[offset="0"] {
+  stop-opacity: 1;
+}
+
+#gradient-32 stop[offset="1"] {
+  stop-opacity: 0.5;
+}
+
+#gradient-33 stop {
+  stop-color: #440808;
+}
+
+#gradient-33 stop[offset="0"] {
+  stop-opacity: 1;
+}
+
+#gradient-33 stop[offset="1"] {
+  stop-opacity: 0.5;
+}
+
+#gradient-34 stop {
+  stop-color: #170303;
+}
+
+#gradient-34 stop[offset="0"] {
+  stop-opacity: 1;
+}
+
+#gradient-34 stop[offset="1"] {
+  stop-opacity: 0.5;
+}
+
+#gradient-35 stop {
+  stop-color: #e7d7f4;
+}
+
+#gradient-35 stop[offset="0"] {
+  stop-opacity: 1;
+}
+
+#gradient-35 stop[offset="1"] {
+  stop-opacity: 0.5;
+}
+
+#gradient-36 stop {
+  stop-color: #C29CE2;
+}
+
+#gradient-36 stop[offset="0"] {
+  stop-opacity: 1;
+}
+
+#gradient-36 stop[offset="1"] {
+  stop-opacity: 0.5;
+}
+
+#gradient-37 stop {
+  stop-color: #9D61D1;
+}
+
+#gradient-37 stop[offset="0"] {
+  stop-opacity: 1;
+}
+
+#gradient-37 stop[offset="1"] {
+  stop-opacity: 0.5;
+}
+
+#gradient-38 stop {
+  stop-color: #772EB8;
+}
+
+#gradient-38 stop[offset="0"] {
+  stop-opacity: 1;
+}
+
+#gradient-38 stop[offset="1"] {
+  stop-opacity: 0.5;
+}
+
+#gradient-39 stop {
+  stop-color: #501980;
+}
+
+#gradient-39 stop[offset="0"] {
+  stop-opacity: 1;
+}
+
+#gradient-39 stop[offset="1"] {
+  stop-opacity: 0.5;
+}
+
+#gradient-40 stop {
+  stop-color: #360D59;
+}
+
+#gradient-40 stop[offset="0"] {
+  stop-opacity: 1;
+}
+
+#gradient-40 stop[offset="1"] {
+  stop-opacity: 0.5;
+}
+
+#gradient-41 stop {
+  stop-color: #1B042F;
+}
+
+#gradient-41 stop[offset="0"] {
+  stop-opacity: 1;
+}
+
+#gradient-41 stop[offset="1"] {
+  stop-opacity: 0.5;
+}
+
+#gradient-42 stop {
+  stop-color: #ddc3c3;
+}
+
+#gradient-42 stop[offset="0"] {
+  stop-opacity: 1;
+}
+
+#gradient-42 stop[offset="1"] {
+  stop-opacity: 0.5;
+}
+
+#gradient-43 stop {
+  stop-color: #8B9595;
+}
+
+#gradient-43 stop[offset="0"] {
+  stop-opacity: 1;
+}
+
+#gradient-43 stop[offset="1"] {
+  stop-opacity: 0.5;
+}
+
+#gradient-44 stop {
+  stop-color: #101414;
+}
+
+#gradient-44 stop[offset="0"] {
+  stop-opacity: 1;
+}
+
+#gradient-44 stop[offset="1"] {
+  stop-opacity: 0.5;
+}
+
+#gradient-45 stop {
+  stop-color: #DDDDDD;
+}
+
+#gradient-45 stop[offset="0"] {
+  stop-opacity: 1;
+}
+
+#gradient-45 stop[offset="1"] {
+  stop-opacity: 0.5;
+}
+
 #gradient-area-0 stop {
-  stop-color: #0074D9;
+  stop-color: #B3DBFF;
 }
 
 #gradient-area-0 stop[offset="0"] {
@@ -851,7 +1208,7 @@ g.highcharts-series,
 }
 
 #gradient-area-1 stop {
-  stop-color: #ff3299;
+  stop-color: #66B8FF;
 }
 
 #gradient-area-1 stop[offset="0"] {
@@ -863,7 +1220,7 @@ g.highcharts-series,
 }
 
 #gradient-area-2 stop {
-  stop-color: #DDC3C3;
+  stop-color: #1A94FF;
 }
 
 #gradient-area-2 stop[offset="0"] {
@@ -875,7 +1232,7 @@ g.highcharts-series,
 }
 
 #gradient-area-3 stop {
-  stop-color: #051d33;
+  stop-color: #0070D1;
 }
 
 #gradient-area-3 stop[offset="0"] {
@@ -887,7 +1244,7 @@ g.highcharts-series,
 }
 
 #gradient-area-4 stop {
-  stop-color: #ffdc00;
+  stop-color: #005299;
 }
 
 #gradient-area-4 stop[offset="0"] {
@@ -899,7 +1256,7 @@ g.highcharts-series,
 }
 
 #gradient-area-5 stop {
-  stop-color: #0b4272;
+  stop-color: #003666;
 }
 
 #gradient-area-5 stop[offset="0"] {
@@ -911,7 +1268,7 @@ g.highcharts-series,
 }
 
 #gradient-area-6 stop {
-  stop-color: #ff3d32;
+  stop-color: #001B33;
 }
 
 #gradient-area-6 stop[offset="0"] {
@@ -923,7 +1280,7 @@ g.highcharts-series,
 }
 
 #gradient-area-7 stop {
-  stop-color: #59b1ff;
+  stop-color: #FFFF99;
 }
 
 #gradient-area-7 stop[offset="0"] {
@@ -935,7 +1292,7 @@ g.highcharts-series,
 }
 
 #gradient-area-8 stop {
-  stop-color: #8c1c54;
+  stop-color: #FFFF4D;
 }
 
 #gradient-area-8 stop[offset="0"] {
@@ -947,7 +1304,7 @@ g.highcharts-series,
 }
 
 #gradient-area-9 stop {
-  stop-color: #28cc5c;
+  stop-color: #FFFF1A;
 }
 
 #gradient-area-9 stop[offset="0"] {
@@ -959,7 +1316,7 @@ g.highcharts-series,
 }
 
 #gradient-area-10 stop {
-  stop-color: #101414;
+  stop-color: #C7C705;
 }
 
 #gradient-area-10 stop[offset="0"] {
@@ -971,7 +1328,7 @@ g.highcharts-series,
 }
 
 #gradient-area-11 stop {
-  stop-color: #a52721;
+  stop-color: #919108;
 }
 
 #gradient-area-11 stop[offset="0"] {
@@ -983,7 +1340,7 @@ g.highcharts-series,
 }
 
 #gradient-area-12 stop {
-  stop-color: #677f7f;
+  stop-color: #5E5E08;
 }
 
 #gradient-area-12 stop[offset="0"] {
@@ -995,7 +1352,7 @@ g.highcharts-series,
 }
 
 #gradient-area-13 stop {
-  stop-color: #0a3316;
+  stop-color: #2E2E05;
 }
 
 #gradient-area-13 stop[offset="0"] {
@@ -1007,7 +1364,7 @@ g.highcharts-series,
 }
 
 #gradient-area-14 stop {
-  stop-color: #a59110;
+  stop-color: #FAD1EC;
 }
 
 #gradient-area-14 stop[offset="0"] {
@@ -1019,7 +1376,7 @@ g.highcharts-series,
 }
 
 #gradient-area-15 stop {
-  stop-color: #99373f;
+  stop-color: #F48BCF;
 }
 
 #gradient-area-15 stop[offset="0"] {
@@ -1031,7 +1388,7 @@ g.highcharts-series,
 }
 
 #gradient-area-16 stop {
-  stop-color: #5cf28b;
+  stop-color: #ED45B2;
 }
 
 #gradient-area-16 stop[offset="0"] {
@@ -1043,7 +1400,7 @@ g.highcharts-series,
 }
 
 #gradient-area-17 stop {
-  stop-color: #22162b;
+  stop-color: #D1158F;
 }
 
 #gradient-area-17 stop[offset="0"] {
@@ -1055,7 +1412,7 @@ g.highcharts-series,
 }
 
 #gradient-area-18 stop {
-  stop-color: #e58939;
+  stop-color: #970F67;
 }
 
 #gradient-area-18 stop[offset="0"] {
@@ -1067,7 +1424,7 @@ g.highcharts-series,
 }
 
 #gradient-area-19 stop {
-  stop-color: #167234;
+  stop-color: #5D0940;
 }
 
 #gradient-area-19 stop[offset="0"] {
@@ -1079,7 +1436,7 @@ g.highcharts-series,
 }
 
 #gradient-area-20 stop {
-  stop-color: #cc7097;
+  stop-color: #2E0520;
 }
 
 #gradient-area-20 stop[offset="0"] {
@@ -1091,7 +1448,7 @@ g.highcharts-series,
 }
 
 #gradient-area-21 stop {
-  stop-color: #4c1b1f;
+  stop-color: #7DE87D;
 }
 
 #gradient-area-21 stop[offset="0"] {
@@ -1103,7 +1460,7 @@ g.highcharts-series,
 }
 
 #gradient-area-22 stop {
-  stop-color: #3f380c;
+  stop-color: #52E052;
 }
 
 #gradient-area-22 stop[offset="0"] {
@@ -1115,7 +1472,7 @@ g.highcharts-series,
 }
 
 #gradient-area-23 stop {
-  stop-color: #d8c756;
+  stop-color: #23CA23;
 }
 
 #gradient-area-23 stop[offset="0"] {
@@ -1127,7 +1484,7 @@ g.highcharts-series,
 }
 
 #gradient-area-24 stop {
-  stop-color: #4c2033;
+  stop-color: #1B981B;
 }
 
 #gradient-area-24 stop[offset="0"] {
@@ -1139,7 +1496,7 @@ g.highcharts-series,
 }
 
 #gradient-area-25 stop {
-  stop-color: #875121;
+  stop-color: #136C13;
 }
 
 #gradient-area-25 stop[offset="0"] {
@@ -1151,7 +1508,7 @@ g.highcharts-series,
 }
 
 #gradient-area-26 stop {
-  stop-color: #660e0a;
+  stop-color: #0B410B;
 }
 
 #gradient-area-26 stop[offset="0"] {
@@ -1163,7 +1520,7 @@ g.highcharts-series,
 }
 
 #gradient-area-27 stop {
-  stop-color: #794f99;
+  stop-color: #041604;
 }
 
 #gradient-area-27 stop[offset="0"] {
@@ -1175,7 +1532,7 @@ g.highcharts-series,
 }
 
 #gradient-area-28 stop {
-  stop-color: #DDDDDD;
+  stop-color: #F18E8E;
 }
 
 #gradient-area-28 stop[offset="0"] {
@@ -1183,6 +1540,210 @@ g.highcharts-series,
 }
 
 #gradient-area-28 stop[offset="1"] {
+  stop-opacity: 0.1;
+}
+
+#gradient-area-29 stop {
+  stop-color: #EB6060;
+}
+
+#gradient-area-29 stop[offset="0"] {
+  stop-opacity: 1;
+}
+
+#gradient-area-29 stop[offset="1"] {
+  stop-opacity: 0.1;
+}
+
+#gradient-area-30 stop {
+  stop-color: #E63333;
+}
+
+#gradient-area-30 stop[offset="0"] {
+  stop-opacity: 1;
+}
+
+#gradient-area-30 stop[offset="1"] {
+  stop-opacity: 0.1;
+}
+
+#gradient-area-31 stop {
+  stop-color: #CC1919;
+}
+
+#gradient-area-31 stop[offset="0"] {
+  stop-opacity: 1;
+}
+
+#gradient-area-31 stop[offset="1"] {
+  stop-opacity: 0.1;
+}
+
+#gradient-area-32 stop {
+  stop-color: #881111;
+}
+
+#gradient-area-32 stop[offset="0"] {
+  stop-opacity: 1;
+}
+
+#gradient-area-32 stop[offset="1"] {
+  stop-opacity: 0.1;
+}
+
+#gradient-area-33 stop {
+  stop-color: #440808;
+}
+
+#gradient-area-33 stop[offset="0"] {
+  stop-opacity: 1;
+}
+
+#gradient-area-33 stop[offset="1"] {
+  stop-opacity: 0.1;
+}
+
+#gradient-area-34 stop {
+  stop-color: #170303;
+}
+
+#gradient-area-34 stop[offset="0"] {
+  stop-opacity: 1;
+}
+
+#gradient-area-34 stop[offset="1"] {
+  stop-opacity: 0.1;
+}
+
+#gradient-area-35 stop {
+  stop-color: #e7d7f4;
+}
+
+#gradient-area-35 stop[offset="0"] {
+  stop-opacity: 1;
+}
+
+#gradient-area-35 stop[offset="1"] {
+  stop-opacity: 0.1;
+}
+
+#gradient-area-36 stop {
+  stop-color: #C29CE2;
+}
+
+#gradient-area-36 stop[offset="0"] {
+  stop-opacity: 1;
+}
+
+#gradient-area-36 stop[offset="1"] {
+  stop-opacity: 0.1;
+}
+
+#gradient-area-37 stop {
+  stop-color: #9D61D1;
+}
+
+#gradient-area-37 stop[offset="0"] {
+  stop-opacity: 1;
+}
+
+#gradient-area-37 stop[offset="1"] {
+  stop-opacity: 0.1;
+}
+
+#gradient-area-38 stop {
+  stop-color: #772EB8;
+}
+
+#gradient-area-38 stop[offset="0"] {
+  stop-opacity: 1;
+}
+
+#gradient-area-38 stop[offset="1"] {
+  stop-opacity: 0.1;
+}
+
+#gradient-area-39 stop {
+  stop-color: #501980;
+}
+
+#gradient-area-39 stop[offset="0"] {
+  stop-opacity: 1;
+}
+
+#gradient-area-39 stop[offset="1"] {
+  stop-opacity: 0.1;
+}
+
+#gradient-area-40 stop {
+  stop-color: #360D59;
+}
+
+#gradient-area-40 stop[offset="0"] {
+  stop-opacity: 1;
+}
+
+#gradient-area-40 stop[offset="1"] {
+  stop-opacity: 0.1;
+}
+
+#gradient-area-41 stop {
+  stop-color: #1B042F;
+}
+
+#gradient-area-41 stop[offset="0"] {
+  stop-opacity: 1;
+}
+
+#gradient-area-41 stop[offset="1"] {
+  stop-opacity: 0.1;
+}
+
+#gradient-area-42 stop {
+  stop-color: #ddc3c3;
+}
+
+#gradient-area-42 stop[offset="0"] {
+  stop-opacity: 1;
+}
+
+#gradient-area-42 stop[offset="1"] {
+  stop-opacity: 0.1;
+}
+
+#gradient-area-43 stop {
+  stop-color: #8B9595;
+}
+
+#gradient-area-43 stop[offset="0"] {
+  stop-opacity: 1;
+}
+
+#gradient-area-43 stop[offset="1"] {
+  stop-opacity: 0.1;
+}
+
+#gradient-area-44 stop {
+  stop-color: #101414;
+}
+
+#gradient-area-44 stop[offset="0"] {
+  stop-opacity: 1;
+}
+
+#gradient-area-44 stop[offset="1"] {
+  stop-opacity: 0.1;
+}
+
+#gradient-area-45 stop {
+  stop-color: #DDDDDD;
+}
+
+#gradient-area-45 stop[offset="0"] {
+  stop-opacity: 1;
+}
+
+#gradient-area-45 stop[offset="1"] {
   stop-opacity: 0.1;
 }
 
@@ -1883,11 +2444,11 @@ text.highcharts-drilldown-data-label,
 }
 
 .highcharts-data-label-color-0 text {
-  fill: #dffcff;
+  fill: #2e3838;
 }
 
 .highcharts-data-label-color-1 text {
-  fill: #dffcff;
+  fill: #2e3838;
 }
 
 .highcharts-data-label-color-2 text {
@@ -1899,7 +2460,7 @@ text.highcharts-drilldown-data-label,
 }
 
 .highcharts-data-label-color-4 text {
-  fill: #2e3838;
+  fill: #dffcff;
 }
 
 .highcharts-data-label-color-5 text {
@@ -1911,15 +2472,15 @@ text.highcharts-drilldown-data-label,
 }
 
 .highcharts-data-label-color-7 text {
-  fill: #dffcff;
+  fill: #2e3838;
 }
 
 .highcharts-data-label-color-8 text {
-  fill: #dffcff;
+  fill: #2e3838;
 }
 
 .highcharts-data-label-color-9 text {
-  fill: #dffcff;
+  fill: #2e3838;
 }
 
 .highcharts-data-label-color-10 text {
@@ -1943,7 +2504,7 @@ text.highcharts-drilldown-data-label,
 }
 
 .highcharts-data-label-color-15 text {
-  fill: #dffcff;
+  fill: #2e3838;
 }
 
 .highcharts-data-label-color-16 text {
@@ -1955,7 +2516,7 @@ text.highcharts-drilldown-data-label,
 }
 
 .highcharts-data-label-color-18 text {
-  fill: #2e3838;
+  fill: #dffcff;
 }
 
 .highcharts-data-label-color-19 text {
@@ -1971,7 +2532,7 @@ text.highcharts-drilldown-data-label,
 }
 
 .highcharts-data-label-color-22 text {
-  fill: #dffcff;
+  fill: #2e3838;
 }
 
 .highcharts-data-label-color-23 text {
@@ -1979,5 +2540,89 @@ text.highcharts-drilldown-data-label,
 }
 
 .highcharts-data-label-color-24 text {
+  fill: #dffcff;
+}
+
+.highcharts-data-label-color-25 text {
+  fill: #dffcff;
+}
+
+.highcharts-data-label-color-26 text {
+  fill: #dffcff;
+}
+
+.highcharts-data-label-color-27 text {
+  fill: #dffcff;
+}
+
+.highcharts-data-label-color-28 text {
+  fill: #2e3838;
+}
+
+.highcharts-data-label-color-29 text {
+  fill: #2e3838;
+}
+
+.highcharts-data-label-color-30 text {
+  fill: #2e3838;
+}
+
+.highcharts-data-label-color-31 text {
+  fill: #dffcff;
+}
+
+.highcharts-data-label-color-32 text {
+  fill: #dffcff;
+}
+
+.highcharts-data-label-color-33 text {
+  fill: #dffcff;
+}
+
+.highcharts-data-label-color-34 text {
+  fill: #dffcff;
+}
+
+.highcharts-data-label-color-35 text {
+  fill: #2e3838;
+}
+
+.highcharts-data-label-color-36 text {
+  fill: #2e3838;
+}
+
+.highcharts-data-label-color-37 text {
+  fill: #2e3838;
+}
+
+.highcharts-data-label-color-38 text {
+  fill: #dffcff;
+}
+
+.highcharts-data-label-color-39 text {
+  fill: #dffcff;
+}
+
+.highcharts-data-label-color-40 text {
+  fill: #dffcff;
+}
+
+.highcharts-data-label-color-41 text {
+  fill: #dffcff;
+}
+
+.highcharts-data-label-color-42 text {
+  fill: #2e3838;
+}
+
+.highcharts-data-label-color-43 text {
+  fill: #dffcff;
+}
+
+.highcharts-data-label-color-44 text {
+  fill: #dffcff;
+}
+
+.highcharts-data-label-color-45 text {
   fill: #2e3838;
 }

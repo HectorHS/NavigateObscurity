@@ -953,6 +953,261 @@ Highcharts.setOptions({
                 offset: 1
             }]
         },
+        gradient29: {
+            tagName: 'linearGradient',
+            id: 'gradient-29',
+            x1: 0,
+            y1: 0,
+            x2: 0,
+            y2: 1,
+            children: [{
+                tagName: 'stop',
+                offset: 0
+            }, {
+                tagName: 'stop',
+                offset: 1
+            }]
+        },
+        gradient30: {
+            tagName: 'linearGradient',
+            id: 'gradient-30',
+            x1: 0,
+            y1: 0,
+            x2: 0,
+            y2: 1,
+            children: [{
+                tagName: 'stop',
+                offset: 0
+            }, {
+                tagName: 'stop',
+                offset: 1
+            }]
+        },
+        gradient31: {
+            tagName: 'linearGradient',
+            id: 'gradient-31',
+            x1: 0,
+            y1: 0,
+            x2: 0,
+            y2: 1,
+            children: [{
+                tagName: 'stop',
+                offset: 0
+            }, {
+                tagName: 'stop',
+                offset: 1
+            }]
+        },
+        gradient32: {
+            tagName: 'linearGradient',
+            id: 'gradient-32',
+            x1: 0,
+            y1: 0,
+            x2: 0,
+            y2: 1,
+            children: [{
+                tagName: 'stop',
+                offset: 0
+            }, {
+                tagName: 'stop',
+                offset: 1
+            }]
+        },
+        gradient33: {
+            tagName: 'linearGradient',
+            id: 'gradient-33',
+            x1: 0,
+            y1: 0,
+            x2: 0,
+            y2: 1,
+            children: [{
+                tagName: 'stop',
+                offset: 0
+            }, {
+                tagName: 'stop',
+                offset: 1
+            }]
+        },
+        gradient34: {
+            tagName: 'linearGradient',
+            id: 'gradient-34',
+            x1: 0,
+            y1: 0,
+            x2: 0,
+            y2: 1,
+            children: [{
+                tagName: 'stop',
+                offset: 0
+            }, {
+                tagName: 'stop',
+                offset: 1
+            }]
+        },
+        gradient35: {
+            tagName: 'linearGradient',
+            id: 'gradient-35',
+            x1: 0,
+            y1: 0,
+            x2: 0,
+            y2: 1,
+            children: [{
+                tagName: 'stop',
+                offset: 0
+            }, {
+                tagName: 'stop',
+                offset: 1
+            }]
+        },
+        gradient36: {
+            tagName: 'linearGradient',
+            id: 'gradient-36',
+            x1: 0,
+            y1: 0,
+            x2: 0,
+            y2: 1,
+            children: [{
+                tagName: 'stop',
+                offset: 0
+            }, {
+                tagName: 'stop',
+                offset: 1
+            }]
+        },
+        gradient37: {
+            tagName: 'linearGradient',
+            id: 'gradient-37',
+            x1: 0,
+            y1: 0,
+            x2: 0,
+            y2: 1,
+            children: [{
+                tagName: 'stop',
+                offset: 0
+            }, {
+                tagName: 'stop',
+                offset: 1
+            }]
+        },
+        gradient38: {
+            tagName: 'linearGradient',
+            id: 'gradient-38',
+            x1: 0,
+            y1: 0,
+            x2: 0,
+            y2: 1,
+            children: [{
+                tagName: 'stop',
+                offset: 0
+            }, {
+                tagName: 'stop',
+                offset: 1
+            }]
+        },
+        gradient39: {
+            tagName: 'linearGradient',
+            id: 'gradient-39',
+            x1: 0,
+            y1: 0,
+            x2: 0,
+            y2: 1,
+            children: [{
+                tagName: 'stop',
+                offset: 0
+            }, {
+                tagName: 'stop',
+                offset: 1
+            }]
+        },
+        gradient40: {
+            tagName: 'linearGradient',
+            id: 'gradient-40',
+            x1: 0,
+            y1: 0,
+            x2: 0,
+            y2: 1,
+            children: [{
+                tagName: 'stop',
+                offset: 0
+            }, {
+                tagName: 'stop',
+                offset: 1
+            }]
+        },
+        gradient41: {
+            tagName: 'linearGradient',
+            id: 'gradient-41',
+            x1: 0,
+            y1: 0,
+            x2: 0,
+            y2: 1,
+            children: [{
+                tagName: 'stop',
+                offset: 0
+            }, {
+                tagName: 'stop',
+                offset: 1
+            }]
+        },
+        gradient42: {
+            tagName: 'linearGradient',
+            id: 'gradient-42',
+            x1: 0,
+            y1: 0,
+            x2: 0,
+            y2: 1,
+            children: [{
+                tagName: 'stop',
+                offset: 0
+            }, {
+                tagName: 'stop',
+                offset: 1
+            }]
+        },
+        gradient43: {
+            tagName: 'linearGradient',
+            id: 'gradient-43',
+            x1: 0,
+            y1: 0,
+            x2: 0,
+            y2: 1,
+            children: [{
+                tagName: 'stop',
+                offset: 0
+            }, {
+                tagName: 'stop',
+                offset: 1
+            }]
+        },
+        gradient44: {
+            tagName: 'linearGradient',
+            id: 'gradient-44',
+            x1: 0,
+            y1: 0,
+            x2: 0,
+            y2: 1,
+            children: [{
+                tagName: 'stop',
+                offset: 0
+            }, {
+                tagName: 'stop',
+                offset: 1
+            }]
+        },
+        gradient45: {
+            tagName: 'linearGradient',
+            id: 'gradient-45',
+            x1: 0,
+            y1: 0,
+            x2: 0,
+            y2: 1,
+            children: [{
+                tagName: 'stop',
+                offset: 0
+            }, {
+                tagName: 'stop',
+                offset: 1
+            }]
+        },
         gradient0area: {
             tagName: 'linearGradient',
             id: 'gradient-area-0',
@@ -1377,6 +1632,261 @@ Highcharts.setOptions({
         gradient28area: {
             tagName: 'linearGradient',
             id: 'gradient-area-28',
+            x1: 0,
+            y1: 0,
+            x2: 0,
+            y2: 1,
+            children: [{
+                tagName: 'stop',
+                offset: 0
+            }, {
+                tagName: 'stop',
+                offset: 1
+            }]
+        },
+        gradient29area: {
+            tagName: 'linearGradient',
+            id: 'gradient-area-29',
+            x1: 0,
+            y1: 0,
+            x2: 0,
+            y2: 1,
+            children: [{
+                tagName: 'stop',
+                offset: 0
+            }, {
+                tagName: 'stop',
+                offset: 1
+            }]
+        },
+        gradient30area: {
+            tagName: 'linearGradient',
+            id: 'gradient-area-30',
+            x1: 0,
+            y1: 0,
+            x2: 0,
+            y2: 1,
+            children: [{
+                tagName: 'stop',
+                offset: 0
+            }, {
+                tagName: 'stop',
+                offset: 1
+            }]
+        },
+        gradient31area: {
+            tagName: 'linearGradient',
+            id: 'gradient-area-31',
+            x1: 0,
+            y1: 0,
+            x2: 0,
+            y2: 1,
+            children: [{
+                tagName: 'stop',
+                offset: 0
+            }, {
+                tagName: 'stop',
+                offset: 1
+            }]
+        },
+        gradient32area: {
+            tagName: 'linearGradient',
+            id: 'gradient-area-32',
+            x1: 0,
+            y1: 0,
+            x2: 0,
+            y2: 1,
+            children: [{
+                tagName: 'stop',
+                offset: 0
+            }, {
+                tagName: 'stop',
+                offset: 1
+            }]
+        },
+        gradient33area: {
+            tagName: 'linearGradient',
+            id: 'gradient-area-33',
+            x1: 0,
+            y1: 0,
+            x2: 0,
+            y2: 1,
+            children: [{
+                tagName: 'stop',
+                offset: 0
+            }, {
+                tagName: 'stop',
+                offset: 1
+            }]
+        },
+        gradient34area: {
+            tagName: 'linearGradient',
+            id: 'gradient-area-34',
+            x1: 0,
+            y1: 0,
+            x2: 0,
+            y2: 1,
+            children: [{
+                tagName: 'stop',
+                offset: 0
+            }, {
+                tagName: 'stop',
+                offset: 1
+            }]
+        },
+        gradient35area: {
+            tagName: 'linearGradient',
+            id: 'gradient-area-35',
+            x1: 0,
+            y1: 0,
+            x2: 0,
+            y2: 1,
+            children: [{
+                tagName: 'stop',
+                offset: 0
+            }, {
+                tagName: 'stop',
+                offset: 1
+            }]
+        },
+        gradient36area: {
+            tagName: 'linearGradient',
+            id: 'gradient-area-36',
+            x1: 0,
+            y1: 0,
+            x2: 0,
+            y2: 1,
+            children: [{
+                tagName: 'stop',
+                offset: 0
+            }, {
+                tagName: 'stop',
+                offset: 1
+            }]
+        },
+        gradient37area: {
+            tagName: 'linearGradient',
+            id: 'gradient-area-37',
+            x1: 0,
+            y1: 0,
+            x2: 0,
+            y2: 1,
+            children: [{
+                tagName: 'stop',
+                offset: 0
+            }, {
+                tagName: 'stop',
+                offset: 1
+            }]
+        },
+        gradient38area: {
+            tagName: 'linearGradient',
+            id: 'gradient-area-38',
+            x1: 0,
+            y1: 0,
+            x2: 0,
+            y2: 1,
+            children: [{
+                tagName: 'stop',
+                offset: 0
+            }, {
+                tagName: 'stop',
+                offset: 1
+            }]
+        },
+        gradient39area: {
+            tagName: 'linearGradient',
+            id: 'gradient-area-39',
+            x1: 0,
+            y1: 0,
+            x2: 0,
+            y2: 1,
+            children: [{
+                tagName: 'stop',
+                offset: 0
+            }, {
+                tagName: 'stop',
+                offset: 1
+            }]
+        },
+        gradient40area: {
+            tagName: 'linearGradient',
+            id: 'gradient-area-40',
+            x1: 0,
+            y1: 0,
+            x2: 0,
+            y2: 1,
+            children: [{
+                tagName: 'stop',
+                offset: 0
+            }, {
+                tagName: 'stop',
+                offset: 1
+            }]
+        },
+        gradient41area: {
+            tagName: 'linearGradient',
+            id: 'gradient-area-41',
+            x1: 0,
+            y1: 0,
+            x2: 0,
+            y2: 1,
+            children: [{
+                tagName: 'stop',
+                offset: 0
+            }, {
+                tagName: 'stop',
+                offset: 1
+            }]
+        },
+        gradient42area: {
+            tagName: 'linearGradient',
+            id: 'gradient-area-42',
+            x1: 0,
+            y1: 0,
+            x2: 0,
+            y2: 1,
+            children: [{
+                tagName: 'stop',
+                offset: 0
+            }, {
+                tagName: 'stop',
+                offset: 1
+            }]
+        },
+        gradient43area: {
+            tagName: 'linearGradient',
+            id: 'gradient-area-43',
+            x1: 0,
+            y1: 0,
+            x2: 0,
+            y2: 1,
+            children: [{
+                tagName: 'stop',
+                offset: 0
+            }, {
+                tagName: 'stop',
+                offset: 1
+            }]
+        },
+        gradient44area: {
+            tagName: 'linearGradient',
+            id: 'gradient-area-44',
+            x1: 0,
+            y1: 0,
+            x2: 0,
+            y2: 1,
+            children: [{
+                tagName: 'stop',
+                offset: 0
+            }, {
+                tagName: 'stop',
+                offset: 1
+            }]
+        },
+        gradient45area: {
+            tagName: 'linearGradient',
+            id: 'gradient-area-45',
             x1: 0,
             y1: 0,
             x2: 0,
