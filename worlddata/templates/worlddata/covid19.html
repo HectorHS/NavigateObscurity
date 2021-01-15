@@ -61,26 +61,24 @@
                             France has done about 50 times more tests for every positive result compared to India.
                         </li>
                         <li>
-                            The death rate in the USA is almost double the one in Ethiopia, with similar positive test
-                            ratios
-                            for
-                            the two countries.
+                            The USA and Ethiopia have similar death rates and positive test
+                            ratios.
                         </li>
                         <li>
                             Several European countries had a 100% increase in their total death counts
                             (from
                             all
                             causes)
-                            for a couple of weeks this year.
+                            for a couple of weeks during 2020.
                         </li>
                         <li>
-                            The USA has 20 times more covid-19 related deaths per capita than China.
+                            The USA has 50 times more covid-19 related deaths per capita than China.
                         </li>
                         <li>
                             Italy has 20 times more confirmed cases per capita than Russia.
                         </li>
                         <li>
-                            More people have died from covid-19 in 2020 so far, than the number of deaths caused by
+                            More people died from covid-19 in 2020, than the number of deaths caused by
                             wars,
                             violent
                             crimes, terrorism, and drug abuse combined in a year (you might need to check some <a
@@ -354,7 +352,8 @@
         merely outlined recommendations for the public, but most enforced rules to make citizens comply. Here you can
         see a rough visualization of government responses when it came to public movement restrictions. For simplicity I
         am only using 4 broad categories of responses, but you can find more specific information by hovering over each
-        country. The four categories range from no restrictions imposed (although recommendations were typically made), to
+        country. The four categories range from no restrictions imposed (although recommendations were typically made),
+        to
         movement restrictions only in parts of the country, to restrictions for the whole country but only in particular
         times (curfew), to restrictions in the whole country all of the time (lockdown). Of course, many more government
         responses were put in place at the same time like banning gatherings, imposing social distancing rules, closing
@@ -899,7 +898,7 @@
             },
             colorAxis: {
                 tickInterval: 250,
-                max: 500,
+                max: 1000,
                 min: 0,
                 stops: [
                     [0, '#0070D1'],
@@ -1412,20 +1411,20 @@
         function updateColorStops() {
             if (parameter == "Confirmed cases per 1 million") {
                 chart.colorAxis[0].update({
-                    tickInterval: 2500,
-                    max: 10000,
+                    tickInterval: 10000,
+                    max: 40000,
                     min: 0,
                 }, false)
             } else if (parameter == "Deaths per 1 million") {
                 chart.colorAxis[0].update({
-                    tickInterval: 100,
-                    max: 500,
+                    tickInterval: 250,
+                    max: 100,
                     min: 0,
                 }, false)
             } else if (parameter == "Death rate") {
                 chart.colorAxis[0].update({
-                    tickInterval: 2,
-                    max: 10,
+                    tickInterval: 1,
+                    max: 5,
                     min: 0,
                 }, false)
             } else if (parameter == "Recovery rate") {
