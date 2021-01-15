@@ -1595,19 +1595,19 @@ figure {
 .covid-bars .restricted-band,
 .covid-area .restricted-band,
 .covid-excess .restricted-band {
-  fill: #794f99;
+  fill: #9d61d1;
 }
 
 .covid-bars .curfew-band,
 .covid-area .curfew-band,
 .covid-excess .curfew-band {
-  fill: #8c1c54;
+  fill: #ed45b2;
 }
 
 .covid-bars .lockdown-band,
 .covid-area .lockdown-band,
 .covid-excess .lockdown-band {
-  fill: #ff3299;
+  fill: #970f67;
 }
 
 .covid-dashboard .covid-dashboard-options {
