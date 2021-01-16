@@ -230,7 +230,7 @@ function addSlider(parent, name, min, max, value, containerWidth, width, onChang
     sliderOutput.id = name + "-slider-output";
     //percentageSliderOutput.for = "mapPercentageSlider";
     sliderOutput.classList.add("slider-output");
-    sliderOutput.innerHTML = value + "% completion";
+    sliderOutput.innerHTML = value + "% completed";
     sliderOutput.style.width = width + "px";
     sliderContainer.appendChild(sliderOutput);
 }
