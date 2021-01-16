@@ -111,6 +111,7 @@
 }
 
 .node-container #graph-container .search-container {
+  width: 150px;
   border-radius: 10px;
   border-width: 1px;
   border-style: solid;
@@ -126,7 +127,7 @@
 }
 
 .node-container #graph-container .search-container:hover {
-  border-color: #2f98d0;
+  border-color: #1A94FF;
 }
 
 .node-container #graph-container .search-container input {
@@ -139,6 +140,12 @@
   background-color: rgba(46, 56, 56, 0.8);
 }
 
+@media only screen and (min-width: 768px) {
+  .node-container #graph-container .search-container {
+    width: inherit;
+  }
+}
+
 .node-container #selected-nodes {
   position: absolute;
   z-index: 10;
@@ -146,7 +153,7 @@
 }
 
 .node-container #selected-nodes .selected-node {
-  background-color: #216a91;
+  background-color: #0070D1;
   padding: 3px 10px;
   border-radius: 20px;
   margin: 5px;
@@ -184,8 +191,8 @@
 
 .node-container .zoom-button:hover {
   color: #2e3838;
-  background-color: #2f98d0;
-  border-color: #2f98d0;
+  background-color: #1A94FF;
+  border-color: #1A94FF;
 }
 
 #node-legend {
@@ -219,11 +226,13 @@
   position: relative;
   top: -15px;
   margin-top: 10px;
+  width: 280px;
 }
 
 .slider-container .slider {
   -webkit-appearance: none;
   height: 3px;
+  width: 110px;
   background: #9dafaf;
   border-radius: 5px;
   outline: none;
@@ -245,8 +254,8 @@
 }
 
 .slider-container .slider::-webkit-slider-thumb:hover {
-  background: #2f98d0;
-  border-color: #2f98d0;
+  background: #1A94FF;
+  border-color: #1A94FF;
 }
 
 .slider-container .slider::-moz-range-thumb {
@@ -261,13 +270,14 @@
 }
 
 .slider-container .slider::-moz-range-thumb:hover {
-  background: #2f98d0;
-  border-color: #2f98d0;
+  background: #1A94FF;
+  border-color: #1A94FF;
 }
 
 .slider-container .slider-output {
   display: inline-block;
   position: relative;
+  width: 130px;
   top: 3px;
   color: #dffcff;
   line-height: 20px;
@@ -290,4 +300,16 @@
   border-right: 7px solid #9dafaf;
   border-bottom: 7px solid transparent;
   content: "";
+}
+
+@media only screen and (min-width: 768px) {
+  .slider-container {
+    width: 400px;
+  }
+  .slider-container .slider {
+    width: 210px;
+  }
+  .slider-container .slider-output {
+    width: 150px;
+  }
 }

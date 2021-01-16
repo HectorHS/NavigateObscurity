@@ -92,6 +92,7 @@
       float: right;
     }
     .search-container {
+      width: 150px;
       border-radius: 10px;
       border-width: 1px;
       border-style: solid;
@@ -116,6 +117,9 @@
         padding: 0 10px;
         display: block;
         background-color: $dark-grey-opacity;
+      }
+      @media only screen and (min-width: $mobile-breakpoint) {
+        width: inherit;
       }
     }
   }
@@ -189,10 +193,12 @@
   position: relative;
   top: -15px;
   margin-top: 10px;
+  width: 280px;
 
   .slider {
     -webkit-appearance: none;
     height: 3px;
+    width: 110px;
     background: $light-grey;
     border-radius: 5px;
     outline: none;
@@ -234,6 +240,7 @@
   .slider-output {
     display: inline-block;
     position: relative;
+    width: 130px;
     top: 3px;
     color: $almost-white;
     line-height: 20px;
@@ -255,6 +262,15 @@
       border-right: 7px solid $light-grey;
       border-bottom: 7px solid transparent;
       content: "";
+    }
+  }
+  @media only screen and (min-width: $mobile-breakpoint) {
+    width: 400px;
+    .slider {
+      width: 210px;
+    }
+    .slider-output {
+      width: 150px;
     }
   }
 }

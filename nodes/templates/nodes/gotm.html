@@ -235,11 +235,9 @@
     var sliderName = "percent-slider",
       min = 0,
       max = 100,
-      value = percent,
-      containerWidth = 400;
-    sliderWidth = 150;
+      value = percent;
     let sliderContainer = document.getElementById("slider_container");
-    addSlider(sliderContainer, sliderName, min, max, value, containerWidth, sliderWidth, sliderChange);
+    addSlider(sliderContainer, sliderName, min, max, value, sliderChange);
 
     function sliderChange() {
       let loopi = 0;
