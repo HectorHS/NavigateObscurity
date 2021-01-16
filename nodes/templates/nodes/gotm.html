@@ -5,14 +5,16 @@
 <!-- Meta -->
 <title>{{ title }} - Navigate Obscurity</title>
 <meta name="description" content="{{ abstract }}">
-<meta property="og:image" content="https://www.navigateobscurity.com/static/nodes/images/gardens-of-moon-social.jpg" />
+<meta property="og:image"
+  content="https://www.navigateobscurity.com/static/nodes/images/gardens-of-the-moon-social.jpg" />
 <meta property="og:title" content="{{ title }} - Navigate Obscurity" />
 <meta property="og:url" content="https://www.navigateobscurity.com/notes/gardens-of-the-moon" />
 <meta name="twitter:card" content="summary" />
 <meta name="twitter:url" content="https://www.navigateobscurity.com/notes/gardens-of-the-moon" />
 <meta name="twitter:title" content="{{ title }} - Navigate Obscurity" />
 <meta name="twitter:description" content="{{ abstract }}" />
-<meta name="twitter:image" content="https://www.navigateobscurity.com/static/nodes/images/gardens-of-moon-social.jpg" />
+<meta name="twitter:image"
+  content="https://www.navigateobscurity.com/static/nodes/images/gardens-of-the-moon-social.jpg" />
 
 <!-- We use d3 libraries to load data -->
 <script src="https://d3js.org/d3-dsv.v1.min.js"></script>
@@ -244,7 +246,7 @@
       let slider = document.getElementById(sliderName + "-slider");
       let shownPercentage = document.getElementById("percent-slider-slider-output");
       percent = +slider.value;
-      shownPercentage.innerHTML = percent + "% completion";
+      shownPercentage.innerHTML = percent + "% completed";
       updateContextText(contexts, context_links, selected, percent);
       s.refresh();
 
