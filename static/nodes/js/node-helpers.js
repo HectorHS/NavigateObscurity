@@ -99,6 +99,10 @@ function nodeHover(s, node, selected) {
     selectedAndHovered[node.id] = node;
     var toKeep = nodesToKeep(s, selectedAndHovered);
 
+    hideNodes(s, toKeep);
+}
+
+function hideNodes(s, toKeep) {
     s.graph.nodes().forEach(function (n) {
         if (toKeep[n.id]) {
             n.color = n.originalColor;
@@ -229,4 +233,32 @@ function addSlider(parent, name, min, max, value, onChange) {
     sliderOutput.classList.add("slider-output");
     sliderOutput.innerHTML = value + "% completed";
     sliderContainer.appendChild(sliderOutput);
+}
+
+function filterByPercent(s, file1, file2, percent) {
+    // filter nodes by finding max id
+    let maxId = 0;
+    for (let row of file1) {
+        if (row.Percent <= percent) {
+            maxId = +row.Id;
+        } else {
+            break;
+        }
+    }
+
+    // ger corresponding names and remove duplicates
+    let nodeNamesToKeep = [];
+    for (let row of file2) {
+        if (row.Context <= maxId) {
+            nodeNamesToKeep.push(row.Node);
+        }
+    }
+    let uniqueNodeNamesToKeep = [...new Set(nodeNamesToKeep)];
+
+    // now get the actual nodes from the graph
+    let nodesToKeep = [];
+    for (let name of uniqueNodeNamesToKeep) {
+        nodesToKeep[name] = s.graph.nodes(name);
+    }
+    hideNodes(s, nodesToKeep);
 }

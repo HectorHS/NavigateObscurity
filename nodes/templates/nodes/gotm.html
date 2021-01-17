@@ -245,6 +245,9 @@
       let shownPercentage = document.getElementById("percent-slider-slider-output");
       percent = +slider.value;
       shownPercentage.innerHTML = percent + "% completed";
+
+      filterByPercent(s, files[0], files[1], percent);
+
       updateContextText(contexts, context_links, selected, percent);
       s.refresh();
 
@@ -339,7 +342,6 @@
         container.appendChild(legend_item);
       }
     }
-
 
     function populateSearchList(nodes) {
       var container = document.getElementById('nodes-datalist');
