@@ -246,7 +246,7 @@
       percent = +slider.value;
       shownPercentage.innerHTML = percent + "% completed";
 
-      filterByPercent(s, files[0], files[1], percent);
+      filterByPercent(s, selected, files[0], files[1], percent);
 
       updateContextText(contexts, context_links, selected, percent);
       s.refresh();
@@ -263,7 +263,7 @@
           }
         }
       });
-      nodeSelect(s, selected, contexts, context_links, percent);
+      nodeSelect(s, selected, contexts, context_links, files[0], files[1], percent);
     }
 
     function zoomIn() {
@@ -289,17 +289,17 @@
         delete selected[e.data.node.id];
       }
 
-      nodeSelect(s, selected, contexts, context_links, percent);
+      nodeSelect(s, selected, contexts, context_links, files[0], files[1], percent);
     });
 
     // Mouse over event
     s.bind('overNode', function (e) {
-      nodeHover(s, e.data.node, selected);
+      nodeHover(s, e.data.node, selected, files[0], files[1], percent);
     });
 
     // Mouse out event
     s.bind('outNode', function (e) {
-      nodeHoverOut(s, selected);
+      nodeHoverOut(s, selected, files[0], files[1], percent);
     });
 
     // When the background is clicked, we reset the graph

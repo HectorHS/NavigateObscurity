@@ -75,10 +75,10 @@ function updateContextText(contexts, context_links, selected, percent) {
 }
 
 // Toggle select a node
-function nodeSelect(s, selected, contexts, context_links, percent) {
+function nodeSelect(s, selected, contexts, context_links, file1, file2, percent) {
     // Making sure we have at least one node selected
     if (Object.keys(selected).length > 0) {
-        var toKeep = nodesToKeep(s, selected);
+        var toKeep = nodesToKeep(s, selected, file1, file2, percent);
 
         setSelectedColor(s, selected, toKeep);
         // Grey out irrelevant edges 
@@ -92,12 +92,12 @@ function nodeSelect(s, selected, contexts, context_links, percent) {
 }
 
 // Highlight hovered node and relevant nodes by greying out all else
-function nodeHover(s, node, selected) {
+function nodeHover(s, node, selected, file1, file2, percent) {
     var selectedAndHovered = [];
     // Make a copy of selected and add the hovered node
     Object.assign(selectedAndHovered, selected);
     selectedAndHovered[node.id] = node;
-    var toKeep = nodesToKeep(s, selectedAndHovered);
+    var toKeep = nodesToKeep(s, selectedAndHovered, file1, file2, percent);
 
     hideNodes(s, toKeep);
 }
@@ -116,17 +116,16 @@ function hideNodes(s, toKeep) {
 }
 
 // Return graph to pre-hover state
-function nodeHoverOut() {
-    // Start clean, and then figure out what needs to be greyed out according to selected nodes
+function nodeHoverOut(s, selected, file1, file2, percent) {
+    // Start clean, and then figure out what needs to be greyed out according to selected nodes and percentage
     resetStates(s);
 
-    if (Object.keys(selected).length > 0) {
-        var toKeep = nodesToKeep(s, selected);
+    var toKeep = nodesToKeep(s, selected, file1, file2, percent);
 
-        setSelectedColor(s, selected, toKeep);
-        setEdgesToInactive(s, toKeep);
-    }
+    hideNodes(s, toKeep);
+    setSelectedColor(s, selected, toKeep);
     s.refresh();
+
 }
 
 // Reset all selections
@@ -169,36 +168,52 @@ function returnMatchingNodes(array1, array2) {
 }
 
 // Return all relevant nodes to be kept
-function nodesToKeep(s, selected) {
+function nodesToKeep(s, selected, file1, file2, percent) {
     // Make sure selected is not empty when calling this
-    var toKeep,
+    var toKeep = [],
         i = 0;
 
-    Object.keys(selected).forEach(function (key) {
-        if (i == 0) {
-            toKeep = s.graph.neighbors(key);
-            toKeep[key] = selected[key];
-        } else {
-            var keep = s.graph.neighbors(key);
-            keep[key] = selected[key];
-            toKeep = returnMatchingNodes(toKeep, keep);
+    // if nodes are selected, get relevant nodes, otherwise all of them (and only filter on percentage)
+    if (Object.keys(selected).length > 0) {
+        Object.keys(selected).forEach(function (key) {
+            if (i == 0) {
+                toKeep = s.graph.neighbors(key);
+                toKeep[key] = selected[key];
+            } else {
+                var keep = s.graph.neighbors(key);
+                keep[key] = selected[key];
+                toKeep = returnMatchingNodes(toKeep, keep);
+            }
+            i++;
+        });
+    } else {
+        // if no selected, add them all
+        let all_nodes = s.graph.nodes();
+        for (let node of all_nodes) {
+            toKeep[node.id] = node;
         }
-        i++;
-    });
+    }
+
+    if (percent < 100) {
+        let perNodes = percentNodesToKeep(s, file1, file2, percent);
+        toKeep = returnMatchingNodes(toKeep, perNodes);
+    }
+
     return toKeep;
 }
 
 // Set the color of all selected nodes
 function setSelectedColor(s, selected, toKeep) {
-    s.graph.nodes().forEach(function (n) {
+    if (Object.keys(selected).length > 0) {
+        s.graph.nodes().forEach(function (n) {
 
-        if (selected[n.id]) {
-            n.color = n.selectedColor;
-        }
-        else if (!toKeep[n.id]) {
-            n.color = n.inactiveColor;
-        }
-    });
+            if (selected[n.id]) {
+                n.color = n.selectedColor;
+            } else if (!toKeep[n.id]) {
+                n.color = n.inactiveColor;
+            }
+        });
+    }
 }
 
 // Grey out all edges that are not bewteen active nodes
@@ -235,7 +250,7 @@ function addSlider(parent, name, min, max, value, onChange) {
     sliderContainer.appendChild(sliderOutput);
 }
 
-function filterByPercent(s, file1, file2, percent) {
+function percentNodesToKeep(s, file1, file2, percent) {
     // filter nodes by finding max id
     let maxId = 0;
     for (let row of file1) {
@@ -260,5 +275,13 @@ function filterByPercent(s, file1, file2, percent) {
     for (let name of uniqueNodeNamesToKeep) {
         nodesToKeep[name] = s.graph.nodes(name);
     }
-    hideNodes(s, nodesToKeep);
+
+    return nodesToKeep;
+}
+
+function filterByPercent(s, selected, file1, file2, percent) {
+    let toKeep = nodesToKeep(s, selected, file1, file2, percent);
+
+    hideNodes(s, toKeep);
+    setSelectedColor(s, selected, toKeep);
 }
