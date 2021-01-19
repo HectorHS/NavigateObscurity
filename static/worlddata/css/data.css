@@ -1878,3 +1878,65 @@ figure {
 #covid_top_cases .highcharts-data-label-color-1 text {
   fill: #fff;
 }
+
+.search-container {
+  width: 100%;
+  border-radius: 5px;
+  border-width: 1px;
+  border-style: solid;
+  border-color: #9dafaf;
+  position: relative;
+  display: block;
+  z-index: 10;
+  color: #dffcff;
+  overflow: hidden;
+  height: 34px;
+  align-self: flex-end;
+  margin-bottom: 10px;
+}
+
+.search-container:hover {
+  border-color: #1A94FF;
+}
+
+.search-container input {
+  color: #dffcff;
+  border: none;
+  height: 34px;
+  position: relative;
+  padding: 0 10px;
+  display: block;
+  background-color: rgba(46, 56, 56, 0.8);
+  width: -webkit-calc(100% - 20px);
+  width: -moz-calc(100% - 20px);
+  width: calc(100% - 20px);
+}
+
+.CCLAB-var-container {
+  display: flex;
+}
+
+.CCLAB-var-title {
+  width: 180px;
+  color: #1A94FF;
+  font-weight: 500;
+  font-size: 110%;
+}
+
+@media only screen and (min-width: 520px) {
+  .CCLAB-var-title {
+    width: 370px;
+  }
+}
+
+@media only screen and (min-width: 850px) {
+  .CCLAB-var-title {
+    width: 180px;
+  }
+}
+
+@media only screen and (min-width: 1270px) {
+  .CCLAB-var-title {
+    width: 370px;
+  }
+}
