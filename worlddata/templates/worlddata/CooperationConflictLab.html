@@ -236,6 +236,13 @@
             data.push(+numberFormatterPercentage(d1v / d1c));
             data.push(+numberFormatterPercentage(d2v / d2c));
 
+            // to hide 0's
+            data.forEach(function (element, index) {
+                if (element === 0) {
+                    data[index] = null;
+                }
+            });
+
             let slice = { name: variable, data: data, colorIndex: random_colors[i] };
             return slice;
         }
@@ -736,6 +743,7 @@
                     d14c++;
                 }
             }
+
             data.push(+numberFormatterPercentage(d1v / d1c));
             data.push(+numberFormatterPercentage(d2v / d2c));
             data.push(+numberFormatterPercentage(d3v / d3c));
@@ -750,6 +758,13 @@
             data.push(+numberFormatterPercentage(d12v / d12c));
             data.push(+numberFormatterPercentage(d13v / d13c));
             data.push(+numberFormatterPercentage(d14v / d14c));
+
+            // to hide 0's
+            data.forEach(function (element, index) {
+                if (element === 0) {
+                    data[index] = null;
+                }
+            });
 
             let slice = { name: variable, data: data, colorIndex: random_colors[i] };
             return slice;
