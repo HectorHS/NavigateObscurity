@@ -16,7 +16,8 @@ class MainSitemap(Sitemap):
             'worlddata:covid-19',
             'nodes:index',
             'nodes:head-strong',
-            'nodes:gardens-of-the-moon'
+            'nodes:gardens-of-the-moon',
+            'nodes:elastic-thinking'
         ]
 
     def location(self, item):

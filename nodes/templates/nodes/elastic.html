@@ -1,0 +1,342 @@
+{% extends 'main/layout.html' %}
+{% load static %}
+
+{% block styles %}
+<!-- Meta -->
+<title>{{ title }} - Navigate Obscurity</title>
+<meta name="description" content="{{ abstract }}">
+<meta property="og:image" content="https://www.navigateobscurity.com/static/nodes/images/elastic-thinking.jpg" />
+<meta property="og:title" content="{{ title }} - Navigate Obscurity" />
+<meta property="og:url" content="https://www.navigateobscurity.com/notes/elastic-thinking" />
+<meta name="twitter:card" content="summary" />
+<meta name="twitter:url" content="https://www.navigateobscurity.com/notes/elastic-thinking" />
+<meta name="twitter:title" content="{{ title }} - Navigate Obscurity" />
+<meta name="twitter:description" content="{{ abstract }}" />
+<meta name="twitter:image" content="https://www.navigateobscurity.com/static/nodes/images/elastic-thinking.jpg" />
+
+<!-- We use d3 libraries to load data -->
+<script src="https://d3js.org/d3-dsv.v1.min.js"></script>
+<script src="https://d3js.org/d3-fetch.v1.min.js"></script>
+<!-- simplebar for custom styled scroll bars -->
+<link rel="stylesheet" href="https://unpkg.com/simplebar@latest/dist/simplebar.css" />
+<script src="https://unpkg.com/simplebar@latest/dist/simplebar.min.js"></script>
+<!-- We use sigma to visualise the graph -->
+<script src={% static "nodes/js/sigma.min.js" %}></script>
+<script src={% static "nodes/js/sigma.parsers.gexf.min.js" %}></script>
+<script src={% static "nodes/js/sigma.renderers.parallelEdges.min.js" %}></script>
+
+<script src={% static "nodes/js/node-helpers.js" %}></script>
+
+<link rel='stylesheet' type="text/css" href={% static "nodes/css/nodes.css" %}>
+<noscript>
+  <style>
+    /**
+    * Reinstate scrolling for non-JS clients
+    */
+    .simplebar-content-wrapper {
+      overflow: auto;
+    }
+  </style>
+</noscript>
+{% endblock %}
+
+{% block content %}
+<section class="banner-container">
+  <h1 class="header-title-banner">{{title}} by Leonard Mlodinow</h1>
+</section>
+<!-- Intro -->
+<section>
+  <div class="container limited-width">
+    <p>
+      Are you interested in becoming more creative or imaginative? Better at dealing with ambiguity, contradictions, and
+      more able to adapt to change? Ready to challenge some of your well rooted assumptions while you are at it? Turns
+      out there is a coherent way of thinking that can help you with all that. It’s called elastic thinking.
+    </p>
+
+  </div>
+</section>
+<!-- How to use -->
+<section class="container">
+  <div class="graph-instructions">
+    <h5>How to use:</h5>
+    <div class="two-column-text notes">
+      <ul>
+        <li> Hover over a node to see its name, and which other nodes it connects to. </li>
+        <li> Click on a node to see all relevant notes. </li>
+        <li> Click on a second node to only see notes related to both nodes. </li>
+        <li> Click on the background to reset all selections. </li>
+      </ul>
+      <ul>
+        <li> Use the search box to find a node - suggestions will be shown when you start typing. </li>
+        <li> Click on the + / - buttons to zoom in and out. </li>
+        <li> Click and drag the background to move the view of the graph.</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- Graph -->
+<section class="node-container">
+  <div id="context-container" class="nodes-text"> </div>
+  <div id="graph-container" class="nodes" style="width:100%;">
+    <div id="selected-nodes"></div>
+    <div class="node-controls">
+      <div id="slider_container"></div>
+      <div class="search-container">
+        <input id="search-input" list="nodes-datalist" placeholder="Search for a node">
+      </div>
+      <datalist id="nodes-datalist"></datalist>
+      <button type="button" id="zoom-in-button" class="zoom-button zoom-in">+</button>
+      <button type="button" id="zoom-out-button" class="zoom-button zoom-out">-</button>
+    </div>
+
+  </div>
+</section>
+<!-- Legend -->
+<section id="node-legend">
+</section>
+<!-- Comments -->
+<section>
+  <div class="container">
+    <hr>
+    <div class="comment-container">
+      {% for comment in comments %}
+      {% if comment.approved_comment %}
+      <div class="comment-author">{{ comment.author }}</div>
+      <div class="comment-date">{{ comment.created_date }}</div>
+      {{ comment.message|linebreaks }}
+      {% endif %}
+      {% empty %}
+      <p>No comments here yet :(</p>
+      {% endfor %}
+    </div>
+    <hr>
+    <div class="comment-form-container">
+      <h3>Leave a comment</h3>
+      <form method="post">
+        {% csrf_token %}
+        <div>
+          {{comment_form.author}}
+        </div>
+        <div>
+          {{ comment_form.message }}
+        </div>
+        <div>
+          <button class="button" type="submit" formmethod="post">Post comment</button>
+        </div>
+      </form>
+    </div>
+  </div>
+</section>
+
+<script>
+  let static_url = "{% get_static_prefix %}",
+    elastic_graph = "nodes/gexf/elastic.gexf",
+    elastic_graph_gexf = static_url + elastic_graph,
+    context = "nodes/csv/elastic-context.csv",
+    elastic_context = static_url + context,
+    context_links = "nodes/csv/elastic-context-links.csv",
+    elastic_context_links = static_url + context_links;
+
+  let selected = [];
+  MiniBarOptions = {
+    barType: "default",
+    minBarSize: 100,
+    alwaysShowBars: true,
+  };
+
+  sigma.classes.graph.addMethod('neighbors', function (nodeId) {
+    let k,
+      neighbors = {},
+      index = this.allNeighborsIndex[nodeId] || {};
+
+    for (k in index)
+      neighbors[k] = this.nodesIndex[k];
+
+    return neighbors;
+  });
+
+  // Initialise sigma with settings
+  var s = new sigma({
+    renderers: [
+      {
+        type: 'canvas',
+        container: document.getElementById('graph-container'),
+        freeStyle: true
+      }
+    ],
+    settings: {
+      minNodeSize: 1,
+      maxNodeSize: 20,
+      minEdgeSize: 0.1,
+      maxEdgeSize: 0.5,
+      defaultEdgeType: "curve", // only works on canvas renderer
+      labelColor: "node",
+      labelHoverBGColor: "default",
+      defaultHoverLabelBGColor: "#171c1c",
+      defaultLabelHoverColor: "#fff",
+      font: "Poppins",
+      drawLabels: false,
+      mouseWheelEnabled: false,
+      doubleClickEnabled: false,
+      touchEnabled: false,
+    },
+  });
+
+  // Load all notes
+  Promise.all([
+    d3.csv(elastic_context),
+    d3.csv(elastic_context_links),
+  ]).then(function (files) {
+
+    var contexts = files[0],
+      context_links = files[1];
+
+    // Load data to the graph
+    sigma.parsers.gexf(elastic_graph_gexf, s,
+      function (s) {
+        // Add various parameters to nodes and edges
+        s.graph.nodes().forEach(function (n) {
+          n.label = fCapital(n.label);
+          n.color = getColor[n.attributes["modularity class"]];
+          n.originalColor = n.color;
+          n.inactiveColor = "#455454";
+          n.selectedColor = "#DDDDDD";
+        });
+        s.graph.edges().forEach(function (e) {
+          e.originalColor = e.color;
+          e.inactiveColor = "#455454";
+        });
+        s.refresh();
+        populateSearchList(s.graph.nodes());
+
+        // Add event listeners to buttons
+        var inputBox = document.getElementById('search-input');
+        inputBox.addEventListener("change", searchChange);
+
+        var zoomInButton = document.getElementById('zoom-in-button');
+        zoomInButton.addEventListener("click", zoomIn);
+        var zoomOutButton = document.getElementById('zoom-out-button');
+        zoomOutButton.addEventListener("click", zoomOut);
+      });
+
+    updateContextText(contexts, context_links, selected);
+    createLegend();
+
+    function searchChange(e) {
+      var value = e.target.value;
+
+      // Add node to selected
+      s.graph.nodes().forEach(function (n) {
+        if (n.label == value) {
+          if (!selected[n.id]) {
+            selected[n.id] = n;
+          }
+        }
+      });
+      nodeSelect(s, selected, contexts, context_links, files[0], files[1]);
+    }
+
+    function zoomIn() {
+      var c = s.camera;
+      c.goTo({
+        ratio: c.ratio / c.settings('zoomingRatio')
+      });
+    }
+
+    function zoomOut() {
+      var c = s.camera;
+      c.goTo({
+        ratio: c.ratio * c.settings('zoomingRatio')
+      });
+    }
+
+    // Click event for node
+    s.bind('clickNode', function (e) {
+      // Add or remove from selected array
+      if (!selected[e.data.node.id]) {
+        selected[e.data.node.id] = e.data.node;
+      } else {
+        delete selected[e.data.node.id];
+      }
+
+      nodeSelect(s, selected, contexts, context_links, files[0], files[1]);
+    });
+
+    // Mouse over event
+    s.bind('overNode', function (e) {
+      nodeHover(s, e.data.node, selected, files[0], files[1]);
+    });
+
+    // Mouse out event
+    s.bind('outNode', function (e) {
+      nodeHoverOut(s, selected, files[0], files[1]);
+    });
+
+    // When the background is clicked, we reset the graph
+    s.bind('clickStage', function (e) {
+      selected = [];
+      resetStates(s);
+      showSelectedNodes(selected);
+      updateContextText(contexts, context_links, selected);
+      s.refresh();
+    });
+
+    function createLegend() {
+      var categories = [
+        { class: "2", name: "Hardware" },
+        { class: "0", name: "Legacy" },
+        { class: "3", name: "Frozen thinking" },
+        { class: "4", name: "Analytical thinking" },
+        { class: "5", name: "Elastic thinking" },
+        { class: "1", name: "Drives" },
+        { class: "6", name: "Outcomes" },
+        { class: "7", name: "Substances" },
+      ];
+
+      var container = document.getElementById('node-legend');
+
+      //Object.keys(categories).forEach(function (key) {
+      for (var cat of categories) {
+        var legend_item = document.createElement("div");
+        legend_item.classList.add('legend-item');
+
+        var legend_dot = document.createElement("div");
+        legend_dot.classList.add('legend-dot');
+        legend_dot.style["background-color"] = getColor[cat.class];
+        legend_item.appendChild(legend_dot);
+
+        var legend_label = document.createElement("div");
+        legend_label.classList.add('legend-label');
+        legend_label.innerHTML = cat.name;
+        legend_item.appendChild(legend_label);
+
+        container.appendChild(legend_item);
+      }
+    }
+
+    function populateSearchList(nodes) {
+      var container = document.getElementById('nodes-datalist');
+      nodes.forEach(function (n) {
+        var item = document.createElement('option');
+        item.value = n.label;
+        container.appendChild(item);
+      });
+    }
+
+  }).catch(function (error) {
+    console.log(error);
+  })
+
+  getColor = {
+    "0": "#8B9595",
+    "1": "#F18E8E",
+    "2": "#9D61D1",
+    "3": "#CC1919",
+    "4": "#23CA23",
+    "5": "#0070D1",
+    "6": "#FFFF1A",
+    "7": "#101414"
+  };
+</script>
+{% endblock %}

@@ -1,0 +1,531 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<gexf xmlns="http://www.gexf.net/1.3" version="1.3" xmlns:viz="http://www.gexf.net/1.3/viz" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.gexf.net/1.3 http://www.gexf.net/1.3/gexf.xsd">
+  <meta lastmodifieddate="2021-01-24">
+    <creator>Gephi 0.9</creator>
+    <description></description>
+  </meta>
+  <graph defaultedgetype="undirected" mode="static">
+    <attributes class="node" mode="static">
+      <attribute id="modularity class" title="modularity class" type="integer"></attribute>
+      <attribute id="degree" title="Degree" type="integer">
+        <default>0</default>
+      </attribute>
+      <attribute id="weighted degree" title="Weighted Degree" type="double">
+        <default>0.0</default>
+      </attribute>
+      <attribute id="authority" title="Authority" type="float">
+        <default>0.0</default>
+      </attribute>
+      <attribute id="hub" title="Hub" type="float">
+        <default>0.0</default>
+      </attribute>
+      <attribute id="componentnumber" title="Component ID" type="integer">
+        <default>0</default>
+      </attribute>
+    </attributes>
+    <nodes>
+      <node id="adaptability" label="Adaptability">
+        <attvalues>
+          <attvalue for="modularity class" value="6"></attvalue>
+          <attvalue for="degree" value="3"></attvalue>
+          <attvalue for="weighted degree" value="3.0"></attvalue>
+          <attvalue for="authority" value="0.16110805"></attvalue>
+          <attvalue for="hub" value="0.1611318"></attvalue>
+          <attvalue for="componentnumber" value="0"></attvalue>
+        </attvalues>
+        <viz:size value="12.777778"></viz:size>
+        <viz:position x="97.0663" y="-22.838238"></viz:position>
+        <viz:color r="223" g="137" b="255"></viz:color>
+      </node>
+      <node id="elastic-thinking" label="Elastic thinking">
+        <attvalues>
+          <attvalue for="modularity class" value="5"></attvalue>
+          <attvalue for="degree" value="10"></attvalue>
+          <attvalue for="weighted degree" value="14.0"></attvalue>
+          <attvalue for="authority" value="0.4723904"></attvalue>
+          <attvalue for="hub" value="0.47229686"></attvalue>
+          <attvalue for="componentnumber" value="0"></attvalue>
+        </attvalues>
+        <viz:size value="40.0"></viz:size>
+        <viz:position x="-149.33379" y="48.65502"></viz:position>
+        <viz:color r="115" g="192" b="0"></viz:color>
+      </node>
+      <node id="paradigm-shift" label="Paradigm shift">
+        <attvalues>
+          <attvalue for="modularity class" value="6"></attvalue>
+          <attvalue for="degree" value="2"></attvalue>
+          <attvalue for="weighted degree" value="2.0"></attvalue>
+          <attvalue for="authority" value="0.15349373"></attvalue>
+          <attvalue for="hub" value="0.15351452"></attvalue>
+          <attvalue for="componentnumber" value="0"></attvalue>
+        </attvalues>
+        <viz:size value="8.888889"></viz:size>
+        <viz:position x="-57.145336" y="135.62723"></viz:position>
+        <viz:color r="223" g="137" b="255"></viz:color>
+      </node>
+      <node id="scripted-behaviour" label="Scripted behaviour">
+        <attvalues>
+          <attvalue for="modularity class" value="0"></attvalue>
+          <attvalue for="degree" value="3"></attvalue>
+          <attvalue for="weighted degree" value="5.0"></attvalue>
+          <attvalue for="authority" value="0.16177951"></attvalue>
+          <attvalue for="hub" value="0.16180351"></attvalue>
+          <attvalue for="componentnumber" value="0"></attvalue>
+        </attvalues>
+        <viz:size value="12.777778"></viz:size>
+        <viz:position x="-401.30893" y="154.39006"></viz:position>
+        <viz:color r="211" g="179" b="176"></viz:color>
+      </node>
+      <node id="rational-thinking" label="Rational thinking">
+        <attvalues>
+          <attvalue for="modularity class" value="4"></attvalue>
+          <attvalue for="degree" value="2"></attvalue>
+          <attvalue for="weighted degree" value="2.0"></attvalue>
+          <attvalue for="authority" value="0.15365653"></attvalue>
+          <attvalue for="hub" value="0.15367723"></attvalue>
+          <attvalue for="componentnumber" value="0"></attvalue>
+        </attvalues>
+        <viz:size value="8.888889"></viz:size>
+        <viz:position x="-286.6164" y="-1.4492416"></viz:position>
+        <viz:color r="255" g="136" b="5"></viz:color>
+      </node>
+      <node id="reward-system" label="Reward system">
+        <attvalues>
+          <attvalue for="modularity class" value="1"></attvalue>
+          <attvalue for="degree" value="3"></attvalue>
+          <attvalue for="weighted degree" value="3.0"></attvalue>
+          <attvalue for="authority" value="0.10955382"></attvalue>
+          <attvalue for="hub" value="0.10953672"></attvalue>
+          <attvalue for="componentnumber" value="0"></attvalue>
+        </attvalues>
+        <viz:size value="12.777778"></viz:size>
+        <viz:position x="-382.36447" y="-190.29309"></viz:position>
+        <viz:color r="255" g="85" b="132"></viz:color>
+      </node>
+      <node id="human-temperament" label="Human temperament">
+        <attvalues>
+          <attvalue for="modularity class" value="1"></attvalue>
+          <attvalue for="degree" value="2"></attvalue>
+          <attvalue for="weighted degree" value="2.0"></attvalue>
+          <attvalue for="authority" value="0.03503373"></attvalue>
+          <attvalue for="hub" value="0.035037633"></attvalue>
+          <attvalue for="componentnumber" value="0"></attvalue>
+        </attvalues>
+        <viz:size value="8.888889"></viz:size>
+        <viz:position x="-394.73233" y="-279.09998"></viz:position>
+        <viz:color r="255" g="85" b="132"></viz:color>
+      </node>
+      <node id="neophilia" label="Neophilia">
+        <attvalues>
+          <attvalue for="modularity class" value="1"></attvalue>
+          <attvalue for="degree" value="2"></attvalue>
+          <attvalue for="weighted degree" value="2.0"></attvalue>
+          <attvalue for="authority" value="0.03503373"></attvalue>
+          <attvalue for="hub" value="0.035037633"></attvalue>
+          <attvalue for="componentnumber" value="0"></attvalue>
+        </attvalues>
+        <viz:size value="8.888889"></viz:size>
+        <viz:position x="-297.59863" y="-307.95135"></viz:position>
+        <viz:color r="255" g="85" b="132"></viz:color>
+      </node>
+      <node id="epigenetics" label="Epigenetics">
+        <attvalues>
+          <attvalue for="modularity class" value="2"></attvalue>
+          <attvalue for="degree" value="1"></attvalue>
+          <attvalue for="weighted degree" value="1.0"></attvalue>
+          <attvalue for="authority" value="0.03904804"></attvalue>
+          <attvalue for="hub" value="0.039041016"></attvalue>
+          <attvalue for="componentnumber" value="0"></attvalue>
+        </attvalues>
+        <viz:size value="5.0"></viz:size>
+        <viz:position x="54.22175" y="-59.320885"></viz:position>
+        <viz:color r="0" g="189" b="148"></viz:color>
+      </node>
+      <node id="mindfulness" label="Mindfulness">
+        <attvalues>
+          <attvalue for="modularity class" value="4"></attvalue>
+          <attvalue for="degree" value="2"></attvalue>
+          <attvalue for="weighted degree" value="3.0"></attvalue>
+          <attvalue for="authority" value="0.041657183"></attvalue>
+          <attvalue for="hub" value="0.0416494"></attvalue>
+          <attvalue for="componentnumber" value="0"></attvalue>
+        </attvalues>
+        <viz:size value="8.888889"></viz:size>
+        <viz:position x="-383.11386" y="-43.390076"></viz:position>
+        <viz:color r="255" g="136" b="5"></viz:color>
+      </node>
+      <node id="focus" label="Focus">
+        <attvalues>
+          <attvalue for="modularity class" value="6"></attvalue>
+          <attvalue for="degree" value="1"></attvalue>
+          <attvalue for="weighted degree" value="1.0"></attvalue>
+          <attvalue for="authority" value="0.01009239"></attvalue>
+          <attvalue for="hub" value="0.010094709"></attvalue>
+          <attvalue for="componentnumber" value="0"></attvalue>
+        </attvalues>
+        <viz:size value="5.0"></viz:size>
+        <viz:position x="-481.27734" y="50.374954"></viz:position>
+        <viz:color r="223" g="137" b="255"></viz:color>
+      </node>
+      <node id="analytical-thinking" label="Analytical thinking">
+        <attvalues>
+          <attvalue for="modularity class" value="4"></attvalue>
+          <attvalue for="degree" value="2"></attvalue>
+          <attvalue for="weighted degree" value="5.0"></attvalue>
+          <attvalue for="authority" value="0.20701788"></attvalue>
+          <attvalue for="hub" value="0.2070309"></attvalue>
+          <attvalue for="componentnumber" value="0"></attvalue>
+        </attvalues>
+        <viz:size value="8.888889"></viz:size>
+        <viz:position x="-223.05313" y="-78.99811"></viz:position>
+        <viz:color r="255" g="136" b="5"></viz:color>
+      </node>
+      <node id="problem-solving" label="Problem solving">
+        <attvalues>
+          <attvalue for="modularity class" value="6"></attvalue>
+          <attvalue for="degree" value="6"></attvalue>
+          <attvalue for="weighted degree" value="7.0"></attvalue>
+          <attvalue for="authority" value="0.3819507"></attvalue>
+          <attvalue for="hub" value="0.38200045"></attvalue>
+          <attvalue for="componentnumber" value="0"></attvalue>
+        </attvalues>
+        <viz:size value="24.444445"></viz:size>
+        <viz:position x="-94.17363" y="-214.07637"></viz:position>
+        <viz:color r="223" g="137" b="255"></viz:color>
+      </node>
+      <node id="emergence" label="Emergence">
+        <attvalues>
+          <attvalue for="modularity class" value="5"></attvalue>
+          <attvalue for="degree" value="1"></attvalue>
+          <attvalue for="weighted degree" value="1.0"></attvalue>
+          <attvalue for="authority" value="0.1144457"></attvalue>
+          <attvalue for="hub" value="0.1144735"></attvalue>
+          <attvalue for="componentnumber" value="0"></attvalue>
+        </attvalues>
+        <viz:size value="5.0"></viz:size>
+        <viz:position x="-51.610092" y="-14.963807"></viz:position>
+        <viz:color r="115" g="192" b="0"></viz:color>
+      </node>
+      <node id="default-mode" label="Default mode">
+        <attvalues>
+          <attvalue for="modularity class" value="5"></attvalue>
+          <attvalue for="degree" value="4"></attvalue>
+          <attvalue for="weighted degree" value="4.0"></attvalue>
+          <attvalue for="authority" value="0.14608325"></attvalue>
+          <attvalue for="hub" value="0.14611861"></attvalue>
+          <attvalue for="componentnumber" value="0"></attvalue>
+        </attvalues>
+        <viz:size value="16.666668"></viz:size>
+        <viz:position x="34.849957" y="111.71724"></viz:position>
+        <viz:color r="115" g="192" b="0"></viz:color>
+      </node>
+      <node id="associative-thinking" label="Associative thinking">
+        <attvalues>
+          <attvalue for="modularity class" value="5"></attvalue>
+          <attvalue for="degree" value="2"></attvalue>
+          <attvalue for="weighted degree" value="2.0"></attvalue>
+          <attvalue for="authority" value="0.05976672"></attvalue>
+          <attvalue for="hub" value="0.059762254"></attvalue>
+          <attvalue for="componentnumber" value="0"></attvalue>
+        </attvalues>
+        <viz:size value="8.888889"></viz:size>
+        <viz:position x="95.668915" y="66.41084"></viz:position>
+        <viz:color r="115" g="192" b="0"></viz:color>
+      </node>
+      <node id="rest" label="Rest">
+        <attvalues>
+          <attvalue for="modularity class" value="5"></attvalue>
+          <attvalue for="degree" value="2"></attvalue>
+          <attvalue for="weighted degree" value="2.0"></attvalue>
+          <attvalue for="authority" value="0.1005338"></attvalue>
+          <attvalue for="hub" value="0.10051355"></attvalue>
+          <attvalue for="componentnumber" value="0"></attvalue>
+        </attvalues>
+        <viz:size value="8.888889"></viz:size>
+        <viz:position x="170.18185" y="124.47333"></viz:position>
+        <viz:color r="115" g="192" b="0"></viz:color>
+      </node>
+      <node id="creativity" label="Creativity">
+        <attvalues>
+          <attvalue for="modularity class" value="6"></attvalue>
+          <attvalue for="degree" value="7"></attvalue>
+          <attvalue for="weighted degree" value="8.0"></attvalue>
+          <attvalue for="authority" value="0.35501605"></attvalue>
+          <attvalue for="hub" value="0.35508874"></attvalue>
+          <attvalue for="componentnumber" value="0"></attvalue>
+        </attvalues>
+        <viz:size value="28.333334"></viz:size>
+        <viz:position x="267.11002" y="48.106422"></viz:position>
+        <viz:color r="223" g="137" b="255"></viz:color>
+      </node>
+      <node id="procrastination" label="Procrastination">
+        <attvalues>
+          <attvalue for="modularity class" value="5"></attvalue>
+          <attvalue for="degree" value="1"></attvalue>
+          <attvalue for="weighted degree" value="1.0"></attvalue>
+          <attvalue for="authority" value="0.08605197"></attvalue>
+          <attvalue for="hub" value="0.08603039"></attvalue>
+          <attvalue for="componentnumber" value="0"></attvalue>
+        </attvalues>
+        <viz:size value="5.0"></viz:size>
+        <viz:position x="192.64764" y="193.51926"></viz:position>
+        <viz:color r="115" g="192" b="0"></viz:color>
+      </node>
+      <node id="left-right-brain" label="Left-right brain">
+        <attvalues>
+          <attvalue for="modularity class" value="2"></attvalue>
+          <attvalue for="degree" value="2"></attvalue>
+          <attvalue for="weighted degree" value="3.0"></attvalue>
+          <attvalue for="authority" value="0.1646251"></attvalue>
+          <attvalue for="hub" value="0.16461688"></attvalue>
+          <attvalue for="componentnumber" value="0"></attvalue>
+        </attvalues>
+        <viz:size value="8.888889"></viz:size>
+        <viz:position x="2.1276321" y="-128.0063"></viz:position>
+        <viz:color r="0" g="189" b="148"></viz:color>
+      </node>
+      <node id="insight" label="Insight">
+        <attvalues>
+          <attvalue for="modularity class" value="6"></attvalue>
+          <attvalue for="degree" value="4"></attvalue>
+          <attvalue for="weighted degree" value="4.0"></attvalue>
+          <attvalue for="authority" value="0.2973632"></attvalue>
+          <attvalue for="hub" value="0.29734102"></attvalue>
+          <attvalue for="componentnumber" value="0"></attvalue>
+        </attvalues>
+        <viz:size value="16.666668"></viz:size>
+        <viz:position x="182.16994" y="-206.79095"></viz:position>
+        <viz:color r="223" g="137" b="255"></viz:color>
+      </node>
+      <node id="inflexible-thinking" label="Inflexible thinking">
+        <attvalues>
+          <attvalue for="modularity class" value="3"></attvalue>
+          <attvalue for="degree" value="6"></attvalue>
+          <attvalue for="weighted degree" value="7.0"></attvalue>
+          <attvalue for="authority" value="0.32542616"></attvalue>
+          <attvalue for="hub" value="0.32538646"></attvalue>
+          <attvalue for="componentnumber" value="0"></attvalue>
+        </attvalues>
+        <viz:size value="24.444445"></viz:size>
+        <viz:position x="199.48589" y="-293.46075"></viz:position>
+        <viz:color r="0" g="196" b="255"></viz:color>
+      </node>
+      <node id="functional-fixedness" label="Functional fixedness">
+        <attvalues>
+          <attvalue for="modularity class" value="3"></attvalue>
+          <attvalue for="degree" value="2"></attvalue>
+          <attvalue for="weighted degree" value="2.0"></attvalue>
+          <attvalue for="authority" value="0.10406996"></attvalue>
+          <attvalue for="hub" value="0.10407901"></attvalue>
+          <attvalue for="componentnumber" value="0"></attvalue>
+        </attvalues>
+        <viz:size value="8.888889"></viz:size>
+        <viz:position x="279.3646" y="-486.3412"></viz:position>
+        <viz:color r="0" g="196" b="255"></viz:color>
+      </node>
+      <node id="momentum-of-thought" label="Momentum of thought">
+        <attvalues>
+          <attvalue for="modularity class" value="3"></attvalue>
+          <attvalue for="degree" value="2"></attvalue>
+          <attvalue for="weighted degree" value="3.0"></attvalue>
+          <attvalue for="authority" value="0.10406996"></attvalue>
+          <attvalue for="hub" value="0.10407901"></attvalue>
+          <attvalue for="componentnumber" value="0"></attvalue>
+        </attvalues>
+        <viz:size value="8.888889"></viz:size>
+        <viz:position x="296.88617" y="-369.99417"></viz:position>
+        <viz:color r="0" g="196" b="255"></viz:color>
+      </node>
+      <node id="frozen-thinking" label="Frozen thinking">
+        <attvalues>
+          <attvalue for="modularity class" value="3"></attvalue>
+          <attvalue for="degree" value="4"></attvalue>
+          <attvalue for="weighted degree" value="5.0"></attvalue>
+          <attvalue for="authority" value="0.10028147"></attvalue>
+          <attvalue for="hub" value="0.100296594"></attvalue>
+          <attvalue for="componentnumber" value="0"></attvalue>
+        </attvalues>
+        <viz:size value="16.666668"></viz:size>
+        <viz:position x="-194.3104" y="-332.24255"></viz:position>
+        <viz:color r="0" g="196" b="255"></viz:color>
+      </node>
+      <node id="critical-thinking" label="Critical thinking">
+        <attvalues>
+          <attvalue for="modularity class" value="4"></attvalue>
+          <attvalue for="degree" value="1"></attvalue>
+          <attvalue for="weighted degree" value="1.0"></attvalue>
+          <attvalue for="authority" value="0.024305535"></attvalue>
+          <attvalue for="hub" value="0.024301024"></attvalue>
+          <attvalue for="componentnumber" value="0"></attvalue>
+        </attvalues>
+        <viz:size value="5.0"></viz:size>
+        <viz:position x="-304.07764" y="-125.64898"></viz:position>
+        <viz:color r="255" g="136" b="5"></viz:color>
+      </node>
+      <node id="experts" label="Experts">
+        <attvalues>
+          <attvalue for="modularity class" value="3"></attvalue>
+          <attvalue for="degree" value="2"></attvalue>
+          <attvalue for="weighted degree" value="2.0"></attvalue>
+          <attvalue for="authority" value="0.032077886"></attvalue>
+          <attvalue for="hub" value="0.0320744"></attvalue>
+          <attvalue for="componentnumber" value="0"></attvalue>
+        </attvalues>
+        <viz:size value="8.888889"></viz:size>
+        <viz:position x="5.72493" y="-392.57816"></viz:position>
+        <viz:color r="0" g="196" b="255"></viz:color>
+      </node>
+      <node id="beginners-mind" label="Beginners mind">
+        <attvalues>
+          <attvalue for="modularity class" value="6"></attvalue>
+          <attvalue for="degree" value="2"></attvalue>
+          <attvalue for="weighted degree" value="3.0"></attvalue>
+          <attvalue for="authority" value="0.032077886"></attvalue>
+          <attvalue for="hub" value="0.0320744"></attvalue>
+          <attvalue for="componentnumber" value="0"></attvalue>
+        </attvalues>
+        <viz:size value="8.888889"></viz:size>
+        <viz:position x="-86.82692" y="-427.70154"></viz:position>
+        <viz:color r="223" g="137" b="255"></viz:color>
+      </node>
+      <node id="cognitive-filter" label="Cognitive filter">
+        <attvalues>
+          <attvalue for="modularity class" value="2"></attvalue>
+          <attvalue for="degree" value="3"></attvalue>
+          <attvalue for="weighted degree" value="4.0"></attvalue>
+          <attvalue for="authority" value="0.097504295"></attvalue>
+          <attvalue for="hub" value="0.0974781"></attvalue>
+          <attvalue for="componentnumber" value="0"></attvalue>
+        </attvalues>
+        <viz:size value="12.777778"></viz:size>
+        <viz:position x="150.76614" y="-91.493546"></viz:position>
+        <viz:color r="0" g="189" b="148"></viz:color>
+      </node>
+      <node id="cannabis" label="Cannabis">
+        <attvalues>
+          <attvalue for="modularity class" value="7"></attvalue>
+          <attvalue for="degree" value="1"></attvalue>
+          <attvalue for="weighted degree" value="1.0"></attvalue>
+          <attvalue for="authority" value="0.023620268"></attvalue>
+          <attvalue for="hub" value="0.023628036"></attvalue>
+          <attvalue for="componentnumber" value="0"></attvalue>
+        </attvalues>
+        <viz:size value="5.0"></viz:size>
+        <viz:position x="414.27896" y="-75.96005"></viz:position>
+        <viz:color r="76" g="70" b="62"></viz:color>
+      </node>
+      <node id="alcohol" label="Alcohol">
+        <attvalues>
+          <attvalue for="modularity class" value="7"></attvalue>
+          <attvalue for="degree" value="1"></attvalue>
+          <attvalue for="weighted degree" value="1.0"></attvalue>
+          <attvalue for="authority" value="0.023620268"></attvalue>
+          <attvalue for="hub" value="0.023628036"></attvalue>
+          <attvalue for="componentnumber" value="0"></attvalue>
+        </attvalues>
+        <viz:size value="5.0"></viz:size>
+        <viz:position x="333.54453" y="-110.42345"></viz:position>
+        <viz:color r="76" g="70" b="62"></viz:color>
+      </node>
+      <node id="lsd" label="Lsd">
+        <attvalues>
+          <attvalue for="modularity class" value="7"></attvalue>
+          <attvalue for="degree" value="1"></attvalue>
+          <attvalue for="weighted degree" value="1.0"></attvalue>
+          <attvalue for="authority" value="0.035410557"></attvalue>
+          <attvalue for="hub" value="0.035400085"></attvalue>
+          <attvalue for="componentnumber" value="0"></attvalue>
+        </attvalues>
+        <viz:size value="5.0"></viz:size>
+        <viz:position x="-4.757736" y="231.571"></viz:position>
+        <viz:color r="76" g="70" b="62"></viz:color>
+      </node>
+      <node id="psilocybin" label="Psilocybin">
+        <attvalues>
+          <attvalue for="modularity class" value="7"></attvalue>
+          <attvalue for="degree" value="1"></attvalue>
+          <attvalue for="weighted degree" value="1.0"></attvalue>
+          <attvalue for="authority" value="0.035410557"></attvalue>
+          <attvalue for="hub" value="0.035400085"></attvalue>
+          <attvalue for="componentnumber" value="0"></attvalue>
+        </attvalues>
+        <viz:size value="5.0"></viz:size>
+        <viz:position x="41.963524" y="194.33162"></viz:position>
+        <viz:color r="76" g="70" b="62"></viz:color>
+      </node>
+      <node id="ayahuasca" label="Ayahuasca">
+        <attvalues>
+          <attvalue for="modularity class" value="7"></attvalue>
+          <attvalue for="degree" value="1"></attvalue>
+          <attvalue for="weighted degree" value="1.0"></attvalue>
+          <attvalue for="authority" value="0.08605197"></attvalue>
+          <attvalue for="hub" value="0.08603039"></attvalue>
+          <attvalue for="componentnumber" value="0"></attvalue>
+        </attvalues>
+        <viz:size value="5.0"></viz:size>
+        <viz:position x="381.60776" y="10.892153"></viz:position>
+        <viz:color r="76" g="70" b="62"></viz:color>
+      </node>
+      <node id="happiness" label="Happiness">
+        <attvalues>
+          <attvalue for="modularity class" value="6"></attvalue>
+          <attvalue for="degree" value="1"></attvalue>
+          <attvalue for="weighted degree" value="1.0"></attvalue>
+          <attvalue for="authority" value="0.1144457"></attvalue>
+          <attvalue for="hub" value="0.1144735"></attvalue>
+          <attvalue for="componentnumber" value="0"></attvalue>
+        </attvalues>
+        <viz:size value="5.0"></viz:size>
+        <viz:position x="-130.8453" y="191.95212"></viz:position>
+        <viz:color r="223" g="137" b="255"></viz:color>
+      </node>
+    </nodes>
+    <edges>
+      <edge id="347" source="elastic-thinking" target="adaptability"></edge>
+      <edge id="348" source="elastic-thinking" target="paradigm-shift"></edge>
+      <edge id="349" source="elastic-thinking" target="creativity"></edge>
+      <edge id="350" source="elastic-thinking" target="rational-thinking"></edge>
+      <edge id="351" source="scripted-behaviour" target="elastic-thinking" weight="2.0"></edge>
+      <edge id="352" source="scripted-behaviour" target="rational-thinking"></edge>
+      <edge id="353" source="reward-system" target="human-temperament"></edge>
+      <edge id="354" source="reward-system" target="neophilia"></edge>
+      <edge id="355" source="human-temperament" target="neophilia"></edge>
+      <edge id="356" source="epigenetics" target="adaptability"></edge>
+      <edge id="357" source="scripted-behaviour" target="mindfulness" weight="2.0"></edge>
+      <edge id="358" source="mindfulness" target="focus"></edge>
+      <edge id="360" source="analytical-thinking" target="elastic-thinking" weight="4.0"></edge>
+      <edge id="362" source="problem-solving" target="analytical-thinking"></edge>
+      <edge id="363" source="problem-solving" target="elastic-thinking"></edge>
+      <edge id="364" source="problem-solving" target="reward-system"></edge>
+      <edge id="366" source="elastic-thinking" target="emergence"></edge>
+      <edge id="367" source="paradigm-shift" target="adaptability"></edge>
+      <edge id="368" source="elastic-thinking" target="default-mode"></edge>
+      <edge id="369" source="default-mode" target="associative-thinking"></edge>
+      <edge id="370" source="rest" target="associative-thinking"></edge>
+      <edge id="371" source="rest" target="creativity"></edge>
+      <edge id="372" source="procrastination" target="creativity"></edge>
+      <edge id="373" source="left-right-brain" target="insight"></edge>
+      <edge id="374" source="problem-solving" target="left-right-brain" weight="2.0"></edge>
+      <edge id="375" source="problem-solving" target="insight"></edge>
+      <edge id="377" source="insight" target="inflexible-thinking"></edge>
+      <edge id="378" source="insight" target="creativity"></edge>
+      <edge id="379" source="creativity" target="inflexible-thinking"></edge>
+      <edge id="380" source="inflexible-thinking" target="momentum-of-thought" weight="2.0"></edge>
+      <edge id="381" source="functional-fixedness" target="inflexible-thinking"></edge>
+      <edge id="382" source="functional-fixedness" target="momentum-of-thought"></edge>
+      <edge id="384" source="frozen-thinking" target="critical-thinking"></edge>
+      <edge id="385" source="frozen-thinking" target="inflexible-thinking"></edge>
+      <edge id="386" source="frozen-thinking" target="beginners-mind" weight="2.0"></edge>
+      <edge id="387" source="problem-solving" target="inflexible-thinking"></edge>
+      <edge id="388" source="frozen-thinking" target="experts"></edge>
+      <edge id="390" source="experts" target="beginners-mind"></edge>
+      <edge id="391" source="creativity" target="cognitive-filter" weight="2.0"></edge>
+      <edge id="394" source="cognitive-filter" target="cannabis"></edge>
+      <edge id="395" source="cognitive-filter" target="alcohol"></edge>
+      <edge id="396" source="default-mode" target="lsd"></edge>
+      <edge id="397" source="default-mode" target="psilocybin"></edge>
+      <edge id="398" source="creativity" target="ayahuasca"></edge>
+      <edge id="400" source="elastic-thinking" target="happiness"></edge>
+    </edges>
+  </graph>
+</gexf>
