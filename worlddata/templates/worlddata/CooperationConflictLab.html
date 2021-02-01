@@ -221,6 +221,10 @@
             let d1c = 0;
             let d2v = 0;
             let d2c = 0;
+            let d3v = 0;
+            let d3c = 0;
+            let d4v = 0;
+            let d4c = 0;
             let data = [];
 
             // for (let date of all_dates) {
@@ -231,10 +235,18 @@
                 } else if (row.Date == "10/27/2020") {
                     d2v += +row[variable];
                     d2c++;
+                } else if (row.Date == "11/28/2020") {
+                    d3v += +row[variable];
+                    d3c++;
+                } else if (row.Date == "12/28/2020") {
+                    d4v += +row[variable];
+                    d4c++;
                 }
             }
             data.push(+numberFormatterPercentage(d1v / d1c));
             data.push(+numberFormatterPercentage(d2v / d2c));
+            data.push(+numberFormatterPercentage(d3v / d3c));
+            data.push(+numberFormatterPercentage(d4v / d4c));
 
             // to hide 0's
             data.forEach(function (element, index) {
