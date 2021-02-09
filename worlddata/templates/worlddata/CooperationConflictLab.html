@@ -77,7 +77,7 @@
 
 <!-- Viz 1 - Dashboard for newer data -->
 <section style="margin-top:100px;">
-    <div class="dashboard-title"> Data collected between September 26th and October 27th, 2020
+    <div class="dashboard-title"> Data collected between September 26th and December 28th, 2020
     </div>
     <figure>
         <div class="container dashboard-container-horizontal CCLab-old-dashboard" style="margin-bottom:100px;">
@@ -96,17 +96,33 @@
                 </div>
                 <div class="dashboard-side-40 dashboard-side" style="border-radius:30px">
                     <div class="chart-options side-chart-container" style="max-width:100%; ">
-                        <div class="chart-filters covid-dashboard-options" style="margin: 0px 20px;">
-                            <div> Primary variable</div>
-                            <div id="new_var1_container" style="width:100%"></div>
-                            <div> Date</div>
-                            <div id="new_date_container" style="width:100%"></div>
-                            <div> Secondary variable</div>
-                            <div id="new_var2_container" style="width:100%"></div>
+                        <div class="chart-filters covid-dashboard-options" style="margin: 10px 20px;">
+                            <datalist id="new-var1-datalist"></datalist>
+                            <div class="CCLAB-var-container">
+                                <div class="CCLAB-var-title"> Primary variable: </div>
+                                <div class="search-container">
+                                    <input id="new-var1-search-input" list="new-var1-datalist"
+                                        placeholder="Search for a variable">
+                                </div>
+                            </div>
+                            <div id="new_var1"></div>
+                            <div class="CCLAB-var-container" style="padding-top:40px;">
+                                <div class="CCLAB-var-title">Date:</div>
+                                <div id="new_date_container" style="width:100%"></div>
+                            </div>
+                            <datalist id="new-var2-datalist"></datalist>
+                            <div class="CCLAB-var-container" style="padding-top:40px;">
+                                <div class="CCLAB-var-title"> Secondary variable: </div>
+                                <div class="search-container">
+                                    <input id="new-var2-search-input" list="new-var2-datalist"
+                                        placeholder="Search for a variable">
+                                </div>
+                            </div>
+                            <div id="new_var2"></div>
                         </div>
 
                     </div>
-                    <div class="side-chart-container" style="margin-bottom:0;">
+                    <div class="side-chart-container" style="margin-bottom:20px;">
                         <div class="chart-container-dashboard filters-on-top">
                             <div id="new_lines" class="lines" style="width:100%;"></div>
                         </div>
@@ -189,16 +205,24 @@
     new_path = static_url + file_new;
     file_new_vars = "worlddata/csv/CCLAB-new-variableLookup.csv";
     new_vars_path = static_url + file_new_vars;
+    file_new_desc = "worlddata/csv/CCLAB-new-descriptions.csv";
+    new_desc_path = static_url + file_new_desc;
 
     var CovidNewDashboard = Promise.all([
         d3.csv(new_path),
-        d3.csv(new_vars_path)
+        d3.csv(new_vars_path),
+        d3.csv(new_desc_path)
     ]).then(function (files) {
         // All filterable options
         const all_dates = [...new Set(files[0].map(d => d.Date))];
         const all_variables = files[0].columns;
         all_variables.splice(0, 1);
         let random_colors = [3, 9, 18, 23, 31, 37, 1, 12, 15, 26, 29, 39, 42, 5, 8, 19, 22, 32, 38, 43, 2, 10, 17, 24, 30, 40, 4, 11, 16, 25, 33, 36, 54];
+        // create description lookup
+        let descriptions_lookup = [];
+        for (let row of files[2]) {
+            descriptions_lookup[row.key] = row.description;
+        }
 
         let variable1 = "Stress";
         let variable2 = "PerceptionRisk";
@@ -206,6 +230,10 @@
         let heatmapMax = 0;
         let availableDates = [];
         let availableVar2 = getVar2Values();
+        let var1output = document.getElementById("new_var1");
+        var1output.innerHTML = "<b>" + variable1 + "</b>: " + descriptions_lookup[variable1];
+        let var2output = document.getElementById("new_var2");
+        var2output.innerHTML = "<b>" + variable2 + "</b>: " + descriptions_lookup[variable2];
 
         function getLinesData() {
             let data = [];
@@ -336,7 +364,7 @@
                     slice = { name: name, data: data, className: 'highcharts-blue-gradient-' + i };
 
                 } else {
-                    slice = { name: name, data: data };
+                    slice = { name: name, data: data, colorIndex: random_colors[i] };
                 }
                 all_data.push(slice);
             }
@@ -466,17 +494,21 @@
 
         // Dropdowns
 
-        // Variable 1 dropdown
-        var var1Name = "new-var1-measure",
-            var1Width = "100%",
-            var1Container = document.getElementById("new_var1_container");
-        addDropdown(var1Container, var1Name, var1Width, var1Change, all_variables, variable1);
+        // Primary variable
+        let var1_search_input = document.getElementById("new-var1-search-input");
+        var1_search_input.addEventListener("change", var1Change);
+        populateSearchList(all_variables, "new-var1-datalist");
 
         // Update chart data on variable 1 change
         function var1Change() {
             // update variables
-            variable1 = document.getElementById(var1Name + "-select").value;
+            let searchInput = document.getElementById("new-var1-search-input");
+            variable1 = searchInput.value;
             dateSelect = document.getElementById(dateName + "-select");
+            var1output.innerHTML = "<b>" + variable1 + "</b>: " + descriptions_lookup[variable1];
+
+            // clear search
+            searchInput.value = '';
 
             // update other dropdowns
             updatedDateOptions();
@@ -545,15 +577,21 @@
         }
 
         // variable 2 dropdown
-        // date dropdown
-        var var2Name = "new-var2-measure",
-            var2Width = "100%",
-            var2Container = document.getElementById("new_var2_container");
-        addDropdown(var2Container, var2Name, var2Width, var2Change, availableVar2, variable2);
+        // secondary variable
+        let var2_search_input = document.getElementById("new-var2-search-input");
+        var2_search_input.addEventListener("change", var2Change);
+        populateSearchList(availableVar2, "new-var2-datalist");
 
+        // Update chart data on variable 1 change
         function var2Change() {
             // update variables
-            variable2 = document.getElementById(var2Name + "-select").value;
+            let searchInput = document.getElementById("new-var2-search-input");
+            variable2 = searchInput.value;
+            dateSelect = document.getElementById(dateName + "-select");
+            var2output.innerHTML = "<b>" + variable2 + "</b>: " + descriptions_lookup[variable2];
+
+            // clear search
+            searchInput.value = '';
 
             // update chart options
             heatmapYaxis.title.text = variable2;
@@ -589,12 +627,9 @@
             }
         }
         function updatedVar2Options() {
-            let select = document.getElementById(var2Name + "-select");
-            select.length = 0;
             availableVar2 = getVar2Values();
-            for (let o of availableVar2) {
-                select.add(new Option(o));
-            }
+            populateSearchList(availableVar2, "new-var2-datalist");
+            let select = document.getElementById("new-var2-datalist");
             // set selected value - if possible the previous var2
             if (availableVar2.includes(variable2)) {
                 select.value = variable2;
@@ -622,6 +657,16 @@
             bars.redraw();
         }
 
+        function populateSearchList(variables, container) {
+            var container = document.getElementById(container);
+            container.innerHTML = '';
+            variables.forEach(function (v) {
+                var item = document.createElement('option');
+                item.value = v;
+                item.label = descriptions_lookup[v];
+                container.appendChild(item);
+            });
+        }
 
     })
         .catch(function (error) {

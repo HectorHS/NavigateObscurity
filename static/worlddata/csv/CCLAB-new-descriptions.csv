@@ -1,0 +1,397 @@
+key,description
+Age,
+Sex,"1 = male, 2 = female, 3 =other"
+Children,Number of children
+ChildrenUnder18,Number of children under 18 years
+Education,"1 = less than high school, 7 = doctoral or professional degree"
+SSES,"At the top of the ladder are the people who are the best off, have the most money, most education, and best jobs. These people are represented by number 10 marked on the ladder. At the bottom are the people who are the worst off, have the least money, least education, worst jobs, or no job. These people are represented by number 1 at the bottom of the ladder. "
+OccupationRisk,"Has your occupation been identified as high-risk for COVID-19 transmission? 1 = no, 2 = not sure, 3 = yes"
+MoveChildhood,How many times before the age of 18 did you move to a totally new neighborhood or town? 
+Move,How many times since the age of 18 have you moved to a totally new neighborhood or town? 
+NumberInHouse,How many people currently live in your household?
+Preexisting,"Do you have any pre-existing health conditions that require you to take extra precautions to avoid catching a disease/illness? 0 = no, 1 = yes"
+PFINeigh1,"When my neighborhood succeeds, I feel good. "
+PFINeigh2,"When my neighborhood fails, I feel bad. "
+PFINeigh3,I feel that my neighborhood's gains are my gains 
+PFINeigh4,What is good for my neighborhood is good for me 
+PFINeigh5,"Honestly, I don't care whether my neighborhood thrives or not "
+PFINeigh6,My neighborhood and I rise and fall together (11)
+WillingnessNeigh,"Someone from your neighborhood is having their house fixed, so it isn't livable. How willing would you be to let them move into your house for a week?"
+NBTneigh,Helping someone from my neighborhood when they are in need is the right thing to do.
+PFIcountry1,"When my country succeeds, I feel good. "
+PFIcountry2,"When my country fails, I feel bad. "
+PFIcountry3,I feel that my country's gains are my gains. 
+PFIcountry4,What is good for my country is good for me. 
+PFIcountry5,"Honestly, I don't care whether my country thrives or not. "
+PFIcountry6,My country and I rise and fall together. 
+WillingnessCountry,"A person who is a citizen of your own country is having their house fixed, so it isn't livable. How willing would you be to let them move into your house for a week?"
+NBTcountry,Helping someone who is a citizen of your own country when they are in need is the right thing to do.
+InfectedCovid,"Have you contracted COVID-19? 1 = no, 2 = maybe, 3 = yes"
+TestedCovid,"If yes or maybe, have you tested positive? 1 = no, 2 = have not been tested, 3 = yes"
+Symptoms1,"Fever or chills; 0 = no, 1 = yes"
+Symptoms2,"Cough; 0 = no, 1 = yes"
+Symptoms3,"Shortness of breath or difficulty breathing ; 0 = no, 1 = yes"
+Symptoms4,"Fatigue ; 0 = no, 1 = yes"
+Symptoms5,"Muscle or body aches; 0 = no, 1 = yes"
+Symptoms6,"Headache; 0 = no, 1 = yes"
+Symptoms7,"New loss of taste or smell; 0 = no, 1 = yes"
+Symptoms8,"Sore throat; 0 = no, 1 = yes"
+Symptoms9,"Congestion or runny nose; 0 = no, 1 = yes"
+Symptoms10,"Nausea or vomiting ; 0 = no, 1 = yes"
+Symptoms11,"Diarrhea; 0 = no, 1 = yes"
+Symptoms12,Conjunctivitis (pink eye)
+Symptoms13,Purple or darker colored toes
+WeekSinceCovid,"If yes or maybe, how many weeks ago did you contract COVID-19?"
+ContactsInfected,How many people do you personally know who have been diagnosed by a physician or tested positive for COVID-19?
+Contacts24hrs,"How many people (outside of your household) have you had in-person interactions with during the last 24 hours (e.g., visiting with friends, buying food or supplies from a cashier)?"
+Contacts7days,"How many people (outside of your household) have you had in-person interactions with during the last 7 days(e.g., visiting with friends, buying food or supplies from a cashier)?"
+ContactsMask,"During these in-person interactions, if you were closer than 6 feet (2 meters) from the person(s) did you wear a face mask?"
+HouseMask,"When members of your household have in-person interactions where they are closer than 6 feet (2 meters) from others, do they wear a face mask?"
+Stress,How stressed do you currently feel dealing with changes caused by COVID-19?
+PerceptionRisk,"If you have never been infected with COVID-19, how likely do you think it is that you will become infected with COVID-19?"
+InfectionSeverity,"If you have never been infected with COVID-19, how severe do expect your symptoms to be if you were to become infected with COVID-19?"
+ConcernCovid,How anxious do you feel about the possibility of becoming sick (or sick again) with COVID-19? 
+EconomyVSshutdown,"Government efforts to slow the spread of COVID-19 have led to severe economic consequences. Assuming your area has re-opened completely and a second wave hits in the winter, how should people in your area respond?"
+HelpGiven1,"Giving money to someone you know who needs it (e.g., for rent, utilities, etc); 1 = 0 times, 2 = 1-2 times, 3 = 3-4 times, 4 = 5-6 times, 5 = more than 6 times"
+HelpGiven2,"Providing food or water (e.g., meals, groceries; 1 = 0 times, 2 = 1-2 times, 3 = 3-4 times, 4 = 5-6 times, 5 = more than 6 times"
+HelpGiven3,"Providing household supplies (e.g., medical, cleaning, etc); 1 = 0 times, 2 = 1-2 times, 3 = 3-4 times, 4 = 5-6 times, 5 = more than 6 times"
+HelpGiven4,"Providing help to someone who was sick, or injured; 1 = 0 times, 2 = 1-2 times, 3 = 3-4 times, 4 = 5-6 times, 5 = more than 6 times"
+HelpGiven5,"Providing help with child or dependent care; 1 = 0 times, 2 = 1-2 times, 3 = 3-4 times, 4 = 5-6 times, 5 = more than 6 times"
+HelpGiven6,"Providing emotional support; 1 = 0 times, 2 = 1-2 times, 3 = 3-4 times, 4 = 5-6 times, 5 = more than 6 times"
+EmpathyState1,To what extent did you feel each of the following emotions during this particular time that you helped someone that you know? - troubled
+EmpathyState2,To what extent did you feel each of the following emotions during this particular time that you helped someone that you know? - distressed
+EmpathyState3,To what extent did you feel each of the following emotions during this particular time that you helped someone that you know? - concerned
+EmpathyState4,To what extent did you feel each of the following emotions during this particular time that you helped someone that you know? - compassionate
+TimeSinceHelp,How long ago was this particular time that you helped someone that you know?
+HelpReceived1,"Receiving money from someone you know when you needed it (e.g., for groceries, rent, utilities, etc); 1 = 0 times, 2 = 1-2 times, 3 = 3-4 times, 4 = 5-6 times, 5 = more than 6 times"
+HelpReceived2,"Receiving food or water (e.g., meals, groceries); 1 = 0 times, 2 = 1-2 times, 3 = 3-4 times, 4 = 5-6 times, 5 = more than 6 times"
+HelpReceived3,"Receiving household supplies (e.g., medical, cleaning, etc); 1 = 0 times, 2 = 1-2 times, 3 = 3-4 times, 4 = 5-6 times, 5 = more than 6 times"
+HelpReceived4,"Receiving help when sick or injured; 1 = 0 times, 2 = 1-2 times, 3 = 3-4 times, 4 = 5-6 times, 5 = more than 6 times"
+HelpReceived5,"Receiving help with child or dependent care; 1 = 0 times, 2 = 1-2 times, 3 = 3-4 times, 4 = 5-6 times, 5 = more than 6 times"
+HelpReceived6,"Receiving emotional support; 1 = 0 times, 2 = 1-2 times, 3 = 3-4 times, 4 = 5-6 times, 5 = more than 6 times"
+Predictability1,"Does this reason for helping arise at regular, predictable times, or does it arise at unpredictable times? Not having enough money for rent or mortgage payments"
+Predictability2,"Does this reason for helping arise at regular, predictable times, or does it arise at unpredictable times? Not having enough money to pay for utilities"
+Predictability3,"Does this reason for helping arise at regular, predictable times, or does it arise at unpredictable times? Not having enough food or water"
+Predictability4,"Does this reason for helping arise at regular, predictable times, or does it arise at unpredictable times? Not having household supplies (e.g., medical, cleaning)"
+Predictability5,"Does this reason for helping arise at regular, predictable times, or does it arise at unpredictable times? Being sick or injured"
+Predictability6,"Does this reason for helping arise at regular, predictable times, or does it arise at unpredictable times? Needing child or dependent care"
+Predictability7,"Does this reason for helping arise at regular, predictable times, or does it arise at unpredictable times? Needing emotional support"
+Expectation1,"When people help each other in these ways or in these circumstances, what, if anything, do they expect in return? Providing money for rent or mortgage payments "
+Expectation2,"When people help each other in these ways or in these circumstances, what, if anything, do they expect in return? Providing money to pay for utilities"
+Expectation3,"When people help each other in these ways or in these circumstances, what, if anything, do they expect in return? Providing food or water"
+Expectation4,"When people help each other in these ways or in these circumstances, what, if anything, do they expect in return? Providing household supplies (e.g., medical, cleaning)"
+Expectation5,"When people help each other in these ways or in these circumstances, what, if anything, do they expect in return? Providing care for a sick or injured person"
+Expectation6,"When people help each other in these ways or in these circumstances, what, if anything, do they expect in return? Providing help with child or dependent care"
+Expectation7,"When people help each other in these ways or in these circumstances, what, if anything, do they expect in return? Providing emotional support"
+Challenges1,"In the past 12 months, how many times did you experience each of the following challenges? Lacking the money or access to get basic needs (e.g., rent, utilities, etc)"
+Challenges2,"In the past 12 months, how many times did you experience each of the following challenges? Lacking the money or access to get food or water"
+Challenges3,"In the past 12 months, how many times did you experience each of the following challenges? Lacking the money or access to get household supplies (e.g., medical, cleaning)"
+Challenges4,"In the past 12 months, how many times did you experience each of the following challenges? Being sick or injured"
+Challenges5,"In the past 12 months, how many times did you experience each of the following challenges? Needing help with child or dependent care"
+Challenges6,"In the past 12 months, how many times did you experience each of the following challenges? Needing emotional support"
+IRIconcern1,"I often have tender, concerned feelings for people less fortunate than me"
+IRIconcern2,"Sometimes, I don't feel sorry for other people when they are having problems"
+IRIconcern3,Other people's misfortunes do not usually disturb me a great deal
+IRIconcern4,"When I see someone being treated unfairly, I sometimes don't feel very much pity for them"
+IRIconcern5,I am often quite touched by things that I see happen
+IRIconcern6,I would describe myself as a pretty soft-hearted person
+IRIdistress1,"In emergency situations, I feel apprehensive and ill-at-ease"
+IRIdistress2,I sometimes feel helpless when I am in the middle of a very emotional situation
+IRIdistress3,"When I see someone get hurt, I tend to remain calm"
+IRIdistress4,Being in a tense emotional situation scares me
+IRIdistress5,I am usually pretty effective in dealing with emergencies
+IRIdistress6,I tend to lose control during emergencies
+IRIdistress7,"When I see someone who badly needs help in an emergency, I fall apart"
+CovidVolunteer,"Considering the potential risk of spreading COVID-19, is helping others in-person the right thing to do now?"
+TimeSpentOthers,"In the last 7 days, how many hours have you spent in places with many other people, such as in schools, stores, or public transport?"
+MoneyDonated,"In the last 7 days, how much money have you contributed to charities that try to help people affected by the pandemic? "
+Back2Normal,"When do you think life will get back to pre-COVID normal?; 1 = it's alread normal, 2 = two weeks, 3 = one month, 4 = two months, 5 = four months, 6 = six months, 7 = nine months, 8 = one year, 9 = 1.5 years, 10 = two years, 11 = more than two years, 12 = never"
+ElectionBck2Normal,How much will the outcome of the November election affect how long it takes for life to return to normal?
+ConditionsChange,"Considering the current situation and looking to the coming year, how will conditions change?; 1 = will steadily improve, 3 = will stay the same, 5 = will get much worse"
+Vaccine,How likely would you be to take a COVID vaccine when it is available to you?
+TrustVaccine,How likely would you be to trust that a COVID vaccine available to you is safe and effective? 
+OthersVaccine,"What proportion of people in the US do you think will take a COVID vaccine when it is made available to them? 1 = 0-10%, 10 = 91-100%"
+TimeToVaccine,"How long do you think it will be until a COVID vaccine is made available to you? 1 = currently, 2 = 1 month, 3 = 2 months, 4 = 3-6 months, 5 = 6-9 months, 6 = 9-12 months"
+FinancialHardship,"Do you anticipate having financial difficulties over the coming year, for instance being unable to pay bills on time? 1 = currently, 2 = 1 month, 3 = 2 months, 4 = 3-6 months, 5 = 6-9 months, 6 = 9-12 months"
+CFCset1.1,"I consider how things might be in the future, and try to influence those things with my day to day behavior. (1)"
+CFCset1.2,Often I engage in a particular behavior in order to achieve outcomes that may not result for many years. (2)
+CFCset1.3,"I only act to satisfy immediate concerns, figuring the future will take care of itself.  (3)"
+CFCset1.4,"My behavior is only influenced by the immediate (i.e., a matter of days or weeks) outcomes of my actions. (4)"
+CFCset1.5,My convenience is a big factor in the decisions I make or the actions I take. (5)
+CFCset1.6,I am willing to sacrifice my immediate happiness or wellbeing in order to achieve future outcomes. (6)
+CFCset1.7,I think it is important to take warnings about negative outcomes seriously even if the negative outcome will not occur for many years.  (7)
+CFCset2.1,I think it is more important to perform a behavior with important distant consequences than a behavior with less important immediate consequences.  (1)
+CFCset2.2, I generally ignore warnings about possible future problems because I think the problems will be resolved before they reach crisis level.  (2)
+CFCset2.3,I think that sacrificing now is usually unnecessary since future outcomes can be dealt with at a later time.  (3)
+CFCset2.4," I only act to satisfy immediate concerns, figuring that I will take care of future problems that may occur at a later date. (4)"
+CFCset2.5,"Since my day-to-day work has specific outcomes, it is more important to me than behavior that has distant outcomes.  (5)"
+CFCset2.6,"When I make a decision, I think about how it might affect me in the future.  (6)"
+CFCset2.7,My behavior is generally influenced by future consequences (7)
+Discounting1,Which would you rather receive?
+Discounting2,Which would you rather receive?
+Discounting3,Which would you rather receive?
+Discounting4,Which would you rather receive?
+Discounting5,Which would you rather receive?
+Discounting6,Which would you rather receive?
+Discounting7,Which would you rather receive?
+Discounting8,Which would you rather receive?
+Discounting9,Which would you rather receive?
+Discounting10,Which would you rather receive?
+Discounting11,Which would you rather receive?
+Discounting12,Which would you rather receive?
+Discounting13,Which would you rather receive?
+Discounting14,Which would you rather receive?
+Discounting15,Which would you rather receive?
+Discounting16,Which would you rather receive?
+Discounting17,Which would you rather receive?
+Discounting18,Which would you rather receive?
+Discounting19,Which would you rather receive?
+Discounting20,Which would you rather receive?
+Discounting21,Which would you rather receive?
+Discounting22,Which would you rather receive?
+Discounting23,Which would you rather receive?
+Discounting24,Which would you rather receive?
+Discounting25,Which would you rather receive?
+Discounting26,Which would you rather receive?
+Discounting27,Which would you rather receive?
+TroubleRemember,"Since you have been in quarantine, have you had trouble remembering what day of the week it is?"
+TimePassed,"Since the beginning of the pandemic, this year has passed: 1 = much faster than previous years, 3 = about the same, 5 = much more slowly than previous years"
+SimilarDays,"Since the beginning of the pandemic, how similar would you say each day is to the day before and the day after? 1 = everyday is basically the same, 5 = each day is different from the last"
+FarMonth,"How near or far away does a month from now seem? 1 = very near, 7 = very far"
+FarYear,"How near or far away does a year from now seem? 1 = very near, 7 = very far"
+Optimistic1,"Optimistic How optimistic do you feel about how things will be in: Two days from now? 1 = very optimistic, 7 = very pessimistic"
+Optimistic2,"Optimistic How optimistic do you feel about how things will be in: Two weeks from now? 1 = very optimistic, 7 = very pessimistic"
+Optimistic3,"Optimistic How optimistic do you feel about how things will be in: Two months from now? 1 = very optimistic, 7 = very pessimistic"
+Optimistic4,"Optimistic How optimistic do you feel about how things will be in: One year from now? 1 = very optimistic, 7 = very pessimistic"
+Optimistic5,"Optimistic How optimistic do you feel about how things will be in: Ten years from now? 1 = very optimistic, 7 = very pessimistic"
+ConspiracySet1.1,"The government is involved in the murder of innocent citizens and/or well-known public figures, and keeps this a secret (1)"
+ConspiracySet1.2,The power held by heads of state is second to that of small unknown groups who really control world politics (2)
+ConspiracySet1.3,"Secret organizations communicate with extraterrestrials, but keep this fact from the help (3)"
+ConspiracySet1.4,"The spread of certain viruses and/or diseases is the result of deliberate, concealed efforts to some organization  (4)"
+ConspiracySet1.5,"Groups of scientists manipulate, fabricate, or suppress evidence in order to deceive the public (5)"
+ConspiracySet1.6,"The government permits or pepetrates acts of terrorism on its own soil, disguising its involvement  (6)"
+ConspiracySet1.7,"A small, secret group of people is responsible for making all major world decisions, such as going to war (7)"
+ConspiracySet2.1,Evidence of alien contact is being concealed from the public (1)
+ConspiracySet2.2,Technology with mind-control capacities is used on people without their knowledge  (2)
+ConspiracySet2.3,New and advanced technology which would harm current industry is being suppressed  (3)
+ConspiracySet2.4,The government uses people as patsies to hide its involvement in criminal activity  (4)
+ConspiracySet2.5,Certain significant events have been the result of the activity of a small group who secretly manipulate world events  (5)
+ConspiracySet2.6,Some UFO sightings and rumors are planned or staged in order to distract the public from real alien contact  (6)
+ConspiracySet2.7,Experiments involving new drugs or technologies are routinely carried out on the public without their knowledge or consent (7)
+ConspiracySet2.8,A lot of important information is deliberately concealed from the public out of self-interest (8)
+Citizen,Are you a US citizen?
+Sociopolitical,"How would you describe your political orientation with regard to social issues? 1 = very liberal, 7 = very conservative"
+Econopolitical,"How would you describe your political orientation with regard to economic issues? 1 = very liberal, 7 = very conservative"
+MaskPolitical,Do you believe that some people wear a mask as a political statement?
+MaskOtherStatement,Does the possibility that others might interpret you wearing a mask as a political statement make you more or less likely to wear a mask?
+RefuseMask,Do you believe that some people refuse to wear a mask to make a political statement?
+MaskMakeStatement,"How often do you wear a face mask with the intention of making a political statement? 1 = never, 3 = sometimes, 5 = always, 6 = I never wear a mask"
+NoMaskStatement,"When you go out without wearing a face mask, how often do you do so with the intention of making a political statement? 1 = never, 3 = sometimes, 5 = always, 6 = I never wear a mask"
+NoMaskOtherState,"When you go out without wearing a face mask, how often do you do so with the intention of making a political statement? 1 = never, 3 = sometimes, 5 = always, 6 = I always wear a mask"
+TrumpMask1,"President Trump was photographed wearing a mask publicly for the first time in July at Walter Reed National Military Medical Center, where he told reporters, “When you’re in a hospital, especially... I think it’s a great thing to wear a mask.” Does this make you more or less likely to wear a mask?"
+TrumpMask2,"In a June interview with the Wall Street Journal, President Trump said that he believes some people wear masks to signal their disapproval of him (rather than to prevent the spread of the virus). Does this make you more or less likely to wear a mask?"
+NeighborMask,What proportion of individuals in your neighborhood wear a mask while shopping?
+NeighborMask1,"What proportion of people in your area wear a mask while doing routine activities indoors (e.g., running errands, shopping, going to work)? 1 = none, 4 = half, 7 = all"
+NeighborMask2,"What proportion of people in your area wear a mask while doing recreational/social activities indoors (e.g., going to the gym, eating at a restaurant, attending a party)? 1 = none, 4 = half, 7 = all"
+MaskAttitudes1,Seeing other people wearing face masks in public makes me feel safe (1)
+MaskAttitudes2,Seeing other people wearing face masks in public makes me feel relieved (2)
+MaskAttitudes3,Seeing other people wearing face masks in public makes me feel disgust (3)
+MaskAttitudes4,Seeing other people NOT wearing face masks in public makes me feel safe (4)
+MaskAttitudes5,Seeing other people NOT wearing face masks in public makes me feel relieved (5)
+MaskAttitudes6,Seeing other people NOT wearing face masks in public makes me feel disgust (6)
+MaskTrust,"Compared to people who choose to not wear face-masks in public, those who wear face-masks in public are 1 = much less trustworthy, 5 = much more trustworthy"
+MaskIntelligence,"Compared to people who choose to not wear face-masks in public, those who wear face-masks in public are: 1 = much less intelligent, 5 = much more intelligent"
+MaskMotives1,I wear a face mask when going out in public to keep myself from getting sick
+MaskMotives2,I wear a face mask when going out in public to prevent others from getting sick in case I may be infected but don’t know it yet
+MaskMotives3,Wearing a face mask when going out in public is the right thing to do
+MaskStigma1,Wearing a face mask is cool
+MaskStigma2,Wearing a face mask is shameful 
+MaskStigma3,Wearing a face mask is a sign of weakness
+MaskStigma4,The stigma attached to wearing a face mask is preventing me from wearing one as often as I should
+MaskStereotype,"Do you think men or women are more likely to wear a mask in public? 1 = men much more likely, 7 = women much more likely"
+MaskLegal,"Is there a legal requirement to wear a face mask in your area? 1 = no, 2 = yes, 3 = don't know"
+MaskRespect,"In general, how often do you see people that you respect and trust wearing a mask (e.g., on tv, news, etc.)? 1 = never/rarely, 7 = very often"
+MaskEncouraged,"How much are mask-wearing rules encouraged in your area (e.g., by local or state government officials, businesses, etc.)? 1 = strongly discouraged, 7 = strongly encouraged"
+FriendSameBelief,How important is it that your friends hold similar beliefs to you?
+RightWing,"Everyone should be allowed to have their own lifestyle, religious beliefs, and political opinions, even if they go against established norms."
+Dogmatism,"There is a particular set of religious teachings that are true because they are the basic, bedrock message that God has given humanity."
+Fundamentalism,"My religion has given humanity a complete, unfailing guide to happiness and salvation, which should be strictly followed."
+Exclusivity,"There are basically only two kinds of people in the world: the faithful and spiritual, who will be rewarded, and the rest, who will not. "
+Income,"What was your combined household income in the previous year before taxes? 1 = under 15k, 9 = over 200k"
+Savings,"Approximately, what is the total amount of money that you have in all of your checking(s) and saving(s) account? 1 = $0-500, 9 = over $200k"
+Assests,"Approximately, what is the total net worth of all of your assets combined (including your primary residence, other real estate, business, vehicles, stocks, trusts, etc)? 1 = $0-500, 9 = over $200k"
+PFIaffectNeigh,Perceived interdependence - empathetic engagement with neighborhood
+PFIaffectCountry,Perceived interdependence - empathetic engagement with country
+PFIsharedfateNeigh,Perceived interdependence - Shared fate with neighborhood
+PFIsharedfateCountry,Perceived interdependence - Shared fate with country
+CovidSymptoms,Sum of covid symptoms
+HelpGiven,Average composite of help given over past 30 days
+HelpReceived,Average composite of help received over past 30 days
+MutualAid,Average composite of helpg given and help received
+EmpatheticConcern,Average composite of concern and compassionate felt during last time help was given
+EmpatheticDistress,Average composite of troubled and distressed felt during last time help was given
+Predictability,Average composite of perceived predictability of challenges
+Repayment,Average composite of expectation of repayment when people give help
+Challenges,Average composite of times people experienced challenges over the past 12 months
+Wealth,"average composite of income, assets, and savings"
+TraitEmpathicConcern,average composite of empathic concern
+TraitEmpathicdistress,average composite of empathic distress
+BeliefInConspiracy,average composite of beliefs in conspiracy
+PoliticalOrientation,average composite of sociopolitical and economic views
+DiscountingRate,Temporal discounting
+SmallSooner,index used to calculate temporal discounting
+LargerSooner,index used to calculate temporal discounting
+NoResponse,index used to calculate temporal discounting
+@00025.1,index used to calculate temporal discounting
+@00039.1,index used to calculate temporal discounting
+@00098.1,index used to calculate temporal discounting
+@0021.1,index used to calculate temporal discounting
+@0034.1,index used to calculate temporal discounting
+@0055.1,index used to calculate temporal discounting
+@0087.1,index used to calculate temporal discounting
+@013.1,index used to calculate temporal discounting
+@02.1,index used to calculate temporal discounting
+@025.1,index used to calculate temporal discounting
+Responsible,How responsible do you feel for the members of your household/pod?
+SourceInfo1,From which of the following sources of information do you regularly get information about COVID-19? (please choose all that apply) - Twitter
+SourceInfo2,From which of the following sources of information do you regularly get information about COVID-19? (please choose all that apply)- Facebook
+SourceInfo3,From which of the following sources of information do you regularly get information about COVID-19? (please choose all that apply) - Communication with medical personnel
+SourceInfo4,From which of the following sources of information do you regularly get information about COVID-19? (please choose all that apply) - Written news/online (please enter one example of a site/newspaper you read below)
+SourceInfo5,From which of the following sources of information do you regularly get information about COVID-19? (please choose all that apply) - TV news (please enter one example of a channel you watch below)
+SourceInfo6,From which of the following sources of information do you regularly get information about COVID-19? (please choose all that apply) - Family
+SourceInfo7,From which of the following sources of information do you regularly get information about COVID-19? (please choose all that apply) - Friends
+SourceInfo8,From which of the following sources of information do you regularly get information about COVID-19? (please choose all that apply) - Neighbors/Community members
+SourceInfo9,From which of the following sources of information do you regularly get information about COVID-19? (please choose all that apply) - Coworkers
+SourceInfo10,From which of the following sources of information do you regularly get information about COVID-19? (please choose all that apply) - Workplace supervisor
+SourceInfo11,"From which of the following sources of information do you regularly get information about COVID-19? (please choose all that apply) - Local (city, state) government"
+SourceInfo12,From which of the following sources of information do you regularly get information about COVID-19? (please choose all that apply) - The president
+SourceInfo13,"From which of the following sources of information do you regularly get information about COVID-19? (please choose all that apply) - Health organizations (e.g., the CDC, WHO)"
+SourceInfo14,From which of the following sources of information do you regularly get information about COVID-19? (please choose all that apply)- Other (please specify below)
+Fundamental1,"Please answer how important each of the following statements are to you at this point in your life, not how important these have been for you in the past or how important they may be in the future - Keeping myself physically safe from other people"
+Fundamental2,"Please answer how important each of the following statements are to you at this point in your life, not how important these have been for you in the past or how important they may be in the future- Avoiding people or places that might carry diseases"
+Fundamental3,"Please answer how important each of the following statements are to you at this point in your life, not how important these have been for you in the past or how important they may be in the future - Staying in contact with friends remotely (e.g., phone, video chat, texting, email)"
+Fundamental4,"Please answer how important each of the following statements are to you at this point in your life, not how important these have been for you in the past or how important they may be in the future - Spending time with friends outside your household/pod through in-person interactions"
+Fundamental5,"Please answer how important each of the following statements are to you at this point in your life, not how important these have been for you in the past or how important they may be in the future - Working in any way that brings in income, builds your career, or strengthens your abilities/skills"
+Fundamental6,"Please answer how important each of the following statements are to you at this point in your life, not how important these have been for you in the past or how important they may be in the future - Spending time trying to meet, or to stay in contact with new possible dating partners remotely (e.g., phone, video chat, texting)"
+Fundamental7,"Please answer how important each of the following statements are to you at this point in your life, not how important these have been for you in the past or how important they may be in the future - Spending time trying to meet, or to stay in contact with new possible dating partners through in-person interactions"
+Fundamental8,"Please answer how important each of the following statements are to you at this point in your life, not how important these have been for you in the past or how important they may be in the future - Spending quality time with my significant other"
+Fundamental9,"Please answer how important each of the following statements are to you at this point in your life, not how important these have been for you in the past or how important they may be in the future - Staying in contact with family members remotely (e.g., phone, video chat, texting, email)"
+Fundamental10,"Please answer how important each of the following statements are to you at this point in your life, not how important these have been for you in the past or how important they may be in the future - Spending time with family members outside your household/pod through in-person interactions"
+RiskManage1,I save for the future so I can cover any unexpected costs that may come up
+RiskManage2,I actively do my best at work to reduce the risk of being fired
+RiskManage3,I have a backup plan in case my preferred/current career doesn't pan out
+RiskManage4,I avoid things that are too risky
+RiskManage5,I am unlikely to gamble
+RiskManage6,I am unlikely to begin ventures that don't have secure outcomes
+RiskManage7,"When I buy an expensive commodity (e.g., computer/ phone/TV), I tend to buy an insurance plan for it"
+RiskManage8,I like having more than one credit card to ensure that I can buy necessities if something goes wrong
+RiskManage9,I'm likely to ask parents/ friends/ someone for help if I'm in a tough situation
+RiskManage10,In high stakes situations I prefer to solve problems with the help from others instead of alone to ensure a beneficial outcome
+RiskManage11,"When things go wrong, I prefer to solve problems on my own before I ask for help"
+NewFood,"Imagine you want to order takeout, and a new restaurant is opening up nearby serving a cuisine you’ve never had before--would you want to try it out?"
+RiskReduction,Average composite of tendency to engage in risk reduction 
+RiskAvoidance,Average composite of tendency to engage in risk avoidance
+RiskRetention,Average composite of tendency to engage in risk retention
+RiskTransfer,Average composite of tendency to engage in risk transfer
+ShopBF,"Did you shop indoors in a crowded store in the last 7 days? 1 = no, 2 = yes"
+MaskBF,"During the time you shopped indoors in the last 7 days, to what extent did you wear a face mask and/or stay 6 feet away from others"
+WorriedCovidBF1,During the time you shopped indoors in a crowded store in the last 7 days - How worried were you about the possibility of becoming infected with COVID-19?
+WorriedCovidBF2,During the time you shopped indoors in a crowded store in the last 7 days - How worried were you about the possibility of infecting others with COVID-19?
+ChangePlansBF3,"Did you change your plans to shop in a particular store in the last 7 days because of the heightened risk during crowded shopping times? 1 = no, 2 = yes"
+CelebrateTG,"Did you celebrate Thanksgiving? 1 = no, 2 = yes"
+PrecautionTG,"If you celebrated Thanksgiving with people outside of your household, did you take precautions before meeting in person (e.g., quarantining ahead of time, testing beforehand)?"
+HowManyTG,How many people did you celebrate Thanksgiving dinner with?
+NotHouseHoldTG,How many people were not members of your household?
+MaskTG,"If you celebrated Thanksgiving with people outside of your household, did you wear a face mask and/or stay 6 feet away from others (e.g., an outdoor socially distanced Thanksgiving)"
+COVIDpositiveTG,"If you celebrated Thanksgiving with people outside of your household, how likely do you think it is that at least one person there was COVID positive?"
+WorriedCovidTG1,How worried were you about the possibility of becoming infected with COVID-19?
+WorriedCovidTG2,How worried were you about the possibility that you could infect others with COVID-19?
+CancelTG,"Did you decide to avoid celebrating Thanksgiving because of COVID-19 related concerns? 1 = no, 2 = yes, 3 = other reason"
+SchoolChild,Do you have any school-aged children who may be returning to in-person school in the next few weeks?
+SchoolConcern,"Given the current state of the pandemic where you live, how concerned are you at the prospect of your children physically returning to school?"
+SchoolMethod,"What is/will be your children's method of schooling?  1 = in-person, 2 = online, 3 = mixed in-person and online, 4 = homeschool, 5 = other"
+PreferredMethod,"Is this your preferred method of schooling? 1 = no, 2 = yes"
+Schoolitems1,"If there are children who are attending school in person in your household, please rate your agreement with the following statements - I am comfortable with my children attending school in person as soon as possible"
+Schoolitems2,"If there are children who are attending school in person in your household, please rate your agreement with the following statements  - I believe that the benefits granted for my children by attending school in-person outweigh the potential risks associated with COVID-19"
+Schoolitems3,"If there are children who are attending school in person in your household, please rate your agreement with the following statements - I have a choice/say in how my children attend school"
+Schoolitems4,"If there are children who are attending school in person in your household, please rate your agreement with the following statements - I have obligations that prevent me from keeping my children at home "
+ReasonHelp,What was the reason for giving help?
+PersonHelped,"What is your relationship with the person that you most recently helped? 1 = acquaintance, 2 = friend, 3 = family member, 4 = other"
+PresentVfuture1,"Right now I can either focus on the present or focus on the future, but not both"
+PresentVfuture2,"Right now when I make decisions, I think about the immediate present"
+PresentVfuture3,"Right now when I make decisions, I think about the distant future"
+PresentVfuture4,"Right now I can either prioritize my immediate well-being or my long-term well-being, but not both"
+FutureImportant,"Right now for me the future is 1 = extremely unimportant, 7 = extremely important"
+PresentImportant,"Right now for me the present is 1 = extremely unimportant, 7 = extremely important"
+RiskBehavior1,Drinking heavily at a social function.
+RiskBehavior2,Engaging in unprotected sex.
+RiskBehavior3,Driving a car without wearing a seat belt.
+RiskBehavior4,Riding a motorcycle without a helmet.
+RiskBehavior5,Sunbathing without sunscreen.
+RiskBehavior6,Walking home alone at night in an unsafe area of town.
+ReduceCovidRisk1,"To what extent have you tried to reduce the risk of becoming infected with COVID-19 by engaging in protective behaviors since March, 2020?"
+ReduceCovidRisk2,"To what extent have the members of your household tried to reduce their risk of becoming infected with COVID-19 by engaging in protective behaviors since March, 2020?"
+ReduceCovidRisk3,"To what extent have your friends tried to reduce their risk of becoming infected with COVID-19 by engaging in protective behaviors since March, 2020?"
+BothersFriendsRisk,"It bothers me when my friends put themselves at risk of COVID-19 infection (e.g., attending a crowded place indoors, not wearing a mask)"
+TimeRiskyFriend,How likely are you to spend time in-person with friends who have put themselves at risk of COVID-19 infection
+TimeCarefulFriend,How likely are you to spend time in-person with friends who have been careful about minimizing their risk of COVID-19 infection?
+WishFriendsCareful,I wish that my friends were more careful about minimizing their risk of COVID-19 infection so that I could spend more time in-person with them
+FriendsConflict,"Some of my friends are more/less careful than others, and that is creating conflict within my circle of friends"
+EnjoyHelpFriends,"I enjoy when my friends come to me for help, even if it requires seeing each other in-person and indoors"
+BothersHouseRisk,"It bothers me when members of my household put themselves at risk of COVID-19 infection (e.g., attending a crowded place indoors, not wearing a mask)"
+WishHouseCareful,I wish that members of my household were more careful about minimizing their risk of COVID-19 infection
+HouseConflict,"Some people in my household are more/less careful than others, and that is creating conflict within the members of my household"
+RiskBehaviorComposite,Average composite of trait risk proneness
+CFC.Future,Average composite of consideration of future consequences
+CFC.Immediate,Average composite of consideration of immediate consequences
+CFC.Composite,Average composite of consideration of future and immediate consequences
+PostVaccineBehavior1,"How likely are you to do each of the following protective behaviors after receiving the COVID-19 vaccine? - Wear a mask in public (e.g., public transport, indoors)"
+PostVaccineBehavior2,How likely are you to do each of the following protective behaviors after receiving the COVID-19 vaccine? - Wear mask indoors at friend’s/family’s house
+PostVaccineBehavior3,How likely are you to do each of the following protective behaviors after receiving the COVID-19 vaccine? - Wash hands immediately after returning home
+PostVaccineBehavior4,"How likely are you to do each of the following protective behaviors after receiving the COVID-19 vaccine? - Social distance (i.e., stay away 6 feet away from others)"
+PostVaccineBehavior5,"How likely are you to do each of the following protective behaviors after receiving the COVID-19 vaccine? - Minimizing as much as possible in-person interactions (i.e., only necessary in-person interactions such as grocery shopping)"
+PostVaccineBehavior6,"How likely are you to do each of the following protective behaviors after receiving the COVID-19 vaccine? - Quarantine (i.e., completely avoid seeing people in-person outside your household)"
+MaskDem,Do you believe that someone wearing a mask is more likely to be a Democrat?
+MaskRep,Do you believe that someone not wearing a mask is more likely to be a Republican?
+MaskDemAffiliate,Does the possibility that others might interpret you wearing a mask as a sign of political affiliation with Democrats make you more or less likely to wear a mask?
+MaskRepAffiliate,Does the possibility that others might interpret you not wearing a mask as a sign of political affiliation with Republicans make you more or less likely to wear a mask?
+Reactance1,"When someone tells me what to do, I feel like doing precisely the opposite"
+Reactance2,Rules and regulations provoke some kind of resistance in me
+Reactance3,"When somebody tells me not to do something, I react by thinking that is exactly what I want to do"
+Reactance4,I react negatively when others try to tell me what to do
+Entitlement1,I honestly feel I’m just more deserving than others
+Entitlement2,Great things should come to me
+Entitlement3,"If I were on the Titanic, I would deserve to be on the first lifeboat! "
+Entitlement4,I demand the best because I’m worth it
+Entitlement5,I do not necessarily deserve special treatment
+Entitlement6,I deserve more things in my life
+Entitlement7,People like me deserve an extra break now and then
+Entitlement8,Things should go my way
+Entitlement9,I feel entitled to more of everything
+HowMuchSleep,"How much have you been sleeping? 1 = less than usual, 3 = about the same, 5 = more than usual "
+HourSleep,How many hours of actual sleep did you get at night? (This may be different than the number of hours you spend in bed). 
+QualitySleep,"How would you rate the quality of your sleep? 1 = poor/unrefreshing, 3 = acceptable, 5 = excellent, restful/refreshing"
+SleepExperiences1,Have you experienced any of the following more than usual? - Strange or vivid dreams
+SleepExperiences2,Have you experienced any of the following more than usual? - Nightmares or night terrors
+SleepExperiences3,Have you experienced any of the following more than usual? - Lack of dreams
+SleepExperiences4,Have you experienced any of the following more than usual? - Bouts of insomnia
+SleepExperiences5,Have you experienced any of the following more than usual? - Trouble falling asleep
+SleepExperiences6,Have you experienced any of the following more than usual? - Trouble staying asleep
+SleepExperiences7,"Have you experienced any of the following more than usual? - Change in your sleep schedule (for example, going to bed later)"
+HowFastYear,"How fast did this past year go by? 1 = very slowly, 5 = very quickly"
+NewPandemic,"How likely is another pandemic that is as or more damaging (e.g. loss of life, economic impact) as COVID-19 in the next 100 years?"
+TimeTilNewPandemic,"How long will it be before another pandemic happens that is as or more damaging than COVID-19? 1 = wtihin 1 year, 2 = 5 years, 3 = 10 years, 4 = 50 years, 5 = 100 years, 6 = 200 years, 7 = 500 years, 8 = Longer"
+PandemicExtinction,How likely is a future pandemic that could cause human extinction (everyone dying) or destroy human civilization in the next 100 years?
+GovernmentPandemic,How much can government action minimize the damage from future pandemics?
+IndividualPandemic,How much can individual action minimize the damage from future pandemics?
+CausesExtinction1,How likely are each of the following to cause human extinction in the next 100 years? Give the percent chance of extinction from each:   - Global thermonuclear war
+CausesExtinction2,How likely are each of the following to cause human extinction in the next 100 years? Give the percent chance of extinction from each:  - Global warming/climate change/environment destruction
+CausesExtinction3,How likely are each of the following to cause human extinction in the next 100 years? Give the percent chance of extinction from each:  - Naturally occurring pandemic
+CausesExtinction4,How likely are each of the following to cause human extinction in the next 100 years? Give the percent chance of extinction from each:  - Bioweapons that cause a pandemic
+CausesExtinction5,How likely are each of the following to cause human extinction in the next 100 years? Give the percent chance of extinction from each:  - Super intelligent AI
+CausesExtinction6,How likely are each of the following to cause human extinction in the next 100 years? Give the percent chance of extinction from each:  - Asteroid hitting Earth
+CausesExtinction8,How likely are each of the following to cause human extinction in the next 100 years? Give the percent chance of extinction from each:  - How likely will human civilization still exist in 100 years?
+CausesExtinction9,"How likely are each of the following to cause human extinction in the next 100 years? Give the percent chance of extinction from each:  - Enter any other danger that could cause extinction, and the percent chance:"
+CausesExtinction10,"Enter any other danger that could cause extinction, and the percent chance:"
+ReactanceComposite,average composite of trait reactance
+EntitlementComposite,average composite of trait psychological entitlement
