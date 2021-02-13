@@ -337,7 +337,7 @@
                     Historical weekly death toll: <a href="https://www.mortality.org/" target="_blank">Human Mortality
                         Database. University of California, Berkeley (USA), and Max Planck Institute for Demographic
                         Research (Germany).</a>
-                    Downloaded at 07/02/2021.
+                    Downloaded at 13/02/2021.
                 </p>
             </div>
         </div>
@@ -885,6 +885,7 @@
                         country = "World";
                         change_dashboard_country_text(country);
                         area_bar_data_update();
+                        excess_data_update();
                     }
                 }
             },
@@ -1364,8 +1365,6 @@
         for (let point of legendItems) {
             $legend2Container.append('<div class="legend-item"><div class="dot legend-color-' + point.colorIndex + '" ></div><div class="serieName" id="">' + fCapital(point.name) + '</div></div>');
         }
-
-
 
         // Dropdowns
         // Define dropdown container
