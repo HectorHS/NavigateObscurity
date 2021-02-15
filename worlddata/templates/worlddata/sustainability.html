@@ -203,11 +203,11 @@
                     max: 5,
                     min: -5,
                     stops: [
-                        [0, '#E63333'],
-                        [0.35, '#FFFF1A'],
-                        [0.5, '#DDDDDD'],
-                        [0.65, '#23CA23'],
-                        [0.95, '#0070D1']
+                        [0, getIndexColor(30)],
+                        [0.35, getIndexColor(9)],
+                        [0.5, getIndexColor(52)],
+                        [0.65, getIndexColor(23)],
+                        [0.95, getIndexColor(3)]
                     ],
                 },
                 tooltip: {
@@ -284,31 +284,31 @@
                 if (measure == "Biocapacity") {
                     chart.colorAxis[0].update({
                         stops: [
-                            [0, '#E63333'],
-                            [0.35, '#FFFF1A'],
-                            [0.5, '#DDDDDD'],
-                            [0.65, '#23CA23'],
-                            [0.95, '#0070D1']
+                            [0, getIndexColor(30)],
+                            [0.35, getIndexColor(9)],
+                            [0.5, getIndexColor(52)],
+                            [0.65, getIndexColor(23)],
+                            [0.95, getIndexColor(3)]
                         ],
                     }, false)
                 } else if (measure == "Ecological deficit or reserve") {
                     chart.colorAxis[0].update({
                         stops: [
-                            [0, '#E63333'],
-                            [0.35, '#FFFF1A'],
-                            [0.5, '#DDDDDD'],
-                            [0.65, '#23CA23'],
-                            [0.95, '#0070D1']
+                            [0, getIndexColor(30)],
+                            [0.35, getIndexColor(9)],
+                            [0.5, getIndexColor(52)],
+                            [0.65, getIndexColor(23)],
+                            [0.95, getIndexColor(3)]
                         ],
                     }, false)
                 } else if (measure == "Ecological footprint of consumption") {
                     chart.colorAxis[0].update({
                         stops: [
-                            [0, '#0070D1'],
-                            [0.35, '#23CA23'],
-                            [0.5, '#DDDDDD'],
-                            [0.65, '#FFFF1A'],
-                            [0.95, '#E63333']
+                            [0, getIndexColor(3)],
+                            [0.35, getIndexColor(23)],
+                            [0.5, getIndexColor(52)],
+                            [0.65, getIndexColor(9)],
+                            [0.95, getIndexColor(30)]
                         ],
                     }, false)
                 }
@@ -532,7 +532,7 @@
             }
 
             var getColor = {
-                "Built up land": "43",
+                "Built up land": "50",
                 "Crop land": "10",
                 "Fishing grounds": "3",
                 "Forest land": "25",

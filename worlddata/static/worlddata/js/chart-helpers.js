@@ -510,6 +510,69 @@ function addSlider(parent, name, min, max, value, containerWidth, width, onChang
     sliderOutput.style.width = width + "px";
     sliderContainer.appendChild(sliderOutput);
 }
+function getIndexColor(indx) {
+    let indexColor = {
+        "0": "#B3DBFF",
+        "1": "#66B8FF",
+        "2": "#1A94FF",
+        "3": "#0070D1",
+        "4": "#005299",
+        "5": "#003666",
+        "6": "#001B33",
+        "7": "#FFFF99",
+        "8": "#FFFF4D",
+        "9": "#FFFF1A",
+        "10": "#C7C705",
+        "11": "#919108",
+        "12": "#5E5E08",
+        "13": "#2E2E05",
+        "14": "#FAD1EC",
+        "15": "#F48BCF",
+        "16": "#ED45B2",
+        "17": "#D1158F",
+        "18": "#970F67",
+        "19": "#5D0940",
+        "20": "#2E0520",
+        "21": "#7DE87D",
+        "22": "#52E052",
+        "23": "#23CA23",
+        "24": "#1B981B",
+        "25": "#136C13",
+        "26": "#0B410B",
+        "27": "#041604",
+        "28": "#F18E8E",
+        "29": "#EB6060",
+        "30": "#E63333",
+        "31": "#CC1919",
+        "32": "#881111",
+        "33": "#440808",
+        "34": "#170303",
+        "35": "#e7d7f4",
+        "36": "#C29CE2",
+        "37": "#9D61D1",
+        "38": "#772EB8",
+        "39": "#501980",
+        "40": "#360D59",
+        "41": "#1B042F",
+        "42": "#FFDBB3",
+        "43": "#FFB866",
+        "44": "#FFA033",
+        "45": "#FF8800",
+        "46": "#CC6D00",
+        "47": "#804400",
+        "48": "#4D2900",
+        "49": "#ddc3c3",
+        "50": "#8B9595",
+        "51": "#101414",
+        "52": "#DDDDDD",
+    };
+
+    let color = indexColor[indx];
+    if (!color) {
+        console.log("Color not found for index " + indx)
+    }
+    return color;
+}
 
 // highcharts global oprions
 Highcharts.setOptions({
@@ -1208,6 +1271,111 @@ Highcharts.setOptions({
                 offset: 1
             }]
         },
+        gradient46: {
+            tagName: 'linearGradient',
+            id: 'gradient-46',
+            x1: 0,
+            y1: 0,
+            x2: 0,
+            y2: 1,
+            children: [{
+                tagName: 'stop',
+                offset: 0
+            }, {
+                tagName: 'stop',
+                offset: 1
+            }]
+        },
+        gradient47: {
+            tagName: 'linearGradient',
+            id: 'gradient-47',
+            x1: 0,
+            y1: 0,
+            x2: 0,
+            y2: 1,
+            children: [{
+                tagName: 'stop',
+                offset: 0
+            }, {
+                tagName: 'stop',
+                offset: 1
+            }]
+        },
+        gradient48: {
+            tagName: 'linearGradient',
+            id: 'gradient-48',
+            x1: 0,
+            y1: 0,
+            x2: 0,
+            y2: 1,
+            children: [{
+                tagName: 'stop',
+                offset: 0
+            }, {
+                tagName: 'stop',
+                offset: 1
+            }]
+        },
+        gradient49: {
+            tagName: 'linearGradient',
+            id: 'gradient-49',
+            x1: 0,
+            y1: 0,
+            x2: 0,
+            y2: 1,
+            children: [{
+                tagName: 'stop',
+                offset: 0
+            }, {
+                tagName: 'stop',
+                offset: 1
+            }]
+        },
+        gradient50: {
+            tagName: 'linearGradient',
+            id: 'gradient-50',
+            x1: 0,
+            y1: 0,
+            x2: 0,
+            y2: 1,
+            children: [{
+                tagName: 'stop',
+                offset: 0
+            }, {
+                tagName: 'stop',
+                offset: 1
+            }]
+        },
+        gradient51: {
+            tagName: 'linearGradient',
+            id: 'gradient-51',
+            x1: 0,
+            y1: 0,
+            x2: 0,
+            y2: 1,
+            children: [{
+                tagName: 'stop',
+                offset: 0
+            }, {
+                tagName: 'stop',
+                offset: 1
+            }]
+        },
+        gradient52: {
+            tagName: 'linearGradient',
+            id: 'gradient-52',
+            x1: 0,
+            y1: 0,
+            x2: 0,
+            y2: 1,
+            children: [{
+                tagName: 'stop',
+                offset: 0
+            }, {
+                tagName: 'stop',
+                offset: 1
+            }]
+        },
         gradient0area: {
             tagName: 'linearGradient',
             id: 'gradient-area-0',
@@ -1887,6 +2055,111 @@ Highcharts.setOptions({
         gradient45area: {
             tagName: 'linearGradient',
             id: 'gradient-area-45',
+            x1: 0,
+            y1: 0,
+            x2: 0,
+            y2: 1,
+            children: [{
+                tagName: 'stop',
+                offset: 0
+            }, {
+                tagName: 'stop',
+                offset: 1
+            }]
+        },
+        gradient46area: {
+            tagName: 'linearGradient',
+            id: 'gradient-area-46',
+            x1: 0,
+            y1: 0,
+            x2: 0,
+            y2: 1,
+            children: [{
+                tagName: 'stop',
+                offset: 0
+            }, {
+                tagName: 'stop',
+                offset: 1
+            }]
+        },
+        gradient47area: {
+            tagName: 'linearGradient',
+            id: 'gradient-area-47',
+            x1: 0,
+            y1: 0,
+            x2: 0,
+            y2: 1,
+            children: [{
+                tagName: 'stop',
+                offset: 0
+            }, {
+                tagName: 'stop',
+                offset: 1
+            }]
+        },
+        gradient48area: {
+            tagName: 'linearGradient',
+            id: 'gradient-area-48',
+            x1: 0,
+            y1: 0,
+            x2: 0,
+            y2: 1,
+            children: [{
+                tagName: 'stop',
+                offset: 0
+            }, {
+                tagName: 'stop',
+                offset: 1
+            }]
+        },
+        gradient49area: {
+            tagName: 'linearGradient',
+            id: 'gradient-area-49',
+            x1: 0,
+            y1: 0,
+            x2: 0,
+            y2: 1,
+            children: [{
+                tagName: 'stop',
+                offset: 0
+            }, {
+                tagName: 'stop',
+                offset: 1
+            }]
+        },
+        gradient50area: {
+            tagName: 'linearGradient',
+            id: 'gradient-area-50',
+            x1: 0,
+            y1: 0,
+            x2: 0,
+            y2: 1,
+            children: [{
+                tagName: 'stop',
+                offset: 0
+            }, {
+                tagName: 'stop',
+                offset: 1
+            }]
+        },
+        gradient51area: {
+            tagName: 'linearGradient',
+            id: 'gradient-area-51',
+            x1: 0,
+            y1: 0,
+            x2: 0,
+            y2: 1,
+            children: [{
+                tagName: 'stop',
+                offset: 0
+            }, {
+                tagName: 'stop',
+                offset: 1
+            }]
+        },
+        gradient52area: {
+            tagName: 'linearGradient',
+            id: 'gradient-area-52',
             x1: 0,
             y1: 0,
             x2: 0,

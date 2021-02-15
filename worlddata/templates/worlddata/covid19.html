@@ -501,7 +501,7 @@
         var getColor = {
             "Active": "4",
             "Deaths": "6",
-            "Recovered": "42",
+            "Recovered": "49",
             "Confirmed": "1"
         };
 
@@ -902,11 +902,11 @@
                 max: 1000,
                 min: 0,
                 stops: [
-                    [0, '#0070D1'],
-                    [0.35, '#23CA23'],
-                    [0.5, '#DDDDDD'],
-                    [0.65, '#FFFF1A'],
-                    [0.95, '#E63333']
+                    [0, getIndexColor(3)],
+                    [0.35, getIndexColor(23)],
+                    [0.5, getIndexColor(52)],
+                    [0.65, getIndexColor(9)],
+                    [0.95, getIndexColor(30)]
                 ],
             },
             tooltip: {
@@ -1143,7 +1143,7 @@
                 id: "old",
                 name: "2015-9 average",
                 type: 'column',
-                colorIndex: 43,
+                colorIndex: 50,
                 data: initial_old_excess_data
             },
             {
@@ -1307,10 +1307,10 @@
                 max: 3,
                 min: 0,
                 stops: [
-                    [0, '#DDDDDD'],
-                    [0.33, '#9D61D1'],
-                    [0.66, '#ED45B2'],
-                    [0.95, '#970F67']
+                    [0, getIndexColor(52)],
+                    [0.33, getIndexColor(37)],
+                    [0.66, getIndexColor(16)],
+                    [0.95, getIndexColor(18)]
                 ],
             },
             tooltip: {
@@ -1451,62 +1451,62 @@
             if (parameter == "Confirmed cases per 1 million") {
                 chart.colorAxis[0].update({
                     stops: [
-                        [0, '#0074D9'],
-                        [0.35, '#2ECC40'],
-                        [0.5, '#DDDDDD'],
-                        [0.65, '#FFDC00'],
-                        [0.95, '#FF4136']
+                        [0, getIndexColor(3)],
+                        [0.35, getIndexColor(23)],
+                        [0.5, getIndexColor(52)],
+                        [0.65, getIndexColor(9)],
+                        [0.95, getIndexColor(30)]
                     ],
                 }, false)
             } else if (parameter == "Deaths per 1 million") {
                 chart.colorAxis[0].update({
                     stops: [
-                        [0, '#0074D9'],
-                        [0.35, '#2ECC40'],
-                        [0.5, '#DDDDDD'],
-                        [0.65, '#FFDC00'],
-                        [0.95, '#FF4136']
+                        [0, getIndexColor(3)],
+                        [0.35, getIndexColor(23)],
+                        [0.5, getIndexColor(52)],
+                        [0.65, getIndexColor(9)],
+                        [0.95, getIndexColor(30)]
                     ],
                 }, false)
             } else if (parameter == "Death rate") {
                 chart.colorAxis[0].update({
                     stops: [
-                        [0, '#0074D9'],
-                        [0.35, '#2ECC40'],
-                        [0.5, '#DDDDDD'],
-                        [0.65, '#FFDC00'],
-                        [0.95, '#FF4136']
+                        [0, getIndexColor(3)],
+                        [0.35, getIndexColor(23)],
+                        [0.5, getIndexColor(52)],
+                        [0.65, getIndexColor(9)],
+                        [0.95, getIndexColor(30)]
                     ],
                 }, false)
             } else if (parameter == "Recovery rate") {
                 chart.colorAxis[0].update({
                     stops: [
-                        [0, '#FF4136'],
-                        [0.35, '#FFDC00'],
-                        [0.5, '#DDDDDD'],
-                        [0.65, '#2ECC40'],
-                        [0.95, '#0074D9']
+                        [0, getIndexColor(30)],
+                        [0.35, getIndexColor(9)],
+                        [0.5, getIndexColor(52)],
+                        [0.65, getIndexColor(23)],
+                        [0.95, getIndexColor(3)]
                     ],
                 }, false)
             } else if (parameter == "Active per 1 million") {
                 chart.colorAxis[0].update({
                     stops: [
-                        [0, '#0074D9'],
-                        [0.35, '#2ECC40'],
-                        [0.5, '#DDDDDD'],
-                        [0.65, '#FFDC00'],
-                        [0.95, '#FF4136']
+                        [0, getIndexColor(3)],
+                        [0.35, getIndexColor(23)],
+                        [0.5, getIndexColor(52)],
+                        [0.65, getIndexColor(9)],
+                        [0.95, getIndexColor(30)]
                     ],
                 }, false)
             } else if (parameter == "Positive tests rate") {
                 chart.colorAxis[0].update({
                     stops: [
-                        [0, '#101414'],
-                        [0.01, '#0074D9'],
-                        [0.35, '#2ECC40'],
-                        [0.5, '#DDDDDD'],
-                        [0.65, '#FFDC00'],
-                        [0.95, '#FF4136']
+                        [0, getIndexColor(51)],
+                        [0.01, getIndexColor(3)],
+                        [0.35, getIndexColor(23)],
+                        [0.5, getIndexColor(52)],
+                        [0.65, getIndexColor(9)],
+                        [0.95, getIndexColor(30)]
                     ],
                 }, false)
             }
@@ -1518,7 +1518,7 @@
 
         // legend for response map
         $responseLegendContainer = $('.lockdown-map .secondary-legend');
-        let responseLegendItems = [{ name: "No restrictions", colorIndex: 45 },
+        let responseLegendItems = [{ name: "No restrictions", colorIndex: 52 },
         { name: 'Some movement restrictions', colorIndex: 37 },
         { name: 'Curfew', colorIndex: 16 },
         { name: 'Lockdown', colorIndex: 18 }];
