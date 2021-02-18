@@ -2080,3 +2080,7 @@ figure {
     width: 370px;
   }
 }
+
+.band-soft {
+  opacity: 0.6;
+}

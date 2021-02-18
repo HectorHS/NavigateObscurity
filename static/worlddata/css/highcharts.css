@@ -229,39 +229,39 @@ g.highcharts-series,
 /* Series options */
 /* Default colors */
 .highcharts-color-0 {
-  fill: #b3dbff;
-  stroke: #b3dbff;
+  fill: #B3DBFF;
+  stroke: #B3DBFF;
 }
 
 .legend-color-0 {
-  background-image: linear-gradient(to top right, rgba(255, 0, 0, 0) 0%, #b3dbff 50%);
+  background-image: linear-gradient(to top right, rgba(255, 0, 0, 0) 0%, #B3DBFF 50%);
 }
 
 .highcharts-color-1 {
-  fill: #66b8ff;
-  stroke: #66b8ff;
+  fill: #66B8FF;
+  stroke: #66B8FF;
 }
 
 .legend-color-1 {
-  background-image: linear-gradient(to top right, rgba(255, 0, 0, 0) 0%, #66b8ff 50%);
+  background-image: linear-gradient(to top right, rgba(255, 0, 0, 0) 0%, #66B8FF 50%);
 }
 
 .highcharts-color-2 {
-  fill: #1a94ff;
-  stroke: #1a94ff;
+  fill: #1A94FF;
+  stroke: #1A94FF;
 }
 
 .legend-color-2 {
-  background-image: linear-gradient(to top right, rgba(255, 0, 0, 0) 0%, #1a94ff 50%);
+  background-image: linear-gradient(to top right, rgba(255, 0, 0, 0) 0%, #1A94FF 50%);
 }
 
 .highcharts-color-3 {
-  fill: #0070d1;
-  stroke: #0070d1;
+  fill: #0070D1;
+  stroke: #0070D1;
 }
 
 .legend-color-3 {
-  background-image: linear-gradient(to top right, rgba(255, 0, 0, 0) 0%, #0070d1 50%);
+  background-image: linear-gradient(to top right, rgba(255, 0, 0, 0) 0%, #0070D1 50%);
 }
 
 .highcharts-color-4 {
@@ -283,48 +283,48 @@ g.highcharts-series,
 }
 
 .highcharts-color-6 {
-  fill: #001b33;
-  stroke: #001b33;
+  fill: #001B33;
+  stroke: #001B33;
 }
 
 .legend-color-6 {
-  background-image: linear-gradient(to top right, rgba(255, 0, 0, 0) 0%, #001b33 50%);
+  background-image: linear-gradient(to top right, rgba(255, 0, 0, 0) 0%, #001B33 50%);
 }
 
 .highcharts-color-7 {
-  fill: #ffff99;
-  stroke: #ffff99;
+  fill: #FFFF99;
+  stroke: #FFFF99;
 }
 
 .legend-color-7 {
-  background-image: linear-gradient(to top right, rgba(255, 0, 0, 0) 0%, #ffff99 50%);
+  background-image: linear-gradient(to top right, rgba(255, 0, 0, 0) 0%, #FFFF99 50%);
 }
 
 .highcharts-color-8 {
-  fill: #ffff4d;
-  stroke: #ffff4d;
+  fill: #FFFF4D;
+  stroke: #FFFF4D;
 }
 
 .legend-color-8 {
-  background-image: linear-gradient(to top right, rgba(255, 0, 0, 0) 0%, #ffff4d 50%);
+  background-image: linear-gradient(to top right, rgba(255, 0, 0, 0) 0%, #FFFF4D 50%);
 }
 
 .highcharts-color-9 {
-  fill: #ffff1a;
-  stroke: #ffff1a;
+  fill: #FFFF1A;
+  stroke: #FFFF1A;
 }
 
 .legend-color-9 {
-  background-image: linear-gradient(to top right, rgba(255, 0, 0, 0) 0%, #ffff1a 50%);
+  background-image: linear-gradient(to top right, rgba(255, 0, 0, 0) 0%, #FFFF1A 50%);
 }
 
 .highcharts-color-10 {
-  fill: #c7c705;
-  stroke: #c7c705;
+  fill: #C7C705;
+  stroke: #C7C705;
 }
 
 .legend-color-10 {
-  background-image: linear-gradient(to top right, rgba(255, 0, 0, 0) 0%, #c7c705 50%);
+  background-image: linear-gradient(to top right, rgba(255, 0, 0, 0) 0%, #C7C705 50%);
 }
 
 .highcharts-color-11 {
@@ -337,138 +337,138 @@ g.highcharts-series,
 }
 
 .highcharts-color-12 {
-  fill: #5e5e08;
-  stroke: #5e5e08;
+  fill: #5E5E08;
+  stroke: #5E5E08;
 }
 
 .legend-color-12 {
-  background-image: linear-gradient(to top right, rgba(255, 0, 0, 0) 0%, #5e5e08 50%);
+  background-image: linear-gradient(to top right, rgba(255, 0, 0, 0) 0%, #5E5E08 50%);
 }
 
 .highcharts-color-13 {
-  fill: #2e2e05;
-  stroke: #2e2e05;
+  fill: #2E2E05;
+  stroke: #2E2E05;
 }
 
 .legend-color-13 {
-  background-image: linear-gradient(to top right, rgba(255, 0, 0, 0) 0%, #2e2e05 50%);
+  background-image: linear-gradient(to top right, rgba(255, 0, 0, 0) 0%, #2E2E05 50%);
 }
 
 .highcharts-color-14 {
-  fill: #fad1ec;
-  stroke: #fad1ec;
+  fill: #FAD1EC;
+  stroke: #FAD1EC;
 }
 
 .legend-color-14 {
-  background-image: linear-gradient(to top right, rgba(255, 0, 0, 0) 0%, #fad1ec 50%);
+  background-image: linear-gradient(to top right, rgba(255, 0, 0, 0) 0%, #FAD1EC 50%);
 }
 
 .highcharts-color-15 {
-  fill: #f48bcf;
-  stroke: #f48bcf;
+  fill: #F48BCF;
+  stroke: #F48BCF;
 }
 
 .legend-color-15 {
-  background-image: linear-gradient(to top right, rgba(255, 0, 0, 0) 0%, #f48bcf 50%);
+  background-image: linear-gradient(to top right, rgba(255, 0, 0, 0) 0%, #F48BCF 50%);
 }
 
 .highcharts-color-16 {
-  fill: #ed45b2;
-  stroke: #ed45b2;
+  fill: #ED45B2;
+  stroke: #ED45B2;
 }
 
 .legend-color-16 {
-  background-image: linear-gradient(to top right, rgba(255, 0, 0, 0) 0%, #ed45b2 50%);
+  background-image: linear-gradient(to top right, rgba(255, 0, 0, 0) 0%, #ED45B2 50%);
 }
 
 .highcharts-color-17 {
-  fill: #d1158f;
-  stroke: #d1158f;
+  fill: #D1158F;
+  stroke: #D1158F;
 }
 
 .legend-color-17 {
-  background-image: linear-gradient(to top right, rgba(255, 0, 0, 0) 0%, #d1158f 50%);
+  background-image: linear-gradient(to top right, rgba(255, 0, 0, 0) 0%, #D1158F 50%);
 }
 
 .highcharts-color-18 {
-  fill: #970f67;
-  stroke: #970f67;
+  fill: #970F67;
+  stroke: #970F67;
 }
 
 .legend-color-18 {
-  background-image: linear-gradient(to top right, rgba(255, 0, 0, 0) 0%, #970f67 50%);
+  background-image: linear-gradient(to top right, rgba(255, 0, 0, 0) 0%, #970F67 50%);
 }
 
 .highcharts-color-19 {
-  fill: #5d0940;
-  stroke: #5d0940;
+  fill: #5D0940;
+  stroke: #5D0940;
 }
 
 .legend-color-19 {
-  background-image: linear-gradient(to top right, rgba(255, 0, 0, 0) 0%, #5d0940 50%);
+  background-image: linear-gradient(to top right, rgba(255, 0, 0, 0) 0%, #5D0940 50%);
 }
 
 .highcharts-color-20 {
-  fill: #2e0520;
-  stroke: #2e0520;
+  fill: #2E0520;
+  stroke: #2E0520;
 }
 
 .legend-color-20 {
-  background-image: linear-gradient(to top right, rgba(255, 0, 0, 0) 0%, #2e0520 50%);
+  background-image: linear-gradient(to top right, rgba(255, 0, 0, 0) 0%, #2E0520 50%);
 }
 
 .highcharts-color-21 {
-  fill: #7de87d;
-  stroke: #7de87d;
+  fill: #7DE87D;
+  stroke: #7DE87D;
 }
 
 .legend-color-21 {
-  background-image: linear-gradient(to top right, rgba(255, 0, 0, 0) 0%, #7de87d 50%);
+  background-image: linear-gradient(to top right, rgba(255, 0, 0, 0) 0%, #7DE87D 50%);
 }
 
 .highcharts-color-22 {
-  fill: #52e052;
-  stroke: #52e052;
+  fill: #52E052;
+  stroke: #52E052;
 }
 
 .legend-color-22 {
-  background-image: linear-gradient(to top right, rgba(255, 0, 0, 0) 0%, #52e052 50%);
+  background-image: linear-gradient(to top right, rgba(255, 0, 0, 0) 0%, #52E052 50%);
 }
 
 .highcharts-color-23 {
-  fill: #23ca23;
-  stroke: #23ca23;
+  fill: #23CA23;
+  stroke: #23CA23;
 }
 
 .legend-color-23 {
-  background-image: linear-gradient(to top right, rgba(255, 0, 0, 0) 0%, #23ca23 50%);
+  background-image: linear-gradient(to top right, rgba(255, 0, 0, 0) 0%, #23CA23 50%);
 }
 
 .highcharts-color-24 {
-  fill: #1b981b;
-  stroke: #1b981b;
+  fill: #1B981B;
+  stroke: #1B981B;
 }
 
 .legend-color-24 {
-  background-image: linear-gradient(to top right, rgba(255, 0, 0, 0) 0%, #1b981b 50%);
+  background-image: linear-gradient(to top right, rgba(255, 0, 0, 0) 0%, #1B981B 50%);
 }
 
 .highcharts-color-25 {
-  fill: #136c13;
-  stroke: #136c13;
+  fill: #136C13;
+  stroke: #136C13;
 }
 
 .legend-color-25 {
-  background-image: linear-gradient(to top right, rgba(255, 0, 0, 0) 0%, #136c13 50%);
+  background-image: linear-gradient(to top right, rgba(255, 0, 0, 0) 0%, #136C13 50%);
 }
 
 .highcharts-color-26 {
-  fill: #0b410b;
-  stroke: #0b410b;
+  fill: #0B410B;
+  stroke: #0B410B;
 }
 
 .legend-color-26 {
-  background-image: linear-gradient(to top right, rgba(255, 0, 0, 0) 0%, #0b410b 50%);
+  background-image: linear-gradient(to top right, rgba(255, 0, 0, 0) 0%, #0B410B 50%);
 }
 
 .highcharts-color-27 {
@@ -481,39 +481,39 @@ g.highcharts-series,
 }
 
 .highcharts-color-28 {
-  fill: #f18e8e;
-  stroke: #f18e8e;
+  fill: #F18E8E;
+  stroke: #F18E8E;
 }
 
 .legend-color-28 {
-  background-image: linear-gradient(to top right, rgba(255, 0, 0, 0) 0%, #f18e8e 50%);
+  background-image: linear-gradient(to top right, rgba(255, 0, 0, 0) 0%, #F18E8E 50%);
 }
 
 .highcharts-color-29 {
-  fill: #eb6060;
-  stroke: #eb6060;
+  fill: #EB6060;
+  stroke: #EB6060;
 }
 
 .legend-color-29 {
-  background-image: linear-gradient(to top right, rgba(255, 0, 0, 0) 0%, #eb6060 50%);
+  background-image: linear-gradient(to top right, rgba(255, 0, 0, 0) 0%, #EB6060 50%);
 }
 
 .highcharts-color-30 {
-  fill: #e63333;
-  stroke: #e63333;
+  fill: #E63333;
+  stroke: #E63333;
 }
 
 .legend-color-30 {
-  background-image: linear-gradient(to top right, rgba(255, 0, 0, 0) 0%, #e63333 50%);
+  background-image: linear-gradient(to top right, rgba(255, 0, 0, 0) 0%, #E63333 50%);
 }
 
 .highcharts-color-31 {
-  fill: #cc1919;
-  stroke: #cc1919;
+  fill: #CC1919;
+  stroke: #CC1919;
 }
 
 .legend-color-31 {
-  background-image: linear-gradient(to top right, rgba(255, 0, 0, 0) 0%, #cc1919 50%);
+  background-image: linear-gradient(to top right, rgba(255, 0, 0, 0) 0%, #CC1919 50%);
 }
 
 .highcharts-color-32 {
@@ -553,30 +553,30 @@ g.highcharts-series,
 }
 
 .highcharts-color-36 {
-  fill: #c29ce2;
-  stroke: #c29ce2;
+  fill: #C29CE2;
+  stroke: #C29CE2;
 }
 
 .legend-color-36 {
-  background-image: linear-gradient(to top right, rgba(255, 0, 0, 0) 0%, #c29ce2 50%);
+  background-image: linear-gradient(to top right, rgba(255, 0, 0, 0) 0%, #C29CE2 50%);
 }
 
 .highcharts-color-37 {
-  fill: #9d61d1;
-  stroke: #9d61d1;
+  fill: #9D61D1;
+  stroke: #9D61D1;
 }
 
 .legend-color-37 {
-  background-image: linear-gradient(to top right, rgba(255, 0, 0, 0) 0%, #9d61d1 50%);
+  background-image: linear-gradient(to top right, rgba(255, 0, 0, 0) 0%, #9D61D1 50%);
 }
 
 .highcharts-color-38 {
-  fill: #772eb8;
-  stroke: #772eb8;
+  fill: #772EB8;
+  stroke: #772EB8;
 }
 
 .legend-color-38 {
-  background-image: linear-gradient(to top right, rgba(255, 0, 0, 0) 0%, #772eb8 50%);
+  background-image: linear-gradient(to top right, rgba(255, 0, 0, 0) 0%, #772EB8 50%);
 }
 
 .highcharts-color-39 {
@@ -589,66 +589,66 @@ g.highcharts-series,
 }
 
 .highcharts-color-40 {
-  fill: #360d59;
-  stroke: #360d59;
+  fill: #360D59;
+  stroke: #360D59;
 }
 
 .legend-color-40 {
-  background-image: linear-gradient(to top right, rgba(255, 0, 0, 0) 0%, #360d59 50%);
+  background-image: linear-gradient(to top right, rgba(255, 0, 0, 0) 0%, #360D59 50%);
 }
 
 .highcharts-color-41 {
-  fill: #1b042f;
-  stroke: #1b042f;
+  fill: #1B042F;
+  stroke: #1B042F;
 }
 
 .legend-color-41 {
-  background-image: linear-gradient(to top right, rgba(255, 0, 0, 0) 0%, #1b042f 50%);
+  background-image: linear-gradient(to top right, rgba(255, 0, 0, 0) 0%, #1B042F 50%);
 }
 
 .highcharts-color-42 {
-  fill: #ffdbb3;
-  stroke: #ffdbb3;
+  fill: #FFDBB3;
+  stroke: #FFDBB3;
 }
 
 .legend-color-42 {
-  background-image: linear-gradient(to top right, rgba(255, 0, 0, 0) 0%, #ffdbb3 50%);
+  background-image: linear-gradient(to top right, rgba(255, 0, 0, 0) 0%, #FFDBB3 50%);
 }
 
 .highcharts-color-43 {
-  fill: #ffb866;
-  stroke: #ffb866;
+  fill: #FFB866;
+  stroke: #FFB866;
 }
 
 .legend-color-43 {
-  background-image: linear-gradient(to top right, rgba(255, 0, 0, 0) 0%, #ffb866 50%);
+  background-image: linear-gradient(to top right, rgba(255, 0, 0, 0) 0%, #FFB866 50%);
 }
 
 .highcharts-color-44 {
-  fill: #ffa033;
-  stroke: #ffa033;
+  fill: #FFA033;
+  stroke: #FFA033;
 }
 
 .legend-color-44 {
-  background-image: linear-gradient(to top right, rgba(255, 0, 0, 0) 0%, #ffa033 50%);
+  background-image: linear-gradient(to top right, rgba(255, 0, 0, 0) 0%, #FFA033 50%);
 }
 
 .highcharts-color-45 {
-  fill: #ff8800;
-  stroke: #ff8800;
+  fill: #FF8800;
+  stroke: #FF8800;
 }
 
 .legend-color-45 {
-  background-image: linear-gradient(to top right, rgba(255, 0, 0, 0) 0%, #ff8800 50%);
+  background-image: linear-gradient(to top right, rgba(255, 0, 0, 0) 0%, #FF8800 50%);
 }
 
 .highcharts-color-46 {
-  fill: #cc6d00;
-  stroke: #cc6d00;
+  fill: #CC6D00;
+  stroke: #CC6D00;
 }
 
 .legend-color-46 {
-  background-image: linear-gradient(to top right, rgba(255, 0, 0, 0) 0%, #cc6d00 50%);
+  background-image: linear-gradient(to top right, rgba(255, 0, 0, 0) 0%, #CC6D00 50%);
 }
 
 .highcharts-color-47 {
@@ -661,12 +661,12 @@ g.highcharts-series,
 }
 
 .highcharts-color-48 {
-  fill: #4d2900;
-  stroke: #4d2900;
+  fill: #4D2900;
+  stroke: #4D2900;
 }
 
 .legend-color-48 {
-  background-image: linear-gradient(to top right, rgba(255, 0, 0, 0) 0%, #4d2900 50%);
+  background-image: linear-gradient(to top right, rgba(255, 0, 0, 0) 0%, #4D2900 50%);
 }
 
 .highcharts-color-49 {
@@ -679,12 +679,12 @@ g.highcharts-series,
 }
 
 .highcharts-color-50 {
-  fill: #8b9595;
-  stroke: #8b9595;
+  fill: #8B9595;
+  stroke: #8B9595;
 }
 
 .legend-color-50 {
-  background-image: linear-gradient(to top right, rgba(255, 0, 0, 0) 0%, #8b9595 50%);
+  background-image: linear-gradient(to top right, rgba(255, 0, 0, 0) 0%, #8B9595 50%);
 }
 
 .highcharts-color-51 {
@@ -697,17 +697,17 @@ g.highcharts-series,
 }
 
 .highcharts-color-52 {
-  fill: #dddddd;
-  stroke: #dddddd;
+  fill: #DDDDDD;
+  stroke: #DDDDDD;
 }
 
 .legend-color-52 {
-  background-image: linear-gradient(to top right, rgba(255, 0, 0, 0) 0%, #dddddd 50%);
+  background-image: linear-gradient(to top right, rgba(255, 0, 0, 0) 0%, #DDDDDD 50%);
 }
 
 /* Default gradients */
 #gradient-0 stop {
-  stop-color: #b3dbff;
+  stop-color: #B3DBFF;
 }
 
 #gradient-0 stop[offset="0"] {
@@ -719,7 +719,7 @@ g.highcharts-series,
 }
 
 #gradient-1 stop {
-  stop-color: #66b8ff;
+  stop-color: #66B8FF;
 }
 
 #gradient-1 stop[offset="0"] {
@@ -731,7 +731,7 @@ g.highcharts-series,
 }
 
 #gradient-2 stop {
-  stop-color: #1a94ff;
+  stop-color: #1A94FF;
 }
 
 #gradient-2 stop[offset="0"] {
@@ -743,7 +743,7 @@ g.highcharts-series,
 }
 
 #gradient-3 stop {
-  stop-color: #0070d1;
+  stop-color: #0070D1;
 }
 
 #gradient-3 stop[offset="0"] {
@@ -779,7 +779,7 @@ g.highcharts-series,
 }
 
 #gradient-6 stop {
-  stop-color: #001b33;
+  stop-color: #001B33;
 }
 
 #gradient-6 stop[offset="0"] {
@@ -791,7 +791,7 @@ g.highcharts-series,
 }
 
 #gradient-7 stop {
-  stop-color: #ffff99;
+  stop-color: #FFFF99;
 }
 
 #gradient-7 stop[offset="0"] {
@@ -803,7 +803,7 @@ g.highcharts-series,
 }
 
 #gradient-8 stop {
-  stop-color: #ffff4d;
+  stop-color: #FFFF4D;
 }
 
 #gradient-8 stop[offset="0"] {
@@ -815,7 +815,7 @@ g.highcharts-series,
 }
 
 #gradient-9 stop {
-  stop-color: #ffff1a;
+  stop-color: #FFFF1A;
 }
 
 #gradient-9 stop[offset="0"] {
@@ -827,7 +827,7 @@ g.highcharts-series,
 }
 
 #gradient-10 stop {
-  stop-color: #c7c705;
+  stop-color: #C7C705;
 }
 
 #gradient-10 stop[offset="0"] {
@@ -851,7 +851,7 @@ g.highcharts-series,
 }
 
 #gradient-12 stop {
-  stop-color: #5e5e08;
+  stop-color: #5E5E08;
 }
 
 #gradient-12 stop[offset="0"] {
@@ -863,7 +863,7 @@ g.highcharts-series,
 }
 
 #gradient-13 stop {
-  stop-color: #2e2e05;
+  stop-color: #2E2E05;
 }
 
 #gradient-13 stop[offset="0"] {
@@ -875,7 +875,7 @@ g.highcharts-series,
 }
 
 #gradient-14 stop {
-  stop-color: #fad1ec;
+  stop-color: #FAD1EC;
 }
 
 #gradient-14 stop[offset="0"] {
@@ -887,7 +887,7 @@ g.highcharts-series,
 }
 
 #gradient-15 stop {
-  stop-color: #f48bcf;
+  stop-color: #F48BCF;
 }
 
 #gradient-15 stop[offset="0"] {
@@ -899,7 +899,7 @@ g.highcharts-series,
 }
 
 #gradient-16 stop {
-  stop-color: #ed45b2;
+  stop-color: #ED45B2;
 }
 
 #gradient-16 stop[offset="0"] {
@@ -911,7 +911,7 @@ g.highcharts-series,
 }
 
 #gradient-17 stop {
-  stop-color: #d1158f;
+  stop-color: #D1158F;
 }
 
 #gradient-17 stop[offset="0"] {
@@ -923,7 +923,7 @@ g.highcharts-series,
 }
 
 #gradient-18 stop {
-  stop-color: #970f67;
+  stop-color: #970F67;
 }
 
 #gradient-18 stop[offset="0"] {
@@ -935,7 +935,7 @@ g.highcharts-series,
 }
 
 #gradient-19 stop {
-  stop-color: #5d0940;
+  stop-color: #5D0940;
 }
 
 #gradient-19 stop[offset="0"] {
@@ -947,7 +947,7 @@ g.highcharts-series,
 }
 
 #gradient-20 stop {
-  stop-color: #2e0520;
+  stop-color: #2E0520;
 }
 
 #gradient-20 stop[offset="0"] {
@@ -959,7 +959,7 @@ g.highcharts-series,
 }
 
 #gradient-21 stop {
-  stop-color: #7de87d;
+  stop-color: #7DE87D;
 }
 
 #gradient-21 stop[offset="0"] {
@@ -971,7 +971,7 @@ g.highcharts-series,
 }
 
 #gradient-22 stop {
-  stop-color: #52e052;
+  stop-color: #52E052;
 }
 
 #gradient-22 stop[offset="0"] {
@@ -983,7 +983,7 @@ g.highcharts-series,
 }
 
 #gradient-23 stop {
-  stop-color: #23ca23;
+  stop-color: #23CA23;
 }
 
 #gradient-23 stop[offset="0"] {
@@ -995,7 +995,7 @@ g.highcharts-series,
 }
 
 #gradient-24 stop {
-  stop-color: #1b981b;
+  stop-color: #1B981B;
 }
 
 #gradient-24 stop[offset="0"] {
@@ -1007,7 +1007,7 @@ g.highcharts-series,
 }
 
 #gradient-25 stop {
-  stop-color: #136c13;
+  stop-color: #136C13;
 }
 
 #gradient-25 stop[offset="0"] {
@@ -1019,7 +1019,7 @@ g.highcharts-series,
 }
 
 #gradient-26 stop {
-  stop-color: #0b410b;
+  stop-color: #0B410B;
 }
 
 #gradient-26 stop[offset="0"] {
@@ -1043,7 +1043,7 @@ g.highcharts-series,
 }
 
 #gradient-28 stop {
-  stop-color: #f18e8e;
+  stop-color: #F18E8E;
 }
 
 #gradient-28 stop[offset="0"] {
@@ -1055,7 +1055,7 @@ g.highcharts-series,
 }
 
 #gradient-29 stop {
-  stop-color: #eb6060;
+  stop-color: #EB6060;
 }
 
 #gradient-29 stop[offset="0"] {
@@ -1067,7 +1067,7 @@ g.highcharts-series,
 }
 
 #gradient-30 stop {
-  stop-color: #e63333;
+  stop-color: #E63333;
 }
 
 #gradient-30 stop[offset="0"] {
@@ -1079,7 +1079,7 @@ g.highcharts-series,
 }
 
 #gradient-31 stop {
-  stop-color: #cc1919;
+  stop-color: #CC1919;
 }
 
 #gradient-31 stop[offset="0"] {
@@ -1139,7 +1139,7 @@ g.highcharts-series,
 }
 
 #gradient-36 stop {
-  stop-color: #c29ce2;
+  stop-color: #C29CE2;
 }
 
 #gradient-36 stop[offset="0"] {
@@ -1151,7 +1151,7 @@ g.highcharts-series,
 }
 
 #gradient-37 stop {
-  stop-color: #9d61d1;
+  stop-color: #9D61D1;
 }
 
 #gradient-37 stop[offset="0"] {
@@ -1163,7 +1163,7 @@ g.highcharts-series,
 }
 
 #gradient-38 stop {
-  stop-color: #772eb8;
+  stop-color: #772EB8;
 }
 
 #gradient-38 stop[offset="0"] {
@@ -1187,7 +1187,7 @@ g.highcharts-series,
 }
 
 #gradient-40 stop {
-  stop-color: #360d59;
+  stop-color: #360D59;
 }
 
 #gradient-40 stop[offset="0"] {
@@ -1199,7 +1199,7 @@ g.highcharts-series,
 }
 
 #gradient-41 stop {
-  stop-color: #1b042f;
+  stop-color: #1B042F;
 }
 
 #gradient-41 stop[offset="0"] {
@@ -1211,7 +1211,7 @@ g.highcharts-series,
 }
 
 #gradient-42 stop {
-  stop-color: #ffdbb3;
+  stop-color: #FFDBB3;
 }
 
 #gradient-42 stop[offset="0"] {
@@ -1223,7 +1223,7 @@ g.highcharts-series,
 }
 
 #gradient-43 stop {
-  stop-color: #ffb866;
+  stop-color: #FFB866;
 }
 
 #gradient-43 stop[offset="0"] {
@@ -1235,7 +1235,7 @@ g.highcharts-series,
 }
 
 #gradient-44 stop {
-  stop-color: #ffa033;
+  stop-color: #FFA033;
 }
 
 #gradient-44 stop[offset="0"] {
@@ -1247,7 +1247,7 @@ g.highcharts-series,
 }
 
 #gradient-45 stop {
-  stop-color: #ff8800;
+  stop-color: #FF8800;
 }
 
 #gradient-45 stop[offset="0"] {
@@ -1259,7 +1259,7 @@ g.highcharts-series,
 }
 
 #gradient-46 stop {
-  stop-color: #cc6d00;
+  stop-color: #CC6D00;
 }
 
 #gradient-46 stop[offset="0"] {
@@ -1283,7 +1283,7 @@ g.highcharts-series,
 }
 
 #gradient-48 stop {
-  stop-color: #4d2900;
+  stop-color: #4D2900;
 }
 
 #gradient-48 stop[offset="0"] {
@@ -1307,7 +1307,7 @@ g.highcharts-series,
 }
 
 #gradient-50 stop {
-  stop-color: #8b9595;
+  stop-color: #8B9595;
 }
 
 #gradient-50 stop[offset="0"] {
@@ -1331,7 +1331,7 @@ g.highcharts-series,
 }
 
 #gradient-52 stop {
-  stop-color: #dddddd;
+  stop-color: #DDDDDD;
 }
 
 #gradient-52 stop[offset="0"] {
@@ -1343,7 +1343,7 @@ g.highcharts-series,
 }
 
 #gradient-area-0 stop {
-  stop-color: #b3dbff;
+  stop-color: #B3DBFF;
 }
 
 #gradient-area-0 stop[offset="0"] {
@@ -1355,7 +1355,7 @@ g.highcharts-series,
 }
 
 #gradient-area-1 stop {
-  stop-color: #66b8ff;
+  stop-color: #66B8FF;
 }
 
 #gradient-area-1 stop[offset="0"] {
@@ -1367,7 +1367,7 @@ g.highcharts-series,
 }
 
 #gradient-area-2 stop {
-  stop-color: #1a94ff;
+  stop-color: #1A94FF;
 }
 
 #gradient-area-2 stop[offset="0"] {
@@ -1379,7 +1379,7 @@ g.highcharts-series,
 }
 
 #gradient-area-3 stop {
-  stop-color: #0070d1;
+  stop-color: #0070D1;
 }
 
 #gradient-area-3 stop[offset="0"] {
@@ -1415,7 +1415,7 @@ g.highcharts-series,
 }
 
 #gradient-area-6 stop {
-  stop-color: #001b33;
+  stop-color: #001B33;
 }
 
 #gradient-area-6 stop[offset="0"] {
@@ -1427,7 +1427,7 @@ g.highcharts-series,
 }
 
 #gradient-area-7 stop {
-  stop-color: #ffff99;
+  stop-color: #FFFF99;
 }
 
 #gradient-area-7 stop[offset="0"] {
@@ -1439,7 +1439,7 @@ g.highcharts-series,
 }
 
 #gradient-area-8 stop {
-  stop-color: #ffff4d;
+  stop-color: #FFFF4D;
 }
 
 #gradient-area-8 stop[offset="0"] {
@@ -1451,7 +1451,7 @@ g.highcharts-series,
 }
 
 #gradient-area-9 stop {
-  stop-color: #ffff1a;
+  stop-color: #FFFF1A;
 }
 
 #gradient-area-9 stop[offset="0"] {
@@ -1463,7 +1463,7 @@ g.highcharts-series,
 }
 
 #gradient-area-10 stop {
-  stop-color: #c7c705;
+  stop-color: #C7C705;
 }
 
 #gradient-area-10 stop[offset="0"] {
@@ -1487,7 +1487,7 @@ g.highcharts-series,
 }
 
 #gradient-area-12 stop {
-  stop-color: #5e5e08;
+  stop-color: #5E5E08;
 }
 
 #gradient-area-12 stop[offset="0"] {
@@ -1499,7 +1499,7 @@ g.highcharts-series,
 }
 
 #gradient-area-13 stop {
-  stop-color: #2e2e05;
+  stop-color: #2E2E05;
 }
 
 #gradient-area-13 stop[offset="0"] {
@@ -1511,7 +1511,7 @@ g.highcharts-series,
 }
 
 #gradient-area-14 stop {
-  stop-color: #fad1ec;
+  stop-color: #FAD1EC;
 }
 
 #gradient-area-14 stop[offset="0"] {
@@ -1523,7 +1523,7 @@ g.highcharts-series,
 }
 
 #gradient-area-15 stop {
-  stop-color: #f48bcf;
+  stop-color: #F48BCF;
 }
 
 #gradient-area-15 stop[offset="0"] {
@@ -1535,7 +1535,7 @@ g.highcharts-series,
 }
 
 #gradient-area-16 stop {
-  stop-color: #ed45b2;
+  stop-color: #ED45B2;
 }
 
 #gradient-area-16 stop[offset="0"] {
@@ -1547,7 +1547,7 @@ g.highcharts-series,
 }
 
 #gradient-area-17 stop {
-  stop-color: #d1158f;
+  stop-color: #D1158F;
 }
 
 #gradient-area-17 stop[offset="0"] {
@@ -1559,7 +1559,7 @@ g.highcharts-series,
 }
 
 #gradient-area-18 stop {
-  stop-color: #970f67;
+  stop-color: #970F67;
 }
 
 #gradient-area-18 stop[offset="0"] {
@@ -1571,7 +1571,7 @@ g.highcharts-series,
 }
 
 #gradient-area-19 stop {
-  stop-color: #5d0940;
+  stop-color: #5D0940;
 }
 
 #gradient-area-19 stop[offset="0"] {
@@ -1583,7 +1583,7 @@ g.highcharts-series,
 }
 
 #gradient-area-20 stop {
-  stop-color: #2e0520;
+  stop-color: #2E0520;
 }
 
 #gradient-area-20 stop[offset="0"] {
@@ -1595,7 +1595,7 @@ g.highcharts-series,
 }
 
 #gradient-area-21 stop {
-  stop-color: #7de87d;
+  stop-color: #7DE87D;
 }
 
 #gradient-area-21 stop[offset="0"] {
@@ -1607,7 +1607,7 @@ g.highcharts-series,
 }
 
 #gradient-area-22 stop {
-  stop-color: #52e052;
+  stop-color: #52E052;
 }
 
 #gradient-area-22 stop[offset="0"] {
@@ -1619,7 +1619,7 @@ g.highcharts-series,
 }
 
 #gradient-area-23 stop {
-  stop-color: #23ca23;
+  stop-color: #23CA23;
 }
 
 #gradient-area-23 stop[offset="0"] {
@@ -1631,7 +1631,7 @@ g.highcharts-series,
 }
 
 #gradient-area-24 stop {
-  stop-color: #1b981b;
+  stop-color: #1B981B;
 }
 
 #gradient-area-24 stop[offset="0"] {
@@ -1643,7 +1643,7 @@ g.highcharts-series,
 }
 
 #gradient-area-25 stop {
-  stop-color: #136c13;
+  stop-color: #136C13;
 }
 
 #gradient-area-25 stop[offset="0"] {
@@ -1655,7 +1655,7 @@ g.highcharts-series,
 }
 
 #gradient-area-26 stop {
-  stop-color: #0b410b;
+  stop-color: #0B410B;
 }
 
 #gradient-area-26 stop[offset="0"] {
@@ -1679,7 +1679,7 @@ g.highcharts-series,
 }
 
 #gradient-area-28 stop {
-  stop-color: #f18e8e;
+  stop-color: #F18E8E;
 }
 
 #gradient-area-28 stop[offset="0"] {
@@ -1691,7 +1691,7 @@ g.highcharts-series,
 }
 
 #gradient-area-29 stop {
-  stop-color: #eb6060;
+  stop-color: #EB6060;
 }
 
 #gradient-area-29 stop[offset="0"] {
@@ -1703,7 +1703,7 @@ g.highcharts-series,
 }
 
 #gradient-area-30 stop {
-  stop-color: #e63333;
+  stop-color: #E63333;
 }
 
 #gradient-area-30 stop[offset="0"] {
@@ -1715,7 +1715,7 @@ g.highcharts-series,
 }
 
 #gradient-area-31 stop {
-  stop-color: #cc1919;
+  stop-color: #CC1919;
 }
 
 #gradient-area-31 stop[offset="0"] {
@@ -1775,7 +1775,7 @@ g.highcharts-series,
 }
 
 #gradient-area-36 stop {
-  stop-color: #c29ce2;
+  stop-color: #C29CE2;
 }
 
 #gradient-area-36 stop[offset="0"] {
@@ -1787,7 +1787,7 @@ g.highcharts-series,
 }
 
 #gradient-area-37 stop {
-  stop-color: #9d61d1;
+  stop-color: #9D61D1;
 }
 
 #gradient-area-37 stop[offset="0"] {
@@ -1799,7 +1799,7 @@ g.highcharts-series,
 }
 
 #gradient-area-38 stop {
-  stop-color: #772eb8;
+  stop-color: #772EB8;
 }
 
 #gradient-area-38 stop[offset="0"] {
@@ -1823,7 +1823,7 @@ g.highcharts-series,
 }
 
 #gradient-area-40 stop {
-  stop-color: #360d59;
+  stop-color: #360D59;
 }
 
 #gradient-area-40 stop[offset="0"] {
@@ -1835,7 +1835,7 @@ g.highcharts-series,
 }
 
 #gradient-area-41 stop {
-  stop-color: #1b042f;
+  stop-color: #1B042F;
 }
 
 #gradient-area-41 stop[offset="0"] {
@@ -1847,7 +1847,7 @@ g.highcharts-series,
 }
 
 #gradient-area-42 stop {
-  stop-color: #ffdbb3;
+  stop-color: #FFDBB3;
 }
 
 #gradient-area-42 stop[offset="0"] {
@@ -1859,7 +1859,7 @@ g.highcharts-series,
 }
 
 #gradient-area-43 stop {
-  stop-color: #ffb866;
+  stop-color: #FFB866;
 }
 
 #gradient-area-43 stop[offset="0"] {
@@ -1871,7 +1871,7 @@ g.highcharts-series,
 }
 
 #gradient-area-44 stop {
-  stop-color: #ffa033;
+  stop-color: #FFA033;
 }
 
 #gradient-area-44 stop[offset="0"] {
@@ -1883,7 +1883,7 @@ g.highcharts-series,
 }
 
 #gradient-area-45 stop {
-  stop-color: #ff8800;
+  stop-color: #FF8800;
 }
 
 #gradient-area-45 stop[offset="0"] {
@@ -1895,7 +1895,7 @@ g.highcharts-series,
 }
 
 #gradient-area-46 stop {
-  stop-color: #cc6d00;
+  stop-color: #CC6D00;
 }
 
 #gradient-area-46 stop[offset="0"] {
@@ -1919,7 +1919,7 @@ g.highcharts-series,
 }
 
 #gradient-area-48 stop {
-  stop-color: #4d2900;
+  stop-color: #4D2900;
 }
 
 #gradient-area-48 stop[offset="0"] {
@@ -1943,7 +1943,7 @@ g.highcharts-series,
 }
 
 #gradient-area-50 stop {
-  stop-color: #8b9595;
+  stop-color: #8B9595;
 }
 
 #gradient-area-50 stop[offset="0"] {
@@ -1967,7 +1967,7 @@ g.highcharts-series,
 }
 
 #gradient-area-52 stop {
-  stop-color: #dddddd;
+  stop-color: #DDDDDD;
 }
 
 #gradient-area-52 stop[offset="0"] {
