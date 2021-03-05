@@ -10,6 +10,7 @@ MoveChildhood,1,,,
 Move,1,,,
 NumberInHouse,1,,,
 Preexisting,1,,,
+Responsible,,1,,
 PFINeigh1,1,1,1,1
 PFINeigh2,1,1,1,1
 PFINeigh3,1,1,1,1
@@ -58,6 +59,8 @@ HelpGiven3,1,1,1,1
 HelpGiven4,1,1,1,1
 HelpGiven5,1,1,1,1
 HelpGiven6,1,1,1,1
+ReasonHelp,,,1,1
+PersonHelped,,,1,1
 EmpathyState1,1,1,1,1
 EmpathyState2,1,1,1,1
 EmpathyState3,1,1,1,1
@@ -75,14 +78,12 @@ Predictability3,1,,,
 Predictability4,1,,,
 Predictability5,1,,,
 Predictability6,1,,,
-Predictability7,1,,,
 Expectation1,1,,,
 Expectation2,1,,,
 Expectation3,1,,,
 Expectation4,1,,,
 Expectation5,1,,,
 Expectation6,1,,,
-Expectation7,1,,,
 Challenges1,1,,,
 Challenges2,1,,,
 Challenges3,1,,,
@@ -105,6 +106,12 @@ IRIdistress7,1,,,
 CovidVolunteer,1,,,
 TimeSpentOthers,1,1,1,1
 MoneyDonated,1,1,1,1
+PresentVfuture1,,,1,
+PresentVfuture2,,,1,
+PresentVfuture3,,,1,
+PresentVfuture4,,,1,
+FutureImportant,,,1,
+PresentImportant,,,1,
 Back2Normal,1,1,1,1
 ElectionBck2Normal,1,1,,
 ConditionsChange,1,1,1,1
@@ -179,7 +186,6 @@ ConspiracySet2.5,1,1,1,1
 ConspiracySet2.6,1,1,1,1
 ConspiracySet2.7,1,1,1,1
 ConspiracySet2.8,1,1,1,1
-Citizen,1,1,1,1
 Sociopolitical,1,,,
 Econopolitical,1,,,
 MaskPolitical,1,1,,1
@@ -252,7 +258,6 @@ NoResponse,1,,1,
 @013.1,1,,1,
 @02.1,1,,1,
 @025.1,1,,1,
-Responsible,,1,,
 SourceInfo1,,1,,
 SourceInfo2,,1,,
 SourceInfo3,,1,,
@@ -315,13 +320,6 @@ Schoolitems1,,,1,
 Schoolitems2,,,1,
 Schoolitems3,,,1,
 Schoolitems4,,,1,
-ReasonHelp,,,1,1
-PersonHelped,,,1,1
-PresentVfuture1,,,1,
-PresentVfuture2,,,1,
-PresentVfuture3,,,1,
-PresentVfuture4,,,1,
-FutureImportant,,,1,
 PresentImportant,,,1,
 RiskBehavior1,,,1,
 RiskBehavior2,,,1,
