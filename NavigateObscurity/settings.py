@@ -30,6 +30,9 @@ DEBUG = False
 ALLOWED_HOSTS = [
     '.navigateobscurity.com'
 ]
+GOOGLE_ANALYTICS = {
+    'google_analytics_id': 'UA-126058372-3',
+}
 
 
 # Application definition
@@ -45,6 +48,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'django.contrib.sitemaps',
+    'google_analytics',
 ]
 
 MIDDLEWARE = [
