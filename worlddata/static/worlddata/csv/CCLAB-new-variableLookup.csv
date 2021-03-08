@@ -1,11 +1,11 @@
 Name,09/26/2020,10/27/2020,11/28/2020,12/28/2020
 Age,1,1,1,1
-Sex,1,,,
-Children,1,,,
-ChildrenUnder18,1,,,
-Education,1,,,
-SSES,1,,,
-OccupationRisk,1,,,
+Sex,1,1,1,1
+Children,1,1,1,1
+ChildrenUnder18,1,1,1,1
+Education,1,1,1,1
+SSES,1,1,1,1
+OccupationRisk,1,1,1,1
 MoveChildhood,1,,,
 Move,1,,,
 NumberInHouse,1,,,
