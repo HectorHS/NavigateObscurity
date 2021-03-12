@@ -478,10 +478,6 @@ LargeGroupReason1,,,,,,,,,,,,,,1
 LargeGroupReason2,,,,,,,,,,,,,,1
 LargeGroupReason3,,,,,,,,,,,,,,1
 LargeGroupReason4,,,,,,,,,,,,,,1
-LargeGroupReason1text,,,,,,,,,,,,,,1
-LargeGroupReason2text,,,,,,,,,,,,,,1
-LargeGroupReason3text,,,,,,,,,,,,,,1
-LargeGroupReason4text,,,,,,,,,,,,,,1
 AskingHelpComposite,,,,,1,1,1,1,1,,,,,
 LikelyGiveHelpComposite,,,,,1,1,1,1,1,,,,,
 RiskManagementProtestComposite,,,,,,,,,1,,,,,
@@ -496,6 +492,3 @@ PFISharedFateAcqComposite,,,,,,,,,,,,,1,
 CFCcomposite,,,,,,,,,,1,,,,
 CFCcompositeFuture,,,,,,,,,,1,,,,
 CFCcompositeImmediate,,,,,,,,,,1,,,,
-IncidenceRate,,,,,,,,1,1,1,1,1,1,1
-DeathRate,,,,,,,,1,1,1,1,1,1,1
-dc,,,,,,,,1,1,1,1,1,1,1

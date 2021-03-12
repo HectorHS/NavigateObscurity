@@ -1103,9 +1103,19 @@
 
                     for (let i = 0; i < varValues.length - 1; i++) {
                         let counter = 0
-                        for (let row of files[0]) {
-                            if (row.Date == date && +row[variable] >= varValues[i] && +row[variable] < varValues[i + 1]) {
-                                counter++;
+
+                        // In case our categories start from 0, otherwise empty values are counted as zeroes
+                        if (varValues[i] == 0) {
+                            for (let row of files[0]) {
+                                if (row.Date == date && row[variable] == "0") {
+                                    counter++;
+                                }
+                            }
+                        } else {
+                            for (let row of files[0]) {
+                                if (row.Date == date && +row[variable] >= varValues[i] && +row[variable] < varValues[i + 1]) {
+                                    counter++;
+                                }
                             }
                         }
                         data.push(counter);
@@ -1806,7 +1816,6 @@
             const all_dates = [...new Set(files[0].map(d => d.Date))];
             const all_variables = files[0].columns;
             all_variables.splice(0, 3);
-            let random_colors = [3, 9, 18, 23, 31, 37, 1, 12, 15, 26, 29, 39, 42, 5, 8, 19, 22, 32, 38, 43, 2, 10, 17, 24, 30, 40, 4, 11, 16, 25, 33, 36, 54];
             // create description lookup
             let descriptions_lookup = [];
             for (let row of files[2]) {
@@ -1814,6 +1823,66 @@
             }
             let heatmap_xaxis_categories;
             let heatmap_yaxis_categories;
+            // long variables set up
+            let longVariables = ["Age", "Children", "Under12", "Over12", "SubjectiveSES",
+                "LivingSituation", "RiskmanagementavoidComposite", "RiskmanagementreductionComposite",
+                "NonfoodHave", "NonfoodWant", "FoodHave", "FoodWant", "PrepTimeCovidnotCOVID",
+                "PrepTimeCovidtracking", "PrepTimeCovidtalking", "PrepTimeCovidnewrelationships",
+                "PrepTimeCovidmedical", "PrepTimeCovidfood", "PrepTimeCovidwater", "PrepTimeCovidpower",
+                "PrepTimeCovidhomedefense", "PrepTimeCovidfinancial", "PrepTimeCovidbarter", "PrepTimeCovidother",
+                "PrepCOVIDPoliticalLeaders", "PrepCOVIDLocalGov", "PrepCOVIDNationalHealthcare", "PrepCOVIDLocalHealthcare",
+                "PrepCOVIDNationalMedia", "PrepCOVIDLocalMedia", "PrepCOVIDAirline", "PrepCOVIDEmployer",
+                "PrepCOVIDExtendedFamily", "PrepCOVIDSigOther", "PrepCOVIDParents", "PrepCOVIDSiblings",
+                "Howmuch", "CloseFriendPFIEmpathyComposite", "AcqPFIEmpathyComposite", "NeighborPFIEmpathyComposite",
+                "CountryPFIEmpathyComposite", "HumanityPFIEmpathyComposite", "CloseFriendPFISharedFAteComposite",
+                "AcqPFISharedFAteComposite", "NeighborPFISharedFAteComposite", "CountryPFISharedFAteComposite",
+                "HumanityPFISharedFAteComposite", "PSScomposite", "AnxietyComposite", "WillingnessNeighborComposite",
+                "WillingnessCountryComposite", "WillingnessHumanityComposite", "PerceptionRiskComposite", "PerceptionManagementComposite",
+                "CFICloseFriendComposite", "CFIAcqComposite", "CFINeighborComposite", "CFICountryComposite",
+                "CFIHumanityComposite", "DiseaseAvoidanceComposite", "NBTNeighborComposite", "NBTHumanityComposite", "NBTCountryComposite",
+                "Back2Normal", "MateSeekingComposite", "SocialDistanceComposite", "HoursworkedOutside", "HoursWorkHome", "HoursSpentOthers",
+                "HoursInContact", "HoursVolunteer", "MoneyDonated", "aidindividuals", "aidsmallbusiness", "aidlargebusiness", "aidbanks",
+                "aidgovernment", "RiskManagementcomposite", "WeeksAgoPrepare", "WeeksSinceCovid", "WeeksSinceCovid", "HowManyInfected",
+                "MaskAttitudes1", "MaskAttitudes2", "MaskAttitudes3", "MaskAttitudes4", "MaskAttitudes5", "SafetyProtests",
+                "MoneyProtests", "Movies", "Job1", "Job2", "Job3", "HowLongSocialDist", "HowLongMask", "Contacts24hrs",
+                "Contacts7days", "Streneous", "Moderate", "Mild", "RMETcomposite", "PerspectiveTakingComposite",
+                "PartnerEmpathyAcqComposite", "SharedAgencyAcqComposite", "Dggive", "HouseHold", "NewFriends", "LargeGroups",
+                "AskingHelpComposite", "LikelyGiveHelpComposite", "RiskManagementProtestComposite",
+                "TimesHelpGivenComposite", "HousingInsecurityComposite", "NeedForChaosComposite", "NeedForOrderComposite",
+                "FoodInsecurityComposite", "UseGreenSpacesComposite", "ProportionWearMaskComposite", "CFCcomposite",
+                "CFCcompositeFuture", "CFCcompositeImmediate"];
+            let avg3 = ["HousingInsecurityComposite", "FoodInsecurityComposite", "UseGreenSpacesComposite"]
+            let avg4 = ["AnxietyComposite", "SharedAgencyAcqComposite"];
+            let avg5 = ["PSScomposite", "PerspectiveTakingComposite"];
+            let avg7 = ["RiskmanagementavoidComposite", "RiskmanagementreductionComposite", "CloseFriendPFIEmpathyComposite",
+                "AcqPFIEmpathyComposite", "NeighborPFIEmpathyComposite", "CountryPFIEmpathyComposite", "HumanityPFIEmpathyComposite",
+                "CloseFriendPFISharedFAteComposite", "AcqPFISharedFAteComposite", "NeighborPFISharedFAteComposite",
+                "CountryPFISharedFAteComposite", "HumanityPFISharedFAteComposite", "WillingnessNeighborComposite", "WillingnessCountryComposite",
+                "WillingnessHumanityComposite", "PerceptionRiskComposite", "PerceptionManagementComposite", "DiseaseAvoidanceComposite",
+                "NBTNeighborComposite", "NBTHumanityComposite", "NBTCountryComposite", "MateSeekingComposite", "SocialDistanceComposite",
+                "RiskManagementcomposite", "PartnerEmpathyAcqComposite", "AskingHelpComposite", "LikelyGiveHelpComposite", "RiskManagementProtestComposite",
+                "TimesHelpGivenComposite", "NeedForChaosComposite", "NeedForOrderComposite", "ProportionWearMaskComposite"];
+            let avg33 = ["CFICloseFriendComposite", "CFIAcqComposite", "CFINeighborComposite", "CFICountryComposite",
+                "CFIHumanityComposite"];
+            let cat8 = ["MaskAttitudes1", "MaskAttitudes2", "MaskAttitudes3", "MaskAttitudes4", "MaskAttitudes5", "SafetyProtests",
+                "Job1", "Job2", "Job3"];
+            let cat9 = ["SubjectiveSES", "LivingSituation"];
+            let cat10 = ["PrepCOVIDPoliticalLeaders", "PrepCOVIDLocalGov", "PrepCOVIDNationalHealthcare",
+                "PrepCOVIDLocalHealthcare", "PrepCOVIDNationalMedia", "PrepCOVIDLocalMedia", "PrepCOVIDAirline",
+                "PrepCOVIDEmployer", "PrepCOVIDExtendedFamily", "PrepCOVIDSigOther", "PrepCOVIDParents", "PrepCOVIDSiblings",
+                "RMETcomposite", "NewFriends"];
+            let cat10plus = ["Streneous", "Moderate", "Mild", "HouseHold"];
+            let cat12 = ["Back2Normal", "HowLongSocialDist", "HowLongMask"];
+            let cat20plus = ["WeeksAgoPrepare", "WeeksSinceCovid", "WeeksSinceCovid"]
+            let cat50plus = ["HoursworkedOutside", "HoursWorkHome",
+                "HoursSpentOthers", "HoursInContact", "HoursVolunteer", "HowManyInfected", "MoneyProtests", "Movies",
+                "Contacts24hrs", "CFCcompositeFuture", "CFCcompositeImmediate"];
+            let cat100 = ["PrepTimeCovidnotCOVID", "PrepTimeCovidtracking", "PrepTimeCovidtalking",
+                "PrepTimeCovidnewrelationships", "PrepTimeCovidmedical", "PrepTimeCovidfood", "PrepTimeCovidwater",
+                "PrepTimeCovidpower", "PrepTimeCovidhomedefense", "PrepTimeCovidfinancial", "PrepTimeCovidbarter",
+                "PrepTimeCovidother", "aidindividuals", "aidsmallbusiness", "aidlargebusiness", "aidbanks", "aidgovernment",
+                "Dggive", "CFCcomposite"];
+            let cat100plus = ["NonfoodHave", "NonfoodWant", "FoodHave", "FoodWant", "Contacts7days"];
 
             let variable1 = "Stress";
             let variable2 = "PerceptionsRisk";
@@ -1985,23 +2054,60 @@
                 return array;
             }
             function getHeatmapAxis(parameter) {
-                // fancy sorting to deal with numerical values
-                let array = [...new Set(files[0].map(d => +d[parameter]))].sort((a, b) => a - b);
-                array = removeEmpty(array);
+                let array;
+                // Deal with variables with a lot of unique values
+                if (longVariables.includes(parameter)) {
+                    array = getArrayForNewVariable(parameter);
+                } else {
+                    // fancy sorting to deal with numerical values
+                    array = [...new Set(files[0].map(d => +d[parameter]))].sort((a, b) => a - b);
+                    array = removeEmpty(array);
+                }
+
                 return array;
             }
             function getHeatmapData() {
                 let xaxis = getHeatmapAxis(variable1);
                 let yaxis = getHeatmapAxis(variable2);
+                let xLoops;
+                let yLoops;
+
+                // define loops - we will be skipping last one for long variables
+                if (longVariables.includes(variable1)) {
+                    xLoops = xaxis.length - 1;
+                } else {
+                    xLoops = xaxis.length;
+                }
+                if (longVariables.includes(variable2)) {
+                    yLoops = yaxis.length - 1;
+                } else {
+                    yLoops = yaxis.length;
+                }
+
                 heatmapMax = 0;
 
                 let data = [];
-                for (let x = 0; x < xaxis.length; x++) {
-                    for (let y = 0; y < yaxis.length; y++) {
+
+                for (let x = 0; x < xLoops; x++) {
+                    for (let y = 0; y < yLoops; y++) {
                         let counter = 0;
                         for (let row of files[0]) {
-                            if (row.Date == date && row[variable1] == xaxis[x] && row[variable2] == yaxis[y]) {
-                                counter++;
+                            if (longVariables.includes(variable1) && longVariables.includes(variable2)) {
+                                if (row.Date == date && +row[variable1] >= xaxis[x] && +row[variable1] < xaxis[x + 1] && +row[variable2] >= yaxis[y] && +row[variable2] < yaxis[y + 1]) {
+                                    counter++;
+                                }
+                            } else if (longVariables.includes(variable1)) {
+                                if (row.Date == date && +row[variable1] >= xaxis[x] && +row[variable1] < xaxis[x + 1] && row[variable2] == yaxis[y]) {
+                                    counter++;
+                                }
+                            } else if (longVariables.includes(variable2)) {
+                                if (row.Date == date && row[variable1] == xaxis[x] && +row[variable2] >= yaxis[y] && +row[variable2] < yaxis[y + 1]) {
+                                    counter++;
+                                }
+                            } else {
+                                if (row.Date == date && row[variable1] == xaxis[x] && row[variable2] == yaxis[y]) {
+                                    counter++;
+                                }
                             }
                         }
                         data.push([x, y, counter]);
@@ -2018,13 +2124,13 @@
                 }
             }
             function getBarsData(heatmap_data) {
-                let yaxis = getHeatmapAxis(variable2);
-                let all_data = [];
-                let useGradient = false;
-
-                if (yaxis.length < 8) {
-                    useGradient = true;
+                let yaxis;
+                if (longVariables.includes(variable2)) {
+                    yaxis = getCategoriesForNewVariable(variable2);
+                } else {
+                    yaxis = getHeatmapAxis(variable2);
                 }
+                let all_data = [];
 
                 for (let i = 0; i < yaxis.length; i++) {
                     let name = variable2 + ": " + yaxis[i];
@@ -2035,15 +2141,10 @@
                         }
                     }
                     let slice;
-                    if (useGradient) {
-                        slice = { name: name, data: data, className: 'highcharts-blue-gradient-' + i };
+                    slice = { name: name, data: data, className: 'highcharts-blue-gradient-' + i };
 
-                    } else {
-                        slice = { name: name, data: data, colorIndex: random_colors[i] };
-                    }
                     all_data.push(slice);
                 }
-
                 return all_data;
             }
             function getBarBands(categories) {
@@ -2071,7 +2172,6 @@
             function getStackedData(number) {
                 let data = [];
                 let series = [];
-                let useGradient = false;
                 let variable;
                 let colorCSS;
                 if (number == "one") {
@@ -2083,35 +2183,52 @@
                 }
 
                 let varValues = getHeatmapAxis(variable);
-                if (varValues.length < 8) {
-                    useGradient = true;
-                }
 
-                for (let val of varValues) {
-                    let counter = 0
-                    for (let row of files[0]) {
-                        if (row.Date == date && +row[variable] == val) {
-                            counter++;
+                if (longVariables.includes(variable)) {
+
+                    for (let i = 0; i < varValues.length - 1; i++) {
+                        let counter = 0
+                        if (varValues[i] == 0) {
+                            for (let row of files[0]) {
+                                if (row.Date == date && row[variable] == "0") {
+                                    counter++;
+                                }
+                            }
+                        } else {
+                            for (let row of files[0]) {
+                                if (row.Date == date && row[variable] >= varValues[i] && row[variable] < varValues[i + 1]) {
+                                    counter++;
+                                }
+                            }
                         }
+                        data.push(counter);
                     }
-                    data.push(counter);
-
+                } else {
+                    for (let val of varValues) {
+                        let counter = 0
+                        for (let row of files[0]) {
+                            if (row.Date == date && +row[variable] == val) {
+                                counter++;
+                            }
+                        }
+                        data.push(counter);
+                    }
                 }
                 let total = 0;
                 for (let d of data) {
                     total = total + d;
                 }
-
-                if (useGradient) {
-                    for (let i = 0; i < varValues.length; i++) {
+                if (longVariables.includes(variable)) {
+                    let varCats = getCategoriesForNewVariable(variable);
+                    for (let i = 0; i < varValues.length - 1; i++) {
                         let percent = data[i] / total * 100;
-                        let slice = { name: varValues[i], data: [{ y: percent, custom: data[i] }], className: colorCSS + i };
+                        let slice = { name: varCats[i], data: [{ y: percent, custom: data[i] }], className: colorCSS + i };
                         series.push(slice);
                     }
                 } else {
                     for (let i = 0; i < varValues.length; i++) {
                         let percent = data[i] / total * 100;
-                        let slice = { name: varValues[i], data: [{ y: percent, custom: data[i] }], colorIndex: random_colors[i] };
+                        let slice = { name: varValues[i], data: [{ y: percent, custom: data[i] }], className: colorCSS + i };
                         series.push(slice);
                     }
                 }
@@ -2168,8 +2285,16 @@
 
             let initial_lines_data = getLinesData();
             let initial_heatmap_data = getHeatmapData();
-            heatmap_xaxis_categories = getHeatmapAxis(variable1);
-            heatmap_yaxis_categories = getHeatmapAxis(variable2);
+            if (longVariables.includes(variable1)) {
+                heatmap_xaxis_categories = getCategoriesForNewVariable(variable1);
+            } else {
+                heatmap_xaxis_categories = getHeatmapAxis(variable1);
+            }
+            if (longVariables.includes(variable2)) {
+                heatmap_yaxis_categories = getCategoriesForNewVariable(variable2);
+            } else {
+                heatmap_yaxis_categories = getHeatmapAxis(variable2);
+            }
             let initial_bars = getBarsData(initial_heatmap_data);
             heatmapMax = getHeatmapMax(initial_heatmap_data);
             availableDates = getAvailableDates(variable1);
@@ -2407,8 +2532,13 @@
                 let newHeatmapData = getHeatmapData();
                 heatmapXaxis.title.text = variable1;
                 barsXaxis.title.text = variable1;
-                heatmapXaxis.categories = getHeatmapAxis(variable1);
-                barsXaxis.categories = getHeatmapAxis(variable1);
+                if (longVariables.includes(variable1)) {
+                    heatmapXaxis.categories = getCategoriesForNewVariable(variable1);
+                    barsXaxis.categories = getCategoriesForNewVariable(variable1);
+                } else {
+                    heatmapXaxis.categories = getHeatmapAxis(variable1);
+                    barsXaxis.categories = getHeatmapAxis(variable1);
+                }
                 barsXaxis.plotBands = getBarBands(barsXaxis.categories);
                 heatmapColorAxis.max = getHeatmapMax(newHeatmapData);
                 heatmap.update({
@@ -2485,9 +2615,12 @@
                 searchInput.value = '';
 
                 // update chart options
-
                 heatmapYaxis.title.text = variable2;
-                heatmapYaxis.categories = getHeatmapAxis(variable2);
+                if (longVariables.includes(variable2)) {
+                    heatmapYaxis.categories = getCategoriesForNewVariable(variable2);
+                } else {
+                    heatmapYaxis.categories = getHeatmapAxis(variable2);
+                }
                 heatmap.update({
                     yAxis: heatmapYaxis
                 });
@@ -2627,6 +2760,98 @@
                     }
                 }
                 validCombo = newValidity;
+            }
+            function getArrayForNewVariable(variable) {
+                let array = [];
+                if (variable == "Age") {
+                    array = [18, 21, 26, 31, 41, 51, 100];
+                } else if (cat8.includes(variable)) {
+                    array = [1, 3, 5, 7, 9];
+                } else if (cat10.includes(variable) || cat9.includes(variable)) {
+                    array = [1, 3, 5, 7, 9, 11];
+                } else if (cat10plus.includes(variable)) {
+                    array = [0, 1, 3, 5, 7, 9, 11, 1000];
+                } else if (cat12.includes(variable)) {
+                    array = [1, 3, 5, 7, 9, 11, 13];
+                } else if (cat20plus.includes(variable)) {
+                    array = [0, 1, 6, 11, 16, 21, 1000];
+                } else if (cat50plus.includes(variable)) {
+                    array = [0, 1, 11, 21, 31, 41, 51, 1000];
+                } else if (cat100.includes(variable)) {
+                    array = [0, 21, 41, 61, 81, 101];
+                } else if (cat100plus.includes(variable)) {
+                    array = [0, 1, 11, 31, 51, 71, 101, 1000];
+                } else if (avg3.includes(variable)) {
+                    array = [1, 1, 2, 3, 4];
+                } else if (avg4.includes(variable)) {
+                    array = [1, 2, 3, 4, 5];
+                } else if (avg5.includes(variable)) {
+                    array = [1, 2, 3, 4, 5, 6];
+                } else if (avg7.includes(variable)) {
+                    array = [1, 2, 3, 4, 5, 6, 7, 8];
+                } else if (avg33.includes(variable)) {
+                    array = [-3, -2, -1, 0, 1, 2, 4];
+                } else if (variable == "Children") {
+                    array = [0, 1, 2, 3, 4, 5, 50];
+                } else if (variable == "Under12") {
+                    array = [0, 1, 2, 3, 4, 5];
+                } else if (variable == "Over12") {
+                    array = [0, 1, 2, 3, 4, 5, 6];
+                } else if (variable == "Howmuch") {
+                    array = [0, 1, 26, 51, 101, 201, 501, 10000];
+                } else if (variable == "MoneyDonated") {
+                    array = [0, 1, 26, 51, 101, 201, 501, 10000];
+                } else if (variable == "LargeGroups") {
+                    array = [0, 1, 6, 11, 21, 51, 10000];
+                }
+                return array;
+            }
+            function getCategoriesForNewVariable(variable) {
+                let cats = [];
+                if (variable == "Age") {
+                    cats = ["18-20", "21-25", "26-30", "31-40", "41-50", "51+"];
+                } else if (cat8.includes(variable)) {
+                    cats = ["1-2", "3-4", "5-6", "7-8"];
+                } else if (cat9.includes(variable)) {
+                    cats = ["1-2", "3-4", "5-6", "7-8", "9"];
+                } else if (cat10.includes(variable)) {
+                    cats = ["1-2", "3-4", "5-6", "7-8", "9-10"];
+                } else if (cat10plus.includes(variable)) {
+                    cats = ["0", "1-2", "3-4", "5-6", "7-8", "9-10", "11+"];
+                } else if (cat12.includes(variable)) {
+                    cats = ["1-2", "3-4", "5-6", "7-8", "9-10", "11-12"];
+                } else if (cat20plus.includes(variable)) {
+                    cats = ["0", "1-5", "6-10", "11-15", "16-20", "20+"];
+                } else if (cat50plus.includes(variable)) {
+                    cats = ["0", "1-10", "11-20", "21-30", "31-40", "40-50", "51+"];
+                } else if (cat100.includes(variable)) {
+                    cats = ["0-20", "21-40", "41-60", "61-80", "81-100"];
+                } else if (cat100plus.includes(variable)) {
+                    cats = ["0", "1-10", "11-30", "31-50", "51-70", "71-100", "100+"];
+                } else if (avg4.includes(variable)) {
+                    cats = ["1-2", "2-3", "3-4", "4"];
+                } else if (avg3.includes(variable)) {
+                    cats = ["1", "1-2", "2-3", "3"];
+                } else if (avg5.includes(variable)) {
+                    cats = ["1-2", "2-3", "3-4", "4-5", "5"];
+                } else if (avg7.includes(variable)) {
+                    cats = ["1-2", "2-3", "3-4", "4-5", "5-6", "6-7", "7"];
+                } else if (avg33.includes(variable)) {
+                    cats = ["-3 to -2", "-2 to -1", "-1 to 0", "0 to 1", "1 to 2", "2 to 3"];
+                } else if (variable == "Children") {
+                    cats = ["0", "1", "2", "3", "4", "5+"];
+                } else if (variable == "Under12") {
+                    cats = ["0", "1", "2", "3", "4"];
+                } else if (variable == "Over12") {
+                    cats = ["0", "1", "2", "3", "4", "5"];
+                } else if (variable == "Howmuch") {
+                    cats = ["0", "1-25", "26-50", "51-100", "101-200", "201-500", "500+"];
+                } else if (variable == "MoneyDonated") {
+                    cats = ["0", "1-25", "26-50", "51-100", "101-200", "201-500", "500+"];
+                } else if (variable == "LargeGroups") {
+                    cats = ["0", "1-5", "6-10", "11-20", "21-50", "51+"];
+                }
+                return cats;
             }
         })
             .catch(function (error) {
