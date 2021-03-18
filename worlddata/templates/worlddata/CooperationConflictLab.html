@@ -371,6 +371,15 @@
             border: none;
         }
 
+        .pies-container {
+            display: flex;
+            justify-content: space-around;
+        }
+
+        .cclab-pie .highcharts-data-label text {
+            fill: #1c1c1c;
+        }
+
         .highcharts-yellow .highcharts-point {
             fill: #E6A519;
         }
@@ -397,37 +406,44 @@
             stroke-width: 3px;
         }
 
-        .highcharts-blue-gradient-0 rect {
+        .highcharts-blue-gradient-0 rect,
+        .highcharts-blue-gradient-0 {
             fill: #B7E1D9;
             stroke: #B7E1D9;
         }
 
-        .highcharts-blue-gradient-1 rect {
+        .highcharts-blue-gradient-1 rect,
+        .highcharts-blue-gradient-1 {
             fill: #81CABD;
             stroke: #81CABD;
         }
 
-        .highcharts-blue-gradient-2 rect {
+        .highcharts-blue-gradient-2 rect,
+        .highcharts-blue-gradient-2 {
             fill: #4BB4A1;
             stroke: #4BB4A1;
         }
 
-        .highcharts-blue-gradient-3 rect {
+        .highcharts-blue-gradient-3 rect,
+        .highcharts-blue-gradient-3 {
             fill: #3C9080;
             stroke: #3C9080;
         }
 
-        .highcharts-blue-gradient-4 rect {
+        .highcharts-blue-gradient-4 rect,
+        .highcharts-blue-gradient-4 {
             fill: #2D6C60;
             stroke: #2D6C60;
         }
 
-        .highcharts-blue-gradient-5 rect {
+        .highcharts-blue-gradient-5 rect,
+        .highcharts-blue-gradient-5 {
             fill: #1E4840;
             stroke: #1E4840;
         }
 
-        .highcharts-blue-gradient-6 rect {
+        .highcharts-blue-gradient-6 rect,
+        .highcharts-blue-gradient-6 {
             fill: #0F2420;
             stroke: #0F2420;
         }
@@ -474,6 +490,11 @@
         .highcharts-yellow-gradient-6 {
             fill: #483E1E;
             /* stroke: #2E2E05; */
+        }
+
+        .highcharts-data-label-connector {
+            fill: #1c1c1c;
+            stroke: #1c1c1c;
         }
     </style>
 </head>
@@ -580,10 +601,10 @@
                                             variable
                                             combination</div>
                                     </div>
-                                    <div class="cclab-chart-container" style="height: 350px;">
+                                    <div class="cclab-chart-container" style="height: 400px;">
                                         <div id="new_bars" class="" style="width:100%;"></div>
                                         <div id="new_bars_error" class="error hidden"
-                                            style="padding: 160px 0; bottom:350px;">
+                                            style="padding: 185px 0; bottom:400px;">
                                             Invalid
                                             date
                                             - variable
@@ -617,20 +638,24 @@
                                     <div id="new_var2"></div>
 
                                 </div>
-                                <div class="cclab-chart-container" style="margin: 5px 0; height: 140px;">
-                                    <div id="new_var1_stack" class="bar" style="width:100%;">
+                                <div class="pies-container">
+                                    <div class="cclab-chart-container"
+                                        style="margin: 5px 5px 0 0; height: 250px; width:100%">
+                                        <div id="new_var1_pie" class="cclab-pie" style="width:100%;">
+                                        </div>
+                                        <div id="new_var1_error" class="error hidden"
+                                            style="padding: 95px 0; bottom: 250px;">
+                                            Invalid date - variable combination
+                                        </div>
                                     </div>
-                                    <div id="new_var1_error" class="error hidden"
-                                        style="padding: 55px 0; bottom: 140px;">
-                                        Invalid date - variable combination
-                                    </div>
-                                </div>
-                                <div class="cclab-chart-container" style="margin: 5px 0; height: 140px;">
-                                    <div id="new_var2_stack" class="bar" style="width:100%;">
-                                    </div>
-                                    <div id="new_var2_error" class="error hidden"
-                                        style="padding: 55px 0; bottom: 140px;">
-                                        Invalid date - variable combination
+                                    <div class="cclab-chart-container"
+                                        style="margin: 5px 0 0 0; height: 250px;width:100%">
+                                        <div id="new_var2_pie" class="cclab-pie" style="width:100%;">
+                                        </div>
+                                        <div id="new_var2_error" class="error hidden"
+                                            style="padding: 95px 0; bottom: 250px;">
+                                            Invalid date - variable combination
+                                        </div>
                                     </div>
                                 </div>
                                 <div class="cclab-chart-container" style="margin: 5px 0; height: 300px;">
@@ -735,10 +760,10 @@
                                             variable
                                             combination</div>
                                     </div>
-                                    <div class="cclab-chart-container" style="height: 350px;">
+                                    <div class="cclab-chart-container" style="height: 400px;">
                                         <div id="old_bars" class="" style="width:100%;"></div>
                                         <div id="old_bars_error" class="error hidden"
-                                            style="padding: 160px 0; bottom:350px;">
+                                            style="padding: 185px 0; bottom:400px;">
                                             Invalid
                                             date
                                             -
@@ -772,20 +797,24 @@
                                     </div>
                                     <div id="old_var2"></div>
                                 </div>
-                                <div class="cclab-chart-container" style="margin: 5px 0; height: 140px;">
-                                    <div id="old_var1_stack" class="bar" style="width:100%;"></div>
-                                    <div id="old_var1_error" class="error hidden"
-                                        style="padding: 55px 0; bottom: 140px;">
-                                        Invalid date -
-                                        variable combination
+                                <div class="pies-container">
+                                    <div class="cclab-chart-container"
+                                        style="margin: 5px 5px 0 0; height: 250px; width:100%">
+                                        <div id="old_var1_pie" class="cclab-pie" style="width:100%;"></div>
+                                        <div id="old_var1_error" class="error hidden"
+                                            style="padding: 95px 0; bottom: 250px;">
+                                            Invalid date -
+                                            variable combination
+                                        </div>
                                     </div>
-                                </div>
-                                <div class="cclab-chart-container" style="margin: 5px 0;height: 140px;">
-                                    <div id="old_var2_stack" class="bar" style="width:100%;"></div>
-                                    <div id="old_var2_error" class="error hidden"
-                                        style="padding: 55px 0; bottom: 140px;">
-                                        Invalid date -
-                                        variable combination
+                                    <div class="cclab-chart-container"
+                                        style="margin: 5px 0 0 0;height: 250px;width:100%">
+                                        <div id="old_var2_pie" class="cclab-pie" style="width:100%;"></div>
+                                        <div id="old_var2_error" class="error hidden"
+                                            style="padding: 95px 0; bottom: 250px;">
+                                            Invalid date -
+                                            variable combination
+                                        </div>
                                     </div>
                                 </div>
                                 <div class="cclab-chart-container" style="margin: 5px 0;height: 300px;">
@@ -1084,7 +1113,7 @@
                 }
                 return data;
             }
-            function getStackedData(number) {
+            function getPieData(number) {
                 let data = [];
                 let series = [];
                 let variable;
@@ -1131,21 +1160,18 @@
                         data.push(counter);
                     }
                 }
-                let total = 0;
-                for (let d of data) {
-                    total = total + d;
-                }
+
                 if (longVariables.includes(variable)) {
                     let varCats = getCategoriesForNewVariable(variable);
                     for (let i = 0; i < varValues.length - 1; i++) {
-                        let percent = data[i] / total * 100;
-                        let slice = { name: varCats[i], data: [{ y: percent, custom: data[i] }], className: colorCSS + i };
+
+                        let slice = { name: varCats[i], y: data[i], className: colorCSS + i };
                         series.push(slice);
                     }
                 } else {
                     for (let i = 0; i < varValues.length; i++) {
-                        let percent = data[i] / total * 100;
-                        let slice = { name: varValues[i], data: [{ y: percent, custom: data[i] }], className: colorCSS + i };
+
+                        let slice = { name: varValues[i], y: data[i], className: colorCSS + i };
                         series.push(slice);
                     }
                 }
@@ -1193,6 +1219,8 @@
 
             let initial_lines_data = getLinesData();
             let initial_heatmap_data = getHeatmapData();
+            let initial_var1_pie_data = getPieData("one");
+            let initial_var2_pie_data = getPieData("two");
 
             if (longVariables.includes(variable1)) {
                 heatmap_xaxis_categories = getCategoriesForNewVariable(variable1);
@@ -1207,8 +1235,6 @@
             let initial_bars = getBarsData(initial_heatmap_data);
             heatmapMax = getHeatmapMax(initial_heatmap_data);
             availableDates = getAvailableDates(variable1);
-            let initial_var1_stacked_data = getStackedData("one");
-            let initial_var2_stacked_data = getStackedData("two");
             let heatmapXaxis = {
                 categories: heatmap_xaxis_categories,
                 title: {
@@ -1236,96 +1262,106 @@
             };
             setStats();
 
-            let var1Stack = Highcharts.chart('new_var1_stack', {
+            let var1Pie = Highcharts.chart('new_var1_pie', {
                 chart: {
-                    type: 'bar',
-                    height: 140,
+                    plotBackgroundColor: null,
+                    plotBorderWidth: null,
+                    plotShadow: false,
+                    type: 'pie',
+                    height: 250,
+
                 },
                 title: {
                     text: "<strong>" + variable1 + "</strong> - breakdown of responses",
                     align: "left",
                     margin: 0
                 },
-                xAxis: {
-                    title: {
-                        text: null
-                    },
-                    showFirstLabel: false,
-                    visible: false,
-                },
-                yAxis: {
-                    min: 0,
-                    max: 100,
-                    reversedStacks: false,
-                    title: {
-                        text: null
-                    },
-                    labels: {
-                        format: '{value}%'
-                    },
-                    tickInterval: 25
-                },
                 tooltip: {
                     formatter: function () {
-                        return '<text><strong>' + variable1 + "[" + this.series.name + "] </strong><br># of respondents: " + this.point.custom + "<br>% of respondents: " + numberFormatterPercentage(this.point.y) + '%</text>';
+                        return '<text><strong>' + variable1 + "[" + this.key + "] </strong><br># of respondents: " + this.y + "<br>% of respondents: " + numberFormatterPercentage(this.percentage) + '%</text>';
                     },
+
                     useHTML: true
                 },
                 plotOptions: {
-                    series: {
-                        stacking: 'percent'
+                    pie: {
+                        allowPointSelect: true,
+                        cursor: 'pointer',
+                        dataLabels: {
+                            enabled: true,
+                            connectorWidth: 1,
+                            distance: 10,
+                            connectorShape: 'straight',
+                            //format: '<b>{point.name}</b>: {point.percentage:.1f} %'
+                        }
                     }
                 },
                 legend: {
                     margin: 0
                 },
-                series: initial_var1_stacked_data
-            });
-            let var2Stack = Highcharts.chart('new_var2_stack', {
+                series: [{
+                    name: "Variable1",
+                    innerSize: '40%',
+                    data: initial_var1_pie_data
+                }],
+                annotations: [{
+                    labels: [{
+                        point: '0'
+                    }]
+                }, {
+                    visible: false,
+                }]
+            })
+            let var2Pie = Highcharts.chart('new_var2_pie', {
                 chart: {
-                    type: 'bar',
-                    height: 140,
+                    plotBackgroundColor: null,
+                    plotBorderWidth: null,
+                    plotShadow: false,
+                    type: 'pie',
+                    height: 250,
+
                 },
                 title: {
                     text: "<strong>" + variable2 + "</strong> - breakdown of responses",
                     align: "left",
                     margin: 0
                 },
-                xAxis: {
-                    title: {
-                        text: null
-                    },
-                    showFirstLabel: false,
-                    visible: false,
-                },
-                yAxis: {
-                    min: 0,
-                    max: 100,
-                    reversedStacks: false,
-                    title: {
-                        text: null
-                    },
-                    labels: {
-                        format: '{value}%'
-                    },
-                    tickInterval: 25
-                },
                 tooltip: {
                     formatter: function () {
-                        return '<text><strong>' + variable2 + "[" + this.series.name + "] </strong><br># of respondents: " + this.point.custom + "<br>% of respondents: " + numberFormatterPercentage(this.point.y) + '%</text>';
+                        return '<text><strong>' + variable2 + "[" + this.key + "] </strong><br># of respondents: " + this.y + "<br>% of respondents: " + numberFormatterPercentage(this.percentage) + '%</text>';
                     },
+
                     useHTML: true
                 },
                 plotOptions: {
-                    series: {
-                        stacking: 'normal',
-                    },
+                    pie: {
+                        allowPointSelect: true,
+                        cursor: 'pointer',
+                        dataLabels: {
+                            enabled: true,
+                            connectorWidth: 1,
+                            distance: 10,
+                            connectorShape: 'straight'
+                            //format: '<b>{point.name}</b>: {point.percentage:.1f} %'
+                        }
+                    }
                 },
                 legend: {
                     margin: 0
                 },
-                series: initial_var2_stacked_data
-            });
+                series: [{
+                    name: "Variable2",
+                    innerSize: '40%',
+                    data: initial_var2_pie_data
+                }],
+                annotations: [{
+                    labels: [{
+                        point: '0'
+                    }]
+                }, {
+                    visible: false,
+                }]
+            })
             let lineChart = Highcharts.chart('new_lines', {
                 chart: {
                     height: 300,
@@ -1381,7 +1417,8 @@
             let bars = Highcharts.chart('new_bars', {
                 chart: {
                     type: 'column',
-                    height: 350,
+                    height: 400,
+
                 },
                 title: {
                     text: 'Frequency of <strong>' + variable2 + "</strong> responses, for each <strong>" + variable1 + "</strong> response",
@@ -1411,6 +1448,7 @@
                 series: initial_bars
 
             });
+
 
             // Dropdowns
 
@@ -1469,7 +1507,8 @@
                 lineChart.update({
                     series: newLineData
                 });
-                updateStackedData1();
+                updatePieData1();
+                setStats();
                 checkValidity();
             }
 
@@ -1497,8 +1536,8 @@
                 heatmap.series[0].setData(newHeatmapData);
                 updateBarsData(newHeatmapData);
 
-                updateStackedData1();
-                updateStackedData2();
+                updatePieData1();
+                updatePieData2();
                 setStats();
                 checkValidity();
             }
@@ -1542,7 +1581,7 @@
                 lineChart.update({
                     series: newLineData
                 });
-                updateStackedData2();
+                updatePieData2();
                 setStats();
                 checkValidity();
             }
@@ -1601,38 +1640,17 @@
                     container.appendChild(item);
                 });
             }
-            function updateStackedData1() {
-                newVar1StackData = getStackedData("one");
-
-                var1Stack.update({ title: { text: "<strong>" + variable1 + "</strong> - breakdown of responses", } });
-
-                // first, remove old series
-                let loops = var1Stack.series.length;
-                for (var i = 0; i < loops; i++) {
-                    var1Stack.series[0].remove(false);
-                }
-
-                // then add new ones
-                for (var i = 0; i < newVar1StackData.length; i++) {
-                    var1Stack.addSeries(newVar1StackData[i], false);
-                }
-                var1Stack.redraw();
+            function updatePieData1() {
+                newVar1PieData = getPieData("one");
+                var1Pie.update({ title: { text: "<strong>" + variable1 + "</strong> - breakdown of responses", } });
+                var1Pie.series[0].setData(newVar1PieData);
+                // var1Pie.redraw();
             }
-            function updateStackedData2() {
-                newVar2StackData = getStackedData("two");
-                var2Stack.update({ title: { text: "<strong>" + variable2 + "</strong> - breakdown of responses", } });
-
-                // first, remove old series
-                let loops = var2Stack.series.length;
-                for (var i = 0; i < loops; i++) {
-                    var2Stack.series[0].remove(false);
-                }
-
-                // then add new ones
-                for (var i = 0; i < newVar2StackData.length; i++) {
-                    var2Stack.addSeries(newVar2StackData[i], false);
-                }
-                var2Stack.redraw();
+            function updatePieData2() {
+                newVar2PieData = getPieData("two");
+                var2Pie.update({ title: { text: "<strong>" + variable2 + "</strong> - breakdown of responses", } });
+                var2Pie.series[0].setData(newVar2PieData);
+                // var1Pie.redraw();
             }
             function getArrayForNewVariable(variable) {
                 let array = [];
@@ -2169,7 +2187,7 @@
                 }
                 return data;
             }
-            function getStackedData(number) {
+            function getPieData(number) {
                 let data = [];
                 let series = [];
                 let variable;
@@ -2188,6 +2206,8 @@
 
                     for (let i = 0; i < varValues.length - 1; i++) {
                         let counter = 0
+
+                        // In case our categories start from 0, otherwise empty values are counted as zeroes
                         if (varValues[i] == 0) {
                             for (let row of files[0]) {
                                 if (row.Date == date && row[variable] == "0") {
@@ -2196,7 +2216,7 @@
                             }
                         } else {
                             for (let row of files[0]) {
-                                if (row.Date == date && row[variable] >= varValues[i] && row[variable] < varValues[i + 1]) {
+                                if (row.Date == date && +row[variable] >= varValues[i] && +row[variable] < varValues[i + 1]) {
                                     counter++;
                                 }
                             }
@@ -2214,21 +2234,18 @@
                         data.push(counter);
                     }
                 }
-                let total = 0;
-                for (let d of data) {
-                    total = total + d;
-                }
+
                 if (longVariables.includes(variable)) {
                     let varCats = getCategoriesForNewVariable(variable);
                     for (let i = 0; i < varValues.length - 1; i++) {
-                        let percent = data[i] / total * 100;
-                        let slice = { name: varCats[i], data: [{ y: percent, custom: data[i] }], className: colorCSS + i };
+
+                        let slice = { name: varCats[i], y: data[i], className: colorCSS + i };
                         series.push(slice);
                     }
                 } else {
                     for (let i = 0; i < varValues.length; i++) {
-                        let percent = data[i] / total * 100;
-                        let slice = { name: varValues[i], data: [{ y: percent, custom: data[i] }], className: colorCSS + i };
+
+                        let slice = { name: varValues[i], y: data[i], className: colorCSS + i };
                         series.push(slice);
                     }
                 }
@@ -2285,6 +2302,8 @@
 
             let initial_lines_data = getLinesData();
             let initial_heatmap_data = getHeatmapData();
+            let initial_var1_pie_data = getPieData("one");
+            let initial_var2_pie_data = getPieData("two");
             if (longVariables.includes(variable1)) {
                 heatmap_xaxis_categories = getCategoriesForNewVariable(variable1);
             } else {
@@ -2298,8 +2317,6 @@
             let initial_bars = getBarsData(initial_heatmap_data);
             heatmapMax = getHeatmapMax(initial_heatmap_data);
             availableDates = getAvailableDates(variable1);
-            let initial_var1_stacked_data = getStackedData("one");
-            let initial_var2_stacked_data = getStackedData("two");
 
             let heatmapXaxis = {
                 categories: heatmap_xaxis_categories,
@@ -2328,98 +2345,104 @@
             };
             setStats();
 
-            let var1Stack = Highcharts.chart('old_var1_stack', {
+            let var1Pie = Highcharts.chart('old_var1_pie', {
                 chart: {
-                    type: 'bar',
-                    height: 140
+                    plotBackgroundColor: null,
+                    plotBorderWidth: null,
+                    plotShadow: false,
+                    type: 'pie',
+                    height: 250,
+
                 },
                 title: {
                     text: "<strong>" + variable1 + "</strong> - breakdown of responses",
                     align: "left",
                     margin: 0
                 },
-                xAxis: {
-                    title: {
-                        text: null
-                    },
-                    showFirstLabel: false,
-                    visible: false,
-                },
-                yAxis: {
-                    min: 0,
-                    max: 100,
-                    reversedStacks: false,
-                    title: {
-                        text: null
-                    },
-                    labels: {
-                        format: '{value}%'
-                    },
-                    tickInterval: 25
-                },
                 tooltip: {
                     formatter: function () {
-                        return '<text><strong>' + variable1 + "[" + this.series.name + "] </strong><br># of respondents: " + this.point.custom + "<br>% of respondents: " + numberFormatterPercentage(this.point.y) + '%</text>';
+                        return '<text><strong>' + variable1 + "[" + this.key + "] </strong><br># of respondents: " + this.y + "<br>% of respondents: " + numberFormatterPercentage(this.percentage) + '%</text>';
                     },
+
                     useHTML: true
                 },
                 plotOptions: {
-                    series: {
-                        stacking: 'percent'
+                    pie: {
+                        allowPointSelect: true,
+                        cursor: 'pointer',
+                        dataLabels: {
+                            enabled: true,
+                            connectorWidth: 1,
+                            distance: 10,
+                            connectorShape: 'straight',
+                        }
                     }
                 },
                 legend: {
                     margin: 0
                 },
-                series: initial_var1_stacked_data
+                series: [{
+                    name: "Variable1",
+                    innerSize: '40%',
+                    data: initial_var1_pie_data
+                }],
+                annotations: [{
+                    labels: [{
+                        point: '0'
+                    }]
+                }, {
+                    visible: false,
+                }]
             });
-            let var2Stack = Highcharts.chart('old_var2_stack', {
+            let var2Pie = Highcharts.chart('old_var2_pie', {
                 chart: {
-                    type: 'bar',
-                    height: 140,
+                    plotBackgroundColor: null,
+                    plotBorderWidth: null,
+                    plotShadow: false,
+                    type: 'pie',
+                    height: 250,
+
                 },
                 title: {
-                    text: "<strong>" + variable1 + "</strong> - breakdown of responses",
+                    text: "<strong>" + variable2 + "</strong> - breakdown of responses",
                     align: "left",
                     margin: 0
                 },
-                xAxis: {
-                    title: {
-                        text: null
-                    },
-                    showFirstLabel: false,
-                    visible: false,
-
-                },
-                yAxis: {
-                    min: 0,
-                    max: 100,
-                    reversedStacks: false,
-                    title: {
-                        text: null
-                    },
-                    labels: {
-                        format: '{value}%'
-                    },
-                    tickInterval: 25
-                },
                 tooltip: {
                     formatter: function () {
-                        return '<text><strong>' + variable2 + "[" + this.series.name + "] </strong><br># of respondents: " + this.point.custom + "<br>% of respondents: " + numberFormatterPercentage(this.point.y) + '%</text>';
+                        return '<text><strong>' + variable2 + "[" + this.key + "] </strong><br># of respondents: " + this.y + "<br>% of respondents: " + numberFormatterPercentage(this.percentage) + '%</text>';
                     },
+
                     useHTML: true
                 },
                 plotOptions: {
-                    series: {
-                        stacking: 'normal',
-
-                    },
-
+                    pie: {
+                        allowPointSelect: true,
+                        cursor: 'pointer',
+                        dataLabels: {
+                            enabled: true,
+                            connectorWidth: 1,
+                            distance: 10,
+                            connectorShape: 'straight'
+                            //format: '<b>{point.name}</b>: {point.percentage:.1f} %'
+                        }
+                    }
                 },
                 legend: {
                     margin: 0
                 },
-                series: initial_var2_stacked_data
+                series: [{
+                    name: "Variable2",
+                    innerSize: '40%',
+                    data: initial_var2_pie_data
+                }],
+                annotations: [{
+                    labels: [{
+                        point: '0'
+                    }]
+                }, {
+                    visible: false,
+                }]
             });
             var lineChart = Highcharts.chart('old_lines', {
                 chart: {
@@ -2476,7 +2499,7 @@
             let bars = Highcharts.chart('old_bars', {
                 chart: {
                     type: 'column',
-                    height: 350
+                    height: 400
                 },
                 title: {
                     text: 'Frequency of <strong>' + variable2 + "</strong> responses, for each <strong>" + variable1 + "</strong> response",
@@ -2562,7 +2585,7 @@
                 lineChart.update({
                     series: newLineData
                 });
-                updateStackedData1();
+                updatePieData1();
                 setStats();
                 checkValidity();
             }
@@ -2591,8 +2614,8 @@
                 heatmap.series[0].setData(newHeatmapData);
                 updateBarsData(newHeatmapData);
 
-                updateStackedData1();
-                updateStackedData2();
+                updatePieData1();
+                updatePieData2();
                 setStats();
                 checkValidity();
             }
@@ -2635,7 +2658,7 @@
                 lineChart.update({
                     series: newLineData
                 });
-                updateStackedData2();
+                updatePieData2();
                 setStats();
                 checkValidity();
             }
@@ -2694,22 +2717,15 @@
                     container.appendChild(item);
                 });
             }
-            function updateStackedData1() {
-                newVar1StackData = getStackedData("one");
-
-                var1Stack.update({ title: { text: "<strong>" + variable1 + "</strong> - breakdown of responses", } });
-
-                // first, remove old series
-                let loops = var1Stack.series.length;
-                for (var i = 0; i < loops; i++) {
-                    var1Stack.series[0].remove(false);
-                }
-
-                // then add new ones
-                for (var i = 0; i < newVar1StackData.length; i++) {
-                    var1Stack.addSeries(newVar1StackData[i], false);
-                }
-                var1Stack.redraw();
+            function updatePieData1() {
+                newVar1PieData = getPieData("one");
+                var1Pie.update({ title: { text: "<strong>" + variable1 + "</strong> - breakdown of responses", } });
+                var1Pie.series[0].setData(newVar1PieData);
+            }
+            function updatePieData2() {
+                newVar2PieData = getPieData("two");
+                var2Pie.update({ title: { text: "<strong>" + variable2 + "</strong> - breakdown of responses", } });
+                var2Pie.series[0].setData(newVar2PieData);
             }
             function updateStackedData2() {
                 newVar2StackData = getStackedData("two");
