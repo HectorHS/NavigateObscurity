@@ -9,7 +9,8 @@ OccupationRisk,"Has your occupation been identified as high-risk for COVID-19 tr
 MoveChildhood,How many times before the age of 18 did you move to a totally new neighborhood or town? 
 Move,How many times since the age of 18 have you moved to a totally new neighborhood or town? 
 NumberInHouse,How many people currently live in your household?
-Preexisting,"Do you have any pre-existing health conditions that require you to take extra precautions to avoid catching a disease/illness? 0 = no, 1 = yes"
+Preexisting,"Do you have any pre-existing health conditions that require you to take extra precautions to avoid catching a disease/illness? 1 = no, 2 = yes"
+Citizen,
 PFINeigh1,"When my neighborhood succeeds, I feel good. "
 PFINeigh2,"When my neighborhood fails, I feel bad. "
 PFINeigh3,I feel that my neighborhood's gains are my gains 
@@ -28,19 +29,19 @@ WillingnessCountry,"A person who is a citizen of your own country is having thei
 NBTcountry,Helping someone who is a citizen of your own country when they are in need is the right thing to do.
 InfectedCovid,"Have you contracted COVID-19? 1 = no, 2 = maybe, 3 = yes"
 TestedCovid,"If yes or maybe, have you tested positive? 1 = no, 2 = have not been tested, 3 = yes"
-Symptoms1,"Fever or chills; 0 = no, 1 = yes"
-Symptoms2,"Cough; 0 = no, 1 = yes"
-Symptoms3,"Shortness of breath or difficulty breathing ; 0 = no, 1 = yes"
-Symptoms4,"Fatigue ; 0 = no, 1 = yes"
-Symptoms5,"Muscle or body aches; 0 = no, 1 = yes"
-Symptoms6,"Headache; 0 = no, 1 = yes"
-Symptoms7,"New loss of taste or smell; 0 = no, 1 = yes"
-Symptoms8,"Sore throat; 0 = no, 1 = yes"
-Symptoms9,"Congestion or runny nose; 0 = no, 1 = yes"
-Symptoms10,"Nausea or vomiting ; 0 = no, 1 = yes"
-Symptoms11,"Diarrhea; 0 = no, 1 = yes"
-Symptoms12,Conjunctivitis (pink eye)
-Symptoms13,Purple or darker colored toes
+Symptoms1,"Fever or chills; (1 = no, 2 = yes)"
+Symptoms2,"Cough; (1 = no, 2 = yes)"
+Symptoms3,"Shortness of breath or difficulty breathing ; (1 = no, 2 = yes)"
+Symptoms4,"Fatigue ; (1 = no, 2 = yes)"
+Symptoms5,"Muscle or body aches; (1 = no, 2 = yes)"
+Symptoms6,"Headache;(1 = no, 2 = yes)"
+Symptoms7,"New loss of taste or smell; (1 = no, 2 = yes)"
+Symptoms8,"Sore throat;(1 = no, 2 = yes)"
+Symptoms9,"Congestion or runny nose; (1 = no, 2 = yes)"
+Symptoms10,"Nausea or vomiting ; (1 = no, 2 = yes)"
+Symptoms11,"Diarrhea;(1 = no, 2 = yes)"
+Symptoms12,"Conjunctivitis (pink eye) (1 = no, 2 = yes)"
+Symptoms13,"Purple or darker colored toes (1 = no, 2 = yes)"
 WeekSinceCovid,"If yes or maybe, how many weeks ago did you contract COVID-19?"
 ContactsInfected,How many people do you personally know who have been diagnosed by a physician or tested positive for COVID-19?
 Contacts24hrs,"How many people (outside of your household) have you had in-person interactions with during the last 24 hours (e.g., visiting with friends, buying food or supplies from a cashier)?"
@@ -112,6 +113,18 @@ Vaccine,How likely would you be to take a COVID vaccine when it is available to 
 TrustVaccine,How likely would you be to trust that a COVID vaccine available to you is safe and effective? 
 OthersVaccine,"What proportion of people in the US do you think will take a COVID vaccine when it is made available to them? 1 = 0-10%, 10 = 91-100%"
 TimeToVaccine,"How long do you think it will be until a COVID vaccine is made available to you? 1 = currently, 2 = 1 month, 3 = 2 months, 4 = 3-6 months, 5 = 6-9 months, 6 = 9-12 months"
+ReceiveVaccine,"Have you received a COVID-19 vaccine? 1 (No, I am not planning on getting a vaccine ), 2 (No, I am not sure if I will get a vaccine), 3 (No, but I am planning on getting one), 4 (Yes)"
+VaccineHealth,"Regarding your likelihood to get vaccinated or not to get vaccinated, how important was your personal health in making this decision? (1 = Not at all important, 7 = Extremely important) "
+VaccineOtherHealth,"Regarding your likelihood to get vaccinated or not to get vaccinated, how important was the health of others around you/your community in making this decision? (1 = Not at all important, 7 = Extremely important) "
+VaccineSafety1,"How do you feel about each of these vaccine safety factors regarding the COVID-19 vaccine? Reaction after vaccine (1 = Do not trust at all, 7 = Trust completely) "
+VaccineSafety2,"How do you feel about each of these vaccine safety factors regarding the COVID-19 vaccine? Potential long-term side effects (1 = Do not trust at all, 7 = Trust completely) "
+VaccineSafety3,"How do you feel about each of these vaccine safety factors regarding the COVID-19 vaccine? Testing timeline before launch (1 = Do not trust at all, 7 = Trust completely) "
+VaccineTV,"How has seeing televised vaccinations of well-known people (I.e., politicians) made you feel about the vaccine? (0= I have not seen this, 1= Much more negative, 7= Much more positive)"
+VaccinePeers,"How has seeing your friends, family, or other peers getting the vaccine (I.e., posts on social media) made you feel about the vaccine? (0= I have not seen this, 1= Much more negative, 7= Much more positive)
+"
+AfterVaccineNormal,"After the vaccine becomes available to most people, how long do you think it will take before the country returns to pre-COVID-19 normal (1=Less than one month, 2=1-2 months, 3=2-3 months, 4=3-6 months, 5=6-9 months, 6= 9-12 months, 7= More than one year)"
+VaccineRisk1,"I can still get COVID-19 after getting vaccinated (1=Strongly disagree, 7=Strongly agree)"
+VaccineRisk2,"I can still give COVID-19 to others after getting vaccinated (1=Strongly disagree, 7=Strongly agree)"
 FinancialHardship,"Do you anticipate having financial difficulties over the coming year, for instance being unable to pay bills on time? 1 = currently, 2 = 1 month, 3 = 2 months, 4 = 3-6 months, 5 = 6-9 months, 6 = 9-12 months"
 CFCset1.1,"I consider how things might be in the future, and try to influence those things with my day to day behavior. (1)"
 CFCset1.2,Often I engage in a particular behavior in order to achieve outcomes that may not result for many years. (2)
@@ -159,11 +172,20 @@ TimePassed,"Since the beginning of the pandemic, this year has passed: 1 = much 
 SimilarDays,"Since the beginning of the pandemic, how similar would you say each day is to the day before and the day after? 1 = everyday is basically the same, 5 = each day is different from the last"
 FarMonth,"How near or far away does a month from now seem? 1 = very near, 7 = very far"
 FarYear,"How near or far away does a year from now seem? 1 = very near, 7 = very far"
-Optimistic1,"Optimistic How optimistic do you feel about how things will be in: Two days from now? 1 = very optimistic, 7 = very pessimistic"
-Optimistic2,"Optimistic How optimistic do you feel about how things will be in: Two weeks from now? 1 = very optimistic, 7 = very pessimistic"
-Optimistic3,"Optimistic How optimistic do you feel about how things will be in: Two months from now? 1 = very optimistic, 7 = very pessimistic"
-Optimistic4,"Optimistic How optimistic do you feel about how things will be in: One year from now? 1 = very optimistic, 7 = very pessimistic"
-Optimistic5,"Optimistic How optimistic do you feel about how things will be in: Ten years from now? 1 = very optimistic, 7 = very pessimistic"
+Optimistic1,"Optimistic How optimistic do you feel about how things will be in: Two days from now? (0 = very pessimistic, 100 = very optimistic)"
+Optimistic2,"Optimistic How optimistic do you feel about how things will be in: Seven days from now?(0 = very pessimistic, 100 = very optimistic)"
+Optimistic3,"Optimistic How optimistic do you feel about how things will be in: Four weeks from now? (0 = very pessimistic, 100 = very optimistic)"
+Optimistic4,"Optimistic How optimistic do you feel about how things will be in: Six months from now? (0 = very pessimistic, 100 = very optimistic)"
+Optimistic5,"Optimistic How optimistic do you feel about how things will be in: One year from now? (0 = very pessimistic, 100 = very optimistic)"
+Optimistic6,"Optimistic How optimistic do you feel about how things will be in: Five years from now? (0 = very pessimistic, 100 = very optimistic)"
+Optimistic7,"Optimistic How optimistic do you feel about how things will be in: Ten years from now? (0 = very pessimistic, 100 = very optimistic)"
+Optimistic8,"Optimistic How optimistic do you feel about how things will be in: 100 years from now? (0 = very pessimistic, 100 = very optimistic)"
+Optimistic9,"Optimistic How optimistic do you feel about how things will be in: 1000 years from now? (0 = very pessimistic, 100 = very optimistic)"
+Optimistic1old,"Optimistic How optimistic do you feel about how things will be in: Two days from now? 1 = very optimistic, 7 = very pessimistic"
+Optimistic2old,"Optimistic How optimistic do you feel about how things will be in: Two weeks from now? 1 = very optimistic, 7 = very pessimistic"
+Optimistic3old,"Optimistic How optimistic do you feel about how things will be in: Two months from now? 1 = very optimistic, 7 = very pessimistic"
+Optimistic4old,"Optimistic How optimistic do you feel about how things will be in: One year from now? 1 = very optimistic, 7 = very pessimistic"
+Optimistic5old,"Optimistic How optimistic do you feel about how things will be in: Ten years from now? 1 = very optimistic, 7 = very pessimistic"
 ConspiracySet1.1,"The government is involved in the murder of innocent citizens and/or well-known public figures, and keeps this a secret (1)"
 ConspiracySet1.2,The power held by heads of state is second to that of small unknown groups who really control world politics (2)
 ConspiracySet1.3,"Secret organizations communicate with extraterrestrials, but keep this fact from the help (3)"
@@ -267,16 +289,16 @@ SourceInfo11,"From which of the following sources of information do you regularl
 SourceInfo12,From which of the following sources of information do you regularly get information about COVID-19? (please choose all that apply) - The president
 SourceInfo13,"From which of the following sources of information do you regularly get information about COVID-19? (please choose all that apply) - Health organizations (e.g., the CDC, WHO)"
 SourceInfo14,From which of the following sources of information do you regularly get information about COVID-19? (please choose all that apply)- Other (please specify below)
-Fundamental1,"Please answer how important each of the following statements are to you at this point in your life, not how important these have been for you in the past or how important they may be in the future - Keeping myself physically safe from other people"
-Fundamental2,"Please answer how important each of the following statements are to you at this point in your life, not how important these have been for you in the past or how important they may be in the future- Avoiding people or places that might carry diseases"
-Fundamental3,"Please answer how important each of the following statements are to you at this point in your life, not how important these have been for you in the past or how important they may be in the future - Staying in contact with friends remotely (e.g., phone, video chat, texting, email)"
-Fundamental4,"Please answer how important each of the following statements are to you at this point in your life, not how important these have been for you in the past or how important they may be in the future - Spending time with friends outside your household/pod through in-person interactions"
-Fundamental5,"Please answer how important each of the following statements are to you at this point in your life, not how important these have been for you in the past or how important they may be in the future - Working in any way that brings in income, builds your career, or strengthens your abilities/skills"
-Fundamental6,"Please answer how important each of the following statements are to you at this point in your life, not how important these have been for you in the past or how important they may be in the future - Spending time trying to meet, or to stay in contact with new possible dating partners remotely (e.g., phone, video chat, texting)"
-Fundamental7,"Please answer how important each of the following statements are to you at this point in your life, not how important these have been for you in the past or how important they may be in the future - Spending time trying to meet, or to stay in contact with new possible dating partners through in-person interactions"
-Fundamental8,"Please answer how important each of the following statements are to you at this point in your life, not how important these have been for you in the past or how important they may be in the future - Spending quality time with my significant other"
-Fundamental9,"Please answer how important each of the following statements are to you at this point in your life, not how important these have been for you in the past or how important they may be in the future - Staying in contact with family members remotely (e.g., phone, video chat, texting, email)"
-Fundamental10,"Please answer how important each of the following statements are to you at this point in your life, not how important these have been for you in the past or how important they may be in the future - Spending time with family members outside your household/pod through in-person interactions"
+Fundamental1,"Please answer how important each of the following statements are to you at this point in your life, not how important these have been for you in the past or how important they may be in the future - Keeping myself physically safe from other people (1 = Not at all, 7 = Extremely important)"
+Fundamental2,"Please answer how important each of the following statements are to you at this point in your life, not how important these have been for you in the past or how important they may be in the future- Avoiding people or places that might carry diseases (1 = Not at all, 7 = Extremely important)"
+Fundamental3,"Please answer how important each of the following statements are to you at this point in your life, not how important these have been for you in the past or how important they may be in the future - Staying in contact with friends remotely (e.g., phone, video chat, texting, email) (1 = Not at all, 7 = Extremely important)"
+Fundamental4,"Please answer how important each of the following statements are to you at this point in your life, not how important these have been for you in the past or how important they may be in the future - Spending time with friends outside your household/pod through in-person interactions (1 = Not at all, 7 = Extremely important)"
+Fundamental5,"Please answer how important each of the following statements are to you at this point in your life, not how important these have been for you in the past or how important they may be in the future - Working in any way that brings in income, builds your career, or strengthens your abilities/skills (1 = Not at all, 7 = Extremely important)"
+Fundamental6,"Please answer how important each of the following statements are to you at this point in your life, not how important these have been for you in the past or how important they may be in the future - Spending time trying to meet, or to stay in contact with new possible dating partners remotely (e.g., phone, video chat, texting) (1 = Not at all, 7 = Extremely important)"
+Fundamental7,"Please answer how important each of the following statements are to you at this point in your life, not how important these have been for you in the past or how important they may be in the future - Spending time trying to meet, or to stay in contact with new possible dating partners through in-person interactions (1 = Not at all, 7 = Extremely important)"
+Fundamental8,"Please answer how important each of the following statements are to you at this point in your life, not how important these have been for you in the past or how important they may be in the future - Spending quality time with my significant other (1 = Not at all, 7 = Extremely important)"
+Fundamental9,"Please answer how important each of the following statements are to you at this point in your life, not how important these have been for you in the past or how important they may be in the future - Staying in contact with family members remotely (e.g., phone, video chat, texting, email) (1 = Not at all, 7 = Extremely important)"
+Fundamental10,"Please answer how important each of the following statements are to you at this point in your life, not how important these have been for you in the past or how important they may be in the future - Spending time with family members outside your household/pod through in-person interactions (1 = Not at all, 7 = Extremely important)"
 RiskManage1,I save for the future so I can cover any unexpected costs that may come up
 RiskManage2,I actively do my best at work to reduce the risk of being fired
 RiskManage3,I have a backup plan in case my preferred/current career doesn't pan out
@@ -315,7 +337,7 @@ Schoolitems1,"If there are children who are attending school in person in your h
 Schoolitems2,"If there are children who are attending school in person in your household, please rate your agreement with the following statements  - I believe that the benefits granted for my children by attending school in-person outweigh the potential risks associated with COVID-19"
 Schoolitems3,"If there are children who are attending school in person in your household, please rate your agreement with the following statements - I have a choice/say in how my children attend school"
 Schoolitems4,"If there are children who are attending school in person in your household, please rate your agreement with the following statements - I have obligations that prevent me from keeping my children at home "
-ReasonHelp,What was the reason for giving help?
+ReasonHelp,"What was the reason for giving help? (1=Money, 2= Food or water, 3=Housold supplies, 4=caring ofr someone who was sick, 5=Help with child or dependent care, 6=Emotional support, 7=Other, 8=I have not provided help to people outside my household on the past 30 days)"
 PersonHelped,"What is your relationship with the person that you most recently helped? 1 = acquaintance, 2 = friend, 3 = family member, 4 = other"
 PresentVfuture1,"Right now I can either focus on the present or focus on the future, but not both"
 PresentVfuture2,"Right now when I make decisions, I think about the immediate present"
@@ -371,13 +393,13 @@ Entitlement9,I feel entitled to more of everything
 HowMuchSleep,"How much have you been sleeping? 1 = less than usual, 3 = about the same, 5 = more than usual "
 HourSleep,How many hours of actual sleep did you get at night? (This may be different than the number of hours you spend in bed). 
 QualitySleep,"How would you rate the quality of your sleep? 1 = poor/unrefreshing, 3 = acceptable, 5 = excellent, restful/refreshing"
-SleepExperiences1,Have you experienced any of the following more than usual? - Strange or vivid dreams
-SleepExperiences2,Have you experienced any of the following more than usual? - Nightmares or night terrors
-SleepExperiences3,Have you experienced any of the following more than usual? - Lack of dreams
-SleepExperiences4,Have you experienced any of the following more than usual? - Bouts of insomnia
-SleepExperiences5,Have you experienced any of the following more than usual? - Trouble falling asleep
-SleepExperiences6,Have you experienced any of the following more than usual? - Trouble staying asleep
-SleepExperiences7,"Have you experienced any of the following more than usual? - Change in your sleep schedule (for example, going to bed later)"
+SleepExperiences1,"Have you experienced any of the following more than usual? - Strange or vivid dreams (1=No, 2=Yes)"
+SleepExperiences2,"Have you experienced any of the following more than usual? - Nightmares or night terrors (1=No, 2=Yes)"
+SleepExperiences3,"Have you experienced any of the following more than usual? - Lack of dreams (1=No, 2=Yes)"
+SleepExperiences4,"Have you experienced any of the following more than usual? - Bouts of insomnia (1=No, 2=Yes)"
+SleepExperiences5,"Have you experienced any of the following more than usual? - Trouble falling asleep (1=No, 2=Yes)"
+SleepExperiences6,"Have you experienced any of the following more than usual? - Trouble staying asleep (1=No, 2=Yes)"
+SleepExperiences7,"Have you experienced any of the following more than usual? - Change in your sleep schedule (for e (1=No, 2=Yes)xample, going to bed later)"
 HowFastYear,"How fast did this past year go by? 1 = very slowly, 5 = very quickly"
 NewPandemic,"How likely is another pandemic that is as or more damaging (e.g. loss of life, economic impact) as COVID-19 in the next 100 years?"
 TimeTilNewPandemic,"How long will it be before another pandemic happens that is as or more damaging than COVID-19? 1 = wtihin 1 year, 2 = 5 years, 3 = 10 years, 4 = 50 years, 5 = 100 years, 6 = 200 years, 7 = 500 years, 8 = Longer"
@@ -395,3 +417,35 @@ CausesExtinction9,"How likely are each of the following to cause human extinctio
 CausesExtinction10,"Enter any other danger that could cause extinction, and the percent chance:"
 ReactanceComposite,average composite of trait reactance
 EntitlementComposite,average composite of trait psychological entitlement
+MaskMouthNose,"For preventing the spread of COVID19, how important is it to wear a mask covering both mouth and nose, compared to just covering the mouth? (1=not at all important; 7=very important)"
+NotCoverNose,"How often do you wear a mask around others in public indoors where your mouth is covered but your nose is exposed? (1=never, 4=half the time, 7=always)"
+FeelOthersNose,"When you see a person indoors wearing a mask with their nose uncovered, how does this make you feel about that person? (1=much more negatively; 4=no difference; 7=much more positively)"
+AloneTime,"About how much time do you currently spend by yourself each week? (1= 0-10%, 10=91-100%)"
+AloneTimeSatisfied,"Since the beginning of the pandemic, have you been satisfied with the amount of time you spend alone? (1=no, I would like less alone time;   3=Somewhat;   5=no, I would like more alone time)"
+WrongMaskIntention,"When you see a person indoors wearing a mask with their nose uncovered, how likely do you think it is that they are intentionally wearing their mask like this? (1=Not at all; 7=Extremely)"
+WrongMaskComfort,"If a person intentionally wears a mask indoors with their nose uncovered, to what extent do you think they are doing so for reasons of personal comfort? (1=Not at all; 7=Extremely)"
+WrongMaskComply,"WrongMaskComply.6 If a person intentionally wears a mask indoors with their nose uncovered, to what extent do you think they are doing so to 'comply' with a mask requirement that they personally disagree with? (1=Not at all; 7=Extremely)"
+Big5.1,I am the life of the party (1=Strongly disagree; 7=Strongly agree)
+Big5.2,I talk to a lot of different people at parties. (1=Strongly disagree; 7=Strongly agree)
+Big5.3,I don’t talk a lot. (1=Strongly disagree; 7=Strongly agree)
+Big5.4,I keep in the background. (1=Strongly disagree; 7=Strongly agree)
+Big5.5,I sympathize with others’ feelings (1=Strongly disagree; 7=Strongly agree)
+Big5.6,I feel others’ emotions. (1=Strongly disagree; 7=Strongly agree)
+Big5.7,I am not really interested in others. (1=Strongly disagree; 7=Strongly agree)
+Big5.8,I am not interested in other people’s problems. (1=Strongly disagree; 7=Strongly agree)
+Big5.9,I get chores done right away.  (1=Strongly disagree; 7=Strongly agree)
+Big5.10,I like order. (1=Strongly disagree; 7=Strongly agree)
+Big5.11,I often forget to put things back in their proper place.  (1=Strongly disagree; 7=Strongly agree)
+Big5.12,I make a mess of things. (1=Strongly disagree; 7=Strongly agree)
+Big5.13,I have frequent mood swings.  (1=Strongly disagree; 7=Strongly agree)
+Big5.14,I get upset easily.  (1=Strongly disagree; 7=Strongly agree)
+Big5.15,I am relaxed most of the time. (1=Strongly disagree; 7=Strongly agree)
+Big5.16,I seldom feel blue.  (1=Strongly disagree; 7=Strongly agree)
+Big5.17,I have a vivid imagination. (1=Strongly disagree; 7=Strongly agree)
+Big5.18,I have difficulty understanding abstract ideas. (1=Strongly disagree; 7=Strongly agree)
+Big5.19,I am not interested in abstract ideas.  (1=Strongly disagree; 7=Strongly agree)
+Big5.20,I do not have a good imagination. (1=Strongly disagree; 7=Strongly agree)
+GreenSettings,"Since March 11, when COVID-19 was declared a global pandemic, have you utilized “green” settings such as parks, gardens, forests, waterbodies, etc. to find peace, relax or de-stress? (1-Never; 2=Sometimes; 3=Often)"
+OutdoorRec,"To cope with the disruptions and increased demands of COVID-19, have you turned to outdoor recreation to take care of yourself and support your physical or mental health? (1-Never; 2=Sometimes; 3=Often)
+"
+RecentForgotten,Have you recently forgotten what day of the week it is? (1=Never; 3=Sometimes; 5=Regularly)

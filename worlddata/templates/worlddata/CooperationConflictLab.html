@@ -862,7 +862,6 @@
             const all_dates = [...new Set(files[0].map(d => d.Date))];
             const all_variables = files[0].columns;
             all_variables.splice(0, 3);
-            let random_colors = [3, 9, 18, 23, 31, 37, 1, 12, 15, 26, 29, 39, 42, 5, 8, 19, 22, 32, 38, 43, 2, 10, 17, 24, 30, 40, 4, 11, 16, 25, 33, 36, 54];
             // create description lookup
             let descriptions_lookup = [];
             for (let row of files[2]) {
@@ -885,24 +884,31 @@
                 "RiskBehaviorComposite", "CFC.Future", "CFC.Immediate", "CFC.Composite", "HourSleep",
                 "TimeTilNewPandemic", "CausesExtinction1", "CausesExtinction2", "CausesExtinction3",
                 "CausesExtinction4", "CausesExtinction5", "CausesExtinction6", "CausesExtinction8",
-                "CausesExtinction9", "CausesExtinction10", "ReactanceComposite", "EntitlementComposite"
+                "CausesExtinction9", "CausesExtinction10", "ReactanceComposite", "EntitlementComposite",
+                "VaccineTV", "VaccinePeers", "VaccineRightThing", "TimeToVaccine", "Optimistic1", "Optimistic2",
+                "Optimistic3", "Optimistic4", "Optimistic5", "Optimistic6", "Optimistic7", "Optimistic8",
+                "Optimistic9", "AloneTime", "b5_extroversion", "b5_agreeable", "b5_conscientious", "b5_negemotion",
+                "b5_openness"
             ];
             let avg5 = ["HelpGiven", "HelpReceived", "MutualAid", "Predictability", "TraitEmpathicConcern",
-                "TraitEmpathicdistress", "BeliefInConspiracy", "ReactanceComposite"];
+                "TraitEmpathicdistress", "BeliefInConspiracy", "ReactanceComposite", "b5_extroversion",
+                "b5_agreeable", "b5_conscientious", "b5_negemotion", "b5_openness"];
             let avg4 = ["Repayment"];
             let avg6 = ["Challenges"];
             let avg7 = ["PFIaffectNeigh", "PFIaffectCountry", "PFIsharedfateNeigh", "PFIsharedfateCountry",
                 "EmpatheticConcern", "EmpatheticDistress", "PoliticalOrientation", "RiskReduction", "RiskAvoidance",
                 "RiskRetention", "RiskTransfer", "RiskBehaviorComposite", "EntitlementComposite"];
-            let cat10 = ["SSES", "OthersVaccine", "TimePassed"];
-            let cat12 = ["Back2Normal", "TimeToVaccine"];
+            let cat10 = ["SSES", "OthersVaccine", "TimePassed", "VaccineRightThing", "AloneTime"];
+            let cat12 = ["Back2Normal", "TimeToVaccine", "TimeToVaccine"];
             let cat30 = ["SmallSooner", "LargerSooner", "@00025.1", "@00039.1", "@00098.1", "@0021.1",
                 "@0034.1", "@0055.1", "@0087.1", "@013.1", "@02.1", "@025.1"];
             let cat9 = ["Income", "Savings", "Assests", "Wealth"];
-            let cat8 = ["ReasonHelp", "TimeTilNewPandemic"];
+            let cat8 = ["ReasonHelp", "TimeTilNewPandemic", "VaccineTV", "VaccinePeers"];
             let cat100 = ["CausesExtinction1", "CausesExtinction2", "CausesExtinction3",
                 "CausesExtinction4", "CausesExtinction5", "CausesExtinction6", "CausesExtinction8",
-                "CausesExtinction9", "CausesExtinction10"];
+                "CausesExtinction9", "CausesExtinction10", "Optimistic1", "Optimistic2",
+                "Optimistic3", "Optimistic4", "Optimistic5", "Optimistic6", "Optimistic7", "Optimistic8",
+                "Optimistic9"];
 
             let variable1 = "Stress";
             let variable2 = "PerceptionRisk";
@@ -934,6 +940,10 @@
                 let d3c = 0;
                 let d4v = 0;
                 let d4c = 0;
+                let d5c = 0;
+                let d5v = 0;
+                let d6c = 0;
+                let d6v = 0;
                 let data = [];
                 let variable;
                 let colorCSS;
@@ -959,12 +969,20 @@
                     } else if (row.Date == "12/28/2020") {
                         d4v += +row[variable];
                         d4c++;
+                    } else if (row.Date == "01/27/2021") {
+                        d5v += +row[variable];
+                        d5c++;
+                    } else if (row.Date == "02/26/2021") {
+                        d6v += +row[variable];
+                        d6c++;
                     }
                 }
                 data.push(+numberFormatterPercentage(d1v / d1c));
                 data.push(+numberFormatterPercentage(d2v / d2c));
                 data.push(+numberFormatterPercentage(d3v / d3c));
                 data.push(+numberFormatterPercentage(d4v / d4c));
+                data.push(+numberFormatterPercentage(d5v / d5c));
+                data.push(+numberFormatterPercentage(d6v / d6c));
 
                 // to hide 0's
                 data.forEach(function (element, index) {
