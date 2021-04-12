@@ -350,9 +350,8 @@ figure {
 }
 
 .chart-options .chart-filters .radio-container label {
-  display: block;
   position: relative;
-  padding-left: 35px;
+  padding-left: 30px;
   margin-bottom: 15px;
   cursor: pointer;
   -webkit-user-select: none;
@@ -1722,45 +1721,39 @@ figure {
   line-height: 0.8;
 }
 
-.covid-area {
+.covid-bars-all {
   padding-bottom: 0;
 }
 
-.covid-bars,
-.covid-area,
+.covid-bars-all,
+.covid-bars-30,
 .covid-excess {
   padding-top: 0;
 }
 
-.covid-bars .restricted-band,
-.covid-area .restricted-band,
+.covid-bars-all .restricted-band,
+.covid-bars-30 .restricted-band,
 .covid-excess .restricted-band {
   fill: #9d61d1;
 }
 
-.covid-bars .curfew-band,
-.covid-area .curfew-band,
+.covid-bars-all .curfew-band,
+.covid-bars-30 .curfew-band,
 .covid-excess .curfew-band {
   fill: #ed45b2;
 }
 
-.covid-bars .lockdown-band,
-.covid-area .lockdown-band,
+.covid-bars-all .lockdown-band,
+.covid-bars-30 .lockdown-band,
 .covid-excess .lockdown-band {
   fill: #970f67;
 }
 
 .covid-dashboard .covid-dashboard-options {
   display: flex;
-  flex-direction: column-reverse;
+  flex-direction: column;
   justify-content: space-between;
   align-items: flex-start;
-}
-
-@media (min-width: 1024px) {
-  .covid-dashboard .covid-dashboard-options {
-    flex-direction: row;
-  }
 }
 
 .covid-dashboard .chart-filters {
@@ -1769,6 +1762,9 @@ figure {
 }
 
 .covid-dashboard .covid-dashboard-country {
+  display: flex;
+  width: 100%;
+  justify-content: flex-end;
   color: #1A94FF;
   font-size: 140%;
   font-weight: 500;
@@ -1780,13 +1776,29 @@ figure {
 
 @media (min-width: 1025px) {
   .covid-dashboard .covid-dashboard-country {
-    margin-bottom: 0px;
     text-align: end;
   }
 }
 
+.covid-dashboard .covid-dashboard-country p {
+  margin: 0;
+  border-style: solid;
+  border-radius: 0 30px;
+  border-width: 2px;
+  padding: 5px 20px;
+  margin-right: -20px;
+  margin-top: -10px;
+}
+
 .covid-dashboard .radio-container {
   min-width: 140px;
+  width: 100%;
+  display: flex;
+  justify-content: flex-end;
+}
+
+.covid-dashboard .radio-container label {
+  padding-right: 20px;
 }
 
 .covid-dashboard .side-chart-container {
@@ -1802,6 +1814,51 @@ figure {
   .covid-dashboard .side-chart-container {
     margin-bottom: 20px;
   }
+}
+
+.covid-dashboard .profile-container {
+  flex-direction: row;
+  display: flex;
+  justify-content: space-around;
+  width: 100%;
+  margin-bottom: 10px;
+}
+
+@media only screen and (min-width: 850px) {
+  .covid-dashboard .profile-container {
+    flex-direction: column;
+  }
+}
+
+@media only screen and (min-width: 1025px) {
+  .covid-dashboard .profile-container {
+    flex-direction: row;
+  }
+}
+
+.covid-dashboard .profile-container .profile-column2 {
+  margin-left: 30px;
+}
+
+@media only screen and (min-width: 850px) {
+  .covid-dashboard .profile-container .profile-column2 {
+    margin-left: 0;
+  }
+}
+
+@media only screen and (min-width: 1025px) {
+  .covid-dashboard .profile-container .profile-column2 {
+    margin-left: 30px;
+  }
+}
+
+.covid-dashboard .profile-container .profile-item {
+  display: flex;
+}
+
+.covid-dashboard .profile-container .profile-item .profile-value {
+  font-weight: 600;
+  margin-left: 10px;
 }
 
 .covid-dashboard .covid-map {
@@ -1827,12 +1884,12 @@ figure {
   }
 }
 
-.covid-dashboard .covid-area {
-  height: 150px;
+.covid-dashboard .covid-bars-all {
+  height: 155px;
 }
 
-.covid-dashboard .covid-bars {
-  height: 205px;
+.covid-dashboard .covid-bars-30 {
+  height: 155px;
 }
 
 .covid-dashboard .chart-legend {
@@ -1948,11 +2005,8 @@ figure {
   margin-bottom: 2px;
 }
 
-.CCLab-old-dashboard .covid-dashboard-options {
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  align-items: flex-start;
+#covid_top_cases .highcharts-data-label-color-1 text {
+  fill: #fff;
 }
 
 .CCLab-old-dashboard .chart-filters {

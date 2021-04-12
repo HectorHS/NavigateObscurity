@@ -271,9 +271,8 @@ figure {
     .radio-container {
       /* The container */
       label {
-        display: block;
         position: relative;
-        padding-left: 35px;
+        padding-left: 30px;
         margin-bottom: 15px;
         cursor: pointer;
         -webkit-user-select: none;
@@ -564,11 +563,11 @@ figure {
     line-height: 0.8;
   }
 }
-.covid-area {
+.covid-bars-all {
   padding-bottom: 0;
 }
-.covid-bars,
-.covid-area,
+.covid-bars-all,
+.covid-bars-30,
 .covid-excess {
   padding-top: 0;
   .restricted-band {
@@ -585,19 +584,18 @@ figure {
 .covid-dashboard {
   .covid-dashboard-options {
     display: flex;
-    flex-direction: column-reverse;
+    flex-direction: column;
     justify-content: space-between;
     align-items: flex-start;
-
-    @media (min-width: ($desktop-breakpoint - 1px)) {
-      flex-direction: row;
-    }
   }
   .chart-filters {
     text-align: inherit;
     margin-bottom: 0;
   }
   .covid-dashboard-country {
+    display: flex;
+    width: 100%;
+    justify-content: flex-end;
     color: $bright-blue;
     font-size: 140%;
     font-weight: 500;
@@ -606,12 +604,26 @@ figure {
     margin-bottom: 10px;
     text-align: start;
     @media (min-width: $desktop-breakpoint) {
-      margin-bottom: 0px;
       text-align: end;
+    }
+    p {
+      margin: 0;
+      border-style: solid;
+      border-radius: 0 30px;
+      border-width: 2px;
+      padding: 5px 20px;
+      margin-right: -20px;
+      margin-top: -10px;
     }
   }
   .radio-container {
     min-width: 140px;
+    width: 100%;
+    display: flex;
+    justify-content: flex-end;
+    label {
+      padding-right: 20px;
+    }
   }
   .side-chart-container {
     box-shadow: 2px 2px 8px $navbar-color;
@@ -622,6 +634,39 @@ figure {
     border-radius: 30px;
     @media only screen and (min-width: $tablet-breakpoint) {
       margin-bottom: 20px;
+    }
+  }
+  .profile-container {
+    flex-direction: row;
+    display: flex;
+    justify-content: space-around;
+    width: 100%;
+    margin-bottom: 10px;
+    @media only screen and (min-width: $tablet-breakpoint) {
+      flex-direction: column;
+    }
+    @media only screen and (min-width: $desktop-breakpoint) {
+      flex-direction: row;
+    }
+    .profile-column2 {
+      margin-left: 30px;
+      @media only screen and (min-width: $tablet-breakpoint) {
+        margin-left: 0;
+      }
+      @media only screen and (min-width: $desktop-breakpoint) {
+        margin-left: 30px;
+      }
+    }
+
+    .profile-item {
+      display: flex;
+      .profile-label {
+      }
+      .profile-value {
+        // color: $bright-blue;
+        font-weight: 600;
+        margin-left: 10px;
+      }
     }
   }
   .covid-map {
@@ -641,11 +686,11 @@ figure {
       }
     }
   }
-  .covid-area {
-    height: 150px;
+  .covid-bars-all {
+    height: 155px;
   }
-  .covid-bars {
-    height: 205px;
+  .covid-bars-30 {
+    height: 155px;
   }
   .chart-legend {
     font-size: 80%;
@@ -744,13 +789,9 @@ figure {
   margin-bottom: 2px;
 }
 
-.CCLab-old-dashboard {
-  .covid-dashboard-options {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    align-items: flex-start;
-  }
+#covid_top_cases .highcharts-data-label-color-1 text {
+  fill: #fff;
+}
   .chart-filters {
     text-align: inherit;
     margin-bottom: 0;

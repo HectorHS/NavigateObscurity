@@ -10,8 +10,24 @@ function numberFormatterInteger(number) {
     var value = number.toLocaleString(undefined, { maximumFractionDigits: 0 });
     return value;
 }
+function numberFormatterIntegerLarge(number) {
+    let numberFormated;
+    if (number > 1000000) {
+        let value = number / 1000000;
+        numberFormated = numberFormatterPercentage(value);
+        return numberFormated + "m";
+    } else {
+        var value = number.toLocaleString(undefined, { maximumFractionDigits: 0 });
+        return value;
+    }
+}
 function numberFormatterPercentage(number) {
-    var value = number.toLocaleString(undefined, { maximumFractionDigits: 2 });
+    let value;
+    if (number > 1000) {
+        value = number.toLocaleString(undefined, { maximumFractionDigits: 0 });
+    } else {
+        value = number.toLocaleString(undefined, { maximumFractionDigits: 2 });
+    }
     return value;
 }
 function numberFormatterSeparator(number) {
