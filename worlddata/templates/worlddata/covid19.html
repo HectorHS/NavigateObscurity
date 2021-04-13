@@ -694,65 +694,95 @@
 
             return week_data;
         }
-        function get_latest_excess_data() {
+        function get_latest_excess_data(year) {
             let latest_data = [];
             for (let row of files[3]) {
                 if (row.Country == country) {
-                    if (row.Deaths_2020 > 0) {
-                        latest_data.push(+row.Deaths_2020);
+                    if (year == 2020) {
+                        if (row.Deaths_2020 > 0) {
+                            latest_data.push(+row.Deaths_2020);
+                        }
+                    } else if (year == 2021) {
+                        if (row.Deaths_2021 > 0) {
+                            latest_data.push(+row.Deaths_2021);
+                        }
                     }
                 }
             }
             return latest_data;
         }
         function excess_data_update() {
-            let latest = get_latest_excess_data();
+            let excess20 = get_latest_excess_data(2020);
+            let excess21 = get_latest_excess_data(2021);
             let old = get_old_excess_data();
-            let latestTotal = 0;
-            let oldTotal = 0;
-            let total_excess_text = '';
-
-            // first reset options otherwise might get errors
-            let options = {
-                plotOptions: {
-                    spline: {
-                        label: {
-                            enabled: false,
-                        }
-                    }
+            let series20 = {
+                data: [],
+                label: {
+                    enabled: false,
+                    format: ''
                 }
-            };
+            }
+            let series21 = {
+                data: [],
+                label: {
+                    enabled: false,
+                    format: ''
+                }
+            }
 
-            excess_chart.update(options);
+            //excess_chart.update(options);
             excess_chart.series[0].setData(old);
-            excess_chart.series[1].setData(latest);
 
-            if (latest.length != 0) {
-                for (let i = 0; i < latest.length; i++) {
-                    latestTotal += +latest[i];
+            if (excess20.length != 0) {
+                let oldTotal = 0;
+                let total2020 = 0;
+                let total_excess_text_2020 = '';
+
+                for (let i = 0; i < excess20.length; i++) {
+                    total2020 += +excess20[i];
                     oldTotal += +old[i];
                 }
-                total_excess = latestTotal - oldTotal;
+                total_excess_2020 = total2020 - oldTotal;
 
-                let val = numberFormatterInteger(total_excess);
+                let val = numberFormatterInteger(total_excess_2020);
                 val = numberFormatterSeparator(val);
-                if (total_excess > 0) {
-                    total_excess_text = "+ " + val.toString();
+                if (total_excess_2020 > 0) {
+                    total_excess_text_2020 = "+ " + val.toString();
                 } else {
-                    total_excess_text = "- " + val.toString();
+                    total_excess_text_2020 = val.toString();
                 }
-                let options = {
-                    plotOptions: {
-                        spline: {
-                            label: {
-                                enabled: true,
-                                format: total_excess_text
-                            }
-                        }
-                    }
-                };
-                excess_chart.update(options);
+
+                series20.label.format = total_excess_text_2020;
+                series20.label.enabled = true;
             }
+            if (excess21.length != 0) {
+                let oldTotal = 0;
+                let total2021 = 0;
+                let total_excess_2021 = 0;
+                let total_excess_text_2021 = '';
+
+                for (let i = 0; i < excess21.length; i++) {
+                    total2021 += +excess21[i];
+                    oldTotal += +old[i];
+                }
+                total_excess_2021 = total2021 - oldTotal;
+
+                let val = numberFormatterInteger(total_excess_2021);
+                val = numberFormatterSeparator(val);
+                if (total_excess_2021 > 0) {
+                    total_excess_text_2021 = "+ " + val.toString();
+                } else {
+                    total_excess_text_2021 = val.toString();
+                }
+
+                series21.label.format = total_excess_text_2021;
+                series21.label.enabled = true;
+            }
+            series20.data = excess20;
+            series21.data = excess21;
+            excess_chart.series[1].update(series20, false);
+            excess_chart.series[2].update(series21, false);
+            excess_chart.redraw();
             excess_chart.setSize();
         }
         function initialise_top_cases_data() {
@@ -872,12 +902,26 @@
 
         intial_map_data = get_map_data();
         xAxisBands = get_bands();
-        initial_area_data = get_area_data();
         initial_bar_data = get_bar_data();
+        initial_bar_30_data = JSON.parse(JSON.stringify(initial_bar_data));
+        initial_bar_30_data = initial_bar_30_data.slice(Math.max(initial_bar_30_data.length - 30, 0));
         initial_old_excess_data = get_old_excess_data();
-        initial_latest_excess_data = get_latest_excess_data();
+        initial_2020_excess_data = get_latest_excess_data(2020);
+        initial_2021_excess_data = get_latest_excess_data(2021);
         initialise_top_cases_data();
         initial_map_response_data = get_map_response_data();
+        setStats();
+        let chartXAxis = {
+            categories: all_dates,
+            tickInterval: 20,
+            labels: {
+                enabled: false
+            },
+            title: {
+                enabled: false
+            },
+            plotBands: xAxisBands,
+        };
 
         // Dashboard 1
         // Initiate the map chart
@@ -1113,8 +1157,10 @@
                     let tip = "";
                     if (this.series.index == 0) {
                         tip = '<text><span style="font-size: 1.1em"><strong>Week ' + title + '</strong></span><br>Weekly death toll (average of 2015-9): ' + value + '</text>';
-                    } else {
+                    } else if (this.series.index == 1) {
                         tip = '<text><span style="font-size: 1.1em"><strong>Week ' + title + '</strong></span><br>Weekly death toll (2020): ' + value + '</text>';
+                    } else {
+                        tip = '<text><span style="font-size: 1.1em"><strong>Week ' + title + '</strong></span><br>Weekly death toll (2021): ' + value + '</text>';
                     }
 
                     return tip
@@ -1126,14 +1172,30 @@
                 name: "2015-9 average",
                 type: 'column',
                 colorIndex: 50,
-                data: initial_old_excess_data
+                data: initial_old_excess_data,
+
             },
             {
                 id: "2020",
                 name: "2020",
                 type: 'spline',
+                colorIndex: 44,
+                data: initial_2020_excess_data,
+                label: {
+                    enabled: false,
+                    format: ''
+                }
+            },
+            {
+                id: "2021",
+                name: "2021",
+                type: 'spline',
                 colorIndex: 9,
-                data: initial_latest_excess_data
+                data: initial_2021_excess_data,
+                label: {
+                    enabled: false,
+                    format: ''
+                }
             },
             ],
             legend: {
