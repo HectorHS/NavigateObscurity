@@ -179,6 +179,7 @@ function getCountryCode(country) {
         "Kiribati": "KIR",
         "Korea, Democratic People's Republic of": "PRK",
         "Dem. People's Republic of Korea": "PRK",
+        "Democratic People's Republic of Korea": "PRK",
         "Korea, Republic of": "KOR",
         "Republic of Korea": "KOR",
         "Korea, South": "KOR",
@@ -215,6 +216,7 @@ function getCountryCode(country) {
         "Micronesia, Federated States of": "FSM",
         "Micronesia (Fed. States of)": "FSM",
         "Federated States of Micronesia": "FSM",
+        "Micronesia (Federated States of)": "FSM",
         "Moldova": "MDA",
         "Republic of Moldova": "MDA",
         "Monaco": "MCO",
@@ -1395,9 +1397,9 @@ Highcharts.setOptions({
         gradient0area: {
             tagName: 'linearGradient',
             id: 'gradient-area-0',
-            x1: 0,
-            y1: 0,
-            x2: 0,
+            x1: 0.4,
+            y1: 0.4,
+            x2: 1,
             y2: 1,
             children: [{
                 tagName: 'stop',
@@ -1410,9 +1412,9 @@ Highcharts.setOptions({
         gradient1area: {
             tagName: 'linearGradient',
             id: 'gradient-area-1',
-            x1: 0,
-            y1: 0,
-            x2: 0,
+            x1: 0.4,
+            y1: 0.4,
+            x2: 1,
             y2: 1,
             children: [{
                 tagName: 'stop',
@@ -1425,9 +1427,9 @@ Highcharts.setOptions({
         gradient2area: {
             tagName: 'linearGradient',
             id: 'gradient-area-2',
-            x1: 0,
-            y1: 0,
-            x2: 0,
+            x1: 0.4,
+            y1: 0.4,
+            x2: 1,
             y2: 1,
             children: [{
                 tagName: 'stop',
@@ -1440,9 +1442,9 @@ Highcharts.setOptions({
         gradient3area: {
             tagName: 'linearGradient',
             id: 'gradient-area-3',
-            x1: 0,
-            y1: 0,
-            x2: 0,
+            x1: 0.4,
+            y1: 0.4,
+            x2: 1,
             y2: 1,
             children: [{
                 tagName: 'stop',
@@ -1455,9 +1457,9 @@ Highcharts.setOptions({
         gradient4area: {
             tagName: 'linearGradient',
             id: 'gradient-area-4',
-            x1: 0,
-            y1: 0,
-            x2: 0,
+            x1: 0.4,
+            y1: 0.4,
+            x2: 1,
             y2: 1,
             children: [{
                 tagName: 'stop',
@@ -1470,9 +1472,9 @@ Highcharts.setOptions({
         gradient5area: {
             tagName: 'linearGradient',
             id: 'gradient-area-5',
-            x1: 0,
-            y1: 0,
-            x2: 0,
+            x1: 0.4,
+            y1: 0.4,
+            x2: 1,
             y2: 1,
             children: [{
                 tagName: 'stop',
@@ -1485,9 +1487,9 @@ Highcharts.setOptions({
         gradient6area: {
             tagName: 'linearGradient',
             id: 'gradient-area-6',
-            x1: 0,
-            y1: 0,
-            x2: 0,
+            x1: 0.4,
+            y1: 0.4,
+            x2: 1,
             y2: 1,
             children: [{
                 tagName: 'stop',
@@ -1500,9 +1502,9 @@ Highcharts.setOptions({
         gradient7area: {
             tagName: 'linearGradient',
             id: 'gradient-area-7',
-            x1: 0,
-            y1: 0,
-            x2: 0,
+            x1: 0.4,
+            y1: 0.4,
+            x2: 1,
             y2: 1,
             children: [{
                 tagName: 'stop',
@@ -1515,9 +1517,9 @@ Highcharts.setOptions({
         gradient8area: {
             tagName: 'linearGradient',
             id: 'gradient-area-8',
-            x1: 0,
-            y1: 0,
-            x2: 0,
+            x1: 0.4,
+            y1: 0.4,
+            x2: 1,
             y2: 1,
             children: [{
                 tagName: 'stop',
@@ -1531,9 +1533,9 @@ Highcharts.setOptions({
         gradient9area: {
             tagName: 'linearGradient',
             id: 'gradient-area-9',
-            x1: 0,
-            y1: 0,
-            x2: 0,
+            x1: 0.4,
+            y1: 0.4,
+            x2: 1,
             y2: 1,
             children: [{
                 tagName: 'stop',
@@ -1546,9 +1548,9 @@ Highcharts.setOptions({
         gradient10area: {
             tagName: 'linearGradient',
             id: 'gradient-area-10',
-            x1: 0,
-            y1: 0,
-            x2: 0,
+            x1: 0.4,
+            y1: 0.4,
+            x2: 1,
             y2: 1,
             children: [{
                 tagName: 'stop',
@@ -1561,9 +1563,9 @@ Highcharts.setOptions({
         gradient11area: {
             tagName: 'linearGradient',
             id: 'gradient-area-11',
-            x1: 0,
-            y1: 0,
-            x2: 0,
+            x1: 0.4,
+            y1: 0.4,
+            x2: 1,
             y2: 1,
             children: [{
                 tagName: 'stop',
@@ -1576,9 +1578,9 @@ Highcharts.setOptions({
         gradient12area: {
             tagName: 'linearGradient',
             id: 'gradient-area-12',
-            x1: 0,
-            y1: 0,
-            x2: 0,
+            x1: 0.4,
+            y1: 0.4,
+            x2: 1,
             y2: 1,
             children: [{
                 tagName: 'stop',
@@ -1591,9 +1593,9 @@ Highcharts.setOptions({
         gradient13area: {
             tagName: 'linearGradient',
             id: 'gradient-area-13',
-            x1: 0,
-            y1: 0,
-            x2: 0,
+            x1: 0.4,
+            y1: 0.4,
+            x2: 1,
             y2: 1,
             children: [{
                 tagName: 'stop',
@@ -1606,9 +1608,9 @@ Highcharts.setOptions({
         gradient14area: {
             tagName: 'linearGradient',
             id: 'gradient-area-14',
-            x1: 0,
-            y1: 0,
-            x2: 0,
+            x1: 0.4,
+            y1: 0.4,
+            x2: 1,
             y2: 1,
             children: [{
                 tagName: 'stop',
@@ -1621,9 +1623,9 @@ Highcharts.setOptions({
         gradient15area: {
             tagName: 'linearGradient',
             id: 'gradient-area-15',
-            x1: 0,
-            y1: 0,
-            x2: 0,
+            x1: 0.4,
+            y1: 0.4,
+            x2: 1,
             y2: 1,
             children: [{
                 tagName: 'stop',
@@ -1636,9 +1638,9 @@ Highcharts.setOptions({
         gradient16area: {
             tagName: 'linearGradient',
             id: 'gradient-area-16',
-            x1: 0,
-            y1: 0,
-            x2: 0,
+            x1: 0.4,
+            y1: 0.4,
+            x2: 1,
             y2: 1,
             children: [{
                 tagName: 'stop',
@@ -1651,9 +1653,9 @@ Highcharts.setOptions({
         gradient17area: {
             tagName: 'linearGradient',
             id: 'gradient-area-17',
-            x1: 0,
-            y1: 0,
-            x2: 0,
+            x1: 0.4,
+            y1: 0.4,
+            x2: 1,
             y2: 1,
             children: [{
                 tagName: 'stop',
@@ -1666,9 +1668,9 @@ Highcharts.setOptions({
         gradient18area: {
             tagName: 'linearGradient',
             id: 'gradient-area-18',
-            x1: 0,
-            y1: 0,
-            x2: 0,
+            x1: 0.4,
+            y1: 0.4,
+            x2: 1,
             y2: 1,
             children: [{
                 tagName: 'stop',
@@ -1681,9 +1683,9 @@ Highcharts.setOptions({
         gradient19area: {
             tagName: 'linearGradient',
             id: 'gradient-area-19',
-            x1: 0,
-            y1: 0,
-            x2: 0,
+            x1: 0.4,
+            y1: 0.4,
+            x2: 1,
             y2: 1,
             children: [{
                 tagName: 'stop',
@@ -1696,9 +1698,9 @@ Highcharts.setOptions({
         gradient20area: {
             tagName: 'linearGradient',
             id: 'gradient-area-20',
-            x1: 0,
-            y1: 0,
-            x2: 0,
+            x1: 0.4,
+            y1: 0.4,
+            x2: 1,
             y2: 1,
             children: [{
                 tagName: 'stop',
@@ -1711,9 +1713,9 @@ Highcharts.setOptions({
         gradient21area: {
             tagName: 'linearGradient',
             id: 'gradient-area-21',
-            x1: 0,
-            y1: 0,
-            x2: 0,
+            x1: 0.4,
+            y1: 0.4,
+            x2: 1,
             y2: 1,
             children: [{
                 tagName: 'stop',
@@ -1726,9 +1728,9 @@ Highcharts.setOptions({
         gradient22area: {
             tagName: 'linearGradient',
             id: 'gradient-area-22',
-            x1: 0,
-            y1: 0,
-            x2: 0,
+            x1: 0.4,
+            y1: 0.4,
+            x2: 1,
             y2: 1,
             children: [{
                 tagName: 'stop',
@@ -1741,9 +1743,9 @@ Highcharts.setOptions({
         gradient23area: {
             tagName: 'linearGradient',
             id: 'gradient-area-23',
-            x1: 0,
-            y1: 0,
-            x2: 0,
+            x1: 0.4,
+            y1: 0.4,
+            x2: 1,
             y2: 1,
             children: [{
                 tagName: 'stop',
@@ -1756,9 +1758,9 @@ Highcharts.setOptions({
         gradient24area: {
             tagName: 'linearGradient',
             id: 'gradient-area-24',
-            x1: 0,
-            y1: 0,
-            x2: 0,
+            x1: 0.4,
+            y1: 0.4,
+            x2: 1,
             y2: 1,
             children: [{
                 tagName: 'stop',
@@ -1771,9 +1773,9 @@ Highcharts.setOptions({
         gradient25area: {
             tagName: 'linearGradient',
             id: 'gradient-area-25',
-            x1: 0,
-            y1: 0,
-            x2: 0,
+            x1: 0.4,
+            y1: 0.4,
+            x2: 1,
             y2: 1,
             children: [{
                 tagName: 'stop',
@@ -1786,9 +1788,9 @@ Highcharts.setOptions({
         gradient26area: {
             tagName: 'linearGradient',
             id: 'gradient-area-26',
-            x1: 0,
-            y1: 0,
-            x2: 0,
+            x1: 0.4,
+            y1: 0.4,
+            x2: 1,
             y2: 1,
             children: [{
                 tagName: 'stop',
@@ -1801,9 +1803,9 @@ Highcharts.setOptions({
         gradient27area: {
             tagName: 'linearGradient',
             id: 'gradient-area-27',
-            x1: 0,
-            y1: 0,
-            x2: 0,
+            x1: 0.4,
+            y1: 0.4,
+            x2: 1,
             y2: 1,
             children: [{
                 tagName: 'stop',
@@ -1816,9 +1818,9 @@ Highcharts.setOptions({
         gradient28area: {
             tagName: 'linearGradient',
             id: 'gradient-area-28',
-            x1: 0,
-            y1: 0,
-            x2: 0,
+            x1: 0.4,
+            y1: 0.4,
+            x2: 1,
             y2: 1,
             children: [{
                 tagName: 'stop',
@@ -1831,9 +1833,9 @@ Highcharts.setOptions({
         gradient29area: {
             tagName: 'linearGradient',
             id: 'gradient-area-29',
-            x1: 0,
-            y1: 0,
-            x2: 0,
+            x1: 0.4,
+            y1: 0.4,
+            x2: 1,
             y2: 1,
             children: [{
                 tagName: 'stop',
@@ -1846,9 +1848,9 @@ Highcharts.setOptions({
         gradient30area: {
             tagName: 'linearGradient',
             id: 'gradient-area-30',
-            x1: 0,
-            y1: 0,
-            x2: 0,
+            x1: 0.4,
+            y1: 0.4,
+            x2: 1,
             y2: 1,
             children: [{
                 tagName: 'stop',
@@ -1861,9 +1863,9 @@ Highcharts.setOptions({
         gradient31area: {
             tagName: 'linearGradient',
             id: 'gradient-area-31',
-            x1: 0,
-            y1: 0,
-            x2: 0,
+            x1: 0.4,
+            y1: 0.4,
+            x2: 1,
             y2: 1,
             children: [{
                 tagName: 'stop',
@@ -1876,9 +1878,9 @@ Highcharts.setOptions({
         gradient32area: {
             tagName: 'linearGradient',
             id: 'gradient-area-32',
-            x1: 0,
-            y1: 0,
-            x2: 0,
+            x1: 0.4,
+            y1: 0.4,
+            x2: 1,
             y2: 1,
             children: [{
                 tagName: 'stop',
@@ -1891,9 +1893,9 @@ Highcharts.setOptions({
         gradient33area: {
             tagName: 'linearGradient',
             id: 'gradient-area-33',
-            x1: 0,
-            y1: 0,
-            x2: 0,
+            x1: 0.4,
+            y1: 0.4,
+            x2: 1,
             y2: 1,
             children: [{
                 tagName: 'stop',
@@ -1906,9 +1908,9 @@ Highcharts.setOptions({
         gradient34area: {
             tagName: 'linearGradient',
             id: 'gradient-area-34',
-            x1: 0,
-            y1: 0,
-            x2: 0,
+            x1: 0.4,
+            y1: 0.4,
+            x2: 1,
             y2: 1,
             children: [{
                 tagName: 'stop',
@@ -1921,9 +1923,9 @@ Highcharts.setOptions({
         gradient35area: {
             tagName: 'linearGradient',
             id: 'gradient-area-35',
-            x1: 0,
-            y1: 0,
-            x2: 0,
+            x1: 0.4,
+            y1: 0.4,
+            x2: 1,
             y2: 1,
             children: [{
                 tagName: 'stop',
@@ -1936,9 +1938,9 @@ Highcharts.setOptions({
         gradient36area: {
             tagName: 'linearGradient',
             id: 'gradient-area-36',
-            x1: 0,
-            y1: 0,
-            x2: 0,
+            x1: 0.4,
+            y1: 0.4,
+            x2: 1,
             y2: 1,
             children: [{
                 tagName: 'stop',
@@ -1951,9 +1953,9 @@ Highcharts.setOptions({
         gradient37area: {
             tagName: 'linearGradient',
             id: 'gradient-area-37',
-            x1: 0,
-            y1: 0,
-            x2: 0,
+            x1: 0.4,
+            y1: 0.4,
+            x2: 1,
             y2: 1,
             children: [{
                 tagName: 'stop',
@@ -1966,9 +1968,9 @@ Highcharts.setOptions({
         gradient38area: {
             tagName: 'linearGradient',
             id: 'gradient-area-38',
-            x1: 0,
-            y1: 0,
-            x2: 0,
+            x1: 0.4,
+            y1: 0.4,
+            x2: 1,
             y2: 1,
             children: [{
                 tagName: 'stop',
@@ -1981,9 +1983,9 @@ Highcharts.setOptions({
         gradient39area: {
             tagName: 'linearGradient',
             id: 'gradient-area-39',
-            x1: 0,
-            y1: 0,
-            x2: 0,
+            x1: 0.4,
+            y1: 0.4,
+            x2: 1,
             y2: 1,
             children: [{
                 tagName: 'stop',
@@ -1996,9 +1998,9 @@ Highcharts.setOptions({
         gradient40area: {
             tagName: 'linearGradient',
             id: 'gradient-area-40',
-            x1: 0,
-            y1: 0,
-            x2: 0,
+            x1: 0.4,
+            y1: 0.4,
+            x2: 1,
             y2: 1,
             children: [{
                 tagName: 'stop',
@@ -2011,9 +2013,9 @@ Highcharts.setOptions({
         gradient41area: {
             tagName: 'linearGradient',
             id: 'gradient-area-41',
-            x1: 0,
-            y1: 0,
-            x2: 0,
+            x1: 0.4,
+            y1: 0.4,
+            x2: 1,
             y2: 1,
             children: [{
                 tagName: 'stop',
@@ -2026,9 +2028,9 @@ Highcharts.setOptions({
         gradient42area: {
             tagName: 'linearGradient',
             id: 'gradient-area-42',
-            x1: 0,
-            y1: 0,
-            x2: 0,
+            x1: 0.4,
+            y1: 0.4,
+            x2: 1,
             y2: 1,
             children: [{
                 tagName: 'stop',
@@ -2041,9 +2043,9 @@ Highcharts.setOptions({
         gradient43area: {
             tagName: 'linearGradient',
             id: 'gradient-area-43',
-            x1: 0,
-            y1: 0,
-            x2: 0,
+            x1: 0.4,
+            y1: 0.4,
+            x2: 1,
             y2: 1,
             children: [{
                 tagName: 'stop',
@@ -2056,9 +2058,9 @@ Highcharts.setOptions({
         gradient44area: {
             tagName: 'linearGradient',
             id: 'gradient-area-44',
-            x1: 0,
-            y1: 0,
-            x2: 0,
+            x1: 0.4,
+            y1: 0.4,
+            x2: 1,
             y2: 1,
             children: [{
                 tagName: 'stop',
@@ -2071,9 +2073,9 @@ Highcharts.setOptions({
         gradient45area: {
             tagName: 'linearGradient',
             id: 'gradient-area-45',
-            x1: 0,
-            y1: 0,
-            x2: 0,
+            x1: 0.4,
+            y1: 0.4,
+            x2: 1,
             y2: 1,
             children: [{
                 tagName: 'stop',
@@ -2086,9 +2088,9 @@ Highcharts.setOptions({
         gradient46area: {
             tagName: 'linearGradient',
             id: 'gradient-area-46',
-            x1: 0,
-            y1: 0,
-            x2: 0,
+            x1: 0.4,
+            y1: 0.4,
+            x2: 1,
             y2: 1,
             children: [{
                 tagName: 'stop',
@@ -2101,9 +2103,9 @@ Highcharts.setOptions({
         gradient47area: {
             tagName: 'linearGradient',
             id: 'gradient-area-47',
-            x1: 0,
-            y1: 0,
-            x2: 0,
+            x1: 0.4,
+            y1: 0.4,
+            x2: 1,
             y2: 1,
             children: [{
                 tagName: 'stop',
@@ -2116,9 +2118,9 @@ Highcharts.setOptions({
         gradient48area: {
             tagName: 'linearGradient',
             id: 'gradient-area-48',
-            x1: 0,
-            y1: 0,
-            x2: 0,
+            x1: 0.4,
+            y1: 0.4,
+            x2: 1,
             y2: 1,
             children: [{
                 tagName: 'stop',
@@ -2131,9 +2133,9 @@ Highcharts.setOptions({
         gradient49area: {
             tagName: 'linearGradient',
             id: 'gradient-area-49',
-            x1: 0,
-            y1: 0,
-            x2: 0,
+            x1: 0.4,
+            y1: 0.4,
+            x2: 1,
             y2: 1,
             children: [{
                 tagName: 'stop',
@@ -2146,9 +2148,9 @@ Highcharts.setOptions({
         gradient50area: {
             tagName: 'linearGradient',
             id: 'gradient-area-50',
-            x1: 0,
-            y1: 0,
-            x2: 0,
+            x1: 0.4,
+            y1: 0.4,
+            x2: 1,
             y2: 1,
             children: [{
                 tagName: 'stop',
@@ -2161,9 +2163,9 @@ Highcharts.setOptions({
         gradient51area: {
             tagName: 'linearGradient',
             id: 'gradient-area-51',
-            x1: 0,
-            y1: 0,
-            x2: 0,
+            x1: 0.4,
+            y1: 0.4,
+            x2: 1,
             y2: 1,
             children: [{
                 tagName: 'stop',
@@ -2176,9 +2178,9 @@ Highcharts.setOptions({
         gradient52area: {
             tagName: 'linearGradient',
             id: 'gradient-area-52',
-            x1: 0,
-            y1: 0,
-            x2: 0,
+            x1: 0.4,
+            y1: 0.4,
+            x2: 1,
             y2: 1,
             children: [{
                 tagName: 'stop',

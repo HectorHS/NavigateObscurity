@@ -5,6 +5,12 @@
 figure {
   margin: 0;
 }
+.section-title {
+  padding-left: 20px;
+  @media only screen and (min-width: $mobile-breakpoint) {
+    padding-left: 50px;
+  }
+}
 .dark-bg {
   background-color: $dark-grey;
 }
@@ -267,83 +273,83 @@ figure {
         }
       }
     }
+  }
 
-    .radio-container {
-      /* The container */
-      label {
-        position: relative;
-        padding-left: 30px;
-        margin-bottom: 15px;
-        cursor: pointer;
-        -webkit-user-select: none;
-        -moz-user-select: none;
-        -ms-user-select: none;
-        user-select: none;
-        margin: 0;
-      }
-
-      /* Hide the browser's default radio button */
-      label input {
-        position: absolute;
-        opacity: 0;
-        cursor: pointer;
-      }
-
-      /* Create a custom radio button */
-      .checkmark {
-        position: absolute;
-        top: 0;
-        left: 0;
-        height: 20px;
-        width: 20px;
-        background-color: $bright-blue;
-        border-radius: 50%;
-      }
-
-      label input:checked ~ .checkmark {
-        background-color: $bright-blue;
-      }
-
-      /* Create the indicator (the dot/circle - hidden when checked) */
-      .checkmark:after {
-        content: "";
-        position: absolute;
-        display: block;
-      }
-
-      label input:checked ~ .checkmark:after {
-        display: none;
-      }
-
-      /* Style the indicator (dot/circle) */
-      label .checkmark:after {
-        top: 3px;
-        left: 3px;
-        width: 14px;
-        height: 14px;
-        border-radius: 50%;
-        background: #2e3838;
-      }
-    }
-    .play-button {
-      height: 34px;
-      width: 60px;
-      padding: 0;
-      margin: 0;
-      margin: 0;
-      margin-right: 20px;
-      border: 1px solid $light-grey;
-      border-radius: 20px;
-      transition: background-image 0.5s ease;
-      display: inline-block;
-      text-align: center;
+  .radio-container {
+    /* The container */
+    label {
+      position: relative;
+      padding-left: 30px;
+      margin-bottom: 15px;
       cursor: pointer;
-      color: #222a2a;
-      vertical-align: middle;
-      background-color: $dark-grey;
-      &:hover {
-        background-image: linear-gradient(to top right, $dark-grey 0%, $bright-blue 60%);
-      }
+      -webkit-user-select: none;
+      -moz-user-select: none;
+      -ms-user-select: none;
+      user-select: none;
+      margin: 0;
+    }
+
+    /* Hide the browser's default radio button */
+    label input {
+      position: absolute;
+      opacity: 0;
+      cursor: pointer;
+    }
+
+    /* Create a custom radio button */
+    .checkmark {
+      position: absolute;
+      top: 0;
+      left: 0;
+      height: 20px;
+      width: 20px;
+      background-color: $bright-blue;
+      border-radius: 50%;
+    }
+
+    label input:checked ~ .checkmark {
+      background-color: $bright-blue;
+    }
+
+    /* Create the indicator (the dot/circle - hidden when checked) */
+    .checkmark:after {
+      content: "";
+      position: absolute;
+      display: block;
+    }
+
+    label input:checked ~ .checkmark:after {
+      display: none;
+    }
+
+    /* Style the indicator (dot/circle) */
+    label .checkmark:after {
+      top: 3px;
+      left: 3px;
+      width: 14px;
+      height: 14px;
+      border-radius: 50%;
+      background: #2e3838;
+    }
+  }
+  .play-button {
+    height: 34px;
+    width: 60px;
+    padding: 0;
+    margin: 0;
+    margin: 0;
+    margin-right: 20px;
+    border: 1px solid $light-grey;
+    border-radius: 20px;
+    transition: background-image 0.5s ease;
+    display: inline-block;
+    text-align: center;
+    cursor: pointer;
+    color: #222a2a;
+    vertical-align: middle;
+    background-color: $dark-grey;
+    &:hover {
+      background-image: linear-gradient(to top right, $dark-grey 0%, $bright-blue 60%);
     }
   }
 }
@@ -458,6 +464,16 @@ figure {
     font-size: 1.2em;
   }
 }
+.dark-bg {
+  height: inherit;
+  @media only screen and (min-width: $tablet-breakpoint) {
+    border-radius: 0 0 30px 0;
+  }
+}
+.chart-title {
+  font-size: 120%;
+  font-weight: 500;
+}
 
 // chart types
 .bars,
@@ -501,9 +517,6 @@ figure {
 .biomass-scatter {
   min-height: 400px;
 }
-.death-tree,
-.death-map,
-.death-bars,
 .migration-map,
 .migration-bubbles,
 .migration-wheel,
@@ -792,113 +805,117 @@ figure {
 #covid_top_cases .highcharts-data-label-color-1 text {
   fill: #fff;
 }
-  .chart-filters {
-    text-align: inherit;
-    margin-bottom: 0;
-  }
-  .covid-dashboard-country {
+
+// Death
+.death-dashboard {
+  .dashboard-command {
     color: $bright-blue;
-    font-size: 140%;
-    font-weight: 500;
-    margin: 0;
-    padding-right: 20px;
+    font-size: 80%;
+    &:before {
+      content: "\2BC8";
+      color: $bright-blue;
+      margin-right: 5px;
+    }
+  }
+  .parameters-container {
+    display: flex;
+  }
+  .parameter-container {
+    width: 100%;
+    padding: 3px;
+    margin: 5px;
+    border-width: 2px;
+    border-radius: 20px 0;
     margin-bottom: 10px;
-    text-align: start;
-    @media (min-width: $desktop-breakpoint) {
-      margin-bottom: 0px;
-      text-align: end;
+    justify-content: space-between;
+    display: flex;
+    flex-direction: column;
+    .parameter {
+      text-align: center;
+      font-weight: 700;
+      font-size: 150%;
+      margin-bottom: 15px;
+      // height: 65px;
+      overflow: hidden;
+    }
+    .parameter-label {
+      padding: 0 10px;
+    }
+    .parameter-button {
+      margin: 0;
+      font-size: 100%;
+      font-weight: 600;
+      height: 30px;
+      width: 100%;
+      padding: 0;
+      border-radius: 0 0 15px;
+      background-image: linear-gradient(to bottom left, $dark-grey 0%, $bright-blue 60%);
+      text-align: center;
+      color: $dark-grey;
+      padding-top: 5px;
+      box-shadow: none;
+      &:before {
+        background-image: linear-gradient(to top right, $dark-grey 0%, $orange 60%);
+        border-radius: 0 0 15px;
+      }
     }
   }
-  .side-chart-container {
-    box-shadow: 2px 2px 8px $navbar-color;
+  .radio-container {
+    display: flex;
+    justify-content: flex-end;
+  }
+  .death-tree {
+    height: 300px;
+  }
+  .death-map {
+    height: 400px;
+  }
+  .death-pyramid {
+    height: 350px;
+  }
+  .death-bubbles {
+    height: 280px;
+  }
+  .pyramid-label-selected {
+    fill: $orange;
+  }
+  .death-pyramid {
+    .pyramid-band {
+      fill: $dark-grey;
+      fill-opacity: 0.7;
+      cursor: pointer;
+      &:hover {
+        fill: $bright-blue;
+      }
+    }
+    .pyramid-band-selected {
+      fill: $orange;
+      fill-opacity: 1;
+      cursor: pointer;
+      &:hover {
+        fill: $bright-blue;
+      }
+    }
+    .pyramid-series-inactive {
+      opacity: 0.2;
+    }
+  }
+  .selected-element {
+    fill: $orange !important;
+    color: $orange !important;
+  }
+  .dashboard-border-container-lg {
     padding: 10px;
-    margin: 20px;
-    margin-bottom: 0px;
-    background-color: #2e3838;
-    border-radius: 30px;
-    @media only screen and (min-width: $tablet-breakpoint) {
-      margin-bottom: 20px;
-    }
-  }
-
-  .dashboard-level-1 {
-    .dashboard-side-40 {
-      border-radius: 30px 30px 0px 0;
-      z-index: 1;
-      background-image: linear-gradient(to bottom left, $bright-blue-opacity 7%, $mid-grey 50%);
-    }
-  }
-  .dashboard-level-2 {
-    .covid-top-container {
-      @media only screen and (min-width: $tablet-breakpoint) {
-        border-radius: 30px 0px 0px 30px;
-        background-image: linear-gradient(to top right, $bright-blue-opacity 7%, $mid-grey 50%);
-      }
-    }
-    .dashboard-side-40 {
-      background-image: linear-gradient(to top right, $bright-blue-opacity 7%, $mid-grey 50%);
-      @media only screen and (min-width: $tablet-breakpoint) {
-        background-image: none;
-      }
-    }
-  }
-}
-
-#covid_top_cases .highcharts-data-label-color-1 text {
-  fill: #fff;
-}
-
-.search-container {
-  width: 100%;
-  border-radius: 5px;
-  border-width: 1px;
-  border-style: solid;
-  border-color: $light-grey;
-  position: relative;
-  display: block;
-  z-index: 10;
-  color: $almost-white;
-  overflow: hidden;
-  height: 34px;
-  align-self: flex-end;
-  margin-bottom: 10px;
-  &:hover {
+    border-style: solid;
     border-color: $bright-blue;
+    border-width: 2px;
+    box-shadow: 4px 4px 12px rgb(12, 12, 12);
+    margin: 10px;
   }
-
-  input {
-    color: $almost-white;
-    border: none;
-    height: 34px;
-    position: relative;
-    padding: 0 10px;
-    display: block;
-    background-color: $dark-grey-opacity;
-    width: -webkit-calc(100% - 20px);
-    width: -moz-calc(100% - 20px);
-    width: calc(100% - 20px);
+  .dashboard-border-container-sm {
+    border-style: solid;
+    border-color: $bright-blue;
+    border-width: 2px;
+    box-shadow: 2px 2px 8px $navbar-color;
   }
-}
-
-.CCLAB-var-container {
-  display: flex;
-}
-.CCLAB-var-title {
-  width: 180px;
-  color: $bright-blue;
-  font-weight: 500;
-  font-size: 110%;
-  @media only screen and (min-width: 520px) {
-    width: 370px;
-  }
-  @media only screen and (min-width: $tablet-breakpoint) {
-    width: 180px;
-  }
-  @media only screen and (min-width: 1270px) {
-    width: 370px;
-  }
-}
-
-.band-soft {
-  opacity: 0.6;
 }

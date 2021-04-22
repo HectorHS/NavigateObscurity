@@ -26,6 +26,16 @@ figure {
   margin: 0;
 }
 
+.section-title {
+  padding-left: 20px;
+}
+
+@media only screen and (min-width: 768px) {
+  .section-title {
+    padding-left: 50px;
+  }
+}
+
 .dark-bg {
   background-color: #2e3838;
 }
@@ -341,7 +351,7 @@ figure {
   content: "";
 }
 
-.chart-options .chart-filters .radio-container {
+.chart-options .radio-container {
   /* The container */
   /* Hide the browser's default radio button */
   /* Create a custom radio button */
@@ -349,7 +359,7 @@ figure {
   /* Style the indicator (dot/circle) */
 }
 
-.chart-options .chart-filters .radio-container label {
+.chart-options .radio-container label {
   position: relative;
   padding-left: 30px;
   margin-bottom: 15px;
@@ -361,13 +371,13 @@ figure {
   margin: 0;
 }
 
-.chart-options .chart-filters .radio-container label input {
+.chart-options .radio-container label input {
   position: absolute;
   opacity: 0;
   cursor: pointer;
 }
 
-.chart-options .chart-filters .radio-container .checkmark {
+.chart-options .radio-container .checkmark {
   position: absolute;
   top: 0;
   left: 0;
@@ -377,21 +387,21 @@ figure {
   border-radius: 50%;
 }
 
-.chart-options .chart-filters .radio-container label input:checked ~ .checkmark {
+.chart-options .radio-container label input:checked ~ .checkmark {
   background-color: #1A94FF;
 }
 
-.chart-options .chart-filters .radio-container .checkmark:after {
+.chart-options .radio-container .checkmark:after {
   content: "";
   position: absolute;
   display: block;
 }
 
-.chart-options .chart-filters .radio-container label input:checked ~ .checkmark:after {
+.chart-options .radio-container label input:checked ~ .checkmark:after {
   display: none;
 }
 
-.chart-options .chart-filters .radio-container label .checkmark:after {
+.chart-options .radio-container label .checkmark:after {
   top: 3px;
   left: 3px;
   width: 14px;
@@ -400,7 +410,7 @@ figure {
   background: #2e3838;
 }
 
-.chart-options .chart-filters .play-button {
+.chart-options .play-button {
   height: 34px;
   width: 60px;
   padding: 0;
@@ -418,7 +428,7 @@ figure {
   background-color: #2e3838;
 }
 
-.chart-options .chart-filters .play-button:hover {
+.chart-options .play-button:hover {
   background-image: linear-gradient(to top right, #2e3838 0%, #1A94FF 60%);
 }
 
@@ -557,6 +567,21 @@ figure {
 
 .chart-container-dashboard .highcharts-title {
   font-size: 1.2em;
+}
+
+.dark-bg {
+  height: inherit;
+}
+
+@media only screen and (min-width: 850px) {
+  .dark-bg {
+    border-radius: 0 0 30px 0;
+  }
+}
+
+.chart-title {
+  font-size: 120%;
+  font-weight: 500;
 }
 
 .bars,
@@ -1645,9 +1670,6 @@ figure {
   min-height: 400px;
 }
 
-.death-tree,
-.death-map,
-.death-bars,
 .migration-map,
 .migration-bubbles,
 .migration-wheel,
@@ -2009,132 +2031,131 @@ figure {
   fill: #fff;
 }
 
-.CCLab-old-dashboard .chart-filters {
-  text-align: inherit;
-  margin-bottom: 0;
-}
-
-.CCLab-old-dashboard .covid-dashboard-country {
+.death-dashboard .dashboard-command {
   color: #1A94FF;
-  font-size: 140%;
-  font-weight: 500;
-  margin: 0;
-  padding-right: 20px;
-  margin-bottom: 10px;
-  text-align: start;
+  font-size: 80%;
 }
 
-@media (min-width: 1025px) {
-  .CCLab-old-dashboard .covid-dashboard-country {
-    margin-bottom: 0px;
-    text-align: end;
-  }
+.death-dashboard .dashboard-command:before {
+  content: "\2BC8";
+  color: #1A94FF;
+  margin-right: 5px;
 }
 
-.CCLab-old-dashboard .side-chart-container {
-  box-shadow: 2px 2px 8px rgba(23, 28, 28, 0.9);
-  padding: 10px;
-  margin: 20px;
-  margin-bottom: 0px;
-  background-color: #2e3838;
-  border-radius: 30px;
-}
-
-@media only screen and (min-width: 850px) {
-  .CCLab-old-dashboard .side-chart-container {
-    margin-bottom: 20px;
-  }
-}
-
-.CCLab-old-dashboard .dashboard-level-1 .dashboard-side-40 {
-  border-radius: 30px 30px 0px 0;
-  z-index: 1;
-  background-image: linear-gradient(to bottom left, rgba(47, 152, 208, 0.4) 7%, #3f5050 50%);
-}
-
-@media only screen and (min-width: 850px) {
-  .CCLab-old-dashboard .dashboard-level-2 .covid-top-container {
-    border-radius: 30px 0px 0px 30px;
-    background-image: linear-gradient(to top right, rgba(47, 152, 208, 0.4) 7%, #3f5050 50%);
-  }
-}
-
-.CCLab-old-dashboard .dashboard-level-2 .dashboard-side-40 {
-  background-image: linear-gradient(to top right, rgba(47, 152, 208, 0.4) 7%, #3f5050 50%);
-}
-
-@media only screen and (min-width: 850px) {
-  .CCLab-old-dashboard .dashboard-level-2 .dashboard-side-40 {
-    background-image: none;
-  }
-}
-
-#covid_top_cases .highcharts-data-label-color-1 text {
-  fill: #fff;
-}
-
-.search-container {
-  width: 100%;
-  border-radius: 5px;
-  border-width: 1px;
-  border-style: solid;
-  border-color: #9dafaf;
-  position: relative;
-  display: block;
-  z-index: 10;
-  color: #dffcff;
-  overflow: hidden;
-  height: 34px;
-  align-self: flex-end;
-  margin-bottom: 10px;
-}
-
-.search-container:hover {
-  border-color: #1A94FF;
-}
-
-.search-container input {
-  color: #dffcff;
-  border: none;
-  height: 34px;
-  position: relative;
-  padding: 0 10px;
-  display: block;
-  background-color: rgba(46, 56, 56, 0.8);
-  width: -webkit-calc(100% - 20px);
-  width: -moz-calc(100% - 20px);
-  width: calc(100% - 20px);
-}
-
-.CCLAB-var-container {
+.death-dashboard .parameters-container {
   display: flex;
 }
 
-.CCLAB-var-title {
-  width: 180px;
-  color: #1A94FF;
-  font-weight: 500;
-  font-size: 110%;
+.death-dashboard .parameter-container {
+  width: 100%;
+  padding: 3px;
+  margin: 5px;
+  border-width: 2px;
+  border-radius: 20px 0;
+  margin-bottom: 10px;
+  justify-content: space-between;
+  display: flex;
+  flex-direction: column;
 }
 
-@media only screen and (min-width: 520px) {
-  .CCLAB-var-title {
-    width: 370px;
-  }
+.death-dashboard .parameter-container .parameter {
+  text-align: center;
+  font-weight: 700;
+  font-size: 150%;
+  margin-bottom: 15px;
+  overflow: hidden;
 }
 
-@media only screen and (min-width: 850px) {
-  .CCLAB-var-title {
-    width: 180px;
-  }
+.death-dashboard .parameter-container .parameter-label {
+  padding: 0 10px;
 }
 
-@media only screen and (min-width: 1270px) {
-  .CCLAB-var-title {
-    width: 370px;
-  }
+.death-dashboard .parameter-container .parameter-button {
+  margin: 0;
+  font-size: 100%;
+  font-weight: 600;
+  height: 30px;
+  width: 100%;
+  padding: 0;
+  border-radius: 0 0 15px;
+  background-image: linear-gradient(to bottom left, #2e3838 0%, #1A94FF 60%);
+  text-align: center;
+  color: #2e3838;
+  padding-top: 5px;
+  box-shadow: none;
 }
 
-.band-soft {
-  opacity: 0.6;
+.death-dashboard .parameter-container .parameter-button:before {
+  background-image: linear-gradient(to top right, #2e3838 0%, #d66808 60%);
+  border-radius: 0 0 15px;
+}
+
+.death-dashboard .radio-container {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.death-dashboard .death-tree {
+  height: 300px;
+}
+
+.death-dashboard .death-map {
+  height: 400px;
+}
+
+.death-dashboard .death-pyramid {
+  height: 350px;
+}
+
+.death-dashboard .death-bubbles {
+  height: 280px;
+}
+
+.death-dashboard .pyramid-label-selected {
+  fill: #d66808;
+}
+
+.death-dashboard .death-pyramid .pyramid-band {
+  fill: #2e3838;
+  fill-opacity: 0.7;
+  cursor: pointer;
+}
+
+.death-dashboard .death-pyramid .pyramid-band:hover {
+  fill: #1A94FF;
+}
+
+.death-dashboard .death-pyramid .pyramid-band-selected {
+  fill: #d66808;
+  fill-opacity: 1;
+  cursor: pointer;
+}
+
+.death-dashboard .death-pyramid .pyramid-band-selected:hover {
+  fill: #1A94FF;
+}
+
+.death-dashboard .death-pyramid .pyramid-series-inactive {
+  opacity: 0.2;
+}
+
+.death-dashboard .selected-element {
+  fill: #d66808 !important;
+  color: #d66808 !important;
+}
+
+.death-dashboard .dashboard-border-container-lg {
+  padding: 10px;
+  border-style: solid;
+  border-color: #1A94FF;
+  border-width: 2px;
+  box-shadow: 4px 4px 12px #0c0c0c;
+  margin: 10px;
+}
+
+.death-dashboard .dashboard-border-container-sm {
+  border-style: solid;
+  border-color: #1A94FF;
+  border-width: 2px;
+  box-shadow: 2px 2px 8px rgba(23, 28, 28, 0.9);
 }

@@ -2,6 +2,7 @@
 {% load static %}
 
 {% block styles %}
+<!-- Look at accessibility stuff!!! -->
 <!-- Meta -->
 <title>{{ title }} - Navigate Obscurity</title>
 <meta name="description" content="{{ abstract }}">
@@ -20,10 +21,10 @@
 
 <!-- We use highcharts for visualizations -->
 <script src="https://code.highcharts.com/highcharts.js"></script>
+<script src="https://code.highcharts.com/highcharts-more.js"></script>
 <script src="https://code.highcharts.com/maps/modules/map.js"></script>
 <script src="https://code.highcharts.com/modules/treemap.js"></script>
 <script src="https://code.highcharts.com/modules/data.js"></script>
-
 <script src="https://code.highcharts.com/mapdata/custom/world.js"></script>
 
 <script src={% static "worlddata/js/chart-helpers.js" %}></script>
@@ -38,7 +39,6 @@
 </section>
 <!-- Viz 1 - Total population, births, deaths -->
 <section>
-
     <div class="container limited-width">
         <p>
             First, a quick visualization to get a perspective of where people live, and how many people get born and die
@@ -158,6 +158,7 @@
             following years from Africa.
         </p>
     </div>
+
     <figure>
         <div class="container chart-container life-map filters-on-top">
             <div class="chart-options chart-options-map" style="max-width:100%">
@@ -176,49 +177,210 @@
     </figure>
 
 </section>
+<!-- Death dashboard -->
 <section>
-    <!-- Viz 1 - Causes of death -->
+    <h2 class="section-title">The Death Dashboard</h2>
     <div class="container limited-width">
-        <p>
-            Good to have some perspective on what is killing us.
-            Also, pretty interesting to see how causes of death change according to country,
-            income level, age and sex.
-        </p>
-        <p>
-            All data is from 2017. Numbers are actual total numbers.
-            The measures available below are death – total number of casualties, and
-            DALYs – disability adjusted life years lost which are calculated by adding years lived with disability
-            (YLLs) & years lived with disability (YLDs),
-            so basically healthy years lost due to the particular cause.
-        </p>
-        <p>
-            Many of the causes are clickable so you can see the breakdowns of each cause category.
-        </p>
+        <div class="q-o-n-container" style="display: flex;">
+            <div class="tabs-container">
+                <div class="tab-button tab-active" onclick="tabClickHandler(this)">Questions</div>
+                <div class="tab-button" onclick="tabClickHandler(this)">Obscurity</div>
+                <div class="tab-button" onclick="tabClickHandler(this)">Navigation</div>
+            </div>
+            <div class="text-container">
+                <div id="death_dash_questions">
+                    <p style="margin-top: 0;">
+                        Half of the following statements are false. Find out which by interacting with the
+                        visualisation dashboard below.
+                    </p>
+                    <ul style="margin-bottom: 0;">
+                        <li>
+                            The leading cause of death for Males aged 20-29 across Northern Europe, Canada and
+                            Australia, is suicide.
+                        </li>
+                        <li>
+                            One in 5 deaths in Nigeria, are for children under the age of 9.
+                        </li>
+                        <li>
+                            Four times more deaths are related to air pollution (risk) than to unsafe water, sanitation
+                            and handwashing (risk).
+                        </li>
+                        <li>
+                            Almost a third of all deaths in South Africa are caused by HIV.
+                        </li>
+                        <li>
+                            Globally, drug use (risk) is associated with about 5 times more deaths than alcohol
+                            consumption (risk).
+                        </li>
+                        <li>
+                            Globally, more people die from traffic accidents than enteric infections, digestive
+                            diseases, and HIV combined.
+                        </li>
+                    </ul>
+                </div>
+                <div id="death_dash_obscurity" class="hide">
+                    <p style="margin-top: 0;">
+                        Attributing a single cause of death for each death happening is a useful simplification that
+                        allows us to compare causes of death and get a bird’s eye view of what is killing us. But it
+                        also hides a lot of what is going on. Does a HIV patient who contracts viral Hepatitis die from
+                        HIV or Hepatitis? Does a cancer patient who contracts the flu, which then develops to pneumonia
+                        die from cancer, the flu, or pneumonia? Does a driver having a fatal road accident while under
+                        the influence of alcohol die from the car crash, or the alcohol? Does a child who is severely
+                        underfed die from malnutrition or from poverty? To navigate this landscape, we need some
+                        conventions, and the dominating one is to single out the most severe cause, the one having the
+                        greatest impact on one’s health. As a result, in this dataset, the first death would be counted
+                        under HIV, the second under cancer, the third as a transport accident (with alcohol an
+                        associated risk) and the last a nutritional deficiency (with poverty ignored as a factor).
+
+
+                    </p>
+                    <p>
+                        The examples above show two important shortcomings of such datasets. The simplification of a
+                        single cause of death, and the disregard of certain socioeconomic contributors (such as
+                        poverty). This last bit is important because big scale tragedies like poverty, famine, war,
+                        child labour and so on will not show up either as risks or causes of death. Another, is that
+                        death itself is a very narrow point of view for disease, and more broadly, suffering. Patients
+                        can live for years with ALS, decades with HIV and many overcome cancer. So this data is not a
+                        good indication of how many people get impacted by a disease (e.g. you cannot tell how many
+                        people get cancer), or how much it impacts them. Ultimately this data can only help us
+                        understand mortality.
+
+                    </p>
+                </div>
+                <div id="death_dash_navigation" class="hide">
+                    <p style="margin-top: 0;">
+                        All data presented here is for 2019.
+                    </p>
+                    <p>
+                        Three out of the four charts shown here are clickable so click away and use them to filter the
+                        data based on location, cause of death, age and sex. The four boxes at the top will let you know
+                        what filters you have applied and allow you to reset them.
+                    </p>
+                    <p>
+                        Use the map to either see what causes of death dominate each geography (no cause of death
+                        selected) or to compare the prevalence of a specific cause of death between countries. This is
+                        especially interesting when comparing poorer and richer areas, or when comparing younger and
+                        older age groups. The divided box underneath (treemap) shows a break-down of all deaths for the
+                        selected country (or the world). The total area represents all deaths, and the size of each
+                        smaller part is analogous to the corresponding number of deaths. The bars provide some
+                        demographic information on who is doing all the dying. You’ll notice that in rich countries,
+                        barely anyone young dies, but the image changes dramatically in the poorest parts of the world.
+                        Note that a 20% on ages 70-79 translates to “20% of the deceased where 70-79 years old” and not
+                        “20% of 70-79 years old died”. The bubbles show risks associated with the selected cause(s) of
+                        death. Again, size is relating to the number of associated deaths. Note that here there is no
+                        1-1 relation between deaths and risks. Multiple risks might relate to the same death, and some
+                        deaths might not relate to any risks, so the sums of all deaths (on the treemap) and all risks
+                        may not match, and the elimination of all risks will not lead to the elimination of all relevant
+                        deaths.
+                    </p>
+                </div>
+            </div>
+        </div>
     </div>
     <figure>
-        <div class="container chart-container death-tree filters-on-top">
-            <div class="chart-options" style="max-width:100%">
-                <div class="chart-filters"></div>
+        <div class="container dashboard-container-horizontal death-dashboard">
+            <div class="parameters-container">
+                <div class="parameter-container dashboard-border-container-sm">
+                    <div class="parameter-label">Location: </div>
+                    <div id="death-dashboard-location" class="parameter">Global</div>
+                    <div class="parameter-button button" id="resetLocation">reset</div>
+                </div>
+                <div class="parameter-container dashboard-border-container-sm">
+                    <div class="parameter-label">Cause: </div>
+                    <div id="death-dashboard-cause" class="parameter">All causes</div>
+                    <div class="parameter-button button" id="resetCause">reset</div>
+                </div>
+                <div class="parameter-container dashboard-border-container-sm">
+                    <div class="parameter-label">Age: </div>
+                    <div id="death-dashboard-age" class="parameter">All ages</div>
+                    <div class="parameter-button button" id="resetAge">reset</div>
+                </div>
+                <div class="parameter-container dashboard-border-container-sm">
+                    <div class="parameter-label">Sex: </div>
+                    <div id="death-dashboard-sex" class="parameter">Both</div>
+                    <div class="parameter-button button" id="resetSex">reset</div>
+                </div>
             </div>
-            <div id="death_tree" class="treemap" style="width:100%;"></div>
+
+
+            <div class="dashboard-container-vertical dashboard-level-1">
+
+                <div class="dashboard-container-horizontal dashboard-side-60">
+                    <div class="chart-container-dashboard death-map" style="padding-left: 10px;">
+                        <div class="chart-title" id="death_map_title"></div>
+                        <div class="dashboard-command">Click on the map to select a country</div>
+                        <div id="death_map" class="map" style="width:100%;"></div>
+                    </div>
+                </div>
+                <div class="dashboard-side-40">
+                    <div class="chart-container-dashboard death-pyramid dashboard-border-container-lg"
+                        style="border-radius: 0 20px;">
+                        <div class="chart-title" id="death_pyramid_title">Share of deaths by age
+                        </div>
+                        <div class="dashboard-command">Click on the graph to select an age group</div>
+                        <div class="chart-options" style="max-width:100%; ">
+                            <!-- <div class="chart-filters covid-dashboard-options"> -->
+                            <div class="radio-container">
+                                <label style="padding-right: 10px;">Male
+                                    <input type="radio" class="sex-radio" name="sex-radio" value="Male">
+                                    <span class="checkmark"></span>
+                                </label>
+                                <label style="padding-right: 10px;">Female
+                                    <input type="radio" class="sex-radio" name="sex-radio" value="Female">
+                                    <span class="checkmark"></span>
+                                </label>
+                                <label style="padding-right: 0;">Both
+                                    <input type="radio" class="sex-radio" checked="checked" name="sex-radio"
+                                        value="Both">
+                                    <span class="checkmark"></span>
+                                </label>
+                            </div>
+                        </div>
+                        <!-- </div> -->
+                        <div id="death_pyramid" class="bars" style="width:100%;"></div>
+
+                    </div>
+                </div>
+            </div>
+            <div class="dashboard-container-vertical dashboard-level-2">
+                <div class="dashboard-side-60">
+                    <div class="death-tree chart-container-dashboard dashboard-border-container-lg"
+                        style=" border-radius: 0 20px; padding: 0; overflow: hidden;">
+                        <div class="chart-title" id="death_treemap_title" style="padding: 10px 10px 0;">Total deaths
+                            broken down by cause
+                        </div>
+                        <div class="dashboard-command" style="padding: 0 10px 10px;">Click on the graph to select a
+                            cause of death</div>
+                        <div id="death_tree" class="treemap" style="width:100%;"></div>
+                    </div>
+                </div>
+                <div class="dashboard-side-40">
+                    <div class="chart-container-dashboard death-bubbles dashboard-border-container-lg"
+                        style=" border-radius: 20px 0;">
+                        <div class="chart-title" id="death_bubbles_title"></div>
+                        <div id="death_bubbles" class="bubbles"></div>
+                    </div>
+                </div>
+
+            </div>
 
             <div class="source-text">
                 <p>
                     *Source:
                     <a href="http://ghdx.healthdata.org/gbd-results-tool" target="_blank">The Global Health Data
                         Exchange. </a>
-                    Downloaded 19/10/2019.
+                    Downloaded 27/01/2021.
                 </p>
             </div>
         </div>
     </figure>
-
-    <!-- Viz 2 - Historical causes of death -->
+</section>
+<!-- Historical deaths -->
+<section>
     <div class="container limited-width">
         <p>
-            Unfortunately we do not have equally good data for older periods,
-            but see a similar - although rougher - break down of major causes of death
-            for the US in 1900.
+            Historical death data is nowhere close to the quality and detail of what is presented above, but you can see
+            a rought estimate of the major causes of death for the US in 1900 below.
         </p>
     </div>
     <figure>
@@ -236,63 +398,6 @@
             </div>
         </div>
     </figure>
-    <!-- Viz 3 - Causes of death by geography -->
-    <div class="container limited-width">
-        <p>
-            Causes of death differ wildly according to geography -
-            partly because they differ wildly according to income level as we saw above.
-            Have a look for instance at the big killers: cardiovascular disease and cancer.
-            And compare those to something like HIV, maternal and neonatal disorders, 
-            or nutritional deficiencies.
-        </p>
-    </div>
-    <figure>
-        <div class="container chart-container death-map filters-on-top">
-            <div class="chart-options chart-options-map" style="max-width:100%">
-                <div class="chart-filters"></div>
-            </div>
-            <div id="death_map" class="map" style="width:100%;"></div>
-
-            <div class="source-text">
-                <p>
-                    *Source:
-                    <a href="http://ghdx.healthdata.org/gbd-results-tool" target="_blank">The Global Health Data
-                        Exchange. </a>
-                    Downloaded 19/10/2019.
-                </p>
-            </div>
-        </div>
-    </figure>
-    <!-- Viz 4 - Risks for causes of death -->
-    <div class="container limited-width">
-        <p>
-            Below you can see risks that have been identified as causes of
-            conditions leading to death or disability. All these risks are completely preventable.
-            Note that risks overlap significantly and that there is  good amount of casualties /
-            incidents that have not been associated with any risks. So minimising
-            the associated risks cannot eliminate the possibility of a disease / condition occurring,
-            but it definitely helps.
-        </p>
-    </div>
-    <figure>
-        <div class="container chart-container death-bars filters-on-top">
-            <div class="chart-options" style="max-width:100%">
-                <div class="chart-filters"></div>
-                <div class="chart-legend"></div>
-            </div>
-            <div id="death_bars" class="chart bars" style="width:100%;"></div>
-
-            <div class="source-text">
-                <p>
-                    *Source:
-                    <a href="http://ghdx.healthdata.org/gbd-results-tool" target="_blank">The Global Health Data
-                        Exchange. </a>
-                    Downloaded 19/10/2019.
-                </p>
-            </div>
-        </div>
-    </figure>
-
 </section>
 <!-- Comments -->
 <section>
@@ -333,12 +438,16 @@
     life_map_path = static_url + file_map_life;
     file_old_death = "worlddata/csv/death-old.csv";
     old_death_path = static_url + file_old_death;
-    file_treemap_death = "worlddata/csv/death-tree-2017.csv";
-    death_treemap_path = static_url + file_treemap_death;
-    file_map_death = "worlddata/csv/death-map-2017.csv";
-    death_map_path = static_url + file_map_death;
-    file_bars_death = "worlddata/csv/death-bars-2017.csv";
-    death_bars_path = static_url + file_bars_death;
+    file_death_causes = "worlddata/csv/death-causes.csv";
+    death_causes_path = static_url + file_death_causes;
+    file_death_locations = "worlddata/csv/death-locations.csv";
+    death_locations_path = static_url + file_death_locations;
+    file_death_risks = "worlddata/csv/death-risks.csv";
+    death_risks_path = static_url + file_death_risks;
+    file_death_causes_percent = "worlddata/csv/death-causes-percent.csv";
+    death_causes_percent_path = static_url + file_death_causes_percent;
+    file_death_top_causes = "worlddata/csv/death-top-causes.csv";
+    death_top_causes_path = static_url + file_death_top_causes;
 
     var LifeMap = d3.csv(life_map_path)
         .then(function (data) {
@@ -737,448 +846,842 @@
             console.log(error);
         })
 
-    var DeathTree = d3.csv(death_treemap_path)
-        .then(function (data) {
-            // All filterable options
-            const all_measures = [...new Set(data.map(d => d.measure))].sort()
-            const all_locations = [...new Set(data.map(d => d.location))].sort()
-            const all_sexes = [...new Set(data.map(d => d.sex))].sort()
-            const all_ages = [...new Set(data.map(d => d.age))].sort()
-            const all_causes = ["Acute glomerulonephritis",
-                "Adverse effects of medical treatment",
-                "African trypanosomiasis",
-                "Alcohol use disorders",
-                "Alzheimer's disease and other dementias",
-                "Animal contact",
-                "Anxiety disorders",
-                "Aortic aneurysm",
-                "Atrial fibrillation and flutter",
-                "Attention-deficit/hyperactivity disorder",
-                "Autism spectrum disorders",
-                "Bipolar disorder",
-                "Bladder cancer",
-                "Brain and nervous system cancer",
-                "Breast cancer",
-                "Cancer",
-                "Cardiomyopathy and myocarditis",
-                "Cardiovascular diseases",
-                "Cervical cancer",
-                "Chagas disease",
-                "Chronic kidney disease",
-                "Chronic respiratory diseases",
-                "Colon and rectum cancer",
-                "Conduct disorder",
-                "Conflict and terrorism",
-                "Cystic echinococcosis",
-                "Cysticercosis",
-                "Dengue",
-                "Depressive disorders",
-                "Diabetes and kidney diseases",
-                "Diabetes mellitus",
-                "Diarrheal diseases",
-                "Digestive diseases",
-                "Drowning",
-                "Drug use disorders",
-                "Eating disorders",
-                "Ebola",
-                "Endocarditis",
-                "Enteric infections",
-                "Environmental heat and cold exposure",
-                "Epilepsy",
-                "Esophageal cancer",
-                "Executions and police conflict",
-                "Exposure to forces of nature",
-                "Exposure to mechanical forces",
-                "Falls",
-                "Fire, heat, and hot substances",
-                "Food-borne trematodiases",
-                "Foreign body",
-                "Gallbladder and biliary tract cancer",
-                "Headache disorders",
-                "HIV/AIDS",
-                "Hodgkin lymphoma",
-                "Hypertensive heart disease",
-                "Idiopathic developmental intellectual disability",
-                "Interpersonal violence",
-                "Intestinal nematode infections",
-                "Invasive Non-typhoidal Salmonella (iNTS)",
-                "Ischemic heart disease",
-                "Kidney cancer",
-                "Larynx cancer",
-                "Leishmaniasis",
-                "Leprosy",
-                "Leukemia",
-                "Lip and oral cavity cancer",
-                "Liver cancer",
-                "Lower respiratory infections",
-                "Lymphatic filariasis",
-                "Malaria",
-                "Malignant skin melanoma",
-                "Maternal and neonatal disorders",
-                "Maternal disorders",
-                "Mental disorders",
-                "Mesothelioma",
-                "Motor neuron disease",
-                "Multiple myeloma",
-                "Multiple sclerosis",
-                "Musculoskeletal disorders",
-                "Nasopharynx cancer",
-                "Neglected tropical diseases and malaria",
-                "Neonatal disorders",
-                "Neurological disorders",
-                "Non-Hodgkin lymphoma",
-                "Non-melanoma skin cancer",
-                "Non-rheumatic valvular heart disease",
-                "Nutritional deficiencies",
-                "Onchocerciasis",
-                "Other cardiovascular and circulatory diseases",
-                "Other infectious diseases",
-                "Other intestinal infectious diseases",
-                "Other malignant neoplasms",
-                "Other mental disorders",
-                "Other neglected tropical diseases",
-                "Other neoplasms",
-                "Other neurological disorders",
-                "Other non-communicable diseases",
-                "Other pharynx cancer",
-                "Other transport injuries",
-                "Other unintentional injuries",
-                "Otitis media",
-                "Ovarian cancer",
-                "Pancreatic cancer",
-                "Parkinson's disease",
-                "Peripheral artery disease",
-                "Poisonings",
-                "Prostate cancer",
-                "Rabies",
-                "Respiratory infections and tuberculosis",
-                "Rheumatic heart disease",
-                "Road injuries",
-                "Schistosomiasis",
-                "Schizophrenia",
-                "Self-harm",
-                "Sense organ diseases",
-                "Sexually transmitted infections excluding HIV",
-                "Skin and subcutaneous diseases",
-                "Stomach cancer",
-                "Stroke",
-                "Substance use disorders",
-                "Testicular cancer",
-                "Thyroid cancer",
-                "Tracheal, bronchus, and lung cancer",
-                "Trachoma",
-                "Transport injuries",
-                "Tuberculosis",
-                "Typhoid and paratyphoid",
-                "Unintentional injuries",
-                "Upper respiratory infections",
-                "Uterine cancer",
-                "Yellow fever",
-                "Zika virus",
-            ]
+    var DeathDash = Promise.all([
+        d3.csv(death_causes_path),
+        d3.csv(death_locations_path),
+        d3.csv(death_causes_percent_path),
+        d3.csv(death_top_causes_path),
+        d3.csv(death_risks_path),
+    ]).then(function (files) {
+        // All filterable options
+        // const all_measures = [...new Set(data.map(d => d.measure))].sort()
+        const all_locations = [...new Set(files[1].map(d => d.Location))].sort();
+        const all_sexes = [...new Set(files[0].map(d => d.sex))].sort();
+        const all_ages = [...new Set(files[0].map(d => d.age))].sort();
+        const all_causes = [...new Set(files[0].map(d => d.cause))].sort();
+        const all_main_causes = [...new Set(files[2].map(d => d.cause))].sort();
 
-            //Default values for filters
-            var measure = "Deaths",
-                location = "Global",
-                sex = "Both",
-                age = "All Ages";
+        //Default values for filters
+        var location = "Global",
+            innerLocation = "Global",
+            sex = "Both",
+            age = "All ages",
+            cause = "All causes";
 
-            var container_class = ".death-tree";
-            var initial_data = [];
+        var container_class = ".death-tree";
+        var initial_data = [];
+        var pyramid_categories = [
+            '0 to 9', '10 to 19', '20 to 29', '30 to 39',
+            '40 to 49', '50 to 59', '60 to 69', '70 to 79', '80 to 89',
+            '90+'
+        ];
+        let causeElement = document.getElementById("death-dashboard-cause");
+        let locationElement = document.getElementById("death-dashboard-location");
+        let ageElement = document.getElementById("death-dashboard-age");
+        let sexElement = document.getElementById("death-dashboard-sex");
+        let radioElements = document.getElementsByClassName('sex-radio');
 
-            function get_data() {
-                var new_data = [];
-                var i = 0;
-                var parent = "";
-                for (let row of data) {
-                    if (row.age == age && row.sex == sex && row.measure == measure && row.location == location) {
-                        for (cause of all_causes) {
-                            if (row[cause] > 0) {
-                                var parent = "";
-                                if (cause == "Tuberculosis"
-                                    || cause == "Lower respiratory infections"
-                                    || cause == "Upper respiratory infections"
-                                    || cause == "Otitis media") {
-                                    parent = "Respiratory infections and tuberculosis";
-                                } else if (cause == "Diarrheal diseases"
-                                    || cause == "Typhoid and paratyphoid"
-                                    || cause == "Other intestinal infectious diseases"
-                                    || cause == "Invasive Non-typhoidal Salmonella (iNTS)") {
-                                    parent = "Enteric infections";
-                                } else if (cause == "Malaria"
-                                    || cause == "Chagas disease"
-                                    || cause == "Leishmaniasis"
-                                    || cause == "African trypanosomiasis"
-                                    || cause == "Schistosomiasis"
-                                    || cause == "Cystic echinococcosis"
-                                    || cause == "Cysticercosis"
-                                    || cause == "Lymphatic filariasis"
-                                    || cause == "Onchocerciasis"
-                                    || cause == "Trachoma"
-                                    || cause == "Dengue"
-                                    || cause == "Yellow fever"
-                                    || cause == "Rabies"
-                                    || cause == "Intestinal nematode infections"
-                                    || cause == "Leprosy"
-                                    || cause == "Food-borne trematodiases"
-                                    || cause == "Ebola"
-                                    || cause == "Zika virus"
-                                    || cause == "Other neglected tropical diseases") {
-                                    parent = "Neglected tropical diseases and malaria";
-                                } else if (cause == "Neonatal disorders"
-                                    || cause == "Maternal disorders") {
-                                    parent = "Maternal and neonatal disorders";
-                                }
-                                else if (cause == "Bladder cancer"
-                                    || cause == "Brain and nervous system cancer"
-                                    || cause == "Breast cancer"
-                                    || cause == "Cervical cancer"
-                                    || cause == "Colon and rectum cancer"
-                                    || cause == "Esophageal cancer"
-                                    || cause == "Gallbladder and biliary tract cancer"
-                                    || cause == "Kidney cancer"
-                                    || cause == "Larynx cancer"
-                                    || cause == "Leukemia"
-                                    || cause == "Lip and oral cavity cancer"
-                                    || cause == "Liver cancer"
-                                    || cause == "Malignant skin melanoma"
-                                    || cause == "Nasopharynx cancer"
-                                    || cause == "Non-melanoma skin cancer"
-                                    || cause == "Other pharynx cancer"
-                                    || cause == "Ovarian cancer"
-                                    || cause == "Pancreatic cancer"
-                                    || cause == "Prostate cancer"
-                                    || cause == "Stomach cancer"
-                                    || cause == "Testicular cancer"
-                                    || cause == "Thyroid cancer"
-                                    || cause == "Tracheal, bronchus, and lung cancer"
-                                    || cause == "Uterine cancer"
-                                    || cause == "Mesothelioma"
-                                    || cause == "Hodgkin lymphoma"
-                                    || cause == "Non-Hodgkin lymphoma"
-                                    || cause == "Multiple myeloma"
-                                    || cause == "Other malignant neoplasms"
-                                    || cause == "Other neoplasms") {
-                                    parent = "Cancer";
-                                } else if (cause == "Ischemic heart disease"
-                                    || cause == "Rheumatic heart disease"
-                                    || cause == "Non-rheumatic valvular heart disease"
-                                    || cause == "Stroke"
-                                    || cause == "Hypertensive heart disease"
-                                    || cause == "Cardiomyopathy and myocarditis"
-                                    || cause == "Aortic aneurysm"
-                                    || cause == "Atrial fibrillation and flutter"
-                                    || cause == "Endocarditis"
-                                    || cause == "Peripheral artery disease"
-                                    || cause == "Other cardiovascular and circulatory diseases") {
-                                    parent = "Cardiovascular diseases";
-                                } else if (cause == "Alzheimer's disease and other dementias"
-                                    || cause == "Motor neuron disease"
-                                    || cause == "Multiple sclerosis"
-                                    || cause == "Other neurological disorders"
-                                    || cause == "Parkinson's disease"
-                                    || cause == "Epilepsy"
-                                    || cause == "Headache disorders") {
-                                    parent = "Neurological disorders";
-                                } else if (cause == "Anxiety disorders"
-                                    || cause == "Attention-deficit/hyperactivity disorder"
-                                    || cause == "Autism spectrum disorders"
-                                    || cause == "Bipolar disorder"
-                                    || cause == "Depressive disorders"
-                                    || cause == "Idiopathic developmental intellectual disability"
-                                    || cause == "Other mental disorders"
-                                    || cause == "Schizophrenia"
-                                    || cause == "Conduct disorder"
-                                    || cause == "Eating disorders") {
-                                    parent = "Mental disorders";
-                                } else if (cause == "Alcohol use disorders"
-                                    || cause == "Drug use disorders") {
-                                    parent = "Substance use disorders";
-                                } else if (cause == "Acute glomerulonephritis"
-                                    || cause == "Diabetes mellitus"
-                                    || cause == "Chronic kidney disease") {
-                                    parent = "Diabetes and kidney diseases";
-                                } else if (cause == "Road injuries"
-                                    || cause == "Other transport injuries") {
-                                    parent = "Transport injuries";
-                                } else if (cause == "Animal contact"
-                                    || cause == "Drowning"
-                                    || cause == "Environmental heat and cold exposure"
-                                    || cause == "Exposure to forces of nature"
-                                    || cause == "Exposure to mechanical forces"
-                                    || cause == "Falls"
-                                    || cause == "Fire, heat, and hot substances"
-                                    || cause == "Foreign body"
-                                    || cause == "Poisonings"
-                                    || cause == "Other unintentional injuries"
-                                    || cause == "Adverse effects of medical treatment") {
-                                    parent = "Unintentional injuries";
+        // setting reseting click events
+        document.getElementById("resetCause").addEventListener("click", resetCause);
+        document.getElementById("resetLocation").addEventListener("click", resetLocation);
+        document.getElementById("resetAge").addEventListener("click", resetAge);
+        document.getElementById("resetSex").addEventListener("click", resetSex);
+        for (var i = 0; i < radioElements.length; i++) {
+            radioElements[i].onchange = sexRadioChange;
+        }
+
+        function sexRadioChange() {
+            sex = document.querySelector('input[name="sex-radio"]:checked').value;
+            updateSex();
+            treemap_data_update();
+            bubbles_data_update();
+            map_data_update();
+        }
+
+        function get_treemap_data() {
+            var new_data = [];
+            for (let row of files[0]) {
+                if (row.age == age && row.sex == sex && row.cause != "All causes") {
+                    let cause = row.cause;
+
+                    let parent = getCauseParent[cause];
+                    if (parent == undefined) {
+                        parent = "";
+                    }
+
+                    if (parent == "") {
+                        new_data.push({ id: cause, name: cause, value: +row[innerLocation], colorIndex: getColor[cause] });
+                    } else {
+                        new_data.push({ id: cause, name: cause, parent: parent, value: +row[innerLocation] });
+                    }
+                }
+            }
+            return new_data;
+        }
+        function get_map_data() {
+            var new_data = [];
+            let new_series = [];
+            if (cause == "All causes") {
+                data_values = [];
+                data_locs = [];
+                for (caus of all_main_causes) {
+                    for (let row of files[3]) {
+                        if (row.cause == caus && row.sex == sex && row.age == age && row.location != "Global") {
+                            new_data.push({ country: getCountryCode(row.location), value: +row.value, originalName: row.location })
+                        }
+                    }
+                    if (new_data.length > 0) {
+                        let slice = { data: new_data, name: caus, colorIndex: getColor[caus] }
+                        new_series.push(slice);
+                        new_data = [];
+                    }
+
+                }
+            } else {
+                for (let row of files[2]) {
+                    if (row.age == age && row.sex == sex && row.cause == cause && row.location != "Global") {
+                        for (loc of all_locations) {
+                            new_data.push({ country: getCountryCode(loc), value: +row[loc], originalName: loc });
+                        }
+                    }
+                }
+                let series = { data: new_data, name: cause }
+                new_series.push(series);
+            }
+            return new_series;
+        }
+        function get_pyramid_slice_data(sex) {
+            let zero = 0;
+            let ten = 0;
+            let twenty = 0;
+            let thirty = 0;
+            let forty = 0;
+            let fifty = 0;
+            let sixty = 0;
+            let seventy = 0;
+            let eighty = 0;
+            let ninety = 0;
+
+            for (let row of files[0]) {
+                if (row.sex == sex && row.cause == cause) {
+                    if (row.age == "0 to 9") {
+                        zero = +row[innerLocation];
+                    } else if (row.age == "10 to 19") {
+                        ten = +row[innerLocation];
+                    } else if (row.age == "20 to 29") {
+                        twenty = +row[innerLocation];
+                    } else if (row.age == "30 to 39") {
+                        thirty = +row[innerLocation];
+                    } else if (row.age == "40 to 49") {
+                        forty = +row[innerLocation];
+                    } else if (row.age == "50 to 59") {
+                        fifty = +row[innerLocation];
+                    } else if (row.age == "60 to 69") {
+                        sixty = +row[innerLocation];
+                    } else if (row.age == "70 to 79") {
+                        seventy = +row[innerLocation];
+                    } else if (row.age == "80 to 89") {
+                        eighty = +row[innerLocation];
+                    } else if (row.age == "90+") {
+                        ninety = +row[innerLocation];
+                    }
+                }
+            }
+            let data = [];
+            data.push(zero);
+            data.push(ten);
+            data.push(twenty);
+            data.push(thirty);
+            data.push(forty);
+            data.push(fifty);
+            data.push(sixty);
+            data.push(seventy);
+            data.push(eighty);
+            data.push(ninety);
+
+            let total = 0;
+            for (let d of data) {
+                total = total + d;
+            }
+            let dataPC = [];
+            for (let d of data) {
+                dataPC.push(+numberFormatterPercentage(d / total * 100));
+            }
+
+            // make values negative for male
+            if (sex == "Male") {
+                for (let i = 0; i < dataPC.length; i++) {
+                    dataPC[i] = dataPC[i] * -1;
+                }
+            }
+            let new_data = [];
+            for (let i = 0; i < dataPC.length; i++) {
+                let dv = { y: dataPC[i], totalValue: data[i] }
+                new_data.push(dv);
+            }
+
+            return new_data;
+        }
+        function treemap_data_update() {
+            let updated_treemap_data = get_treemap_data();
+
+            treemap_chart.series[0].setData(updated_treemap_data);
+
+            setTreemapTitle();
+            treemap_chart.setSize();
+        }
+        function pyramid_data_update() {
+            let updated_pyramid_male_data = get_pyramid_slice_data("Male");
+            let updated_pyramid_female_data = get_pyramid_slice_data("Female");
+
+            pyramid_chart.series[0].setData(updated_pyramid_male_data);
+            pyramid_chart.series[1].setData(updated_pyramid_female_data);
+
+            pyramid_chart.setSize();
+            setPyramidTitle();
+        }
+        function map_data_update(col) {
+            let updatedMapData = get_map_data();
+            let color = map_chart.colorAxis[0].options.maxColor;
+
+            if (cause == "All causes") {
+                map_chart.update({
+                    plotOptions: { map: { colorAxis: false } }
+                }, false);
+                map_chart.update({
+                    colorAxis: { visible: false }
+                }, false);
+                map_chart.update({
+                    legend: { enabled: false }
+                }, false);
+            } else {
+                if (col) {
+                    color = col;
+                }
+                map_chart.update({
+                    legend: { enabled: true }
+                }, false);
+                map_chart.update({
+                    plotOptions: { map: { colorAxis: 0 } }
+                }, false);
+                map_chart.update({
+                    colorAxis: { maxColor: color, visible: true, max: +getCauseMaxValue[cause] }
+                }, false);
+            }
+
+            // remove old series
+            let loops = map_chart.series.length;
+            for (var i = 0; i < loops; i++) {
+                map_chart.series[0].remove(false);
+            }
+
+            // then add new ones
+            for (var i = 0; i < updatedMapData.length; i++) {
+                map_chart.addSeries(updatedMapData[i], false);
+            }
+
+            map_chart.redraw();
+            highlightCountry();
+            setMapTitle();
+        }
+        function get_bubbles_data() {
+
+            var new_data = [],
+                total_risks = 0;
+            for (let row of files[4]) {
+                if (cause == row.cause && age == row.age && sex == row.sex) {
+                    // new_data.push({ id: row.rei, name: row.rei, absolute: +row[location], value: 0, colorIndex: getColor[row.rei] });
+                    new_data.push({ id: row.rei, name: row.rei, value: +row[innerLocation], colorIndex: getColor[row.rei] });
+
+                }
+            }
+
+            return new_data;
+        }
+        function bubbles_data_update() {
+            let updated_bubble_data = get_bubbles_data();
+
+            // remove old series
+            bubbles_chart.series[0].setData(updated_bubble_data);
+            setBubblesTitle();
+        }
+
+        intial_treemap_data = get_treemap_data();
+        initial_map_data = get_map_data();
+        initial_pyramid_male_data = get_pyramid_slice_data("Male");
+        initial_pyramid_female_data = get_pyramid_slice_data("Female");
+        initial_bubbles_data = get_bubbles_data();
+        setMapTitle();
+        setBubblesTitle();
+
+        // Initiate the charts
+        let treemap_chart = Highcharts.chart('death_tree', {
+            chart: {
+                type: 'treemap',
+                margin: 0
+            },
+            title: {
+                text: null
+            },
+            tooltip: {
+                formatter: function () {
+                    var title = fCapital(this.key);
+                    var deaths = numberFormatterInteger(this.point.value);
+                    var perc = this.point.value / this.series.tree.val * 100;
+                    var per = numberFormatterPercentage(perc);
+                    return '<text><span style="font-size: 1.1em"><strong>' + title + '</strong></span><br>Total number of deaths: ' + deaths + '<br> Share of deaths: ' + per + '%</text>';
+                },
+                useHTML: true
+            },
+            xAxis: {
+                visible: false,
+
+            },
+            plotOptions: {
+                treemap: {
+                    dataLabels: {
+                        formatter: function () {
+                            var boxWidth = this.point.shapeArgs.width;
+                            var boxHeight = this.point.shapeArgs.height;
+                            var maxLineHeight = (Math.floor(boxHeight / 20)) - 1;
+                            var maxLineLength = boxWidth / 8;
+                            var nameParts = this.point.name.split(" ");
+                            var name = [];
+                            var newLine = "";
+                            var oldLine = "";
+                            var i = 0;
+                            var words = 0;
+                            for (var n in nameParts) {
+                                i = +1;
+                                // If we have reached the line number (height) limit,
+                                // try to append ... dots on remaining name element
+                                // and break the for loop
+                                if (name.length == maxLineHeight) {
+                                    newLine = oldLine.concat("...");
+                                    if (newLine.length > maxLineLength) {
+                                        newLine = "..."
+                                    }
+                                    oldLine = newLine;
+                                    break;
                                 } else {
-                                    parent = "";
+                                    // We keep adding name elements until we hit the width limit
+                                    newLine = oldLine.concat(nameParts[n]).concat(" ");
+                                    if (newLine.length > maxLineLength) {
+                                        // once we hit the limit, we add previous name that was 
+                                        // still under limit
+                                        name.push(oldLine);
+                                        // We replace so that we don't lose current element on next loop
+                                        oldLine = nameParts[n].concat(" ");
+                                        // There is a chance that the current element is too large and cannot 
+                                        // be displayed on its own. In such cases we just want to return ... 
+                                        // and exit the loop
+                                        if (oldLine.length > maxLineLength) {
+                                            oldLine = ("...");
+                                            break;
+                                        }
+                                    } else {
+                                        // if limit is not hit, newline becomes the oldline
+                                        oldLine = newLine;
+                                    }
                                 }
-
-                                if (parent == "") {
-                                    new_data.push({ id: cause, name: cause, value: +row[cause], colorIndex: getColor[cause] });
-                                } else {
-                                    new_data.push({ id: cause, name: cause, parent: parent, value: +row[cause] });
-                                }
+                            }
+                            name.push(oldLine);
+                            return name.join("<br/>");
+                        },
+                        padding: 0
+                    },
+                    levels: [{
+                        level: 1,
+                        colorKey: 'colorValue',
+                    }]
+                },
+                series: {
+                    events: {
+                        click: function (e) {
+                            if (e.point.node.level < 2) {
+                                cause = e.point.name;
+                                location = "Global";
+                                innerLocation = "Global";
+                                causeElement.innerHTML = cause;
+                                locationElement.innerHTML = location;
+                                let color = getIndexColor(getMapColor[cause]);
+                                pyramid_data_update();
+                                bubbles_data_update();
+                                map_data_update(color);
+                            }
+                            return true;
+                        },
+                        setRootNode: function (e) {
+                            if (e.trigger == "traverseUpButton") {
+                                cause = "All causes";
+                                causeElement.innerHTML = cause;
+                                pyramid_data_update();
+                                bubbles_data_update();
+                                map_data_update();
+                            } else {
+                                setTreemapTitle();
                             }
                         }
                     }
                 }
-                return new_data;
-            }
-
-            initial_data = get_data();
-
-            var chart = Highcharts.chart('death_tree', {
-                chart: {
-                    type: 'treemap',
-                    height: 500
+            },
+            series: [{
+                type: 'treemap',
+                layoutAlgorithm: 'squarified',
+                allowTraversingTree: true,
+                animationLimit: 1000,
+                dataLabels: {
+                    enabled: false,
                 },
-                title: {
-                    text: null
+                levelIsConstant: false,
+                levels: [{
+                    level: 1,
+                    dataLabels: {
+                        enabled: true,
+                    }
+                }],
+                data: intial_treemap_data
+            }],
+        });
+        let map_chart = Highcharts.mapChart('death_map', {
+            chart: {
+                events: {
+                    click: function (e) {
+                        location = "Global";
+                        innerLocation = "Global";
+                        locationElement.innerHTML = location;
+                        highlightCountry();
+                        treemap_data_update();
+                        pyramid_data_update();
+                        bubbles_data_update();
+                    }
+                }
+            },
+            title: {
+                text: null
+            },
+            mapNavigation: {
+                enabled: true,
+                enableMouseWheelZoom: false,
+                enableButtons: true,
+            },
+            plotOptions: {
+                map: {
+                    allAreas: false,
+                    joinBy: ['iso-a3', 'country'],
+                    colorAxis: false
                 },
-                tooltip: {
-                    formatter: function () {
-                        var title = fCapital(this.key);
-                        var deaths = numberFormatterInteger(this.point.value);
-                        var perc = this.point.value / this.series.tree.val * 100;
-                        var per = numberFormatterPercentage(perc);
-                        if (measure == "Deaths") {
-                            return '<text><span style="font-size: 1.1em"><strong>' + title + '</strong></span><br>Total number of deaths: ' + deaths + '<br> Percentage: ' + per + '%</text>';
-                        } else {
-                            return '<text><span style="font-size: 1.1em"><strong>' + title + '</strong></span><br>Total number of years lost: ' + deaths + '<br> Percentage: ' + per + '%</text>';
+                series: {
+                    events: {
+                        click: function (e) {
+                            location = e.point.name;
+                            innerLocation = e.point.originalName;
+                            locationElement.innerHTML = location;
+                            highlightCountry();
+                            treemap_data_update();
+                            pyramid_data_update();
+                            bubbles_data_update();
                         }
                     },
-                    useHTML: true
-                },
-                plotOptions: {
-                    treemap: {
-                        dataLabels: {
-                            formatter: function () {
-                                var boxWidth = this.point.shapeArgs.width;
-                                var boxHeight = this.point.shapeArgs.height;
-                                var maxLineHeight = (Math.floor(boxHeight / 20)) - 1;
-                                var maxLineLength = boxWidth / 8;
-                                var nameParts = this.point.name.split(" ");
-                                var name = [];
-                                var newLine = "";
-                                var oldLine = "";
-                                var i = 0;
-                                var words = 0;
-                                for (var n in nameParts) {
-                                    i = +1;
-                                    // If we have reached the line number (height) limit,
-                                    // try to append ... dots on remaining name element
-                                    // and break the for loop
-                                    if (name.length == maxLineHeight) {
-                                        newLine = oldLine.concat("...");
-                                        if (newLine.length > maxLineLength) {
-                                            newLine = "..."
-                                        }
-                                        oldLine = newLine;
-                                        break;
-                                    } else {
-                                        // We keep adding name elements until we hit the width limit
-                                        newLine = oldLine.concat(nameParts[n]).concat(" ");
-                                        if (newLine.length > maxLineLength) {
-                                            // once we hit the limit, we add previous name that was 
-                                            // still under limit
-                                            name.push(oldLine);
-                                            // We replace so that we don't lose current element on next loop
-                                            oldLine = nameParts[n].concat(" ");
-                                            // There is a chance that the current element is too large and cannot 
-                                            // be displayed on its own. In such cases we just want to return ... 
-                                            // and exit the loop
-                                            if (oldLine.length > maxLineLength) {
-                                                oldLine = ("...");
-                                                break;
-                                            }
-                                        } else {
-                                            // if limit is not hit, newline becomes the oldline
-                                            oldLine = newLine;
-                                        }
-                                    }
-                                }
-                                name.push(oldLine);
-                                return name.join("<br/>");
-                            },
-                            padding: 0
-                        },
-                        levels: [{
-                            level: 1,
-                            colorKey: 'colorValue',
-                        }]
+                    mapData: Highcharts.maps['custom/world'],
+                    joinBy: ['iso-a3', 'country']
+                }
+            },
+            colorAxis: {
+                minColor: '#222a2a',
+                maxColor: '#E63333',
+                visible: false
+            },
+            tooltip: {
+                formatter: function () {
+                    var title = fCapital(this.key);
+                    var per = numberFormatterPercentage(this.point.value);
+                    if (cause == "All causes") {
+                        return '<text><span style="font-size: 1.1em"><strong>' + title + '</strong></span><br>Top cause of death: ' + this.series.name + '<br>Percentage of total deaths: ' + per + '%</text>';
+                    } else {
+                        return '<text><span style="font-size: 1.1em"><strong>' + title + '</strong></span><br>Percentage of total deaths: ' + per + '%</text>';
                     }
                 },
-                series: [{
-                    type: 'treemap',
-                    layoutAlgorithm: 'squarified',
-                    allowTraversingTree: true,
-                    animationLimit: 1000,
-                    dataLabels: {
-                        enabled: false,
-                    },
-                    levelIsConstant: false,
-                    levels: [{
-                        level: 1,
-                        dataLabels: {
-                            enabled: true,
+                useHTML: true
+            },
+            series: initial_map_data,
+            legend: {
+                enabled: false
+            }
+        });
+        let pyramid_chart = Highcharts.chart('death_pyramid', {
+            chart: {
+                type: 'bar',
+                events: {
+                    click: function () {
+                        age = this.hoverPoint.category;
+                        ageElement.innerHTML = age;
+
+                        setPyramidBands();
+                        treemap_data_update();
+                        bubbles_data_update();
+                        map_data_update();
+                    }
+                }
+            },
+            title: {
+                text: null
+            },
+            xAxis: [{
+                categories: pyramid_categories,
+                reversed: true,
+                plotBands: [],
+                labels: {
+                    step: 1,
+                },
+                accessibility: {
+                    description: 'Age (male)'
+                },
+
+            }, { // mirror axis on right side
+                opposite: true,
+                reversed: true,
+                categories: pyramid_categories,
+                linkedTo: 0,
+                labels: {
+                    step: 1,
+                },
+                accessibility: {
+                    description: 'Age (female)'
+                }
+            }],
+            yAxis: {
+                title: {
+                    text: null,
+                },
+                labels: {
+                    formatter: function () {
+                        return numberFormatterSeparator(Math.abs(this.value)) + "%";
+                    }
+                },
+                accessibility: {
+                    description: 'Total number of deaths',
+                }
+            },
+
+            plotOptions: {
+                series: {
+                    stacking: 'normal',
+                    events: {
+                        legendItemClick: function (e) {
+                            // to disable default effect of hiding series
+                            return false;
+                        },
+                    }
+                }
+            },
+            tooltip: {
+                formatter: function () {
+                    return '<strong>Aged from ' + this.x + '</strong><br/>' +
+                        'Male, total number of deaths: ' + numberFormatterSeparator(this.points[0].point.totalValue, 1) + '<br>' +
+                        'Male, share of deaths: ' + Math.abs(this.points[0].y) + '%<br>' +
+                        'Female, total number of deaths: ' + numberFormatterSeparator(this.points[1].point.totalValue, 1) + '<br>' +
+                        'Female, share of deaths: ' + Math.abs(this.points[1].y) + '%';
+                },
+                shared: true,
+            },
+
+            series: [{
+                name: "Male",
+                colorIndex: 49,
+                data: initial_pyramid_male_data
+            }, {
+                name: "Female",
+                colorIndex: 51,
+                data: initial_pyramid_female_data
+            }]
+        });
+        var bubbles_chart = Highcharts.chart('death_bubbles', {
+            chart: {
+                type: 'packedbubble',
+            },
+            title: {
+                text: null
+            },
+            tooltip: {
+                useHTML: true,
+                headerFormat: '',
+                pointFormatter: function () {
+                    let sName = fCapital(this.name);
+                    let text = "Associated with " + numberFormatterInteger(this.value) + " deaths";
+                    return '<text><span style="font-size:1.1em"><strong>' + sName + '</strong></span><br>' + text + '</text>';
+                },
+            },
+            plotOptions: {
+                packedbubble: {
+                    crisp: true,
+
+                    minSize: "10%", // These two control the min and max size of the bubbles
+                    maxSize: "200%",
+                    // zMax: 100, // These two define the scale, to keep it consistent across different variables
+                    // zMin: 1,   // without them, maxsize would be the biggest bubble regardless of actual value - so it could be 95% or 15% and would look the same
+                    marker: {
+                        lineColor: '#DDDDD',
+                        states: {
+                            hover: {
+                                enabled: true,
+                                radiusPlus: 10,
+                            },
+                            select: {
+                                enabled: true,
+                                radiusPlus: 10,
+                            }
                         }
-                    }],
-                    data: initial_data
-                }],
+                    },
+                    // useSimulation: true,
+                    layoutAlgorithm: {
+                        initialPositions: 'random',
+                        maxIterations: 200, // total animation time
+                    }
+                }
+            },
+            credits: {
+                enabled: false
+            },
+            legend: {
+                enabled: false
+            },
+            series: [{
+                name: 'Risks',
+                data: initial_bubbles_data,
+                allowPointSelect: true
+
+            }]
+        });
+
+        setPyramidBands();
+        // Otherwise these charts overflow their containers
+        map_chart.reflow();
+        treemap_chart.reflow();
+        pyramid_chart.reflow();
+        bubbles_chart.reflow();
+
+        // Change / reset functions
+        function setMapTitle() {
+            let element = document.getElementById("death_map_title");
+            let text;
+
+            if (cause == "All causes") {
+                text = "National leading causes of death";
+            } else {
+                text = "Share of deaths for " + cause;
+            }
+            if (age != "All ages" && sex != "Both") {
+                let additionalText = "(" + sex + ", " + age + " years old)";
+                text = text + " " + additionalText;
+            } else if (sex != "Both") {
+                let additionalText = "(" + sex + ")";
+                text = text + " " + additionalText;
+            } else if (age != "All ages") {
+                let additionalText = "(" + age + " years old)";
+                text = text + " " + additionalText;
+            }
+
+            element.innerHTML = text;
+        }
+        function setPyramidTitle() {
+            let element = document.getElementById("death_pyramid_title");
+            let text = "Share of deaths by age";
+
+            if (cause != "All causes" && location != "Global") {
+                let additionalText = "(" + location + ", " + cause + ")";
+                text = text + " " + additionalText;
+            } else if (cause != "All causes") {
+                let additionalText = "(" + cause + ")";
+                text = text + " " + additionalText;
+            } else if (location != "Global") {
+                let additionalText = "(" + location + ")";
+                text = text + " " + additionalText;
+            }
+
+            element.innerHTML = text;
+        }
+        function setBubblesTitle() {
+            let element = document.getElementById("death_bubbles_title");
+            let text;
+
+            if (cause == "All causes") {
+                text = "Risks associated with all causes of death";
+            } else {
+                text = "Risks associated with " + cause;
+            }
+            if (age != "All ages" && sex != "Both" && location != "Global") {
+                let additionalText = "(" + location + ", " + sex + ", " + age + " years old)";
+                text = text + " " + additionalText;
+            } else if (age != "All ages" && sex != "Both") {
+                let additionalText = "(" + sex + ", " + age + " years old)";
+                text = text + " " + additionalText;
+            } else if (age != "All ages" && location != "Global") {
+                let additionalText = "(" + location + ", " + age + " years old)";
+                text = text + " " + additionalText;
+            } else if (sex != "Both" && location != "Global") {
+                let additionalText = "(" + location + ", " + sex + ")";
+                text = text + " " + additionalText;
+            } else if (age != "All ages") {
+                let additionalText = "(" + age + " years old)";
+                text = text + " " + additionalText;
+            } else if (sex != "Both") {
+                let additionalText = "(" + sex + ")";
+                text = text + " " + additionalText;
+            } else if (location != "Global") {
+                let additionalText = "(" + location + ")";
+                text = text + " " + additionalText;
+            }
+
+            element.innerHTML = text;
+        }
+        function setTreemapTitle() {
+            let element = document.getElementById("death_treemap_title");
+            let text;
+            if (cause == "All causes") {
+                text = "Total deaths broken down by cause";
+            } else {
+                text = "Total " + cause + " deaths brake down";
+            }
+
+            if (age != "All ages" && sex != "Both" && location != "Global") {
+                let additionalText = "(" + location + ", " + sex + ", " + age + " years old)";
+                text = text + " " + additionalText;
+            } else if (age != "All ages" && sex != "Both") {
+                let additionalText = "(" + sex + ", " + age + " years old)";
+                text = text + " " + additionalText;
+            } else if (age != "All ages" && location != "Global") {
+                let additionalText = "(" + location + ", " + age + " years old)";
+                text = text + " " + additionalText;
+            } else if (sex != "Both" && location != "Global") {
+                let additionalText = "(" + location + ", " + sex + ")";
+                text = text + " " + additionalText;
+            } else if (age != "All ages") {
+                let additionalText = "(" + age + " years old)";
+                text = text + " " + additionalText;
+            } else if (sex != "Both") {
+                let additionalText = "(" + sex + ")";
+                text = text + " " + additionalText;
+            } else if (location != "Global") {
+                let additionalText = "(" + location + ")";
+                text = text + " " + additionalText;
+            }
+
+            element.innerHTML = text;
+        }
+        function resetLocation() {
+            location = "Global";
+            innerLocation = "Global";
+            locationElement.innerHTML = location;
+
+            treemap_data_update();
+            pyramid_data_update();
+            bubbles_data_update();
+            highlightCountry();
+        }
+        function resetCause() {
+            cause = "All causes";
+            causeElement.innerHTML = cause;
+            treemap_chart.series[0].setRootNode("", true, {
+                trigger: 'click'
             });
 
-            // Dropdowns
-            // Define dropdown container
-            var filters = document.querySelector(container_class + " .chart-filters");
+            pyramid_data_update();
+            bubbles_data_update();
+            map_data_update();
+        }
+        function resetAge() {
+            age = "All ages";
+            ageElement.innerHTML = age;
 
-            // Create a measure dropdown
-            var measureName = "tree-measure",
-                measureWidth = "120px";
-            addDropdown(filters, measureName, measureWidth, measureChange, all_measures, measure);
-
-            // Update chart data on location change
-            function measureChange() {
-                measure = document.getElementById(measureName + "-select").value;
-                chart.series[0].setData(get_data());
+            setPyramidBands();
+            treemap_data_update();
+            bubbles_data_update();
+            map_data_update();
+        }
+        function resetSex() {
+            sex = "Both";
+            sexElement.innerHTML = sex;
+            for (var i = 0; i < radioElements.length; i++) {
+                if (radioElements[i].value == "Both") {
+                    radioElements[i].checked = true;
+                } else {
+                    radioElements[i].checked = false;
+                }
             }
 
-            // Create a location dropdown
-            var locationName = "tree-location",
-                locationWidth = "300px";
-            addDropdown(filters, locationName, locationWidth, locationChange, all_locations, location);
+            updateSex();
+            treemap_data_update();
+            bubbles_data_update();
+            map_data_update();
+        }
+        function updateSex() {
+            let maleEl = document.querySelector(".death-pyramid .highcharts-legend .highcharts-series-0 text");
+            let maleSeriesEl = document.querySelector(".death-pyramid  .highcharts-series-group .highcharts-series-0");
+            let femaleEl = document.querySelector(".death-pyramid .highcharts-legend .highcharts-series-1 text");
+            let femaleSeriesEl = document.querySelector(".death-pyramid  .highcharts-series-group .highcharts-series-1");
+            sexElement.innerHTML = sex;
 
-            // Update chart data on location change
-            function locationChange() {
-                location = document.getElementById(locationName + "-select").value;
-                chart.series[0].setData(get_data());
+            if (sex == "Both") {
+                maleEl.classList.remove("pyramid-label-selected");
+                femaleEl.classList.remove("pyramid-label-selected");
+                maleSeriesEl.classList.remove("pyramid-series-inactive");
+                femaleSeriesEl.classList.remove("pyramid-series-inactive");
+            } else if (sex == "Male") {
+                maleEl.classList.add("pyramid-label-selected");
+                femaleEl.classList.remove("pyramid-label-selected");
+                maleSeriesEl.classList.remove("pyramid-series-inactive");
+                femaleSeriesEl.classList.add("pyramid-series-inactive");
+            } else if (sex == "Female") {
+                maleEl.classList.remove("pyramid-label-selected");
+                femaleEl.classList.add("pyramid-label-selected");
+                maleSeriesEl.classList.add("pyramid-series-inactive");
+                femaleSeriesEl.classList.remove("pyramid-series-inactive");
+            }
+        }
+        function setPyramidBands() {
+            let new_bands = [];
+            let catAges = [...all_ages];
+            catAges.pop();
+
+            if (age == "All ages") {
+                for (let i = 0; i < (catAges.length); i++) {
+                    new_bands.push({ from: i - 0.5, to: i + 0.5, className: 'pyramid-band' })
+                }
+            } else {
+                for (let i = 0; i < (catAges.length); i++) {
+                    if (catAges.indexOf(age) == i) {
+                        new_bands.push({ from: i - 0.5, to: i + 0.5, className: 'pyramid-band-selected' })
+                    } else {
+                        new_bands.push({ from: i - 0.5, to: i + 0.5, className: 'pyramid-band' })
+                    }
+                }
             }
 
-            // Create a sex dropdown
-            var sexName = "tree-sex",
-                sexWidth = "100px";
-            addDropdown(filters, sexName, sexWidth, sexChange, all_sexes, sex);
+            pyramid_chart.update({
+                xAxis: { plotBands: new_bands }
+            }, false);
+            pyramid_chart.setSize();
 
-            // Update chart data on sex change
-            function sexChange() {
-                sex = document.getElementById(sexName + "-select").value;
-                chart.series[0].setData(get_data());
+        }
+        function highlightCountry() {
+            let elements = document.querySelectorAll(".death-dashboard .highcharts-map-series .highcharts-point");
+            if (location != 'Global') {
+                let css = 'highcharts-name-' + location.toLowerCase().split(' ').join('-');
+                for (let el of elements) {
+                    if (el.classList.contains(css)) {
+                        el.classList.add("selected-element");
+                    } else {
+                        el.classList.remove("selected-element");
+                    }
+                }
+            } else {
+                for (let el of elements) {
+                    el.classList.remove("selected-element");
+                }
             }
-
-            // Create a age dropdown
-            var ageName = "tree-age",
-                ageWidth = "120px";
-            addDropdown(filters, ageName, ageWidth, ageChange, all_ages, age);
-
-            // Update chart data on location change
-            function ageChange() {
-                age = document.getElementById(ageName + "-select").value;
-                chart.series[0].setData(get_data());
-            }
-        })
+        }
+    })
         .catch(function (error) {
             console.log(error);
         })
@@ -1225,536 +1728,339 @@
             console.log(error);
         })
 
-    var DeathMap = d3.csv(death_map_path)
-        .then(function (data) {
-            // All filterable options
-            const all_causes = [...new Set(data.map(d => d.cause))].sort();
-            const all_years = [...new Set(data.map(d => d.year))].sort();
-            const all_sexes = [...new Set(data.map(d => d.sex))].sort();
-            const all_ages = [...new Set(data.map(d => d.age))].sort();
-            const all_locations = ["Afghanistan",
-                "Albania",
-                "Algeria",
-                "American Samoa",
-                "Andorra",
-                "Angola",
-                "Antigua and Barbuda",
-                "Argentina",
-                "Armenia",
-                "Australia",
-                "Austria",
-                "Azerbaijan",
-                "Bahrain",
-                "Bangladesh",
-                "Barbados",
-                "Belarus",
-                "Belgium",
-                "Belize",
-                "Benin",
-                "Bermuda",
-                "Bhutan",
-                "Bolivia",
-                "Bosnia and Herzegovina",
-                "Botswana",
-                "Brazil",
-                "Brunei",
-                "Bulgaria",
-                "Burkina Faso",
-                "Burundi",
-                "Cambodia",
-                "Cameroon",
-                "Canada",
-                "Cape Verde",
-                "Central African Republic",
-                "Chad",
-                "Chile",
-                "China",
-                "Colombia",
-                "Comoros",
-                "Congo",
-                "Costa Rica",
-                "Cote d'Ivoire",
-                "Croatia",
-                "Cuba",
-                "Cyprus",
-                "Czech Republic",
-                "Democratic Republic of the Congo",
-                "Denmark",
-                "Djibouti",
-                "Dominica",
-                "Dominican Republic",
-                "Ecuador",
-                "Egypt",
-                "El Salvador",
-                "Equatorial Guinea",
-                "Eritrea",
-                "Estonia",
-                "Ethiopia",
-                "Federated States of Micronesia",
-                "Fiji",
-                "Finland",
-                "France",
-                "Gabon",
-                "Georgia",
-                "Germany",
-                "Ghana",
-                "Greece",
-                "Greenland",
-                "Grenada",
-                "Guam",
-                "Guatemala",
-                "Guinea",
-                "Guinea-Bissau",
-                "Guyana",
-                "Haiti",
-                "Honduras",
-                "Hungary",
-                "Iceland",
-                "India",
-                "Indonesia",
-                "Iran",
-                "Iraq",
-                "Ireland",
-                "Israel",
-                "Italy",
-                "Jamaica",
-                "Japan",
-                "Jordan",
-                "Kazakhstan",
-                "Kenya",
-                "Kiribati",
-                "Kuwait",
-                "Kyrgyzstan",
-                "Laos",
-                "Latvia",
-                "Lebanon",
-                "Lesotho",
-                "Liberia",
-                "Libya",
-                "Lithuania",
-                "Luxembourg",
-                "Macedonia",
-                "Madagascar",
-                "Malawi",
-                "Malaysia",
-                "Maldives",
-                "Mali",
-                "Malta",
-                "Marshall Islands",
-                "Mauritania",
-                "Mauritius",
-                "Mexico",
-                "Moldova",
-                "Mongolia",
-                "Montenegro",
-                "Morocco",
-                "Mozambique",
-                "Myanmar",
-                "Namibia",
-                "Nepal",
-                "Netherlands",
-                "New Zealand",
-                "Nicaragua",
-                "Niger",
-                "Nigeria",
-                "North Korea",
-                "Northern Mariana Islands",
-                "Norway",
-                "Oman",
-                "Pakistan",
-                "Palestine",
-                "Panama",
-                "Papua New Guinea",
-                "Paraguay",
-                "Peru",
-                "Philippines",
-                "Poland",
-                "Portugal",
-                "Puerto Rico",
-                "Qatar",
-                "Romania",
-                "Russian Federation",
-                "Rwanda",
-                "Saint Lucia",
-                "Saint Vincent and the Grenadines",
-                "Samoa",
-                "Sao Tome and Principe",
-                "Saudi Arabia",
-                "Senegal",
-                "Serbia",
-                "Seychelles",
-                "Sierra Leone",
-                "Singapore",
-                "Slovakia",
-                "Slovenia",
-                "Solomon Islands",
-                "Somalia",
-                "South Africa",
-                "South Korea",
-                "South Sudan",
-                "Spain",
-                "Sri Lanka",
-                "Sudan",
-                "Suriname",
-                "Swaziland",
-                "Sweden",
-                "Switzerland",
-                "Syria",
-                "Taiwan (Province of China)",
-                "Tajikistan",
-                "Tanzania",
-                "Thailand",
-                "The Bahamas",
-                "The Gambia",
-                "Timor-Leste",
-                "Togo",
-                "Tonga",
-                "Trinidad and Tobago",
-                "Tunisia",
-                "Turkey",
-                "Turkmenistan",
-                "Uganda",
-                "Ukraine",
-                "United Arab Emirates",
-                "United Kingdom",
-                "United States",
-                "Uruguay",
-                "Uzbekistan",
-                "Vanuatu",
-                "Venezuela",
-                "Vietnam",
-                "Virgin Islands, U.S.",
-                "Yemen",
-                "Zambia",
-                "Zimbabwe",
-            ]
 
-            // Default values
-            var age = "All Ages",
-                sex = "Both",
-                cause = "HIV/AIDS",
-                year = "2017";
 
-            var container_class = ".death-map";
-            var initial_data = [];
-
-            function get_data() {
-                var new_data = [];
-                for (let row of data) {
-                    if (row.age == age && row.sex == sex && row.cause == cause && row.year == year) {
-                        for (loc of all_locations) {
-                            new_data.push({ country: getCountryCode(loc), value: +row[loc] });
-                        }
-                    }
+    function tabClickHandler(element) {
+        if (!(element.classList.contains("tab-active"))) {
+            // hide all tab buttons
+            let parent = element.parentNode;
+            for (let i in parent.childNodes) {
+                let el = parent.childNodes[i];
+                if (el.nodeName == "DIV") {
+                    el.classList.remove("tab-active");
                 }
-                return new_data;
             }
 
-            intial_data = get_data();
+            //activate this button
+            element.classList.add("tab-active");
 
-            // Initiate the chart
-            var chart = Highcharts.mapChart('death_map', {
-                chart: {
-                    height: 500
-                },
-                title: {
-                    text: null
-                },
-                mapNavigation: {
-                    enabled: true,
-                    enableMouseWheelZoom: false,
-                    enableButtons: true,
-                },
-                colorAxis: {
-                    tickPixelInterval: 100,
-                    stops: [
-                        [0, '#0070D1'],
-                        [0.25, '#23CA23'],
-                        [0.5, '#DDDDDD'],
-                        [0.75, '#FFFF1A'],
-                        [0.95, '#E63333']
-                    ],
-                },
-                tooltip: {
-                    formatter: function () {
-                        var title = fCapital(this.key);
-                        var per = numberFormatterPercentage(this.point.value);
-                        return '<text><span style="font-size: 1.1em"><strong>' + title + '</strong></span><br>Percentage of total deaths: ' + per + '%</text>';
-                    },
-                    useHTML: true
-                },
-                series: [{
-                    mapData: Highcharts.maps['custom/world'],
-                    data: intial_data,
-                    joinBy: ['iso-a3', 'country'], // first var: type of geographical data, second: data column name
-                }]
-            });
+            // hide other texts and activate this text
+            let questionsText = document.getElementById("death_dash_questions");
+            let obscurityText = document.getElementById("death_dash_obscurity");
+            let navigationText = document.getElementById("death_dash_navigation");
 
-            // Dropdowns
-            // Define dropdown container
-            var filters = document.querySelector(container_class + " .chart-filters");
-
-            // Create a cause dropdown
-            var causeName = "map-cause",
-                causeWidth = "300px";
-            addDropdown(filters, causeName, causeWidth, causeChange, all_causes, cause);
-
-            // Update chart data on cause change
-            function causeChange() {
-                cause = document.getElementById(causeName + "-select").value;
-                chart.series[0].setData(get_data());
+            if (element.innerHTML == "Questions") {
+                obscurityText.classList.add("hide");
+                navigationText.classList.add("hide");
+                questionsText.classList.remove("hide");
+            } else if (element.innerHTML == "Obscurity") {
+                questionsText.classList.add("hide");
+                navigationText.classList.add("hide");
+                obscurityText.classList.remove("hide");
+            } else if (element.innerHTML == "Navigation") {
+                questionsText.classList.add("hide");
+                obscurityText.classList.add("hide");
+                navigationText.classList.remove("hide");
             }
-            // Create a sex dropdown
-            var sexName = "map-sex",
-                sexWidth = "100px";
-            addDropdown(filters, sexName, sexWidth, sexChange, all_sexes, sex);
-
-            // Update chart data on sex change
-            function sexChange() {
-                sex = document.getElementById(sexName + "-select").value;
-                chart.series[0].setData(get_data());
-            }
-            // Create a age dropdown
-            var ageName = "map-age",
-                ageWidth = "120px";
-            addDropdown(filters, ageName, ageWidth, ageChange, all_ages, age);
-
-            // Update chart data on age change
-            function ageChange() {
-                age = document.getElementById(ageName + "-select").value;
-                chart.series[0].setData(get_data());
-            }
-
-            // Create a year dropdown
-            var yearName = "map-year",
-                yearWidth = "80px";
-            addDropdown(filters, yearName, yearWidth, yearChange, all_years, year);
-
-            // Update chart data on year change
-            function yearChange() {
-                year = document.getElementById(yearName + "-select").value;
-                chart.series[0].setData(get_data());
-            }
-        })
-        .catch(function (error) {
-            console.log(error);
-        })
-    var DeathBars = d3.csv(death_bars_path)
-        .then(function (data) {
-            // All filterable options
-            const all_risks = [...new Set(data.map(d => d.rei))].sort()
-            const all_sexes = [...new Set(data.map(d => d.sex))].sort()
-            const all_locations = [...new Set(data.map(d => d.location))].sort()
-            const all_measures = [...new Set(data.map(d => d.measure))].sort()
-            const all_causes = ["Cancer",
-                "Cardiovascular diseases",
-                "Chronic respiratory diseases",
-                "Diabetes and kidney diseases",
-                "Digestive diseases",
-                "Enteric infections",
-                "HIV/AIDS",
-                "Interpersonal violence",
-                "Maternal disorders",
-                "Mental disorders",
-                "Musculoskeletal disorders",
-                "Neonatal disorders",
-                "Neurological disorders",
-                "Nutritional deficiencies",
-                "Other infectious diseases",
-                "Other non-communicable diseases",
-                "Respiratory infections and tuberculosis",
-                "Self-harm",
-                "Sense organ diseases",
-                "Sexually transmitted infections excluding HIV",
-                "Substance use disorders",
-                "Transport injuries",
-                "Unintentional injuries",
-            ]
-
-            // Default values
-            var sex = "Both",
-                measure = "Deaths",
-                location = "Global";
-
-            var container_class = ".death-bars";
-            var initial_data = [];
-
-            function getBlankData() {
-                return [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0];
-            }
-
-            function get_data() {
-                var new_data = [];
-                // First we create the structure by getting each cause, setting a color and providing empty data for it
-                for (let cause of all_causes) {
-                    new_data.push({ id: cause, name: cause, data: getBlankData(), colorIndex: getColor[cause] })
-                }
-                // Then we update risk data where appropriate
-                for (let row of data) {
-                    if (row.measure == measure && row.sex == sex && row.location == location) {
-                        for (let cause of all_causes) {
-                            var data_index = new_data.findIndex(x => x.name == cause);
-                            var risk_index = all_risks.findIndex(x => x == row.rei);
-
-                            new_data[data_index].data[risk_index] = +row[cause];
-                        }
-                    }
-                }
-                return new_data;
-            }
-
-            initial_data = get_data();
-
-            var chart = Highcharts.chart('death_bars', {
-                chart: {
-                    type: 'bar',
-                    height: 500,
-                },
-                title: {
-                    text: null
-                },
-                xAxis: {
-                    categories: all_risks
-                },
-                yAxis: {
-                    min: 0,
-                    title: null
-                },
-                legend: {
-                    enabled: false,
-                    width: '100%',
-                    itemWidth: 350
-                },
-                tooltip: {
-                    formatter: function () {
-                        var cause = fCapital(this.point.series.name);
-                        var risk = fCapital(this.key);
-                        var val = numberFormatterInteger(this.y);
-                        return '<text><span style="font-size: 1.1em"><strong>' + cause + '</strong></span><br>' + risk + ' is associated with<br>' + val + ' ' + measure + '</text>';
-                    },
-                    useHTML: true
-                },
-                plotOptions: {
-                    series: {
-                        stacking: 'normal'
-                    }
-                },
-                series: initial_data
-            });
-
-            // Dropdowns
-            // Define dropdown container
-            var filters = document.querySelector(container_class + " .chart-filters");
-
-            // Create a measure dropdown
-            var measureName = "bars-measure",
-                measureWidth = "120px";
-            addDropdown(filters, measureName, measureWidth, measureChange, all_measures, measure);
-
-            // Update chart data on cause change
-            function measureChange() {
-                measure = document.getElementById(measureName + "-select").value;
-                var loops = chart.series.length;
-                var updated_data = get_data();
-
-                // First empty the existing data
-                for (var i = 0; i < loops; i++) {
-                    chart.series[0].remove(false);
-                }
-                // Then add the updated data
-                for (var i = 0; i < updated_data.length; i++) {
-                    chart.addSeries(updated_data[i], false);
-                }
-                chart.redraw();
-            }
-
-            // Create a location dropdown
-            var locationName = "bars-location",
-                locationWidth = "300px";
-            addDropdown(filters, locationName, locationWidth, locationChange, all_locations, location);
-
-            // Update chart data on age change
-            function locationChange() {
-                location = document.getElementById(locationName + "-select").value;
-                var loops = chart.series.length;
-                var updated_data = get_data();
-
-                // First empty the existing data
-                for (var i = 0; i < loops; i++) {
-                    chart.series[0].remove(false);
-                }
-                // Then add the updated data
-                for (var i = 0; i < updated_data.length; i++) {
-                    chart.addSeries(updated_data[i], false);
-                }
-                chart.redraw();
-            }
-
-            // Create a sex dropdown
-            var sexName = "bars-sex",
-                sexWidth = "120px";
-            addDropdown(filters, sexName, sexWidth, sexChange, all_sexes, sex);
-
-
-            // Update chart data on sex change
-            function sexChange() {
-                sex = document.getElementById(sexName + "-select").value;
-                var loops = chart.series.length;
-                var updated_data = get_data();
-
-                // First empty the existing data
-                for (var i = 0; i < loops; i++) {
-                    chart.series[0].remove(false);
-                }
-                // Then add the updated data
-                for (var i = 0; i < updated_data.length; i++) {
-                    chart.addSeries(updated_data[i], false);
-                }
-                chart.redraw();
-            }
-        })
-        .catch(function (error) {
-            console.log(error);
-        })
-
+        }
+    }
     // To keep color of causes consistent
     var getColor = {
-        'Cardiovascular diseases': '3',
-        'Cardiovascular disease': '3',
-        'Cancer': '9',
-        'Chronic respiratory diseases': '19',
-        'Pneumonia or influenza': '19',
-        'Respiratory infections and tuberculosis': '24',
-        'Tuberculosis': '24',
-        'Neurological disorders': '32',
-        'Senility': '32',
-        'Diabetes and kidney diseases': '41',
-        'Nephropathies': '41',
-        'Digestive diseases': '43',
-        'Maternal and neonatal disorders': '5',
-        'Maternal disorders': '5',
-        'Neonatal disorders': '12',
-        'Unintentional injuries': '15',
-        'Accidents': '15',
-        'Enteric infections': '27',
-        'Gastrointestinal infections': '27',
-        'Transport injuries': '31',
-        'Other non-communicable diseases': '39',
-        'HIV/AIDS': '6',
-        'Other infectious diseases': '8',
-        'Self-harm': '25',
-        'Neglected tropical diseases and malaria': '18',
+        'Cardiovascular diseases': '2',
+        'Cardiovascular disease': '2',
+        'Cancer': '4',
+        'Chronic respiratory diseases': '6',
+        'Pneumonia or influenza': '6',
+        'Respiratory infections and tuberculosis': '18',
+        'Tuberculosis': '18',
+        'Neurological disorders': '24',
+        'Senility': '24',
+        'Diabetes and kidney diseases': '3',
+        'Nephropathies': '3',
+        'Digestive diseases': '0',
+        'Maternal and neonatal disorders': '23',
+        'Maternal disorders': '23',
+        'Neonatal disorders': '23',
+        'Unintentional injuries': '8',
+        'Accidents': '8',
+        'Enteric infections': '20',
+        'Gastrointestinal infections': '20',
+        'Transport injuries': '10',
+        'Other non-communicable diseases': '1',
+        'HIV/AIDS': '16',
+        'HIV/AIDS and sexually transmitted infections': '16',
+        'Other infectious diseases': '17',
+        'Self-harm': '12',
+        'Suicide': '12',
+        'Neglected tropical diseases and malaria': '15',
         'Diphtheria': '18',
-        'Interpersonal violence': '34',
-        'Substance use disorders': '37',
-        'Nutritional deficiencies': '44',
-        'Conflict and terrorism': '1',
-        'Musculoskeletal disorders': '11',
-        'Sexually transmitted infections excluding HIV': '20',
-        'Skin and subcutaneous diseases': '23',
-        'Executions and police conflict': '33',
-        'Mental disorders': '38',
-        'Sense organ diseases': '4'
+        'Interpersonal violence': '11',
+        'Substance use disorders': '27',
+        'Nutritional deficiencies': '25',
+        'Conflict and terrorism': '7',
+        'Musculoskeletal disorders': '26',
+        'Sexually transmitted infections excluding HIV': '16',
+        'Skin and subcutaneous diseases': '5',
+        'Executions and police conflict': '9',
+        'Mental disorders': '22',
+        'Sense organ diseases': '4',
+        'High systolic blood pressure': '30',
+        'High LDL cholesterol': '30',
+        'Diabetes': '30',
+        'Kidney dysfunction': '30',
+        'Low bone mineral density': '30',
+        'Air pollution': '33',
+        'Unsafe water, sanitation, and handwashing': '33',
+        'Non-optimal temperature': '33',
+        'Other environmental risks': '33',
+        'Intimate partner violence': '33',
+        'Childhood sexual abuse and bullying': '33',
+        'Dietary risks': '28',
+        'Obesity': '28',
+        'Smoking': '28',
+        'Child and maternal malnutrition': '28',
+        'Alcohol use': '28',
+        'Unsafe sex': '28',
+        'Low physical activity': '28',
+        'Occupational risks': '28',
+        'Drug use': '28'
     };
+    var getMapColor = {
+        'Cardiovascular diseases': '2',
+        'Cardiovascular disease': '2',
+        'Cancer': '2',
+        'Chronic respiratory diseases': '2',
+        'Pneumonia or influenza': '2',
+        'Respiratory infections and tuberculosis': '16',
+        'Tuberculosis': '16',
+        'Neurological disorders': '23',
+        'Senility': '23',
+        'Diabetes and kidney diseases': '2',
+        'Nephropathies': '2',
+        'Digestive diseases': '2',
+        'Maternal and neonatal disorders': '23',
+        'Maternal disorders': '23',
+        'Neonatal disorders': '23',
+        'Unintentional injuries': '8',
+        'Accidents': '8',
+        'Enteric infections': '16',
+        'Gastrointestinal infections': '16',
+        'Transport injuries': '8',
+        'Other non-communicable diseases': '2',
+        'HIV/AIDS': '16',
+        'HIV/AIDS and sexually transmitted infections': '16',
+        'Other infectious diseases': '16',
+        'Self-harm': '8',
+        'Suicide': '8',
+        'Neglected tropical diseases and malaria': '16',
+        'Diphtheria': '16',
+        'Interpersonal violence': '8',
+        'Substance use disorders': '23',
+        'Nutritional deficiencies': '23',
+        'Conflict and terrorism': '8',
+        'Musculoskeletal disorders': '23',
+        'Sexually transmitted infections excluding HIV': '16',
+        'Skin and subcutaneous diseases': '2',
+        'Executions and police conflict': '8',
+        'Mental disorders': '23',
+        'Sense organ diseases': '2'
+    };
+
+    let getCauseParent = {
+        "Tuberculosis": "Respiratory infections and tuberculosis",
+        "Lower respiratory infections": "Respiratory infections and tuberculosis",
+        "Upper respiratory infections": "Respiratory infections and tuberculosis",
+        "Otitis media": "Respiratory infections and tuberculosis",
+        "Respiratory infections and tuberculosis": "",
+        "Diarrheal diseases": "Enteric infections",
+        "Typhoid and paratyphoid": "Enteric infections",
+        "Other intestinal infectious diseases": "Enteric infections",
+        "Invasive Non-typhoidal Salmonella (iNTS)": "Enteric infections",
+        "Enteric infections": "",
+        "Malaria": "Neglected tropical diseases and malaria",
+        "Chagas disease": "Neglected tropical diseases and malaria",
+        "Leishmaniasis": "Neglected tropical diseases and malaria",
+        "African trypanosomiasis": "Neglected tropical diseases and malaria",
+        "Schistosomiasis": "Neglected tropical diseases and malaria",
+        "Cystic echinococcosis": "Neglected tropical diseases and malaria",
+        "Cysticercosis": "Neglected tropical diseases and malaria",
+        "Lymphatic filariasis": "Neglected tropical diseases and malaria",
+        "Onchocerciasis": "Neglected tropical diseases and malaria",
+        "Trachoma": "Neglected tropical diseases and malaria",
+        "Dengue": "Neglected tropical diseases and malaria",
+        "Yellow fever": "Neglected tropical diseases and malaria",
+        "Rabies": "Neglected tropical diseases and malaria",
+        "Intestinal nematode infections": "Neglected tropical diseases and malaria",
+        "Leprosy": "Neglected tropical diseases and malaria",
+        "Food-borne trematodiases": "Neglected tropical diseases and malaria",
+        "Ebola": "Neglected tropical diseases and malaria",
+        "Zika virus": "Neglected tropical diseases and malaria",
+        "Other neglected tropical diseases": "Neglected tropical diseases and malaria",
+        "Neglected tropical diseases and malaria": "",
+        "Neonatal disorders": "Maternal and neonatal disorders",
+        "Maternal disorders": "Maternal and neonatal disorders",
+        "Maternal and neonatal disorders": "",
+        "Bladder cancer": "Cancer",
+        "Brain and nervous system cancer": "Cancer",
+        "Breast cancer": "Cancer",
+        "Cervical cancer": "Cancer",
+        "Colon and rectum cancer": "Cancer",
+        "Esophageal cancer": "Cancer",
+        "Gallbladder and biliary tract cancer": "Cancer",
+        "Kidney cancer": "Cancer",
+        "Larynx cancer": "Cancer",
+        "Leukemia": "Cancer",
+        "Lip and oral cavity cancer": "Cancer",
+        "Liver cancer": "Cancer",
+        "Malignant skin melanoma": "Cancer",
+        "Nasopharynx cancer": "Cancer",
+        "Non-melanoma skin cancer": "Cancer",
+        "Other pharynx cancer": "Cancer",
+        "Ovarian cancer": "Cancer",
+        "Pancreatic cancer": "Cancer",
+        "Prostate cancer": "Cancer",
+        "Stomach cancer": "Cancer",
+        "Testicular cancer": "Cancer",
+        "Thyroid cancer": "Cancer",
+        "Tracheal, bronchus, and lung cancer": "Cancer",
+        "Uterine cancer": "Cancer",
+        "Mesothelioma": "Cancer",
+        "Hodgkin lymphoma": "Cancer",
+        "Non-Hodgkin lymphoma": "Cancer",
+        "Multiple myeloma": "Cancer",
+        "Other malignant neoplasms": "Cancer",
+        "Other neoplasms": "Cancer",
+        "Brain and central nervous system cancer": "Cancer",
+        "Cancer": "",
+        "Ischemic heart disease": "Cardiovascular diseases",
+        "Rheumatic heart disease": "Cardiovascular diseases",
+        "Non-rheumatic valvular heart disease": "Cardiovascular diseases",
+        "Stroke": "Cardiovascular diseases",
+        "Hypertensive heart disease": "Cardiovascular diseases",
+        "Cardiomyopathy and myocarditis": "Cardiovascular diseases",
+        "Aortic aneurysm": "Cardiovascular diseases",
+        "Atrial fibrillation and flutter": "Cardiovascular diseases",
+        "Endocarditis": "Cardiovascular diseases",
+        "Peripheral artery disease": "Cardiovascular diseases",
+        "Other cardiovascular and circulatory diseases": "Cardiovascular diseases",
+        "Cardiovascular diseases": "",
+        "Alzheimer's disease and other dementias": "Neurological disorders",
+        "Motor neuron disease": "Neurological disorders",
+        "Multiple sclerosis": "Neurological disorders",
+        "Other neurological disorders": "Neurological disorders",
+        "Parkinson's disease": "Neurological disorders",
+        "Headache disorders": "Neurological disorders",
+        "Idiopathic epilepsy": "Neurological disorders",
+        "Neurological disorders": "",
+        "Anxiety disorders": "Mental disorders",
+        "Attention-deficit/hyperactivity disorder": "Mental disorders",
+        "Autism spectrum disorders": "Mental disorders",
+        "Bipolar disorder": "Mental disorders",
+        "Depressive disorders": "Mental disorders",
+        "Idiopathic developmental intellectual disability": "Mental disorders",
+        "Other mental disorders": "Mental disorders",
+        "Schizophrenia": "Mental disorders",
+        "Conduct disorder": "Mental disorders",
+        "Eating disorders": "Mental disorders",
+        "Mental disorders": "",
+        "Alcohol use disorders": "Substance use disorders",
+        "Drug use disorders": "Substance use disorders",
+        "Substance use disorders": "",
+        "Acute glomerulonephritis": "Diabetes and kidney diseases",
+        "Diabetes mellitus": "Diabetes and kidney diseases",
+        "Chronic kidney disease": "Diabetes and kidney diseases",
+        "Diabetes and kidney diseases": "",
+        "Cyclist road injuries": "Transport injuries",
+        "Motor vehicle road injuries": "Transport injuries",
+        "Motorcyclist road injuries": "Transport injuries",
+        "Other road injuries": "Transport injuries",
+        "Pedestrian road injuries": "Transport injuries",
+        "Other transport injuries": "Transport injuries",
+        "Transport injuries": "",
+        "Animal contact": "Unintentional injuries",
+        "Drowning": "Unintentional injuries",
+        "Environmental heat and cold exposure": "Unintentional injuries",
+        "Exposure to forces of nature": "Unintentional injuries",
+        "Exposure to mechanical forces": "Unintentional injuries",
+        "Falls": "Unintentional injuries",
+        "Fire, heat, and hot substances": "Unintentional injuries",
+        "Foreign body": "Unintentional injuries",
+        "Poisonings": "Unintentional injuries",
+        "Other unintentional injuries": "Unintentional injuries",
+        "Adverse effects of medical treatment": "Unintentional injuries",
+        "Unintentional injuries": "",
+        "Sexually transmitted infections excluding HIV": "HIV/AIDS and sexually transmitted infections",
+        "HIV/AIDS": "HIV/AIDS and sexually transmitted infections",
+        "HIV/AIDS and sexually transmitted infections": "",
+        "Chronic obstructive pulmonary disease": "Chronic respiratory diseases",
+        "Asthma": "Chronic respiratory diseases",
+        "Pneumoconiosis": "Chronic respiratory diseases",
+        "Interstitial lung disease and pulmonary sarcoidosis": "Chronic respiratory diseases",
+        "Other chronic respiratory diseases": "Chronic respiratory diseases",
+        "Chronic respiratory diseases": "",
+        "Acute hepatitis": "Other infectious diseases",
+        "Meningitis": "Other infectious diseases",
+        "Encephalitis": "Other infectious diseases",
+        "Diphtheria": "Other infectious diseases",
+        "Whooping cough": "Other infectious diseases",
+        "Tetanus": "Other infectious diseases",
+        "Measles": "Other infectious diseases",
+        "Varicella and herpes zoster": "Other infectious diseases",
+        "Other unspecified infectious diseases": "Other infectious diseases",
+        "Other infectious diseases": "",
+        "Appendicitis": "Digestive diseases",
+        "Cirrhosis and other chronic liver diseases": "Digestive diseases",
+        "Upper digestive system diseases": "Digestive diseases",
+        "Paralytic ileus and intestinal obstruction": "Digestive diseases",
+        "Inguinal, femoral, and abdominal hernia": "Digestive diseases",
+        "Inflammatory bowel disease": "Digestive diseases",
+        "Gallbladder and biliary diseases": "Digestive diseases",
+        "Vascular intestinal disorders": "Digestive diseases",
+        "Pancreatitis": "Digestive diseases",
+        "Other digestive diseases": "Digestive diseases",
+        "Digestive diseases": "",
+        "Congenital birth defects": "Other non-communicable diseases",
+        "Gynecological diseases": "Other non-communicable diseases",
+        "Urinary diseases and male infertility": "Other non-communicable diseases",
+        "Endocrine, metabolic, blood, and immune disorders": "Other non-communicable diseases",
+        "Sudden infant death syndrome": "Other non-communicable diseases",
+        "Hemoglobinopathies and hemolytic anemias": "Other non-communicable diseases",
+        "Other non-communicable diseases": "",
+        "Conflict and terrorism": "",
+        "Executions and police conflict": "",
+        "Interpersonal violence": "",
+        "Musculoskeletal disorders": "",
+        "Nutritional deficiencies": "",
+        "Skin and subcutaneous diseases": "",
+        "Suicide": ""
+    };
+
+    let getCauseMaxValue = {
+        "Cancer": "30",
+        "Cardiovascular diseases": "60",
+        "Chronic respiratory diseases": "20",
+        "Conflict and terrorism": "9",
+        "Diabetes and kidney diseases": "20",
+        "Digestive diseases": "10",
+        "Enteric infections": "20",
+        "Executions and police conflict": "0.5",
+        "HIV/AIDS and sexually transmitted infections": "25",
+        "Interpersonal violence": "5",
+        "Maternal and neonatal disorders": "15",
+        "Mental disorders": "0",
+        "Musculoskeletal disorders": "0.5",
+        "Neglected tropical diseases and malaria": "15",
+        "Neurological disorders": "10",
+        "Nutritional deficiencies": "5",
+        "Other infectious diseases": "10",
+        "Other non-communicable diseases": "10",
+        "Respiratory infections and tuberculosis": "20",
+        "Skin and subcutaneous diseases": "0.5",
+        "Substance use disorders": "2.5",
+        "Suicide": "7",
+        "Transport injuries": "15",
+        "Unintentional injuries": "8",
+
+    }
 </script>
 {% endblock %}
