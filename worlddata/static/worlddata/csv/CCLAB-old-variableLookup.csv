@@ -225,9 +225,9 @@ aidlargebusiness,,,1,,,,,,,,,,,
 aidbanks,,,1,,,,,,,,,,,
 aidgovernment,,,1,,,,,,,,,,,
 MostImportant,,,1,1,1,1,1,1,1,1,1,1,1,1
-discounting,,,,1,1,1,1,1,1,1,1,,1,1
+discounting,,,1,1,1,1,1,1,1,1,1,,1,1
 RiskManagementcomposite,,,,1,1,1,1,1,1,1,1,,1,1
-discounting.recode,,,,1,,,,,,,,,,
+discounting.recode,,,1,1,,,,,,,,,,
 StartedPreparing,,,,,1,1,1,,,,,,,
 WeeksAgoPrepare,,,,,1,1,1,,,,,,,
 ContractedCovid,,,,,1,1,1,1,1,1,1,1,1,1

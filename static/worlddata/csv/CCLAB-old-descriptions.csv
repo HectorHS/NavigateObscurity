@@ -4,176 +4,177 @@ Sex,
 Children,
 Under12,Children under 12
 Over12,Children over 12
-Education,
-SubjectiveSES,
-Ethnicity,
-English,
-Fluent,Fluent in English
-LivingSituation,
-Preexisting,Preexisting  health conditions
-MateSeeking1,I spend a lot of time thinking about ways to meet possible dating partners.
-MateSeeking2,Starting a new romantic/sexual relationship is not a high priority for me.
-PFIclose1,"When my close friend succeeds, I feel good."
-PFIclose2,"When my close friend fails, I feel bad"
-PFIclose3,I feel that my close friend's gain is my gain.
-PFIclose4, What is good for my close friend is good for me.
-PFIclose5,"Honestly, I don't care whether my close friend thrives or not."
-PFIclose6,My close friend and I rise and fall together
-CFIclose1," When something good happens to my close friend, that is ..."
-CFIclose2,"When something bad happens to my close friend, that is ..."
-CFIclose3,"When my close friend succeeds, I feel ..."
-CFIclose4,"When my close friend fails, I feel ..."
-CFIclose5, My close friend's gain is ...
-CFIclose6,My close friend's loss is ...
-PFIAcq1,"When my acquaintance succeeds, I feel good."
-PFIAcq2,"When my acquaintance fails, I feel bad"
-PFIAcq3, I feel that my acquaintance's gain is my gain.
-PFIAcq4,What is good for my acquaintance is good for me.
-PFIAcq5,"Honestly, I don't care whether my acquaintance thrives or not."
-PFIAcq6,My acquaintance and I rise and fall together
-CFIAcq1,"When something good happens to my acquaintance, that is ..."
-CFIAcq2,"CFIAcq - When something bad happens to my acquaintance, that is ..."
-CFIAcq3,"CFIAcq - When my acquaintance succeeds, I feel ..."
-CFIAcq4,"CFIAcq - When my acquaintance fails, I feel ..."
-CFIAcq5,My acquaintance's gain is ...
-CFIAcq6,CFIAcq - My acquaintance's loss is ...
-PSS1,"In the last month, how often have you been upset because of something that happened unexpectedly?"
-PSS2,"In the last month, how often have you felt that you were unable to control the important things in your life?"
-PSS3," In the last month, how often have you felt nervous and “stressed”?"
-PSS4,"In the last month, how often have you felt confident about your ability to handle your personal problems?"
-PSS5," In the last month, how often have you felt that things were going your way?"
-PSS6,"In the last month, how often have you found that you could not cope with all the things that you had to do?"
-PSS7,"In the last month, how often have you been able to control irritations in your life?"
-PSS8," In the last month, how often have you felt that you were on top of things?"
-PSS9,"In the last month, how often have you been angered because of things that were outside of your control?"
-PSS10," In the last month, how often have you felt difficulties were piling up so high that you could not overcome them?"
-Stress,How stressed do you currently feel dealing with changes caused by COVID19?
-Anxiety,How anxious do you feel when you think about the current events going on in the world?
-Anxiety1,"Over the last two weeks, how often have you been bothered by the following problems? - Feeling nervous, anxious, or on edge"
-Anxiety2,"Over the last two weeks, how often have you been bothered by the following problems? - Not being able to stop or control worrying"
-Anxiety3,"Over the last two weeks, how often have you been bothered by the following problems? - Worrying too much about different things"
-Anxiety4,"Over the last two weeks, how often have you been bothered by the following problems? - Trouble relaxing"
-Anxiety5," Over the last two weeks, how often have you been bothered by the following problems? - Being so restless that it's hard to sit still"
-Anxiety6,"Over the last two weeks, how often have you been bothered by the following problems? - Becoming easily annoyed or irritable"
-Anxiety7,"Over the last two weeks, how often have you been bothered by the following problems? - Feeling afraid as if something awful might happen"
-PerceptionsRisk,How likely do you think it is that you will contract COVID19?
-PerceptionsRisk2,How likely is it that the epidemic will get a lot worse before it gets better?
-PerceptionsRisk3,"How likely are you to avoid places where you might contract the virus (school, work, hospitals, etc.)?"
-Riskmanagementtransfer,I am likely to ask parents or friends for help preparing for the COVID19 epidemic.
-Riskmanagementretention,I have been stocking up on food and supplies so that I am prepared for the COVID19 epidemic.
-Riskmanagementreduction,I try to reduce my risk of getting COVID19 by doing things like washing my hands often.
-Riskmanagementavoidance,"I completely avoid situations that could put me at risk of contracting COVID19, like going to the grocery store when it is crowded."
-RiskmanagementAvoid1,"I completely avoid situations that could put me at risk of contracting COVID19, for example staying away from large events where there have been cases."
-RiskmanagementAvoid2,"I completely avoid situations that could put me at risk of contracting COVID19, for example not traveling to locations where there have been cases."
-Riskmanagementreduction2,I try to reduce my risk of getting COVID19 by wearing a mask when I leave the house.
+Education,"(1=Less than High School, 2=High School, 3=Some College, 4=2-year degree (Associates), 5=4-year degree (BA, BS), 6=Master's Degree, 7=Doctoral Degree, 8=Professional Degree)"
+SubjectiveSES,"At the top of the ladder are the people who are the best off, have the most money, most education, and best jobs. These people are represented by number 10 marked on the ladder. At the bottom are the people who are the worst off, have the least money, least education, worst jobs, or no job. These people are represented by number 1 at the bottom of the ladder. "
+Ethnicity,"(1=Asian or Paacific Islander, 2=Hispanic or Latino/a, 3=White or Caucasian, 4=Black or African American, 5=Native American, 6=Other)"
+English," Is English your first language? (1=Yes, 2=No)"
+Fluent,"Do you consider yourself to be fluent in English? (1=Yes, 2=No)"
+LivingSituation,"What is your current living situation? (1=Living alone, 2=Living with non-family roommates, 3=Living with family roommates, 4=Living with parents, 5=Living with spouse and children, 6=Living with extended family)"
+Preexisting,"Do you have any pre-existing health conditions that require you to take extra precautions to avoid being sick? (1=Yes, 2=No)
+"
+MateSeeking1,"I spend a lot of time thinking about ways to meet possible dating partners. (1=Strongly disagree, 7=Strongly agree)"
+MateSeeking2,"Starting a new romantic/sexual relationship is not a high priority for me. (1=Strongly disagree, 7=Strongly agree)"
+PFIclose1,"When my close friend succeeds, I feel good. (1=Do not agree at all, 7=Strongly agree)"
+PFIclose2,"When my close friend fails, I feel bad (1=Do not agree at all, 7=Strongly agree)"
+PFIclose3,"I feel that my close friend's gain is my gain. (1=Do not agree at all, 7=Strongly agree)"
+PFIclose4," What is good for my close friend is good for me. (1=Do not agree at all, 7=Strongly agree)"
+PFIclose5,"Honestly, I don't care whether my close friend thrives or not. (1=Do not agree at all, 7=Strongly agree)"
+PFIclose6,"My close friend and I rise and fall together (1=Do not agree at all, 7=Strongly agree)"
+CFIclose1," When something good happens to my close friend, that is … (-3=Very bad for me, 3=Very good for me)"
+CFIclose2,"When something bad happens to my close friend, that is (-3=Very bad for me, 3=Very good for me)"
+CFIclose3,"When my close friend succeeds, I feel (-3=Very bad for me, 3=Very good for me)"
+CFIclose4,"When my close friend fails, I feel (-3=Very bad for me, 3=Very good for me)"
+CFIclose5," My close friend's gain is (-3=Very bad for me, 3=Very good for me)"
+CFIclose6,"My close friend's loss is (-3=Very bad for me, 3=Very good for me)"
+PFIAcq1,"When my acquaintance succeeds, I feel good. (1=Do not agree at all, 7=Strongly agree)"
+PFIAcq2,"When my acquaintance fails, I feel bad (1=Do not agree at all, 7=Strongly agree)"
+PFIAcq3," I feel that my acquaintance's gain is my gain. (1=Do not agree at all, 7=Strongly agree)"
+PFIAcq4,"What is good for my acquaintance is good for me. (1=Do not agree at all, 7=Strongly agree)"
+PFIAcq5,"Honestly, I don't care whether my acquaintance thrives or not. (1=Do not agree at all, 7=Strongly agree)"
+PFIAcq6,"My acquaintance and I rise and fall together (1=Do not agree at all, 7=Strongly agree)"
+CFIAcq1,"When something good happens to my acquaintance, that is (-3=Very bad for me, 3=Very good for me)"
+CFIAcq2,"CFIAcq - When something bad happens to my acquaintance, that is (-3=Very bad for me, 3=Very good for me)"
+CFIAcq3,"CFIAcq - When my acquaintance succeeds, I feel (-3=Very bad for me, 3=Very good for me)"
+CFIAcq4,"CFIAcq - When my acquaintance fails, I feel (-3=Very bad for me, 3=Very good for me)"
+CFIAcq5,"My acquaintance's gain is (-3=Very bad for me, 3=Very good for me)"
+CFIAcq6,"CFIAcq - My acquaintance's loss is (-3=Very bad for me, 3=Very good for me)"
+PSS1,"In the last month, how often have you been upset because of something that happened unexpectedly? (1=Never, 5=Very often)"
+PSS2,"In the last month, how often have you felt that you were unable to control the important things in your life? (1=Never, 5=Very often)"
+PSS3," In the last month, how often have you felt nervous and “stressed”? (1=Never, 5=Very often)"
+PSS4,"In the last month, how often have you felt confident about your ability to handle your personal problems? (1=Never, 5=Very often)"
+PSS5," In the last month, how often have you felt that things were going your way? (1=Never, 5=Very often)"
+PSS6,"In the last month, how often have you found that you could not cope with all the things that you had to do? (1=Never, 5=Very often)"
+PSS7,"In the last month, how often have you been able to control irritations in your life? (1=Never, 5=Very often)"
+PSS8," In the last month, how often have you felt that you were on top of things? (1=Never, 5=Very often)"
+PSS9,"In the last month, how often have you been angered because of things that were outside of your control? (1=Never, 5=Very often)"
+PSS10," In the last month, how often have you felt difficulties were piling up so high that you could not overcome them? (1=Never, 5=Very often)"
+Stress,"How stressed do you currently feel dealing with changes caused by COVID19? (1=Not at all stressed, 7=Extremely stressed)"
+Anxiety,"How anxious do you feel when you think about the current events going on in the world? (1=Not at all anxious, 7=Extremely anxious)"
+Anxiety1,"Over the last two weeks, how often have you been bothered by the following problems? - Feeling nervous, anxious, or on edge (1=Not at all, 2=Several days, 3=Over half of the days, 4=Nearly every day)"
+Anxiety2,"Over the last two weeks, how often have you been bothered by the following problems? - Not being able to stop or control worrying (1=Not at all, 2=Several days, 3=Over half of the days, 4=Nearly every day)"
+Anxiety3,"Over the last two weeks, how often have you been bothered by the following problems? - Worrying too much about different things (1=Not at all, 2=Several days, 3=Over half of the days, 4=Nearly every day)"
+Anxiety4,"Over the last two weeks, how often have you been bothered by the following problems? - Trouble relaxing (1=Not at all, 2=Several days, 3=Over half of the days, 4=Nearly every day)"
+Anxiety5," Over the last two weeks, how often have you been bothered by the following problems? - Being so restless that it's hard to sit still (1=Not at all, 2=Several days, 3=Over half of the days, 4=Nearly every day)"
+Anxiety6,"Over the last two weeks, how often have you been bothered by the following problems? - Becoming easily annoyed or irritable (1=Not at all, 2=Several days, 3=Over half of the days, 4=Nearly every day)"
+Anxiety7,"Over the last two weeks, how often have you been bothered by the following problems? - Feeling afraid as if something awful might happen (1=Not at all, 2=Several days, 3=Over half of the days, 4=Nearly every day)"
+PerceptionsRisk,"How likely do you think it is that you will contract COVID19? (1=Not at all, 7=Extremely)"
+PerceptionsRisk2,"How likely is it that the epidemic will get a lot worse before it gets better? (1=Not at all, 7=Extremely)"
+PerceptionsRisk3,"How likely are you to avoid places where you might contract the virus (school, work, hospitals, etc.)? (1=Not at all, 7=Extremely)"
+Riskmanagementtransfer,"I am likely to ask parents or friends for help preparing for the COVID19 epidemic. (1=Do not agree at all, 7= Strongly agree)"
+Riskmanagementretention,"I have been stocking up on food and supplies so that I am prepared for the COVID19 epidemic. (1=Do not agree at all, 7= Strongly agree)"
+Riskmanagementreduction,"I try to reduce my risk of getting COVID19 by doing things like washing my hands often. (1=Do not agree at all, 7= Strongly agree)"
+Riskmanagementavoidance,"I completely avoid situations that could put me at risk of contracting COVID19, like going to the grocery store when it is crowded. (1=Do not agree at all, 7= Strongly agree)"
+RiskmanagementAvoid1,"I completely avoid situations that could put me at risk of contracting COVID19, for example staying away from large events where there have been cases. (1=Do not agree at all, 7= Strongly agree)"
+RiskmanagementAvoid2,"I completely avoid situations that could put me at risk of contracting COVID19, for example not traveling to locations where there have been cases. (1=Do not agree at all, 7= Strongly agree)"
+Riskmanagementreduction2,"I try to reduce my risk of getting COVID19 by wearing a mask when I leave the house. (1=Do not agree at all, 7= Strongly agree)"
 RiskmanagementavoidComposite,composite of avoidance questions
 RiskmanagementreductionComposite,composite of reduction questions
-DiseaseAvoidance1,I avoid places and people that might carry diseases.
-DiseaseAvoidance2,I avoid people who might have a contagious illness.
-DiseaseAvoidance3,I worry about catching colds and the flu from too much contact with other people.
-DiseaseAvoidance4,I do not worry very much about getting germs from others.
-DiseaseAvoidance5,"When someone near me is sick, it doesn't bother me very much."
-DiseaseAvoidance6,I don't mind being around people who are sick.
-CPR1,"If a stranger collapses and it looks like they need CPR (cardiopulmonary resuscitation), I would be willing to start performing CPR."
-CPR2,"If an acquaintance collapses and it looks like they need CPR (cardiopulmonary resuscitation), I would be willing to start performing CPR."
-CPR3,"If a family member collapses and it looks like they need CPR (cardiopulmonary resuscitation), I would be willing to start performing CPR."
-Delay1,I am considering delaying routine checkups and dentist visits.
+DiseaseAvoidance1,"I avoid places and people that might carry diseases. (1=Strongly disagree, 7=Strongly agree)"
+DiseaseAvoidance2,"I avoid people who might have a contagious illness. (1=Strongly disagree, 7=Strongly agree)"
+DiseaseAvoidance3,"I worry about catching colds and the flu from too much contact with other people. (1=Strongly disagree, 7=Strongly agree)"
+DiseaseAvoidance4,"I do not worry very much about getting germs from others. (1=Strongly disagree, 7=Strongly agree)"
+DiseaseAvoidance5,"When someone near me is sick, it doesn't bother me very much. (1=Strongly disagree, 7=Strongly agree)"
+DiseaseAvoidance6,"I don't mind being around people who are sick. (1=Strongly disagree, 7=Strongly agree)"
+CPR1,"If a stranger collapses and it looks like they need CPR (cardiopulmonary resuscitation), I would be willing to start performing CPR. (1=Not at all willing, 7=Very willing)"
+CPR2,"If an acquaintance collapses and it looks like they need CPR (cardiopulmonary resuscitation), I would be willing to start performing CPR. (1=Not at all willing, 7=Very willing)"
+CPR3,"If a family member collapses and it looks like they need CPR (cardiopulmonary resuscitation), I would be willing to start performing CPR. (1=Not at all willing, 7=Very willing)"
+Delay1,"I am considering delaying routine checkups and dentist visits. (1=Strongly disagree, 7=Srongly agree)"
 NonfoodHave,How many days of non-food supplies do you currently have for your household?
 NonfoodWant,How many days of non-food supplies would you like to have for your household?
 FoodHave,How many days of food do you currently have for your household?
 FoodWant,How many days of food would you like to have for your household?
-Summer1,"How much are you thinking about your plans (travel, work, vacation, etc.) for... - the next week?"
-Summer2,"How much are you thinking about your plans (travel, work, vacation, etc.) for... - the next month?"
-Summer3,"How much are you thinking about your plans (travel, work, vacation, etc.) for... - the summer?"
-Concern,How concerned are you about becoming infected with COVID19?
-OtherConcern,How concerned are you about other matters (not-related to infection) associated with the COVID19 outbreak?
-DiscussWith1,How likely are you to talk about your concerns or show that you are concerned with COVID19 with the following people? - Family
-DiscussWith2,How likely are you to talk about your concerns or show that you are concerned with COVID19 with the following people? - Friends
-DiscussWith3,How likely are you to talk about your concerns or show that you are concerned with COVID19 with the following people? - Coworkers
-DiscussWith4,How likely are you to talk about your concerns or show that you are concerned with COVID19 with the following people? - Strangers
-PFINeighEmpathy,"When my neighborhood succeeds, I feel good."
-PFINeigh2,"When my neighborhood fails, I feel bad"
-PFINeigh3,I feel that my neighborhood's gain is my gain.
-PFINeigh4,What is good for my neighborhood is good for me.
-PFINeigh5,"Honestly, I don't care whether my neighborhood thrives or not."
-PFINeighSharedFate,My neighborhood and I rise and fall together
-CFINeigh1,"When something good happens to my neighborhood, that is ..."
-CFINeigh2,"When something bad happens to my neighborhood, that is ..."
-CFINeigh3,"When my neighborhood succeeds, I feel ..."
-CFINeigh4,"When my neighborhood fails, I feel ..."
-CFINeigh5,My neighborhood's gain is ...
-CFINeigh6,My neighborhood's loss is ...
-WillingnessNeigh1,"During a winter storm, someone from your neighborhood knocks on your door because their heating is out. How willing would you be to let them sleep in your living room for the night?"
-WillingnessNeigh2,Someone from your neighborhood has no water in their house. How willing would you be to fill their jugs with water from your tap?
-WillingnessNeigh,"Someone from your neighborhood is having their house fixed, so it isn't livable. How willing would you be to let them move into your house for a week?"
-WillingnessNeigh4,How willing would you be to help someone from your neighborhood move boxes into their new apartment?
-RepayNeigh1,How much repayment or compensation would you expect for helping someone from your neighborhood?
-NBTNeigh,Helping someone from my neighborhood when they are in need is the right thing to do.
-NBTNeigh2,I get a strong urge to help when I see that someone from my neighborhood is upset.
-PFICountry1,"When my country succeeds, I feel good."
-PFICountry2,"When my country fails, I feel bad"
-PFICountry3,I feel that my country's gain is my gain.
-PFICountry4,What is good for my country is good for me.
-PFICountry5,"Honestly, I don't care whether my country thrives or not."
-PFICountry6,My country and I rise and fall together
-CFICountry1,"When something good happens to my country, that is ..."
-CFICountry2,"When something bad happens to my country, that is ..."
-CFICountry3,"When my country succeeds, I feel ..."
-CFICountry4,"When my country fails, I feel ..."
-CFICountry5,My country's gain is ...
-CFICountry6,My country's loss is ...
-WillingnessCountry1,"During a winter storm, a displaced person who is a citizen of your own country knocks on your door because their heating is out. How willing would you be to let them sleep in your living room for the night?"
-WillingnessCountry2,A displaced person who is a citizen of your own country has no water in their house. How willing would you be to fill their jugs with water from your tap?
-WillingnessCountry3," A displaced person who is a citizen of your own country is having their house fixed, so it isn't livable. How willing would you be to let them move into your house for a week?"
-WillingnessCountry4,How willing would you be to help a displaced person who is a citizen of your own country move boxes into their new apartment?
-RepayCountry1,How much repayment or compensation would you expect for helping someone from a displaced person who is a citizen of your own country?
-NBTCommunity1,Helping a displaced person who is a citizen of your own country when they are in need is the right thing to do.
-NBTCommunity2,I get a strong urge to help when I see that a displaced citizen from my own country is upset.
-PFIHumanityEmpathy,"When all of humanity succeeds, I feel good."
-PFIHumanity2,"When all of humanity fails, I feel bad"
-PFIHumanity3,I feel that all of humanity's gain is my gain.
-PFIHumanity4,What is good for my all of humanity is good for me.
-PFIHumanity5,"Honestly, I don't care whether all of humanity thrives or not."
-PFIHumanitySharedFate,All of humanity and I rise and fall together
-CFIHumanity1,"When something good happens to all of humanity, that is ..."
-CFIHumanity2,"When something bad happens to all of humanity, that is ..."
-CFIHumanity3,"When all of humanity succeeds, I feel ..."
-CFIHumanity4,"CFIHumanity - When all of humanity fails, I feel ..."
-CFIHumanity5,All of humanity's gain is ...
-CFIHumanity6,All of humanity's loss is ...
-WillingnessHumanity1,"During a winter storm, a displaced person who is not a citizen of your own country knocks on your door because their heating is out. How willing would you be to let them sleep in your living room for the night?"
-WillingnessHumanity2,A displaced person who is not a citizen of your own country has no water in their house. How willing would you be to fill their jugs with water from your tap?
-WillingnessHumanity,"A displaced person who is not a citizen of your own country is having their house fixed, so it isn't livable. How willing would you be to let them move into your house for a week?"
-WillingnessHumanity4,How willing would you be to help a displaced person who is not a citizen of your own country move boxes into their new apartment?
-RepayHumanity1,How much repayment or compensation would you expect for helping someone from a displaced person who is not a citizen of your own country?
-NBTHumanity,Helping a displaced person who is not a citizen of your own country when they are in need is the right thing to do.
-NBTHumanity2,I get a strong urge to help when I see that a displaced citizen who is not from my own country is upset.
-PrepTimeCovidnotCOVID,"Since you learned about COVID19, how much effort (time, energy, money) have you put into these preparations? Spent time on things NOT RELATED to the COVID19"
-PrepTimeCovidtracking,"Since you learned about COVID19, how much effort (time, energy, money) have you put into these preparations? "
-PrepTimeCovidtalking,"Since you learned about COVID19, how much effort (time, energy, money) have you put into these preparations? Spent time talking, texting, etc., with family, friends, and coworkers about COVID19 and how to prepare for it"
-PrepTimeCovidnewrelationships,"Since you learned about COVID19, how much effort (time, energy, money) have you put into these preparations? Spent time trying to develop new relationships, or improving existing relationships, with family, friends, neighbors, coworkers, church congregation members, etc."
-PrepTimeCovidmedical,
-PrepTimeCovidfood,"Since you learned about COVID19, how much effort (time, energy, money) have you put into these preparations? Spent time stocking up on food"
-PrepTimeCovidwater,"Since you learned about COVID19, how much effort (time, energy, money) have you put into these preparations? Spent time stocking up on water or preparing in case the water supply fails"
-PrepTimeCovidpower,"Since you learned about COVID19, how much effort (time, energy, money) have you put into these preparations? Spent time buying supplies in case there is a loss of power from the electrical grid (I.e., buying solar power, generators, batteries)"
-PrepTimeCovidhomedefense,"Spent time buying supplies for home defense (I.e., guns, ammo, door locks, security systems)"
-PrepTimeCovidfinancial,"Spent time planning for the possible impact on your business, career, investments, pension, home equity, etc.?"
-PrepTimeCovidbarter,Spent time stocking up on physical goods that you could trade or barter if things get bad?
-PrepTimeCovidother,Spent time on anything else related to preparing for COVID19?
-PrepCOVIDPoliticalLeaders,"In preparing for and managing COVID19, how good of a job do you think the following individuals are doing: - National political leaders"
-PrepCOVIDLocalGov,"In preparing for and managing COVID19, how good of a job do you think the following individuals are doing: - Local or city government"
-PrepCOVIDNationalHealthcare,"In preparing for and managing COVID19, how good of a job do you think the following individuals are doing: - National healthcare system"
-PrepCOVIDLocalHealthcare,"In preparing for and managing COVID19, how good of a job do you think the following individuals are doing: - Local healthcare system"
-PrepCOVIDNationalMedia,"In preparing for and managing COVID19, how good of a job do you think the following individuals are doing: - National media"
-PrepCOVIDLocalMedia,"In preparing for and managing COVID19, how good of a job do you think the following individuals are doing: - Local media"
-PrepCOVIDAirline,"In preparing for and managing COVID19, how good of a job do you think the following individuals are doing: - Airline transport system"
-PrepCOVIDEmployer,"In preparing for and managing COVID19, how good of a job do you think the following individuals are doing: - Your employer"
-PrepCOVIDExtendedFamily,"In preparing for and managing COVID19, how good of a job do you think the following individuals are doing: - Your extended family (grandparents, parents, aunts, uncles, cousins, in-laws, etc.)"
-PrepCOVIDSigOther,"In preparing for and managing COVID19, how good of a job do you think the following individuals are doing: - Your significant other (boyfriend, girlfriend, wife, husband)"
-PrepCOVIDParents,"In preparing for and managing COVID19, how good of a job do you think the following individuals are doing: - Your parents"
-PrepCOVIDSiblings,"In preparing for and managing COVID19, how good of a job do you think the following individuals are doing: - Your siblings (brothers, sisters, etc.)"
+Summer1,"How much are you thinking about your plans (travel, work, vacation, etc.) for... - the next week? (1=Not at all, 7=Very much)"
+Summer2,"How much are you thinking about your plans (travel, work, vacation, etc.) for... - the next month? (1=Not at all, 7=Very much)"
+Summer3,"How much are you thinking about your plans (travel, work, vacation, etc.) for... - the summer? (1=Not at all, 7=Very much)"
+Concern,"How concerned are you about becoming infected with COVID19? (1=Not at all concerned, 7=Very concerned)"
+OtherConcern,"How concerned are you about other matters (not-related to infection) associated with the COVID19 outbreak? (1=Not at all concerned, 7=Very concerned)"
+DiscussWith1,"How likely are you to talk about your concerns or show that you are concerned with COVID19 with the following people? - Family (1=Not at all likely, 7=Very likely)"
+DiscussWith2,"How likely are you to talk about your concerns or show that you are concerned with COVID19 with the following people? - Friends (1=Not at all likely, 7=Very likely)"
+DiscussWith3,"How likely are you to talk about your concerns or show that you are concerned with COVID19 with the following people? - Coworkers (1=Not at all likely, 7=Very likely)"
+DiscussWith4,"How likely are you to talk about your concerns or show that you are concerned with COVID19 with the following people? - Strangers (1=Not at all likely, 7=Very likely)"
+PFINeighEmpathy,"When my neighborhood succeeds, I feel good. (1=Do not agree at all, 7=Strongly agree)"
+PFINeigh2,"When my neighborhood fails, I feel bad (1=Do not agree at all, 7=Strongly agree)"
+PFINeigh3,"I feel that my neighborhood's gain is my gain. (1=Do not agree at all, 7=Strongly agree)"
+PFINeigh4,"What is good for my neighborhood is good for me. (1=Do not agree at all, 7=Strongly agree)"
+PFINeigh5,"Honestly, I don't care whether my neighborhood thrives or not. (1=Do not agree at all, 7=Strongly agree)"
+PFINeighSharedFate,"My neighborhood and I rise and fall together (1=Do not agree at all, 7=Strongly agree)"
+CFINeigh1,"When something good happens to my neighborhood, that is (-3 = Very bad for me, 3 = Very good for me)"
+CFINeigh2,"When something bad happens to my neighborhood, that is (-3 = Very bad for me, 3 = Very good for me)"
+CFINeigh3,"When my neighborhood succeeds, I feel (-3 = Very bad for me, 3 = Very good for me)"
+CFINeigh4,"When my neighborhood fails, I feel (-3 = Very bad for me, 3 = Very good for me)"
+CFINeigh5,"My neighborhood's gain is (-3 = Very bad for me, 3 = Very good for me)"
+CFINeigh6,"My neighborhood's loss is (-3 = Very bad for me, 3 = Very good for me)"
+WillingnessNeigh1,"During a winter storm, someone from your neighborhood knocks on your door because their heating is out. How willing would you be to let them sleep in your living room for the night? (1=Not at all willing, 7=Very willing)"
+WillingnessNeigh2,"Someone from your neighborhood has no water in their house. How willing would you be to fill their jugs with water from your tap? (1=Not at all willing, 7=Very willing)"
+WillingnessNeigh,"Someone from your neighborhood is having their house fixed, so it isn't livable. How willing would you be to let them move into your house for a week? (1=Not at all willing, 7=Very willing)"
+WillingnessNeigh4,"How willing would you be to help someone from your neighborhood move boxes into their new apartment? (1=Not at all willing, 7=Very willing)"
+RepayNeigh1,"How much repayment or compensation would you expect for helping someone from your neighborhood? (1=I would not expect any repayment or compensation, 7=I would expect equal repayment or compensation)"
+NBTNeigh,"Helping someone from my neighborhood when they are in need is the right thing to do. (1=Strongly disagree, 7= Strongly agree)"
+NBTNeigh2,"I get a strong urge to help when I see that someone from my neighborhood is upset. (1=Strongly disagree, 7= Strongly agree)"
+PFICountry1,"When my country succeeds, I feel good. (1=Do not agree at all, 7=Strongly agree)"
+PFICountry2,"When my country fails, I feel bad (1=Do not agree at all, 7=Strongly agree)"
+PFICountry3,"I feel that my country's gain is my gain. (1=Do not agree at all, 7=Strongly agree)"
+PFICountry4,"What is good for my country is good for me. (1=Do not agree at all, 7=Strongly agree)"
+PFICountry5,"Honestly, I don't care whether my country thrives or not. (1=Do not agree at all, 7=Strongly agree)"
+PFICountry6,"My country and I rise and fall together (1=Do not agree at all, 7=Strongly agree)"
+CFICountry1,"When something good happens to my country, that is (-3 = Very bad for me, 3 = Very good for me)"
+CFICountry2,"When something bad happens to my country, that is (-3 = Very bad for me, 3 = Very good for me)"
+CFICountry3,"When my country succeeds, I feel (-3 = Very bad for me, 3 = Very good for me)"
+CFICountry4,"When my country fails, I feel (-3 = Very bad for me, 3 = Very good for me)"
+CFICountry5,"My country's gain is (-3 = Very bad for me, 3 = Very good for me)"
+CFICountry6,"My country's loss is (-3 = Very bad for me, 3 = Very good for me)"
+WillingnessCountry1,"During a winter storm, a displaced person who is a citizen of your own country knocks on your door because their heating is out. How willing would you be to let them sleep in your living room for the night? (1=Not at all willing, 7=Very willing)"
+WillingnessCountry2,"A displaced person who is a citizen of your own country has no water in their house. How willing would you be to fill their jugs with water from your tap? (1=Not at all willing, 7=Very willing)"
+WillingnessCountry3," A displaced person who is a citizen of your own country is having their house fixed, so it isn't livable. How willing would you be to let them move into your house for a week? (1=Not at all willing, 7=Very willing)"
+WillingnessCountry4,"How willing would you be to help a displaced person who is a citizen of your own country move boxes into their new apartment? (1=Not at all willing, 7=Very willing)"
+RepayCountry1,"How much repayment or compensation would you expect for helping someone from a displaced person who is a citizen of your own country? (1=I would not expect any repayment or compensation, 7=I would expect equal repayment or compensation)"
+NBTCommunity1,"Helping a displaced person who is a citizen of your own country when they are in need is the right thing to do. (1=Strongly disagree, 7=Strongly agree)"
+NBTCommunity2,"I get a strong urge to help when I see that a displaced citizen from my own country is upset. (1=Strongly disagree, 7=Strongly agree)"
+PFIHumanityEmpathy,"When all of humanity succeeds, I feel good. (1=Strongly disagree, 7=Strongly agree)"
+PFIHumanity2,"When all of humanity fails, I feel bad (1=Strongly disagree, 7=Strongly agree)"
+PFIHumanity3,"I feel that all of humanity's gain is my gain. (1=Strongly disagree, 7=Strongly agree)"
+PFIHumanity4,"What is good for my all of humanity is good for me. (1=Strongly disagree, 7=Strongly agree)"
+PFIHumanity5,"Honestly, I don't care whether all of humanity thrives or not. (1=Strongly disagree, 7=Strongly agree)"
+PFIHumanitySharedFate,"All of humanity and I rise and fall together (1=Strongly disagree, 7=Strongly agree)"
+CFIHumanity1,"When something good happens to all of humanity, that is (-3 = Very bad for me, 3 = Very good for me)"
+CFIHumanity2,"When something bad happens to all of humanity, that is (-3 = Very bad for me, 3 = Very good for me)"
+CFIHumanity3,"When all of humanity succeeds, I feel (-3 = Very bad for me, 3 = Very good for me)"
+CFIHumanity4,"CFIHumanity - When all of humanity fails, I feel (-3 = Very bad for me, 3 = Very good for me)"
+CFIHumanity5,"All of humanity's gain is (-3 = Very bad for me, 3 = Very good for me)"
+CFIHumanity6,"All of humanity's loss is (-3 = Very bad for me, 3 = Very good for me)"
+WillingnessHumanity1,"During a winter storm, a displaced person who is not a citizen of your own country knocks on your door because their heating is out. How willing would you be to let them sleep in your living room for the night? (1=Not at all willing, 7=Very willing)"
+WillingnessHumanity2,"A displaced person who is not a citizen of your own country has no water in their house. How willing would you be to fill their jugs with water from your tap? (1=Not at all willing, 7=Very willing)"
+WillingnessHumanity,"A displaced person who is not a citizen of your own country is having their house fixed, so it isn't livable. How willing would you be to let them move into your house for a week? (1=Not at all willing, 7=Very willing)"
+WillingnessHumanity4,"How willing would you be to help a displaced person who is not a citizen of your own country move boxes into their new apartment? (1=Not at all willing, 7=Very willing)"
+RepayHumanity1,"How much repayment or compensation would you expect for helping someone from a displaced person who is not a citizen of your own country? (1=I would not expect any repayment or compensation, 7= I would expect equal repayment or compensation)"
+NBTHumanity,"Helping a displaced person who is not a citizen of your own country when they are in need is the right thing to do. (1=Strongly disagree, 7= Strongly agree)"
+NBTHumanity2,"I get a strong urge to help when I see that a displaced citizen who is not from my own country is upset. (1=Strongly disagree, 7= Strongly agree)"
+PrepTimeCovidnotCOVID,"Since you learned about COVID19, how much effort (time, energy, money) have you put into these preparations? Spent time on things NOT RELATED to the COVID19 (% of your time)"
+PrepTimeCovidtracking,"Since you learned about COVID19, how much effort (time, energy, money) have you put into these preparations?  (% of your time)"
+PrepTimeCovidtalking,"Since you learned about COVID19, how much effort (time, energy, money) have you put into these preparations? Spent time talking, texting, etc., with family, friends, and coworkers about COVID19 and how to prepare for it (% of your time)"
+PrepTimeCovidnewrelationships,"Since you learned about COVID19, how much effort (time, energy, money) have you put into these preparations? Spent time trying to develop new relationships, or improving existing relationships, with family, friends, neighbors, coworkers, church congregation members, etc. (% of your time)"
+PrepTimeCovidmedical,"Since you learned about COVID19, how much effort (time, energy, money) have you put into these preparations? Spent time stocking up on medical supplies such as medications (% of your time)"
+PrepTimeCovidfood,"Since you learned about COVID19, how much effort (time, energy, money) have you put into these preparations? Spent time stocking up on food (% of your time)"
+PrepTimeCovidwater,"Since you learned about COVID19, how much effort (time, energy, money) have you put into these preparations? Spent time stocking up on water or prepa ring in case the water supply fails (% of your time)"
+PrepTimeCovidpower,"Since you learned about COVID19, how much effort (time, energy, money) have you put into these preparations? Spent time buying supplies in case there is a loss of power from the electrical grid (I.e., buying solar power, generators, batteries) (% of your time)"
+PrepTimeCovidhomedefense,"Spent time buying supplies for home defense (I.e., guns, ammo, door locks, security systems) (% of your time)"
+PrepTimeCovidfinancial,"Spent time planning for the possible impact on your business, career, investments, pension, home equity, etc.? (% of your time)"
+PrepTimeCovidbarter,Spent time stocking up on physical goods that you could trade or barter if things get bad? (% of your time)
+PrepTimeCovidother,Spent time on anything else related to preparing for COVID19? (% of your time)
+PrepCOVIDPoliticalLeaders,"In preparing for and managing COVID19, how good of a job do you think the following individuals are doing: - National political leaders (1=Very bad, 5=Neutral, 10=Excelent)"
+PrepCOVIDLocalGov,"In preparing for and managing COVID19, how good of a job do you think the following individuals are doing: - Local or city government (1=Very bad, 5=Neutral, 10=Excelent)"
+PrepCOVIDNationalHealthcare,"In preparing for and managing COVID19, how good of a job do you think the following individuals are doing: - National healthcare system (1=Very bad, 5=Neutral, 10=Excelent)"
+PrepCOVIDLocalHealthcare,"In preparing for and managing COVID19, how good of a job do you think the following individuals are doing: - Local healthcare system (1=Very bad, 5=Neutral, 10=Excelent)"
+PrepCOVIDNationalMedia,"In preparing for and managing COVID19, how good of a job do you think the following individuals are doing: - National media (1=Very bad, 5=Neutral, 10=Excelent)"
+PrepCOVIDLocalMedia,"In preparing for and managing COVID19, how good of a job do you think the following individuals are doing: - Local media (1=Very bad, 5=Neutral, 10=Excelent)"
+PrepCOVIDAirline,"In preparing for and managing COVID19, how good of a job do you think the following individuals are doing: - Airline transport system (1=Very bad, 5=Neutral, 10=Excelent)"
+PrepCOVIDEmployer,"In preparing for and managing COVID19, how good of a job do you think the following individuals are doing: - Your employer (1=Very bad, 5=Neutral, 10=Excelent)"
+PrepCOVIDExtendedFamily,"In preparing for and managing COVID19, how good of a job do you think the following individuals are doing: - Your extended family (grandparents, parents, aunts, uncles, cousins, in-laws, etc.) (1=Very bad, 5=Neutral, 10=Excelent)"
+PrepCOVIDSigOther,"In preparing for and managing COVID19, how good of a job do you think the following individuals are doing: - Your significant other (boyfriend, girlfriend, wife, husband) (1=Very bad, 5=Neutral, 10=Excelent)"
+PrepCOVIDParents,"In preparing for and managing COVID19, how good of a job do you think the following individuals are doing: - Your parents (1=Very bad, 5=Neutral, 10=Excelent)"
+PrepCOVIDSiblings,"In preparing for and managing COVID19, how good of a job do you think the following individuals are doing: - Your siblings (brothers, sisters, etc.) (1=Very bad, 5=Neutral, 10=Excelent)"
 Howmuch,How much money have you spent on preparations for COVID19?
-currency,What type of currency was this?
+currency,"What type of currency was this? (1=USD, 2=EUR, 3=JPY, 4=GBP, 5=AUD, 6=CAD, 7=CHF, 8=CNH, 9=SEK, 10=NZD)"
 CloseFriendPFIEmpathyComposite,
 AcqPFIEmpathyComposite,
 NeighborPFIEmpathyComposite,
@@ -200,18 +201,18 @@ DiseaseAvoidanceComposite,
 NBTNeighborComposite,
 NBTHumanityComposite,
 NBTCountryComposite,
-TemporalDiscounting,"If you found $100 tomorrow, how likely would you be to use it to go out to dinner?"
-FutureWorld1,How much are you thinking about climate change and other global sustainability that will have an impact on the world in the next 10-20 years?
-FutureWorld,How much are you thinking about climate change and other global sustainability issues that will have an impact on the world in the next 10-20 years?
-SocialDistnacing1,To what extent are you avoiding gathering in public places?
-SocialDistnacing2, To what extent are you canceling meetings and get-togethers?
-Back2Normal,When do you think life will get back to normal?
+TemporalDiscounting,"If you found $100 tomorrow, how likely would you be to use it to go out to dinner? (1=Not at all likely, 7= Very likely)"
+FutureWorld1,"How much are you thinking about climate change and other global sustainability that will have an impact on the world in the next 10-20 years? (1=Not at all, 7=A lot)"
+FutureWorld,"How much are you thinking about climate change and other global sustainability issues that will have an impact on the world in the next 10-20 years? (1=Not at all, 7=A lot)"
+SocialDistnacing1,"To what extent are you avoiding gathering in public places? (1=Not avoiding/cancelling anything, 7= Actively avoiding/canceling as much as possible)"
+SocialDistnacing2," To what extent are you canceling meetings and get-togethers? (1=Not avoiding/cancelling anything, 7= Actively avoiding/canceling as much as possible)"
+Back2Normal,"When do you think life will get back to normal? (1=Two months, 4= Four months, 5=Six months, 6=Nine months, 7=1 year, 8= 1.5 years, 9=2 years, 10=More than 2 years, 11=Never)"
 MateSeekingComposite,
 SocialDistanceComposite,
-Isolate1,I can have a significant impact on limiting the spread of the virus by isolating myself at home and washing my hands frequently.
-Isolate2,I can significantly reduce my risk of becoming infected by the virus by isolating myself at home and washing my hands frequently.
-Isolate3,Most people in my community are isolating themselves in their homes.
-Altruistic,What is more altruistic at this time?
+Isolate1,"I can have a significant impact on limiting the spread of the virus by isolating myself at home and washing my hands frequently. (1=Strongly disagree, 7=Strongly agree)"
+Isolate2,"I can significantly reduce my risk of becoming infected by the virus by isolating myself at home and washing my hands frequently. (1=Strongly disagree, 7=Strongly agree)"
+Isolate3,"Most people in my community are isolating themselves in their homes. (1=Strongly disagree, 7=Strongly agree)"
+Altruistic,"What is more altruistic at this time? (1=Staying at home, 4=Not sure, 7=Bringing a meal to a neighbor)"
 Altruistic.recode,What is more altruistic at this time? (changing to 3 options)
 HoursworkedOutside,"In the last seven days, how many hours have you worked outside your home (in paid employment)? Numbers only."
 HoursWorkHome,"In the last 7 days, how many hours in total have you worked from home (in any way that brings in income or builds your career)? Numbers only."
@@ -224,260 +225,265 @@ aidsmallbusiness,"If my government gives emergency aid to people during this pan
 aidlargebusiness,"If my government gives emergency aid to people during this pandemic, what percentage of the aid should go to: - Large businesses that employ many people each"
 aidbanks,"If my government gives emergency aid to people during this pandemic, what percentage of the aid should go to: - banks that can loan money to people & businesses"
 aidgovernment,"If my government gives emergency aid to people during this pandemic, what percentage of the aid should go to: - State & local governments"
-MostImportant,What do you think is the most important thing to do right now?
-discounting,"If you could get $1000 from the government in a week or $2000 in the government in a month, which would you prefer?"
+MostImportant,"What do you think is the most important thing to do right now? (1=Reduce the global spread of the virus, 2=Reduce the spread of the virus within my country, 3=Save lives of older people who get sick, 4=Save jobs and businesses disrupted by the pandemic, 5=Help families that have lost jobs and income )"
+discounting,"If you could get $1000 from the government in a week or $2000 in the government in a month, which would you prefer? (1=Very strongly prefer $1000 in a week, 4=No preference, 2=Very strongly prefer $2000 in a month)"
 RiskManagementcomposite,
 discounting.recode,"If you could get $1000 from the government in a week or $2000 in the government in a month, which would you prefer? (changing to 3 options)"
-StartedPreparing,Have you started preparing for the Pandemic?
+StartedPreparing,"Have you started preparing for the Pandemic? (0=No, 1=Yes)"
 WeeksAgoPrepare,How many weeks ago did you start preparing for the COVID19 pandemic?
-ContractedCovid,Have you contracted COVID-19?
+ContractedCovid,"Have you contracted COVID-19?( 1=No, 2=Maybe, 3=Yes)"
 WeeksSinceCovid,If yes or maybe how many weeks ago did you contract COVID-19?
-TestedCovid,If yes or maybe have you tested positive?
-KnowSomeoneInfected,Do you personally know of someone who has contracted COVID-19?
+TestedCovid,"If yes or maybe have you tested positive? (1=No, 2=Haven't been tested, 3=Yes)"
+KnowSomeoneInfected,"Do you personally know of someone who has contracted COVID-19? (1=No, 2=Not sure, 3=Yes)"
 HowManyInfected,"If yes or not sure, how many people do you personally know who have been diagnosed by a physician or tested positive for COVID-19? Please enter a whole number."
-CouldInfect,"If I get sick with COVID-19, I could infect people who are more vulnerable than me (e.g., elderly people, hospital patients)."
-Askingforhelp1,How likely are you to ask your friends and family for help in the following areas during the COVID19 pandemic? Asking for money
-Askingforhelp2,How likely are you to ask your friends and family for help in the following areas during the COVID19 pandemic? Asking for up to date information
-Askingforhelp3,How likely are you to ask your friends and family for help in the following areas during the COVID19 pandemic? Asking for food supplies
-Askingforhelp4,How likely are you to ask your friends and family for help in the following areas during the COVID19 pandemic? Asking for medical advice
-Askingforhelp5,How likely are you to ask your friends and family for help in the following areas during the COVID19 pandemic? Asking for medical care
-Askingforhelp6,How likely are you to ask your friends and family for help in the following areas during the COVID19 pandemic? Asking for help with childcare
-Askingforhelp7,How likely are you to ask your friends and family for help in the following areas during the COVID19 pandemic? Asking for emotional or psychological support
-Givinghelp1,How likely are you to give help to your friends and family in the following areas during the COVID19 pandemic? Helping by sending money
-Givinghelp2,How likely are you to give help to your friends and family in the following areas during the COVID19 pandemic? Helping by giving up to date information
-Givinghelp3,How likely are you to give help to your friends and family in the following areas during the COVID19 pandemic? Helping by giving food supplies
-Givinghelp4,How likely are you to give help to your friends and family in the following areas during the COVID19 pandemic? Helping with medical advice
-Givinghelp5,How likely are you to give help to your friends and family in the following areas during the COVID19 pandemic? Helping with medical care
-Givinghelp6,How likely are you to give help to your friends and family in the following areas during the COVID19 pandemic? Helping with childcare
-Givinghelp7,How likely are you to give help to your friends and family in the following areas during the COVID19 pandemic? Helping by giving emotional or psychological support
-MaskAttitudes1,I wear a face mask when going out in public to keep myself from getting sick
-MaskAttitudes2,Seeing people in public wearing face masks makes me feel safe
-MaskAttitudes3,Seeing people in public wearing face masks makes me feel anxious
-MaskAttitudes4,Wearing a face mask when going out in public is the right thing to do
-MaskAttitudes5,I wear a face mask when going out in public to prevent others from getting sick in case I may be infected but dont know it yet
-WearMask,Are you more or less likely to wear a mask in public than you were 2 weeks ago?
-NeighborMasks,Do you see people in your neighborhood wearing masks more or less now compared to 2 weeks ago?
-SafetyProtests,How concerned are you about your own safety or the safety of your family given the current protests/political unrest in your country related to the death of George Floyd?
+CouldInfect,"If I get sick with COVID-19, I could infect people who are more vulnerable than me (e.g., elderly people, hospital patients). (1=Disagree completely, 7=Agree completely)"
+Askingforhelp1,"How likely are you to ask your friends and family for help in the following areas during the COVID19 pandemic? Asking for money (1=Not at all likely, 7=Extremely likely)"
+Askingforhelp2,"How likely are you to ask your friends and family for help in the following areas during the COVID19 pandemic? Asking for up to date information (1=Not at all likely, 7=Extremely likely)"
+Askingforhelp3,"How likely are you to ask your friends and family for help in the following areas during the COVID19 pandemic? Asking for food supplies (1=Not at all likely, 7=Extremely likely)"
+Askingforhelp4,"How likely are you to ask your friends and family for help in the following areas during the COVID19 pandemic? Asking for medical advice (1=Not at all likely, 7=Extremely likely)"
+Askingforhelp5,"How likely are you to ask your friends and family for help in the following areas during the COVID19 pandemic? Asking for medical care (1=Not at all likely, 7=Extremely likely)"
+Askingforhelp6,"How likely are you to ask your friends and family for help in the following areas during the COVID19 pandemic? Asking for help with childcare (1=Not at all likely, 7=Extremely likely)"
+Askingforhelp7,"How likely are you to ask your friends and family for help in the following areas during the COVID19 pandemic? Asking for emotional or psychological support (1=Not at all likely, 7=Extremely likely)"
+Givinghelp1,"How likely are you to give help to your friends and family in the following areas during the COVID19 pandemic? Helping by sending money (1=Not at all likely, 7=Extremely likely)"
+Givinghelp2,"How likely are you to give help to your friends and family in the following areas during the COVID19 pandemic? Helping by giving up to date information (1=Not at all likely, 7=Extremely likely)"
+Givinghelp3,"How likely are you to give help to your friends and family in the following areas during the COVID19 pandemic? Helping by giving food supplies (1=Not at all likely, 7=Extremely likely)"
+Givinghelp4,"How likely are you to give help to your friends and family in the following areas during the COVID19 pandemic? Helping with medical advice (1=Not at all likely, 7=Extremely likely)"
+Givinghelp5,"How likely are you to give help to your friends and family in the following areas during the COVID19 pandemic? Helping with medical care (1=Not at all likely, 7=Extremely likely)"
+Givinghelp6,"How likely are you to give help to your friends and family in the following areas during the COVID19 pandemic? Helping with childcare (1=Not at all likely, 7=Extremely likely)"
+Givinghelp7,"How likely are you to give help to your friends and family in the following areas during the COVID19 pandemic? Helping by giving emotional or psychological support (1=Not at all likely, 7=Extremely likely)"
+MaskAttitudes1,"I wear a face mask when going out in public to keep myself from getting sick (1=Strongly disagree, 7=Strongly agree)"
+MaskAttitudes2,"Seeing people in public wearing face masks makes me feel safe (1=Strongly disagree, 7=Strongly agree)"
+MaskAttitudes3,"Seeing people in public wearing face masks makes me feel anxious (1=Strongly disagree, 7=Strongly agree)"
+MaskAttitudes4,"Wearing a face mask when going out in public is the right thing to do (1=Strongly disagree, 7=Strongly agree)"
+MaskAttitudes5,"I wear a face mask when going out in public to prevent others from getting sick in case I may be infected but dont know it yet (1=Strongly disagree, 7=Strongly agree)"
+WearMask,"Are you more or less likely to wear a mask in public than you were 2 weeks ago? (1=A lot less likely, 5=A lot more likely)"
+NeighborMasks,"Do you see people in your neighborhood wearing masks more or less now compared to 2 weeks ago? (1=A lot less mask wearing in my neighborhood, 5=A lot more mask wearing in my neighborhood)"
+SafetyProtests,"How concerned are you about your own safety or the safety of your family given the current protests/political unrest in your country related to the death of George Floyd? (1=Not at all, 7=Very much)"
 MoneyProtests,"In the last several weeks, how much money have you donated to help the recent protests/demonstrations or causes/organizations related to the death of George Floyd?"
-ParticipatedProtests,Have you participated in protests/demonstrations related to the death of George Floyd in the last several weeks?
-LikelyToProtests,How likely are you to participate in protests/demonstrations related to the death of George Floyd?
-COVIDaffectProtest,How much has COVID-19 affected your decision to participate or not in protests/demonstrations related to the death of George Floyd?
-RiskProtests1,I am likely to ask parents or friends for help dealing with the current political unrest/protests.
-RiskProtests2,I have been stocking up on supplies so that I am prepared to keep myself safe during the current political unrest/protests.
-RiskProtests3,"I completely avoid situations that could put my safety at risk, like avoiding attending protests and demonstrations."
-RiskProtests4,"I manage my risk of being part of protests and demonstrations, for example by wearing a mask, using hand sanitizer and keeping distance from others."
-RiskProtests5,Taking part in protests is more important than keeping my risk of coronavirus low
-TimesHelpGiven1,Giving money to somebody you know who needs it
-TimesHelpGiven2,Providing up to date information
-TimesHelpGiven3,Providing food or water
-TimesHelpGiven4,Providing cleaning supplies
-TimesHelpGiven5,Providing medical supplies
-TimesHelpGiven6,Providing help with childcare
-TimesHelpGiven7,Providing emotional support
-HelpReceived1,Receiving money from somebody you know when you needed it
-HelpReceived2,Receiving up to date information
-HelpReceived3,Receiving food or water
-HelpReceived4,Receiving cleaning supplies
-HelpReceived5,Receiving medical supplies
-HelpReceived6,Receiving help with childcare
-HelpReceived7,Receiving emotional support
-ReceivedCharity,"Since March 11, when COVID-19 was declared a global pandemic, how many times have you received assistance or goods from charities?"
-GivenCharity,"Since March 11, when COVID-19 was declared a global pandemic, how many times have you donated money, goods or your time to charities?"
-Motivations1,I help others because I feel compassion toward people in need
-Motivations2,People with whom I am close place a high value on helping others
-Motivations3,Helping others puts too much of a strain on me
-Motivations4,Helping others enables me to obtain recognition
-Motivations5,Helping others makes me feel happy
-Motivations6,"When I give money to charitable causes, I find it important that 100% of my contribution goes to the beneficiaries and will not be used for overhead"
-Motivations7,Sometimes I help others because I see other people helping on social media and I feel pressured or guilty.
-Motivations8,"When I help others, I do so with my heart rather than my head"
-Motivations9,My religion is an important driver for my helping behavior
-Motivations10,I help others because I have so much in my life to be thankful for
-Motivations11,I help others to decrease the injustice in this world
-Motivations12,Sometimes I help others because I see other people helping on social media and I feel pressured or guilty.
-Chaos1,I get a kick when natural disasters strike in foreign countries
-Chaos2,I fantasize about a natural disaster wiping out most of humanity such that a small group of people can start all over
-Chaos3,I think society should be burned to the ground
-Chaos4,"When I think about our political and social institutions, I cannot help thinking just let them all burn"
-Chaos5,"We cannot fix the problems in our societal institutions, we need to tear them down and start over"
-Chaos6,I need chaos around me - it is too boring if nothing is going on
-Chaos7,Sometimes I just feel like destroying beautiful things
-Chaos8,There is no right and wrong in the world
-Chaos9,"When I think about our current political and social institutions, I feel proud"
-Chaos10,"I believe that we can fix the problems in our societal institutions, it just takes hard work"
-Chaos11,I do not feel good unless there is order around me - I do not like chaotic situations
-Chaos12,I think we should all work together to preserve the beauty and order of the world we live in
-FutureConsequences1,I often engage in activities to achieve outcomes that may not result for many years.
-FutureConsequences2,"I only act to satisfy present concerns, figuring the future will take care of itself."
-FutureConsequences3,My behavior is only influenced by the short-term (a matter of days or weeks) outcomes of my actions.
-FutureConsequences4,I generally ignore warnings about possible future problems because I think the problems will be resolved before they reach crisis level.
-FutureConsequences5,I think that sacrificing now is usually unnecessary since future outcomes can be dealt with at a later time.
-FutureConsequences6,"I only act to satisfy immediate concerns, figuring that I will take care of future problems that may occur at a later date."
-FutureConsequences7,My day to day work is more important to me than behavior that has distant outcomes.
-FoodInsecurity1,I worried whether my food would run out before I was able to get more.
-FoodInsecurity2,I cut the size of meals or skipped meals because there was not enough food.
-FoodInsecurity3,I lost weight because there was not enough food.
-Housing1,I did not pay full amount of rent or mortgage
-Housing2,I did not pay full amount of utilities
-Housing3,I moved in with people due to financial problems
-Homeless,have you experienced homelessness?
-GreenSettings,"have you utilized green settings such as parks, gardens, forests, waterbodies, etc. to find peace, relax or de-stress?"
-OutdoorRec,"To cope with the disruptions and increased demands of COVID-19, have you turned to outdoor recreation to take care of yourself and support your physical or mental health?"
+ParticipatedProtests,"Have you participated in protests/demonstrations related to the death of George Floyd in the last several weeks? (1=No, 2=Yes)"
+LikelyToProtests,"How likely are you to participate in protests/demonstrations related to the death of George Floyd? (1=Not at all, 7=Very Likely)"
+COVIDaffectProtest,"How much has COVID-19 affected your decision to participate or not in protests/demonstrations related to the death of George Floyd? (1=Not at all, 7=It's a big factor)"
+RiskProtests1,"I am likely to ask parents or friends for help dealing with the current political unrest/protests. (1=Do not agree at all, 7=Strongly agree)"
+RiskProtests2,"I have been stocking up on supplies so that I am prepared to keep myself safe during the current political unrest/protests. (1=Do not agree at all, 7=Strongly agree)"
+RiskProtests3,"I completely avoid situations that could put my safety at risk, like avoiding attending protests and demonstrations. (1=Do not agree at all, 7=Strongly agree)"
+RiskProtests4,"I manage my risk of being part of protests and demonstrations, for example by wearing a mask, using hand sanitizer and keeping distance from others. (1=Do not agree at all, 7=Strongly agree)"
+RiskProtests5,"Taking part in protests is more important than keeping my risk of coronavirus low (1=Do not agree at all, 7=Strongly agree)"
+TimesHelpGiven1,"Giving money to somebody you know who needs it (1=0 times, 2=1-2 times, 3=3-5 times, 4=6-10 times, 5=11-15 times, 6=16-20 times, 7=More than 20 times)"
+TimesHelpGiven2,"Providing up to date information (1=0 times, 2=1-2 times, 3=3-5 times, 4=6-10 times, 5=11-15 times, 6=16-20 times, 7=More than 20 times)"
+TimesHelpGiven3,"Providing food or water (1=0 times, 2=1-2 times, 3=3-5 times, 4=6-10 times, 5=11-15 times, 6=16-20 times, 7=More than 20 times)"
+TimesHelpGiven4,"Providing cleaning supplies (1=0 times, 2=1-2 times, 3=3-5 times, 4=6-10 times, 5=11-15 times, 6=16-20 times, 7=More than 20 times)"
+TimesHelpGiven5,"Providing medical supplies (1=0 times, 2=1-2 times, 3=3-5 times, 4=6-10 times, 5=11-15 times, 6=16-20 times, 7=More than 20 times)"
+TimesHelpGiven6,"Providing help with childcare (1=0 times, 2=1-2 times, 3=3-5 times, 4=6-10 times, 5=11-15 times, 6=16-20 times, 7=More than 20 times)"
+TimesHelpGiven7,"Providing emotional support (1=0 times, 2=1-2 times, 3=3-5 times, 4=6-10 times, 5=11-15 times, 6=16-20 times, 7=More than 20 times)"
+HelpReceived1,"Receiving money from somebody you know when you needed it (1=0 times, 2=1-2 times, 3=3-5 times, 4=6-10 times, 5=11-15 times, 6=16-20 times, 7=More than 20 times)"
+HelpReceived2,"Receiving up to date information (1=0 times, 2=1-2 times, 3=3-5 times, 4=6-10 times, 5=11-15 times, 6=16-20 times, 7=More than 20 times)"
+HelpReceived3,"Receiving food or water (1=0 times, 2=1-2 times, 3=3-5 times, 4=6-10 times, 5=11-15 times, 6=16-20 times, 7=More than 20 times)"
+HelpReceived4,"Receiving cleaning supplies (1=0 times, 2=1-2 times, 3=3-5 times, 4=6-10 times, 5=11-15 times, 6=16-20 times, 7=More than 20 times)"
+HelpReceived5,"Receiving medical supplies (1=0 times, 2=1-2 times, 3=3-5 times, 4=6-10 times, 5=11-15 times, 6=16-20 times, 7=More than 20 times)"
+HelpReceived6,"Receiving help with childcare (1=0 times, 2=1-2 times, 3=3-5 times, 4=6-10 times, 5=11-15 times, 6=16-20 times, 7=More than 20 times)"
+HelpReceived7,"Receiving emotional support (1=0 times, 2=1-2 times, 3=3-5 times, 4=6-10 times, 5=11-15 times, 6=16-20 times, 7=More than 20 times)"
+ReceivedCharity,"Since March 11, when COVID-19 was declared a global pandemic, how many times have you received assistance or goods from charities? (1=0 times, 2=1-2 times, 3=3-5 times, 4=6-10 times, 5=11-15 times, 6=16-20 times, 7=More than 20 times)"
+GivenCharity,"Since March 11, when COVID-19 was declared a global pandemic, how many times have you donated money, goods or your time to charities? (1=0 times, 2=1-2 times, 3=3-5 times, 4=6-10 times, 5=11-15 times, 6=16-20 times, 7=More than 20 times)"
+Motivations1,"I help others because I feel compassion toward people in need (1=Does not fit my personality at all, 7=Fits my personality)"
+Motivations2,"People with whom I am close place a high value on helping others (1=Does not fit my personality at all, 7=Fits my personality)"
+Motivations3,"Helping others puts too much of a strain on me (1=Does not fit my personality at all, 7=Fits my personality)"
+Motivations4,"Helping others enables me to obtain recognition (1=Does not fit my personality at all, 7=Fits my personality)"
+Motivations5,"Helping others makes me feel happy (1=Does not fit my personality at all, 7=Fits my personality)"
+Motivations6,"When I give money to charitable causes, I find it important that 100% of my contribution goes to the beneficiaries and will not be used for overhead (1=Does not fit my personality at all, 7=Fits my personality)"
+Motivations7,"Sometimes I help others because I see other people helping on social media and I feel pressured or guilty. (1=Does not fit my personality at all, 7=Fits my personality)"
+Motivations8,"When I help others, I do so with my heart rather than my head (1=Does not fit my personality at all, 7=Fits my personality)"
+Motivations9,"My religion is an important driver for my helping behavior (1=Does not fit my personality at all, 7=Fits my personality)"
+Motivations10,"I help others because I have so much in my life to be thankful for (1=Does not fit my personality at all, 7=Fits my personality)"
+Motivations11,"I help others to decrease the injustice in this world (1=Does not fit my personality at all, 7=Fits my personality)"
+Motivations12,"Sometimes I help others because I see other people helping on social media and I feel pressured or guilty. (1=Does not fit my personality at all, 7=Fits my personality)"
+Chaos1,"I get a kick when natural disasters strike in foreign countries (1=Strongly disagree, 7=Strongly agree)"
+Chaos2,"I fantasize about a natural disaster wiping out most of humanity such that a small group of people can start all over (1=Strongly disagree, 7=Strongly agree)"
+Chaos3,"I think society should be burned to the ground (1=Strongly disagree, 7=Strongly agree)"
+Chaos4,"When I think about our political and social institutions, I cannot help thinking just let them all burn (1=Strongly disagree, 7=Strongly agree)"
+Chaos5,"We cannot fix the problems in our societal institutions, we need to tear them down and start over (1=Strongly disagree, 7=Strongly agree)"
+Chaos6,"I need chaos around me - it is too boring if nothing is going on (1=Strongly disagree, 7=Strongly agree)"
+Chaos7,"Sometimes I just feel like destroying beautiful things (1=Strongly disagree, 7=Strongly agree)"
+Chaos8,"There is no right and wrong in the world (1=Strongly disagree, 7=Strongly agree)"
+Chaos9,"When I think about our current political and social institutions, I feel proud (1=Strongly disagree, 7=Strongly agree)"
+Chaos10,"I believe that we can fix the problems in our societal institutions, it just takes hard work (1=Strongly disagree, 7=Strongly agree)"
+Chaos11,"I do not feel good unless there is order around me - I do not like chaotic situations (1=Strongly disagree, 7=Strongly agree)"
+Chaos12,"I think we should all work together to preserve the beauty and order of the world we live in (1=Strongly disagree, 7=Strongly agree)"
+FutureConsequences1,"I often engage in activities to achieve outcomes that may not result for many years. (1=Not at all like me, 4=Neutral, 7=Very much like me)"
+FutureConsequences2,"I only act to satisfy present concerns, figuring the future will take care of itself. (1=Not at all like me, 4=Neutral, 7=Very much like me)"
+FutureConsequences3,"My behavior is only influenced by the short-term (a matter of days or weeks) outcomes of my actions. (1=Not at all like me, 4=Neutral, 7=Very much like me)"
+FutureConsequences4,"I generally ignore warnings about possible future problems because I think the problems will be resolved before they reach crisis level. (1=Not at all like me, 4=Neutral, 7=Very much like me)"
+FutureConsequences5,"I think that sacrificing now is usually unnecessary since future outcomes can be dealt with at a later time. (1=Not at all like me, 4=Neutral, 7=Very much like me)"
+FutureConsequences6,"I only act to satisfy immediate concerns, figuring that I will take care of future problems that may occur at a later date. (1=Not at all like me, 4=Neutral, 7=Very much like me)"
+FutureConsequences7,"My day to day work is more important to me than behavior that has distant outcomes. (1=Not at all like me, 4=Neutral, 7=Very much like me)"
+FoodInsecurity1,"Since March 11, when COVID-19 was declared a global pandemic: I worried whether my food would run out before I was able to get more. (1=Never, 2=Sometimes, 3=Often)"
+FoodInsecurity2,"Since March 11, when COVID-19 was declared a global pandemic: I cut the size of meals or skipped meals because there was not enough food. (1=Never, 2=Sometimes, 3=Often)"
+FoodInsecurity3,"Since March 11, when COVID-19 was declared a global pandemic: I lost weight because there was not enough food. (1=Never, 2=Sometimes, 3=Often)"
+Housing1,"Since March 11, when COVID-19 was declared a global pandemic: I did not pay full amount of rent or mortgage (1=Never, 2=Sometimes, 3=Often)"
+Housing2,"Since March 11, when COVID-19 was declared a global pandemic: I did not pay full amount of utilities (1=Never, 2=Sometimes, 3=Often)"
+Housing3,"Since March 11, when COVID-19 was declared a global pandemic: I moved in with people due to financial problems (1=Never, 2=Sometimes, 3=Often)"
+Homeless,"Since March 11, when COVID-19 was declared a global pandemic: have you experienced homelessness? (1=Never, 2=Sometimes, 3=Often)"
+GreenSettings,"Since March 11, when COVID-19 was declared a global pandemic: have you utilized green settings such as parks, gardens, forests, waterbodies, etc. to find peace, relax or de-stress? (1=Never, 2=Sometimes, 3=Often)"
+OutdoorRec,"To cope with the disruptions and increased demands of COVID-19, have you turned to outdoor recreation to take care of yourself and support your physical or mental health? (1=Never, 2=Sometimes, 3=Often)"
 Movies,
-Discounting1,Which would you rather receive?
-Discounting2,Which would you rather receive?
-Discounting3,Which would you rather receive?
-Discounting4,Which would you rather receive?
-Discounting5,Which would you rather receive?
-Discounting6,Which would you rather receive?
-Discounting7,Which would you rather receive?
-Discounting8,Which would you rather receive?
-Discounting9,Which would you rather receive?
-Discounting10,Which would you rather receive?
-Discounting11,Which would you rather receive?
-Discounting12,Which would you rather receive?
-Discounting13,Which would you rather receive?
-Discounting14,Which would you rather receive?
-Discounting15,Which would you rather receive?
-Discounting16,Which would you rather receive?
-Discounting17,Which would you rather receive?
-Discounting18,Which would you rather receive?
-Discounting19,Which would you rather receive?
-Discounting20,Which would you rather receive?
-Discounting21,Which would you rather receive?
-Discounting22,Which would you rather receive?
-Discounting23,Which would you rather receive?
-Discounting24,Which would you rather receive?
-Discounting25,Which would you rather receive?
-Discounting26,Which would you rather receive?
-Discounting27,Which would you rather receive?
-Job1,How likely do you think it is that you will lose your job because of the economic downturn associated with COVID-19
-Job2,"If you lost your job, how long do you think it would take to find another one?"
-Job3,"If you didn't have a job, how long would your savings last?"
-ImportantSocialDist,How important is it to you to maintain social distancing now to help prevent a spike in COVID-19 cases in a few months from now?
-MaskPreventSurge,How important is it to you to wear a mask in public now to help prevent a spike in COVID-19 cases in a few months from now?
-COVIDspike,How likely do you think it is that there will be a spike of COVID-19 cases in a few months from now?
-CareerImpact,How much of an impact will COVID19 have on your career path in 3-6 months from now?
-CareerImpact5yrs,What effect will it have on your career path in five years from now?
-COVIDthreat,How much of a threat do you believe COVID-19 poses to public health?
-Response2ndWave,"Government efforts to slow the spread of COVID-19 have led to severe economic consequences. Assuming we have re-opened completely and a second wave hits in a few months, how should we respond?"
-HowLongSocialDist,How long would you be willing to practice social distancing to limit the spread of the disease?
-HowLongMask,How long would you be willing to wear a mask in public spaces to limit the spread of the disease?
-ProportionWearMask1,What proportion of individuals in your neighborhood wear a mask while shopping?
-ProportionWearMask2,"What proportion of your family have modified their behavior (e.g., practice social distancing or wear masks) to prevent spread of COVID-19?"
-ProportionWearMask3,What percentage of your CLOSE FRIENDS have modified their behavior to prevent the spread of COVID-19
-ProportionWearMask4,What percentage of individuals in your NEIGHBORHOOD have modified their behavior to prevent the spread of COVID-19?
-ClosestMask,Think about the people you are closest with. How important do they believe it is for people to modify their behavior to prevent the spread of COVID-19?
-CFC1,"I consider how things might be in the future, and try to influence those things with my day to day behavior."
-CFC2,My convenience is a big factor in the decisions I make or the actions I take.
-CFC3,I am willing to sacrifice my immediate happiness or well-being in order to achieve future outcomes.
-CFC4,I think it is important to take warnings about negative outcomes seriously even if the negative outcome will not occur for many years.
-CFC5,I think it is more important to perform a behavior with important distant consequences than a behavior with less important immediate consequences.
-CFC6,"When I make a decision, I think about how it might affect me in the future."
-CFC7,My behavior is generally influenced by future consequences.
+Discounting1,"Which would you rather receive? (1=$26 right now, 2=$59 in 17 days)"
+Discounting2,"Which would you rather receive? (1=$69 right now , 2=$85 in 91 days)"
+Discounting3,"Which would you rather receive? (1=$47 right now, 2=$80 in 25 days)"
+Discounting4,"Which would you rather receive? (1=$11 right now, 2=$30 in 7 days)"
+Discounting5,"Which would you rather receive? (1=$34 right now, 2=$50 in 30 days)"
+Discounting6,"Which would you rather receive? (1=$17 right now, 2=$29 in 25 days)"
+Discounting7,"Which would you rather receive? (1=$23 right now, 2=$60 in 10 days)"
+Discounting8,"Which would you rather receive? (1=$40 right now, 2=$55 in 62 days )"
+Discounting9,"Which would you rather receive? (1=$32 right now, 2=$83 in 10 days )"
+Discounting10,"Which would you rather receive? (1=$27 right now, 2=$50 in 21 days )"
+Discounting11,"Which would you rather receive? (1=$25 right now, 2=$60 in 14 days )"
+Discounting12,"Which would you rather receive? (1=$41 right now, 2=$75 in 20 days)"
+Discounting13,"Which would you rather receive? (1=$14 right now, 2=$25 in 19 days)"
+Discounting14,"Which would you rather receive? (1=$55 right now , 2=$75 in 61 days)"
+Discounting15,"Which would you rather receive? (1=$33 right now, 2=$80 in 14 days)"
+Discounting16,"Which would you rather receive? (1=$15 right now, 2=$33 in 16 days )"
+Discounting17,"Which would you rather receive? (1=$49 right now, 2=$60 in 89 days )"
+Discounting18,"Which would you rather receive? (1=$30 right now, 2=$51 in 25 days )"
+Discounting19,"Which would you rather receive? (1=$19 right now , 2=$25 in 53 days )"
+Discounting20,"Which would you rather receive? (1=$24 right now , 2=$35 in 29 days )"
+Discounting21,"Which would you rather receive? (1=$15 right now, 2=$35 in 29 days )"
+Discounting22,"Which would you rather receive? (1=$20 right now, 2=$55 in 7 days )"
+Discounting23,"Which would you rather receive? (1=$31 right now, 2=$85 in 7 days )"
+Discounting24,"Which would you rather receive? (1=$25 right now, 2=$30 in 80 days)"
+Discounting25,"Which would you rather receive? (1=$15 right now, 2=$39 in 10 days)"
+Discounting26,"Which would you rather receive? (1=$37 right now, 2=$84 in 17 days)"
+Discounting27,"Which would you rather receive? (1=$54 right now, 2=$80 in 30 days)"
+Job1,"How likely do you think it is that you will lose your job because of the economic downturn associated with COVID-19 (1=Not at all likely, 7=Extremely likely, 8=Already have lost job)"
+Job2,"If you lost your job, how long do you think it would take to find another one? (1=Less than 1 month, 2=1month, 3=2months, 4=3 months, 5=4 months, 6=5 months, 7=6 months, 8=more than 6 months)"
+Job3,"If you didn't have a job, how long would your savings last? (1=Already have used all of my savings, 2=1 month, 3=2 months, 4=3 months, 5=4 months, 6=5 months, 7=6 months, 8=More than 6 months)"
+ImportantSocialDist,"How important is it to you to maintain social distancing now to help prevent a spike in COVID-19 cases in a few months from now? (1=Not at all important, 7=Extremely important)"
+MaskPreventSurge,"How important is it to you to wear a mask in public now to help prevent a spike in COVID-19 cases in a few months from now? (1=Not at all important, 7=Extremely important)"
+COVIDspike,"How likely do you think it is that there will be a spike of COVID-19 cases in a few months from now? (1=Not at all likely, 7=Extremely likely)"
+CareerImpact,"How much of an impact will COVID19 have on your career path in 3-6 months from now? (1=Extremely positive, 7=Extremely negative)"
+CareerImpact5yrs,"What effect will it have on your career path in five years from now? (1=Extremely positive, 7=Extremely negative)"
+COVIDthreat,"How much of a threat do you believe COVID-19 poses to public health? (1=No threat at all, 7=Extremely severe threat)"
+Response2ndWave,"Government efforts to slow the spread of COVID-19 have led to severe economic consequences. Assuming we have re-opened completely and a second wave hits in a few months, how should we respond? (1=Keep economy open, 4=Partial shutdown, 7=Complete shutdown)"
+HowLongSocialDist,"How long would you be willing to practice social distancing to limit the spread of the disease? (1=Not at all, 2=Two weeks, 3=One month, 4=Two months, 5=Four months, 6=Six months, 7=Nine months, 8=1 year, 9=1.5 years, 10=2 years, 11=More than 2 years, 12=Forever)"
+HowLongMask,"How long would you be willing to wear a mask in public spaces to limit the spread of the disease? (1=Not at all, 2=Two weeks, 3=One month, 4=Two months, 5=Four months, 6=Six months, 7=Nine months, 8=1 year, 9=1.5 years, 10=2 years, 11=More than 2 years, 12=Forever)"
+ProportionWearMask1,"What proportion of individuals in your neighborhood wear a mask while shopping? (1=None, 7=All)"
+ProportionWearMask2,"What proportion of your family have modified their behavior (e.g., practice social distancing or wear masks) to prevent spread of COVID-19? (1=None, 7=All)"
+ProportionWearMask3,"What percentage of your CLOSE FRIENDS have modified their behavior to prevent the spread of COVID-19 (1=None, 7=All)"
+ProportionWearMask4,"What percentage of individuals in your NEIGHBORHOOD have modified their behavior to prevent the spread of COVID-19? (1=None, 7=All)"
+ClosestMask,"Think about the people you are closest with. How important do they believe it is for people to modify their behavior to prevent the spread of COVID-19? (1=Not at all important, 7=Extremely important)"
+CFC1,"I consider how things might be in the future, and try to influence those things with my day to day behavior. (1=Not at all like you, 7=Very much like you)"
+CFC2,"My convenience is a big factor in the decisions I make or the actions I take. (1=Not at all like you, 7=Very much like you)"
+CFC3,"I am willing to sacrifice my immediate happiness or well-being in order to achieve future outcomes. (1=Not at all like you, 7=Very much like you)"
+CFC4,"I think it is important to take warnings about negative outcomes seriously even if the negative outcome will not occur for many years. (1=Not at all like you, 7=Very much like you)"
+CFC5,"I think it is more important to perform a behavior with important distant consequences than a behavior with less important immediate consequences. (1=Not at all like you, 7=Very much like you)"
+CFC6,"When I make a decision, I think about how it might affect me in the future. (1=Not at all like you, 7=Very much like you)"
+CFC7,"My behavior is generally influenced by future consequences. (1=Not at all like you, 7=Very much like you)"
 PoliticalOrient,"How would you characterize your political leanings? 1 = extremely to the left, 7 = extremely to the right"
 Contacts24hrs,"How many people (outside of your household) have you had in-person interactions with during the last 24 hours (e.g., visiting with friends, buying food or supplies from a cashier)?"
 Contacts7days,"How many people (outside of your household) have you had in-person interactions with during the last 7 days (e.g., visiting with friends, buying food or supplies from a cashier)?"
-ContactsMask,"During these in-person interactions, if you were closer than 6 feet (2 meters) from the person(s) did you wear a face mask?"
+ContactsMask,"During these in-person interactions, if you were closer than 6 feet (2 meters) from the person(s) did you wear a face mask? (1=Never, 3=Half the time, 5=Always)"
 SchoolAge,"Do you have any school-aged children who may be returning to school in the next few weeks? 1 = no, 2 = yes, 3 = my children have already returned to school"
-ConcernBack2School,"Given the current state of the pandemic where you live, how concerned are you at the prospect of your children physically returning to school?"
-MethodSchool,"Given the current state of the pandemic, what is/will be your children's method of schooling? "
-PreferredMethod,Is this your preferred method of schooling?
-IfNotPreferred,"If not, what would be your preferred method of schooling your children?"
-Streneous,"During a typical 7-Day period (a week), how many times on the average do you do the following kinds of exercise for more than 15 minutes during your free time (write on each line the appropriate number)?  "
-Moderate,"During a typical 7-Day period (a week), how many times on the average do you do the following kinds of exercise for more than 15 minutes during your free time (write on each line the appropriate number)?  "
-Mild,"During a typical 7-Day period (a week), how many times on the average do you do the following kinds of exercise for more than 15 minutes during your free time (write on each line the appropriate number)?  "
-Sweat,"During a typical 7-Day period (a week), in your leisure time, how often do you engage in any regular activity long enough to work up a sweat (heart beats rapidly)? "
-ActivityCovid,"Compared to your life before the Covid-19 Pandemic response, are you more active, equally active, or less active?"
-PT1,"I sometimes find it difficult to see things from the ""other guy's"" point of view. "
-PT2,I try to look at everybody's side of a disagreement before I make a decision.
-PT3,I sometimes try to understand others better by imagining how things look from their perspective.
-PT4,"If I'm sure I'm right about something, I don't waste much time listening to other people's arguments."
-PT5,I believe that there are two sides to every question and try to look at them both.
-PT6,"When I'm upset at someone, I usually try to ""put myself in their shoes"" for a while."
-PT7," Before criticizing somebody, I try to imagine how I would feel if I were in their place."
-RMET8score,"0 = wrong answer, 1 = right answer"
-RMET9score,"0 = wrong answer, 1 = right answer"
-RMET12score,"0 = wrong answer, 1 = right answer"
-RMET14score,"0 = wrong answer, 1 = right answer"
-RMET15score,"0 = wrong answer, 1 = right answer"
-RMET19score,"0 = wrong answer, 1 = right answer"
-RMET22score,"0 = wrong answer, 1 = right answer"
-RMET24score,"0 = wrong answer, 1 = right answer"
-RMET32score,"0 = wrong answer, 1 = right answer"
-RMET36score,"0 = wrong answer, 1 = right answer"
-PartnerEmpathy1,I share my acquaintance's emotions
-PartnerEmpathy2,I empathize with my acquaintance
-PartnerEmpathy3,I see that my acquaintance feels the same emotions as I do
-PartnerEmpathy4,I feel a strong bond with my acquaintance
-SharedAgency1,My acquaintance will take on my responsibilities so that I can accomplish my goals
-SharedAgency2,"If I am busy, my acquaintance will not tell me about their difficulties and needs."
-SharedAgency3,My acquaintance and I tend to negotiate when we disagree
+ConcernBack2School,"Given the current state of the pandemic where you live, how concerned are you at the prospect of your children physically returning to school? (1=Not at all, 7=Extremely)"
+MethodSchool,"Given the current state of the pandemic, what is/will be your children's method of schooling? (1=In-person, 2=Online, 3=Mixed in-person and online, 4=Homeschool, 5=Other)"
+PreferredMethod,"Is this your preferred method of schooling? (1=No, 2=Yes)"
+IfNotPreferred,"If not, what would be your preferred method of schooling your children? (1=In-person, 2=Online, 3=Mixed in-person and online, 4=Homeschool, 5=Other)"
+Streneous,"During a typical 7-Day period (a week), how many times on the average do you do streneous exercise for more than 15 minutes during your free time?  "
+Moderate,"During a typical 7-Day period (a week), how many times on the average do you do moderate exercise for more than 15 minutes during your free time?  "
+Mild,"During a typical 7-Day period (a week), how many times on the average do you do mild exercise for more than 15 minutes during your free time?  "
+Sweat,"During a typical 7-Day period (a week), in your leisure time, how often do you engage in any regular activity long enough to work up a sweat (heart beats rapidly)? (1=Often, 2=Sometimes, 3=Rarely/Never)"
+ActivityCovid,"Compared to your life before the Covid-19 Pandemic response, are you more active, equally active, or less active? (1=More active, 2=Equally active, 3=Less active)"
+PT1,"I sometimes find it difficult to see things from the ""other guy's"" point of view. (1=Does not describe me well, 5=Describes me very well)"
+PT2,"I try to look at everybody's side of a disagreement before I make a decision. (1=Does not describe me well, 5=Describes me very well)"
+PT3,"I sometimes try to understand others better by imagining how things look from their perspective. (1=Does not describe me well, 5=Describes me very well)"
+PT4,"If I'm sure I'm right about something, I don't waste much time listening to other people's arguments. (1=Does not describe me well, 5=Describes me very well)"
+PT5,"I believe that there are two sides to every question and try to look at them both. (1=Does not describe me well, 5=Describes me very well)"
+PT6,"When I'm upset at someone, I usually try to ""put myself in their shoes"" for a while. (1=Does not describe me well, 5=Describes me very well)"
+PT7," Before criticizing somebody, I try to imagine how I would feel if I were in their place. (1=Does not describe me well, 5=Describes me very well)"
+RMET8score,"You will now be shown a set of eyes from people displaying various thoughts and feelings. For each set of eyes, choose the word that best describes what the person in the picture is thinking or feeling. Please choose the word which you consider to be most suitable. You should try to do the task as quickly as possible, but make sure that you have read all 4 words before making your choice.
+ 0 = wrong answer, 1 = right answer"
+RMET9score,"You will now be shown a set of eyes from people displaying various thoughts and feelings. For each set of eyes, choose the word that best describes what the person in the picture is thinking or feeling. Please choose the word which you consider to be most suitable. You should try to do the task as quickly as possible, but make sure that you have read all 4 words before making your choice.
+ 0 = wrong answer, 1 = right answer"
+RMET12score,"You will now be shown a set of eyes from people displaying various thoughts and feelings. For each set of eyes, choose the word that best describes what the person in the picture is thinking or feeling. Please choose the word which you consider to be most suitable. You should try to do the task as quickly as possible, but make sure that you have read all 4 words before making your choice.
+ 0 = wrong answer, 1 = right answer"
+RMET14score,"You will now be shown a set of eyes from people displaying various thoughts and feelings. For each set of eyes, choose the word that best describes what the person in the picture is thinking or feeling. Please choose the word which you consider to be most suitable. You should try to do the task as quickly as possible, but make sure that you have read all 4 words before making your choice.
+ 0 = wrong answer, 1 = right answer"
+RMET15score,"You will now be shown a set of eyes from people displaying various thoughts and feelings. For each set of eyes, choose the word that best describes what the person in the picture is thinking or feeling. Please choose the word which you consider to be most suitable. You should try to do the task as quickly as possible, but make sure that you have read all 4 words before making your choice.
+ 0 = wrong answer, 1 = right answer"
+RMET19score,"You will now be shown a set of eyes from people displaying various thoughts and feelings. For each set of eyes, choose the word that best describes what the person in the picture is thinking or feeling. Please choose the word which you consider to be most suitable. You should try to do the task as quickly as possible, but make sure that you have read all 4 words before making your choice. 0 = wrong answer, 1 = right answer"
+RMET22score,"You will now be shown a set of eyes from people displaying various thoughts and feelings. For each set of eyes, choose the word that best describes what the person in the picture is thinking or feeling. Please choose the word which you consider to be most suitable. You should try to do the task as quickly as possible, but make sure that you have read all 4 words before making your choice. 0 = wrong answer, 1 = right answer"
+RMET24score,"You will now be shown a set of eyes from people displaying various thoughts and feelings. For each set of eyes, choose the word that best describes what the person in the picture is thinking or feeling. Please choose the word which you consider to be most suitable. You should try to do the task as quickly as possible, but make sure that you have read all 4 words before making your choice. 0 = wrong answer, 1 = right answer"
+RMET32score,"You will now be shown a set of eyes from people displaying various thoughts and feelings. For each set of eyes, choose the word that best describes what the person in the picture is thinking or feeling. Please choose the word which you consider to be most suitable. You should try to do the task as quickly as possible, but make sure that you have read all 4 words before making your choice. 0 = wrong answer, 1 = right answer"
+RMET36score,"You will now be shown a set of eyes from people displaying various thoughts and feelings. For each set of eyes, choose the word that best describes what the person in the picture is thinking or feeling. Please choose the word which you consider to be most suitable. You should try to do the task as quickly as possible, but make sure that you have read all 4 words before making your choice. 0 = wrong answer, 1 = right answer"
+PartnerEmpathy1,"I share my acquaintance's emotions (1=Do not agree at all, 7=Strongly agree)"
+PartnerEmpathy2,"I empathize with my acquaintance (1=Do not agree at all, 7=Strongly agree)"
+PartnerEmpathy3,"I see that my acquaintance feels the same emotions as I do (1=Do not agree at all, 7=Strongly agree)"
+PartnerEmpathy4,"I feel a strong bond with my acquaintance (1=Do not agree at all, 7=Strongly agree)"
+SharedAgency1,"My acquaintance will take on my responsibilities so that I can accomplish my goals (1=Do not agree at all, 7=Strongly agree)"
+SharedAgency2,"If I am busy, my acquaintance will not tell me about their difficulties and needs. (1=Do not agree at all, 7=Strongly agree)"
+SharedAgency3,"My acquaintance and I tend to negotiate when we disagree (1=Do not agree at all, 7=Strongly agree)"
 RMETcomposite,
 PerspectiveTakingComposite,
 PartnerEmpathyAcqComposite,
 SharedAgencyAcqComposite,
-PromotionEE,"Imagine that your acquaintance has received a promotion at their job. They have been working really hard for this company for some time, and are very excited about this new opportunity. This promotion will give your acquaintance more financial stability and the ability to invest in the future. How good do you feel about your acquaintance receiving this promotion?"
-PromotionSH,How do you feel this promotion will influence you?
-DeathEE,"Imagine that your acquaintance recently lost both of their parents in a car accident. Your acquaintance is devastated about their loss. Without his/her parents, your acquaintance has lost their main source of emotional and social support, and they do not know how to cope. How bad do you feel about your acquaintance losing their parents?"
-DeathSH,How do you feel that this loss will influence you?
+PromotionEE,"Imagine that your acquaintance has received a promotion at their job. They have been working really hard for this company for some time, and are very excited about this new opportunity. This promotion will give your acquaintance more financial stability and the ability to invest in the future. How good do you feel about your acquaintance receiving this promotion? (1=Not at all, 7=Really good)"
+PromotionSH,"How do you feel this promotion will influence you? (1=This will have no influence on me, 7=This will have a positive influence on me)"
+DeathEE,"Imagine that your acquaintance recently lost both of their parents in a car accident. Your acquaintance is devastated about their loss. Without his/her parents, your acquaintance has lost their main source of emotional and social support, and they do not know how to cope. How bad do you feel about your acquaintance losing their parents? (1=Not at all, 7=Really bad)"
+DeathSH,"How do you feel that this loss will influence you? (1=This will have no influence on me, 7=This will have a positive influence on me)"
 Dggive,"You will now play an allocation task with your acquaintance. In this allocation task you will be given 100 lottery tickets. Each ticket is a lottery entry for two $5.00 USD prices. You can allocate any amount between 0 and 100 to your acquaintance. The remainder amount you will keep as entries to the lottery for yourself. The more tickets you allocate to your acquaintance, the greater the chances of them winning; and the more tickets you allocate to yourself, the greater your chances of winning. We will send you information about how your acquaintance can contact us and receive their payment if they win the lottery. If you are the winner, we will add a bonus payment to your Prolific account."
 HouseHold,How many people currently live in your household?
-HealthCare,Are you currently employed as a healthcare worker?
-Teacher,Are you currently employed as a teacher?
-WorkHighRisk,Has your occupation been identified as high-risk for COVID-19 transmission? 
-WorkCovidGear,"Does your workplace provide you with sufficient access to protective gear against COVID-19 (for example, cloth masks, surgical masks, respirators, eye protection, etc)?"
-SelfIsolation,"Since March 13, when COVID-19 was declared a global pandemic, have you been self-isolating (no physical contact with people outside of your household)?"
-HouseHoldIsolation,"Since March 13, when COVID-19 was declared a global pandemic, have members of your household been isolating (no physical contact with people outside of your household)?"
-HouseHoldMask,When members of your household have in-person interactions with people outside your household do they wear a mask and/or stay 6 feet (2 meters) away from the person(s)? 
-Work,During work
-ErrandOut,Outdors errands
-ErrandIN,Indoor errands
-Taxi,"During taxi, lyft/uber"
-PublicTransport,Using large public transportation such as buses or subways
-RestaurantOut,Dining at a restaurant outdoors
-RestaurantIN,Dining at a restaurant indoors
-PartyOut,Hosting/attending a gathering or party outdoors
-PartyIN,Hosting/attending a gathering or party indoors
-GymOut,Using an outdoor gym/fitness center
-GymIN,Using an indoor gym/fitness center
-Salon,Going to a salon such as a nail/hair salon or barbershop
-Camping,
-Hotel,Spending the night in a hotel
-OtherHouse,Spending the night in someone else’s house
-Park,Going to parks or recreational centers/facilities 
-Doctor,Going a doctor’s/dentist’s office 
-Beach,Going to the beach or lake
-Pool,Going to a public/shared pool
-ContactFriends,"How often have you been in contact with friends (not including family members, in-laws, children) since the pandemic started?"
-WayContact,What is your primary way of keeping in contact with friends since the pandemic started?
-ImpactedFriends,How has the pandemic impacted your existing friendships?
+HealthCare,"Are you currently employed as a healthcare worker? (1=No, 2=Yes)"
+Teacher,"Are you currently employed as a teacher? (1=No, 2=Yes)"
+WorkHighRisk,"Has your occupation been identified as high-risk for COVID-19 transmission? (1=No, 2=Not sure, 3=Yes)"
+WorkCovidGear,"Does your workplace provide you with sufficient access to protective gear against COVID-19 (for example, cloth masks, surgical masks, respirators, eye protection, etc)? (1=Strongly disagree, 7=Strongly agree)"
+SelfIsolation,"Since March 13, when COVID-19 was declared a global pandemic, have you been self-isolating (no physical contact with people outside of your household)? (1=Not at all, 3=About half of the time, 5=All of the time)"
+HouseHoldIsolation,"Since March 13, when COVID-19 was declared a global pandemic, have members of your household been isolating (no physical contact with people outside of your household)? (1=Not at all, 3=About half of the time, 5=All of the time)"
+HouseHoldMask,"When members of your household have in-person interactions with people outside your household do they wear a mask and/or stay 6 feet (2 meters) away from the person(s)? (1=Never, 3=Half the time, 5=Always)"
+Work,"Since March 13, when COVID-19 was declared a global pandemic, have you worn a mask and/or stayed 6 feet (2 meters) away from other people when doing the following activities? During work (1=Never, 3=About half the time, 5=Always, 6=I have not done this activity since March 13)"
+ErrandOut,"Since March 13, when COVID-19 was declared a global pandemic, have you worn a mask and/or stayed 6 feet (2 meters) away from other people when doing the following activities? Outdors errands (1=Never, 3=About half the time, 5=Always, 6=I have not done this activity since March 13)"
+ErrandIN,"Since March 13, when COVID-19 was declared a global pandemic, have you worn a mask and/or stayed 6 feet (2 meters) away from other people when doing the following activities? Indoor errands (1=Never, 3=About half the time, 5=Always, 6=I have not done this activity since March 13)"
+Taxi,"Since March 13, when COVID-19 was declared a global pandemic, have you worn a mask and/or stayed 6 feet (2 meters) away from other people when doing the following activities? During taxi, lyft/uber (1=Never, 3=About half the time, 5=Always, 6=I have not done this activity since March 13)"
+PublicTransport,"Since March 13, when COVID-19 was declared a global pandemic, have you worn a mask and/or stayed 6 feet (2 meters) away from other people when doing the following activities? Using large public transportation such as buses or subways (1=Never, 3=About half the time, 5=Always, 6=I have not done this activity since March 13)"
+RestaurantOut,"Since March 13, when COVID-19 was declared a global pandemic, have you worn a mask and/or stayed 6 feet (2 meters) away from other people when doing the following activities? Dining at a restaurant outdoors (1=Never, 3=About half the time, 5=Always, 6=I have not done this activity since March 13)"
+RestaurantIN,"Since March 13, when COVID-19 was declared a global pandemic, have you worn a mask and/or stayed 6 feet (2 meters) away from other people when doing the following activities? Dining at a restaurant indoors (1=Never, 3=About half the time, 5=Always, 6=I have not done this activity since March 13)"
+PartyOut,"Since March 13, when COVID-19 was declared a global pandemic, have you worn a mask and/or stayed 6 feet (2 meters) away from other people when doing the following activities? Hosting/attending a gathering or party outdoors (1=Never, 3=About half the time, 5=Always, 6=I have not done this activity since March 13)"
+PartyIN,"Since March 13, when COVID-19 was declared a global pandemic, have you worn a mask and/or stayed 6 feet (2 meters) away from other people when doing the following activities? Hosting/attending a gathering or party indoors (1=Never, 3=About half the time, 5=Always, 6=I have not done this activity since March 13)"
+GymOut,"Since March 13, when COVID-19 was declared a global pandemic, have you worn a mask and/or stayed 6 feet (2 meters) away from other people when doing the following activities? Using an outdoor gym/fitness center (1=Never, 3=About half the time, 5=Always, 6=I have not done this activity since March 13)"
+GymIN,"Since March 13, when COVID-19 was declared a global pandemic, have you worn a mask and/or stayed 6 feet (2 meters) away from other people when doing the following activities? Using an indoor gym/fitness center (1=Never, 3=About half the time, 5=Always, 6=I have not done this activity since March 13)"
+Salon,"Since March 13, when COVID-19 was declared a global pandemic, have you worn a mask and/or stayed 6 feet (2 meters) away from other people when doing the following activities? Going to a salon such as a nail/hair salon or  (1=Never, 3=About half the time, 5=Always, 6=I have not done this activity since March 13)barbershop"
+Camping,"Since March 13, when COVID-19 was declared a global pandemic, have you worn a mask and/or stayed 6 feet (2 meters) away from other people when doing the following activities? Camping (1=Never, 3=About half the time, 5=Always, 6=I have not done this activity since March 13)"
+Hotel,"Since March 13, when COVID-19 was declared a global pandemic, have you worn a mask and/or stayed 6 feet (2 meters) away from other people when doing the following activities? Spending the night in a hotel(1=Never, 3=About half the time, 5=Always, 6=I have not done this activity since March 13)"
+OtherHouse,"Since March 13, when COVID-19 was declared a global pandemic, have you worn a mask and/or stayed 6 feet (2 meters) away from other people when doing the following activities? Spending the night in someone else’s house (1=Never, 3=About half the time, 5=Always, 6=I have not done this activity since March 13)"
+Park,"Since March 13, when COVID-19 was declared a global pandemic, have you worn a mask and/or stayed 6 feet (2 meters) away from other people when doing the following activities? Going to parks or recreational centers/facilities (1=Never, 3=About half the time, 5=Always, 6=I have not done this activity since March 13)"
+Doctor,"Since March 13, when COVID-19 was declared a global pandemic, have you worn a mask and/or stayed 6 feet (2 meters) away from other people when doing the following activities? Going a doctor’s/dentist’s office (1=Never, 3=About half the time, 5=Always, 6=I have not done this activity since March 13)"
+Beach,"Since March 13, when COVID-19 was declared a global pandemic, have you worn a mask and/or stayed 6 feet (2 meters) away from other people when doing the following activities? Going to the beach or lake (1=Never, 3=About half the time, 5=Always, 6=I have not done this activity since March 13)"
+Pool,"Since March 13, when COVID-19 was declared a global pandemic, have you worn a mask and/or stayed 6 feet (2 meters) away from other people when doing the following activities? Going to a public/shared pool (1=Never, 3=About half the time, 5=Always, 6=I have not done this activity since March 13)"
+ContactFriends,"How often have you been in contact with friends (not including family members, in-laws, children) since the pandemic started? (1=Less than once a month, 2=Once a month, 3=Once a week, 4=A few times a week, 5=Every day)"
+WayContact,"What is your primary way of keeping in contact with friends since the pandemic started? (1=In-person contact, 2=Texting and phone calls, 3=Video calling (e.g., Skype, FaceTime, Zoom), 4=Emails)"
+ImpactedFriends,"How has the pandemic impacted your existing friendships? (1=The pandemic has made them worse, 4=Neither better or worse, 7=The pandemic has made them better)"
 NewFriends,"Have you made any new friendships since the pandemic began? If so, how many?"
-FriendsSatisfied,How satisfied are you with your friendships currently during the pandemic?
-FriendsIsolated,How isolated from your social circle have you felt during the pandemic?
-FriendsLonely,How lonely have you felt during the pandemic?
-FriendsGuilty,Do you feel guilty because you are not able to check-in on your friends in person as much as you used to? 
-FriendsParty,"A friend of yours is hosting a party indoors at his house next weekend that will have about 50 guests. Some of the guests are mutual friends of yours; other guests you do not know. Considering you have no other obligations, how likely are you to attend this party?"
-FP1,How many new friends have you made in the past 12 months?
-FP2,"Friendships without closeness are ok, I don’t feel like I need to be emotionally close with all of my friends"
-FP3,I enjoy making casual friendships with many different people
-FP4,I try to make new friends even if I can't be sure that I will develop close friendships with all of them
-FP5,"I want to have a lot of different friendships with a lot of different people, even if it means that I don't get to know all of them very well"
-FP6,How long would you have to know someone to consider that person a friend?
-FP7,I often find myself wishing I could be friends with lots of new people
-FP8,I often find myself wishing I could get closer with lots of new people
-FP9,I often wish I could become friends with many of the people that I meet
-FP10,"In situations where I am around new people, I often feel really motivated to make new friends"
-FP11,"It doesn’t matter how many friends I have, I am always looking to meet new people to talk to/hang out with"
-FP12,I often wish that others would introduce me to new people to talk to/hang out with
-FP13,"In situations where I am around new people, I find it really easy to make new friends"
-Careful,"Considering the potential risk of COVID-19 infection, how careful are you when having in-person interactions? "
-WashHands,How often do you wash or sanitize your hands?
+FriendsSatisfied,"How satisfied are you with your friendships currently during the pandemic? (1=Not at all satisfied, 7=Completely satisfied)"
+FriendsIsolated,"How isolated from your social circle have you felt during the pandemic? (1=Not at all isolated, 7=Completely isolated)"
+FriendsLonely,"How lonely have you felt during the pandemic? (1=Not at all lonely, 7=Completely lonely)"
+FriendsGuilty,"Do you feel guilty because you are not able to check-in on your friends in person as much as you used to? (1=Not at all, 7=Very much)"
+FriendsParty,"A friend of yours is hosting a party indoors at his house next weekend that will have about 50 guests. Some of the guests are mutual friends of yours; other guests you do not know. Considering you have no other obligations, how likely are you to attend this party? (1=Not at all, 7=Very likely)"
+FP1,"How many new friends have you made in the past 12 months? (1=0 friends, 2=1-2 friends, 3=3-5 friends, 4=6-10 friends, 5=11-15 friends, 6=16-20 friends, 7=More than 20 friends)"
+FP2,"Friendships without closeness are ok, I don’t feel like I need to be emotionally close with all of my friends (1=Strongly disagree, 7=Strongly agree)"
+FP3,"I enjoy making casual friendships with many different people (1=Strongly disagree, 7=Strongly agree)"
+FP4,"I try to make new friends even if I can't be sure that I will develop close friendships with all of them (1=Strongly disagree, 7=Strongly agree)"
+FP5,"I want to have a lot of different friendships with a lot of different people, even if it means that I don't get to know all of them very well (1=Strongly disagree, 7=Strongly agree)"
+FP6,"How long would you have to know someone to consider that person a friend? (1=More than 1 year, 2=1 year, 3=6-12 months, 4=3-6 months, 5=1-3 months, 6=A few weeks, 7=A few days)"
+FP7,"I often find myself wishing I could be friends with lots of new people (1=Strongly disagree, 7=Strongly agree)"
+FP8,"I often find myself wishing I could get closer with lots of new people (1=Strongly disagree, 7=Strongly agree)"
+FP9,"I often wish I could become friends with many of the people that I meet (1=Strongly disagree, 7=Strongly agree)"
+FP10,"In situations where I am around new people, I often feel really motivated to make new friends (1=Strongly disagree, 7=Strongly agree)"
+FP11,"It doesn’t matter how many friends I have, I am always looking to meet new people to talk to/hang out with (1=Strongly disagree, 7=Strongly agree)"
+FP12,"I often wish that others would introduce me to new people to talk to/hang out with (1=Strongly disagree, 7=Strongly agree)"
+FP13,"In situations where I am around new people, I find it really easy to make new friends (1=Strongly disagree, 7=Strongly agree)"
+Careful,"Considering the potential risk of COVID-19 infection, how careful are you when having in-person interactions? (1=Not at all, 7=Extremely)"
+WashHands,"How often do you wash or sanitize your hands? (1=Less often than before the pandemic, 7=As soon as possible after I come in contact with a person or surface outside my household)"
 LargeGroups,"Since March 13, when COVID-19 was declared a global pandemic, how many times have you been exposed to large groups of people (i.e., more than 10 people) while being indoors? Numbers only. "
-LargeGroupReason1,"If you have been exposed to large groups of people (i.e., more than 10 people), what were the reasons? (select all that apply)"
-LargeGroupReason2,"If you have been exposed to large groups of people (i.e., more than 10 people), what were the reasons? (select all that apply)"
-LargeGroupReason3,"If you have been exposed to large groups of people (i.e., more than 10 people), what were the reasons? (select all that apply)"
-LargeGroupReason4,"If you have been exposed to large groups of people (i.e., more than 10 people), what were the reasons? (select all that apply)"
+LargeGroupReason1,"If you have been exposed to large groups of people (i.e., more than 10 people), what were the reasons? (Family reasons)"
+LargeGroupReason2,"If you have been exposed to large groups of people (i.e., more than 10 people), what were the reasons? (Social reasons)"
+LargeGroupReason3,"If you have been exposed to large groups of people (i.e., more than 10 people), what were the reasons? (Work-related reasons)"
+LargeGroupReason4,"If you have been exposed to large groups of people (i.e., more than 10 people), what were the reasons? (Other reasons)"
 LargeGroupReason1text,Family reasons What was the most common family circumstance that brought you together with more than 10 people?
 LargeGroupReason2text,Social reasons What was the most common social circumstance that brought you together with more than 10 people? 
 LargeGroupReason3text,Work-related reasons What was the most common work-related situation that brought you together with more than 10 people? 
