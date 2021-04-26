@@ -272,6 +272,10 @@
                                         <div class="profile-label">Death rate:</div>
                                         <div id="stat_death_rate" class="profile-value"></div>
                                     </div>
+                                    <div class="profile-item">
+                                        <div class="profile-label">Fully vaccinated:</div>
+                                        <div id="stat_vaccination_share" class="profile-value"></div>
+                                    </div>
                                 </div>
                             </div>
                         </div>
@@ -338,7 +342,8 @@
                     Confirmed, deaths, recovered, active data: <a href="https://github.com/CSSEGISandData/COVID-19"
                         target="_blank">Johns Hopkins University.</a><span id="JHU_date"> Downloaded</span>
                     <br />
-                    Test data: <a href="https://github.com/owid/covid-19-data" target="_blank">Our World in Data.</a>
+                    Test & vaccination data: <a href="https://github.com/owid/covid-19-data" target="_blank">Our World
+                        in Data.</a>
                     <span id="Test_date"> Downloaded</span> <br />
                     Government response data: <a href="https://github.com/OxCGRT/covid-policy-tracker"
                         target="_blank">Oxford University.</a>
@@ -455,7 +460,8 @@
         const all_parameters = ["Confirmed cases per 1 million",
             "Deaths per 1 million",
             "Death rate",
-            "Positive tests rate"];
+            "Positive tests rate",
+            "Fully vaccinated population share"];
         const all_countries = [...new Set(files[0].map(d => d.Country))].sort()
         const all_countries_ex = [...new Set(files[3].map(d => d.Country))].sort()
         const all_weeks = [...new Set(files[3].map(d => d.Week))]
@@ -525,24 +531,23 @@
         let statTests = document.getElementById("stat_tests");
         let statTestsRate = document.getElementById("stat_tests_rate");
         let statDeathRate = document.getElementById("stat_death_rate");
+        let statVaccinationShare = document.getElementById("stat_vaccination_share");
 
         function get_map_data() {
             var new_data = [];
             for (let row of files[0]) {
                 var val = 0;
                 if (row.Country != "World") {
-                    if (parameter == "Confirmed cases") {
-                        val = row.Confirmed;
-                    } else if (parameter == "Confirmed cases per 1 million") {
+                    if (parameter == "Confirmed cases per 1 million") {
                         val = row.Confirmed_pc;
-                    } else if (parameter == "Deaths") {
-                        val = row.Deaths;
                     } else if (parameter == "Deaths per 1 million") {
                         val = row.Deaths_pc;
                     } else if (parameter == "Death rate") {
                         val = row.Death_rate;
                     } else if (parameter == "Positive tests rate") {
                         val = row.Tested_rate;
+                    } else if (parameter == "Fully vaccinated population share") {
+                        val = row.Fully_vaccinated_pc;
                     }
 
                     new_data.push({ country: getCountryCode(row.Country), value: +val, originalName: row.Country });
@@ -877,7 +882,7 @@
         }
 
         function setStats() {
-            let cases, casesPc, deaths, deathsPc, tests, testsRate, deathRate;
+            let cases, casesPc, deaths, deathsPc, tests, testsRate, deathRate, vaccinationShare;
 
             for (let row of files[0]) {
                 if (country == row.Country) {
@@ -888,6 +893,7 @@
                     tests = numberFormatterIntegerLarge(+row.Tested);
                     testsRate = numberFormatterPercentage(+row.Tested_rate);
                     deathRate = numberFormatterPercentage(+row.Death_rate);
+                    vaccinationShare = numberFormatterPercentage(+row.Fully_vaccinated_pc);
                     break;
                 }
             }
@@ -896,8 +902,9 @@
             statDeaths.innerHTML = deaths;
             statDeathsPc.innerHTML = deathsPc;
             statTests.innerHTML = tests;
-            statTestsRate.innerHTML = testsRate;
-            statDeathRate.innerHTML = deathRate;
+            statTestsRate.innerHTML = testsRate + "%";
+            statDeathRate.innerHTML = deathRate + "%";
+            statVaccinationShare.innerHTML = vaccinationShare + "%";
         }
 
         intial_map_data = get_map_data();
@@ -981,6 +988,9 @@
                         } else {
                             text = val + "% of tests were positive";
                         }
+                    } else if (parameter == "Fully vaccinated population share") {
+                        let val = numberFormatterPercentage(value);
+                        text = val + "% of total population has been fully vaccinated";
                     }
                     return '<text><span style="font-size: 1.1em"><strong>' + title + '</strong></span><br>' + text + '</text>';
                 },
@@ -1475,6 +1485,12 @@
                     max: 20,
                     min: 0,
                 }, false)
+            } else if (parameter == "Fully vaccinated population share") {
+                chart.colorAxis[0].update({
+                    tickInterval: 10,
+                    max: 30,
+                    min: 0,
+                }, false)
             }
         }
 
@@ -1518,6 +1534,17 @@
                         [0.5, getIndexColor(52)],
                         [0.65, getIndexColor(9)],
                         [0.95, getIndexColor(30)]
+                    ],
+                }, false)
+            } else if (parameter == "Fully vaccinated population share") {
+                chart.colorAxis[0].update({
+                    stops: [
+                        [0, getIndexColor(51)],
+                        [0.01, getIndexColor(30)],
+                        [0.35, getIndexColor(9)],
+                        [0.5, getIndexColor(52)],
+                        [0.65, getIndexColor(23)],
+                        [0.95, getIndexColor(3)]
                     ],
                 }, false)
             }
