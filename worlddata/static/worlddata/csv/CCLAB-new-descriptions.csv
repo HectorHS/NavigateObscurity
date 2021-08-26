@@ -4,13 +4,14 @@ Sex,"1 = male, 2 = female, 3 =other"
 Children,Number of children
 ChildrenUnder18,Number of children under 18 years
 Education,"1 = less than high school, 7 = doctoral or professional degree"
-SSES,"At the top of the ladder are the people who are the best off, have the most money, most education, and best jobs. These people are represented by number 10 marked on the ladder. At the bottom are the people who are the worst off, have the least money, least education, worst jobs, or no job. These people are represented by number 1 at the bottom of the ladder.†"
+SSES,"At the top of the ladder are the people who are the best off, have the most money, most education, and best jobs. These people are represented by number 10 marked on the ladder. At the bottom are the people who are the worst off, have the least money, least education, worst jobs, or no job. These people are represented by number 1 at the bottom of the ladder.·"
 OccupationRisk,"Has your occupation been identified as high-risk for COVID-19 transmission? (1 = no, 2 = not sure, 3 = yes)"
 MoveChildhood,How many times before the age of 18 did you move to a totally new neighborhood or town? 
 Move,How many times since the age of 18 have you moved to a totally new neighborhood or town? 
 NumberInHouse,How many people currently live in your household?
 Preexisting,"Do you have any pre-existing health conditions that require you to take extra precautions to avoid catching a disease/illness? (1 = no, 2 = yes)"
 Citizen,"Are you a US citizen? (1=No, 2=Yes)"
+Responsible,"How responsible do you feel for the members of your household/pod? (1= not at all, 7= extremely)"
 PFINeigh1,"When my neighborhood succeeds, I feel good. (1=Do not agree at all, 7=Strongly agree)"
 PFINeigh2,"When my neighborhood fails, I feel bad. (1=Do not agree at all, 7=Strongly agree)"
 PFINeigh3,"I feel that my neighborhood's gains are my gains (1=Do not agree at all, 7=Strongly agree)"
@@ -29,6 +30,7 @@ WillingnessCountry,"A person who is a citizen of your own country is having thei
 NBTcountry,"Helping someone who is a citizen of your own country when they are in need is the right thing to do. (1=Strognly disagree, 7= Strongly agree)"
 InfectedCovid,"Have you contracted COVID-19? (1 = no, 2 = maybe, 3 = yes)"
 TestedCovid,"If yes or maybe, have you tested positive? (1 = no, 2 = have not been tested, 3 = yes)"
+WeekSinceCovid,"If yes or maybe, how many weeks ago did you contract COVID-19?"
 Symptoms1,"Fever or chills; (1 = no, 2 = yes)"
 Symptoms2,"Cough; (1 = no, 2 = yes)"
 Symptoms3,"Shortness of breath or difficulty breathing ; (1 = no, 2 = yes)"
@@ -42,7 +44,6 @@ Symptoms10,"Nausea or vomiting ; (1 = no, 2 = yes)"
 Symptoms11,"Diarrhea;(1 = no, 2 = yes)"
 Symptoms12,"Conjunctivitis (pink eye) (1 = no, 2 = yes)"
 Symptoms13,"Purple or darker colored toes (1 = no, 2 = yes)"
-WeekSinceCovid,"If yes or maybe, how many weeks ago did you contract COVID-19?"
 ContactsInfected,How many people do you personally know who have been diagnosed by a physician or tested positive for COVID-19?
 Contacts24hrs,"How many people (outside of your household) have you had in-person interactions with during the last 24 hours (e.g., visiting with friends, buying food or supplies from a cashier)?"
 Contacts7days,"How many people (outside of your household) have you had in-person interactions with during the last 7 days(e.g., visiting with friends, buying food or supplies from a cashier)?"
@@ -51,7 +52,7 @@ HouseMask,"When members of your household have in-person interactions where they
 Stress,"How stressed do you currently feel dealing with changes caused by COVID-19? (1=Not at all, 7=Extremely)"
 PerceptionRisk,"If you have never been infected with COVID-19, how likely do you think it is that you will become infected with COVID-19? (1=Not at all, 7=Extremely)"
 InfectionSeverity,"If you have never been infected with COVID-19, how severe do expect your symptoms to be if you were to become infected with COVID-19?  (1=Not at all severe, 7=Extremely severe)"
-ConcernCovid,"How anxious do you feel about the possibility of becoming sick (or sick again) with COVID-19?† (1=Not at all, 7=Extremely)"
+ConcernCovid,"How anxious do you feel about the possibility of becoming sick (or sick again) with COVID-19?· (1=Not at all, 7=Extremely)"
 EconomyVSshutdown,"Government efforts to slow the spread of COVID-19 have led to severe economic consequences. Assuming your area has re-opened completely and a second wave hits in the winter, how should people in your area respond? (1=Keep economy open, 7=Complete shutdown)"
 HelpGiven1,"Giving money to someone you know who needs it (e.g., for rent, utilities, etc); (1 = 0 times, 2 = 1-2 times, 3 = 3-4 times, 4 = 5-6 times, 5 = more than 6 times)"
 HelpGiven2,"Providing food or water e.g., meals, groceries; (1 = 0 times, 2 = 1-2 times, 3 = 3-4 times, 4 = 5-6 times, 5 = more than 6 times)"
@@ -105,12 +106,12 @@ IRIdistress6,"I tend to lose control during emergencies (1=Does not describe me 
 IRIdistress7,"When I see someone who badly needs help in an emergency, I fall apart (1=Does not describe me well, 5=Describes me well)"
 CovidVolunteer,"Considering the potential risk of spreading COVID-19, is helping others in-person the right thing to do now? (1=Not at all, 4=Not sure, 7=Absolutely)"
 TimeSpentOthers,"In the last 7 days, how many hours have you spent in places with many other people, such as in schools, stores, or public transport?"
-MoneyDonated,"In the last 7 days, how much money have you contributed to charities that try to help people affected by the pandemic?†"
+MoneyDonated,"In the last 7 days, how much money have you contributed to charities that try to help people affected by the pandemic?·"
 Back2Normal,"When do you think life will get back to pre-COVID normal?; (1 = it's alread normal, 2 = two weeks, 3 = one month, 4 = two months, 5 = four months, 6 = six months, 7 = nine months, 8 = one year, 9 = 1.5 years, 10 = two years, 11 = more than two years, 12 = never)"
 ElectionBck2Normal,"How much will the outcome of the November election affect how long it takes for life to return to normal? (1=Not at all, 7=Very much)"
 ConditionsChange,"Considering the current situation and looking to the coming year, how will conditions change?; 1 = will steadily improve, 3 = will stay the same, 5 = will get much worse"
 Vaccine,"How likely would you be to take a COVID vaccine when it is available to you? (1=Not at all likely, 7=Extremely likely)"
-TrustVaccine,"How likely would you be to trust that a COVID vaccine available to you is safe and effective?† (1=Not at all likely, 7=Extremely likely)"
+TrustVaccine,"How likely would you be to trust that a COVID vaccine available to you is safe and effective?· (1=Not at all likely, 7=Extremely likely)"
 OthersVaccine,"What proportion of people in the US do you think will take a COVID vaccine when it is made available to them? 1 = 0-10%, 10 = 91-100%"
 TimeToVaccine,"How long do you think it will be until a COVID vaccine is made available to you? 1 = currently, 2 = 1 month, 3 = 2 months, 4 = 3-6 months, 5 = 6-9 months, 6 = 9-12 months"
 ReceiveVaccine,"Have you received a COVID-19 vaccine? (1=No, I am not planning on getting a vaccine, 2=No, I am not sure if I will get a vaccine, 3=No, but I am planning on getting one 4=Yes)"
@@ -125,7 +126,8 @@ VaccinePeers,"How has seeing your friends, family, or other peers getting the va
 AfterVaccineNormal,"After the vaccine becomes available to most people, how long do you think it will take before the country returns to pre-COVID-19 normal (1=Less than one month, 2=1-2 months, 3=2-3 months, 4=3-6 months, 5=6-9 months, 6= 9-12 months, 7= More than one year)"
 VaccineRisk1,"I can still get COVID-19 after getting vaccinated (1=Strongly disagree, 7=Strongly agree)"
 VaccineRisk2,"I can still give COVID-19 to others after getting vaccinated (1=Strongly disagree, 7=Strongly agree)"
-FinancialHardship,"Do you anticipate having financial difficulties over the coming year, for instance being unable to pay bills on time?†1 = currently, 2 = 1 month, 3 = 2 months, 4 = 3-6 months, 5 = 6-9 months, 6 = 9-12 months"
+VaccineRightThing,"What proportion of people in the US do you think believe taking the COVID-19 vaccine is the right thing to do? (1 = 0-10%, 10 = 91-100%)"
+FinancialHardship,"Do you anticipate having financial difficulties over the coming year, for instance being unable to pay bills on time?·1 = currently, 2 = 1 month, 3 = 2 months, 4 = 3-6 months, 5 = 6-9 months, 6 = 9-12 months"
 CFCset1.1,"I consider how things might be in the future, and try to influence those things with my day to day behavior. (1=Not at all like you, 7=Very much like you)"
 CFCset1.2,"Often I engage in a particular behavior in order to achieve outcomes that may not result for many years.  (1=Not at all like you, 7=Very much like you)"
 CFCset1.3,"I only act to satisfy immediate concerns, figuring the future will take care of itself.   (1=Not at all like you, 7=Very much like you)"
@@ -209,7 +211,7 @@ RefuseMask,"Do you believe that some people refuse to wear a mask to make a poli
 MaskMakeStatement,"How often do you wear a face mask with the intention of making a political statement? 1 = never, 3 = sometimes, 5 = always, 6 = I never wear a mask"
 NoMaskStatement,"When you go out without wearing a face mask, how often do you do so with the intention of making a political statement? 1 = never, 3 = sometimes, 5 = always, 6 = I never wear a mask"
 NoMaskOtherState,"When you go out without wearing a face mask, how often do you do so with the intention of making a political statement? 1 = never, 3 = sometimes, 5 = always, 6 = I always wear a mask"
-TrumpMask1,"President Trump was photographed wearing a mask publicly for the first time in July at Walter Reed National Military Medical Center, where he told reporters, ìWhen youíre in a hospital, especially... I think itís a great thing to wear a mask.î Does this make you more or less likely to wear a mask? (1=Much less likely, 7=Much more likely)"
+TrumpMask1,"President Trump was photographed wearing a mask publicly for the first time in July at Walter Reed National Military Medical Center, where he told reporters, ÙWhen you∆re in a hospital, especially... I think it∆s a great thing to wear a mask.ˆ Does this make you more or less likely to wear a mask? (1=Much less likely, 7=Much more likely)"
 TrumpMask2,"In a June interview with the Wall Street Journal, President Trump said that he believes some people wear masks to signal their disapproval of him (rather than to prevent the spread of the virus). Does this make you more or less likely to wear a mask? (1=Much less likely, 7=Much more likely)"
 NeighborMask,"What proportion of individuals in your neighborhood wear a mask while shopping? (1=none, 7=all)"
 NeighborMask1,"What proportion of people in your area wear a mask while doing routine activities indoors (e.g., running errands, shopping, going to work)? 1 = none, 4 = half, 7 = all"
@@ -223,7 +225,7 @@ MaskAttitudes6,"Seeing other people NOT wearing face masks in public makes me fe
 MaskTrust,"Compared to people who choose to not wear face-masks in public, those who wear face-masks in public are (1 = much less trustworthy, 5 = much more trustworthy)"
 MaskIntelligence,"Compared to people who choose to not wear face-masks in public, those who wear face-masks in public are: (1 = much less intelligent, 5 = much more intelligent)"
 MaskMotives1,"I wear a face mask when going out in public to keep myself from getting sick (1=strongly disagree, 7=Strongly agree)"
-MaskMotives2,"I wear a face mask when going out in public to prevent others from getting sick in case I may be infected but donít know it yet (1=strongly disagree, 7=Strongly agree)"
+MaskMotives2,"I wear a face mask when going out in public to prevent others from getting sick in case I may be infected but don∆t know it yet (1=strongly disagree, 7=Strongly agree)"
 MaskMotives3,"Wearing a face mask when going out in public is the right thing to do (1=strongly disagree, 7=Strongly agree)"
 MaskStigma1,"Wearing a face mask is cool (1=strongly disagree, 7=Strongly agree)"
 MaskStigma2,"Wearing a face mask is shameful (1=strongly disagree, 7=Strongly agree)"
@@ -237,7 +239,7 @@ FriendSameBelief,"How important is it that your friends hold similar beliefs to 
 RightWing,"Everyone should be allowed to have their own lifestyle, religious beliefs, and political opinions, even if they go against established norms. (1=Strongly disagree, 7=Strongly agree)"
 Dogmatism,"There is a particular set of religious teachings that are true because they are the basic, bedrock message that God has given humanity. (1=Strongly disagree, 7=Strongly agree)"
 Fundamentalism,"My religion has given humanity a complete, unfailing guide to happiness and salvation, which should be strictly followed. (1=Strongly disagree, 7=Strongly agree)"
-Exclusivity,"There are basically only two kinds of people in the world: the faithful and spiritual, who will be rewarded, and the rest, who will not.† (1=Strongly disagree, 7=Strongly agree)"
+Exclusivity,"There are basically only two kinds of people in the world: the faithful and spiritual, who will be rewarded, and the rest, who will not.· (1=Strongly disagree, 7=Strongly agree)"
 Income,"What was your combined household income in the previous year before taxes? (1 = under 15k, 2 = 15k-25k, 3 = 15k-35k, 4 = 35k-50k, 5 = 50k-75k, 6 = 75k-100k, 7 = 100k-150k, 8 = 150k-200k, 9 = over 200k, 10 = Prefer not to share)"
 Savings,"Approximately, what is the total amount of money that you have in all of your checking(s) and saving(s) account? (1 = 0-500, 2 = 500-5k, 3 = 5k-20k, 4 = 20k-45k, 5 = 45k-70k, 6 = 70k-100k, 7 = 100k-150k, 8 = 150k-200k, 9 = over 200k, 10 = Prefer not to share)"
 Assests,"Approximately, what is the total net worth of all of your assets combined (including your primary residence, other real estate, business, vehicles, stocks, trusts, etc)? (1 = 0-500, 2 = 500-5k, 3 = 5k-20k, 4 = 20k-45k, 5 = 45k-70k, 6 = 70k-100k, 7 = 100k-150k, 8 = 150k-200k, 9 = over 200k, 10 = Prefer not to share)"
@@ -273,7 +275,6 @@ NoResponse,index used to calculate temporal discounting
 @013.1,index used to calculate temporal discounting
 @02.1,index used to calculate temporal discounting
 @025.1,index used to calculate temporal discounting
-Responsible,"How responsible do you feel for the members of your household/pod? (1=Not at all, 7=Extremely)"
 SourceInfo1,From which of the following sources of information do you regularly get information about COVID-19? (please choose all that apply) - Twitter
 SourceInfo2,From which of the following sources of information do you regularly get information about COVID-19? (please choose all that apply)- Facebook
 SourceInfo3,From which of the following sources of information do you regularly get information about COVID-19? (please choose all that apply) - Communication with medical personnel
@@ -309,12 +310,12 @@ RiskManage8,"I like having more than one credit card to ensure that I can buy ne
 RiskManage9,"I'm likely to ask parents/ friends/ someone for help if I'm in a tough situation (1=Strongly disagree, 7=Strongly agree)"
 RiskManage10,"In high stakes situations I prefer to solve problems with the help from others instead of alone to ensure a beneficial outcome (1=Strongly disagree, 7=Strongly agree)"
 RiskManage11,"When things go wrong, I prefer to solve problems on my own before I ask for help (1=Strongly disagree, 7=Strongly agree)"
-NewFood,"Imagine you want to order takeout, and a new restaurant is opening up nearby serving a cuisine youíve never had before--would you want to try it out? (1=Not at all, 7=Definitely)"
+NewFood,"Imagine you want to order takeout, and a new restaurant is opening up nearby serving a cuisine you∆ve never had before--would you want to try it out? (1=Not at all, 7=Definitely)"
 RiskReduction,Average composite of tendency to engage in risk reduction 
 RiskAvoidance,Average composite of tendency to engage in risk avoidance
 RiskRetention,Average composite of tendency to engage in risk retention
 RiskTransfer,Average composite of tendency to engage in risk transfer
-ShopBF,"Did you shop indoors in a crowded store in the last 7 days?†1 = no, 2 = yes"
+ShopBF,"Did you shop indoors in a crowded store in the last 7 days?·1 = no, 2 = yes"
 MaskBF,"During the time you shopped indoors in the last 7 days, to what extent did you wear a face mask and/or stay 6 feet away from others (1=Not at all, 5=Always)"
 WorriedCovidBF1,"During the time you shopped indoors in a crowded store in the last 7 days - How worried were you about the possibility of becoming infected with COVID-19? (1=Not at all, 7=Extremely)"
 WorriedCovidBF2,"During the time you shopped indoors in a crowded store in the last 7 days - How worried were you about the possibility of infecting others with COVID-19? (1=Not at all, 7=Extremely)"
@@ -330,7 +331,7 @@ WorriedCovidTG2,"How worried were you about the possibility that you could infec
 CancelTG,"Did you decide to avoid celebrating Thanksgiving because of COVID-19 related concerns? 1 = no, 2 = yes, 3 = other reason"
 SchoolChild,"Do you have any school-aged children who may be returning to in-person school in the next few weeks? (1=No, 2=Yes, 3=My Children have already returned to school)"
 SchoolConcern,"Given the current state of the pandemic where you live, how concerned are you at the prospect of your children physically returning to school? (1=Not at all, 7=Extremely)"
-SchoolMethod,"What is/will be your children's method of schooling?† 1 = in-person, 2 = online, 3 = mixed in-person and online, 4 = homeschool, 5 = other"
+SchoolMethod,"What is/will be your children's method of schooling?· 1 = in-person, 2 = online, 3 = mixed in-person and online, 4 = homeschool, 5 = other"
 PreferredMethod,"Is this your preferred method of schooling? 1 = no, 2 = yes"
 Schoolitems1,"If there are children who are attending school in person in your household, please rate your agreement with the following statements - I am comfortable with my children attending school in person as soon as possible (1=Strongly disagree, 7=Strongly agree)"
 Schoolitems2,"If there are children who are attending school in person in your household, please rate your agreement with the following statements  - I believe that the benefits granted for my children by attending school in-person outweigh the potential risks associated with COVID-19 (1=Strongly disagree, 7=Strongly agree)"
@@ -367,7 +368,7 @@ CFC.Future,Average composite of consideration of future consequences
 CFC.Immediate,Average composite of consideration of immediate consequences
 CFC.Composite,Average composite of consideration of future and immediate consequences
 PostVaccineBehavior1,"How likely are you to do each of the following protective behaviors after receiving the COVID-19 vaccine? - Wear a mask in public (e.g., public transport, indoors) (1=Not at all, 7=Extremely, 8=NA/not planning on taking a vaccine)"
-PostVaccineBehavior2,"How likely are you to do each of the following protective behaviors after receiving the COVID-19 vaccine? - Wear mask indoors at friendís/familyís house (1=Not at all, 7=Extremely, 8=NA/not planning on taking a vaccine)"
+PostVaccineBehavior2,"How likely are you to do each of the following protective behaviors after receiving the COVID-19 vaccine? - Wear mask indoors at friend∆s/family∆s house (1=Not at all, 7=Extremely, 8=NA/not planning on taking a vaccine)"
 PostVaccineBehavior3,"How likely are you to do each of the following protective behaviors after receiving the COVID-19 vaccine? - Wash hands immediately after returning home (1=Not at all, 7=Extremely, 8=NA/not planning on taking a vaccine)"
 PostVaccineBehavior4,"How likely are you to do each of the following protective behaviors after receiving the COVID-19 vaccine? - Social distance (i.e., stay away 6 feet away from others) (1=Not at all, 7=Extremely, 8=NA/not planning on taking a vaccine)"
 PostVaccineBehavior5,"How likely are you to do each of the following protective behaviors after receiving the COVID-19 vaccine? - Minimizing as much as possible in-person interactions (i.e., only necessary in-person interactions such as grocery shopping) (1=Not at all, 7=Extremely, 8=NA/not planning on taking a vaccine)"
@@ -380,10 +381,10 @@ Reactance1,"When someone tells me what to do, I feel like doing precisely the op
 Reactance2,"Rules and regulations provoke some kind of resistance in me (1=Strongly disagree, 5=Strongly agree)"
 Reactance3,"When somebody tells me not to do something, I react by thinking that is exactly what I want to do (1=Strongly disagree, 5=Strongly agree)"
 Reactance4,"I react negatively when others try to tell me what to do (1=Strongly disagree, 5=Strongly agree)"
-Entitlement1,"I honestly feel Iím just more deserving than others (1=Strong disagreement, 7=Strong agreement)"
+Entitlement1,"I honestly feel I∆m just more deserving than others (1=Strong disagreement, 7=Strong agreement)"
 Entitlement2,"Great things should come to me (1=Strong disagreement, 7=Strong agreement)"
 Entitlement3,"If I were on the Titanic, I would deserve to be on the first lifeboat! (1=Strong disagreement, 7=Strong agreement)"
-Entitlement4,"I demand the best because Iím worth it (1=Strong disagreement, 7=Strong agreement)"
+Entitlement4,"I demand the best because I∆m worth it (1=Strong disagreement, 7=Strong agreement)"
 Entitlement5,"I do not necessarily deserve special treatment (1=Strong disagreement, 7=Strong agreement)"
 Entitlement6,"I deserve more things in my life (1=Strong disagreement, 7=Strong agreement)"
 Entitlement7,"People like me deserve an extra break now and then (1=Strong disagreement, 7=Strong agreement)"
@@ -420,18 +421,19 @@ MaskMouthNose,"For preventing the spread of COVID19, how important is it to wear
 NotCoverNose,"How often do you wear a mask around others in public indoors where your mouth is covered but your nose is exposed? (1=never, 4=half the time, 7=always)"
 FeelOthersNose,"When you see a person indoors wearing a mask with their nose uncovered, how does this make you feel about that person? (1=much more negatively; 4=no difference; 7=much more positively)"
 AloneTime,"About how much time do you currently spend by yourself each week? (1= 0-10%, 10=91-100%)"
-AloneTimeSatisfied,"Since the beginning of the pandemic, have you been satisfied with the amount of time you spend alone? (1=no, I would like less alone time; † 3=Somewhat; † 5=no, I would like more alone time)"
+powerrespect,
+AloneTimeSatisfied,"Since the beginning of the pandemic, have you been satisfied with the amount of time you spend alone? (1=no, I would like less alone time; · 3=Somewhat; · 5=no, I would like more alone time)"
 WrongMaskIntention,"When you see a person indoors wearing a mask with their nose uncovered, how likely do you think it is that they are intentionally wearing their mask like this? (1=Not at all; 7=Extremely)"
 WrongMaskComfort,"If a person intentionally wears a mask indoors with their nose uncovered, to what extent do you think they are doing so for reasons of personal comfort? (1=Not at all; 7=Extremely)"
 WrongMaskComply,"WrongMaskComply.6 If a person intentionally wears a mask indoors with their nose uncovered, to what extent do you think they are doing so to 'comply' with a mask requirement that they personally disagree with? (1=Not at all; 7=Extremely)"
 Big5.1,I am the life of the party (1=Strongly disagree; 7=Strongly agree)
 Big5.2,I talk to a lot of different people at parties. (1=Strongly disagree; 7=Strongly agree)
-Big5.3,I donít talk a lot. (1=Strongly disagree; 7=Strongly agree)
+Big5.3,I don∆t talk a lot. (1=Strongly disagree; 7=Strongly agree)
 Big5.4,I keep in the background. (1=Strongly disagree; 7=Strongly agree)
-Big5.5,I sympathize with othersí feelings (1=Strongly disagree; 7=Strongly agree)
-Big5.6,I feel othersí emotions. (1=Strongly disagree; 7=Strongly agree)
+Big5.5,I sympathize with others∆ feelings (1=Strongly disagree; 7=Strongly agree)
+Big5.6,I feel others∆ emotions. (1=Strongly disagree; 7=Strongly agree)
 Big5.7,I am not really interested in others. (1=Strongly disagree; 7=Strongly agree)
-Big5.8,I am not interested in other peopleís problems. (1=Strongly disagree; 7=Strongly agree)
+Big5.8,I am not interested in other people∆s problems. (1=Strongly disagree; 7=Strongly agree)
 Big5.9,I get chores done right away.  (1=Strongly disagree; 7=Strongly agree)
 Big5.10,I like order. (1=Strongly disagree; 7=Strongly agree)
 Big5.11,I often forget to put things back in their proper place.  (1=Strongly disagree; 7=Strongly agree)
@@ -444,7 +446,218 @@ Big5.17,I have a vivid imagination. (1=Strongly disagree; 7=Strongly agree)
 Big5.18,I have difficulty understanding abstract ideas. (1=Strongly disagree; 7=Strongly agree)
 Big5.19,I am not interested in abstract ideas.  (1=Strongly disagree; 7=Strongly agree)
 Big5.20,I do not have a good imagination. (1=Strongly disagree; 7=Strongly agree)
-GreenSettings,"Since March 11, when COVID-19 was declared a global pandemic, have you utilized ìgreenî settings such as parks, gardens, forests, waterbodies, etc. to find peace, relax or de-stress? (1-Never; 2=Sometimes; 3=Often)"
+GreenSettings,"Since March 11, when COVID-19 was declared a global pandemic, have you utilized Ùgreenˆ settings such as parks, gardens, forests, waterbodies, etc. to find peace, relax or de-stress? (1-Never; 2=Sometimes; 3=Often)"
 OutdoorRec,"To cope with the disruptions and increased demands of COVID-19, have you turned to outdoor recreation to take care of yourself and support your physical or mental health? (1-Never; 2=Sometimes; 3=Often)
 "
 RecentForgotten,Have you recently forgotten what day of the week it is? (1=Never; 3=Sometimes; 5=Regularly)
+b5_extroversion,
+b5_agreeable,
+b5_conscientious,
+b5_negemotion,
+b5_openness,
+Feet,
+Inches,
+Weight,
+DescriptiveLearning1,"Do mask-wearing rules encouraged in your area (e.g., by local or state government officials, businesses, etc.) tell you what everyone is doing?"
+DescriptiveLearning2,"Does how often you see people that you respect and trust wearing a mask (e.g., on tv, news, etc.) tell you what everyone is doing?"
+DescriptiveLearning3,"Does noticing the proportion of people in your area that wear a mask while doing recreational/social activities indoors (e.g., going to the gym, eating at a restaurant, attending a party) tell you what everyone is doing?"
+DescriptiveLearning4,"Does noticing the proportion of people in your area that wear a mask while doing routine activities indoors (e.g., running errands, shopping, going to work) tell you what everyone is doing?"
+InjunctiveLearning1,"Do mask-wearing rules encouraged in your area (e.g., by local or state government officials, businesses, etc.) tell you what everyone should be doing?"
+InjunctiveLearning2,"Does how often you see people that you respect and trust wearing a mask (e.g., on tv, news, etc.) tell you what everyone should be doing?"
+InjunctiveLearning3,"Does noticing the proportion of people in your area that wear a mask while doing recreational/social activities indoors (e.g., going to the gym, eating at a restaurant, attending a party) tell you what everyone should be doing?"
+InjunctiveLearning4,"Does noticing the proportion of people in your area that wear a mask while doing routine activities indoors (e.g., running errands, shopping, going to work) tell you what everyone should be doing?"
+VaccineLocalArea,What proportion of people in your local area do you think will take a COVID-19 vaccine when it is made available to them?
+DecisionMask1,"When you made the decision on whether to get vaccinated, which of the following influenced your decision? Governmental authorities (1 = did not indluence me at all, 7= Heavily influenced me)"
+DecisionMask2,"When you made the decision on whether to get vaccinated, which of the following influenced your decision? Medical/Scientific authorities (1 = did not indluence me at all, 7= Heavily influenced me)"
+DecisionMask3,"When you made the decision on whether to get vaccinated, which of the following influenced your decision? What people around you were doing (1 = did not indluence me at all, 7= Heavily influenced me)"
+DecisionMask4,"When you made the decision on whether to get vaccinated, which of the following influenced your decision? What people around you thought you should do (1 = did not indluence me at all, 7= Heavily influenced me)"
+NormDisagreement1,"In your community, do these pairs agree or disagree with one another regarding COVID-19 preventative behaviors (i.e., mask-wearing, vaccination)? What authorities tell people to do and what people are doing (1 = Yes, they agree / match one another, 6 = No, they disagree / do not match one another)"
+NormDisagreement2,"In your community, do these pairs agree or disagree with one another regarding COVID-19 preventative behaviors (i.e., mask-wearing, vaccination)? What authorities tell people to do and what people think is the right thing to do (1 = Yes, they agree / match one another, 6 = No, they disagree / do not match one another)"
+NormDisagreement3,"In your community, do these pairs agree or disagree with one another regarding COVID-19 preventative behaviors (i.e., mask-wearing, vaccination)? What people do and what people think is the right thing to do (1 = Yes, they agree / match one another, 6 = No, they disagree / do not match one another)"
+PostVaccineActivity1,"How long after getting fully vaccinated do you plan to do each of the following activities? Visit households outside your ëbubbleí or ëpodí (1 = Already do, 2 = 2 weeks, 3 = 1 month, 4 = 4 months, 5 = 6 months, 6 = 9 months, 7 = 1 year, 8 = 2 years, 9 = More than 2 years, 10 = Never)"
+PostVaccineActivity2,"How long after getting fully vaccinated do you plan to do each of the following activities? Travel domestically  (1 = Already do, 2 = 2 weeks, 3 = 1 month, 4 = 4 months, 5 = 6 months, 6 = 9 months, 7 = 1 year, 8 = 2 years, 9 = More than 2 years, 10 = Never)"
+PostVaccineActivity3,"How long after getting fully vaccinated do you plan to do each of the following activities? Travel internationally  (1 = Already do, 2 = 2 weeks, 3 = 1 month, 4 = 4 months, 5 = 6 months, 6 = 9 months, 7 = 1 year, 8 = 2 years, 9 = More than 2 years, 10 = Never)"
+PostVaccineActivity4,"How long after getting fully vaccinated do you plan to do each of the following activities? Get non-emergency medical checkups  (1 = Already do, 2 = 2 weeks, 3 = 1 month, 4 = 4 months, 5 = 6 months, 6 = 9 months, 7 = 1 year, 8 = 2 years, 9 = More than 2 years, 10 = Never)"
+PostVaccineActivity5,"How long after getting fully vaccinated do you plan to do each of the following activities? Dine at a restaurant indoors  (1 = Already do, 2 = 2 weeks, 3 = 1 month, 4 = 4 months, 5 = 6 months, 6 = 9 months, 7 = 1 year, 8 = 2 years, 9 = More than 2 years, 10 = Never)"
+PostVaccineActivity6,"How long after getting fully vaccinated do you plan to do each of the following activities? Go to a bar  (1 = Already do, 2 = 2 weeks, 3 = 1 month, 4 = 4 months, 5 = 6 months, 6 = 9 months, 7 = 1 year, 8 = 2 years, 9 = More than 2 years, 10 = Never)
+
+"
+PostVaccineActivity7,"How long after getting fully vaccinated do you plan to do each of the following activities? Attend a party  (1 = Already do, 2 = 2 weeks, 3 = 1 month, 4 = 4 months, 5 = 6 months, 6 = 9 months, 7 = 1 year, 8 = 2 years, 9 = More than 2 years, 10 = Never)"
+PostVaccineActivity8,"How long after getting fully vaccinated do you plan to do each of the following activities? Do non-essential shopping   (1 = Already do, 2 = 2 weeks, 3 = 1 month, 4 = 4 months, 5 = 6 months, 6 = 9 months, 7 = 1 year, 8 = 2 years, 9 = More than 2 years, 10 = Never)
+
+"
+PostVaccineActivity9,"How long after getting fully vaccinated do you plan to do each of the following activities? Get a haircut or other personal care (spa, nail salon, etc.)  (1 = Already do, 2 = 2 weeks, 3 = 1 month, 4 = 4 months, 5 = 6 months, 6 = 9 months, 7 = 1 year, 8 = 2 years, 9 = More than 2 years, 10 = Never)"
+PostVaccineActivity10,"How long after getting fully vaccinated do you plan to do each of the following activities? Meet a new dating partner  (1 = Already do, 2 = 2 weeks, 3 = 1 month, 4 = 4 months, 5 = 6 months, 6 = 9 months, 7 = 1 year, 8 = 2 years, 9 = More than 2 years, 10 = Never)"
+PostVaccineActivity11,"How long after getting fully vaccinated do you plan to do each of the following activities? Go to the gym  (1 = Already do, 2 = 2 weeks, 3 = 1 month, 4 = 4 months, 5 = 6 months, 6 = 9 months, 7 = 1 year, 8 = 2 years, 9 = More than 2 years, 10 = Never)"
+PostVaccineActivity12,"How long after getting fully vaccinated do you plan to do each of the following activities? Go to a movie  (1 = Already do, 2 = 2 weeks, 3 = 1 month, 4 = 4 months, 5 = 6 months, 6 = 9 months, 7 = 1 year, 8 = 2 years, 9 = More than 2 years, 10 = Never)"
+PostVaccineActivity13,"How long after getting fully vaccinated do you plan to do each of the following activities? Attend a concert  (1 = Already do, 2 = 2 weeks, 3 = 1 month, 4 = 4 months, 5 = 6 months, 6 = 9 months, 7 = 1 year, 8 = 2 years, 9 = More than 2 years, 10 = Never)"
+PostVaccineActivity14,"How long after getting fully vaccinated do you plan to do each of the following activities? Attend a sporting event  (1 = Already do, 2 = 2 weeks, 3 = 1 month, 4 = 4 months, 5 = 6 months, 6 = 9 months, 7 = 1 year, 8 = 2 years, 9 = More than 2 years, 10 = Never)"
+PostVaccineActivity15,"How long after getting fully vaccinated do you plan to do each of the following activities? Attend a religious service  (1 = Already do, 2 = 2 weeks, 3 = 1 month, 4 = 4 months, 5 = 6 months, 6 = 9 months, 7 = 1 year, 8 = 2 years, 9 = More than 2 years, 10 = Never)"
+PostVaccineActivity16,"How long after getting fully vaccinated do you plan to do each of the following activities? Work outside your home   (1 = Already do, 2 = 2 weeks, 3 = 1 month, 4 = 4 months, 5 = 6 months, 6 = 9 months, 7 = 1 year, 8 = 2 years, 9 = More than 2 years, 10 = Never)
+
+"
+CDCguidelines1,"Which of these are the current CDC guidelines regarding preventative measures after vaccination? Select all that apply. Fully vaccinated people can gather indoors with other fully vaccinated people without wearing masks (0 = False, 1 = True)"
+CDCguidelines2,"Which of these are the current CDC guidelines regarding preventative measures after vaccination? Select all that apply. Fully vaccinated people can attend medium-sized gatherings (0 = False, 1 = True)"
+CDCguidelines3,"Which of these are the current CDC guidelines regarding preventative measures after vaccination? Select all that apply. Fully vaccinated people no longer need to delay domestic travel  (0 = False, 1 = True)"
+CDCguidelines4,"Which of these are the current CDC guidelines regarding preventative measures after vaccination? Select all that apply. Fully vaccinated people can visit a household of unvaccinated people, as long as the unvaccinated household does not include someone high-risk  (0 = False, 1 = True)"
+CDCpostVaccine,"How likely are you to follow the CDC guidelines regarding preventative measures after vaccination? (1 = Very unlikely, 7 = Very likely)"
+EffortLive,"If you made the maximum effort you could make to look after your health and ensure your safety, what do you think the chances would be that you would live to be 79 or more? (0 = No chance, 100 = Definitely)"
+NoEffortLive,"If you made no effort at all to look after your health and ensure your safety, what do you think the chances would be that you would live to be 79 or more?  (0 = No chance, 100 = Definitely)"
+LifeExpectancy,How old do you expect you will live to be (in years)?
+Bored1,"How often would you feel bored in a typical week: Before the COVID-19 pandemic (1 = Rarely, 7 = Most of the time)"
+Bored2,"How often would you feel bored in a typical week: 6 months ago, during the COVID-19 pandemic (1 = Rarely, 7 = Most of the time)"
+Bored3,"How often would you feel bored in a typical week: This past week (1 = Rarely, 7 = Most of the time)"
+OftenUncertain1,"How often would you feel uncertain about the future Before the COVID-19 pandemic (1 = Rarely, 7 = Most of the time)"
+OftenUncertain2,"How often would you feel uncertain about the future 6 months ago, during the COVID-19 pandemic (1 = Rarely, 7 = Most of the time)"
+OftenUncertain3,"How often would you feel uncertain about the future This past week (1 = Rarely, 7 = Most of the time)"
+QAnon1,Please rate whether you believe the statements below are true or false: I think that the official version of the events given by the authorities very often hides the truth 
+QAnon2,Please rate whether you believe the statements below are true or false: I think that at least one of the available COVID vaccines are part of the hidden agenda of a covert alliance of powerful individuals or organizations 
+QAnon3,Please rate whether you believe the statements below are true or false: I think QAnon is a significant threat to American security 
+FeetToInches,
+InchesTotal,
+Height,
+WorkHome,"Are you working from home during the pandemic? (1 = I am not currently employed , 2 = No, I commute to work, 3 = Yes, some days of the week, 4 = Yes, every working day)"
+VaccineLocalRightThing,What proportion of people in your local area do you think believe that taking a COVID-19 vaccine is the right thing to do? 
+ConcernAlterDNA,"The FDA classifies Pfizer's and Moderna's mRNA vaccines as 'gene therapies' because they contain genetic material. To what extent are you concerned that these vaccines might permanently alter a recipient's DNA? (1 = Not at all concerned, 7 = very concerned)"
+ThinkVaccinated,"How would people in your community think about a person who got the COVID-19 vaccine? (1 = Very negatively, 7 = very positevely)"
+VaccineAttitudes1,"I feel the need to hide that I've gotten the COVID-19 vaccine (1 = strongly agree, 7 = strongly disagree)"
+VaccineAttitudes2,"I am proud to share that I've gotten the COVID-19 vaccine (1 = strongly agree, 7 = strongly disagree)"
+VaccineAttitudes3,"News surrounding COVID-19 vaccinations is making me more hesitant to get vaccinated (1 = strongly agree, 7 = strongly disagree)"
+VaccineAttitudes4,"I do not have a preference on which COVID-19 vaccine I receive (i.e. Moderna, Pfizer, Johnson & Johnson) (1 = strongly agree, 7 = strongly disagree)"
+MaskToComply,"Mask mandates are being used to test the public's willingness to comply with future government orders rather than to stop the spread of COVID-19 (1=Definitely not true, 2=Probably not true, 3=Not sure/can't decide, 4=Probably true, 5=Definitely true)"
+Mortality1,"Please indicate your believed likelihood of dying from the following risk factors before the age of 79, provided you do everything you can to take care of your health and ensure your safety: Dying from COVID-19  infection (0= not a chance, 10= certain)"
+Mortality2,"Please indicate your believed likelihood of dying from the following risk factors before the age of 79, provided you do everything you can to take care of your health and ensure your safety: Dying from illness from air pollution (0= not a chance, 10= certain)"
+Mortality3,"Please indicate your believed likelihood of dying from the following risk factors before the age of 79, provided you do everything you can to take care of your health and ensure your safety: Dying from illness from polluted or contaminated water (0= not a chance, 10= certain)"
+Mortality4,"Please indicate your believed likelihood of dying from the following risk factors before the age of 79, provided you do everything you can to take care of your health and ensure your safety: Dying from injuries sustained by illegal violence (0= not a chance, 10= certain)"
+Mortality5,"Please indicate your believed likelihood of dying from the following risk factors before the age of 79, provided you do everything you can to take care of your health and ensure your safety: Dying from injuries incurred in a travel accident (e.g. a motor vehicle, train, or plane crash) (0= not a chance, 10= certain)"
+Mortality6,"Please indicate your believed likelihood of dying from the following risk factors before the age of 79, provided you do everything you can to take care of your health and ensure your safety: Dying from illness or injury caused by your occupation (e.g. injury resulting from heavy machinery or exposure to infection or hazardous chemicals) (0= not a chance, 10= certain)"
+Mortality7,"Please indicate your believed likelihood of dying from the following risk factors before the age of 79, provided you do everything you can to take care of your health and ensure your safety: Dying from natural disaster (such as a flood or forest fire) (0= not a chance, 10= certain)"
+Mortality8,"Please indicate your believed likelihood of dying from the following risk factors before the age of 79, provided you do everything you can to take care of your health and ensure your safety: Dying from infectious disease other than COVID-19 (0= not a chance, 10= certain)"
+VaccineWork,"Does your workplace require you to get a COVID-19 vaccine? (1=Yes, 2=No, 3=Unsure)"
+VaccineEncouraged,"My workplace encourages me to get a COVID-19 vaccine (1=strongly disagree, 7=strongly agree)"
+Caregiving,"Do you have caregiving responsibilities? (i.e. children, relatives) (1=Yes, 2=No)"
+Vaccine4Care,"I feel I should get a COVID-19 vaccine because of my caregiving responsibilities (1=strongly disagree, 7=strongly agree)"
+VaccineChild,"How likely would you be to give your child/children a COVID vaccine when it is available to them? (1=not at all, 7=extremely likely, 8=N/A)"
+MaskMandate,"Have mask mandates been lifted in your area? (1=yes, 2=no, 3=unsure)"
+VaccineStatus,"Are you fully vaccinated against COVID-19 (i.e., has it been two weeks since receiving your second Pfizer/Moderna shot or the single-dose J&J vaccine)? (1=yes, it has been two weeks since my final shot, 2= I have received my final shot, but it has not yet been two weeks, 3= I have an appointment for my second shot of Pfizer/Moderna, but have only received my first shot, 4= I have received my first shot of Pfizer/Moderna, but do not intend to receive a second shot, 5= I have not yet received any shots, but I intend to soon/when able, 6= I do not intend to get a COVID vaccine anytime soon, if ever)"
+MaskMandates1,"Even if there are no mask requirements in my area, I will continue to wear a mask in public because I am concerned for my own health/safety (1= strongly disagree, 7= strongly agree)"
+MaskMandates2,"Even if there are no mask requirements in my area, I will continue to wear a mask in public because I am concerned for othersí health/safety (1= strongly disagree, 7= strongly agree)"
+MaskMandates3,"Even if there are no mask requirements in my area, I will continue to wear a mask in public because I am concerned about what others may think of me if I do not wear a mask (1= strongly disagree, 7= strongly agree)"
+LifeExpectancy,How old do you expect you will live to be (in years)?
+StudyVSdowntime,"Imagine that it's the weekend and you are going to study for a certification test to advance professionally and also enjoy some well-deserved down time. Which are you likely to do first? (1=study, 5= enjoy downtime)"
+Agency1,"I am in full control of what I do (1= strongly disagree, 7= strongly agree)"
+Agency2,"I am just an instrument in the hands of somebody or something else (1= strongly disagree, 7= strongly agree)"
+Agency3,"My actions just happen without my intention (1= strongly disagree, 7= strongly agree)"
+Agency4,"I am the author of my actions (1= strongly disagree, 7= strongly agree)"
+Agency5,"The consequences of my actions feel like they donít logically follow my actions (1= strongly disagree, 7= strongly agree)"
+Agency6,"My movements are automatic - my body simply makes them (1= strongly disagree, 7= strongly agree)"
+Agency7,"The outcomes of my actions generally surprise me (1= strongly disagree, 7= strongly agree)"
+Agency8,"Things I do are subject only to my free will (1= strongly disagree, 7= strongly agree)"
+Agency9,"The decision whether and when to act is within my hands (1= strongly disagree, 7= strongly agree)"
+Agency10,"Nothing I do is actually voluntary (1= strongly disagree, 7= strongly agree)"
+Agency11,"While I am in action, I feel like I am a remote controlled robot (1= strongly disagree, 7= strongly agree)"
+Agency12,"My behavior is planned by me from the very beginning to the very end (1= strongly disagree, 7= strongly agree)"
+Agency13,"I am completely responsible for everything that results from my actions (1= strongly disagree, 7= strongly agree)"
+PositiveRightNow1,"How positive do you feel about: Your life right now? (0= very negative, 100 = very positive)"
+PositiveRightNow2,"How positive do you feel about: The world right now? (0= very negative, 100 = very positive)"
+PositiveLife1,"How optimistic do you feel about your life in: 1 month from now (0= very pessimistic, 100= very optimistic)"
+PositiveLife2,"How optimistic do you feel about your life in: 1 year from now (0= very pessimistic, 100= very optimistic)"
+PositiveLife3,"How optimistic do you feel about your life in: 10 years from now (0= very pessimistic, 100= very optimistic)"
+PositiveLife4,"How optimistic do you feel about your life in: 20 years from now (0= very pessimistic, 100= very optimistic)"
+PositiveLife5,"How optimistic do you feel about your life in: 50 years from now (0= very pessimistic, 100= very optimistic)"
+PositiveLife6,"How optimistic do you feel about your life in: 80 years from now (0= very pessimistic, 100= very optimistic)"
+PositiveWorld1,"How optimistic do you feel about the world in: 1 month from now (0= very pessimistic, 100= very optimistic)"
+PositiveWorld2,"How optimistic do you feel about the world in:1 year from now (0= very pessimistic, 100= very optimistic)"
+PositiveWorld3,"How optimistic do you feel about the world in: 10 years from now (0= very pessimistic, 100= very optimistic)"
+PositiveWorld4,"How optimistic do you feel about the world in: 20 years from now (0= very pessimistic, 100= very optimistic)"
+PositiveWorld5,"How optimistic do you feel about the world in: 50 years from now (0= very pessimistic, 100= very optimistic)"
+PositiveWorld6,"How optimistic do you feel about the world in: 80 years from now (0= very pessimistic, 100= very optimistic)"
+PositiveWorld8,"How optimistic do you feel about the world in: 100 years from now (0= very pessimistic, 100= very optimistic)"
+PositiveWorld9,"How optimistic do you feel about the world in: 1,000 years from now (0= very pessimistic, 100= very optimistic)"
+SoPA,
+SoNA,
+CurrentHrlyWrk,"Are you currently an hourly employee? (1= no, 2= yes)"
+HrlyWrkMonthAgo,"Were you working in an hourly job a month ago? (1= no, 2= yes)"
+NoMaskOutPoliOri,"If you see someone OUTSIDE in a public space who IS NOT wearing a mask, do you think they are: (1=Very likely liberal, 4= not sure, 7= very likely conservative)"
+NoMaskOutVacc,"If you see someone OUTSIDE in a public space who IS NOT wearing a mask, do you think they are: (1= very likely vaccinated, 4= not sure, 7= very likely not vaccinated)"
+MaskOutPoliOri,"If you see someone OUTSIDE in a public space who IS wearing a mask, do you think they are: (1=Very likely liberal, 4= not sure, 7= very likely conservative)"
+MaskOutVacc,"If you see someone OUTSIDE in a public space who IS wearing a mask, do you think they are: (1= very likely vaccinated, 4= not sure, 7= very likely not vaccinated)"
+NoMaskInPoliOri,"If you see someone INSIDE in a public space who IS NOT wearing a mask, do you think they are: (1=Very likely liberal, 4= not sure, 7= very likely conservative)"
+NoMaskInVacc,"If you see someone INSIDE in a public space who IS NOT wearing a mask, do you think they are: (1= very likely vaccinated, 4= not sure, 7= very likely not vaccinated)"
+MaskInPoliOri,"If you see someone INSIDE in a public space who IS wearing a mask, do you think they are: (1=Very likely liberal, 4= not sure, 7= very likely conservative)"
+MaskInVacc,"If you see someone INSIDE in a public space who IS wearing a mask, do you think they are: (1= very likely vaccinated, 4= not sure, 7= very likely not vaccinated)"
+OthersJudgeMask,"Do you think others might observe you wearing or not wearing a mask in public and make a judgment about your vaccination status? (1= highly likely, 7= highly unlikely)"
+JudgeWearMask,"JudgeWearMask.10 Would others making a judgment about your vaccination status based on whether or not you wear a mask in public make you more or less likely to wear a mask? (1= much less likely, 7= much more likely)"
+PositiveLifePast1,"How positive do you feel about how your life was 1 month ago? (0= very negative, 100= very positive)"
+PositiveLifePast2,"How positive do you feel about how your life was 1 year ago? (0= very negative, 100= very positive)"
+PositiveLifePast3,"How positive do you feel about how your life was 10 years ago? (0= very negative, 100= very positive)"
+PositiveLifePast4,"How positive do you feel about how your life was 20 years ago? (0= very negative, 100= very positive)"
+PositiveLifePast5,"How positive do you feel about how your life was 50 years ago? Enter ""0"" if you are younger than 50 (0= very negative, 100= very positive)"
+PositiveWorldPast1,"How positive do you feel about how the world was 1 month ago? (0= very negative, 100= very positive)"
+PositiveWorldPast2,"How positive do you feel about how the world was 1 year ago? (0= very negative, 100= very positive)"
+PositiveWorldPast3,"How positive do you feel about how the world was 10 years ago? (0= very negative, 100= very positive)"
+PositiveWorldPast4,"How positive do you feel about how the world was 20 years ago? (0= very negative, 100= very positive)"
+PositiveWorldPast5,"How positive do you feel about how the world was 50 years ago? (0= very negative, 100= very positive)"
+PositiveWorldPast6,"How positive do you feel about how the world was 80 years ago? (0= very negative, 100= very positive)"
+PositiveWorldPast7,"How positive do you feel about how the world was 100 years ago? (0= very negative, 100= very positive)"
+PositiveWorldPast8,"How positive do you feel about how the world was 1000 years ago? (0= very negative, 100= very positive)"
+LifeOrientation1,"In uncertain times, I usually expect the best. (1= strongly disagree, 5= strongly agree)"
+LifeOrientation2,"If something can go wrong for me, it will. (1= strongly disagree, 5= strongly agree)"
+LifeOrientation3," Iím always optimistic about my future. (1= strongly disagree, 5= strongly agree)"
+LifeOrientation4," I hardly ever expect things to go my way. (1= strongly disagree, 5= strongly agree)"
+LifeOrientation5," I rarely count on good things happening to me. (1= strongly disagree, 5= strongly agree)"
+LifeOrientation6,"Overall, I expect more good things to happen to me than bad. (1= strongly disagree, 5= strongly agree)"
+Loneliness1,"I am unhappy doing so many things alone (1= I never feel this way, 2= I rarely feel this way, 3= I sometimes feel this way, 4= I often feel this way)"
+Loneliness2,"I have nobody to talk to (1= I never feel this way, 2= I rarely feel this way, 3= I sometimes feel this way, 4= I often feel this way)"
+Loneliness3,"I cannot tolerate being so alone (1= I never feel this way, 2= I rarely feel this way, 3= I sometimes feel this way, 4= I often feel this way)"
+Loneliness4,"I lack companionship (1= I never feel this way, 2= I rarely feel this way, 3= I sometimes feel this way, 4= I often feel this way)"
+Loneliness5,"I feel as if nobody really understands me (1= I never feel this way, 2= I rarely feel this way, 3= I sometimes feel this way, 4= I often feel this way)"
+Loneliness6,"I find myself waiting for people to call or write (1= I never feel this way, 2= I rarely feel this way, 3= I sometimes feel this way, 4= I often feel this way)"
+Loneliness7,"There is no one I can turn to (1= I never feel this way, 2= I rarely feel this way, 3= I sometimes feel this way, 4= I often feel this way)"
+Loneliness8,"I am no longer close to anyone (1= I never feel this way, 2= I rarely feel this way, 3= I sometimes feel this way, 4= I often feel this way)"
+Loneliness9,"My interests and ideas are not shared by those around me (1= I never feel this way, 2= I rarely feel this way, 3= I sometimes feel this way, 4= I often feel this way)"
+Loneliness10,"I feel left out (1= I never feel this way, 2= I rarely feel this way, 3= I sometimes feel this way, 4= I often feel this way)"
+Loneliness11,"I feel completely alone (1= I never feel this way, 2= I rarely feel this way, 3= I sometimes feel this way, 4= I often feel this way)"
+Loneliness12,"I am unable to reach out and communicate with those around me (1= I never feel this way, 2= I rarely feel this way, 3= I sometimes feel this way, 4= I often feel this way)"
+Loneliness13,"My social relationships are superficial (1= I never feel this way, 2= I rarely feel this way, 3= I sometimes feel this way, 4= I often feel this way)"
+Loneliness14,"I feel starved for company (1= I never feel this way, 2= I rarely feel this way, 3= I sometimes feel this way, 4= I often feel this way)"
+Loneliness15,"No one really knows me well (1= I never feel this way, 2= I rarely feel this way, 3= I sometimes feel this way, 4= I often feel this way)"
+Loneliness16,"I feel isolated from others (1= I never feel this way, 2= I rarely feel this way, 3= I sometimes feel this way, 4= I often feel this way)"
+Loneliness17,"I am unhappy being so withdrawn (1= I never feel this way, 2= I rarely feel this way, 3= I sometimes feel this way, 4= I often feel this way)"
+Loneliness18,"It is difficult for me to make friends (1= I never feel this way, 2= I rarely feel this way, 3= I sometimes feel this way, 4= I often feel this way)"
+Loneliness19,"I feel shut out and excluded by others (1= I never feel this way, 2= I rarely feel this way, 3= I sometimes feel this way, 4= I often feel this way)"
+Loneliness20,"People are around me but not with me  (1= I never feel this way, 2= I rarely feel this way, 3= I sometimes feel this way, 4= I often feel this way)"
+FriendsRisks1,"It bothers me when my friends put themselves at risk of COVID-19 infection (e.g., attending a crowded place indoors) (1=strongly disagree, 7= strongly agree)"
+FriendsRisks2,"My friends are bothered when I put myself at risk of COVID-19 infection (e.g., attending a crowded place indoors) (1=strongly disagree, 7= strongly agree)"
+FriendsRisks3,"I wish that my friends were more careful about minimizing their risk of COVID-19 infection (e.g., more hand washing, mask wearing, social distancing) (1=strongly disagree, 7= strongly agree)"
+FriendsRisks4,"My friends would like me to be more careful about minimizing my risk of COVID-19 infection (e.g., more hand washing, mask wearing, social distancing) (1=strongly disagree, 7= strongly agree)"
+FriendsRisks5,"I enjoy when my friends come to me for help, even if it may increase my risk of becoming infected with COVID-19 (1=strongly disagree, 7= strongly agree)"
+FriendsRisks6,"My friends donít mind when I come to them for help, even if it may increase their risk of becoming infected with COVID-19 (1=strongly disagree, 7= strongly agree)"
+FriendsRisks7,"Some of my friends are more/less careful about COVID-19 than others, and that is creating conflict within my circle of friends (1=strongly disagree, 7= strongly agree)"
+ContactFriends,"How often have you been in contact with friends (not including family members, in-laws, children) since the pandemic started? (1= Less than once a month, 2= Once a month, 3= Once a week, 4= A few times a week, 5= Every day)"
+PanWorseFriends,"The pandemic has made my existing friendships worse (1= strongly disagree, 4= neither agree nor disagree, 7= strongly agree)"
+PanBetterFriends,"The pandemic has made my existing friendships better (1= strongly disagree, 4= neither agree nor disagree, 7= strongly agree)"
+SatisfiedFriends,"How satisfied have you been with your friendships during the pandemic? (1= not at all, 4= neither agree nor disagree, 7= completely)"
+LifeOrientation,Sum of scores of LifeOrientation1-6 items divided by 2
+Loneliness,sum of scores of loneliness1-20 items
+Closure1,"I don't like situations that are uncertain. (1= strongly disagree, 7= strongly agree)"
+Closure2,"I dislike questions which could be answered in many different ways. (1= strongly disagree, 7= strongly agree)"
+Closure3,"I find that a well ordered life with regular hours suits my temperament. (1= strongly disagree, 7= strongly agree)"
+Closure4,"I feel uncomfortable when I don't understand the reason why an event occurred in my life. (1= strongly disagree, 7= strongly agree)"
+Closure5,"I feel irritated when one person disagrees with what everyone else in a group believes. (1= strongly disagree, 7= strongly agree)"
+Closure6,"I don't like to go into a situation without knowing what I can expect from it.  (1= strongly disagree, 7= strongly agree)"
+Closure7,"When I have made a decision, I feel relieved.  (1= strongly disagree, 7= strongly agree)"
+Closure8,"When I am confronted with a problem, Iím dying to reach a solution very quickly. (1= strongly disagree, 7= strongly agree)"
+Closure9,"I would quickly become impatient and irritated if I would not find a solution to a problem immediately. (1= strongly disagree, 7= strongly agree)"
+Closure10,"I don't like to be with people who are capable of unexpected actions.  (1= strongly disagree, 7= strongly agree)"
+Closure11,"I dislike it when a person's statement could mean many different things.  (1= strongly disagree, 7= strongly agree)"
+Closure12,"I find that establishing a consistent routine enables me to enjoy life more. (1= strongly disagree, 7= strongly agree)"
+Closure13,"I enjoy having a clear and structured mode of life.  (1= strongly disagree, 7= strongly agree)"
+Closure14,"I do not usually consult many different opinions before forming my own view. (1= strongly disagree, 7= strongly agree)"
+Closure15,"I dislike unpredictable situations. (1= strongly disagree, 7= strongly agree)"
+OptimisticEvent,"How optimistic are you about this event? (0= very pessimistic, 100= very optimistic)"
+TimeToEventYears,How long will it be until this event takes place? Please answer in numbers only. (years)
+TimeToEventMonths,How long will it be until this event takes place? Please answer in numbers only. (months)
+TimeToEventWeeks,How long will it be until this event takes place? Please answer in numbers only. (weeks)
+TimeToEventDays,How long will it be until this event takes place? Please answer in numbers only. (days)
+Closure,Sum of Closure1-15 items
