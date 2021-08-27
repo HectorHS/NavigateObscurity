@@ -873,7 +873,7 @@
             let longVariables = ["Age", "SSES", "Children", "ChildrenUnder18",
                 "MoveChildhood", "Move", "NumberInHouse", "WeekSinceCovid", "ContactsInfected",
                 "Contacts24hrs", "Contacts7days", "TimeSinceHelp", "TimeSpentOthers", "MoneyDonated",
-                "Back2Normal", "OthersVaccine", "TimeToVaccine", "TimePassed", "Income", "Savings",
+                "Back2Normal", "OthersVaccine", "TimeToVaccine", "Income", "Savings",
                 "Assests", "PFIaffectNeigh", "PFIaffectCountry", "PFIsharedfateNeigh", "PFIsharedfateCountry",
                 "CovidSymptoms", "HelpGiven", "HelpReceived", "MutualAid", "EmpatheticConcern",
                 "EmpatheticDistress", "Predictability", "Repayment", "Challenges", "Wealth",
@@ -912,7 +912,7 @@
             let avg7 = ["PFIaffectNeigh", "PFIaffectCountry", "PFIsharedfateNeigh", "PFIsharedfateCountry",
                 "EmpatheticConcern", "EmpatheticDistress", "PoliticalOrientation", "RiskReduction", "RiskAvoidance",
                 "RiskRetention", "RiskTransfer", "RiskBehaviorComposite", "EntitlementComposite", "SoPA", "SoNA"];
-            let cat10 = ["SSES", "OthersVaccine", "TimePassed", "VaccineRightThing", "AloneTime", "PostVaccineActivity1", 
+            let cat10 = ["SSES", "OthersVaccine", "VaccineRightThing", "AloneTime", "PostVaccineActivity1", 
                 "PostVaccineActivity2", "PostVaccineActivity3", "PostVaccineActivity4", "PostVaccineActivity5", 
                 "PostVaccineActivity6", "PostVaccineActivity7", "PostVaccineActivity8", "PostVaccineActivity9",
                 "PostVaccineActivity10", "PostVaccineActivity11", "PostVaccineActivity12", "PostVaccineActivity13", 
@@ -1772,8 +1772,6 @@
                     array = [0, 1, 3, 5, 7, 10, 20, 1000];
                 } else if (variable == "MoneyDonated") {
                     array = [0, 1, 10, 50, 100, 500, 50000];
-                } else if (variable == "TimePassed") {
-                    array = [1, 3, 5, 7, 9, 20];
                 } else if (variable == "CovidSymptoms") {
                     array = [0, 1, 6, 11, 16, 21, 30];
                 } else if (variable == "DiscountingRate") {
