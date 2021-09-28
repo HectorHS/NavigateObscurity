@@ -351,7 +351,7 @@
                     Historical weekly death toll: <a href="https://www.mortality.org/" target="_blank">Human Mortality
                         Database. University of California, Berkeley (USA), and Max Planck Institute for Demographic
                         Research (Germany).</a>
-                    Downloaded at 04/08/2021.
+                    Downloaded at 28/09/2021.
                 </p>
             </div>
         </div>
@@ -956,8 +956,8 @@
                 enableButtons: true,
             },
             colorAxis: {
-                tickInterval: 250,
-                max: 1000,
+                tickInterval: 500,
+                max: 2000,
                 min: 0,
                 stops: [
                     [0, getIndexColor(3)],
@@ -1463,14 +1463,14 @@
         function updateColorStops() {
             if (parameter == "Confirmed cases per 1 million") {
                 chart.colorAxis[0].update({
-                    tickInterval: 10000,
-                    max: 40000,
+                    tickInterval: 20000,
+                    max: 100000,
                     min: 0,
                 }, false)
             } else if (parameter == "Deaths per 1 million") {
                 chart.colorAxis[0].update({
-                    tickInterval: 250,
-                    max: 1000,
+                    tickInterval: 500,
+                    max: 2000,
                     min: 0,
                 }, false)
             } else if (parameter == "Death rate") {
@@ -1487,8 +1487,8 @@
                 }, false)
             } else if (parameter == "Fully vaccinated population share") {
                 chart.colorAxis[0].update({
-                    tickInterval: 10,
-                    max: 30,
+                    tickInterval: 20,
+                    max: 80,
                     min: 0,
                 }, false)
             }
