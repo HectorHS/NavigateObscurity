@@ -902,7 +902,9 @@
                 "PositiveLifePast5", "PositiveWorldPast1", "PositiveWorldPast2", "PositiveWorldPast3", "PositiveWorldPast4", 
                 "PositiveWorldPast5", "PositiveWorldPast6", "PositiveWorldPast7", "PositiveWorldPast8", "FriendsRisks1",
                 "FriendsRisks2", "FriendsRisks3", "FriendsRisks4", "FriendsRisks5", "FriendsRisks6", "FriendsRisks7",
-                "LifeOrientation", "Loneliness"
+                "LifeOrientation", "Loneliness", "OptimisticEvent", "TimeToEventYears", "TimeToEventWeeks", "TimeToEventDays",
+                "Closure", "MonthRelStatus", "MonthChangeJob", "TechVSconsume", "SelfEnhancement", "AnticipatedFoodScarcity",
+                "FoodInsecurity"
             ];
             let avg5 = ["HelpGiven", "HelpReceived", "MutualAid", "Predictability", "TraitEmpathicConcern",
                 "TraitEmpathicdistress", "BeliefInConspiracy", "ReactanceComposite", "b5_extroversion",
@@ -911,7 +913,8 @@
             let avg6 = ["Challenges"];
             let avg7 = ["PFIaffectNeigh", "PFIaffectCountry", "PFIsharedfateNeigh", "PFIsharedfateCountry",
                 "EmpatheticConcern", "EmpatheticDistress", "PoliticalOrientation", "RiskReduction", "RiskAvoidance",
-                "RiskRetention", "RiskTransfer", "RiskBehaviorComposite", "EntitlementComposite", "SoPA", "SoNA"];
+                "RiskRetention", "RiskTransfer", "RiskBehaviorComposite", "EntitlementComposite", "SoPA", "SoNA", "SelfEnhancement",
+                "AnticipatedFoodScarcity"];
             let cat10 = ["SSES", "OthersVaccine", "VaccineRightThing", "AloneTime", "PostVaccineActivity1", 
                 "PostVaccineActivity2", "PostVaccineActivity3", "PostVaccineActivity4", "PostVaccineActivity5", 
                 "PostVaccineActivity6", "PostVaccineActivity7", "PostVaccineActivity8", "PostVaccineActivity9",
@@ -919,12 +922,12 @@
                 "PostVaccineActivity14", "PostVaccineActivity15", "PostVaccineActivity16"];
             let cat12 = ["Back2Normal", "TimeToVaccine", "TimeToVaccine", "NoMaskOutVacc",
                 "MaskOutPoliOri", "MaskOutVacc", "NoMaskInPoliOri", "NoMaskInVacc", "MaskInPoliOri", "MaskInVacc", 
-                "OthersJudgeMask", "JudgeWearMask"];
+                "OthersJudgeMask", "JudgeWearMask", "MonthRelStatus", "MonthChangeJob"];
             let cat30 = ["SmallSooner", "LargerSooner", "@00025.1", "@00039.1", "@00098.1", "@0021.1",
                 "@0034.1", "@0055.1", "@0087.1", "@013.1", "@02.1", "@025.1"];
             let cat9 = ["Income", "Savings", "Assests", "Wealth", "QAnon1", "QAnon2", "QAnon3"];
             let cat8 = ["ReasonHelp", "TimeTilNewPandemic", "VaccineTV", "VaccinePeers", "FriendsRisks1",
-                "FriendsRisks2", "FriendsRisks3", "FriendsRisks4", "FriendsRisks5", "FriendsRisks6", "FriendsRisks7"];
+                "FriendsRisks2", "FriendsRisks3", "FriendsRisks4", "FriendsRisks5", "FriendsRisks6", "FriendsRisks7", "FoodInsecurity"];
             let cat100 = ["CausesExtinction1", "CausesExtinction2", "CausesExtinction3",
                 "CausesExtinction4", "CausesExtinction5", "CausesExtinction6", "CausesExtinction8",
                 "CausesExtinction9", "CausesExtinction10", "Optimistic1", "Optimistic2",
@@ -936,7 +939,7 @@
                 "PositiveWorld6", "PositiveWorld7", "PositiveWorld8", "PositiveWorld9", "PositiveLifePast1", "PositiveLifePast2", 
                 "PositiveLifePast3", "PositiveLifePast4", "PositiveLifePast5", "PositiveWorldPast1", "PositiveWorldPast2", 
                 "PositiveWorldPast3", "PositiveWorldPast4", "PositiveWorldPast5", "PositiveWorldPast6", "PositiveWorldPast7", 
-                "PositiveWorldPast8", "Loneliness"];
+                "PositiveWorldPast8", "Loneliness", "OptimisticEvent", "Closure", "TechVSconsume"];
 
             let variable1 = "Stress";
             let variable2 = "PerceptionRisk";
@@ -980,6 +983,10 @@
                 let d9v = 0;
                 let d10c = 0;
                 let d10v = 0;
+                let d11c = 0;
+                let d11v = 0;
+                let d12c = 0;
+                let d12v = 0;
                 let data = [];
                 let variable;
                 let colorCSS;
@@ -1024,6 +1031,12 @@
                     } else if (row.Date == "06/26/2021" && val > 0) {
                         d10v += val;
                         d10c++;
+                    } else if (row.Date == "07/26/2021" && val > 0) {
+                        d11v += val;
+                        d11c++;
+                    } else if (row.Date == "08/25/2021" && val > 0) {
+                        d12v += val;
+                        d12c++;
                     }
                 }
 
@@ -1037,6 +1050,8 @@
                 data.push((d8v>0) ? +numberFormatterPercentage(d8v / d8c) : 0);
                 data.push((d9v>0) ? +numberFormatterPercentage(d9v / d9c) : 0);
                 data.push((d10v>0) ? +numberFormatterPercentage(d10v / d10c) : 0);
+                data.push((d11v>0) ? +numberFormatterPercentage(d11v / d11c) : 0);
+                data.push((d12v>0) ? +numberFormatterPercentage(d12v / d12c) : 0);
 
                 // to hide 0's
                 data.forEach(function (element, index) {
@@ -1265,8 +1280,15 @@
                         if (row.InfectedCovid == 3) {
                             covid++;
                         }
-                        if (row.OccupationRisk == 3) {
+                        if (["09/26/2020", "10/27/2020", "11/28/2020", "12/28/2020", "01/27/2021", "02/26/2021",
+                        "03/28/2021", "04/27/2021", "05/27/2021", "06/26/2021", "07/26/2021"].includes(row.Date)) {
+                            if (row.OccupationRisk == 3) {
+                                highRisk++;
+                            }
+                        } else {
+                            if (row.JobRiskCovid > 3) {
                             highRisk++;
+                            }
                         }
                     }
                 }
@@ -1800,6 +1822,10 @@
                     array = [1, 5.1, 5.4, 5.7, 6, 6.3, 12];
                 } else if (variable == "LifeOrientation") {
                     array = [1, 4, 6, 8, 10, 12, 14, 20];
+                } else if (variable == "TimeToEventYears") {
+                    array = [0, 1, 3, 5, 7, 10, 20, 1000];
+                } else if (variable == "TimeToEventDays") {
+                    array = [0, 1, 3, 6, 10, 1000];
                 }
                 return array;
             }
@@ -1879,6 +1905,12 @@
                     cats = ["<5.1", "5.1 - 5.4", "5.4-5.7", "5.7-6", "6-6.3", "6.6+"];
                 } else if (variable == "LifeOrientation") {
                     cats = ["<4", "4-6", "6-8", "8-10", "10-12", "12-14", "14+"];
+                } else if (variable == "TimeToEventYears") {
+                    cats = ["0", "1-2", "3-4", "5-6", "7-9", "10-19", "20+"];
+                } else if (variable == "TimeToEventMonths") {
+                    cats = ["0", "1-2", "3-4", "5-6", "7-8", "9-10", "10+"];
+                } else if (variable == "TimeToEventDays") {
+                    cats = ["0", "1-2", "3-5", "6-10", "10+"];
                 }
                 return cats;
             }
