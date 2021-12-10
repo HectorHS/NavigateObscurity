@@ -3,7 +3,7 @@ Age,
 Sex,"1 = male, 2 = female, 3 =other"
 Children,Number of children
 ChildrenUnder18,Number of children under 18 years
-Education,"1 = less than high school, 7 = doctoral or professional degree"
+Education,"1 = less than high school, 2 = High School/ GED, 3 = Some College, 4 = 2- year degree (Associates), 5 = 4- year degree (BA, BS), 6 = Master's Degree,  7 = doctoral or professional degree"
 SSES,"At the top of the ladder are the people who are the best off, have the most money, most education, and best jobs. These people are represented by number 10 marked on the ladder. At the bottom are the people who are the worst off, have the least money, least education, worst jobs, or no job. These people are represented by number 1 at the bottom of the ladder.?"
 OccupationRisk,"Has your occupation been identified as high-risk for COVID-19 transmission? (1 = no, 2 = not sure, 3 = yes)"
 MoveChildhood,How many times before the age of 18 did you move to a totally new neighborhood or town? 
