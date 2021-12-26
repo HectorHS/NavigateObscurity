@@ -931,7 +931,7 @@
                         }
                     }
                     if (new_data.length > 0) {
-                        let slice = { data: new_data, name: caus, colorIndex: getColor[caus] }
+                        let slice = { data: new_data, name: caus, colorIndex: getColor[caus], showInLegend: false }
                         new_series.push(slice);
                         new_data = [];
                     }
@@ -1051,16 +1051,10 @@
                 map_chart.update({
                     colorAxis: { visible: false }
                 }, false);
-                map_chart.update({
-                    legend: { enabled: false }
-                }, false);
             } else {
                 if (col) {
                     color = col;
                 }
-                map_chart.update({
-                    legend: { enabled: true }
-                }, false);
                 map_chart.update({
                     plotOptions: { map: { colorAxis: 0 } }
                 }, false);
@@ -1081,6 +1075,7 @@
             }
 
             map_chart.redraw();
+            map_chart.reflow();
             highlightCountry();
             setMapTitle();
         }
@@ -1306,7 +1301,7 @@
             },
             series: initial_map_data,
             legend: {
-                enabled: false
+                enabled: true
             }
         });
         let pyramid_chart = Highcharts.chart('death_pyramid', {
