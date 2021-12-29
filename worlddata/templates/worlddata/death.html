@@ -307,14 +307,18 @@
 
                 <div class="dashboard-container-horizontal dashboard-side-60">
                     <div class="chart-container-dashboard death-map" style="padding-left: 10px;">
-                        <div class="chart-title" id="death_map_title"></div>
-                        <div class="dashboard-command">Click on the map to select a country</div>
-                        <div id="death_map" class="map" style="width:100%;"></div>
+                        <div class="dashboard-side" style="height: inherit;">
+                            <div class="dark-bg">
+                                <div class="chart-title" id="death_map_title"></div>
+                                <div class="dashboard-command">Click on the map to select a country</div>
+                                <div id="death_map" class="map" style="width:100%; padding-bottom: 15px;"></div>
+                            </div>
+                        </div>
                     </div>
                 </div>
-                <div class="dashboard-side-40">
-                    <div class="chart-container-dashboard death-pyramid dashboard-border-container-lg"
-                        style="border-radius: 0 20px;">
+                <div class="dashboard-side-40 dashboard-side">
+                    <div class="chart-container-dashboard death-pyramid side-chart-container"
+                        style="border-radius: 30px; padding: 15px 20px; margin-bottom: 0;">
                         <div class="chart-title" id="death_pyramid_title">Share of deaths by age
                         </div>
                         <div class="dashboard-command">Click on the graph to select an age group</div>
@@ -343,20 +347,20 @@
                 </div>
             </div>
             <div class="dashboard-container-vertical dashboard-level-2">
-                <div class="dashboard-side-60">
-                    <div class="death-tree chart-container-dashboard dashboard-border-container-lg"
-                        style=" border-radius: 0 20px; padding: 0; overflow: hidden;">
-                        <div class="chart-title" id="death_treemap_title" style="padding: 10px 10px 0;">Total deaths
+                <div class="dashboard-side-60 dashboard-side" style="z-index: 1;">
+                    <div class="death-tree chart-container-dashboard side-chart-container"
+                        style=" border-radius: 30px; padding: 15px 20px; overflow: hidden; margin-right: 0; z-index: 2;">
+                        <div class="chart-title" id="death_treemap_title"">Total deaths
                             broken down by cause
                         </div>
-                        <div class="dashboard-command" style="padding: 0 10px 10px;">Click on the graph to select a
+                        <div class="dashboard-command">Click on the graph to select a
                             cause of death</div>
                         <div id="death_tree" class="treemap" style="width:100%;"></div>
                     </div>
                 </div>
-                <div class="dashboard-side-40">
-                    <div class="chart-container-dashboard death-bubbles dashboard-border-container-lg"
-                        style=" border-radius: 20px 0;">
+                <div class="dashboard-side-40 dashboard-side">
+                    <div class="chart-container-dashboard death-bubbles side-chart-container"
+                        style=" border-radius: 30px; padding: 15px 20px;">
                         <div class="chart-title" id="death_bubbles_title"></div>
                         <div id="death_bubbles" class="bubbles"></div>
                     </div>
