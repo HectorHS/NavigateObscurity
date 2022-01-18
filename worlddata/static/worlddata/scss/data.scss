@@ -675,7 +675,12 @@ figure {
   }
   .covid-map {
     height: 100%;
+    .selected-element {
+      fill: black !important;
+      color: black !important;
+    }
   }
+  
   .covid-excess {
     height: 350px;
     margin-bottom: 20px;

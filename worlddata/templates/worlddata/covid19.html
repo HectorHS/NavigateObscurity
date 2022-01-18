@@ -331,10 +331,11 @@
                 </div>
                 <div class="dashboard-side-40 dashboard-side">
                     <div class=" filters-on-top">
-                        <div
-                            class="chart-container-dashboard side-chart-container covid-excess filters-on-top bar-line">
-                            <div class="dashboard-title">
-                                Weekly death toll for all causes
+                        <div  class="chart-container-dashboard side-chart-container covid-excess filters-on-top bar-line">
+                            <div class="chart-options" style="max-width:100%; ">
+                                <div class="dashboard-title">
+                                    Weekly death toll for all causes
+                                </div> 
                             </div> 
                             <div id="excess_deaths" class="bars" style="width:100%;"></div>
                             <div class="chart-options" style="max-width:100%">
@@ -491,6 +492,7 @@
         let parameter = "Deaths per 1 million (7 day average)",
             metric = "absolute",
             country = "World",
+            innerCountry = "World",
             total_excess = 0,
             date_lock = all_week_dates_lock[all_week_dates_lock.length - 1];
         let timer;
@@ -548,7 +550,7 @@
         function get_bar_data(measure) {
             let day_data = [];
             for (let row of files[1]) {
-                if (row.Parameter == measure && row.Country == country) {
+                if (row.Parameter == measure && row.Country == innerCountry) {
                         for (let day in all_dates) {
                             val = +row[all_dates[day]];
                             // this especially helpful for test positive rates where we are missing a lot of values
@@ -613,7 +615,7 @@
         function get_old_excess_data() {
             let week_data = [];
             for (let row of files[3]) {
-                if (row.Country == country) {
+                if (row.Country == innerCountry) {
                     if (row.Deaths_2020 > 0) {
                         week_data.push(+row.Deaths_old);
                     }
@@ -632,7 +634,7 @@
         function get_latest_excess_data(year) {
             let latest_data = [];
             for (let row of files[3]) {
-                if (row.Country == country) {
+                if (row.Country == innerCountry) {
                     if (year == 2020) {
                         if (row.Deaths_2020 > 0) {
                             latest_data.push(+row.Deaths_2020);
@@ -765,7 +767,7 @@
             let cases, casesPc, deaths, deathsPc, testsRate, vaccinationShare, boosterShare;
 
             for (let row of files[0]) {
-                if (country == row.Country) {
+                if (innerCountry == row.Country) {
                     cases = numberFormatterIntegerLarge(+row.Cases);
                     casesPc = numberFormatterPercentage(+row.Cases_week);
                     deaths = numberFormatterIntegerLarge(+row.Deaths);
@@ -823,10 +825,12 @@
                 events: {
                     click: function (e) {
                         country = "World";
+                        innerCountry = "World";
                         change_dashboard_country_text(country);
                         setStats();
                         bar_data_update();
                         excess_data_update();
+                        highlightCountry();
                     }
                 }
             },
@@ -885,11 +889,13 @@
                 joinBy: ['iso-a3', 'country'], // first var: type of geographical data, second: data column name
                 events: {
                     click: function (e) {
-                        country = e.point.originalName;
-                        change_dashboard_country_text(e.point.name);
+                        country = e.point.name;
+                        innerCountry = e.point.originalName;
+                        change_dashboard_country_text(country);
                         setStats();
                         bar_data_update();
                         excess_data_update();
+                        highlightCountry();
                     }
                 }
             }]
@@ -1514,6 +1520,23 @@
             }
         }
 
+        function highlightCountry() {
+            let elements = document.querySelectorAll(".covid-map .highcharts-map-series .highcharts-point");
+            if (country != 'World') {
+                let css = 'highcharts-name-' + country.toLowerCase().split(' ').join('-');
+                for (let el of elements) {
+                    if (el.classList.contains(css)) {
+                        el.classList.add("selected-element");
+                    } else {
+                        el.classList.remove("selected-element");
+                    }
+                }
+            } else {
+                for (let el of elements) {
+                    el.classList.remove("selected-element");
+                }
+            }
+        }
         // Dashboard 2
         // Define filters / options for response map
         var responseFilters = document.querySelector(map_response_container_class + " .chart-filters");
@@ -1661,238 +1684,6 @@
                 obscurityText.classList.add("hide");
                 navigationText.classList.remove("hide");
             }
-        }
-    }
-
-    function getCountryColor(country) {
-        let africa = ["Angola",
-            "Benin",
-            "Botswana",
-            "Burkina Faso",
-            "Burundi",
-            "Cabo Verde",
-            "Cameroon",
-            "Central African Republic",
-            "Chad",
-            "Congo (Brazzaville)",
-            "Congo (Kinshasa)",
-            "Cote d'Ivoire",
-            "Equatorial Guinea",
-            "Eritrea",
-            "Eswatini",
-            "Ethiopia",
-            "Gabon",
-            "Gambia",
-            "Ghana",
-            "Guinea",
-            "Guinea-Bissau",
-            "Kenya",
-            "Lesotho",
-            "Liberia",
-            "Madagascar",
-            "Malawi",
-            "Mali",
-            "Mauritius",
-            "Mayotte",
-            "Mozambique",
-            "Namibia",
-            "Niger",
-            "Nigeria",
-            "Rwanda",
-            "Sao Tome and Principe",
-            "Senegal",
-            "Seychelles",
-            "Sierra Leone",
-            "South Africa",
-            "South Sudan",
-            "Tanzania",
-            "Togo",
-            "Uganda",
-            "Western Sahara",
-            "Zambia",
-            "Zimbabwe"]
-        let arab = ["Algeria",
-            "Bahrain",
-            "Comoros",
-            "Djibouti",
-            "Mauritania",
-            "Morocco",
-            "Somalia",
-            "Sudan",
-            "Tunisia",
-            "West Bank and Gaza"];
-        let apac = ["Afghanistan",
-            "Australia",
-            "Azerbaijan",
-            "Bangladesh",
-            "Bhutan",
-            "British Virgin Islands",
-            "Brunei",
-            "Burma",
-            "Cambodia",
-            "China",
-            "Fiji",
-            "French Polynesia",
-            "India",
-            "Indonesia",
-            "Japan",
-            "Kazakhstan",
-            "Korea, South",
-            "Kyrgyzstan",
-            "Laos",
-            "Malaysia",
-            "Maldives",
-            "Mongolia",
-            "Nepal",
-            "New Caledonia",
-            "New Zealand",
-            "Pakistan",
-            "Papua New Guinea",
-            "Philippines",
-            "Reunion",
-            "Singapore",
-            "Solomon Islands",
-            "Sri Lanka",
-            "Syria",
-            "Taiwan*",
-            "Tajikistan",
-            "Thailand",
-            "Timor-Leste",
-            "Uzbekistan",
-            "Vietnam"]
-        let europe = ["Albania",
-            "Andorra",
-            "Armenia",
-            "Austria",
-            "Belarus",
-            "Belgium",
-            "Bosnia and Herzegovina",
-            "Bulgaria",
-            "Channel Islands",
-            "Croatia",
-            "Cyprus",
-            "Czechia",
-            "Denmark",
-            "Estonia",
-            "Faroe Islands",
-            "Finland",
-            "France",
-            "Georgia",
-            "Germany",
-            "Gibraltar",
-            "Greece",
-            "Greenland",
-            "Holy See",
-            "Hungary",
-            "Iceland",
-            "Ireland",
-            "Isle of Man",
-            "Israel",
-            "Italy",
-            "Kosovo",
-            "Latvia",
-            "Liechtenstein",
-            "Lithuania",
-            "Luxembourg",
-            "Malta",
-            "Moldova",
-            "Monaco",
-            "Montenegro",
-            "Netherlands",
-            "North Macedonia",
-            "Norway",
-            "Poland",
-            "Portugal",
-            "Romania",
-            "Russia",
-            "San Marino",
-            "Serbia",
-            "Slovakia",
-            "Slovenia",
-            "Spain",
-            "Sweden",
-            "Switzerland",
-            "Turkey",
-            "Ukraine",
-            "United Kingdom"]
-        let meast = ["Egypt",
-            "Iran",
-            "Iraq",
-            "Jordan",
-            "Kuwait",
-            "Lebanon",
-            "Libya",
-            "Oman",
-            "Qatar",
-            "Saudi Arabia",
-            "United Arab Emirates",
-            "Yemen"]
-        let namerica = ["Bermuda",
-            "Canada",
-            "Saint Pierre and Miquelon",
-            "USA"]
-        let samerica = ["Anguilla",
-            "Antigua and Barbuda",
-            "Argentina",
-            "Aruba",
-            "Bahamas",
-            "Barbados",
-            "Belize",
-            "Bolivia",
-            "Bonaire, Sint Eustatius and Saba",
-            "Brazil",
-            "Cayman Islands",
-            "Chile",
-            "Colombia",
-            "Costa Rica",
-            "Cuba",
-            "Curacao",
-            "Dominica",
-            "Dominican Republic",
-            "Ecuador",
-            "El Salvador",
-            "Falkland Islands (Malvinas)",
-            "French Guiana",
-            "Grenada",
-            "Guadeloupe",
-            "Guatemala",
-            "Guyana",
-            "Haiti",
-            "Honduras",
-            "Jamaica",
-            "Martinique",
-            "Mexico",
-            "Montserrat",
-            "Nicaragua",
-            "Panama",
-            "Paraguay",
-            "Peru",
-            "Saint Barthelemy",
-            "Saint Kitts and Nevis",
-            "Saint Lucia",
-            "Saint Vincent and the Grenadines",
-            "Sint Maarten",
-            "St Martin",
-            "Suriname",
-            "Trinidad and Tobago",
-            "Turks and Caicos Islands",
-            "Uruguay",
-            "Venezuela"]
-
-        if (africa.includes(country)) {
-            return 4;
-        } else if (arab.includes(country)) {
-            return 2;
-        } else if (apac.includes(country)) {
-            return 1;
-        } else if (europe.includes(country)) {
-            return 0;
-        } else if (meast.includes(country)) {
-            return 18;
-        } else if (namerica.includes(country)) {
-            return 6;
-        } else if (samerica.includes(country)) {
-            return 9;
         }
     }
 

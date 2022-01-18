@@ -1865,6 +1865,11 @@ figure {
   height: 100%;
 }
 
+.covid-dashboard .covid-map .selected-element {
+  fill: black !important;
+  color: black !important;
+}
+
 .covid-dashboard .covid-excess {
   height: 350px;
   margin-bottom: 20px;
