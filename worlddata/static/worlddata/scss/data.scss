@@ -428,8 +428,8 @@ figure {
 }
 // Dashboard
 .dashboard-title {
-  font-size: 140%;
-  text-align: center;
+  font-size: 120%;
+  font-weight: 600;
 }
 .dashboard-side-40 {
   width: 100%;
@@ -579,22 +579,8 @@ figure {
     line-height: 0.8;
   }
 }
-.covid-bars-all {
+.bars-all {
   padding-bottom: 0;
-}
-.covid-bars-all,
-.covid-bars-30,
-.covid-excess {
-  padding-top: 0;
-  .restricted-band {
-    fill: #9d61d1;
-  }
-  .curfew-band {
-    fill: #ed45b2;
-  }
-  .lockdown-band {
-    fill: #970f67;
-  }
 }
 
 .side-chart-container {
@@ -704,11 +690,28 @@ figure {
       }
     }
   }
-  .covid-bars-all {
+  .bars-all, .bars-30 {
     height: 155px;
-  }
-  .covid-bars-30 {
-    height: 155px;
+    .error1 {
+      position: absolute;
+      bottom: 365px;
+      text-align: center;
+      width: 90%;
+      font-size: 110%;
+      @media only screen and (min-width: $tablet-breakpoint) {
+        width: 25%;
+      }
+    }
+    .error2 {
+      position: absolute;
+      bottom: 205px;
+      text-align: center;
+      width: 90%;
+      font-size: 110%;
+      @media only screen and (min-width: $tablet-breakpoint) {
+        width: 25%;
+      }
+    }
   }
   .chart-legend {
     font-size: 80%;
@@ -731,7 +734,7 @@ figure {
     }
   }
   .dashboard-level-2 {
-    .covid-top-container {
+    .covid-deaths-tests-container {
       @media only screen and (min-width: $tablet-breakpoint) {
         border-radius: 30px 0px 0px 30px;
         background-image: linear-gradient(to top right, $bright-blue-opacity 7%, $mid-grey 50%);
@@ -744,7 +747,7 @@ figure {
       }
     }
   }
-  .covid-top {
+  .covid-deaths-tests {
     height: 350px;
     .highcharts-data-label {
       font-weight: 400;

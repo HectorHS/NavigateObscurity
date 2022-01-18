@@ -247,12 +247,8 @@
                                         <div id="stat_cases" class="profile-value"></div>
                                     </div>
                                     <div class="profile-item">
-                                        <div class="profile-label">Cases per 1m:</div>
+                                        <div class="profile-label">Current cases per 1m:</div>
                                         <div id="stat_cases_pc" class="profile-value"></div>
-                                    </div>
-                                    <div class="profile-item">
-                                        <div class="profile-label">Total tests:</div>
-                                        <div id="stat_tests" class="profile-value"></div>
                                     </div>
                                     <div class="profile-item">
                                         <div class="profile-label">Positive test rate:</div>
@@ -265,46 +261,35 @@
                                         <div id="stat_deaths" class="profile-value"></div>
                                     </div>
                                     <div class="profile-item">
-                                        <div class="profile-label">Deaths per 1m:</div>
+                                        <div class="profile-label">Current deaths per 1m:</div>
                                         <div id="stat_deaths_pc" class="profile-value"></div>
-                                    </div>
-                                    <div class="profile-item">
-                                        <div class="profile-label">Death rate:</div>
-                                        <div id="stat_death_rate" class="profile-value"></div>
                                     </div>
                                     <div class="profile-item">
                                         <div class="profile-label">Fully vaccinated:</div>
                                         <div id="stat_vaccination_share" class="profile-value"></div>
                                     </div>
+                                    <div class="profile-item">
+                                        <div class="profile-label">+ booster shot:</div>
+                                        <div id="stat_booster_share" class="profile-value"></div>
+                                    </div>
                                 </div>
                             </div>
                         </div>
                     </div>
-                    <div class="side-chart-container" style="margin-bottom:0;">
+                    <div class="side-chart-container cases-chart" style="margin-bottom:0;">
                         <div class="chart-options" style="max-width:100%; ">
-                            <div class="chart-filters covid-dashboard-options">
-                                <div class="radio-container">
-                                    <label>Cases
-                                        <input type="radio" class="param-radio" checked="checked" name="param-radio"
-                                            value="Confirmed">
-                                        <span class="checkmark"></span>
-                                    </label>
-                                    <label style="padding-right: 0;">Deaths
-                                        <input type="radio" class="param-radio" name="param-radio" value="Deaths">
-                                        <span class="checkmark"></span>
-                                    </label>
-                                </div>
-                            </div>
+                            <div class="dashboard-title">
+                                Cases
+                            </div>                
                         </div>
-                        <div class="chart-container-dashboard covid-bars-all filters-on-top area">
-                            <div id="covid_bars_all" class="bars" style="width:100%;"></div>
+                        <div class="chart-container-dashboard bars-all filters-on-top bars">
+                            <div id="cases_bars_all" class="bars" style="width:100%;"></div>
                         </div>
-                        <div class="chart-container-dashboard covid-bars-30 filters-on-top bars">
-                            <div id="covid_bars_30" class="bars" style="width:100%;"></div>
+                        <div class="chart-container-dashboard bars-30 filters-on-top bars">
+                            <div id="cases_bars_30" class="bars" style="width:100%;"></div>
                         </div>
                         <div class="chart-options" style="max-width:100%">
                             <div class="chart-legend"></div>
-                            <div class="secondary-legend"></div>
                         </div>
                     </div>
 
@@ -312,13 +297,35 @@
             </div>
             <div class="dashboard-container-vertical dashboard-level-2">
                 <div class="dashboard-container-horizontal dashboard-side-60">
-                    <div class="covid-top-container dashboard-container-vertical dashboard-side">
-                        <div class="chart-container-dashboard side-chart-container covid-top covid-top-cases h-bars">
-                            <div id="covid_top_cases" class="bars"></div>
+                    <div class="covid-deaths-tests-container dashboard-container-vertical dashboard-side">
+                        <div class="side-chart-container covid-deaths-tests">
+                            <div class="chart-options" style="max-width:100%; ">
+                                <div class="dashboard-title">
+                                    Tests
+                                </div>                
+                            </div>
+                            <div class="chart-container-dashboard bars-all filters-on-top area">
+                                <div id="tests_bars_all" class="bars" style="width:100%;"></div>
+                                <div id="tests_all_error" class="error1">No data available</div>
+                            </div>
+                            <div class="chart-container-dashboard bars-30 filters-on-top bars">
+                                <div id="tests_bars_30" class="bars" style="width:100%;"></div>
+                                <div id="tests_30_error" class="error2">No data available</div>
+                            </div>
                         </div>
-                        <div class="chart-container-dashboard side-chart-container covid-top covid-top-deaths h-bars"
+                        <div class="side-chart-container covid-deaths-tests"
                             style="z-index: 1;">
-                            <div id="covid_top_deaths" class="bars"></div>
+                            <div class="chart-options" style="max-width:100%; ">
+                                <div class="dashboard-title">
+                                    Deaths
+                                </div>                
+                            </div>
+                            <div class="chart-container-dashboard bars-all filters-on-top area">
+                                <div id="deaths_bars_all" class="bars" style="width:100%;"></div>
+                            </div>
+                            <div class="chart-container-dashboard bars-30 filters-on-top bars">
+                                <div id="deaths_bars_30" class="bars" style="width:100%;"></div>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -326,6 +333,9 @@
                     <div class=" filters-on-top">
                         <div
                             class="chart-container-dashboard side-chart-container covid-excess filters-on-top bar-line">
+                            <div class="dashboard-title">
+                                Weekly death toll for all causes
+                            </div> 
                             <div id="excess_deaths" class="bars" style="width:100%;"></div>
                             <div class="chart-options" style="max-width:100%">
                                 <div class="chart-legend"></div>
@@ -457,9 +467,8 @@
         d3.csv(covid_lockdown_notes_path)
     ]).then(function (files) {
         // All filterable options
-        const all_parameters = ["Confirmed cases per 1 million",
-            "Deaths per 1 million",
-            "Death rate",
+        const all_parameters = ["Cases per 1 million (7 day average)",
+            "Deaths per 1 million (7 day average)",
             "Positive tests rate",
             "Fully vaccinated population share"];
         const all_countries = [...new Set(files[0].map(d => d.Country))].sort()
@@ -479,7 +488,7 @@
         all_week_dates_lock.push(all_dates_lock[all_dates_lock.length - 1]);
 
         // Default values
-        let parameter = "Deaths per 1 million",
+        let parameter = "Deaths per 1 million (7 day average)",
             metric = "absolute",
             country = "World",
             total_excess = 0,
@@ -488,30 +497,14 @@
 
         let map_container_class = ".covid-map",
             excess_container_class = ".covid-excess",
+            cases_container_class = ".cases-chart",
             map_response_container_class = ".lockdown-map",
             initial_map_data = [],
-            initial_bar_data_all = [],
-            initial_bar_data_30 = [],
             xAxisBands = [],
             initial_old_excess_data = [],
             initial_latest_excess_data = [],
-            top_data = [],
-            top_cases_countries = [],
-            top_cases_values = [],
-            top_deaths_countries = [],
-            top_deaths_values = [],
-            top_cases_countries_time = [],
-            top_cases_values_time = [],
-            top_deaths_countries_time = [],
-            top_deaths_values_time = [],
             initial_cases_time_data = [],
-            initial_map_response_data = [],
-            radio_param = "Confirmed";
-
-        var getColor = {
-            "Deaths": "4",
-            "Confirmed": "1"
-        };
+            initial_map_response_data = [];
 
         // Set html dates
         var last_date = all_dates[all_dates.length - 1];
@@ -528,26 +521,23 @@
         let statCases = document.getElementById("stat_cases");
         let statCasesPc = document.getElementById("stat_cases_pc");
         let statDeathsPc = document.getElementById("stat_deaths_pc");
-        let statTests = document.getElementById("stat_tests");
         let statTestsRate = document.getElementById("stat_tests_rate");
-        let statDeathRate = document.getElementById("stat_death_rate");
         let statVaccinationShare = document.getElementById("stat_vaccination_share");
+        let statBoosterShare = document.getElementById("stat_booster_share");
 
         function get_map_data() {
             var new_data = [];
             for (let row of files[0]) {
                 var val = 0;
                 if (row.Country != "World") {
-                    if (parameter == "Confirmed cases per 1 million") {
-                        val = row.Confirmed_pc;
-                    } else if (parameter == "Deaths per 1 million") {
-                        val = row.Deaths_pc;
-                    } else if (parameter == "Death rate") {
-                        val = row.Death_rate;
+                    if (parameter == "Cases per 1 million (7 day average)") {
+                        val = row.Cases_week;
+                    } else if (parameter == "Deaths per 1 million (7 day average)") {
+                        val = row.Deaths_week;
                     } else if (parameter == "Positive tests rate") {
-                        val = row.Tested_rate;
+                        val = row.Positive_rate;
                     } else if (parameter == "Fully vaccinated population share") {
-                        val = row.Fully_vaccinated_pc;
+                        val = row.Fully_vaccinated;
                     }
 
                     new_data.push({ country: getCountryCode(row.Country), value: +val, originalName: row.Country });
@@ -555,124 +545,64 @@
             }
             return new_data;
         }
-        function get_bar_data() {
+        function get_bar_data(measure) {
             let day_data = [];
             for (let row of files[1]) {
-                if (row.Value == "change" && row.Country == country) {
-                    if (row.Parameter == radio_param) {
+                if (row.Parameter == measure && row.Country == country) {
                         for (let day in all_dates) {
-                            day_data[day] = +row[all_dates[day]];
+                            val = +row[all_dates[day]];
+                            // this especially helpful for test positive rates where we are missing a lot of values
+                            if (val == 0){
+                                val = null
+                            }
+                            day_data[day] = val;
                         }
                         return day_data;
-                    }
                 }
             }
-
             return day_data;
         }
-        function get_bands() {
-            var new_bands = [];
-
-            for (let row of files[2]) {
-                if (row.Country == country && row.Measure == "restriction") {
-                    var oldDayValue = 0,
-                        newDayValue = 0,
-                        from = 0,
-                        to = 0,
-                        started = false,
-                        cssClass = '';
-
-                    var i;
-                    for (i = 0; i < all_dates_lock.length; i++) {
-                        newDayValue = row[all_dates_lock[i]];
-                        if (newDayValue != oldDayValue) {
-                            if (!started) {
-                                started = true;
-                                from = i;
-                                if (newDayValue == 1) {
-                                    cssClass = 'restricted-band'
-                                } else if (newDayValue == 2) {
-                                    cssClass = 'curfew-band'
-                                } else {
-                                    cssClass = 'lockdown-band'
-                                }
-                            } else {
-                                to = i;
-                                new_bands.push({ from: from, to: to, className: cssClass })
-                                if (newDayValue != 0) {
-                                    from = i;
-                                    to = 0;
-                                    if (newDayValue == 1) {
-                                        cssClass = 'restricted-band'
-                                    } else if (newDayValue == 2) {
-                                        cssClass = 'curfew-band'
-                                    } else {
-                                        cssClass = 'lockdown-band'
-                                    }
-                                } else {
-                                    started = false;
-                                    to = 0;
-                                }
-                            }
-                        }
-                        oldDayValue = newDayValue;
-                    }
-                    if (started && to == 0) {
-                        new_bands.push({ from: from, to: all_dates_lock.length, className: cssClass })
-                    }
-                }
-            }
-            return new_bands;
-        }
         function bar_data_update() {
-            let title = "";
-            let colorIndex = 0;
-            if (radio_param == "Confirmed") {
-                title = "Cases";
-                colorIndex = 1;
-            } else {
-                title = "Deaths";
-                colorIndex = 3;
-            }
-            var updated_bar_all_data = get_bar_data();
-            var updated_bar_30_data = JSON.parse(JSON.stringify(updated_bar_all_data));
-            updated_bar_30_data = updated_bar_30_data.slice(Math.max(updated_bar_30_data.length - 30, 0));
-            var updated_plot_bands = get_bands();
+            let updated_cases_bar_all_data = get_bar_data("Cases");
+            let updated_deaths_bar_all_data = get_bar_data("Deaths");
+            let updated_tests_bar_all_data = get_bar_data("Tests");
+            let updated_test_rate_all_data = get_bar_data("Tests_rate");
+            let updated_cases_bar_30_data = JSON.parse(JSON.stringify(updated_cases_bar_all_data));
+            updated_cases_bar_30_data = updated_cases_bar_30_data.slice(Math.max(updated_cases_bar_30_data.length - 30, 0));
+            let updated_deaths_bar_30_data = JSON.parse(JSON.stringify(updated_deaths_bar_all_data));
+            updated_deaths_bar_30_data = updated_deaths_bar_30_data.slice(Math.max(updated_deaths_bar_30_data.length - 30, 0));
+            let updated_tests_bar_30_data = JSON.parse(JSON.stringify(updated_tests_bar_all_data));
+            updated_tests_bar_30_data = updated_tests_bar_30_data.slice(Math.max(updated_tests_bar_30_data.length - 30, 0));
+            let updated_tests_rate_30_data = JSON.parse(JSON.stringify(updated_test_rate_all_data));
+            updated_tests_rate_30_data = updated_tests_rate_30_data.slice(Math.max(updated_tests_rate_30_data.length - 30, 0));
 
             // Then add the updated data
-            bar_chart_all.series[0].setData(updated_bar_all_data);
-            bar_chart_30.series[0].setData(updated_bar_30_data);
-            chartXAxis.plotBands = updated_plot_bands;
-            chartXAxis.categories = all_dates;
-            bar_chart_all.update({
-                xAxis: chartXAxis
-            });
-            bar_chart_all.update({
-                title: {
-                    align: 'left',
-                    text: title + ' - daily change (all time)'
-                }
-            });
-            bar_chart_30.update({
-                title: {
-                    align: 'left',
-                    text: title + ' - daily change (last 30 days)'
-                }
-            });
-            bar_chart_all.update({
-                series: [{
-                    colorIndex: colorIndex
-                }]
-            });
-            bar_chart_30.update({
-                series: [{
-                    colorIndex: colorIndex
-                }]
-            });
+            cases_bar_all.series[0].setData(updated_cases_bar_all_data);
+            cases_bar_all.series[1].setData(updated_test_rate_all_data);
+            cases_bar_30.series[0].setData(updated_cases_bar_30_data);
+            cases_bar_30.series[1].setData(updated_tests_rate_30_data);
+            deaths_bar_all.series[0].setData(updated_deaths_bar_all_data);
+            deaths_bar_30.series[0].setData(updated_deaths_bar_30_data);
+            tests_bar_all.series[0].setData(updated_tests_bar_all_data);
+            tests_bar_30.series[0].setData(updated_tests_bar_30_data);
 
+            // Hide / show errors for test graphs (we miss test data for many countries)
+            let err1 = document.getElementById("tests_all_error");
+            let err2 = document.getElementById("tests_30_error");
+            if (updated_tests_bar_all_data.length > 1) {
+                err1.classList.add("hide")
+                err2.classList.add("hide")
+            } else {
+                err1.classList.remove("hide")
+                err2.classList.remove("hide")
+            }
 
-            bar_chart_all.redraw();
-            bar_chart_30.redraw();
+            cases_bar_all.redraw();
+            cases_bar_30.redraw();
+            deaths_bar_all.redraw();
+            deaths_bar_30.redraw();
+            tests_bar_all.redraw();
+            tests_bar_30.redraw();
         }
         function change_dashboard_country_text(country) {
             let c = (country == "United States of America") ? "USA" : country;
@@ -790,52 +720,6 @@
             excess_chart.redraw();
             excess_chart.setSize();
         }
-        function initialise_top_cases_data() {
-            let country_cases_data = [];
-            let country_deaths_data = [];
-            let days = all_dates.slice(Math.max(all_dates.length - 7, 0))
-            for (let row of files[1]) {
-                let av = 0;
-                if (row.Parameter == "Confirmed" && row.Value == "change" && row.Country != "World") {
-                    let av = 0;
-                    for (let day of days) {
-                        av += +row[day];
-                    }
-                    av = av / 7;
-                    let pop = getCountryPopulation(row.Country)
-                    let con = av / (pop / 1000000)
-                    country_cases_data.push({ country: row.Country, confirmed: con });
-                } else if (row.Parameter == "Deaths" && row.Value == "change" && row.Country != "World") {
-                    let av = 0;
-                    for (let day of days) {
-                        av += +row[day];
-                    }
-                    av = av / 7;
-                    let pop = getCountryPopulation(row.Country)
-                    let dea = av / (pop / 1000000)
-                    country_deaths_data.push({ country: row.Country, deaths: dea });
-                }
-
-            }
-            country_cases_data.sort((a, b) => parseFloat(a.confirmed) - parseFloat(b.confirmed));
-            country_cases_data.reverse();
-            let top_cases_data = country_cases_data.slice(0, 8);
-
-            country_deaths_data.sort((a, b) => parseFloat(a.deaths) - parseFloat(b.deaths));
-            country_deaths_data.reverse();
-            let top_deaths_data = country_deaths_data.slice(0, 8);
-
-            for (let d of top_cases_data) {
-                top_cases_countries.push(d.country);
-                top_cases_values.push(d.confirmed);
-            }
-
-            for (let d of top_deaths_data) {
-                top_deaths_countries.push(d.country);
-                top_deaths_values.push(d.deaths);
-            }
-        }
-
         function get_map_response_data() {
             var new_data = [];
             for (let row of files[2]) {
@@ -850,7 +734,6 @@
             }
             return new_data;
         }
-
         function get_map_response_note(code) {
             for (let row of files[5]) {
                 if (row.Code == code) {
@@ -860,7 +743,6 @@
             console.log("No note found for code " + code);
             return "N/A";
         }
-
         function get_map_response_note_code(country) {
             for (let row of files[2]) {
                 if (row.Measure == "note" && row.Country == country) {
@@ -870,7 +752,6 @@
             console.log("No note code found for " + country);
             return 0;
         }
-
         function getCountryPopulation(country) {
             for (let poprow of files[4]) {
                 if (poprow.Country == country) {
@@ -880,20 +761,18 @@
             console.log('population for ' + country + ' not found');
             return 0;
         }
-
         function setStats() {
-            let cases, casesPc, deaths, deathsPc, tests, testsRate, deathRate, vaccinationShare;
+            let cases, casesPc, deaths, deathsPc, testsRate, vaccinationShare, boosterShare;
 
             for (let row of files[0]) {
                 if (country == row.Country) {
-                    cases = numberFormatterIntegerLarge(+row.Confirmed);
-                    casesPc = numberFormatterPercentage(+row.Confirmed_pc);
+                    cases = numberFormatterIntegerLarge(+row.Cases);
+                    casesPc = numberFormatterPercentage(+row.Cases_week);
                     deaths = numberFormatterIntegerLarge(+row.Deaths);
-                    deathsPc = numberFormatterPercentage(+row.Deaths_pc);
-                    tests = numberFormatterIntegerLarge(+row.Tested);
-                    testsRate = numberFormatterPercentage(+row.Tested_rate);
-                    deathRate = numberFormatterPercentage(+row.Death_rate);
-                    vaccinationShare = numberFormatterPercentage(+row.Fully_vaccinated_pc);
+                    deathsPc = numberFormatterPercentage(+row.Deaths_week);
+                    testsRate = numberFormatterPercentage(+row.Positive_rate);
+                    vaccinationShare = numberFormatterPercentage(+row.Fully_vaccinated);
+                    boosterShare = numberFormatterPercentage(+row.Vaccinated_booster);
                     break;
                 }
             }
@@ -901,22 +780,28 @@
             statCasesPc.innerHTML = casesPc;
             statDeaths.innerHTML = deaths;
             statDeathsPc.innerHTML = deathsPc;
-            statTests.innerHTML = tests;
             statTestsRate.innerHTML = testsRate + "%";
-            statDeathRate.innerHTML = deathRate + "%";
             statVaccinationShare.innerHTML = vaccinationShare + "%";
+            statBoosterShare.innerHTML = boosterShare + "%";
         }
 
         intial_map_data = get_map_data();
-        xAxisBands = get_bands();
-        initial_bar_data = get_bar_data();
-        initial_bar_30_data = JSON.parse(JSON.stringify(initial_bar_data));
-        initial_bar_30_data = initial_bar_30_data.slice(Math.max(initial_bar_30_data.length - 30, 0));
+        initial_cases_bar_data = get_bar_data("Cases");
+        initial_cases_bar_30_data = JSON.parse(JSON.stringify(initial_cases_bar_data));
+        initial_cases_bar_30_data = initial_cases_bar_30_data.slice(Math.max(initial_cases_bar_30_data.length - 30, 0));
+        initial_deaths_bar_data = get_bar_data("Deaths");
+        initial_deaths_bar_30_data = JSON.parse(JSON.stringify(initial_deaths_bar_data));
+        initial_deaths_bar_30_data = initial_deaths_bar_30_data.slice(Math.max(initial_deaths_bar_30_data.length - 30, 0));
+        initial_tests_bar_data = get_bar_data("Tests");
+        initial_tests_bar_30_data = JSON.parse(JSON.stringify(initial_tests_bar_data));
+        initial_tests_bar_30_data = initial_tests_bar_30_data.slice(Math.max(initial_tests_bar_30_data.length - 30, 0));
         initial_old_excess_data = get_old_excess_data();
         initial_2020_excess_data = get_latest_excess_data(2020);
         initial_2021_excess_data = get_latest_excess_data(2021);
-        initialise_top_cases_data();
         initial_map_response_data = get_map_response_data();
+        initial_test_rate_data = get_bar_data("Tests_rate");
+        initial_test_rate_30_data = JSON.parse(JSON.stringify(initial_test_rate_data));
+        initial_test_rate_30_data = initial_test_rate_30_data.slice(Math.max(initial_test_rate_30_data.length - 30, 0));
         setStats();
         let chartXAxis = {
             categories: all_dates,
@@ -927,15 +812,13 @@
             title: {
                 enabled: false
             },
-            plotBands: xAxisBands,
         };
 
         // Dashboard 1
-        // Initiate the map chart
         let chart = Highcharts.mapChart('covid_map', {
             chart: {
                 styledMode: true,
-                height: 586,
+                height: 526,
                 marginBottom: 20,
                 events: {
                     click: function (e) {
@@ -956,8 +839,8 @@
                 enableButtons: true,
             },
             colorAxis: {
-                tickInterval: 500,
-                max: 2000,
+                tickInterval: 1,
+                max: 5,
                 min: 0,
                 stops: [
                     [0, getIndexColor(3)],
@@ -972,15 +855,12 @@
                     var title = fCapital(this.key);
                     var value = this.point.value;
                     var text = "";
-                    if (parameter == "Confirmed cases per 1 million") {
-                        let val = numberFormatterInteger(value);
-                        text = val + " confirmed cases per 1 million people";
-                    } else if (parameter == "Deaths per 1 million") {
-                        let val = numberFormatterInteger(value);
-                        text = val + " deaths per 1 million people";
-                    } else if (parameter == "Death rate") {
+                    if (parameter == "Cases per 1 million (7 day average)") {
                         let val = numberFormatterPercentage(value);
-                        text = val + "% of confirmed cases have escalated to death";
+                        text = val + " cases per 1 million people (average of last 7 days)";
+                    } else if (parameter == "Deaths per 1 million (7 day average)") {
+                        let val = numberFormatterPercentage(value);
+                        text = val + " deaths per 1 million people (average of last 7 days)";
                     } else if (parameter == "Positive tests rate") {
                         let val = numberFormatterPercentage(value);
                         if (val == 0) {
@@ -1014,29 +894,198 @@
                 }
             }]
         });
-
-        let bar_chart_all = Highcharts.chart('covid_bars_all', {
+        let cases_bar_all = Highcharts.chart('cases_bars_all', {
             chart: {
                 type: 'column',
             },
             title: {
                 align: 'left',
-                text: 'Cases - daily change (all time)'
+                text: 'Daily change - all time'
+            },
+            xAxis: chartXAxis,
+            yAxis: [{
+                title: {
+                    text: "cases"
+                },
+                min: 0
+            },{
+                title: {
+                    text: "positive test rate",
+                    rotation: 270,
+                },
+                labels: {
+                    format: '{value}% &nbsp;',
+                    useHTML: true
+                },
+                opposite: true,
+                min: 0
+            }],
+            tooltip: {
+                formatter: function () {
+                    let rate = "N/A";
+                    let title = fCapital(this.x);
+                    let cases = numberFormatterInteger(this.points[0].y);
+                    if (this.points.length > 1) {
+                        rate = numberFormatterPercentage(this.points[1].y);
+                    }
+                    return '<b>' + title + '</b><br/>Daily cases: ' + cases + '<br/>Positive test rate: ' + rate;
+                },
+                useHTML: true,
+                shared: true
+            },
+            plotOptions: {
+                spline: {
+                    marker: {
+                        enabled: false
+                    },
+                    label: {
+                        enabled: false
+                    }
+                },
+                column: {
+                    stacking: 'normal',
+                    borderRadius: 3,
+                    pointPadding: 0
+                },
+                series: {
+                    groupPadding: 0.1,
+                }
+            },
+            series: [{
+                id: "cases",
+                name: "COVID-19 cases",
+                type: 'column',
+                colorIndex: 1,
+                data: initial_cases_bar_data,
+            },
+            {
+                id: "testrate",
+                name: "Positive test rate",
+                type: 'spline',
+                colorIndex: 24,
+                yAxis: 1,
+                data: initial_test_rate_data,
+                label: {
+                    enabled: false,
+                    format: ''
+                }
+            }],
+
+
+            legend: {
+                enabled: false
+            }
+        });
+        let cases_bar_30 = Highcharts.chart('cases_bars_30', {
+            chart: {
+                type: 'column',
+            },
+            title: {
+                align: 'left',
+                text: 'Daily change - last 30 days'
+            },
+            xAxis: {
+                categories: dates_30,
+                tickInterval: 20,
+                labels: {
+                    enabled: false
+                },
+                title: {
+                    enabled: false
+                },
+            },
+            yAxis: [{
+                title: {
+                    text: 'Cases'
+                },
+                min: 0
+            },{
+                title: {
+                    text: "positive test rate",
+                    rotation: 270
+                },
+                labels: {
+                    format: '{value}% &nbsp;',
+                    useHTML: true
+                },
+                opposite: true,
+                min: 0
+            }],
+            tooltip: {
+                formatter: function () {
+                    let rate = "N/A";
+                    let title = fCapital(this.x);
+                    let cases = numberFormatterInteger(this.points[0].y);
+                    if (this.points.length > 1) {
+                        rate = numberFormatterPercentage(this.points[1].y);
+                    }
+                    return '<b>' + title + '</b><br/>Daily cases: ' + cases + '<br/>Positive test rate: ' + rate;
+                },
+                useHTML: true,
+                shared: true
+            },
+            plotOptions: {
+                spline: {
+                    marker: {
+                        enabled: false
+                    },
+                    label: {
+                        enabled: false
+                    }
+                },
+                column: {
+                    stacking: 'normal',
+                    borderRadius: 3,
+                    pointPadding: 0
+                },
+                series: {
+                    groupPadding: 0.1,
+                }
+            },
+            series: [{
+                colorIndex: 1,
+                id: 'cases',
+                name: "COVID-19 cases",
+                type: 'column',
+                data: initial_cases_bar_30_data,
+            },{
+                id: "testrate",
+                name: "Positive test rate",
+                type: 'spline',
+                colorIndex: 24,
+                yAxis: 1,
+                data: initial_test_rate_data,
+                label: {
+                    enabled: false,
+                    format: ''
+                }
+            }],
+
+            legend: {
+                enabled: false
+            },
+        });
+        let deaths_bar_all = Highcharts.chart('deaths_bars_all', {
+            chart: {
+                type: 'column',
+            },
+            title: {
+                align: 'left',
+                text: 'Daily change - all time'
             },
             xAxis: chartXAxis,
             yAxis: {
                 title: {
                     enabled: false
                 },
+                endOnTick: false
             },
             tooltip: {
                 formatter: function () {
-                    let param = (radio_param == "Confirmed") ? "cases" : "deaths";
-
                     var title = fCapital(this.x),
                         value = numberFormatterInteger(this.y);
 
-                    return '<b>' + title + '</b><br/>Daily ' + param + ': ' + value;
+                    return '<b>' + title + '</b><br/>Daily deaths: ' + value;
                 },
                 useHTML: true,
             },
@@ -1051,22 +1100,64 @@
                 }
             },
             series: [{
-                colorIndex: 1,
+                colorIndex: 4,
                 name: 'Covid19',
-                data: initial_bar_data,
+                data: initial_deaths_bar_data,
             }],
             legend: {
                 enabled: false
             }
         });
-
-        let bar_chart_30 = Highcharts.chart('covid_bars_30', {
+        let tests_bar_all = Highcharts.chart('tests_bars_all', {
             chart: {
                 type: 'column',
             },
             title: {
                 align: 'left',
-                text: 'Cases - daily change (last 30 days)'
+                text: 'Daily change - all time'
+            },
+            xAxis: chartXAxis,
+            yAxis: {
+                title: {
+                    enabled: false
+                },
+                endOnTick: false
+            },
+            tooltip: {
+                formatter: function () {
+                    var title = fCapital(this.x),
+                        value = numberFormatterInteger(this.y);
+
+                    return '<b>' + title + '</b><br/>Daily tests: ' + value;
+                },
+                useHTML: true,
+            },
+            plotOptions: {
+                column: {
+                    stacking: 'normal',
+                    borderRadius: 3,
+                    pointPadding: 0
+                },
+                series: {
+                    groupPadding: 0.1,
+                }
+            },
+            series: [{
+                colorIndex: 24,
+                name: 'Covid19',
+                data: initial_tests_bar_data,
+            }],
+            legend: {
+                enabled: false
+            }
+        });
+        let deaths_bar_30 = Highcharts.chart('deaths_bars_30', {
+            chart: {
+                type: 'column',
+            },
+            title: {
+                align: 'left',
+                text: 'Daily change - last 30 days'
             },
             xAxis: {
                 categories: dates_30,
@@ -1083,15 +1174,14 @@
                     enabled: false
                     // text: 'Daily change in "active" cases'
                 },
+                endOnTick: false
             },
             tooltip: {
                 formatter: function () {
-                    let param = (radio_param == "Confirmed") ? "cases" : "deaths";
-
                     var title = fCapital(this.x),
                         value = numberFormatterInteger(this.y);
 
-                    return '<b>' + title + '</b><br/>Daily ' + param + ': ' + value;
+                    return '<b>' + title + '</b><br/>Daily deaths: ' + value;
                 },
                 useHTML: true,
             },
@@ -1106,23 +1196,75 @@
                 }
             },
             series: [{
-                colorIndex: 1,
+                colorIndex: 4,
                 id: 'Covid19',
-                data: initial_bar_30_data,
+                data: initial_deaths_bar_30_data,
             }],
 
             legend: {
                 enabled: false
             }
         });
+        let tests_bar_30 = Highcharts.chart('tests_bars_30', {
+            chart: {
+                type: 'column',
+            },
+            title: {
+                align: 'left',
+                text: 'Daily change - last 30 days'
+            },
+            xAxis: {
+                categories: dates_30,
+                tickInterval: 20,
+                labels: {
+                    enabled: false
+                },
+                title: {
+                    enabled: false
+                },
+            },
+            yAxis: {
+                title: {
+                    enabled: false
+                    // text: 'Daily change in "active" cases'
+                },
+                endOnTick: false
+            },
+            tooltip: {
+                formatter: function () {
+                    var title = fCapital(this.x),
+                        value = numberFormatterInteger(this.y);
 
+                    return '<b>' + title + '</b><br/>Daily tests: ' + value;
+                },
+                useHTML: true,
+            },
+            plotOptions: {
+                column: {
+                    stacking: 'normal',
+                    borderRadius: 3,
+                    pointPadding: 0
+                },
+                series: {
+                    groupPadding: 0.1,
+                }
+            },
+            series: [{
+                colorIndex: 24,
+                id: 'Covid19',
+                data: initial_tests_bar_30_data,
+            }],
+
+            legend: {
+                enabled: false
+            }
+        });
         let excess_chart = Highcharts.chart('excess_deaths', {
             chart: {
                 type: 'area',
             },
             title: {
-                align: "left",
-                text: "Weekly death toll for all causes"
+                text: undefined
             },
             xAxis: {
                 categories: all_weeks,
@@ -1138,6 +1280,7 @@
                 title: {
                     text: 'Total deaths (for all causes)'
                 },
+                endOnTick: false
             },
             tooltip: {
                 split: false,
@@ -1162,20 +1305,19 @@
             },
             tooltip: {
                 formatter: function () {
-                    var title = fCapital(this.key);
-                    var value = numberFormatterPercentage(this.y);
-                    let tip = "";
-                    if (this.series.index == 0) {
-                        tip = '<text><span style="font-size: 1.1em"><strong>Week ' + title + '</strong></span><br>Weekly death toll (average of 2015-9): ' + value + '</text>';
-                    } else if (this.series.index == 1) {
-                        tip = '<text><span style="font-size: 1.1em"><strong>Week ' + title + '</strong></span><br>Weekly death toll (2020): ' + value + '</text>';
-                    } else {
-                        tip = '<text><span style="font-size: 1.1em"><strong>Week ' + title + '</strong></span><br>Weekly death toll (2021): ' + value + '</text>';
+                    let twentyone = "N/A";
+                    let title = 'Week ' + this.x;
+                    let old = numberFormatterPercentage(this.points[0].y);
+                    let twenty = numberFormatterPercentage(this.points[1].y);
+                    if (this.points.length > 2) {
+                        twentyone = numberFormatterPercentage(this.points[2].y);
                     }
-
-                    return tip
+                    return '<b>' + title + '</b><br/>Weekly death toll (average of 2015-9): ' + old + 
+                    '<br/>Weekly death toll (2020): ' + twenty + 
+                    '<br/>Weekly death toll (2021): ' + twentyone;
                 },
-                useHTML: true
+                useHTML: true,
+                shared: true
             },
             series: [{
                 id: "old",
@@ -1206,136 +1348,6 @@
                     enabled: false,
                     format: ''
                 }
-            },
-            ],
-            legend: {
-                enabled: false
-            }
-        });
-
-        let top_cases_chart = Highcharts.chart('covid_top_cases', {
-            chart: {
-                type: 'bar',
-            },
-
-            title: {
-                align: 'left',
-                text: "Countries with most new cases"
-            },
-            subtitle: {
-                align: 'left',
-                text: "(per 1m people, 7 day average)"
-            },
-            xAxis: {
-                categories: top_cases_countries,
-                title: {
-                    enabled: false
-                },
-            },
-            yAxis: {
-                title: {
-                    enabled: false
-                },
-                labels: {
-                    enabled: false
-                }
-            },
-            tooltip: {
-                split: false,
-            },
-            plotOptions: {
-                bar: {
-                    dataLabels: {
-                        enabled: true,
-                        formatter: function () {
-                            return numberFormatterPercentage(this.y);
-                        },
-                    },
-                    borderRadius: 3,
-                    pointPadding: 0
-                },
-                series: {
-                    groupPadding: 0.1,
-                }
-            },
-            tooltip: {
-                formatter: function () {
-                    var title = fCapital(this.key);
-                    var value = numberFormatterPercentage(this.y);
-                    return '<text><span style="font-size: 1.1em"><strong>' + title + '</strong></span><br>New cases per day per 1m people (7 day average): ' + value + '</text>';
-                },
-                useHTML: true
-            },
-            series: [{
-                id: "cases",
-                name: "cases",
-                colorIndex: 1,
-                data: top_cases_values
-            },
-            ],
-            legend: {
-                enabled: false
-            }
-        });
-
-        let top_deaths_chart = Highcharts.chart('covid_top_deaths', {
-            chart: {
-                type: 'bar',
-            },
-            title: {
-                align: "left",
-                text: "Countries with most new deaths"
-            },
-            subtitle: {
-                align: "left",
-                text: "(per 1m people, 7 day average)"
-            },
-            xAxis: {
-                categories: top_deaths_countries,
-                title: {
-                    enabled: false
-                }
-            },
-            yAxis: {
-                title: {
-                    enabled: false
-                },
-                labels: {
-                    enabled: false
-                }
-            },
-            tooltip: {
-                split: false,
-            },
-            plotOptions: {
-                bar: {
-                    dataLabels: {
-                        enabled: true,
-                        formatter: function () {
-                            return numberFormatterPercentage(this.y);
-                        },
-                    },
-                    borderRadius: 3,
-                    pointPadding: 0
-                },
-                series: {
-                    groupPadding: 0.1,
-                }
-            },
-            tooltip: {
-                formatter: function () {
-                    var title = fCapital(this.key);
-                    var value = numberFormatterPercentage(this.y);
-                    let tip = "";
-                    return '<text><span style="font-size: 1.1em"><strong>' + title + '</strong></span><br>New deaths per day per 1m people (7 day average): ' + value + '</text>';
-                },
-                useHTML: true
-            },
-            series: [{
-                id: "deaths",
-                name: "deaths",
-                colorIndex: 3,
-                data: top_deaths_values
             },
             ],
             legend: {
@@ -1393,37 +1405,16 @@
             }]
         });
 
-
         // Dashboard 1
 
         // Otherwise these charts overflow their containers
         excess_chart.setSize();
-        bar_chart_all.setSize();
-        bar_chart_30.setSize();
-        top_cases_chart.setSize();
-        top_deaths_chart.setSize();
-
-        // Legend
-        bar_chart_points = [{
-            name: 'Cases',
-            colorIndex: 1
-        }, {
-            name: 'Deaths',
-            colorIndex: 3
-        }]
-        var legend = createLegend(bar_chart_points, bar_chart_points, ".dashboard-container-horizontal");
-
-        // legend for background - lockdown info
-        $legend2Container = $('.dashboard-container-horizontal .secondary-legend');
-        var legendItems = [{ name: 'Some movement restrictions', colorIndex: 37 },
-        { name: 'Curfew', colorIndex: 16 },
-        { name: 'Lockdown', colorIndex: 18 }];
-
-        // Append legend items
-        $legend2Container.append('<div>Background: &nbsp &nbsp</div>')
-        for (let point of legendItems) {
-            $legend2Container.append('<div class="legend-item"><div class="dot legend-color-' + point.colorIndex + '" ></div><div class="serieName" id="">' + fCapital(point.name) + '</div></div>');
-        }
+        cases_bar_all.setSize();
+        cases_bar_30.setSize();
+        deaths_bar_all.setSize();
+        deaths_bar_30.setSize();
+        tests_bar_all.setSize();
+        tests_bar_30.setSize();
 
         // Dropdowns
         // Define dropdown container
@@ -1431,7 +1422,7 @@
 
         // Create a parameter dropdown for the map
         var parameterName = "covid-map-parameter",
-            parameterWidth = "300px";
+            parameterWidth = "340px";
         addDropdown(map_filters, parameterName, parameterWidth, parameterChange, all_parameters, parameter);
 
         // Update chart data on parameter change
@@ -1442,38 +1433,21 @@
             chart.series[0].setData(get_map_data());
         }
 
-        // Radio buttons for changing parameter
-        var radios = document.getElementsByClassName('param-radio');
-        for (var i = 0; i < radios.length; i++) {
-            radios[i].onchange = radioChange;
-        }
-
-        function radioChange() {
-            radio_param = document.querySelector('input[name="param-radio"]:checked').value;
-            bar_data_update();
-        }
-
+        // Legends
         excess_chart_points = excess_chart.series;
-        var legend = createLegend(excess_chart_points, excess_chart_points, excess_container_class);
-        // Dropdowns
-        // Define dropdown container
-        var filters = document.querySelector(excess_container_class + " .chart-filters");
+        var excessLegend = createLegend(excess_chart_points, excess_chart_points, excess_container_class);
+        cases_chart_points = cases_bar_30.series;
+        var excessLegend = createLegend(cases_chart_points, cases_chart_points, cases_container_class);
 
         // adjust map color stops according to parameter
         function updateColorStops() {
-            if (parameter == "Confirmed cases per 1 million") {
+            if (parameter == "Cases per 1 million (7 day average)") {
                 chart.colorAxis[0].update({
-                    tickInterval: 20000,
-                    max: 100000,
-                    min: 0,
-                }, false)
-            } else if (parameter == "Deaths per 1 million") {
-                chart.colorAxis[0].update({
-                    tickInterval: 500,
+                    tickInterval: 400,
                     max: 2000,
                     min: 0,
                 }, false)
-            } else if (parameter == "Death rate") {
+            } else if (parameter == "Deaths per 1 million (7 day average)") {
                 chart.colorAxis[0].update({
                     tickInterval: 1,
                     max: 5,
@@ -1495,7 +1469,7 @@
         }
 
         function updateColorOrder() {
-            if (parameter == "Confirmed cases per 1 million") {
+            if (parameter == "Cases per 1 million (7 day average)") {
                 chart.colorAxis[0].update({
                     stops: [
                         [0, getIndexColor(3)],
@@ -1505,17 +1479,7 @@
                         [0.95, getIndexColor(30)]
                     ],
                 }, false)
-            } else if (parameter == "Deaths per 1 million") {
-                chart.colorAxis[0].update({
-                    stops: [
-                        [0, getIndexColor(3)],
-                        [0.35, getIndexColor(23)],
-                        [0.5, getIndexColor(52)],
-                        [0.65, getIndexColor(9)],
-                        [0.95, getIndexColor(30)]
-                    ],
-                }, false)
-            } else if (parameter == "Death rate") {
+            } else if (parameter == "Deaths per 1 million (7 day average)") {
                 chart.colorAxis[0].update({
                     stops: [
                         [0, getIndexColor(3)],
@@ -1601,7 +1565,6 @@
 
         function dateChange() {
             map_repsonse_chart.series[0].setData(get_map_response_data());
-            // let timeData = get_top_cases_time_data();
 
             // to control the animation on change
             let animation = {

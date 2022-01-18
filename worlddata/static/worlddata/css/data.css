@@ -515,8 +515,8 @@ figure {
 }
 
 .dashboard-title {
-  font-size: 140%;
-  text-align: center;
+  font-size: 120%;
+  font-weight: 600;
 }
 
 .dashboard-side-40 {
@@ -1745,32 +1745,8 @@ figure {
   line-height: 0.8;
 }
 
-.covid-bars-all {
+.bars-all {
   padding-bottom: 0;
-}
-
-.covid-bars-all,
-.covid-bars-30,
-.covid-excess {
-  padding-top: 0;
-}
-
-.covid-bars-all .restricted-band,
-.covid-bars-30 .restricted-band,
-.covid-excess .restricted-band {
-  fill: #9d61d1;
-}
-
-.covid-bars-all .curfew-band,
-.covid-bars-30 .curfew-band,
-.covid-excess .curfew-band {
-  fill: #ed45b2;
-}
-
-.covid-bars-all .lockdown-band,
-.covid-bars-30 .lockdown-band,
-.covid-excess .lockdown-band {
-  fill: #970f67;
 }
 
 .side-chart-container {
@@ -1908,12 +1884,36 @@ figure {
   }
 }
 
-.covid-dashboard .covid-bars-all {
+.covid-dashboard .bars-all, .covid-dashboard .bars-30 {
   height: 155px;
 }
 
-.covid-dashboard .covid-bars-30 {
-  height: 155px;
+.covid-dashboard .bars-all .error1, .covid-dashboard .bars-30 .error1 {
+  position: absolute;
+  bottom: 365px;
+  text-align: center;
+  width: 90%;
+  font-size: 110%;
+}
+
+@media only screen and (min-width: 850px) {
+  .covid-dashboard .bars-all .error1, .covid-dashboard .bars-30 .error1 {
+    width: 25%;
+  }
+}
+
+.covid-dashboard .bars-all .error2, .covid-dashboard .bars-30 .error2 {
+  position: absolute;
+  bottom: 205px;
+  text-align: center;
+  width: 90%;
+  font-size: 110%;
+}
+
+@media only screen and (min-width: 850px) {
+  .covid-dashboard .bars-all .error2, .covid-dashboard .bars-30 .error2 {
+    width: 25%;
+  }
 }
 
 .covid-dashboard .chart-legend {
@@ -1940,7 +1940,7 @@ figure {
 }
 
 @media only screen and (min-width: 850px) {
-  .covid-dashboard .dashboard-level-2 .covid-top-container {
+  .covid-dashboard .dashboard-level-2 .covid-deaths-tests-container {
     border-radius: 30px 0px 0px 30px;
     background-image: linear-gradient(to top right, rgba(26, 148, 255, 0.4) 7%, #3f5050 50%);
   }
@@ -1956,16 +1956,16 @@ figure {
   }
 }
 
-.covid-dashboard .covid-top {
+.covid-dashboard .covid-deaths-tests {
   height: 350px;
 }
 
-.covid-dashboard .covid-top .highcharts-data-label {
+.covid-dashboard .covid-deaths-tests .highcharts-data-label {
   font-weight: 400;
 }
 
 @media only screen and (min-width: 850px) {
-  .covid-dashboard .covid-top {
+  .covid-dashboard .covid-deaths-tests {
     width: 50%;
     margin-right: 0px;
   }
