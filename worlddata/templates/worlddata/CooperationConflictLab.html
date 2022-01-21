@@ -37,8 +37,12 @@
 
     <!-- We use highcharts for visualizations -->
     <script src="https://code.highcharts.com/highcharts.js"></script>
+    <script src="https://code.highcharts.com/maps/modules/map.js"></script>
     <script src="https://code.highcharts.com/modules/coloraxis.js"></script>
     <script src="https://code.highcharts.com/modules/heatmap.js"></script>
+
+    <script src="https://code.highcharts.com/mapdata/countries/us/us-all.js"></script>
+
 
     <script src={% static "worlddata/js/chart-helpers.js" %}></script>
 
@@ -104,7 +108,6 @@
         .cclab-main-container {
             color: #1c1c1c;
             background-color: white;
-            margin-top: -100px;
         }
 
         .dashboard-title {
@@ -181,9 +184,16 @@
             width: 100%;
         }
 
+        .us-dashboard-side-50 {
+            width: 100%;
+        }
+
         @media only screen and (min-width: 850px) {
             .cclab-dashboard-side-40 {
                 width: 40%;
+            }
+            .us-dashboard-side-50 {
+                width: 50%;
             }
         }
 
@@ -269,6 +279,9 @@
             border: 1px solid #9dafaf;
             margin-right: 10px;
         }
+        .usdash-container .dropdown-container {
+            max-width: 100%;
+        }
 
         .dropdown-container select {
             position: relative;
@@ -308,26 +321,78 @@
             stroke: none;
         }
 
-        .cclab-stats-container {
+        .cclab-stats-container1 {
+            display: flex;
+            flex-direction: column;
+            margin: 5px;
+        }
+        @media only screen and (min-width: 1250px) {
+            .cclab-stats-container1 {
+                flex-direction: row;
+            }
+        }
+        .cclab-stats-container2 {
             display: flex;
             justify-content: space-around;
             text-align: center;
-            margin: 5px;
             height: 150px;
         }
+        .dash-stats-container2 {
+            display: flex;
+            justify-content: space-around;
+            text-align: center;
+            height: 175px;
+            width:100%;
+        }
+        .dash-stats-container1 {
+            display: flex;
+            flex-direction: column;
+            margin: 3px;
+        }
+        @media only screen and (min-width: 850px) {
+            .dash-stats-container1 {
+                flex-direction: row;
+            }
+        }
 
+        .dash-stat-box {
+            padding: 20px;
+            width: 100%;
+            margin:3px;
+        }
+        @media only screen and (min-width: 850px) {
+            .dash-stat-box {
+                margin: 0;
+                margin-right: 5px;
+            }
+        }
         .cclab-stat-box {
             padding: 20px;
             width: 100%;
+            margin:3px;
+        }
+        @media only screen and (min-width: 125s0px) {
+            .cclab-stat-box {
+                margin: 0;
+                margin-right: 5px;
+            }
         }
 
         .cclab-stat-label-container {
             height: 50%;
         }
+        .dash-stat-label-container {
+            height: 50px;
+        }
 
         .cclab-stat-label {
             font-family: "Bungee";
             font-size: 80%;
+            line-height: 1.4;
+        }
+        .dash-stat-label {
+            font-family: "Bungee";
+            font-size: 100%;
             line-height: 1.4;
         }
 
@@ -339,6 +404,14 @@
         .cclab-stat-value {
             font-size: 200%;
             font-weight: 600;
+        }
+        .dash-stat-value {
+            font-size: 200%;
+            font-weight: 600;
+            height: 90px;
+            flex-direction: column;
+            display: flex;
+            justify-content: center;
         }
 
         .cclab-footer {
@@ -363,6 +436,12 @@
             display: none;
         }
 
+        @media only screen and (min-width: 850px) {
+            .dashboard-breakdown {
+                width: 50%;
+            }
+        }
+
         hr {
             margin-bottom: 10px;
             margin-top: 0;
@@ -380,28 +459,71 @@
             fill: #1c1c1c;
         }
 
-        .highcharts-yellow .highcharts-point {
+        .highcharts-yellow .highcharts-point, .highcharts-yellow .highcharts-halo {
             fill: #E6A519;
         }
 
-        .highcharts-yellow .highcharts-graph {
-            stroke: #E6A519;
-        }
-
-        .highcharts-yellow .highcharts-tracker-line {
+        .highcharts-yellow .highcharts-tracker-line, .highcharts-yellow .highcharts-graph {
             stroke: #E6A519;
             stroke-width: 3px;
         }
+        .highcharts-red1 .highcharts-tracker-line, .highcharts-red1 .highcharts-graph {
+            stroke: #fad2d1;
+            stroke-width: 3px;
+        }
+        .highcharts-red1 .highcharts-point, .highcharts-red1 .highcharts-halo {
+            fill: #fad2d1;
+        }
+        .highcharts-red2 .highcharts-tracker-line, .highcharts-red2 .highcharts-graph {
+            stroke: #f28f8d;
+            stroke-width: 3px;
+        }
+        .highcharts-red2 .highcharts-point, .highcharts-red2 .highcharts-halo {
+            fill: #f28f8d;
+        }
+        .highcharts-red3 .highcharts-tracker-line, .highcharts-red3 .highcharts-graph {
+            stroke: #ec625f;
+            stroke-width: 3px;
+        }
+        .highcharts-red3 .highcharts-area, .highcharts-red3 .highcharts-point, .highcharts-red3 .highcharts-halo{
+            stroke: #ec625f;
+            fill: #ec625f;
+        }
+        .highcharts-red4 .highcharts-tracker-line, .highcharts-red4 .highcharts-graph {
+            stroke: #c83739;
+            stroke-width: 3px;
+        }
+        .highcharts-red4 .highcharts-point, .highcharts-red4 .highcharts-halo {
+            fill: #c83739;
+        }
+        .highcharts-red5 .highcharts-area, .highcharts-red5 .highcharts-point, .highcharts-red5 .highcharts-halo {
+            stroke: #a02c2e;
+            fill: #a02c2e;
+        }
+        .highcharts-red5 .highcharts-tracker-line, .highcharts-red5 .highcharts-graph {
+            stroke: #a02c2e;
+            stroke-width: 3px;
+        }
+        .highcharts-red6 .highcharts-tracker-line, .highcharts-red6 .highcharts-graph {
+            stroke: #641b1d;
+            stroke-width: 3px;
+        }
+        .highcharts-red6 .highcharts-point, .highcharts-red6 .highcharts-halo {
+            fill: #641b1d;
+        }
+        .highcharts-pie-value {
+            fill: #FDC64B;
+        }
 
-        .highcharts-blue .highcharts-point {
+        .highcharts-pie-empty {
+            fill: #5c6068;
+        }
+
+        .highcharts-blue .highcharts-point, .highcharts-blue .highcharts-halo {
             fill: #2D6C60;
         }
 
-        .highcharts-blue .highcharts-graph {
-            stroke: #2D6C60;
-        }
-
-        .highcharts-blue .highcharts-tracker-line {
+        .highcharts-blue .highcharts-tracker-line, .highcharts-blue .highcharts-graph {
             stroke: #2D6C60;
             stroke-width: 3px;
         }
@@ -411,11 +533,21 @@
             fill: #B7E1D9;
             stroke: #B7E1D9;
         }
+        .highcharts-blue-gradient-0 .highcharts-tracker-line, 
+        .highcharts-blue-gradient-0 .highcharts-graph {
+            stroke: #B7E1D9;
+            stroke-width: 3px;
+        }
 
         .highcharts-blue-gradient-1 rect,
         .highcharts-blue-gradient-1 {
             fill: #81CABD;
             stroke: #81CABD;
+        }
+        .highcharts-blue-gradient-1 .highcharts-tracker-line, 
+        .highcharts-blue-gradient-1 .highcharts-graph {
+            stroke: #81CABD;
+            stroke-width: 3px;
         }
 
         .highcharts-blue-gradient-2 rect,
@@ -423,11 +555,21 @@
             fill: #4BB4A1;
             stroke: #4BB4A1;
         }
+        .highcharts-blue-gradient-2 .highcharts-tracker-line, 
+        .highcharts-blue-gradient-2 .highcharts-graph {
+            stroke: #4BB4A1;
+            stroke-width: 3px;
+        }
 
         .highcharts-blue-gradient-3 rect,
         .highcharts-blue-gradient-3 {
             fill: #3C9080;
             stroke: #3C9080;
+        }
+        .highcharts-blue-gradient-3 .highcharts-tracker-line, 
+        .highcharts-blue-gradient-3 .highcharts-graph {
+            stroke: #3C9080;
+            stroke-width: 3px;
         }
 
         .highcharts-blue-gradient-4 rect,
@@ -435,11 +577,21 @@
             fill: #2D6C60;
             stroke: #2D6C60;
         }
+        .highcharts-blue-gradient-4 .highcharts-tracker-line, 
+        .highcharts-blue-gradient-4 .highcharts-graph {
+            stroke: #2D6C60;
+            stroke-width: 3px;
+        }
 
         .highcharts-blue-gradient-5 rect,
         .highcharts-blue-gradient-5 {
             fill: #1E4840;
             stroke: #1E4840;
+        }
+        .highcharts-blue-gradient-5 .highcharts-tracker-line, 
+        .highcharts-blue-gradient-5 .highcharts-graph {
+            stroke: #1E4840;
+            stroke-width: 3px;
         }
 
         .highcharts-blue-gradient-6 rect,
@@ -447,13 +599,100 @@
             fill: #0F2420;
             stroke: #0F2420;
         }
+        .highcharts-blue-gradient-6 .highcharts-tracker-line, 
+        .highcharts-blue-gradient-6 .highcharts-graph {
+            stroke: #0F2420;
+            stroke-width: 3px;
+        }
+        .highcharts-yellow-green-gradient-1 .highcharts-area, 
+        .highcharts-yellow-green-gradient-1 .highcharts-point, 
+        .highcharts-yellow-green-gradient-1 .highcharts-halo {
+            fill: #374839;
+            stroke: #374839;
+        }
+        .highcharts-yellow-green-gradient-1 .highcharts-tracker-line, 
+        .highcharts-yellow-green-gradient-1 .highcharts-graph {
+            stroke: #374839;
+            stroke-width: 3px;
+        }
+
+        .highcharts-yellow-green-gradient-2 .highcharts-area, 
+        .highcharts-yellow-green-gradient-2 .highcharts-point, 
+        .highcharts-yellow-green-gradient-2 .highcharts-halo {
+            fill: #709072;
+            stroke: #709072;
+        }
+        .highcharts-yellow-green-gradient-2 .highcharts-tracker-line, 
+        .highcharts-yellow-green-gradient-2 .highcharts-graph {
+            stroke: #709072;
+            stroke-width: 3px;
+        }
+
+        .highcharts-yellow-green-gradient-3 .highcharts-area, 
+        .highcharts-yellow-green-gradient-3 .highcharts-point, 
+        .highcharts-yellow-green-gradient-3 .highcharts-halo {
+            fill: #9daf9e;
+            stroke: #9daf9e;
+        }
+        .highcharts-yellow-green-gradient-3 .highcharts-tracker-line, 
+        .highcharts-yellow-green-gradient-3 .highcharts-graph {
+            stroke: #9daf9e;
+            stroke-width: 3px;
+        }
+
+        .highcharts-yellow-green-gradient-4 .highcharts-area, 
+        .highcharts-yellow-green-gradient-4 .highcharts-point, 
+        .highcharts-yellow-green-gradient-4 .highcharts-halo {
+            fill: #B5AFB2;
+            stroke: #B5AFB2;
+        }
+        .highcharts-yellow-green-gradient-4 .highcharts-tracker-line, 
+        .highcharts-yellow-green-gradient-4 .highcharts-graph {
+            stroke: #B5AFB2;
+            stroke-width: 3px;
+        }
+
+        .highcharts-yellow-green-gradient-5 .highcharts-area, 
+        .highcharts-yellow-green-gradient-5 .highcharts-point, 
+        .highcharts-yellow-green-gradient-5 .highcharts-halo {
+            fill: #d5bf90;
+            stroke: #d5bf90;
+        }
+        .highcharts-yellow-green-gradient-5 .highcharts-tracker-line, 
+        .highcharts-yellow-green-gradient-5 .highcharts-graph {
+            stroke: #d5bf90;
+            stroke-width: 3px;
+        }
+
+        .highcharts-yellow-green-gradient-6 .highcharts-area, 
+        .highcharts-yellow-green-gradient-6 .highcharts-point, 
+        .highcharts-yellow-green-gradient-6 .highcharts-halo {
+            fill: #FDC64B;
+            stroke: #FDC64B;
+        }
+        .highcharts-yellow-green-gradient-6 .highcharts-tracker-line, 
+        .highcharts-yellow-green-gradient-6 .highcharts-graph {
+            stroke: #FDC64B;
+            stroke-width: 3px;
+        }
+        .highcharts-yellow-green-gradient-7 .highcharts-area, 
+        .highcharts-yellow-green-gradient-7 .highcharts-point, 
+        .highcharts-yellow-green-gradient-7 .highcharts-halo {
+            fill: #A77A25;
+            stroke: #A77A25;
+        }
+        .highcharts-yellow-green-gradient-7 .highcharts-tracker-line, 
+        .highcharts-yellow-green-gradient-7 .highcharts-graph {
+            stroke: #A77A25;
+            stroke-width: 3px;
+        }
 
         .highcharts-yellow-gradient-0 rect,
         .highcharts-yellow-gradient-0 {
             fill: #FFDF99;
             /* stroke: #FFFF99; */
         }
-
+        
         .highcharts-yellow-gradient-1 rect,
         .highcharts-yellow-gradient-1 {
             fill: #FBCD6A;
@@ -496,6 +735,46 @@
             fill: #1c1c1c;
             stroke: #1c1c1c;
         }
+
+        #us_dash_sex .highcharts-data-label text{
+            fill: #ffffff;
+            font-size: 14px;
+        }
+
+        #us_dash_sex .highcharts-background {
+            fill: #404040;
+        }
+        .chart-border {
+            border-style: solid;
+            border-width: 4px;
+            border-color: #c0c0c0;
+            margin: 2px;
+        }
+        .us-dash-info {
+            background-color: #c0c0c0;
+            padding: 10px;
+            margin: 3px;
+        }
+        .us-dash-attention {
+            background-color: #709072;
+            padding: 10px;
+            margin: 3px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-around;
+        }
+        .yellow-font {
+            color: #fdc64b;
+            font-size: 110%;
+        }
+        #usdash_map .highcharts-legend-item:hover text {
+            color: #fdc64b;
+            fill:black;
+        }
+        #usdash_map .highcharts-map-series .highcharts-point {
+            stroke: #776222;
+        }
+
     </style>
 </head>
 
@@ -512,11 +791,108 @@
                 <div class="subtitle-1">How will humanity survive?</div>
                 <div class="subtitle-2">Interdisciplinary science and scholarship is our only hope.</div>
             </div>
+            <!-- remade us dashboard - public facing -->
         </section>
         <div class="cclab-main-container">
 
+            
+            <figure style="margin-bottom:50px;">
+                
+                <div class="container dashboard-container-horizontal CCLab-dashboard usdash-container">
+                    <div class="dashboard-title"> Summary of findings - US cohort
+                    </div>
+                    <div class="dashboard-text">We surveyed a representive cohort of 921 US based participants 12 times between September 26th 
+                        2020 and October 25th 2021. Here are our main findings regarding cooperation.
+                        
+                        </div>
+            <div class="dash-stats-container1">            
+                <div class="dash-stats-container2">
+                    <div class="dash-stat-box" style="background-color: #FDC64B;">
+                        <div class="dash-stat-label-container">
+                            <div class="dash-stat-label"># of individuals</div>
+                            <div id="us_dash_sample_state" class="cclab-stat-sublabel"></div>
+                        </div>
+
+                        <div id="us_dash_sample" class="dash-stat-value"></div>
+                    </div>
+                    <div class="dash-stat-box" style="background-color: #EC625F;">
+                        <div class="dash-stat-label-container">
+                            <div class="dash-stat-label">Average age</div>
+                            <div id="us_dash_age_state" class="cclab-stat-sublabel"></div>
+                        </div>
+                        <div id="us_dash_age" class="dash-stat-value"></div>
+                    </div>
+                    </div>
+                    <div class="dash-stats-container2">
+                    <div class="dash-stat-box" style="background-color: #404040; color: #fff; padding-bottom: 10px;">
+                        <div class="dash-stat-label-container">
+                            <div class="dash-stat-label">Female </div>
+                            <div id="us_dash_sex_state" class="cclab-stat-sublabel"></div>
+                        </div>
+
+                        <div id="us_dash_sex" class="dash-stat-value"></div>
+                    </div>
+                    <div class="dash-stat-box" style="background-color: #ba9043; color: #ffffff; margin-right:0;">
+                        <div class="dash-stat-label-container">
+
+                            <div class="dash-stat-label">COVID-19 infected</div>
+                            <div id="us_dash_covid_state" class="cclab-stat-sublabel"></div>
+                        </div>
+
+                        <div id="us_dash_covid" class="dash-stat-value"></div>
+                    </div>
+                </div>
+            </div>
+            <div class="dashboard-container-vertical dashboard-level-1">
+                <div class="dashboard-container-horizontal us-dashboard-side-50">
+                    <div class="us-dash-info">We examined how people’s willingness to help others and their perceived interdependence with others 
+                        changed during the COVID-19 pandemic. Use the map below to see how people from different states 
+                        responded to some of our questions (graphs on the right).</div>
+                        <div class="us-dash-attention" style="height: 60px;">
+                            <div id="us_dash_state" class="yellow-font"></div>
+                            <div>! Choose a state by clicking on the map</div>
+                        </div>
+                    <div id="usdash_map"></div>
+                </div>
+                 <div class="dashboard-container-horizontal us-dashboard-side-50">
+                    <div class="dashboard-container-vertical">
+                         <div class="chart-border" id="usdash_inter1"></div>
+                        <div class="chart-border" id="usdash_inter2"></div>
+                    </div>
+                     <div class="dashboard-container-vertical">
+
+                        <div class="chart-border" id="usdash_will1"></div>
+                        <div class="chart-border" id="usdash_will2"></div>
+                    </div>
+           
+                </div>
+            </div>
+            <div class="us-dash-info">
+                <div style="font-weight: 600; font-size: 120%; padding-bottom: 10px;">Explore further</div>
+                <div>See how responses changed over time for specific questions broken down by age, sex and COVID-19 infection</div>
+            </div>
+            <div class="us-dash-attention">
+                <div id="usdash_question" class="yellow-font"></div>
+                <div>! Choose a different question:</div>
+                <div id="usdash-question-dropdown"></div>
+            </div>
+            <div class="dashboard-container-vertical">
+
+                <div class="chart-border dashboard-breakdown" id="usdash_covid"></div>
+                <div class="chart-border dashboard-breakdown" id="usdash_age"></div>
+            </div>
+            <div class="dashboard-container-vertical">
+                <div class="chart-border dashboard-breakdown" id="usdash_sex_break"></div>
+                <div class="chart-border dashboard-breakdown" id="usdash_infected"></div>
+            </div>
+
+</div>
+</figure>
+<hr>
+<hr>
+
             <!-- Viz 1 - Dashboard for newer data -->
-            <section style="margin-top:100px;">
+            <section>
                 <div class="container" style="padding-bottom: 0px;">
                     <div class="dashboard-title"> US cohort - data collected between September 26th 2020 and October
                         25th 2021
@@ -555,9 +931,10 @@
                         <div class="dashboard-container-vertical dashboard-level-1">
                             <div class="dashboard-container-horizontal dashboard-side-60">
                                 <div class="dashboard-side" style="height: inherit;">
-                                    <div class="cclab-stats-container">
+                                    <div class="cclab-stats-container1">
+                                        <div class="cclab-stats-container2">
                                         <div class="cclab-stat-box"
-                                            style="background-color: #B5AFB2; margin-right: 5px;">
+                                            style="background-color: #B5AFB2;">
                                             <div class="cclab-stat-label-container">
                                                 <div class="cclab-stat-label"># of individuals</div>
                                                 <div id="new_sample_date" class="cclab-stat-sublabel"></div>
@@ -566,15 +943,17 @@
                                             <div id="new_sample" class="cclab-stat-value"></div>
                                         </div>
                                         <div class="cclab-stat-box"
-                                            style="background-color: #FDC64B; margin-right: 5px;">
+                                            style="background-color: #FDC64B;">
                                             <div class="cclab-stat-label-container">
                                                 <div class="cclab-stat-label">Covid positive</div>
                                                 <div id="new_covid_date" class="cclab-stat-sublabel"></div>
                                             </div>
                                             <div id="new_covid" class="cclab-stat-value"></div>
                                         </div>
+                                    </div>
+                                    <div class="cclab-stats-container2">
                                         <div class="cclab-stat-box"
-                                            style="background-color: #EC625F;margin-right: 5px;">
+                                            style="background-color: #EC625F;">
                                             <div class="cclab-stat-label-container">
                                                 <div class="cclab-stat-label">Infected contacts - avg</div>
                                                 <div id="new_contacts_date" class="cclab-stat-sublabel"></div>
@@ -582,7 +961,7 @@
 
                                             <div id="new_contacts" class="cclab-stat-value"></div>
                                         </div>
-                                        <div class="cclab-stat-box" style="background-color: #709072;">
+                                        <div class="cclab-stat-box" style="background-color: #709072; margin-right:0;">
                                             <div class="cclab-stat-label-container">
 
                                                 <div class="cclab-stat-label">In high risk occupation</div>
@@ -592,6 +971,7 @@
                                             <div id="new_occupation" class="cclab-stat-value"></div>
                                         </div>
                                     </div>
+                                </div>
 
                                     <div class="cclab-chart-container" style="height: 350px;">
                                         <div id="new_heatmap" class="heatmap" style="width:100%;padding-bottom: 20px;">
@@ -713,7 +1093,8 @@
                         <div class="dashboard-container-vertical dashboard-level-1">
                             <div class="dashboard-container-horizontal dashboard-side-60">
                                 <div class="dashboard-side" style="height: inherit;">
-                                    <div class="cclab-stats-container">
+                                    <div class="cclab-stats-container1">
+                                        <div class="cclab-stats-container2">
                                         <div class="cclab-stat-box"
                                             style="background-color: #B5AFB2; margin-right: 5px;">
                                             <div class="cclab-stat-label-container">
@@ -733,6 +1114,8 @@
 
                                             <div id="old_pre" class="cclab-stat-value"></div>
                                         </div>
+                                    </div>
+                                    <div class="cclab-stats-container2">
                                         <div class="cclab-stat-box"
                                             style="background-color: #FDC64B; margin-right: 5px;">
                                             <div class="cclab-stat-label-container">
@@ -751,6 +1134,7 @@
                                         </div>
 
                                     </div>
+                                </div>
 
                                     <div class="cclab-chart-container" style="height: 350px;">
                                         <div id="old_heatmap" class="heatmap" style="width:100%;padding-bottom: 20px;">
@@ -834,7 +1218,7 @@
     </div>
     <!-- Footer -->
     <div class="cclab-footer">
-        <div class="banner-copy">© 2021 Zombie Apocalypse Medicine Alliance</div>
+        <div class="banner-copy">© 2022 Zombie Apocalypse Medicine Alliance</div>
     </div>
 
 
@@ -852,6 +1236,1100 @@
         new_vars_path = static_url + file_new_vars;
         file_new_desc = "worlddata/csv/CCLAB-new-descriptions.csv";
         new_desc_path = static_url + file_new_desc;
+
+
+
+        file_us_map = "worlddata/csv/cclab-dashus-map.csv";
+        us_map_path = static_url + file_us_map;
+        file_us_vars = "worlddata/csv/cclab-dashus-vars.csv";
+        us_vars_path = static_url + file_us_vars;
+        file_us_detail = "worlddata/csv/cclab-dashus-vars-detail.csv";
+        us_detail_path = static_url + file_us_detail;
+        var usDashboard = Promise.all([
+            d3.csv(us_map_path),
+            d3.csv(us_vars_path),
+            d3.csv(us_detail_path)
+        ]).then(function (files) {
+
+            let all_dates2 = ["09/26/2020", "10/27/2020", "11/28/2020", "12/28/2020", "01/27/2021", "02/26/2021", "03/28/2021", "04/27/2021", "05/27/2021", "06/26/2021", "07/26/2021", "08/25/2021"];
+            let all_dates = ["2020-09-26", "2020-10-27", "2020-11-28", "2020-12-28", "2021-01-27", "2021-02-26", "2021-03-28", "2021-04-27", "2021-05-27", "2021-06-26", "2021-07-26", "2021-08-25"];
+
+            // set initial values
+            let state = "All states";
+            // let question = "How likely do you think it is that you will contract COVID-19? (1=Not at all, 7=Extremely)";
+            // let measure = "PerceptionRisk";
+            let all_questions = ["If you have never been infected with COVID-19, how likely do you think it is that you will become infected with COVID-19?",
+                "When my neighborhood succeeds, I feel good",
+                "My neighborhood and I rise and fall together",
+                "When my country succeeds, I feel good",
+                "My country and I rise and fall together",
+                "Someone from your neighborhood is having their house fixed, so it isn't livable. How willing would you be to let them move into your house for a week?",
+                "A person who is a citizen of your own country is having their house fixed, so it isn't livable. How willing would you be to let them move into your house for a week?",
+                "Helping someone from my neighborhood when they are in need is the right thing to do",
+                "Helping someone who is a citizen of your own country when they are in need is the right thing to do"];
+            let question = all_questions[0];
+            let measure = getMeasureName(question);
+            let scale = getResponseScale(question);
+
+            let initial_map_data = get_map_data();
+            let initial_inter1_data_hum = get_measure_array("PFIcountry1");
+            let initial_inter1_data_nei = get_measure_array("PFINeigh1");
+            let initial_inter2_data_hum = get_measure_array("PFIcountry6");
+            let initial_inter2_data_nei = get_measure_array("PFINeigh6");
+            let initial_will1_data_hum = get_measure_array("WillingnessCountry");
+            let initial_will1_data_nei = get_measure_array("WillingnessNeigh");
+            let initial_will2_data_hum = get_measure_array("NBTcountry");
+            let initial_will2_data_nei = get_measure_array("NBTneigh");
+            let initial_covid_q_data = get_measure_array(measure);
+            let initial_covid_cases_data = get_measure_array("CovidCases");
+            let initial_covid_deaths_data = get_measure_array("CovidDeaths");
+            let initial_age1_data = getBreakdownData("Age", "18-24");
+            let initial_age2_data = getBreakdownData("Age", "25-34");
+            let initial_age3_data = getBreakdownData("Age", "35-44");
+            let initial_age4_data = getBreakdownData("Age", "45-54");
+            let initial_age5_data = getBreakdownData("Age", "55-64");
+            let initial_age6_data = getBreakdownData("Age", "65+");
+            let initial_sex1_data = getBreakdownData("Sex", "Male");
+            let initial_sex2_data = getBreakdownData("Sex", "Female");
+            let initial_sex3_data = getBreakdownData("Sex", "Other");
+            let initial_infected1_data = getBreakdownData("Infected", "Covid_yes");
+            let initial_infected2_data = getBreakdownData("Infected", "Covid_no");
+            let initial_infected3_data = getBreakdownData("Infected", "Covid_maybe");
+            setStats();
+            let initial_sex_data = getSexData();
+            setQuestion();
+
+            // let initial_map_data = [{code: 	"nj", value: 453}, {code: "ri", value: 330}, {code: "ma", value: 98}];
+
+            function get_map_data() {
+                var new_data = [];
+                for (let row of files[0]) {
+                    var val = 0;
+                    if (row.State_full != "All") {
+                        val = row.Count;
+                        new_data.push({ code: row.State, value: +val, originalName: row.State_full });
+                    }
+                }
+                return new_data;
+            }
+            function get_measure_array(measure) {
+                var new_data = [];
+                for (let row of files[1]) {
+                    if (row.State == state && row.Measure == measure) {
+                        // new_data = [[all_dates[0],+row.t1], [all_dates[1],+row.t2], [all_dates[2],+row.t3], [all_dates[3],+row.t4], [all_dates[4],+row.t5], [all_dates[5],+row.t6], [all_dates[6],+row.t7], [all_dates[7],+row.t8], [all_dates[8],+row.t9], [all_dates[9],+row.t10], [all_dates[10],+row.t11], [all_dates[11],+row.t12]]
+                        new_data = [[Date.UTC(2020,08,26,0,0,0),+row.t1], [Date.UTC(2020,09,27,0,0,0),+row.t2], [Date.UTC(2020,10,28,0,0,0),+row.t3], [Date.UTC(2020,11,28,0,0,0),+row.t4], [Date.UTC(2021,00,26,0,0,0),+row.t5], [Date.UTC(2021,01,26,0,0,0),+row.t6], [Date.UTC(2021,02,28,0,0,0),+row.t7], [Date.UTC(2021,03,27,0,0,0),+row.t8], [Date.UTC(2021,04,27,0,0,0),+row.t9], [Date.UTC(2021,05,26,0,0,0),+row.t10], [Date.UTC(2021,06,26,0,0,0),+row.t11], [Date.UTC(2021,07,25,0,0,0),+row.t12]]
+                    }
+                }
+                return new_data;
+            }
+            function setStats() {
+                let sample = 0;
+                let age = 0;
+                let covid = 0;
+                let sex = 0;
+
+                for (let row of files[0]) {
+                    if (row.State_full == state) {
+                        age = row.Age;
+                        sample = row.Count;
+                        covid = row.Covid_infected;
+                        sex = row.Sex;
+                    }
+                }
+                let sampleEl = document.getElementById("us_dash_sample");
+                let covidEl = document.getElementById("us_dash_covid");
+                let ageEl = document.getElementById("us_dash_age");
+                let stateEl = document.getElementById("us_dash_state");
+                let sampleStateEl = document.getElementById("us_dash_sample_state");
+                let covidStateEl = document.getElementById("us_dash_covid_state");
+                let sexStateEl = document.getElementById("us_dash_sex_state");
+                let ageStateEl = document.getElementById("us_dash_age_state");
+
+                sampleEl.innerHTML = sample;
+                covidEl.innerHTML = covid;
+                ageEl.innerHTML = age;
+                sampleStateEl.innerHTML = "(" + state + ")";
+                covidStateEl.innerHTML = "(" + state + ")";
+                sexStateEl.innerHTML = "(" + state + ")";
+                ageStateEl.innerHTML = "(" + state + ")";
+                stateEl.innerHTML = "(" + state + ")";
+            }
+            function getSexData() {
+                var new_data = [];
+                let val = 0;
+                let leftover = 0;
+                for (let row of files[0]) {
+                    if (row.State_full == state) {
+                        val = +row.Sex;
+                        leftover = 100 - val;
+                    }
+                }
+                new_data.push({ name: 'female', className: 'highcharts-pie-value', y: val });
+                new_data.push({ name: 'other', className: 'highcharts-pie-empty', y: leftover });
+
+                return new_data;
+            }
+            function sexDataUpdate() {
+                let new_data = getSexData();
+                sex_chart.series[0].setData(new_data);
+            }
+            function lineChartsDataUpdate() {
+                let new_inter1_data_hum = get_measure_array("PFIcountry1");
+                let new_inter1_data_nei = get_measure_array("PFINeigh1");
+                let new_inter2_data_hum = get_measure_array("PFIcountry6");
+                let new_inter2_data_nei = get_measure_array("PFINeigh6");
+                let new_will1_data_hum = get_measure_array("WillingnessCountry");
+                let new_will1_data_nei = get_measure_array("WillingnessNeigh");
+                let new_will2_data_hum = get_measure_array("NBTcountry");
+                let new_will2_data_nei = get_measure_array("NBTneigh");
+
+                inter1_chart.series[0].setData(new_inter1_data_hum);
+                inter1_chart.series[1].setData(new_inter1_data_nei);
+                inter2_chart.series[0].setData(new_inter2_data_hum);
+                inter2_chart.series[1].setData(new_inter2_data_nei);
+                will1_chart.series[0].setData(new_will1_data_hum);
+                will1_chart.series[1].setData(new_will1_data_nei);
+                will2_chart.series[0].setData(new_will2_data_hum);
+                will2_chart.series[1].setData(new_will2_data_nei);
+            }
+            function breakdownChartDataUpdate() {
+                let new_covid_q_data = get_measure_array(measure);
+                let new_covid_cases_data = get_measure_array("CovidCases");
+                let new_covid_deaths_data = get_measure_array("CovidDeaths");
+                let new_age1_data = getBreakdownData("Age", "18-24");
+                let new_age2_data = getBreakdownData("Age", "25-34");
+                let new_age3_data = getBreakdownData("Age", "35-44");
+                let new_age4_data = getBreakdownData("Age", "45-54");
+                let new_age5_data = getBreakdownData("Age", "55-64");
+                let new_age6_data = getBreakdownData("Age", "65+");
+                let new_sex1_data = getBreakdownData("Sex", "Male");
+                let new_sex2_data = getBreakdownData("Sex", "Female");
+                let new_sex3_data = getBreakdownData("Sex", "Other");
+                let new_infected1_data = getBreakdownData("Infected", "Covid_yes");
+                let new_infected2_data = getBreakdownData("Infected", "Covid_no");
+                let new_infected3_data = getBreakdownData("Infected", "Covid_maybe");
+
+                covid_chart.series[0].setData(new_covid_cases_data);
+                covid_chart.series[1].setData(new_covid_deaths_data);
+                covid_chart.series[2].setData(new_covid_q_data);
+                age_chart.series[0].setData(new_age1_data);
+                age_chart.series[1].setData(new_age2_data);
+                age_chart.series[2].setData(new_age3_data);
+                age_chart.series[3].setData(new_age4_data);
+                age_chart.series[4].setData(new_age5_data);
+                age_chart.series[5].setData(new_age6_data);
+                sex_break_chart.series[0].setData(new_sex1_data);
+                sex_break_chart.series[1].setData(new_sex2_data);
+                sex_break_chart.series[2].setData(new_sex3_data);
+                infected_chart.series[0].setData(new_infected1_data);
+                infected_chart.series[1].setData(new_infected2_data);
+                infected_chart.series[2].setData(new_infected3_data);
+            }
+            function setQuestion() {
+                let questionEl = document.getElementById("usdash_question");
+                scale = getResponseScale(question);
+
+                questionEl.innerHTML = question + " " + scale;
+            }
+            function getBreakdownData(category, subcategory) {
+                var new_data = [];
+                for (let row of files[2]) {
+                    if (row.State == state && row.Measure == measure && row.Category == category && row.Subcategory == subcategory) {
+                        new_data = [[Date.UTC(2020,08,26,0,0,0),+row.t1], [Date.UTC(2020,09,27,0,0,0),+row.t2], [Date.UTC(2020,10,28,0,0,0),+row.t3], [Date.UTC(2020,11,28,0,0,0),+row.t4], [Date.UTC(2021,00,26,0,0,0),+row.t5], [Date.UTC(2021,01,26,0,0,0),+row.t6], [Date.UTC(2021,02,28,0,0,0),+row.t7], [Date.UTC(2021,03,27,0,0,0),+row.t8], [Date.UTC(2021,04,27,0,0,0),+row.t9], [Date.UTC(2021,05,26,0,0,0),+row.t10], [Date.UTC(2021,06,26,0,0,0),+row.t11], [Date.UTC(2021,07,25,0,0,0),+row.t12]]
+                    }
+                }
+                return new_data;
+            }
+
+            // Initiate the map chart
+            let map_chart = Highcharts.mapChart('usdash_map', {
+                chart: {
+                    map: 'countries/us/us-all',
+                    height: 420,
+                    events: {
+                        click: function (e) {
+                            state = "All states";
+                            setStats();
+                            sexDataUpdate();
+                            lineChartsDataUpdate();
+                            breakdownChartDataUpdate();
+                        }
+                    }
+                },
+                plotOptions: {
+                    map: {
+                        allAreas: false
+                    }
+                },
+                title: {
+                    text: null
+                },
+                mapNavigation: {
+                    enabled: false,
+                    enableMouseWheelZoom: false,
+                    enableButtons: false,
+                },
+                colorAxis: {
+                    minColor: '#fdce68',
+                    maxColor: '#483E1E',
+                    max: 103, // otherwise 100 gets tranctuated on the legend
+                    tickInterval: 25,
+                    endOnTick: false
+                },
+                tooltip: {
+                    formatter: function () {
+                        var title = fCapital(this.key);
+                        var value = this.point.value;
+                        return '<text><span style="font-size: 1.1em"><strong>' + title + '</strong></span><br># of people: ' + value + '</text>';
+                    },
+                    useHTML: true
+                },
+                credits: {
+                    enabled: false
+                },
+                legend: {
+                    title: {
+                        text: '<div style="width: 200px; text-align: center;"># of people</div>'
+                    },
+                    useHTML: true, // otherwise we cannot center the title
+                },
+                series: [{
+                    data: initial_map_data,
+                    joinBy: ['postal-code', 'code'], // first var: type of geographical data, second: data column name
+                    borderWidth: 0.5,
+                    events: {
+                        click: function (e) {
+                            state = e.point.originalName;
+                            setStats();
+                            sexDataUpdate();
+                            lineChartsDataUpdate();
+                            breakdownChartDataUpdate();
+                        }
+                    }
+                }]
+            });
+            let inter1_chart = Highcharts.chart('usdash_inter1', {
+                chart: {
+                    type: 'spline',
+                    height: 270,
+                },
+                title: {
+                    align: "left",
+                    text: "When my [target] succeeds, I feel good"
+                },
+                xAxis: {
+                    type: 'datetime',
+                    minPadding:0.05,
+                    maxPadding:0.05,
+                    tickPositions: [1601078400000, 1609113600000, 1619481600000, 1629849600000]
+                },
+                yAxis: {
+                    title: {
+                        text: 'Average score',
+                    },
+                    min: 1,
+                    max: 7,
+                },
+                tooltip: {
+                    split: false,
+                },
+                plotOptions: {
+                    spline: {
+                        label: {
+                            enabled: false
+                        },
+                        marker: {
+                            enabled: false
+                        },
+                    },
+                    series: {
+                        groupPadding: 0.1,
+                        color: '#FF0000'
+                    }
+                },
+                tooltip: {
+                    formatter: function () {
+                        let country = numberFormatterPercentage(this.points[0].y);
+                        let neigh = numberFormatterPercentage(this.points[1].y);
+                        let tip = '<text><b>' + Highcharts.dateFormat('%m/%d/%Y', this.x) + 
+                            '</b><br/>Country: ' + country +
+                            '<br/>Neighborhood: ' + neigh + '</text>';
+                        return tip
+                    },
+                    useHTML: true,
+                    shared: true
+                },
+                series: [
+                    {
+                        id: "country",
+                        name: "country",
+                        className: 'highcharts-yellow',
+                        data: initial_inter1_data_hum,
+                        label: {
+                            enabled: false,
+                            format: ''
+                        },
+                    },
+                    {
+                        id: "neighborhood",
+                        name: "neighborhood",
+                        className: 'highcharts-yellow-green-gradient-2',
+                        data: initial_inter1_data_nei,
+                        label: {
+                            enabled: false,
+                            format: ''
+                        },
+                    },
+                ],
+                legend: {
+                    enabled: true
+                }
+
+            });
+            let inter2_chart = Highcharts.chart('usdash_inter2', {
+                chart: {
+                    type: 'spline',
+                    height: 270,
+                },
+                title: {
+                    align: "left",
+                    text: "My [target] and I rise and fall together"
+                },
+                xAxis: {
+                    type: 'datetime',
+                    minPadding:0.05,
+                    maxPadding:0.05,
+                    tickPositions: [1601078400000, 1609113600000, 1619481600000, 1629849600000]
+                },
+                yAxis: {
+                    title: {
+                        text: 'Average score',
+                    },
+                    min: 1,
+                    max: 7,
+                },
+                tooltip: {
+                    split: false,
+                },
+                plotOptions: {
+                    spline: {
+                        label: {
+                            enabled: false
+                        },
+                        marker: {
+                            enabled: false
+                        },
+                    },
+                    series: {
+                        groupPadding: 0.1,
+                        color: '#FF0000'
+                    }
+                },
+                tooltip: {
+                    formatter: function () {
+                        let country = numberFormatterPercentage(this.points[0].y);
+                        let neigh = numberFormatterPercentage(this.points[1].y);
+                        let tip = '<text><b>' + Highcharts.dateFormat('%m/%d/%Y', this.x) + 
+                            '</b><br/>Country: ' + country +
+                            '<br/>Neighborhood: ' + neigh + '</text>';
+                        return tip
+                    },
+                    useHTML: true,
+                    shared: true
+                },
+                series: [
+                    {
+                        id: "country",
+                        name: "country",
+                        className: 'highcharts-yellow',
+                        data: initial_inter2_data_hum,
+                        label: {
+                            enabled: false,
+                            format: ''
+                        }
+                    },
+                    {
+                        id: "neighborhood",
+                        name: "neighborhood",
+                        className: 'highcharts-yellow-green-gradient-2',
+                        data: initial_inter2_data_nei,
+                        label: {
+                            enabled: false,
+                            format: ''
+                        }
+                    },
+                ],
+                legend: {
+                    enabled: true
+                }
+
+            });
+            let will1_chart = Highcharts.chart('usdash_will1', {
+                chart: {
+                    type: 'spline',
+                    height: 320,
+                },
+                title: {
+                    align: "left",
+                    text: "My [target] and I rise and fall together"
+                },
+                xAxis: {
+                    type: 'datetime',
+                    minPadding:0.05,
+                    maxPadding:0.05,
+                    tickPositions: [1601078400000, 1609113600000, 1619481600000, 1629849600000]
+                },
+                yAxis: {
+                    title: {
+                        text: 'Average score',
+                    },
+                    min: 1,
+                    max: 6,
+                },
+                tooltip: {
+                    split: false,
+                },
+                plotOptions: {
+                    spline: {
+                        label: {
+                            enabled: false
+                        },
+                        marker: {
+                            enabled: false
+                        },
+                    },
+                    series: {
+                        groupPadding: 0.1,
+                        color: '#FF0000'
+                    }
+                },
+                tooltip: {
+                    formatter: function () {
+                        let country = numberFormatterPercentage(this.points[0].y);
+                        let neigh = numberFormatterPercentage(this.points[1].y);
+                        let tip = '<text><b>' + Highcharts.dateFormat('%m/%d/%Y', this.x) + 
+                            '</b><br/>Who is a citizen of your own country: ' + country +
+                            '<br/>From your neighborhood: ' + neigh + '</text>';
+                        return tip
+                    },
+                    useHTML: true,
+                    shared: true
+                },
+                series: [
+                    {
+                        id: "country",
+                        name: "who is a citizen of your own country",
+                        className: 'highcharts-yellow',
+                        data: initial_will1_data_hum,
+                        label: {
+                            enabled: false,
+                            format: ''
+                        }
+                    },
+                    {
+                        id: "neighborhood",
+                        name: "from your neighborhood",
+                        className: 'highcharts-yellow-green-gradient-2',
+                        data: initial_will1_data_nei,
+                        label: {
+                            enabled: false,
+                            format: ''
+                        }
+                    },
+                ],
+                legend: {
+                    enabled: true
+                }
+
+            });
+            let will2_chart = Highcharts.chart('usdash_will2', {
+                chart: {
+                    type: 'spline',
+                    height: 320,
+                },
+                title: {
+                    align: "left",
+                    text: "Someone [target] is having their house fixed, so it isn't livable. How willing would you be to let them move into your house for a week?"
+                },
+                xAxis: {
+                    type: 'datetime',
+                    minPadding:0.05,
+                    maxPadding:0.05,
+                    tickPositions: [1601078400000, 1609113600000, 1619481600000, 1629849600000]
+                },
+                yAxis: {
+                    title: {
+                        text: 'Average score',
+                    },
+                    min: 1,
+                    max: 6,
+                },
+                tooltip: {
+                    split: false,
+                },
+                plotOptions: {
+                    spline: {
+                        label: {
+                            enabled: false
+                        },
+                        marker: {
+                            enabled: false
+                        },
+                    },
+                    series: {
+                        groupPadding: 0.1,
+                        color: '#FF0000'
+                    }
+                },
+                tooltip: {
+                    formatter: function () {
+                        let country = numberFormatterPercentage(this.points[0].y);
+                        let neigh = numberFormatterPercentage(this.points[1].y);
+                        let tip = '<text><b>' + Highcharts.dateFormat('%m/%d/%Y', this.x) + 
+                            '</b><br/>Who is a citizen of your own country: ' + country +
+                            '<br/>From your neighborhood: ' + neigh + '</text>';
+                        return tip
+                    },
+                    useHTML: true,
+                    shared: true
+                },
+                series: [
+                    {
+                        id: "country",
+                        name: "who is a citizen of your own country",
+                        className: 'highcharts-yellow',
+                        data: initial_will2_data_hum,
+                        label: {
+                            enabled: false,
+                            format: ''
+                        }
+                    },
+                    {
+                        id: "neighborhood",
+                        name: "from your neighborhood",
+                        className: 'highcharts-yellow-green-gradient-2',
+                        data: initial_will2_data_nei,
+                        label: {
+                            enabled: false,
+                            format: ''
+                        }
+                    },
+                ],
+                legend: {
+                    enabled: true
+                }
+
+            });
+            let sex_chart = Highcharts.chart('us_dash_sex', {
+                chart: {
+                    type: 'pie',
+                    plotBackgroundColor: null,
+                    plotBorderWidth: null,
+                    plotShadow: false,
+                    type: 'pie',
+                    height: 100,
+                    margin: 0
+                },
+                title: {
+                    text: null,
+
+                },
+                tooltip: {
+                    enabled: false
+                },
+                plotOptions: {
+                    pie: {
+                        allowPointSelect: false,
+                        cursor: 'pointer',
+                        enableMouseTracking: false,
+                        dataLabels: {
+                            enabled: true,
+                            distance: -35,
+                            y: -5,
+                            format: "{y}%",
+                            defer: false,
+                            filter: {
+                                property: 'name',
+                                operator: '===',
+                                value: 'female',
+                            },
+                        }
+                    }
+                },
+                series: [{
+                    name: 'Sex',
+                        innerSize: '60%',
+                        data: initial_sex_data
+                    }]
+                });
+
+            let covid_chart = Highcharts.chart('usdash_covid', {
+                chart: {
+                    type: 'spline',
+                    height: 320,
+                },
+                title: {
+                    align: "left",
+                    text: "Average score in relation to COVID-19 prevalence"
+                },
+                xAxis: {
+                    type: 'datetime',
+                    minPadding:0.05,
+                    maxPadding:0.05,
+                    tickPositions: [1601078400000, 1609113600000, 1619481600000, 1629849600000]
+                },
+                yAxis: [{
+                    title: {
+                        text: 'COVID-19 prevalence',
+                    },
+                    
+                },{
+                    title: {
+                        text:'Average score',
+                        rotation: 270
+                    },
+                    opposite: true,
+                    min: 1,
+                    max: 6,
+                }],
+                tooltip: {
+                    split: false,
+                },
+                plotOptions: {
+                    spline: {
+                        label: {
+                            enabled: false
+                        },
+                        marker: {
+                            enabled: false
+                        },
+                    },
+                    area: {
+                        marker: {
+                            enabled: false
+                        },
+                    },
+                    series: {
+                        groupPadding: 0.1,
+                        color: '#FF0000'
+                    }
+                },
+                tooltip: {
+                    formatter: function () {
+                    let cases = numberFormatterPercentage(this.points[0].y);
+                    let deaths = numberFormatterPercentage(this.points[1].y);
+                    let question = numberFormatterPercentage(this.points[2].y);
+                    return '<text><b>' + Highcharts.dateFormat('%m/%d/%Y', this.x) + 
+                        '</b><br/>COVID-19 cases (7 day average): ' + cases + 
+                        '<br/>COVID-19 deaths (7 day average): ' + deaths + 
+                        '<br/>Average score: ' + question + '</text>';
+                },
+                useHTML: true,
+                shared: true
+                },
+                series: [
+                    {
+                        id: "covid_cases",
+                        type: 'area',
+                        name: "COVID-19 cases",
+                        className: 'highcharts-red3',
+                        data: initial_covid_cases_data,
+                        label: {
+                            enabled: false,
+                            format: ''
+                        }
+                    },
+                    {
+                        id: "covid_deaths",
+                        type: 'area',
+                        name: "COVID-19 deaths",
+                        className: 'highcharts-red5',
+                        data: initial_covid_deaths_data,
+                        label: {
+                            enabled: false,
+                            format: ''
+                        }
+                    },
+                    {
+                        id: "covid_question",
+                        type: 'spline',
+                        name: "Average score",
+                        className: 'highcharts-yellow-green-gradient-2',
+                        yAxis: 1,
+                        data: initial_covid_q_data,
+                        label: {
+                            enabled: false,
+                            format: ''
+                        }
+                    },
+                ],
+                legend: {
+                    enabled: true
+                }
+
+            });
+            let age_chart = Highcharts.chart('usdash_age', {
+                chart: {
+                    type: 'spline',
+                    height: 320,
+                },
+                title: {
+                    align: "left",
+                    text: "Breakdown by age"
+                },
+                xAxis: {
+                    type: 'datetime',
+                    minPadding:0.05,
+                    maxPadding:0.05,
+                    tickPositions: [1601078400000, 1609113600000, 1619481600000, 1629849600000]
+                },
+                yAxis: {
+                    title: {
+                        text: 'Average score',
+                    },                  
+                },
+                plotOptions: {
+                    spline: {
+                        marker: {
+                            enabled: false,
+                        },
+                        label: {
+                            enabled: false
+                        }
+                    },
+                    series: {
+                        groupPadding: 0.1,
+                        color: '#FF0000'
+                    }
+                },
+                tooltip: {
+                    formatter: function () {
+                        let age1 = numberFormatterPercentage(this.points[0].y);
+                        let age2 = numberFormatterPercentage(this.points[1].y);
+                        let age3 = numberFormatterPercentage(this.points[2].y);
+                        let age4 = numberFormatterPercentage(this.points[3].y);
+                        let age5 = numberFormatterPercentage(this.points[4].y);
+                        let age6 = numberFormatterPercentage(this.points[5].y);
+                        let tip = '<text><b>' + Highcharts.dateFormat('%m/%d/%Y', this.x) + 
+                            '</b><br/>Aged 18-24: ' + age1 +
+                            '<br/>Aged 25-34: ' + age2 + 
+                            '<br/>Aged 35-44: ' + age3 + 
+                            '<br/>Aged 45-54: ' + age4 + 
+                            '<br/>Aged 55-64: ' + age5 + 
+                            '<br/>Aged 65+: ' + age6 + '</text>';
+                        return tip
+                    },
+                    useHTML: true,
+                    shared: true
+                },
+                series: [
+                    {
+                        id: "age1",
+                        name: "18-24",
+                        className: 'highcharts-yellow-green-gradient-1',
+                        data: initial_age1_data,
+                        label: {
+                            enabled: false,
+                            format: ''
+                        },
+                    },
+                    {
+                        id: "age2",
+                        name: "25-34",
+                        className: 'highcharts-yellow-green-gradient-2',
+                        data: initial_age2_data,
+                        label: {
+                            enabled: false,
+                            format: ''
+                        },
+                    },
+                    {
+                        id: "age3",
+                        name: "35-44",
+                        className: 'highcharts-yellow-green-gradient-3',
+                        data: initial_age3_data,
+                        label: {
+                            enabled: false,
+                            format: ''
+                        },
+                    },
+                    {
+                        id: "age4",
+                        name: "45-54",
+                        className: 'highcharts-yellow-green-gradient-5',
+                        data: initial_age4_data,
+                        label: {
+                            enabled: false,
+                            format: ''
+                        },
+                    },
+                    {
+                        id: "age5",
+                        name: "55-64",
+                        className: 'highcharts-yellow-green-gradient-6',
+                        data: initial_age5_data,
+                        label: {
+                            enabled: false,
+                            format: ''
+                        },
+                    },
+                    {
+                        id: "age6",
+                        name: "65+",
+                        className: 'highcharts-yellow-green-gradient-7',
+                        data: initial_age6_data,
+                        label: {
+                            enabled: false,
+                            format: ''
+                        },
+                    },
+                ],
+                legend: {
+                    enabled: true
+                }
+            });
+            let sex_break_chart = Highcharts.chart('usdash_sex_break', {
+                chart: {
+                    type: 'spline',
+                    height: 320,
+                },
+                title: {
+                    align: "left",
+                    text: "Breakdown by sex"
+                },
+                xAxis: {
+                    type: 'datetime',
+                    minPadding:0.05,
+                    maxPadding:0.05,
+                    tickPositions: [1601078400000, 1609113600000, 1619481600000, 1629849600000]
+                },
+                yAxis: {
+                    title: {
+                        text: 'Average score',
+                    },                  
+                },
+                plotOptions: {
+                    spline: {
+                        marker: {
+                            enabled: false,
+                        },
+                        label: {
+                            enabled: false
+                        }
+                    },
+                    series: {
+                        groupPadding: 0.1,
+                        color: '#FF0000'
+                    }
+                },
+                tooltip: {
+                    formatter: function () {
+                        let sex1 = numberFormatterPercentage(this.points[0].y);
+                        let sex2 = numberFormatterPercentage(this.points[1].y);
+                        let sex3 = numberFormatterPercentage(this.points[2].y);
+                        let tip = '<text><b>' + Highcharts.dateFormat('%m/%d/%Y', this.x) + 
+                            '</b><br/>Male: ' + sex1 +
+                            '<br/>Female: ' + sex2 + 
+                            '<br/>Other: ' + sex3 + '</text>';
+                        return tip
+                    },
+                    useHTML: true,
+                    shared: true
+                },
+                series: [
+                    {
+                        id: "sex1",
+                        name: "Male",
+                        className: 'highcharts-yellow-green-gradient-6',
+                        data: initial_sex1_data,
+                        label: {
+                            enabled: false,
+                            format: ''
+                        },
+                    },
+                    {
+                        id: "sex2",
+                        name: "Female",
+                        className: 'highcharts-yellow-green-gradient-2',
+                        data: initial_sex2_data,
+                        label: {
+                            enabled: false,
+                            format: ''
+                        },
+                    },
+                    {
+                        id: "sex3",
+                        name: "Other",
+                        className: 'highcharts-yellow-green-gradient-4',
+                        data: initial_sex3_data,
+                        label: {
+                            enabled: false,
+                            format: ''
+                        },
+                    },
+                ],
+                legend: {
+                    enabled: true
+                }
+            });
+            let infected_chart = Highcharts.chart('usdash_infected', {
+                chart: {
+                    type: 'spline',
+                    height: 320,
+                },
+                title: {
+                    align: "left",
+                    text: "Breakdown by infection status"
+                },
+                xAxis: {
+                    type: 'datetime',
+                    minPadding:0.05,
+                    maxPadding:0.05,
+                    tickPositions: [1601078400000, 1609113600000, 1619481600000, 1629849600000]
+                },
+                yAxis: {
+                    title: {
+                        text: 'Average score',
+                    },                  
+                },
+                plotOptions: {
+                    spline: {
+                        marker: {
+                            enabled: false,
+                        },
+                        label: {
+                            enabled: false
+                        }
+                    },
+                    series: {
+                        groupPadding: 0.1,
+                        color: '#FF0000'
+                    }
+                },
+                tooltip: {
+                    formatter: function () {
+                        let infected1 = numberFormatterPercentage(this.points[0].y);
+                        let infected2 = numberFormatterPercentage(this.points[1].y);
+                        let infected3 = numberFormatterPercentage(this.points[2].y);
+                        let tip = '<text><b>' + Highcharts.dateFormat('%m/%d/%Y', this.x) + 
+                            '</b><br/>Have been infected: ' + infected1 +
+                            '<br/>Might have been infected: ' + infected2 + 
+                            '<br/>Have not been infected: ' + infected3 + '</text>';
+                        return tip
+                    },
+                    useHTML: true,
+                    shared: true
+                },
+                series: [
+                    {
+                        id: "infected1",
+                        name: "Have been infected",
+                        className: 'highcharts-yellow-green-gradient-6',
+                        data: initial_infected1_data,
+                        label: {
+                            enabled: false,
+                            format: ''
+                        },
+                    },
+                    {
+                        id: "infected2",
+                        name: "Might have been infected",
+                        className: 'highcharts-yellow-green-gradient-4',
+                        data: initial_infected2_data,
+                        label: {
+                            enabled: false,
+                            format: ''
+                        },
+                    },
+                    {
+                        id: "infected3",
+                        name: "Have not been infected",
+                        className: 'highcharts-yellow-green-gradient-2',
+                        data: initial_infected3_data,
+                        label: {
+                            enabled: false,
+                            format: ''
+                        },
+                    },
+                ],
+                legend: {
+                    enabled: true
+                }
+            });
+
+            // to properly fit containers
+            map_chart.setSize();
+            inter1_chart.setSize();
+            inter2_chart.setSize();
+            will1_chart.setSize();
+            will2_chart.setSize();
+            sex_chart.setSize();
+            covid_chart.setSize();
+            age_chart.setSize();
+            sex_break_chart.setSize();
+            infected_chart.setSize();
+
+             // Dropdowns
+            // Define dropdown container
+            var dash_us_dropdown = document.getElementById("usdash-question-dropdown");
+
+            // Create a question dropdown for the map
+            var questionsName = "usdash-questions",
+                questionsWidth = "100%";
+            addDropdown(dash_us_dropdown, questionsName, questionsWidth, questionsChange, all_questions, question);
+
+            // Update chart data on parameter change
+            function questionsChange() {
+                question = document.getElementById(questionsName + "-select").value;
+                measure = getMeasureName(question);
+                setQuestion();
+                breakdownChartDataUpdate();
+            }
+
+            function getResponseScale(question) {
+                let responseScale = {
+                    "If you have never been infected with COVID-19, how likely do you think it is that you will become infected with COVID-19?": "(1=Not at all, 7=Extremely)",
+                "When my neighborhood succeeds, I feel good": "(1=Do not agree at all, 7=Strongly agree)",
+                "My neighborhood and I rise and fall together": "(1=Do not agree at all, 7=Strongly agree)",
+                "When my country succeeds, I feel good": "(1=Do not agree at all, 7=Strongly agree)",
+                "My country and I rise and fall together": "(1=Do not agree at all, 7=Strongly agree)",
+                "Someone from your neighborhood is having their house fixed, so it isn't livable. How willing would you be to let them move into your house for a week?": "(1=Not at all, 7=Very willing)",
+                "A person who is a citizen of your own country is having their house fixed, so it isn't livable. How willing would you be to let them move into your house for a week?": "(1=Not at all, 7=Very willing)",
+                "Helping someone from my neighborhood when they are in need is the right thing to do": "(1=Strongly disagree, 7=Strongly agree)",
+                "Helping someone who is a citizen of your own country when they are in need is the right thing to do": "(1=Strognly disagree, 7= Strongly agree)"};
+
+                let response = responseScale[question];
+                if (!response) {
+                    console.log("response not found for " + question)
+                }
+                return response;
+            }
+
+            function getMeasureName(question) {
+                let measureName = {
+                    "If you have never been infected with COVID-19, how likely do you think it is that you will become infected with COVID-19?": "PerceptionRisk",
+                    "When my neighborhood succeeds, I feel good": "PFINeigh1",
+                    "My neighborhood and I rise and fall together": "PFINeigh6",
+                    "When my country succeeds, I feel good": "PFIcountry1",
+                    "My country and I rise and fall together": "PFIcountry6",
+                    "Someone from your neighborhood is having their house fixed, so it isn't livable. How willing would you be to let them move into your house for a week?": "WillingnessNeigh",
+                    "A person who is a citizen of your own country is having their house fixed, so it isn't livable. How willing would you be to let them move into your house for a week?": "WillingnessCountry",
+                    "Helping someone from my neighborhood when they are in need is the right thing to do": "NBTneigh",
+                    "Helping someone who is a citizen of your own country when they are in need is the right thing to do": "NBTcountry"};
+
+                let measure = measureName[question];
+                if (!measure) {
+                    console.log("measure name not found for " + question)
+                }
+                return measure;
+            }
+
+        })
+            .catch(function (error) {
+                console.log(error);
+            })
+
+
 
         var CovidNewDashboard = Promise.all([
             d3.csv(new_path),
@@ -891,23 +2369,23 @@
                 "b5_openness", "Inches", "Weight", "PostVaccineActivity1", "PostVaccineActivity2", "PostVaccineActivity3", "PostVaccineActivity4",
                 "PostVaccineActivity5", "PostVaccineActivity6", "PostVaccineActivity7", "PostVaccineActivity8", "PostVaccineActivity9",
                 "PostVaccineActivity10", "PostVaccineActivity11", "PostVaccineActivity12", "PostVaccineActivity13", "PostVaccineActivity14",
-                "PostVaccineActivity15", "PostVaccineActivity16", "EffortLive", "NoEffortLive", "LifeExpectancy", 
+                "PostVaccineActivity15", "PostVaccineActivity16", "EffortLive", "NoEffortLive", "LifeExpectancy",
                 "QAnon1", "QAnon2", "QAnon3", "FeetToInches", "InchesTotal", "Height", "Mortality1", "Mortality2",
                 "Mortality3", "Mortality4", "Mortality5", "Mortality6", "Mortality7", "Mortality8", "PositiveRightNow1",
                 "PositiveRightNow2", "PositiveLife1", "PositiveLife2", "PositiveLife3", "PositiveLife4", "PositiveLife5",
                 "PositiveLife6", "PositiveWorld1", "PositiveWorld2", "PositiveWorld3", "PositiveWorld4", "PositiveWorld5",
                 "PositiveWorld6", "PositiveWorld7", "PositiveWorld8", "PositiveWorld9", "SoPA", "SoNA", "NoMaskOutVacc",
-                "MaskOutPoliOri", "MaskOutVacc", "NoMaskInPoliOri", "NoMaskInVacc", "MaskInPoliOri", "MaskInVacc", 
+                "MaskOutPoliOri", "MaskOutVacc", "NoMaskInPoliOri", "NoMaskInVacc", "MaskInPoliOri", "MaskInVacc",
                 "OthersJudgeMask", "JudgeWearMask", "PositiveLifePast1", "PositiveLifePast2", "PositiveLifePast3", "PositiveLifePast4",
-                "PositiveLifePast5", "PositiveWorldPast1", "PositiveWorldPast2", "PositiveWorldPast3", "PositiveWorldPast4", 
+                "PositiveLifePast5", "PositiveWorldPast1", "PositiveWorldPast2", "PositiveWorldPast3", "PositiveWorldPast4",
                 "PositiveWorldPast5", "PositiveWorldPast6", "PositiveWorldPast7", "PositiveWorldPast8", "FriendsRisks1",
                 "FriendsRisks2", "FriendsRisks3", "FriendsRisks4", "FriendsRisks5", "FriendsRisks6", "FriendsRisks7",
                 "LifeOrientation", "Loneliness", "OptimisticEvent", "TimeToEventYears", "TimeToEventWeeks", "TimeToEventDays",
                 "Closure", "MonthRelStatus", "MonthChangeJob", "TechVSconsume", "SelfEnhancement", "AnticipatedFoodScarcity",
-                "FoodInsecurity", "VaccineUSRightThing", "VaccineLocalRightThing", "Booster", "BoosterLocalArea", "Identities1", 
-                "Identities2","Identities3","Identities4","Identities5", "EffortHealth", "PositiveNegative1", "PositiveNegative2", 
-                "Certain1", "Certain2", "CertainFutureLife1", "CertainFutureLife4", "CertainFutureLife5", "CertainFutureLife6", 
-                "CertainFutureWorld1", "CertainFutureWorld2", "CertainFutureWorld4", "CertainFutureWorld5", "CertainFutureWorld6", 
+                "FoodInsecurity", "VaccineUSRightThing", "VaccineLocalRightThing", "Booster", "BoosterLocalArea", "Identities1",
+                "Identities2", "Identities3", "Identities4", "Identities5", "EffortHealth", "PositiveNegative1", "PositiveNegative2",
+                "Certain1", "Certain2", "CertainFutureLife1", "CertainFutureLife4", "CertainFutureLife5", "CertainFutureLife6",
+                "CertainFutureWorld1", "CertainFutureWorld2", "CertainFutureWorld4", "CertainFutureWorld5", "CertainFutureWorld6",
                 "CertainFutureWorld7", "CertainFutureWorld8", "Promotion", "Prevention", "tot_t13", "tot_t9", "tot_t11", "tot_t12"
             ];
             let avg5 = ["HelpGiven", "HelpReceived", "MutualAid", "Predictability", "TraitEmpathicConcern",
@@ -919,14 +2397,14 @@
                 "EmpatheticConcern", "EmpatheticDistress", "PoliticalOrientation", "RiskReduction", "RiskAvoidance",
                 "RiskRetention", "RiskTransfer", "RiskBehaviorComposite", "EntitlementComposite", "SoPA", "SoNA", "SelfEnhancement",
                 "AnticipatedFoodScarcity"];
-            let cat10 = ["SSES", "OthersVaccine", "VaccineRightThing", "AloneTime", "PostVaccineActivity1", 
-                "PostVaccineActivity2", "PostVaccineActivity3", "PostVaccineActivity4", "PostVaccineActivity5", 
+            let cat10 = ["SSES", "OthersVaccine", "VaccineRightThing", "AloneTime", "PostVaccineActivity1",
+                "PostVaccineActivity2", "PostVaccineActivity3", "PostVaccineActivity4", "PostVaccineActivity5",
                 "PostVaccineActivity6", "PostVaccineActivity7", "PostVaccineActivity8", "PostVaccineActivity9",
-                "PostVaccineActivity10", "PostVaccineActivity11", "PostVaccineActivity12", "PostVaccineActivity13", 
+                "PostVaccineActivity10", "PostVaccineActivity11", "PostVaccineActivity12", "PostVaccineActivity13",
                 "PostVaccineActivity14", "PostVaccineActivity15", "PostVaccineActivity16", "VaccineUSRightThing", "Booster",
-                "BoosterLocalArea", "Identities1", "Identities2","Identities3","Identities4","Identities5", "tot_t9"];
+                "BoosterLocalArea", "Identities1", "Identities2", "Identities3", "Identities4", "Identities5", "tot_t9"];
             let cat12 = ["Back2Normal", "TimeToVaccine", "TimeToVaccine", "NoMaskOutVacc",
-                "MaskOutPoliOri", "MaskOutVacc", "NoMaskInPoliOri", "NoMaskInVacc", "MaskInPoliOri", "MaskInVacc", 
+                "MaskOutPoliOri", "MaskOutVacc", "NoMaskInPoliOri", "NoMaskInVacc", "MaskInPoliOri", "MaskInVacc",
                 "OthersJudgeMask", "JudgeWearMask", "MonthRelStatus", "MonthChangeJob", "tot_t11", "tot_t12"];
             let cat30 = ["SmallSooner", "LargerSooner", "@00025.1", "@00039.1", "@00098.1", "@0021.1",
                 "@0034.1", "@0055.1", "@0087.1", "@013.1", "@02.1", "@025.1"];
@@ -941,12 +2419,12 @@
                 "Mortality3", "Mortality4", "Mortality5", "Mortality6", "Mortality7", "Mortality8", "PositiveRightNow1",
                 "PositiveRightNow2", "PositiveLife1", "PositiveLife2", "PositiveLife3", "PositiveLife4", "PositiveLife5",
                 "PositiveLife6", "PositiveWorld1", "PositiveWorld2", "PositiveWorld3", "PositiveWorld4", "PositiveWorld5",
-                "PositiveWorld6", "PositiveWorld7", "PositiveWorld8", "PositiveWorld9", "PositiveLifePast1", "PositiveLifePast2", 
-                "PositiveLifePast3", "PositiveLifePast4", "PositiveLifePast5", "PositiveWorldPast1", "PositiveWorldPast2", 
-                "PositiveWorldPast3", "PositiveWorldPast4", "PositiveWorldPast5", "PositiveWorldPast6", "PositiveWorldPast7", 
+                "PositiveWorld6", "PositiveWorld7", "PositiveWorld8", "PositiveWorld9", "PositiveLifePast1", "PositiveLifePast2",
+                "PositiveLifePast3", "PositiveLifePast4", "PositiveLifePast5", "PositiveWorldPast1", "PositiveWorldPast2",
+                "PositiveWorldPast3", "PositiveWorldPast4", "PositiveWorldPast5", "PositiveWorldPast6", "PositiveWorldPast7",
                 "PositiveWorldPast8", "Loneliness", "OptimisticEvent", "Closure", "TechVSconsume", "VaccineLocalRightThing",
-                "EffortHealth", "PositiveNegative1", "PositiveNegative2", "Certain1", "Certain2", "CertainFutureLife1", 
-                "CertainFutureLife4", "CertainFutureLife5", "CertainFutureLife6", "CertainFutureWorld1", "CertainFutureWorld2", 
+                "EffortHealth", "PositiveNegative1", "PositiveNegative2", "Certain1", "Certain2", "CertainFutureLife1",
+                "CertainFutureLife4", "CertainFutureLife5", "CertainFutureLife6", "CertainFutureWorld1", "CertainFutureWorld2",
                 "CertainFutureWorld4", "CertainFutureWorld5", "CertainFutureWorld6", "CertainFutureWorld7", "CertainFutureWorld8"];
 
             let variable1 = "Stress";
@@ -1053,19 +2531,19 @@
                     }
                 }
 
-                data.push((d1v>0) ? +numberFormatterPercentage(d1v / d1c) : 0);
-                data.push((d2v>0) ? +numberFormatterPercentage(d2v / d2c) : 0);
-                data.push((d3v>0) ? +numberFormatterPercentage(d3v / d3c) : 0);
-                data.push((d4v>0) ? +numberFormatterPercentage(d4v / d4c) : 0);
-                data.push((d5v>0) ? +numberFormatterPercentage(d5v / d5c) : 0);
-                data.push((d6v>0) ? +numberFormatterPercentage(d6v / d6c) : 0);
-                data.push((d7v>0) ? +numberFormatterPercentage(d7v / d7c) : 0);
-                data.push((d8v>0) ? +numberFormatterPercentage(d8v / d8c) : 0);
-                data.push((d9v>0) ? +numberFormatterPercentage(d9v / d9c) : 0);
-                data.push((d10v>0) ? +numberFormatterPercentage(d10v / d10c) : 0);
-                data.push((d11v>0) ? +numberFormatterPercentage(d11v / d11c) : 0);
-                data.push((d12v>0) ? +numberFormatterPercentage(d12v / d12c) : 0);
-                data.push((d13v>0) ? +numberFormatterPercentage(d13v / d13c) : 0);
+                data.push((d1v > 0) ? +numberFormatterPercentage(d1v / d1c) : 0);
+                data.push((d2v > 0) ? +numberFormatterPercentage(d2v / d2c) : 0);
+                data.push((d3v > 0) ? +numberFormatterPercentage(d3v / d3c) : 0);
+                data.push((d4v > 0) ? +numberFormatterPercentage(d4v / d4c) : 0);
+                data.push((d5v > 0) ? +numberFormatterPercentage(d5v / d5c) : 0);
+                data.push((d6v > 0) ? +numberFormatterPercentage(d6v / d6c) : 0);
+                data.push((d7v > 0) ? +numberFormatterPercentage(d7v / d7c) : 0);
+                data.push((d8v > 0) ? +numberFormatterPercentage(d8v / d8c) : 0);
+                data.push((d9v > 0) ? +numberFormatterPercentage(d9v / d9c) : 0);
+                data.push((d10v > 0) ? +numberFormatterPercentage(d10v / d10c) : 0);
+                data.push((d11v > 0) ? +numberFormatterPercentage(d11v / d11c) : 0);
+                data.push((d12v > 0) ? +numberFormatterPercentage(d12v / d12c) : 0);
+                data.push((d13v > 0) ? +numberFormatterPercentage(d13v / d13c) : 0);
 
                 // to hide 0's
                 data.forEach(function (element, index) {
@@ -1295,13 +2773,13 @@
                             covid++;
                         }
                         if (["09/26/2020", "10/27/2020", "11/28/2020", "12/28/2020", "01/27/2021", "02/26/2021",
-                        "03/28/2021", "04/27/2021", "05/27/2021", "06/26/2021", "07/26/2021"].includes(row.Date)) {
+                            "03/28/2021", "04/27/2021", "05/27/2021", "06/26/2021", "07/26/2021"].includes(row.Date)) {
                             if (row.OccupationRisk == 3) {
                                 highRisk++;
                             }
                         } else {
                             if (row.JobRiskCovid > 3) {
-                            highRisk++;
+                                highRisk++;
                             }
                         }
                     }
@@ -1475,10 +2953,33 @@
             let lineChart = Highcharts.chart('new_lines', {
                 chart: {
                     height: 300,
+                    type: 'spline',
                 },
                 title: {
                     text: 'Average response scores for all available time points',
                     align: "left",
+                },
+                plotOptions: {
+                    spline: {
+                        label: {
+                            enabled: false
+                        },
+                        marker: {
+                            enabled: false
+                        },
+                    },
+                },
+                tooltip: {
+                    formatter: function () {
+                        let var1 = numberFormatterPercentage(this.points[0].y);
+                        let var2 = numberFormatterPercentage(this.points[1].y);
+                        let tip = '<text><b>' + this.x + 
+                            '</b><br/>' + this.points[0].series.name + ': ' + var1 +
+                            '<br/>' + this.points[1].series.name + ': ' + var2 + '</text>';
+                        return tip
+                    },
+                    useHTML: true,
+                    shared: true
                 },
                 xAxis: {
                     categories: all_dates,
@@ -1840,7 +3341,7 @@
                     array = [0, 1, 3, 5, 7, 10, 20, 1000];
                 } else if (variable == "TimeToEventDays") {
                     array = [0, 1, 3, 6, 10, 1000];
-                }else if (variable == "tot_t13") {
+                } else if (variable == "tot_t13") {
                     array = [0, 2, 4, 6, 8, 10, 12, 100];
                 }
 
@@ -1928,7 +3429,7 @@
                     cats = ["0", "1-2", "3-4", "5-6", "7-8", "9-10", "10+"];
                 } else if (variable == "TimeToEventDays") {
                     cats = ["0", "1-2", "3-5", "6-10", "10+"];
-                }else if (variable == "tot_t13") {
+                } else if (variable == "tot_t13") {
                     cats = ["1-2", "3-4", "5-6", "7-8", "9-10", "11-12", "13"];
                 }
                 return cats;
@@ -2172,20 +3673,20 @@
                     }
                 }
 
-                data.push((d1v>0) ? +numberFormatterPercentage(d1v / d1c) : 0);
-                data.push((d2v>0) ? +numberFormatterPercentage(d2v / d2c) : 0);
-                data.push((d3v>0) ? +numberFormatterPercentage(d3v / d3c) : 0);
-                data.push((d4v>0) ? +numberFormatterPercentage(d4v / d4c) : 0);
-                data.push((d5v>0) ? +numberFormatterPercentage(d5v / d5c) : 0);
-                data.push((d6v>0) ? +numberFormatterPercentage(d6v / d6c) : 0);
-                data.push((d7v>0) ? +numberFormatterPercentage(d7v / d7c) : 0);
-                data.push((d8v>0) ? +numberFormatterPercentage(d8v / d8c) : 0);
-                data.push((d9v>0) ? +numberFormatterPercentage(d9v / d9c) : 0);
-                data.push((d10v>0) ? +numberFormatterPercentage(d10v / d10c) : 0);
-                data.push((d11v>0) ? +numberFormatterPercentage(d11v / d11c) : 0);
-                data.push((d12v>0) ? +numberFormatterPercentage(d12v / d12c) : 0);
-                data.push((d13v>0) ? +numberFormatterPercentage(d13v / d13c) : 0);
-                data.push((d14v>0) ? +numberFormatterPercentage(d14v / d14c) : 0);
+                data.push((d1v > 0) ? +numberFormatterPercentage(d1v / d1c) : 0);
+                data.push((d2v > 0) ? +numberFormatterPercentage(d2v / d2c) : 0);
+                data.push((d3v > 0) ? +numberFormatterPercentage(d3v / d3c) : 0);
+                data.push((d4v > 0) ? +numberFormatterPercentage(d4v / d4c) : 0);
+                data.push((d5v > 0) ? +numberFormatterPercentage(d5v / d5c) : 0);
+                data.push((d6v > 0) ? +numberFormatterPercentage(d6v / d6c) : 0);
+                data.push((d7v > 0) ? +numberFormatterPercentage(d7v / d7c) : 0);
+                data.push((d8v > 0) ? +numberFormatterPercentage(d8v / d8c) : 0);
+                data.push((d9v > 0) ? +numberFormatterPercentage(d9v / d9c) : 0);
+                data.push((d10v > 0) ? +numberFormatterPercentage(d10v / d10c) : 0);
+                data.push((d11v > 0) ? +numberFormatterPercentage(d11v / d11c) : 0);
+                data.push((d12v > 0) ? +numberFormatterPercentage(d12v / d12c) : 0);
+                data.push((d13v > 0) ? +numberFormatterPercentage(d13v / d13c) : 0);
+                data.push((d14v > 0) ? +numberFormatterPercentage(d14v / d14c) : 0);
 
                 // to hide 0's
                 data.forEach(function (element, index) {
@@ -2596,11 +4097,34 @@
             });
             var lineChart = Highcharts.chart('old_lines', {
                 chart: {
+                    type: 'spline',
                     height: 300
                 },
                 title: {
                     text: 'Average response scores for all available time points',
                     align: "left",
+                },
+                plotOptions: {
+                    spline: {
+                        label: {
+                            enabled: false
+                        },
+                        marker: {
+                            enabled: false
+                        },
+                    },
+                },
+                tooltip: {
+                    formatter: function () {
+                        let var1 = numberFormatterPercentage(this.points[0].y);
+                        let var2 = numberFormatterPercentage(this.points[1].y);
+                        let tip = '<text><b>' + this.x + 
+                            '</b><br/>' + this.points[0].series.name + ': ' + var1 +
+                            '<br/>' + this.points[1].series.name + ': ' + var2 + '</text>';
+                        return tip
+                    },
+                    useHTML: true,
+                    shared: true
                 },
                 xAxis: {
                     categories: all_dates,
