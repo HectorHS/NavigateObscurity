@@ -666,6 +666,11 @@ figure {
       display: flex;
       .profile-label {
       }
+      .profile-title {
+        font-size: 110%;
+        font-weight: 600;
+        text-decoration-line: underline;
+      }
       .profile-value {
         // color: $bright-blue;
         font-weight: 600;
@@ -813,6 +818,45 @@ figure {
   vertical-align: -webkit-baseline-middle;
   margin-left: 5px;
   margin-bottom: 2px;
+}
+.i-info {
+  background-image: url(../../../../static/main/icons/info-white.svg);
+  height: 18px;
+  width: 18px;
+  display: inline-block;
+  background-repeat: no-repeat;
+  vertical-align: middle;
+  vertical-align: -webkit-baseline-middle;
+  margin-left: 5px;
+  margin-bottom: 2px;
+  &:hover{
+    background-image: url(../../../../static/main/icons/info-blue.svg);
+  }
+}
+.tooltip {
+  position: relative;
+  display: inline-block;
+}
+
+.tooltip .tooltiptext {
+  visibility: hidden;
+  width: max-content;
+  background-color: rgba(46,56,56,0.9);
+  color: $almost-white;
+  border-radius: 3px;
+  padding: 5px 10px;
+  border-style:solid;
+  border-width: 1px;
+  border-color: $bright-blue;
+
+  /* Position the tooltip */
+  position: absolute;
+  z-index: 1;
+  left: 20px;
+}
+
+.tooltip:hover .tooltiptext {
+  visibility: visible;
 }
 
 #covid_top_cases .highcharts-data-label-color-1 text {

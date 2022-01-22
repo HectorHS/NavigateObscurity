@@ -58,30 +58,29 @@
                     </p>
                     <ul style="margin-bottom: 0;">
                         <li>
-                            France has done about 50 times more tests for every positive result compared to India.
+                            During the first two years of the pandemic, Chile had a 50% increase in its total yearly 
+                            death toll (from all causes) compared to the average of the previous five years.
                         </li>
                         <li>
-                            The USA and Ethiopia have similar death rates and positive test
-                            ratios.
+                            The COVID-19 death toll for New Zealand in 2021 and 2022 was similar to its yearly death toll 
+                            of suicide (you might need to check some <a
+                            href="{% url 'worlddata:'|add:'death' %}" target="_blank">death data
+                        </a> for this).
                         </li>
                         <li>
-                            Several European countries had a 100% increase in their total death counts
-                            (from
-                            all
-                            causes)
-                            for a couple of weeks during 2020.
+                            USA had about 3 times more COVID-19 cases in the begining of 2022 compared to the same time last year 
+                            (with about the same amount of tests carried out).
                         </li>
                         <li>
-                            The USA has 50 times more covid-19 related deaths per capita than China.
+                            Germany had approximatelly 20% more total deaths (from all causes) in 2021 and 2022 compared to the average 
+                            of the previous 5 years.
                         </li>
                         <li>
-                            Italy has 20 times more confirmed cases per capita than Russia.
+                            Russia, Cuba, and the US have approximately the same vaccination rate.
                         </li>
                         <li>
-                            More people died from covid-19 in 2020, than the number of deaths caused by
-                            wars,
-                            violent
-                            crimes, terrorism, and drug abuse combined in a year (you might need to check some <a
+                            More people died from covid-19 in 2020, than the number of deaths caused by wars,
+                            violent crimes, terrorism, and drug abuse combined in a year (you might need to check some <a
                                 href="{% url 'worlddata:'|add:'death' %}" target="_blank">death data
                             </a> for this).
                         </li>
@@ -89,38 +88,19 @@
                 </div>
                 <div id="covid_dash_obscurity" class="hide">
                     <p style="margin-top: 0;">
-                        Confirmed cases is the number of people who have tested positive to covid-19. Of course, we
-                        don’t
-                        test
-                        everyone, so we are definitely missing the real number of infected. The question is, by how
-                        much? A
-                        good
-                        indication is to look at how many tests have been done for every positive result. If we have
-                        done
-                        100
-                        tests
-                        for every positive one (1% ratio), our total numbers are probably much more accurate than having
-                        done 2
-                        tests for each positive one (50% ratio). Ok, so I can look at the total confirmed cases, and
-                        then on
-                        the
-                        positive ratio, come up with a fancy calculation formula and then I’ll know. Getting closer, but
-                        not
-                        there
-                        yet. Testing is carried out very differently in different parts of the world. Some countries
-                        count
-                        the
-                        number of people tested, others the number of samples tested, and for many countries we don’t
-                        even
-                        have
-                        data.
-                        Some countries test widely, some narrowly in high risk populations, others use track and test
-                        systems
-                        and so
-                        on. All these different approaches cannot be accurately quantified at this point, but some data
-                        is
-                        better
-                        than no data.
+                        Cases numbers are provided for total cases since the beggining of the pandemic, and as new daily 
+                        cases per 1 million people, as a 7-day average, to show the current prevelance of COVID-19. Either way, 
+                        these are the confirmed cases, which is the number of people who have tested positive to covid-19. Of course, we
+                        don’t test everyone, so we are definitely missing the real number of infected. The question is, by how
+                        much? A good indication is to look at how many tests have been done for every positive result. If we have
+                        done 100 tests for every positive one (1% ratio), our total numbers are probably much more accurate than having
+                        done 2 tests for each positive one (50% ratio). Ok, so I can look at the total confirmed cases, and
+                        then on the positive ratio, come up with a fancy calculation formula and then I’ll know. Getting closer, but
+                        not there yet. Testing is carried out very differently in different parts of the world. Some countries
+                        count the number of people tested, others the number of samples tested, and for many countries we don’t
+                        even have data. Some countries test widely, some narrowly in high risk populations, others use track and 
+                        test systems and so on. All these different approaches cannot be accurately quantified at this point, but 
+                        some data is better than no data.
                     </p>
                     <p>
                         If confirmed cases are so complicated, we can just look at the death data, right? Sure. Just
@@ -129,7 +109,7 @@
                         covid-19 deaths are counted slightly differently in different places. Sometimes even on the same
                         place
                         in
-                        different times. For instance, in the UK, up until the 12 of August all deaths following a
+                        different times. For instance, in the UK, up until the 12 of August of 2020 all deaths following a
                         positive
                         covid-19
                         test were counted in the covid-19 death sum. Then, officials decided to only include deaths
@@ -161,13 +141,6 @@
                         avoiding
                         to visit them out of fear and so on.
                     </p>
-                    <p style="margin-bottom: 0;">
-                        All the additional metrics should be seen in context of the above. The death rates only make
-                        sense
-                        if
-                        there
-                        is adequate testing to record reliable data on confirmed cases.
-                    </p>
                 </div>
                 <div id="covid_dash_navigation" class="hide">
                     <p style="margin-top: 0;">
@@ -189,13 +162,16 @@
                         yesterday, a week ago, or a month ago.
                     </p>
                     <p>
-                        In this regard, the two bar charts should give you an idea of how cases or deaths compare to the
+                        In this regard, the various bar charts should give you an idea of how cases or deaths compare to the
                         past few days and months. These graphs are primarily useful to detect spikes and plateaus of the
-                        disease spread and impact, along with some indication on government responses (more on this
-                        further down).
+                        disease spread and impact. For most countries, on the bar charts showing cases you can also see maped the positive 
+                        test rate which should help interpret rises and falls of cases. For instance, a spike in cases can be driven simply
+                        by doing more tests (New Zealand, November-December 2021, notice a flat positive rate line), or by getting 
+                        more positive results in approximately the same amount of tests (USA, December 2021, notice a spike on positive rate
+                        line).
                     </p>
                     <p>
-                        The weekly death toll is a clear testament that something is going on this year we should be
+                        The weekly death toll is a clear testament that something is going on the past couple of years that we should be
                         paying
                         attention to. Beyond debates of how deadly the virus is, whether the patients were old and
                         sickly
@@ -243,26 +219,50 @@
                             <div class="profile-container">
                                 <div>
                                     <div class="profile-item">
-                                        <div class="profile-label">Total cases:</div>
+                                        <div class="profile-title">Total</div>
+                                    </div>
+                                    <div class="profile-item">
+                                        <div class="profile-label">Cases:</div>
                                         <div id="stat_cases" class="profile-value"></div>
+                                        <div class="i-info tooltip">
+                                            <div class="tooltiptext">
+                                                <div style="font-weight: 600;">Total cases</div>
+                                                <div class="profile-item">
+                                                    <div class="profile-label">2020:</div>
+                                                    <div id="stat_cases_2020" class="profile-value"></div>
+                                                </div>
+                                                <div class="profile-item">
+                                                    <div class="profile-label">2021:</div>
+                                                    <div id="stat_cases_2021" class="profile-value"></div>
+                                                </div>
+                                                <div class="profile-item">
+                                                    <div class="profile-label">2022:</div>
+                                                    <div id="stat_cases_2022" class="profile-value"></div>
+                                                </div>
+                                                
+                                            </div>
+                                        </div>
                                     </div>
                                     <div class="profile-item">
-                                        <div class="profile-label">Current cases per 1m:</div>
-                                        <div id="stat_cases_pc" class="profile-value"></div>
-                                    </div>
-                                    <div class="profile-item">
-                                        <div class="profile-label">Positive test rate:</div>
-                                        <div id="stat_tests_rate" class="profile-value"></div>
-                                    </div>
-                                </div>
-                                <div class="profile-column2">
-                                    <div class="profile-item">
-                                        <div class="profile-label">Total deaths:</div>
+                                        <div class="profile-label">Deaths:</div>
                                         <div id="stat_deaths" class="profile-value"></div>
-                                    </div>
-                                    <div class="profile-item">
-                                        <div class="profile-label">Current deaths per 1m:</div>
-                                        <div id="stat_deaths_pc" class="profile-value"></div>
+                                        <div class="i-info tooltip">
+                                            <div class="tooltiptext">
+                                                <div style="font-weight: 600;">Total deaths</div>
+                                                <div class="profile-item">
+                                                    <div class="profile-label">2020:</div>
+                                                    <div id="stat_deaths_2020" class="profile-value"></div>
+                                                </div>
+                                                <div class="profile-item">
+                                                    <div class="profile-label">2021:</div>
+                                                    <div id="stat_deaths_2021" class="profile-value"></div>
+                                                </div>
+                                                <div class="profile-item">
+                                                    <div class="profile-label">2022:</div>
+                                                    <div id="stat_deaths_2022" class="profile-value"></div>
+                                                </div>
+                                            </div>
+                                        </div>
                                     </div>
                                     <div class="profile-item">
                                         <div class="profile-label">Fully vaccinated:</div>
@@ -272,6 +272,27 @@
                                         <div class="profile-label">+ booster shot:</div>
                                         <div id="stat_booster_share" class="profile-value"></div>
                                     </div>
+                                    
+                                </div>
+                                <div class="profile-column2">
+                                    <div class="profile-item">
+                                        <div class="profile-title">New (7 day average)</div>
+                                    </div>
+                                    <div class="profile-item">
+                                        <div class="profile-label">Cases per 1m:</div>
+                                        <div id="stat_cases_pc" class="profile-value"></div>
+                                    </div>
+                                    <div class="profile-item">
+                                        <div class="profile-label">Deaths per 1m:</div>
+                                        <div id="stat_deaths_pc" class="profile-value"></div>
+                                    </div>
+                                    <div class="profile-item">
+                                        <div class="profile-label">Positive test rate:</div>
+                                        <div id="stat_tests_rate" class="profile-value"></div>
+                                    </div>
+                                   
+
+                                    
                                 </div>
                             </div>
                         </div>
@@ -520,7 +541,13 @@
 
         // Initialise stat elements
         let statDeaths = document.getElementById("stat_deaths");
+        let statDeaths2020 = document.getElementById("stat_deaths_2020");
+        let statDeaths2021 = document.getElementById("stat_deaths_2021");
+        let statDeaths2022 = document.getElementById("stat_deaths_2022");
         let statCases = document.getElementById("stat_cases");
+        let statCases2020 = document.getElementById("stat_cases_2020");
+        let statCases2021 = document.getElementById("stat_cases_2021");
+        let statCases2022 = document.getElementById("stat_cases_2022");
         let statCasesPc = document.getElementById("stat_cases_pc");
         let statDeathsPc = document.getElementById("stat_deaths_pc");
         let statTestsRate = document.getElementById("stat_tests_rate");
@@ -764,13 +791,19 @@
             return 0;
         }
         function setStats() {
-            let cases, casesPc, deaths, deathsPc, testsRate, vaccinationShare, boosterShare;
+            let cases2020, cases2021, cases2022, casesPc, deaths_2020, deaths_2021, deaths_2022, deathsPc, testsRate, vaccinationShare, boosterShare;
 
             for (let row of files[0]) {
                 if (innerCountry == row.Country) {
                     cases = numberFormatterIntegerLarge(+row.Cases);
+                    cases2020 = numberFormatterIntegerLarge(+row.Cases_2020);
+                    cases2021 = numberFormatterIntegerLarge(+row.Cases_2021);
+                    cases2022 = numberFormatterIntegerLarge(+row.Cases_2022);
                     casesPc = numberFormatterPercentage(+row.Cases_week);
                     deaths = numberFormatterIntegerLarge(+row.Deaths);
+                    deaths2020 = numberFormatterIntegerLarge(+row.Deaths_2020);
+                    deaths2021 = numberFormatterIntegerLarge(+row.Deaths_2021);
+                    deaths2022 = numberFormatterIntegerLarge(+row.Deaths_2022);
                     deathsPc = numberFormatterPercentage(+row.Deaths_week);
                     testsRate = numberFormatterPercentage(+row.Positive_rate);
                     vaccinationShare = numberFormatterPercentage(+row.Fully_vaccinated);
@@ -779,12 +812,25 @@
                 }
             }
             statCases.innerHTML = cases;
+            statCases2020.innerHTML = cases2020;
+            statCases2021.innerHTML = cases2021;
+            statCases2022.innerHTML = cases2022;
             statCasesPc.innerHTML = casesPc;
+            statDeaths2020.innerHTML = deaths2020;
             statDeaths.innerHTML = deaths;
+            statDeaths2021.innerHTML = deaths2021;
+            statDeaths2022.innerHTML = deaths2022;
             statDeathsPc.innerHTML = deathsPc;
-            statTestsRate.innerHTML = testsRate + "%";
+            
             statVaccinationShare.innerHTML = vaccinationShare + "%";
             statBoosterShare.innerHTML = boosterShare + "%";
+
+            if (testsRate > 0 ) {
+                statTestsRate.innerHTML = testsRate + "%";
+            } else {
+                statTestsRate.innerHTML = "N/A";
+            }
+            
         }
 
         intial_map_data = get_map_data();

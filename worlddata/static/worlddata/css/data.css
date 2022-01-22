@@ -1856,6 +1856,12 @@ figure {
   display: flex;
 }
 
+.covid-dashboard .profile-container .profile-item .profile-title {
+  font-size: 110%;
+  font-weight: 600;
+  text-decoration-line: underline;
+}
+
 .covid-dashboard .profile-container .profile-item .profile-value {
   font-weight: 600;
   margin-left: 10px;
@@ -2032,6 +2038,47 @@ figure {
   vertical-align: -webkit-baseline-middle;
   margin-left: 5px;
   margin-bottom: 2px;
+}
+
+.i-info {
+  background-image: url(../../../../static/main/icons/info-white.svg);
+  height: 18px;
+  width: 18px;
+  display: inline-block;
+  background-repeat: no-repeat;
+  vertical-align: middle;
+  vertical-align: -webkit-baseline-middle;
+  margin-left: 5px;
+  margin-bottom: 2px;
+}
+
+.i-info:hover {
+  background-image: url(../../../../static/main/icons/info-blue.svg);
+}
+
+.tooltip {
+  position: relative;
+  display: inline-block;
+}
+
+.tooltip .tooltiptext {
+  visibility: hidden;
+  width: max-content;
+  background-color: rgba(46, 56, 56, 0.9);
+  color: #dffcff;
+  border-radius: 3px;
+  padding: 5px 10px;
+  border-style: solid;
+  border-width: 1px;
+  border-color: #1A94FF;
+  /* Position the tooltip */
+  position: absolute;
+  z-index: 1;
+  left: 20px;
+}
+
+.tooltip:hover .tooltiptext {
+  visibility: visible;
 }
 
 #covid_top_cases .highcharts-data-label-color-1 text {
