@@ -461,11 +461,11 @@
         }
 
         .highcharts-yellow .highcharts-point, .highcharts-yellow .highcharts-halo {
-            fill: #E6A519;
+            fill: #A77A25;
         }
 
         .highcharts-yellow .highcharts-tracker-line, .highcharts-yellow .highcharts-graph {
-            stroke: #E6A519;
+            stroke: #A77A25;
             stroke-width: 3px;
         }
         .highcharts-red1 .highcharts-tracker-line, .highcharts-red1 .highcharts-graph {
@@ -521,11 +521,11 @@
         }
 
         .highcharts-blue .highcharts-point, .highcharts-blue .highcharts-halo {
-            fill: #2D6C60;
+            fill: #3C9080;
         }
 
         .highcharts-blue .highcharts-tracker-line, .highcharts-blue .highcharts-graph {
-            stroke: #2D6C60;
+            stroke: #3C9080;
             stroke-width: 3px;
         }
 
@@ -1237,8 +1237,8 @@
         new_vars_path = static_url + file_new_vars;
         file_new_desc = "worlddata/csv/CCLAB-new-descriptions.csv";
         new_desc_path = static_url + file_new_desc;
-
-
+        file_covid = "worlddata/csv/CCLAB-covid.csv";
+        covid_path = static_url + file_covid;
 
         file_us_map = "worlddata/csv/cclab-dashus-map.csv";
         us_map_path = static_url + file_us_map;
@@ -2335,7 +2335,8 @@
         var CovidNewDashboard = Promise.all([
             d3.csv(new_path),
             d3.csv(new_vars_path),
-            d3.csv(new_desc_path)
+            d3.csv(new_desc_path),
+            d3.csv(covid_path)
         ]).then(function (files) {
             // All filterable options
             const all_dates = [...new Set(files[0].map(d => d.Date))];
@@ -2442,11 +2443,15 @@
 
             function getLinesData() {
                 let data = [];
-                slice1 = getLinesDataSlice("one");
-                slice2 = getLinesDataSlice("two");
+                slice1 = getCovidData("cases");
+                slice2 = getCovidData("deaths");
+                slice3 = getLinesDataSlice("one");
+                slice4 = getLinesDataSlice("two");
 
                 data.push(slice1);
                 data.push(slice2);
+                data.push(slice3);
+                data.push(slice4);
                 return data;
             }
             function getLinesDataSlice(number) {
@@ -2553,7 +2558,7 @@
                     }
                 });
 
-                let slice = { name: variable, data: data, className: colorCSS };
+                let slice = { name: variable, data: data, className: colorCSS, type: 'spline', yAxis: 1 };
                 return slice;
             }
             function getAvailableDates(var1) {
@@ -2805,7 +2810,27 @@
                 contactsDateEl.innerHTML = "(" + date + ")";
                 occupationDateEl.innerHTML = "(" + date + ")";
             }
+            function getCovidData(measure) {
+                let data = [];
 
+                if (measure == "cases") {
+                    colorCSS = 'highcharts-red3';
+                } else if (measure == "deaths") {
+                    colorCSS = 'highcharts-red5';
+                }
+
+                for (let row of files[3]) {
+                    if (row.measure == measure) {
+                        for (let date of all_dates)
+                            data.push(+row[date])
+                    }
+                }
+                
+                let slice = { name: fCapital(measure), data: data, className: colorCSS, type:'area' };
+
+                return slice;
+            }
+            
             let initial_lines_data = getLinesData();
             let initial_heatmap_data = getHeatmapData();
             let initial_var1_pie_data = getPieData("one");
@@ -2969,14 +2994,24 @@
                             enabled: false
                         },
                     },
+                    area: {
+                        marker: {
+                            enabled: false
+                        },
+                    },
                 },
                 tooltip: {
                     formatter: function () {
-                        let var1 = numberFormatterPercentage(this.points[0].y);
-                        let var2 = numberFormatterPercentage(this.points[1].y);
+                        let cas = numberFormatterInteger(this.points[0].y);
+                        let dea = numberFormatterInteger(this.points[1].y);
+                        let var1 = numberFormatterPercentage(this.points[2].y);
+                        let var2 = numberFormatterPercentage(this.points[3].y);
                         let tip = '<text><b>' + this.x + 
-                            '</b><br/>' + this.points[0].series.name + ': ' + var1 +
-                            '<br/>' + this.points[1].series.name + ': ' + var2 + '</text>';
+                            '</b><br/>' + this.points[0].series.name + ': ' + cas +
+                            '<br/>' + this.points[1].series.name + ': ' + dea + 
+                            '<br/>' + this.points[2].series.name + ': ' + var1 + 
+                            '<br/>' + this.points[3].series.name + ': ' + var2 + 
+                            '</text>';
                         return tip
                     },
                     useHTML: true,
@@ -2985,12 +3020,21 @@
                 xAxis: {
                     categories: all_dates,
                 },
-                yAxis: {
+                yAxis: [{
                     title: {
-                        text: "Average score"
+                        text: 'COVID-19 prevalence',
                     },
-                },
+                    
+                },{
+                    title: {
+                        text:'Average score',
+                        rotation: 270
+                    },
+                    opposite: true,
+                }],
+
                 series: initial_lines_data,
+               
             });
             let heatmap = Highcharts.chart('new_heatmap', {
                 chart: {
@@ -3951,7 +3995,7 @@
                 contactsDateEl.innerHTML = "(" + date + ")";
                 preDateEl.innerHTML = "(" + date + ")";
             }
-
+            
             let initial_lines_data = getLinesData();
             let initial_heatmap_data = getHeatmapData();
             let initial_var1_pie_data = getPieData("one");
