@@ -206,7 +206,7 @@ FutureWorld1,"How much are you thinking about climate change and other global su
 FutureWorld,"How much are you thinking about climate change and other global sustainability issues that will have an impact on the world in the next 10-20 years? (1=Not at all, 7=A lot)"
 SocialDistnacing1,"To what extent are you avoiding gathering in public places? (1=Not avoiding/cancelling anything, 7= Actively avoiding/canceling as much as possible)"
 SocialDistnacing2," To what extent are you canceling meetings and get-togethers? (1=Not avoiding/cancelling anything, 7= Actively avoiding/canceling as much as possible)"
-Back2Normal,"When do you think life will get back to normal? (1=Two months, 4= Four months, 5=Six months, 6=Nine months, 7=1 year, 8= 1.5 years, 9=2 years, 10=More than 2 years, 11=Never)"
+Back2Normal,"When do you think life will get back to normal? (1=Two weeks, 2=One month, 3=Two months, 4= Four months, 5=Six months, 6=Nine months, 7=1 year, 8= 1.5 years, 9=2 years, 10=More than 2 years, 11=Never)"
 MateSeekingComposite,
 SocialDistanceComposite,
 Isolate1,"I can have a significant impact on limiting the spread of the virus by isolating myself at home and washing my hands frequently. (1=Strongly disagree, 7=Strongly agree)"
