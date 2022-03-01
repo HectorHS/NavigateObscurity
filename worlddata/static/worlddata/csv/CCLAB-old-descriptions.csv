@@ -1,12 +1,12 @@
 key,description
-Age,
-Sex,
-Children,
-Under12,Children under 12
-Over12,Children over 12
-Education,"(1=Less than High School, 2=High School, 3=Some College, 4=2-year degree (Associates), 5=4-year degree (BA, BS), 6=Master's Degree, 7=Doctoral Degree, 8=Professional Degree)"
+Age,What is your age?
+Sex,"What is your sex?(1=male, 2=female, 3=other)"
+Children,How many children do you have?
+Under12,How many children do you have under the age of 12?
+Over12,How many children do you have over the age of 12?/ How many children do you have age 12 and older? 
+Education,"What is the highest level of education that you have completed? (1=Less than High School, 2=High School, 3=Some College, 4=2-year degree (Associates), 5=4-year degree (BA, BS), 6=Master's Degree, 7=Doctoral Degree, 8=Professional Degree)"
 SubjectiveSES,"At the top of the ladder are the people who are the best off, have the most money, most education, and best jobs. These people are represented by number 10 marked on the ladder. At the bottom are the people who are the worst off, have the least money, least education, worst jobs, or no job. These people are represented by number 1 at the bottom of the ladder. "
-Ethnicity,"(1=Asian or Pacific Islander, 2=Hispanic or Latino/a, 3=White or Caucasian, 4=Black or African American, 5=Native American, 6=Other)"
+Ethnicity,"What is your ethnicity? (1=Asian or Pacific Islander, 2=Hispanic or Latino/a, 3=White or Caucasian, 4=Black or African American, 5=Native American, 6=Other)"
 English," Is English your first language? (1=Yes, 2=No)"
 Fluent,"Do you consider yourself to be fluent in English? (1=Yes, 2=No)"
 LivingSituation,"What is your current living situation? (1=Living alone, 2=Living with non-family roommates, 3=Living with family roommates, 4=Living with parents, 5=Living with spouse and children, 6=Living with extended family)"
@@ -17,7 +17,7 @@ MateSeeking2,"Starting a new romantic/sexual relationship is not a high priority
 PFIclose1,"When my close friend succeeds, I feel good. (1=Do not agree at all, 7=Strongly agree)"
 PFIclose2,"When my close friend fails, I feel bad (1=Do not agree at all, 7=Strongly agree)"
 PFIclose3,"I feel that my close friend's gain is my gain. (1=Do not agree at all, 7=Strongly agree)"
-PFIclose4," What is good for my close friend is good for me. (1=Do not agree at all, 7=Strongly agree)"
+PFIclose4,"What is good for my close friend is good for me. (1=Do not agree at all, 7=Strongly agree)"
 PFIclose5,"Honestly, I don't care whether my close friend thrives or not. (1=Do not agree at all, 7=Strongly agree)"
 PFIclose6,"My close friend and I rise and fall together (1=Do not agree at all, 7=Strongly agree)"
 CFIclose1," When something good happens to my close friend, that is à (-3=Very bad for me, 3=Very good for me)"
@@ -28,15 +28,15 @@ CFIclose5," My close friend's gain is (-3=Very bad for me, 3=Very good for me)"
 CFIclose6,"My close friend's loss is (-3=Very bad for me, 3=Very good for me)"
 PFIAcq1,"When my acquaintance succeeds, I feel good. (1=Do not agree at all, 7=Strongly agree)"
 PFIAcq2,"When my acquaintance fails, I feel bad (1=Do not agree at all, 7=Strongly agree)"
-PFIAcq3," I feel that my acquaintance's gain is my gain. (1=Do not agree at all, 7=Strongly agree)"
+PFIAcq3,"I feel that my acquaintance's gain is my gain. (1=Do not agree at all, 7=Strongly agree)"
 PFIAcq4,"What is good for my acquaintance is good for me. (1=Do not agree at all, 7=Strongly agree)"
 PFIAcq5,"Honestly, I don't care whether my acquaintance thrives or not. (1=Do not agree at all, 7=Strongly agree)"
 PFIAcq6,"My acquaintance and I rise and fall together (1=Do not agree at all, 7=Strongly agree)"
-CFIAcq1,"When something good happens to my acquaintance, that is (-3=Very bad for me, 3=Very good for me)"
+CFIAcq1,"CFIAcq -When something good happens to my acquaintance, that is (-3=Very bad for me, 3=Very good for me)"
 CFIAcq2,"CFIAcq - When something bad happens to my acquaintance, that is (-3=Very bad for me, 3=Very good for me)"
 CFIAcq3,"CFIAcq - When my acquaintance succeeds, I feel (-3=Very bad for me, 3=Very good for me)"
 CFIAcq4,"CFIAcq - When my acquaintance fails, I feel (-3=Very bad for me, 3=Very good for me)"
-CFIAcq5,"My acquaintance's gain is (-3=Very bad for me, 3=Very good for me)"
+CFIAcq5,"CFIAcq -My acquaintance's gain is (-3=Very bad for me, 3=Very good for me)"
 CFIAcq6,"CFIAcq - My acquaintance's loss is (-3=Very bad for me, 3=Very good for me)"
 PSS1,"In the last month, how often have you been upset because of something that happened unexpectedly? (1=Never, 5=Very often)"
 PSS2,"In the last month, how often have you felt that you were unable to control the important things in your life? (1=Never, 5=Very often)"
@@ -83,9 +83,9 @@ NonfoodHave,How many days of non-food supplies do you currently have for your ho
 NonfoodWant,How many days of non-food supplies would you like to have for your household?
 FoodHave,How many days of food do you currently have for your household?
 FoodWant,How many days of food would you like to have for your household?
-Summer1,"How much are you thinking about your plans (travel, work, vacation, etc.) for... - the next week? (1=Not at all, 7=Very much)"
-Summer2,"How much are you thinking about your plans (travel, work, vacation, etc.) for... - the next month? (1=Not at all, 7=Very much)"
-Summer3,"How much are you thinking about your plans (travel, work, vacation, etc.) for... - the summer? (1=Not at all, 7=Very much)"
+Summer1,"How much are you thinking about canceling your plans (travel, work, vacation, etc.) for... - the next week? (1=Not at all, 7=Very much)"
+Summer2,"How much are you thinking about canceling your plans (travel, work, vacation, etc.) for... - the next month? (1=Not at all, 7=Very much)"
+Summer3,"How much are you thinking about canceling your plans (travel, work, vacation, etc.) for... - the summer? (1=Not at all, 7=Very much)"
 Concern,"How concerned are you about becoming infected with COVID19? (1=Not at all concerned, 7=Very concerned)"
 OtherConcern,"How concerned are you about other matters (not-related to infection) associated with the COVID19 outbreak? (1=Not at all concerned, 7=Very concerned)"
 DiscussWith1,"How likely are you to talk about your concerns or show that you are concerned with COVID19 with the following people? - Family (1=Not at all likely, 7=Very likely)"
@@ -174,7 +174,7 @@ PrepCOVIDSigOther,"In preparing for and managing COVID19, how good of a job do y
 PrepCOVIDParents,"In preparing for and managing COVID19, how good of a job do you think the following individuals are doing: - Your parents (1=Very bad, 5=Neutral, 10=Excelent)"
 PrepCOVIDSiblings,"In preparing for and managing COVID19, how good of a job do you think the following individuals are doing: - Your siblings (brothers, sisters, etc.) (1=Very bad, 5=Neutral, 10=Excelent)"
 Howmuch,How much money have you spent on preparations for COVID19?
-currency,"What type of currency was this? (1=USD, 2=EUR, 3=JPY, 4=GBP, 5=AUD, 6=CAD, 7=CHF, 8=CNH, 9=SEK, 10=NZD)"
+currency,"What type of currency was this? (linked to howmuch question/key) (1=USD, 2=EUR, 3=JPY, 4=GBP, 5=AUD, 6=CAD, 7=CHF, 8=CNH, 9=SEK, 10=NZD)"
 CloseFriendPFIEmpathyComposite,
 AcqPFIEmpathyComposite,
 NeighborPFIEmpathyComposite,
@@ -324,7 +324,7 @@ Housing3,"Since March 11, when COVID-19 was declared a global pandemic: I moved 
 Homeless,"Since March 11, when COVID-19 was declared a global pandemic: have you experienced homelessness? (1=Never, 2=Sometimes, 3=Often)"
 GreenSettings,"Since March 11, when COVID-19 was declared a global pandemic: have you utilized green settings such as parks, gardens, forests, waterbodies, etc. to find peace, relax or de-stress? (1=Never, 2=Sometimes, 3=Often)"
 OutdoorRec,"To cope with the disruptions and increased demands of COVID-19, have you turned to outdoor recreation to take care of yourself and support your physical or mental health? (1=Never, 2=Sometimes, 3=Often)"
-Movies,
+Movies,Please indicate whether you have seen the following movies
 Discounting1,"Which would you rather receive? (1=$26 right now, 2=$59 in 17 days)"
 Discounting2,"Which would you rather receive? (1=$69 right now , 2=$85 in 91 days)"
 Discounting3,"Which would you rather receive? (1=$47 right now, 2=$80 in 25 days)"
@@ -484,10 +484,6 @@ LargeGroupReason1,"If you have been exposed to large groups of people (i.e., mor
 LargeGroupReason2,"If you have been exposed to large groups of people (i.e., more than 10 people), what were the reasons? (Social reasons)"
 LargeGroupReason3,"If you have been exposed to large groups of people (i.e., more than 10 people), what were the reasons? (Work-related reasons)"
 LargeGroupReason4,"If you have been exposed to large groups of people (i.e., more than 10 people), what were the reasons? (Other reasons)"
-LargeGroupReason1text,Family reasons What was the most common family circumstance that brought you together with more than 10 people?
-LargeGroupReason2text,Social reasons What was the most common social circumstance that brought you together with more than 10 people? 
-LargeGroupReason3text,Work-related reasons What was the most common work-related situation that brought you together with more than 10 people? 
-LargeGroupReason4text,Other reasons Briefly describe the other type of situation that brought you together with more than 10 people. 
 AskingHelpComposite,
 LikelyGiveHelpComposite,
 RiskManagementProtestComposite,
@@ -503,8 +499,5 @@ PFIempathyAcqComposite,
 CFCcomposite,
 CFCcompositeFuture,
 CFCcompositeImmediate,
-IncidenceRate,COVID-19 incidence rate
-DeathRate,COVID-19 death rate
-dc,COVID-19 deaths per incidence ratio
 Facial_Coverings,"Government imposed measures on face coverings (0= No policy, 1= Recommended, 2= Required in some specified shared/public spaces outside the home with other people present, or some situations when social distancing not possible, 3= Required in all shared/public spaces outside the home with other people present or all situations when social distancing not possible, 4= Required outside the home at all times regardless of location or presence of other people)"
 Restrictions_on_gatherings,"Government restrictions limiting group gatherings (0= No restrictions, 1= restrictions on very large gatherings (the limit is above 1000 people), 2= restrictions on gatherings between 101-1000 people, 3= restrictions on gatherings between 11-100 people, 4= restrictions on gatherings of 10 people or less)"

@@ -40,6 +40,7 @@
     <script src="https://code.highcharts.com/maps/modules/map.js"></script>
     <script src="https://code.highcharts.com/modules/coloraxis.js"></script>
     <script src="https://code.highcharts.com/modules/heatmap.js"></script>
+    <script src="https://code.highcharts.com/modules/wordcloud.js"></script>
 
     <script src="https://code.highcharts.com/mapdata/countries/us/us-all.js"></script>
 
@@ -775,6 +776,112 @@
         #usdash_map .highcharts-map-series .highcharts-point {
             stroke: #776222;
         }
+        .look-glo-checks-container {
+            width:100%;
+            display: flex;
+            background-color: #8c8c8c;
+        }
+        .look-glo-check-container {
+            height: 100%;
+            width: 100%;
+        }
+        .look-glo-check {
+            height: 40px;
+            width: 100%;
+        }
+        .look-glo-check-title {
+            text-align: center;
+            font-size: 80%;
+            margin-bottom: 5px;
+        }
+        .check-yes {
+            background-color: #709072;
+            background-image: url(../../static/worlddata/images/yes-100.png);
+            /* height: 200px; */
+            background-position: center;
+            background-size: contain;
+            background-repeat: no-repeat;
+            position: relative;
+            /* top: 300px; */
+        }
+        .check-no {
+            background-color: #c83739;
+            background-image: url(../../static/worlddata/images/no-100.png);
+            /* height: 200px; */
+            background-position: center;
+            background-size: contain;
+            background-repeat: no-repeat;
+            position: relative;
+            /* top: 300px; */
+        }
+        .lookup-dash-info-container {
+            background-color: #8c8c8c;
+            padding: 10px;
+        }
+        .lookup-dash-info {
+            display: flex;
+            flex-direction: column;
+        }
+        .lookup-info-title {
+            flex-basis: 180px;
+            flex-grow: 0;
+            flex-shrink: 0;
+        }
+        .highcharts-wordcloud-series .highcharts-color-0 {
+            fill:#709072;
+            font-family: 'Bungee' !important;
+        }
+        .highcharts-wordcloud-series .highcharts-color-1 {
+            fill:#9ab19c;
+            font-family: 'Bungee' !important;
+        }
+        .highcharts-wordcloud-series .highcharts-color-2 {
+            fill:#435644;
+            font-family: 'Bungee' !important;
+        }
+        .highcharts-wordcloud-series .highcharts-color-3 {
+            fill:#c83739;
+            font-family: 'Bungee' !important;
+        }
+        .highcharts-wordcloud-series .highcharts-color-4 {
+            fill:#de8788;
+            font-family: 'Bungee' !important;
+        }
+        .highcharts-wordcloud-series .highcharts-color-5 {
+            fill:#8c2628;
+            font-family: 'Bungee' !important;
+        }
+        .highcharts-wordcloud-series .highcharts-color-6 {
+            fill:#fdc64b;
+            font-family: 'Bungee' !important;
+        }
+        .highcharts-wordcloud-series .highcharts-color-7 {
+            fill:#fed681;
+            font-family: 'Bungee' !important;
+        }
+        .highcharts-wordcloud-series .highcharts-color-8 {
+            fill:#ca8b02;
+            font-family: 'Bungee' !important;
+        }
+        .highcharts-wordcloud-series .highcharts-color-9 {
+            fill:#709072;
+            font-family: 'Bungee' !important;
+        }
+        .highcharts-green-lookup {
+            stroke: #709072;
+            fill:#709072;
+        }
+        .highcharts-green-lookup .highcharts-point, 
+        .highcharts-green-lookup .highcharts-halo {
+            fill: #709072;
+            stroke: #709072;
+        }
+        .highcharts-green-lookup .highcharts-tracker-line, 
+        .highcharts-green-lookup .highcharts-graph {
+            stroke: #709072;
+            stroke-width: 5px;
+        }
+        
 
     </style>
 </head>
@@ -792,8 +899,99 @@
                 <div class="subtitle-1">How will humanity survive?</div>
                 <div class="subtitle-2">Interdisciplinary science and scholarship is our only hope.</div>
             </div>
-            <!-- remade us dashboard - public facing -->
         </section>
+        <!-- Variable lookup - global cohort -->
+        
+        <div class="cclab-main-container">
+            <div class="container">
+                <div class="lookup-dash-info-container">
+                    <div class="dashboard-title" style="margin:0 0 20px 0;">Variable lookup - global cohorts, t1-t14 </div>
+                    <div class="lookup-dash-info">
+                        <datalist id="look_glo_datalist"></datalist>
+                        <div style="width: 300px; margin-right:30px;">
+        
+                            <div class="search-container">
+                                <input id="look_glo_input" list="look_glo_datalist" placeholder="Search for a variable">
+                            </div>
+                        </div>
+                        <div class="lookup-dash-info">
+                            <div style="display: inline-flex; padding-bottom: 10px;">
+                                <div class="yellow-font lookup-info-title"> Keyword: </div>
+                                <div id="look_glo_key" class="look-glo-text" style="font-size:110%;"></div>
+                            </div>
+                            <div style="display: inline-flex;">
+                                <div class="yellow-font lookup-info-title"> Description: </div>
+                                <div id="look_glo_desc" class="look-glo-text" style="font-size:110%;"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="yellow-font" style="background-color: #8c8c8c; padding:0 10px 10px;">Available at the following time points:</div>
+                <div class="look-glo-checks-container">
+                    <div class="look-glo-check-container">
+                        <div class="look-glo-check-title">06 Mar (t1)</div>
+                        <div class="look-glo-check check-yes"></div>
+                    </div>
+                    <div class="look-glo-check-container">
+                        <div class="look-glo-check-title">14 Mar (t2)</div>
+                        <div class="look-glo-check check-yes"></div>
+                    </div>
+                    <div class="look-glo-check-container">
+                        <div class="look-glo-check-title">24 March (t3)</div>
+                        <div class="look-glo-check check-yes"></div>
+                    </div>
+                    <div class="look-glo-check-container">
+                        <div class="look-glo-check-title">03 Apr (t4)</div>
+                        <div class="look-glo-check check-yes"></div>
+                    </div>
+                    <div class="look-glo-check-container">
+                        <div class="look-glo-check-title">17 Apr (t5)</div>
+                        <div class="look-glo-check check-yes"></div>
+                    </div>
+                    <div class="look-glo-check-container">
+                        <div class="look-glo-check-title">02 May (t6)</div>
+                        <div class="look-glo-check check-yes"></div>
+                    </div>
+                    <div class="look-glo-check-container">
+                        <div class="look-glo-check-title">16 May (t7)</div>
+                        <div class="look-glo-check check-yes"></div>
+                    </div>
+                    <div class="look-glo-check-container">
+                        <div class="look-glo-check-title">30 May (t8)</div>
+                        <div class="look-glo-check check-yes"></div>
+                    </div>
+                    <div class="look-glo-check-container">
+                        <div class="look-glo-check-title">13 Jun (t9)</div>
+                        <div class="look-glo-check check-yes"></div>
+                    </div>
+                    <div class="look-glo-check-container">
+                        <div class="look-glo-check-title">27 Jun (t10)</div>
+                        <div class="look-glo-check check-no"></div>
+                    </div>
+                    <div class="look-glo-check-container">
+                        <div class="look-glo-check-title">11 Jul (t11)</div>
+                        <div class="look-glo-check check-yes"></div>
+                    </div>
+                    <div class="look-glo-check-container">
+                        <div class="look-glo-check-title">25 Jul (t12)</div>
+                        <div class="look-glo-check check-yes"></div>
+                    </div>
+                    <div class="look-glo-check-container">
+                        <div class="look-glo-check-title">08 Aug (t13)</div>
+                        <div class="look-glo-check check-no"></div>
+                    </div>
+                    <div class="look-glo-check-container">
+                        <div class="look-glo-check-title">22 Aug (t14)</div>
+                        <div class="look-glo-check check-yes"></div>
+                    </div>
+                </div>
+                <div id="look_glo_int_chart"></div>
+                <div id="look_glo_str_chart"></div>
+            </div>
+        </div>
+
+            <!-- remade us dashboard - public facing -->
+
         <div class="cclab-main-container">
 
             
@@ -1246,6 +1444,286 @@
         us_vars_path = static_url + file_us_vars;
         file_us_detail = "worlddata/csv/cclab-dashus-vars-detail.csv";
         us_detail_path = static_url + file_us_detail;
+
+        file_glo_look = "worlddata/csv/CCLAB-lookup-glo-lookup.csv";
+        glo_look_path = static_url + file_glo_look;
+        file_glo_desc = "worlddata/csv/CCLAB-lookup-glo-descriptions.csv";
+        glo_desc_path = static_url + file_glo_desc;
+        file_glo_int = "worlddata/csv/CCLAB-lookup-glo-int.csv";
+        glo_int_path = static_url + file_glo_int;
+        file_glo_str = "worlddata/csv/CCLAB-lookup-glo-string.csv";
+        glo_str_path = static_url + file_glo_str;
+
+        // Lookup for global cohort
+        var lookupGlo = Promise.all([
+            d3.csv(glo_look_path),
+            d3.csv(glo_desc_path),
+            d3.csv(glo_int_path),
+            d3.csv(glo_str_path)
+        ]).then(function (files) {
+
+            let all_dates = ["03-06-2020", "03-14-2020", "03-24-2020", "04-03-2020", "04-17-2020", "05-02-2020", "05-16-2020", "05-30-2020", "06-13-2020", "06-27-2020", "07-11-2020", "07-25-2020", "08-08-2020", "08-22-2020"];
+            const all_variables = [...new Set(files[1].map(d => d.key))];
+            let descriptions_lookup = [];
+            for (let row of files[1]) {
+                descriptions_lookup[row.key] = row.description;
+            }
+            let excluded = ["the", "The","on", "of", "and", "was", "is", "my", "it", "from", "to", "in", "about", "I", "that", "be", "for", "would", "were", "me", "have", "at", "so", "not", "My", "as", "more", "i", "what", "we", "had", "with", "by", "how", "did", "do", "a", "it", "that", "then", "this", "there", "than", "get", "but", "don't", "i'm", "am", "she", "he", "or", "an", "you"] 
+
+            let variable = "Stress";
+            let variableInt = "Stress";
+            let variableStr = "Cause";
+            let variableType = "number";
+            
+            varKey = document.getElementById("look_glo_key");
+            varKey.innerHTML = variable;
+            varDesc = document.getElementById("look_glo_desc");
+            varDesc.innerHTML = descriptions_lookup[variable];
+
+            setChecks();
+            hideChart();
+            let initial_average_data = getIntData();
+            let initial_wordcloud_data = getStringData();
+
+            function getStringData() {
+                let text = "";
+                
+                for (let row of files[3]) {
+                    if (row.Measure == variableStr) {
+                        text = row.t1.toLowerCase() + " " + row.t2.toLowerCase() + " " +  row.t3.toLowerCase() + " " +  row.t4.toLowerCase() + " " +  row.t5.toLowerCase() + " " +  row.t6.toLowerCase() + " " +  row.t7.toLowerCase() + " " +  row.t8.toLowerCase() + " " +  row.t9.toLowerCase() + " " +  row.t10.toLowerCase() + " " +  row.t11.toLowerCase() + " " +  row.t12.toLowerCase() + " " +  row.t13.toLowerCase() + " " +  row.t14.toLowerCase();
+                    }
+                }
+                lines = text.split(/[,\. ]+/g),
+                allData = lines.reduce((arr, word) => {
+                    let obj = Highcharts.find(arr, obj => obj.name === word);
+                    if (obj) {
+                        obj.weight += 1;
+                    } else {
+                        obj = {
+                            name: word,
+                            weight: 1
+                        };
+                        arr.push(obj);
+                    }
+                    return arr;
+                }, []);
+                new_data = [];
+                allData.forEach(function (arrayItem) {
+                    if (arrayItem.weight > 1 && !excluded.includes(arrayItem.name)) {
+                        new_data.push(arrayItem);
+                    }
+                });
+                new_data.sort(function(a, b) {
+                    return parseFloat(b.weight) - parseFloat(a.weight);
+                });
+                let new_data_reduced = new_data.slice(0, 100);
+
+                return new_data_reduced;
+            }
+            function getIntData() {
+                var new_data = [];
+                for (let row of files[2]) {
+                    if (row.Measure == variable) {
+                        new_data = [[Date.UTC(2020,02,06,0,0,0),+row.t1], 
+                        [Date.UTC(2020,02,14,0,0,0),+row.t2], 
+                        [Date.UTC(2020,02,24,0,0,0),+row.t3], 
+                        [Date.UTC(2020,03,03,0,0,0),+row.t4], 
+                        [Date.UTC(2020,03,17,0,0,0),+row.t5], 
+                        [Date.UTC(2020,04,02,0,0,0),+row.t6], 
+                        [Date.UTC(2020,04,16,0,0,0),+row.t7], 
+                        [Date.UTC(2020,04,30,0,0,0),+row.t8], 
+                        [Date.UTC(2020,05,13,0,0,0),+row.t9], 
+                        [Date.UTC(2020,05,27,0,0,0),+row.t10], 
+                        [Date.UTC(2020,06,11,0,0,0),+row.t11], 
+                        [Date.UTC(2020,06,25,0,0,0),+row.t12], 
+                        [Date.UTC(2020,07,08,0,0,0),+row.t13], 
+                        [Date.UTC(2020,07,22,0,0,0),+row.t14]]
+                    }
+                }
+
+                // to hide 0's
+                new_data.forEach(function (element, index) {
+                    if (element[1] === 0) {
+                        new_data[index][1] = null;
+                    }
+                });
+
+                return new_data;
+
+            }
+            function hideChart() {
+                intChartEl = document.getElementById('look_glo_int_chart');
+                strChartEl = document.getElementById('look_glo_str_chart');
+
+                if (variableType == "number") {
+                    strChartEl.classList.add("hidden");
+                    intChartEl.classList.remove("hidden");
+                } else {
+                    strChartEl.classList.remove("hidden");
+                    intChartEl.classList.add("hidden");
+                }
+            }
+
+            let int_chart = Highcharts.chart('look_glo_int_chart', {
+                chart: {
+                    type: 'spline',
+                    height: 320,
+                },
+                title: {
+                    text: null
+                },
+                xAxis: {
+                    type: 'datetime',
+                    minPadding:0.05,
+                    maxPadding:0.05,
+                    tickPositions: [1583452800000, 1585872000000, 1588377600000, 1590796800000, 1593216000000, 1595635200000, 1598054400000]
+                },
+                yAxis: {
+                    title: {
+                        text: 'Average score',
+                    },                  
+                },
+                plotOptions: {
+                    spline: {
+                        lineWidth: 4,
+                        marker: {
+                            enabled: true,
+                            radius:5
+                        },
+                        label: {
+                            enabled: false
+                        }
+                    },
+                    series: {
+                        groupPadding: 0.1,
+                        color: '#FF0000'
+                    }
+                },
+                tooltip: {
+                    valueDecimals: 2
+                },
+                series: [{
+                        id: "average",
+                        name: "Average score",
+                        className: 'highcharts-green-lookup',
+                        data: initial_average_data,
+                        lineWidth: 7,
+                        label: {
+                            enabled: false,
+                            format: ''
+                        },
+                    }],
+                legend: {
+                    enabled: false
+                }
+            });
+            let wordcloud = Highcharts.chart('look_glo_str_chart', {
+                series: [{
+                    type: 'wordcloud',
+                    data: initial_wordcloud_data,
+                    name: 'Occurrences',
+                    colors: ['#bbb', '#c0c0c0', '#ff0000']
+                }],
+                title: {
+                    text: null
+                }
+            });
+
+            // Dropdowns
+            let glo_var_input = document.getElementById("look_glo_input");
+            glo_var_input.addEventListener("change", varChange);
+            populateSearchList(all_variables, "look_glo_datalist");
+
+            // Update chart data on variable change
+            function varChange() {
+                // update variables
+                let searchInput = document.getElementById("look_glo_input");
+                variable = searchInput.value;
+                variableType = getVarType();
+                
+                // clear search
+                searchInput.value = '';
+                
+                // update
+                setChecks();
+                varKey.innerHTML = variable;
+                varDesc.innerHTML = descriptions_lookup[variable];
+                if (variableType == "number") {
+                    variableInt = variable;
+                    let newIntData = getIntData();
+                    int_chart.series[0].setData(newIntData);
+                } else if (variableType == "text") {
+                    variableStr = variable;
+                    let newStrData = getStringData();
+                    wordcloud.series[0].setData(newStrData);
+                }
+                hideChart();
+            }
+            function getVarType() {
+                for (let row of files[1]) {
+                    if (row.key == variable && row.type == "int") {
+                        return "number";
+                    } else if (row.key == variable && row.type == "string") {
+                        return "text";
+                    }
+                }
+                console.log("variable type not found for " + variable);
+                return "";
+            }
+            function populateSearchList(variables, containerId) {
+                var container = document.getElementById(containerId);
+                container.innerHTML = '';
+                variables.forEach(function (v) {
+                    var item = document.createElement('option');
+                    item.value = v;
+                    item.label = descriptions_lookup[v];
+                    container.appendChild(item);
+                });
+            }
+
+            function setChecks() {
+                allCheckElements = document.getElementsByClassName("look-glo-check");
+
+                for (let el of allCheckElements) {
+                    el.classList.remove("check-yes");
+                    el.classList.remove("check-no");
+                }
+
+                let look = [];
+                for (let row of files[0]) {
+                    if (row.Name == variable) {
+                        look.push(row.t1);
+                        look.push(row.t2);
+                        look.push(row.t3);
+                        look.push(row.t4);
+                        look.push(row.t5);
+                        look.push(row.t6);
+                        look.push(row.t7);
+                        look.push(row.t8);
+                        look.push(row.t9);
+                        look.push(row.t10);
+                        look.push(row.t11);
+                        look.push(row.t12);
+                        look.push(row.t13);
+                        look.push(row.t14);
+                    }
+                }
+
+                for (let i=0; i<allCheckElements.length; i++) {
+                    if (look[i] == 1) {
+                        allCheckElements[i].classList.add("check-yes");
+                    } else {
+                        allCheckElements[i].classList.add("check-no");
+                    }
+                }
+            }
+
+
+        })
+            .catch(function (error) {
+                console.log(error);
+            })
+
         var usDashboard = Promise.all([
             d3.csv(us_map_path),
             d3.csv(us_vars_path),
@@ -3561,7 +4039,8 @@
                 "AskingHelpComposite", "LikelyGiveHelpComposite", "RiskManagementProtestComposite",
                 "TimesHelpGivenComposite", "HousingInsecurityComposite", "NeedForChaosComposite", "NeedForOrderComposite",
                 "FoodInsecurityComposite", "UseGreenSpacesComposite", "ProportionWearMaskComposite", "CFCcomposite",
-                "CFCcompositeFuture", "CFCcompositeImmediate"];
+                "CFCcompositeFuture", "CFCcompositeImmediate", "PFISharedFateAcqComposite",	"PFIempathyAcqComposite"
+];
             let avg3 = ["HousingInsecurityComposite", "FoodInsecurityComposite", "UseGreenSpacesComposite"]
             let avg4 = ["AnxietyComposite", "SharedAgencyAcqComposite"];
             let avg5 = ["PSScomposite", "PerspectiveTakingComposite"];
@@ -3572,7 +4051,8 @@
                 "WillingnessHumanityComposite", "PerceptionRiskComposite", "PerceptionManagementComposite", "DiseaseAvoidanceComposite",
                 "NBTNeighborComposite", "NBTHumanityComposite", "NBTCountryComposite", "MateSeekingComposite", "SocialDistanceComposite",
                 "RiskManagementcomposite", "PartnerEmpathyAcqComposite", "AskingHelpComposite", "LikelyGiveHelpComposite", "RiskManagementProtestComposite",
-                "TimesHelpGivenComposite", "NeedForChaosComposite", "NeedForOrderComposite", "ProportionWearMaskComposite"];
+                "TimesHelpGivenComposite", "NeedForChaosComposite", "NeedForOrderComposite", "ProportionWearMaskComposite", "PFISharedFateAcqComposite",	
+                "PFIempathyAcqComposite"];
             let avg33 = ["CFICloseFriendComposite", "CFIAcqComposite", "CFINeighborComposite", "CFICountryComposite",
                 "CFIHumanityComposite"];
             let cat8 = ["MaskAttitudes1", "MaskAttitudes2", "MaskAttitudes3", "MaskAttitudes4", "MaskAttitudes5", "SafetyProtests",
