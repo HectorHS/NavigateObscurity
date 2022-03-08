@@ -1093,10 +1093,10 @@
             <!-- Viz 1 - Dashboard for newer data -->
             <section>
                 <div class="container" style="padding-bottom: 0px;">
-                    <div class="dashboard-title"> US cohort - data collected between September 26th 2020 and October
-                        25th 2021
+                    <div class="dashboard-title"> US cohort - data collected between September 26th 2020 and December
+                        16th 2021
                     </div>
-                    <div class="dashboard-text">We surveyed 921 US based participants every month for fourteen months.
+                    <div class="dashboard-text">We surveyed 921 US based participants every month for sixteen months.
                         During that
                         time
                         they answered over 700 unique questions for us. Use the dashboard below to see how their
@@ -1468,7 +1468,7 @@
             for (let row of files[1]) {
                 descriptions_lookup[row.key] = row.description;
             }
-            let excluded = ["the", "The","on", "of", "and", "was", "is", "my", "it", "from", "to", "in", "about", "I", "that", "be", "for", "would", "were", "me", "have", "at", "so", "not", "My", "as", "more", "i", "what", "we", "had", "with", "by", "how", "did", "do", "a", "it", "that", "then", "this", "there", "than", "get", "but", "don't", "i'm", "am", "she", "he", "or", "an", "you"] 
+            let excluded = ["the", "The","on", "of", "and", "was", "is", "my", "it", "from", "to", "in", "about", "I", "that", "be", "for", "would", "were", "me", "have", "at", "so", "not", "My", "as", "more", "i", "what", "we", "had", "with", "by", "how", "did", "do", "a", "it", "that", "then", "this", "there", "than", "get", "but", "don't", "i'm", "am", "she", "he", "or", "an", "you", "if", "its", "it's"] 
 
             let variable = "Stress";
             let variableInt = "Stress";
@@ -2866,31 +2866,41 @@
                 "Identities2", "Identities3", "Identities4", "Identities5", "EffortHealth", "PositiveNegative1", "PositiveNegative2",
                 "Certain1", "Certain2", "CertainFutureLife1", "CertainFutureLife4", "CertainFutureLife5", "CertainFutureLife6",
                 "CertainFutureWorld1", "CertainFutureWorld2", "CertainFutureWorld4", "CertainFutureWorld5", "CertainFutureWorld6",
-                "CertainFutureWorld7", "CertainFutureWorld8", "Promotion", "Prevention", "tot_t13", "tot_t9", "tot_t11", "tot_t12"
+                "CertainFutureWorld7", "CertainFutureWorld8", "Promotion", "Prevention", "tot_t13", "tot_t9", "tot_t11", "tot_t12", 
+                "PFINeighAffectTimeFirstClick", "PFINeighAffectTimeLastClick", "PFINeighAffectTimePageSubmit", "PFINeighAffectTimeClickCount",
+                "PFINeighFateTimeFirstClick", "HelpNeighTimeFirstClick", "PFIcountryAffectTimeFirstClick", "PFIcountryFateTimeFirstClick",
+                "PFINeighFateTimeLastClick", "HelpNeighTimeLastClick", "PFIcountryAffectTimeLastClick", "PFIcountryFateTimeLastClick",
+                "PFINeighFateTimePageSubmit", "HelpNeighTimePageSubmit", "PFIcountryAffectTimePageSubmit", "PFIcountryFateTimePageSubmit",
+                "PFINeighFateTimeClickCount", "HelpNeighTimeClickCount", "PFIcountryAffectTimeClickCount", "PFIcountryFateTimeClickCount",
+                "HelpCountryTimeFirstClick", "HelpCountryTimeLastClick", "HelpCountryTimePageSubmit", "HelpCountryTimeClickCount",
+                "FarXmas1", "PrepXmas1", "FamilyXmas1", "ShareResponsibility1", "HowManyXmas", "NotHouseHoldXmas", "tot_t14"
             ];
+            let avg4 = ["Repayment"];
             let avg5 = ["HelpGiven", "HelpReceived", "MutualAid", "Predictability", "TraitEmpathicConcern",
                 "TraitEmpathicdistress", "BeliefInConspiracy", "ReactanceComposite", "b5_extroversion",
                 "b5_agreeable", "b5_conscientious", "b5_negemotion", "b5_openness", "Promotion", "Prevention"];
-            let avg4 = ["Repayment"];
             let avg6 = ["Challenges"];
             let avg7 = ["PFIaffectNeigh", "PFIaffectCountry", "PFIsharedfateNeigh", "PFIsharedfateCountry",
                 "EmpatheticConcern", "EmpatheticDistress", "PoliticalOrientation", "RiskReduction", "RiskAvoidance",
                 "RiskRetention", "RiskTransfer", "RiskBehaviorComposite", "EntitlementComposite", "SoPA", "SoNA", "SelfEnhancement",
                 "AnticipatedFoodScarcity"];
+            let cat8 = ["ReasonHelp", "TimeTilNewPandemic", "VaccineTV", "VaccinePeers", "FriendsRisks1",
+                "FriendsRisks2", "FriendsRisks3", "FriendsRisks4", "FriendsRisks5", "FriendsRisks6", "FriendsRisks7", "FoodInsecurity"];
+            let cat9 = ["Income", "Savings", "Assests", "Wealth", "QAnon1", "QAnon2", "QAnon3"];
             let cat10 = ["SSES", "OthersVaccine", "VaccineRightThing", "AloneTime", "PostVaccineActivity1",
                 "PostVaccineActivity2", "PostVaccineActivity3", "PostVaccineActivity4", "PostVaccineActivity5",
                 "PostVaccineActivity6", "PostVaccineActivity7", "PostVaccineActivity8", "PostVaccineActivity9",
                 "PostVaccineActivity10", "PostVaccineActivity11", "PostVaccineActivity12", "PostVaccineActivity13",
                 "PostVaccineActivity14", "PostVaccineActivity15", "PostVaccineActivity16", "VaccineUSRightThing", "Booster",
-                "BoosterLocalArea", "Identities1", "Identities2", "Identities3", "Identities4", "Identities5", "tot_t9"];
+                "BoosterLocalArea", "Identities1", "Identities2", "Identities3", "Identities4", "Identities5", "tot_t9",
+                "HelpNeighTimeClickCount"];
             let cat12 = ["Back2Normal", "TimeToVaccine", "TimeToVaccine", "NoMaskOutVacc",
                 "MaskOutPoliOri", "MaskOutVacc", "NoMaskInPoliOri", "NoMaskInVacc", "MaskInPoliOri", "MaskInVacc",
-                "OthersJudgeMask", "JudgeWearMask", "MonthRelStatus", "MonthChangeJob", "tot_t11", "tot_t12"];
+                "OthersJudgeMask", "JudgeWearMask", "MonthRelStatus", "MonthChangeJob", "tot_t11", "tot_t12", "PFINeighAffectTimeClickCount",
+                "PFINeighFateTimeClickCount", "HelpCountryTimeClickCount"];
+            let cat17 = ["PFIcountryAffectTimeClickCount", "PFIcountryFateTimeClickCount"]
             let cat30 = ["SmallSooner", "LargerSooner", "@00025.1", "@00039.1", "@00098.1", "@0021.1",
                 "@0034.1", "@0055.1", "@0087.1", "@013.1", "@02.1", "@025.1"];
-            let cat9 = ["Income", "Savings", "Assests", "Wealth", "QAnon1", "QAnon2", "QAnon3"];
-            let cat8 = ["ReasonHelp", "TimeTilNewPandemic", "VaccineTV", "VaccinePeers", "FriendsRisks1",
-                "FriendsRisks2", "FriendsRisks3", "FriendsRisks4", "FriendsRisks5", "FriendsRisks6", "FriendsRisks7", "FoodInsecurity"];
             let cat100 = ["CausesExtinction1", "CausesExtinction2", "CausesExtinction3",
                 "CausesExtinction4", "CausesExtinction5", "CausesExtinction6", "CausesExtinction8",
                 "CausesExtinction9", "CausesExtinction10", "Optimistic1", "Optimistic2",
@@ -2905,8 +2915,14 @@
                 "PositiveWorldPast8", "Loneliness", "OptimisticEvent", "Closure", "TechVSconsume", "VaccineLocalRightThing",
                 "EffortHealth", "PositiveNegative1", "PositiveNegative2", "Certain1", "Certain2", "CertainFutureLife1",
                 "CertainFutureLife4", "CertainFutureLife5", "CertainFutureLife6", "CertainFutureWorld1", "CertainFutureWorld2",
-                "CertainFutureWorld4", "CertainFutureWorld5", "CertainFutureWorld6", "CertainFutureWorld7", "CertainFutureWorld8"];
-
+                "CertainFutureWorld4", "CertainFutureWorld5", "CertainFutureWorld6", "CertainFutureWorld7", "CertainFutureWorld8",
+                "FarXmas1", "PrepXmas1", "FamilyXmas1", "ShareResponsibility1"];
+            let firstClick = ["PFINeighAffectTimeFirstClick", "PFINeighFateTimeFirstClick", "HelpNeighTimeFirstClick",
+                "PFIcountryAffectTimeFirstClick", "PFIcountryFateTimeFirstClick", "HelpCountryTimeFirstClick"];
+            let lastClick = ["PFINeighAffectTimeLastClick", "PFINeighFateTimeLastClick", "HelpNeighTimeLastClick",
+                "PFIcountryAffectTimeLastClick", "PFIcountryFateTimeLastClick", "HelpCountryTimeLastClick"];
+            let pageSubmit = ["PFINeighFateTimePageSubmit", "HelpNeighTimePageSubmit", "PFIcountryAffectTimePageSubmit", 
+                "PFIcountryFateTimePageSubmit", "PFINeighAffectTimePageSubmit", "HelpCountryTimePageSubmit"]
             let variable1 = "Stress";
             let variable2 = "PerceptionRisk";
             let date = "09/26/2020";
@@ -2959,6 +2975,8 @@
                 let d12v = 0;
                 let d13c = 0;
                 let d13v = 0;
+                let d14c = 0;
+                let d14v = 0;
                 let data = [];
                 let variable;
                 let colorCSS;
@@ -3012,6 +3030,9 @@
                     } else if (row.Date == "10/25/2021" && val > 0) {
                         d13v += val;
                         d13c++;
+                    } else if (row.Date == "12/16/2021" && val > 0) {
+                        d14v += val;
+                        d14c++;
                     }
                 }
 
@@ -3028,6 +3049,7 @@
                 data.push((d11v > 0) ? +numberFormatterPercentage(d11v / d11c) : 0);
                 data.push((d12v > 0) ? +numberFormatterPercentage(d12v / d12c) : 0);
                 data.push((d13v > 0) ? +numberFormatterPercentage(d13v / d13c) : 0);
+                data.push((d14v > 0) ? +numberFormatterPercentage(d14v / d14c) : 0);
 
                 // to hide 0's
                 data.forEach(function (element, index) {
@@ -3257,7 +3279,8 @@
                             covid++;
                         }
                         if (["09/26/2020", "10/27/2020", "11/28/2020", "12/28/2020", "01/27/2021", "02/26/2021",
-                            "03/28/2021", "04/27/2021", "05/27/2021", "06/26/2021", "07/26/2021"].includes(row.Date)) {
+                            "03/28/2021", "04/27/2021", "05/27/2021", "06/26/2021", "07/26/2021", "08/25/2021", 
+                            "10/25/2021", "12/16/2021"].includes(row.Date)) {
                             if (row.OccupationRisk == 3) {
                                 highRisk++;
                             }
@@ -3796,6 +3819,8 @@
                     array = [1, 3, 5, 7, 9, 11];
                 } else if (cat12.includes(variable)) {
                     array = [1, 3, 5, 7, 9, 11, 13];
+                } else if (cat17.includes(variable)) {
+                    array = [0, 3, 6, 9, 12, 15, 18];
                 } else if (cat30.includes(variable)) {
                     array = [0, 5, 10, 15, 20, 25, 30];
                 } else if (cat100.includes(variable)) {
@@ -3808,6 +3833,12 @@
                     array = [1, 2, 3, 4, 5, 6, 7];
                 } else if (avg7.includes(variable)) {
                     array = [1, 2, 3, 4, 5, 6, 7, 8];
+                } else if (firstClick.includes(variable)) {
+                    array = [0, 3, 4, 5, 6, 7, 8, 1000000];
+                } else if (lastClick.includes(variable)) {
+                    array = [0, 5, 8, 11, 14, 17, 20, 1000000];
+                } else if (pageSubmit.includes(variable)) {
+                    array = [0, 6, 9, 12, 15, 18, 21, 1000000];
                 } else if (variable == "Children") {
                     array = [0, 1, 2, 3, 4, 5, 50];
                 } else if (variable == "ChildrenUnder18") {
@@ -3866,7 +3897,14 @@
                     array = [0, 1, 3, 6, 10, 1000];
                 } else if (variable == "tot_t13") {
                     array = [0, 2, 4, 6, 8, 10, 12, 100];
+                } else if (variable == "HowManyXmas") {
+                    array = [0, 0, 3, 5, 7, 10, 13, 100];
+                } else if (variable == "NotHouseHoldXmas") {
+                    array = [0, 0, 3, 5, 7, 10, 13, 100];
+                } else if (variable == "tot_t14") {
+                    array = [0, 2, 4, 6, 8, 10, 12, 100];
                 }
+
 
                 return array;
             }
@@ -3882,6 +3920,8 @@
                     cats = ["1-2", "3-4", "5-6", "7-8", "9-10"];
                 } else if (cat12.includes(variable)) {
                     cats = ["1-2", "3-4", "5-6", "7-8", "9-10", "11-12"];
+                } else if (cat17.includes(variable)) {
+                    cats = ["0-2", "3-5", "6-8", "9-11", "12-14", "15-17"];
                 } else if (cat30.includes(variable)) {
                     cats = ["0-4", "5-9", "10-14", "15-19", "20-24", "25-30"];
                 } else if (cat100.includes(variable)) {
@@ -3894,6 +3934,12 @@
                     cats = ["1-2", "2-3", "3-4", "4-5", "5-6", "6"];
                 } else if (avg7.includes(variable)) {
                     cats = ["1-2", "2-3", "3-4", "4-5", "5-6", "6-7", "7"];
+                } else if (firstClick.includes(variable)) {
+                    cats = ["< 3", "3-4", "4-5", "5-6", "6-7", "7-8", "8 <"];
+                } else if (lastClick.includes(variable)) {
+                    cats = ["< 5", "5-8", "8-11", "11-14", "14-17", "17-20", "20 <"];
+                } else if (pageSubmit.includes(variable)) {
+                    cats = ["< 6", "6-9", "9-12", "12-15", "15-18", "18-21", "21 <"];
                 } else if (variable == "Children") {
                     cats = ["0", "1", "2", "3", "4", "5+"];
                 } else if (variable == "ChildrenUnder18") {
@@ -3954,6 +4000,12 @@
                     cats = ["0", "1-2", "3-5", "6-10", "10+"];
                 } else if (variable == "tot_t13") {
                     cats = ["1-2", "3-4", "5-6", "7-8", "9-10", "11-12", "13"];
+                } else if (variable == "HowManyXmas") {
+                    cats = ["0", "1-2", "3-4", "5-6", "7-9", "10-12", "13 <"];
+                } else if (variable == "NotHouseHoldXmas") {
+                    cats = ["0", "1-2", "3-4", "5-6", "7-9", "10-12", "13 <"];
+                } else if (variable == "tot_t14") {
+                    cats = ["1-2", "3-4", "5-6", "7-8", "9-10", "11-12", "13-14"];
                 }
                 return cats;
             }
