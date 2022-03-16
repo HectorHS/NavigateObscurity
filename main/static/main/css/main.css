@@ -524,11 +524,35 @@ nav ul li ul:hover {
   }
 }
 
-.nav-list-mobile {
+#nav_list_mobile {
+  transition: height .25s ease;
+}
+
+@media screen and (min-width: 768px) {
+  #nav_list_mobile {
+    display: none;
+  }
+}
+
+#nav_list_mobile:not(.active) {
   display: none;
 }
 
-.nav-list-mobile li ul {
+#data_dropdown {
+  transition: height .25s ease;
+  overflow: hidden;
+}
+
+#data_dropdown:not(.active) {
+  display: none;
+}
+
+#notes_dropdown {
+  transition: height .25s ease;
+  overflow: hidden;
+}
+
+#notes_dropdown:not(.active) {
   display: none;
 }
 
@@ -557,16 +581,16 @@ nav ul li ul:hover {
   }
 }
 
-#nav-toggle {
+#nav_hamburger {
   position: absolute;
   top: 2px;
   cursor: pointer;
   padding: 10px 35px 20px 0px;
 }
 
-#nav-toggle span,
-#nav-toggle span:before,
-#nav-toggle span:after {
+#nav_hamburger span,
+#nav_hamburger span:before,
+#nav_hamburger span:after {
   cursor: pointer;
   border-radius: 5px;
   height: 5px;
@@ -578,24 +602,24 @@ nav ul li ul:hover {
   transition: all 300ms ease-in-out;
 }
 
-#nav-toggle span:before {
+#nav_hamburger span:before {
   top: -12px;
 }
 
-#nav-toggle span:after {
+#nav_hamburger span:after {
   bottom: -12px;
 }
 
-#nav-toggle.active span {
+#nav_hamburger.active span {
   background-color: transparent;
 }
 
-#nav-toggle.active span:before {
+#nav_hamburger.active span:before {
   top: 0;
   transform: rotate(45deg);
 }
 
-#nav-toggle.active span:after {
+#nav_hamburger.active span:after {
   top: 0;
   transform: rotate(-45deg);
 }
