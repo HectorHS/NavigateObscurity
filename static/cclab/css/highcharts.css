@@ -1,0 +1,2785 @@
+.highcharts-container {
+  position: relative;
+  overflow: hidden;
+  width: 100%;
+  height: 100%;
+  text-align: left;
+  line-height: normal;
+  z-index: 0;
+  /* #1072 */
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+  font-family: "Quantico", "sans-serif";
+  font-size: 0.9em;
+}
+
+.highcharts-root {
+  display: block;
+}
+
+.highcharts-root text {
+  stroke-width: 0;
+}
+
+.highcharts-strong {
+  font-weight: bold;
+}
+
+.highcharts-emphasized {
+  font-style: italic;
+}
+
+.highcharts-anchor {
+  cursor: pointer;
+}
+
+.highcharts-background {
+  fill: #fff;
+}
+
+.highcharts-plot-border,
+.highcharts-plot-background {
+  fill: none;
+}
+
+.highcharts-label-box {
+  fill: none;
+}
+
+.highcharts-button-box {
+  fill: inherit;
+}
+
+.highcharts-tracker-line {
+  stroke-linejoin: round;
+  fill: none;
+  stroke-width: 3;
+}
+
+.highcharts-tracker-area {
+  stroke-width: 0;
+}
+
+/* Titles */
+.highcharts-title {
+  fill: #1c1c1c;
+  font-size: 110%;
+}
+
+.highcharts-subtitle {
+  fill: #1c1c1c;
+}
+
+/* Axes */
+.highcharts-axis-line {
+  fill: none;
+  stroke: #ccd6eb;
+  opacity: 0.1;
+}
+
+.highcharts-yaxis .highcharts-axis-line {
+  stroke-width: 0;
+}
+
+.highcharts-axis-title {
+  fill: #1c1c1c;
+}
+
+.highcharts-axis-labels {
+  fill: #1c1c1c;
+  cursor: default;
+  font-size: 0.9em;
+}
+
+.highcharts-axis-html-labels {
+  color: #1c1c1c;
+  font-size: 0.9em;
+}
+
+.highcharts-grid-line {
+  fill: none;
+  stroke: #1c1c1c;
+  opacity: 0.1;
+  stroke-width: 1px;
+  stroke: #1c1c1c;
+}
+
+.highcharts-tick {
+  stroke: #ccd6eb;
+  stroke-width: 0;
+}
+
+.highcharts-yaxis .highcharts-tick {
+  stroke-width: 0;
+}
+
+.highcharts-minor-grid-line {
+  stroke: #f2f2f2;
+}
+
+.highcharts-crosshair-thin {
+  stroke-width: 1px;
+  stroke: #cccccc;
+}
+
+.highcharts-crosshair-category {
+  stroke: #ccd6eb;
+  stroke-opacity: 0.25;
+}
+
+/* Credits */
+.highcharts-credits {
+  cursor: pointer;
+  fill: #1c1c1c;
+  font-size: 0.7em;
+  transition: fill 250ms, font-size 250ms;
+}
+
+.highcharts-credits:hover {
+  fill: black;
+  font-size: 1em;
+}
+
+/* Tooltip */
+.highcharts-tooltip {
+  cursor: default;
+  pointer-events: none;
+  white-space: nowrap;
+  transition: stroke 150ms;
+}
+
+.highcharts-tooltip text {
+  fill: #1c1c1c;
+  color: #1c1c1c;
+  word-spacing: 0.1em;
+}
+
+.highcharts-tooltip .highcharts-header {
+  font-size: 0.85em;
+}
+
+.highcharts-tooltip-box {
+  stroke-width: 1px;
+  fill: #e3e8e8;
+  fill-opacity: 0.85;
+}
+
+.highcharts-tooltip-box .highcharts-label-box {
+  fill: #e3e8e8;
+  fill-opacity: 0.85;
+}
+
+div.highcharts-tooltip {
+  filter: none;
+}
+
+.highcharts-selection-marker {
+  fill: #335cad;
+  fill-opacity: 0.25;
+}
+
+.highcharts-graph {
+  fill: none;
+  stroke-width: 2px;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+.highcharts-state-hover .highcharts-graph {
+  stroke-width: 3;
+}
+
+.highcharts-point-inactive {
+  opacity: 0.3;
+  transition: opacity 100ms;
+  /* quick in */
+}
+
+.highcharts-series-inactive {
+  opacity: 0.3;
+  transition: opacity 100ms;
+  /* quick in */
+}
+
+.highcharts-state-hover path {
+  transition: stroke-width 50ms;
+  /* quick in */
+}
+
+.highcharts-state-normal path {
+  transition: stroke-width 50ms;
+  /* slow out */
+}
+
+/* Legend hover affects points and series */
+g.highcharts-series,
+.highcharts-point,
+.highcharts-markers,
+.highcharts-data-labels {
+  transition: opacity 150ms;
+}
+
+.highcharts-legend-series-active g.highcharts-series:not(.highcharts-series-hover),
+.highcharts-legend-point-active .highcharts-point:not(.highcharts-point-hover),
+.highcharts-legend-series-active .highcharts-markers:not(.highcharts-series-hover),
+.highcharts-legend-series-active .highcharts-data-labels:not(.highcharts-series-hover) {
+  opacity: 0.3;
+}
+
+/* Series options */
+/* Default colors */
+.highcharts-color-0 {
+  fill: #fad2d1;
+  stroke: #fad2d1;
+}
+
+.legend-color-0 {
+  background-image: linear-gradient(to top right, rgba(255, 0, 0, 0) 0%, #fad2d1 50%);
+}
+
+.highcharts-band-color-0 {
+  fill: #fad2d1;
+}
+
+.highcharts-color-1 {
+  fill: #f28f8d;
+  stroke: #f28f8d;
+}
+
+.legend-color-1 {
+  background-image: linear-gradient(to top right, rgba(255, 0, 0, 0) 0%, #f28f8d 50%);
+}
+
+.highcharts-band-color-1 {
+  fill: #f28f8d;
+}
+
+.highcharts-color-2 {
+  fill: #ec625f;
+  stroke: #ec625f;
+}
+
+.legend-color-2 {
+  background-image: linear-gradient(to top right, rgba(255, 0, 0, 0) 0%, #ec625f 50%);
+}
+
+.highcharts-band-color-2 {
+  fill: #ec625f;
+}
+
+.highcharts-color-3 {
+  fill: #c83739;
+  stroke: #c83739;
+}
+
+.legend-color-3 {
+  background-image: linear-gradient(to top right, rgba(255, 0, 0, 0) 0%, #c83739 50%);
+}
+
+.highcharts-band-color-3 {
+  fill: #c83739;
+}
+
+.highcharts-color-4 {
+  fill: #a02c2e;
+  stroke: #a02c2e;
+}
+
+.legend-color-4 {
+  background-image: linear-gradient(to top right, rgba(255, 0, 0, 0) 0%, #a02c2e 50%);
+}
+
+.highcharts-band-color-4 {
+  fill: #a02c2e;
+}
+
+.highcharts-color-5 {
+  fill: #641b1d;
+  stroke: #641b1d;
+}
+
+.legend-color-5 {
+  background-image: linear-gradient(to top right, rgba(255, 0, 0, 0) 0%, #641b1d 50%);
+}
+
+.highcharts-band-color-5 {
+  fill: #641b1d;
+}
+
+.highcharts-color-6 {
+  fill: #280b0c;
+  stroke: #280b0c;
+}
+
+.legend-color-6 {
+  background-image: linear-gradient(to top right, rgba(255, 0, 0, 0) 0%, #280b0c 50%);
+}
+
+.highcharts-band-color-6 {
+  fill: #280b0c;
+}
+
+.highcharts-color-7 {
+  fill: #b7e1d9;
+  stroke: #b7e1d9;
+}
+
+.legend-color-7 {
+  background-image: linear-gradient(to top right, rgba(255, 0, 0, 0) 0%, #b7e1d9 50%);
+}
+
+.highcharts-band-color-7 {
+  fill: #b7e1d9;
+}
+
+.highcharts-color-8 {
+  fill: #81cabd;
+  stroke: #81cabd;
+}
+
+.legend-color-8 {
+  background-image: linear-gradient(to top right, rgba(255, 0, 0, 0) 0%, #81cabd 50%);
+}
+
+.highcharts-band-color-8 {
+  fill: #81cabd;
+}
+
+.highcharts-color-9 {
+  fill: #4bb4a1;
+  stroke: #4bb4a1;
+}
+
+.legend-color-9 {
+  background-image: linear-gradient(to top right, rgba(255, 0, 0, 0) 0%, #4bb4a1 50%);
+}
+
+.highcharts-band-color-9 {
+  fill: #4bb4a1;
+}
+
+.highcharts-color-10 {
+  fill: #3c9080;
+  stroke: #3c9080;
+}
+
+.legend-color-10 {
+  background-image: linear-gradient(to top right, rgba(255, 0, 0, 0) 0%, #3c9080 50%);
+}
+
+.highcharts-band-color-10 {
+  fill: #3c9080;
+}
+
+.highcharts-color-11 {
+  fill: #2d6c60;
+  stroke: #2d6c60;
+}
+
+.legend-color-11 {
+  background-image: linear-gradient(to top right, rgba(255, 0, 0, 0) 0%, #2d6c60 50%);
+}
+
+.highcharts-band-color-11 {
+  fill: #2d6c60;
+}
+
+.highcharts-color-12 {
+  fill: #1e4840;
+  stroke: #1e4840;
+}
+
+.legend-color-12 {
+  background-image: linear-gradient(to top right, rgba(255, 0, 0, 0) 0%, #1e4840 50%);
+}
+
+.highcharts-band-color-12 {
+  fill: #1e4840;
+}
+
+.highcharts-color-13 {
+  fill: #0f2420;
+  stroke: #0f2420;
+}
+
+.legend-color-13 {
+  background-image: linear-gradient(to top right, rgba(255, 0, 0, 0) 0%, #0f2420 50%);
+}
+
+.highcharts-band-color-13 {
+  fill: #0f2420;
+}
+
+.highcharts-color-14 {
+  fill: #ffdf99;
+  stroke: #ffdf99;
+}
+
+.legend-color-14 {
+  background-image: linear-gradient(to top right, rgba(255, 0, 0, 0) 0%, #ffdf99 50%);
+}
+
+.highcharts-band-color-14 {
+  fill: #ffdf99;
+}
+
+.highcharts-color-15 {
+  fill: #fbcd6a;
+  stroke: #fbcd6a;
+}
+
+.legend-color-15 {
+  background-image: linear-gradient(to top right, rgba(255, 0, 0, 0) 0%, #fbcd6a 50%);
+}
+
+.highcharts-band-color-15 {
+  fill: #fbcd6a;
+}
+
+.highcharts-color-16 {
+  fill: #f5bb3d;
+  stroke: #f5bb3d;
+}
+
+.legend-color-16 {
+  background-image: linear-gradient(to top right, rgba(255, 0, 0, 0) 0%, #f5bb3d 50%);
+}
+
+.highcharts-band-color-16 {
+  fill: #f5bb3d;
+}
+
+.highcharts-color-17 {
+  fill: #e6a519;
+  stroke: #e6a519;
+}
+
+.legend-color-17 {
+  background-image: linear-gradient(to top right, rgba(255, 0, 0, 0) 0%, #e6a519 50%);
+}
+
+.highcharts-band-color-17 {
+  fill: #e6a519;
+}
+
+.highcharts-color-18 {
+  fill: #a77a25;
+  stroke: #a77a25;
+}
+
+.legend-color-18 {
+  background-image: linear-gradient(to top right, rgba(255, 0, 0, 0) 0%, #a77a25 50%);
+}
+
+.highcharts-band-color-18 {
+  fill: #a77a25;
+}
+
+.highcharts-color-19 {
+  fill: #776222;
+  stroke: #776222;
+}
+
+.legend-color-19 {
+  background-image: linear-gradient(to top right, rgba(255, 0, 0, 0) 0%, #776222 50%);
+}
+
+.highcharts-band-color-19 {
+  fill: #776222;
+}
+
+.highcharts-color-20 {
+  fill: #483e1e;
+  stroke: #483e1e;
+}
+
+.legend-color-20 {
+  background-image: linear-gradient(to top right, rgba(255, 0, 0, 0) 0%, #483e1e 50%);
+}
+
+.highcharts-band-color-20 {
+  fill: #483e1e;
+}
+
+.highcharts-color-21 {
+  fill: #b5afb2;
+  stroke: #b5afb2;
+}
+
+.legend-color-21 {
+  background-image: linear-gradient(to top right, rgba(255, 0, 0, 0) 0%, #b5afb2 50%);
+}
+
+.highcharts-band-color-21 {
+  fill: #b5afb2;
+}
+
+.highcharts-color-22 {
+  fill: #709072;
+  stroke: #709072;
+}
+
+.legend-color-22 {
+  background-image: linear-gradient(to top right, rgba(255, 0, 0, 0) 0%, #709072 50%);
+}
+
+.highcharts-band-color-22 {
+  fill: #709072;
+}
+
+/* Default gradients */
+#gradient-0 stop {
+  stop-color: #B3DBFF;
+}
+
+#gradient-0 stop[offset="0"] {
+  stop-opacity: 1;
+}
+
+#gradient-0 stop[offset="1"] {
+  stop-opacity: 0.5;
+}
+
+#gradient-1 stop {
+  stop-color: #66B8FF;
+}
+
+#gradient-1 stop[offset="0"] {
+  stop-opacity: 1;
+}
+
+#gradient-1 stop[offset="1"] {
+  stop-opacity: 0.5;
+}
+
+#gradient-2 stop {
+  stop-color: #1A94FF;
+}
+
+#gradient-2 stop[offset="0"] {
+  stop-opacity: 1;
+}
+
+#gradient-2 stop[offset="1"] {
+  stop-opacity: 0.5;
+}
+
+#gradient-3 stop {
+  stop-color: #0070D1;
+}
+
+#gradient-3 stop[offset="0"] {
+  stop-opacity: 1;
+}
+
+#gradient-3 stop[offset="1"] {
+  stop-opacity: 0.5;
+}
+
+#gradient-4 stop {
+  stop-color: #005299;
+}
+
+#gradient-4 stop[offset="0"] {
+  stop-opacity: 1;
+}
+
+#gradient-4 stop[offset="1"] {
+  stop-opacity: 0.5;
+}
+
+#gradient-5 stop {
+  stop-color: #003666;
+}
+
+#gradient-5 stop[offset="0"] {
+  stop-opacity: 1;
+}
+
+#gradient-5 stop[offset="1"] {
+  stop-opacity: 0.5;
+}
+
+#gradient-6 stop {
+  stop-color: #001B33;
+}
+
+#gradient-6 stop[offset="0"] {
+  stop-opacity: 1;
+}
+
+#gradient-6 stop[offset="1"] {
+  stop-opacity: 0.5;
+}
+
+#gradient-7 stop {
+  stop-color: #FFFF99;
+}
+
+#gradient-7 stop[offset="0"] {
+  stop-opacity: 1;
+}
+
+#gradient-7 stop[offset="1"] {
+  stop-opacity: 0.5;
+}
+
+#gradient-8 stop {
+  stop-color: #FFFF4D;
+}
+
+#gradient-8 stop[offset="0"] {
+  stop-opacity: 1;
+}
+
+#gradient-8 stop[offset="1"] {
+  stop-opacity: 0.5;
+}
+
+#gradient-9 stop {
+  stop-color: #FFFF1A;
+}
+
+#gradient-9 stop[offset="0"] {
+  stop-opacity: 1;
+}
+
+#gradient-9 stop[offset="1"] {
+  stop-opacity: 0.5;
+}
+
+#gradient-10 stop {
+  stop-color: #C7C705;
+}
+
+#gradient-10 stop[offset="0"] {
+  stop-opacity: 1;
+}
+
+#gradient-10 stop[offset="1"] {
+  stop-opacity: 0.5;
+}
+
+#gradient-11 stop {
+  stop-color: #919108;
+}
+
+#gradient-11 stop[offset="0"] {
+  stop-opacity: 1;
+}
+
+#gradient-11 stop[offset="1"] {
+  stop-opacity: 0.5;
+}
+
+#gradient-12 stop {
+  stop-color: #5E5E08;
+}
+
+#gradient-12 stop[offset="0"] {
+  stop-opacity: 1;
+}
+
+#gradient-12 stop[offset="1"] {
+  stop-opacity: 0.5;
+}
+
+#gradient-13 stop {
+  stop-color: #2E2E05;
+}
+
+#gradient-13 stop[offset="0"] {
+  stop-opacity: 1;
+}
+
+#gradient-13 stop[offset="1"] {
+  stop-opacity: 0.5;
+}
+
+#gradient-14 stop {
+  stop-color: #FAD1EC;
+}
+
+#gradient-14 stop[offset="0"] {
+  stop-opacity: 1;
+}
+
+#gradient-14 stop[offset="1"] {
+  stop-opacity: 0.5;
+}
+
+#gradient-15 stop {
+  stop-color: #F48BCF;
+}
+
+#gradient-15 stop[offset="0"] {
+  stop-opacity: 1;
+}
+
+#gradient-15 stop[offset="1"] {
+  stop-opacity: 0.5;
+}
+
+#gradient-16 stop {
+  stop-color: #ED45B2;
+}
+
+#gradient-16 stop[offset="0"] {
+  stop-opacity: 1;
+}
+
+#gradient-16 stop[offset="1"] {
+  stop-opacity: 0.5;
+}
+
+#gradient-17 stop {
+  stop-color: #D1158F;
+}
+
+#gradient-17 stop[offset="0"] {
+  stop-opacity: 1;
+}
+
+#gradient-17 stop[offset="1"] {
+  stop-opacity: 0.5;
+}
+
+#gradient-18 stop {
+  stop-color: #970F67;
+}
+
+#gradient-18 stop[offset="0"] {
+  stop-opacity: 1;
+}
+
+#gradient-18 stop[offset="1"] {
+  stop-opacity: 0.5;
+}
+
+#gradient-19 stop {
+  stop-color: #5D0940;
+}
+
+#gradient-19 stop[offset="0"] {
+  stop-opacity: 1;
+}
+
+#gradient-19 stop[offset="1"] {
+  stop-opacity: 0.5;
+}
+
+#gradient-20 stop {
+  stop-color: #2E0520;
+}
+
+#gradient-20 stop[offset="0"] {
+  stop-opacity: 1;
+}
+
+#gradient-20 stop[offset="1"] {
+  stop-opacity: 0.5;
+}
+
+#gradient-21 stop {
+  stop-color: #7DE87D;
+}
+
+#gradient-21 stop[offset="0"] {
+  stop-opacity: 1;
+}
+
+#gradient-21 stop[offset="1"] {
+  stop-opacity: 0.5;
+}
+
+#gradient-22 stop {
+  stop-color: #52E052;
+}
+
+#gradient-22 stop[offset="0"] {
+  stop-opacity: 1;
+}
+
+#gradient-22 stop[offset="1"] {
+  stop-opacity: 0.5;
+}
+
+#gradient-23 stop {
+  stop-color: #23CA23;
+}
+
+#gradient-23 stop[offset="0"] {
+  stop-opacity: 1;
+}
+
+#gradient-23 stop[offset="1"] {
+  stop-opacity: 0.5;
+}
+
+#gradient-24 stop {
+  stop-color: #1B981B;
+}
+
+#gradient-24 stop[offset="0"] {
+  stop-opacity: 1;
+}
+
+#gradient-24 stop[offset="1"] {
+  stop-opacity: 0.5;
+}
+
+#gradient-25 stop {
+  stop-color: #136C13;
+}
+
+#gradient-25 stop[offset="0"] {
+  stop-opacity: 1;
+}
+
+#gradient-25 stop[offset="1"] {
+  stop-opacity: 0.5;
+}
+
+#gradient-26 stop {
+  stop-color: #0B410B;
+}
+
+#gradient-26 stop[offset="0"] {
+  stop-opacity: 1;
+}
+
+#gradient-26 stop[offset="1"] {
+  stop-opacity: 0.5;
+}
+
+#gradient-27 stop {
+  stop-color: #041604;
+}
+
+#gradient-27 stop[offset="0"] {
+  stop-opacity: 1;
+}
+
+#gradient-27 stop[offset="1"] {
+  stop-opacity: 0.5;
+}
+
+#gradient-28 stop {
+  stop-color: #F18E8E;
+}
+
+#gradient-28 stop[offset="0"] {
+  stop-opacity: 1;
+}
+
+#gradient-28 stop[offset="1"] {
+  stop-opacity: 0.5;
+}
+
+#gradient-29 stop {
+  stop-color: #EB6060;
+}
+
+#gradient-29 stop[offset="0"] {
+  stop-opacity: 1;
+}
+
+#gradient-29 stop[offset="1"] {
+  stop-opacity: 0.5;
+}
+
+#gradient-30 stop {
+  stop-color: #E63333;
+}
+
+#gradient-30 stop[offset="0"] {
+  stop-opacity: 1;
+}
+
+#gradient-30 stop[offset="1"] {
+  stop-opacity: 0.5;
+}
+
+#gradient-31 stop {
+  stop-color: #CC1919;
+}
+
+#gradient-31 stop[offset="0"] {
+  stop-opacity: 1;
+}
+
+#gradient-31 stop[offset="1"] {
+  stop-opacity: 0.5;
+}
+
+#gradient-32 stop {
+  stop-color: #881111;
+}
+
+#gradient-32 stop[offset="0"] {
+  stop-opacity: 1;
+}
+
+#gradient-32 stop[offset="1"] {
+  stop-opacity: 0.5;
+}
+
+#gradient-33 stop {
+  stop-color: #440808;
+}
+
+#gradient-33 stop[offset="0"] {
+  stop-opacity: 1;
+}
+
+#gradient-33 stop[offset="1"] {
+  stop-opacity: 0.5;
+}
+
+#gradient-34 stop {
+  stop-color: #170303;
+}
+
+#gradient-34 stop[offset="0"] {
+  stop-opacity: 1;
+}
+
+#gradient-34 stop[offset="1"] {
+  stop-opacity: 0.5;
+}
+
+#gradient-35 stop {
+  stop-color: #e7d7f4;
+}
+
+#gradient-35 stop[offset="0"] {
+  stop-opacity: 1;
+}
+
+#gradient-35 stop[offset="1"] {
+  stop-opacity: 0.5;
+}
+
+#gradient-36 stop {
+  stop-color: #C29CE2;
+}
+
+#gradient-36 stop[offset="0"] {
+  stop-opacity: 1;
+}
+
+#gradient-36 stop[offset="1"] {
+  stop-opacity: 0.5;
+}
+
+#gradient-37 stop {
+  stop-color: #9D61D1;
+}
+
+#gradient-37 stop[offset="0"] {
+  stop-opacity: 1;
+}
+
+#gradient-37 stop[offset="1"] {
+  stop-opacity: 0.5;
+}
+
+#gradient-38 stop {
+  stop-color: #772EB8;
+}
+
+#gradient-38 stop[offset="0"] {
+  stop-opacity: 1;
+}
+
+#gradient-38 stop[offset="1"] {
+  stop-opacity: 0.5;
+}
+
+#gradient-39 stop {
+  stop-color: #501980;
+}
+
+#gradient-39 stop[offset="0"] {
+  stop-opacity: 1;
+}
+
+#gradient-39 stop[offset="1"] {
+  stop-opacity: 0.5;
+}
+
+#gradient-40 stop {
+  stop-color: #360D59;
+}
+
+#gradient-40 stop[offset="0"] {
+  stop-opacity: 1;
+}
+
+#gradient-40 stop[offset="1"] {
+  stop-opacity: 0.5;
+}
+
+#gradient-41 stop {
+  stop-color: #1B042F;
+}
+
+#gradient-41 stop[offset="0"] {
+  stop-opacity: 1;
+}
+
+#gradient-41 stop[offset="1"] {
+  stop-opacity: 0.5;
+}
+
+#gradient-42 stop {
+  stop-color: #FFDBB3;
+}
+
+#gradient-42 stop[offset="0"] {
+  stop-opacity: 1;
+}
+
+#gradient-42 stop[offset="1"] {
+  stop-opacity: 0.5;
+}
+
+#gradient-43 stop {
+  stop-color: #FFB866;
+}
+
+#gradient-43 stop[offset="0"] {
+  stop-opacity: 1;
+}
+
+#gradient-43 stop[offset="1"] {
+  stop-opacity: 0.5;
+}
+
+#gradient-44 stop {
+  stop-color: #FFA033;
+}
+
+#gradient-44 stop[offset="0"] {
+  stop-opacity: 1;
+}
+
+#gradient-44 stop[offset="1"] {
+  stop-opacity: 0.5;
+}
+
+#gradient-45 stop {
+  stop-color: #FF8800;
+}
+
+#gradient-45 stop[offset="0"] {
+  stop-opacity: 1;
+}
+
+#gradient-45 stop[offset="1"] {
+  stop-opacity: 0.5;
+}
+
+#gradient-46 stop {
+  stop-color: #CC6D00;
+}
+
+#gradient-46 stop[offset="0"] {
+  stop-opacity: 1;
+}
+
+#gradient-46 stop[offset="1"] {
+  stop-opacity: 0.5;
+}
+
+#gradient-47 stop {
+  stop-color: #804400;
+}
+
+#gradient-47 stop[offset="0"] {
+  stop-opacity: 1;
+}
+
+#gradient-47 stop[offset="1"] {
+  stop-opacity: 0.5;
+}
+
+#gradient-48 stop {
+  stop-color: #4D2900;
+}
+
+#gradient-48 stop[offset="0"] {
+  stop-opacity: 1;
+}
+
+#gradient-48 stop[offset="1"] {
+  stop-opacity: 0.5;
+}
+
+#gradient-49 stop {
+  stop-color: #ddc3c3;
+}
+
+#gradient-49 stop[offset="0"] {
+  stop-opacity: 1;
+}
+
+#gradient-49 stop[offset="1"] {
+  stop-opacity: 0.5;
+}
+
+#gradient-50 stop {
+  stop-color: #8B9595;
+}
+
+#gradient-50 stop[offset="0"] {
+  stop-opacity: 1;
+}
+
+#gradient-50 stop[offset="1"] {
+  stop-opacity: 0.5;
+}
+
+#gradient-51 stop {
+  stop-color: #101414;
+}
+
+#gradient-51 stop[offset="0"] {
+  stop-opacity: 1;
+}
+
+#gradient-51 stop[offset="1"] {
+  stop-opacity: 0.5;
+}
+
+#gradient-52 stop {
+  stop-color: #DDDDDD;
+}
+
+#gradient-52 stop[offset="0"] {
+  stop-opacity: 1;
+}
+
+#gradient-52 stop[offset="1"] {
+  stop-opacity: 0.5;
+}
+
+#gradient-area-0 stop {
+  stop-color: #B3DBFF;
+}
+
+#gradient-area-0 stop[offset="0"] {
+  stop-opacity: 1;
+}
+
+#gradient-area-0 stop[offset="1"] {
+  stop-opacity: 0.1;
+}
+
+#gradient-area-1 stop {
+  stop-color: #66B8FF;
+}
+
+#gradient-area-1 stop[offset="0"] {
+  stop-opacity: 1;
+}
+
+#gradient-area-1 stop[offset="1"] {
+  stop-opacity: 0.1;
+}
+
+#gradient-area-2 stop {
+  stop-color: #1A94FF;
+}
+
+#gradient-area-2 stop[offset="0"] {
+  stop-opacity: 1;
+}
+
+#gradient-area-2 stop[offset="1"] {
+  stop-opacity: 0.1;
+}
+
+#gradient-area-3 stop {
+  stop-color: #0070D1;
+}
+
+#gradient-area-3 stop[offset="0"] {
+  stop-opacity: 1;
+}
+
+#gradient-area-3 stop[offset="1"] {
+  stop-opacity: 0.1;
+}
+
+#gradient-area-4 stop {
+  stop-color: #005299;
+}
+
+#gradient-area-4 stop[offset="0"] {
+  stop-opacity: 1;
+}
+
+#gradient-area-4 stop[offset="1"] {
+  stop-opacity: 0.1;
+}
+
+#gradient-area-5 stop {
+  stop-color: #003666;
+}
+
+#gradient-area-5 stop[offset="0"] {
+  stop-opacity: 1;
+}
+
+#gradient-area-5 stop[offset="1"] {
+  stop-opacity: 0.1;
+}
+
+#gradient-area-6 stop {
+  stop-color: #001B33;
+}
+
+#gradient-area-6 stop[offset="0"] {
+  stop-opacity: 1;
+}
+
+#gradient-area-6 stop[offset="1"] {
+  stop-opacity: 0.1;
+}
+
+#gradient-area-7 stop {
+  stop-color: #FFFF99;
+}
+
+#gradient-area-7 stop[offset="0"] {
+  stop-opacity: 1;
+}
+
+#gradient-area-7 stop[offset="1"] {
+  stop-opacity: 0.1;
+}
+
+#gradient-area-8 stop {
+  stop-color: #FFFF4D;
+}
+
+#gradient-area-8 stop[offset="0"] {
+  stop-opacity: 1;
+}
+
+#gradient-area-8 stop[offset="1"] {
+  stop-opacity: 0.1;
+}
+
+#gradient-area-9 stop {
+  stop-color: #FFFF1A;
+}
+
+#gradient-area-9 stop[offset="0"] {
+  stop-opacity: 1;
+}
+
+#gradient-area-9 stop[offset="1"] {
+  stop-opacity: 0.1;
+}
+
+#gradient-area-10 stop {
+  stop-color: #C7C705;
+}
+
+#gradient-area-10 stop[offset="0"] {
+  stop-opacity: 1;
+}
+
+#gradient-area-10 stop[offset="1"] {
+  stop-opacity: 0.1;
+}
+
+#gradient-area-11 stop {
+  stop-color: #919108;
+}
+
+#gradient-area-11 stop[offset="0"] {
+  stop-opacity: 1;
+}
+
+#gradient-area-11 stop[offset="1"] {
+  stop-opacity: 0.1;
+}
+
+#gradient-area-12 stop {
+  stop-color: #5E5E08;
+}
+
+#gradient-area-12 stop[offset="0"] {
+  stop-opacity: 1;
+}
+
+#gradient-area-12 stop[offset="1"] {
+  stop-opacity: 0.1;
+}
+
+#gradient-area-13 stop {
+  stop-color: #2E2E05;
+}
+
+#gradient-area-13 stop[offset="0"] {
+  stop-opacity: 1;
+}
+
+#gradient-area-13 stop[offset="1"] {
+  stop-opacity: 0.1;
+}
+
+#gradient-area-14 stop {
+  stop-color: #FAD1EC;
+}
+
+#gradient-area-14 stop[offset="0"] {
+  stop-opacity: 1;
+}
+
+#gradient-area-14 stop[offset="1"] {
+  stop-opacity: 0.1;
+}
+
+#gradient-area-15 stop {
+  stop-color: #F48BCF;
+}
+
+#gradient-area-15 stop[offset="0"] {
+  stop-opacity: 1;
+}
+
+#gradient-area-15 stop[offset="1"] {
+  stop-opacity: 0.1;
+}
+
+#gradient-area-16 stop {
+  stop-color: #ED45B2;
+}
+
+#gradient-area-16 stop[offset="0"] {
+  stop-opacity: 1;
+}
+
+#gradient-area-16 stop[offset="1"] {
+  stop-opacity: 0.1;
+}
+
+#gradient-area-17 stop {
+  stop-color: #D1158F;
+}
+
+#gradient-area-17 stop[offset="0"] {
+  stop-opacity: 1;
+}
+
+#gradient-area-17 stop[offset="1"] {
+  stop-opacity: 0.1;
+}
+
+#gradient-area-18 stop {
+  stop-color: #970F67;
+}
+
+#gradient-area-18 stop[offset="0"] {
+  stop-opacity: 1;
+}
+
+#gradient-area-18 stop[offset="1"] {
+  stop-opacity: 0.1;
+}
+
+#gradient-area-19 stop {
+  stop-color: #5D0940;
+}
+
+#gradient-area-19 stop[offset="0"] {
+  stop-opacity: 1;
+}
+
+#gradient-area-19 stop[offset="1"] {
+  stop-opacity: 0.1;
+}
+
+#gradient-area-20 stop {
+  stop-color: #2E0520;
+}
+
+#gradient-area-20 stop[offset="0"] {
+  stop-opacity: 1;
+}
+
+#gradient-area-20 stop[offset="1"] {
+  stop-opacity: 0.1;
+}
+
+#gradient-area-21 stop {
+  stop-color: #7DE87D;
+}
+
+#gradient-area-21 stop[offset="0"] {
+  stop-opacity: 1;
+}
+
+#gradient-area-21 stop[offset="1"] {
+  stop-opacity: 0.1;
+}
+
+#gradient-area-22 stop {
+  stop-color: #52E052;
+}
+
+#gradient-area-22 stop[offset="0"] {
+  stop-opacity: 1;
+}
+
+#gradient-area-22 stop[offset="1"] {
+  stop-opacity: 0.1;
+}
+
+#gradient-area-23 stop {
+  stop-color: #23CA23;
+}
+
+#gradient-area-23 stop[offset="0"] {
+  stop-opacity: 1;
+}
+
+#gradient-area-23 stop[offset="1"] {
+  stop-opacity: 0.1;
+}
+
+#gradient-area-24 stop {
+  stop-color: #1B981B;
+}
+
+#gradient-area-24 stop[offset="0"] {
+  stop-opacity: 1;
+}
+
+#gradient-area-24 stop[offset="1"] {
+  stop-opacity: 0.1;
+}
+
+#gradient-area-25 stop {
+  stop-color: #136C13;
+}
+
+#gradient-area-25 stop[offset="0"] {
+  stop-opacity: 1;
+}
+
+#gradient-area-25 stop[offset="1"] {
+  stop-opacity: 0.1;
+}
+
+#gradient-area-26 stop {
+  stop-color: #0B410B;
+}
+
+#gradient-area-26 stop[offset="0"] {
+  stop-opacity: 1;
+}
+
+#gradient-area-26 stop[offset="1"] {
+  stop-opacity: 0.1;
+}
+
+#gradient-area-27 stop {
+  stop-color: #041604;
+}
+
+#gradient-area-27 stop[offset="0"] {
+  stop-opacity: 1;
+}
+
+#gradient-area-27 stop[offset="1"] {
+  stop-opacity: 0.1;
+}
+
+#gradient-area-28 stop {
+  stop-color: #F18E8E;
+}
+
+#gradient-area-28 stop[offset="0"] {
+  stop-opacity: 1;
+}
+
+#gradient-area-28 stop[offset="1"] {
+  stop-opacity: 0.1;
+}
+
+#gradient-area-29 stop {
+  stop-color: #EB6060;
+}
+
+#gradient-area-29 stop[offset="0"] {
+  stop-opacity: 1;
+}
+
+#gradient-area-29 stop[offset="1"] {
+  stop-opacity: 0.1;
+}
+
+#gradient-area-30 stop {
+  stop-color: #E63333;
+}
+
+#gradient-area-30 stop[offset="0"] {
+  stop-opacity: 1;
+}
+
+#gradient-area-30 stop[offset="1"] {
+  stop-opacity: 0.1;
+}
+
+#gradient-area-31 stop {
+  stop-color: #CC1919;
+}
+
+#gradient-area-31 stop[offset="0"] {
+  stop-opacity: 1;
+}
+
+#gradient-area-31 stop[offset="1"] {
+  stop-opacity: 0.1;
+}
+
+#gradient-area-32 stop {
+  stop-color: #881111;
+}
+
+#gradient-area-32 stop[offset="0"] {
+  stop-opacity: 1;
+}
+
+#gradient-area-32 stop[offset="1"] {
+  stop-opacity: 0.1;
+}
+
+#gradient-area-33 stop {
+  stop-color: #440808;
+}
+
+#gradient-area-33 stop[offset="0"] {
+  stop-opacity: 1;
+}
+
+#gradient-area-33 stop[offset="1"] {
+  stop-opacity: 0.1;
+}
+
+#gradient-area-34 stop {
+  stop-color: #170303;
+}
+
+#gradient-area-34 stop[offset="0"] {
+  stop-opacity: 1;
+}
+
+#gradient-area-34 stop[offset="1"] {
+  stop-opacity: 0.1;
+}
+
+#gradient-area-35 stop {
+  stop-color: #e7d7f4;
+}
+
+#gradient-area-35 stop[offset="0"] {
+  stop-opacity: 1;
+}
+
+#gradient-area-35 stop[offset="1"] {
+  stop-opacity: 0.1;
+}
+
+#gradient-area-36 stop {
+  stop-color: #C29CE2;
+}
+
+#gradient-area-36 stop[offset="0"] {
+  stop-opacity: 1;
+}
+
+#gradient-area-36 stop[offset="1"] {
+  stop-opacity: 0.1;
+}
+
+#gradient-area-37 stop {
+  stop-color: #9D61D1;
+}
+
+#gradient-area-37 stop[offset="0"] {
+  stop-opacity: 1;
+}
+
+#gradient-area-37 stop[offset="1"] {
+  stop-opacity: 0.1;
+}
+
+#gradient-area-38 stop {
+  stop-color: #772EB8;
+}
+
+#gradient-area-38 stop[offset="0"] {
+  stop-opacity: 1;
+}
+
+#gradient-area-38 stop[offset="1"] {
+  stop-opacity: 0.1;
+}
+
+#gradient-area-39 stop {
+  stop-color: #501980;
+}
+
+#gradient-area-39 stop[offset="0"] {
+  stop-opacity: 1;
+}
+
+#gradient-area-39 stop[offset="1"] {
+  stop-opacity: 0.1;
+}
+
+#gradient-area-40 stop {
+  stop-color: #360D59;
+}
+
+#gradient-area-40 stop[offset="0"] {
+  stop-opacity: 1;
+}
+
+#gradient-area-40 stop[offset="1"] {
+  stop-opacity: 0.1;
+}
+
+#gradient-area-41 stop {
+  stop-color: #1B042F;
+}
+
+#gradient-area-41 stop[offset="0"] {
+  stop-opacity: 1;
+}
+
+#gradient-area-41 stop[offset="1"] {
+  stop-opacity: 0.1;
+}
+
+#gradient-area-42 stop {
+  stop-color: #FFDBB3;
+}
+
+#gradient-area-42 stop[offset="0"] {
+  stop-opacity: 1;
+}
+
+#gradient-area-42 stop[offset="1"] {
+  stop-opacity: 0.1;
+}
+
+#gradient-area-43 stop {
+  stop-color: #FFB866;
+}
+
+#gradient-area-43 stop[offset="0"] {
+  stop-opacity: 1;
+}
+
+#gradient-area-43 stop[offset="1"] {
+  stop-opacity: 0.1;
+}
+
+#gradient-area-44 stop {
+  stop-color: #FFA033;
+}
+
+#gradient-area-44 stop[offset="0"] {
+  stop-opacity: 1;
+}
+
+#gradient-area-44 stop[offset="1"] {
+  stop-opacity: 0.1;
+}
+
+#gradient-area-45 stop {
+  stop-color: #FF8800;
+}
+
+#gradient-area-45 stop[offset="0"] {
+  stop-opacity: 1;
+}
+
+#gradient-area-45 stop[offset="1"] {
+  stop-opacity: 0.1;
+}
+
+#gradient-area-46 stop {
+  stop-color: #CC6D00;
+}
+
+#gradient-area-46 stop[offset="0"] {
+  stop-opacity: 1;
+}
+
+#gradient-area-46 stop[offset="1"] {
+  stop-opacity: 0.1;
+}
+
+#gradient-area-47 stop {
+  stop-color: #804400;
+}
+
+#gradient-area-47 stop[offset="0"] {
+  stop-opacity: 1;
+}
+
+#gradient-area-47 stop[offset="1"] {
+  stop-opacity: 0.1;
+}
+
+#gradient-area-48 stop {
+  stop-color: #4D2900;
+}
+
+#gradient-area-48 stop[offset="0"] {
+  stop-opacity: 1;
+}
+
+#gradient-area-48 stop[offset="1"] {
+  stop-opacity: 0.1;
+}
+
+#gradient-area-49 stop {
+  stop-color: #ddc3c3;
+}
+
+#gradient-area-49 stop[offset="0"] {
+  stop-opacity: 1;
+}
+
+#gradient-area-49 stop[offset="1"] {
+  stop-opacity: 0.1;
+}
+
+#gradient-area-50 stop {
+  stop-color: #8B9595;
+}
+
+#gradient-area-50 stop[offset="0"] {
+  stop-opacity: 1;
+}
+
+#gradient-area-50 stop[offset="1"] {
+  stop-opacity: 0.1;
+}
+
+#gradient-area-51 stop {
+  stop-color: #101414;
+}
+
+#gradient-area-51 stop[offset="0"] {
+  stop-opacity: 1;
+}
+
+#gradient-area-51 stop[offset="1"] {
+  stop-opacity: 0.1;
+}
+
+#gradient-area-52 stop {
+  stop-color: #DDDDDD;
+}
+
+#gradient-area-52 stop[offset="0"] {
+  stop-opacity: 1;
+}
+
+#gradient-area-52 stop[offset="1"] {
+  stop-opacity: 0.1;
+}
+
+.highcharts-area {
+  fill-opacity: 0.75;
+  stroke-width: 0;
+}
+
+.highcharts-markers {
+  stroke-width: 1px;
+  stroke: #fff;
+}
+
+.highcharts-point {
+  stroke-width: 0px;
+}
+
+.highcharts-dense-data .highcharts-point {
+  stroke-width: 0;
+}
+
+.highcharts-data-label {
+  font-size: 0.8em;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+}
+
+.highcharts-data-label-box {
+  fill: none;
+  stroke-width: 0;
+}
+
+.highcharts-data-label text,
+text.highcharts-data-label {
+  fill: #1c1c1c;
+}
+
+.highcharts-data-label-connector {
+  fill: none;
+}
+
+.highcharts-halo {
+  fill-opacity: 1;
+  stroke-width: 0;
+}
+
+.highcharts-column-series rect.highcharts-point {
+  stroke: #fff;
+}
+
+.highcharts-column-series .highcharts-point {
+  transition: fill-opacity 250ms;
+}
+
+.highcharts-column-series .highcharts-point-hover {
+  fill-opacity: 0.75;
+  transition: fill-opacity 50ms;
+}
+
+.highcharts-pie-series .highcharts-point {
+  stroke-linejoin: round;
+  stroke: #fff;
+  fill-opacity: 1;
+}
+
+.highcharts-pie-series .highcharts-point-hover {
+  fill-opacity: 1;
+  transition: fill-opacity 50ms;
+}
+
+.highcharts-funnel-series .highcharts-point {
+  stroke-linejoin: round;
+  stroke: #fff;
+}
+
+.highcharts-funnel-series .highcharts-point-hover {
+  fill-opacity: 0.75;
+  transition: fill-opacity 50ms;
+}
+
+.highcharts-funnel-series .highcharts-point-select {
+  fill: inherit;
+  stroke: inherit;
+}
+
+.highcharts-pyramid-series .highcharts-point {
+  stroke-linejoin: round;
+  stroke: #fff;
+}
+
+.highcharts-pyramid-series .highcharts-point-hover {
+  fill-opacity: 0.75;
+  transition: fill-opacity 50ms;
+}
+
+.highcharts-pyramid-series .highcharts-point-select {
+  fill: inherit;
+  stroke: inherit;
+}
+
+.highcharts-solidgauge-series .highcharts-point {
+  stroke-width: 0;
+}
+
+.highcharts-treemap-series .highcharts-point {
+  stroke-width: 2px;
+  stroke: #fff;
+  transition: stroke 250ms, fill 250ms, fill-opacity 250ms;
+  opacity: 0.8;
+}
+
+.highcharts-treemap-series .highcharts-point-hover {
+  stroke: #1c1c1c;
+  transition: stroke 25ms, fill 25ms, fill-opacity 25ms;
+  opacity: 1;
+}
+
+.highcharts-treemap-series .highcharts-above-level {
+  display: none;
+}
+
+.highcharts-treemap-series .highcharts-internal-node {
+  fill: none;
+}
+
+.highcharts-treemap-series .highcharts-internal-node-interactive {
+  fill-opacity: 0.15;
+  cursor: pointer;
+}
+
+.highcharts-treemap-series .highcharts-internal-node-interactive:hover {
+  fill-opacity: 0.75;
+}
+
+.highcharts-vector-series .highcharts-point {
+  fill: none;
+  stroke-width: 2px;
+}
+
+.highcharts-windbarb-series .highcharts-point {
+  fill: none;
+  stroke-width: 2px;
+}
+
+/* Legend */
+.highcharts-legend {
+  height: 100px;
+}
+
+.highcharts-legend-box {
+  fill: none;
+  stroke-width: 0;
+}
+
+.highcharts-legend-item > text {
+  fill: #1c1c1c;
+  font-weight: bold;
+  font-size: 1em;
+  cursor: pointer;
+  stroke-width: 0;
+}
+
+.highcharts-legend-item:hover text {
+  fill: #1c1c1c;
+}
+
+.highcharts-legend-item-hidden * {
+  fill: #cccccc !important;
+  stroke: #cccccc !important;
+  transition: fill 250ms;
+}
+
+.highcharts-legend-nav-active {
+  fill: #003399;
+  cursor: pointer;
+}
+
+.highcharts-legend-nav-inactive {
+  fill: #cccccc;
+}
+
+circle.highcharts-legend-nav-active,
+circle.highcharts-legend-nav-inactive {
+  /* tracker */
+  fill: rgba(192, 192, 192, 0.0001);
+}
+
+.highcharts-legend-title-box {
+  fill: none;
+  stroke-width: 0;
+}
+
+/* Bubble legend */
+.highcharts-bubble-legend-symbol {
+  stroke-width: 2;
+  fill-opacity: 0.5;
+}
+
+.highcharts-bubble-legend-connectors {
+  stroke-width: 1;
+}
+
+.highcharts-bubble-legend-labels {
+  fill: #1c1c1c;
+}
+
+/* Loading */
+.highcharts-loading {
+  position: absolute;
+  background-color: #fff;
+  opacity: 0.5;
+  text-align: center;
+  z-index: 10;
+  transition: opacity 250ms;
+}
+
+.highcharts-loading-hidden {
+  height: 0 !important;
+  opacity: 0;
+  overflow: hidden;
+  transition: opacity 250ms, height 250ms step-end;
+}
+
+.highcharts-loading-inner {
+  font-weight: bold;
+  position: relative;
+  top: 45%;
+}
+
+/* Plot bands and polar pane backgrounds */
+.highcharts-plot-band,
+.highcharts-pane {
+  fill-opacity: 0.6;
+}
+
+.highcharts-plot-line {
+  fill: none;
+  stroke: #1c1c1c;
+  stroke-width: 1px;
+}
+
+/* Highcharts More and modules */
+.highcharts-boxplot-box {
+  fill: #fff;
+}
+
+.highcharts-boxplot-median {
+  stroke-width: 2px;
+}
+
+.highcharts-bubble-series .highcharts-point {
+  fill-opacity: 0.5;
+}
+
+.highcharts-errorbar-series .highcharts-point {
+  stroke: #1c1c1c;
+}
+
+.highcharts-gauge-series .highcharts-data-label-box {
+  stroke: #cccccc;
+  stroke-width: 1px;
+}
+
+.highcharts-gauge-series .highcharts-dial {
+  fill: #1c1c1c;
+  stroke-width: 0;
+}
+
+.highcharts-polygon-series .highcharts-graph {
+  fill: inherit;
+  stroke-width: 0;
+}
+
+.highcharts-waterfall-series .highcharts-graph {
+  stroke: #1c1c1c;
+  stroke-dasharray: 1, 3;
+}
+
+.highcharts-sankey-series .highcharts-point {
+  stroke-width: 0;
+}
+
+.highcharts-sankey-series .highcharts-link {
+  transition: fill 250ms, fill-opacity 250ms;
+  fill-opacity: 0.5;
+}
+
+.highcharts-sankey-series .highcharts-point-hover.highcharts-link {
+  transition: fill 50ms, fill-opacity 50ms;
+  fill-opacity: 1;
+}
+
+.highcharts-venn-series .highcharts-point {
+  fill-opacity: 0.75;
+  stroke: #cccccc;
+  transition: stroke 250ms, fill-opacity 250ms;
+}
+
+.highcharts-venn-series .highcharts-point-hover {
+  fill-opacity: 1;
+  stroke: #cccccc;
+}
+
+/* Highstock */
+.highcharts-navigator-mask-outside {
+  fill-opacity: 0;
+}
+
+.highcharts-navigator-mask-inside {
+  fill: #6685c2;
+  /* navigator.maskFill option */
+  fill-opacity: 0.25;
+  cursor: ew-resize;
+}
+
+.highcharts-navigator-outline {
+  stroke: #cccccc;
+  fill: none;
+}
+
+.highcharts-navigator-handle {
+  stroke: #cccccc;
+  fill: #f2f2f2;
+  cursor: ew-resize;
+}
+
+.highcharts-navigator-series {
+  fill: #335cad;
+  stroke: #335cad;
+}
+
+.highcharts-navigator-series .highcharts-graph {
+  stroke-width: 1px;
+}
+
+.highcharts-navigator-series .highcharts-area {
+  fill-opacity: 0.05;
+}
+
+.highcharts-navigator-xaxis .highcharts-axis-line {
+  stroke-width: 0;
+}
+
+.highcharts-navigator-xaxis.highcharts-axis-labels {
+  fill: #1c1c1c;
+}
+
+.highcharts-scrollbar-thumb {
+  fill: #cccccc;
+  stroke: #cccccc;
+  stroke-width: 1px;
+}
+
+.highcharts-scrollbar-button {
+  fill: #1c1c1c;
+  stroke: #cccccc;
+  stroke-width: 1px;
+}
+
+.highcharts-scrollbar-arrow {
+  fill: #1c1c1c;
+}
+
+.highcharts-scrollbar-rifles {
+  stroke: #1c1c1c;
+  stroke-width: 1px;
+}
+
+.highcharts-scrollbar-track {
+  fill: #f2f2f2;
+  stroke: #f2f2f2;
+  stroke-width: 1px;
+}
+
+.highcharts-button {
+  fill: #e3e8e8;
+  stroke: #cccccc;
+  cursor: default;
+  stroke-width: 1px;
+  transition: fill 250ms;
+}
+
+.highcharts-button text {
+  fill: #1c1c1c;
+}
+
+.highcharts-button-hover {
+  transition: fill 0ms;
+  fill: #1c1c1c;
+  stroke: #cccccc;
+}
+
+.highcharts-button-hover text {
+  fill: #e3e8e8;
+}
+
+.highcharts-button-pressed {
+  font-weight: bold;
+  fill: #e6ebf5;
+  stroke: #cccccc;
+}
+
+.highcharts-button-pressed text {
+  fill: #1c1c1c;
+  font-weight: bold;
+}
+
+.highcharts-button-disabled text {
+  fill: #1c1c1c;
+}
+
+.highcharts-range-selector-buttons .highcharts-button {
+  stroke-width: 0px;
+}
+
+.highcharts-range-label rect {
+  fill: none;
+}
+
+.highcharts-range-label text {
+  fill: #1c1c1c;
+}
+
+.highcharts-range-input rect {
+  fill: none;
+}
+
+.highcharts-range-input text {
+  fill: #1c1c1c;
+}
+
+.highcharts-range-input {
+  stroke-width: 1px;
+  stroke: #cccccc;
+}
+
+input.highcharts-range-selector {
+  position: absolute;
+  border: 0;
+  width: 1px;
+  /* Chrome needs a pixel to see it */
+  height: 1px;
+  padding: 0;
+  text-align: center;
+  left: -9em;
+  /* #4798 */
+}
+
+.highcharts-crosshair-label text {
+  fill: #fff;
+  font-size: 1.1em;
+}
+
+.highcharts-crosshair-label .highcharts-label-box {
+  fill: inherit;
+}
+
+.highcharts-candlestick-series .highcharts-point {
+  stroke: #1c1c1c;
+  stroke-width: 1px;
+}
+
+.highcharts-candlestick-series .highcharts-point-up {
+  fill: #fff;
+}
+
+.highcharts-ohlc-series .highcharts-point-hover {
+  stroke-width: 3px;
+}
+
+.highcharts-flags-series .highcharts-point .highcharts-label-box {
+  stroke: #1c1c1c;
+  fill: #fff;
+  transition: fill 250ms;
+}
+
+.highcharts-flags-series .highcharts-point-hover .highcharts-label-box {
+  stroke: #1c1c1c;
+  fill: #ccd6eb;
+}
+
+.highcharts-flags-series .highcharts-point text {
+  fill: #1c1c1c;
+  font-size: 0.9em;
+  font-weight: bold;
+}
+
+/* Highmaps */
+.highcharts-map-series .highcharts-point {
+  transition: fill 500ms, fill-opacity 500ms, stroke-width 250ms;
+  stroke: #e3e8e8;
+  stroke-width: 0.5px;
+}
+
+.highcharts-map-series .highcharts-point-hover {
+  transition: fill 0ms, fill-opacity 0ms;
+  fill-opacity: 0.5;
+  stroke-width: 2px;
+}
+
+.highcharts-mapline-series .highcharts-point {
+  fill: none;
+}
+
+.highcharts-heatmap-series .highcharts-point {
+  stroke-width: 0;
+}
+
+.highcharts-map-navigation {
+  font-size: 1.3em;
+  text-align: center;
+}
+
+.highcharts-zoom-in text {
+  transform: translateX(3px) translateY(-2px);
+}
+
+.highcharts-zoom-out text {
+  transform: translateX(4px) translateY(-2px);
+}
+
+.highcharts-coloraxis {
+  stroke-width: 0;
+}
+
+.highcharts-coloraxis-marker {
+  fill: #1c1c1c;
+}
+
+.highcharts-null-point {
+  fill: #fff !important;
+}
+
+/* 3d charts */
+.highcharts-3d-frame {
+  fill: transparent;
+}
+
+/* Exporting module */
+.highcharts-contextbutton {
+  fill: #fff;
+  /* needed to capture hover */
+  stroke: none;
+  stroke-linecap: round;
+}
+
+.highcharts-contextbutton:hover {
+  fill: #1c1c1c;
+  stroke: #1c1c1c;
+}
+
+.highcharts-button-symbol {
+  stroke: #1c1c1c;
+  stroke-width: 3px;
+}
+
+.highcharts-menu {
+  border: 1px solid #1c1c1c;
+  background: #fff;
+  padding: 5px 0;
+  box-shadow: 3px 3px 10px #888;
+}
+
+.highcharts-menu-item {
+  padding: 0.5em 1em;
+  background: none;
+  color: #1c1c1c;
+  cursor: pointer;
+  transition: background 250ms, color 250ms;
+}
+
+.highcharts-menu-item:hover {
+  background: #335cad;
+  color: #fff;
+}
+
+/* Drilldown module */
+.highcharts-drilldown-point {
+  cursor: pointer;
+}
+
+.highcharts-drilldown-data-label text,
+text.highcharts-drilldown-data-label,
+.highcharts-drilldown-axis-label {
+  cursor: pointer;
+  fill: #003399;
+  font-weight: bold;
+  text-decoration: underline;
+}
+
+/* No-data module */
+.highcharts-no-data text {
+  font-weight: bold;
+  font-size: 12px;
+  fill: #1c1c1c;
+}
+
+/* Drag-panes module */
+.highcharts-axis-resizer {
+  cursor: ns-resize;
+  stroke: black;
+  stroke-width: 2px;
+}
+
+/* Bullet type series */
+.highcharts-bullet-target {
+  stroke-width: 0;
+}
+
+/* Lineargauge type series */
+.highcharts-lineargauge-target {
+  stroke-width: 1px;
+  stroke: #1c1c1c;
+}
+
+.highcharts-lineargauge-target-line {
+  stroke-width: 1px;
+  stroke: #1c1c1c;
+}
+
+/* Annotations module */
+.highcharts-annotation-label-box {
+  stroke-width: 1px;
+  stroke: #1c1c1c;
+  fill: #1c1c1c;
+  fill-opacity: 0.75;
+}
+
+.highcharts-annotation-label text {
+  fill: #1c1c1c;
+}
+
+/* Gantt */
+.highcharts-treegrid-node-collapsed,
+.highcharts-treegrid-node-expanded {
+  cursor: pointer;
+}
+
+.highcharts-point-connecting-path {
+  fill: none;
+}
+
+.highcharts-grid-axis .highcharts-tick {
+  stroke-width: 1px;
+}
+
+.highcharts-grid-axis .highcharts-axis-line {
+  stroke-width: 1px;
+}
+
+.scatter .highcharts-point-hover,
+.bubbles .highcharts-point-hover,
+.wheel .highcharts-point-hover {
+  opacity: 1;
+}
+
+.scatter .highcharts-point-select,
+.bubbles .highcharts-point-select,
+.wheel .highcharts-point-select {
+  opacity: 1;
+}
+
+.wheel .highcharts-point {
+  stroke-width: 1px;
+}
+
+.wheel .highcharts-node {
+  opacity: 1;
+}
+
+.highcharts-xaxis-grid .highcharts-grid-line {
+  stroke-width: 1px;
+}
+
+.bars .highcharts-xaxis-grid .highcharts-grid-line,
+.area .highcharts-xaxis-grid .highcharts-grid-line,
+.bar-line .highcharts-xaxis-grid .highcharts-grid-line {
+  stroke-width: 0;
+}
+
+.bars .highcharts-axis-line,
+.area .highcharts-axis-line,
+.bar-line .highcharts-axis-line {
+  opacity: 0;
+}
+
+.h-bars .highcharts-xaxis-grid .highcharts-grid-line {
+  stroke-width: 0;
+}
+
+.h-bars .highcharts-yaxis-grid .highcharts-grid-line {
+  stroke-width: 0;
+}
+
+.h-bars .highcharts-axis-line {
+  opacity: 0;
+}
+
+.highcharts-data-label-color-0 text {
+  fill: #2e3838;
+}
+
+.highcharts-data-label-color-1 text {
+  fill: #2e3838;
+}
+
+.highcharts-data-label-color-2 text {
+  fill: #2e3838;
+}
+
+.highcharts-data-label-color-3 text {
+  fill: #1c1c1c;
+}
+
+.highcharts-data-label-color-4 text {
+  fill: #1c1c1c;
+}
+
+.highcharts-data-label-color-5 text {
+  fill: #1c1c1c;
+}
+
+.highcharts-data-label-color-6 text {
+  fill: #1c1c1c;
+}
+
+.highcharts-data-label-color-7 text {
+  fill: #2e3838;
+}
+
+.highcharts-data-label-color-8 text {
+  fill: #2e3838;
+}
+
+.highcharts-data-label-color-9 text {
+  fill: #2e3838;
+}
+
+.highcharts-data-label-color-10 text {
+  fill: #1c1c1c;
+}
+
+.highcharts-data-label-color-11 text {
+  fill: #1c1c1c;
+}
+
+.highcharts-data-label-color-12 text {
+  fill: #1c1c1c;
+}
+
+.highcharts-data-label-color-13 text {
+  fill: #1c1c1c;
+}
+
+.highcharts-data-label-color-14 text {
+  fill: #2e3838;
+}
+
+.highcharts-data-label-color-15 text {
+  fill: #2e3838;
+}
+
+.highcharts-data-label-color-16 text {
+  fill: #2e3838;
+}
+
+.highcharts-data-label-color-17 text {
+  fill: #1c1c1c;
+}
+
+.highcharts-data-label-color-18 text {
+  fill: #1c1c1c;
+}
+
+.highcharts-data-label-color-19 text {
+  fill: #1c1c1c;
+}
+
+.highcharts-data-label-color-20 text {
+  fill: #1c1c1c;
+}
+
+.highcharts-data-label-color-21 text {
+  fill: #2e3838;
+}
+
+.highcharts-data-label-color-22 text {
+  fill: #2e3838;
+}
+
+.highcharts-data-label-color-23 text {
+  fill: #2e3838;
+}
+
+.highcharts-data-label-color-24 text {
+  fill: #1c1c1c;
+}
+
+.highcharts-data-label-color-25 text {
+  fill: #1c1c1c;
+}
+
+.highcharts-data-label-color-26 text {
+  fill: #1c1c1c;
+}
+
+.highcharts-data-label-color-27 text {
+  fill: #1c1c1c;
+}
+
+.highcharts-data-label-color-28 text {
+  fill: #2e3838;
+}
+
+.highcharts-data-label-color-29 text {
+  fill: #2e3838;
+}
+
+.highcharts-data-label-color-30 text {
+  fill: #2e3838;
+}
+
+.highcharts-data-label-color-31 text {
+  fill: #1c1c1c;
+}
+
+.highcharts-data-label-color-32 text {
+  fill: #1c1c1c;
+}
+
+.highcharts-data-label-color-33 text {
+  fill: #1c1c1c;
+}
+
+.highcharts-data-label-color-34 text {
+  fill: #1c1c1c;
+}
+
+.highcharts-data-label-color-35 text {
+  fill: #2e3838;
+}
+
+.highcharts-data-label-color-36 text {
+  fill: #2e3838;
+}
+
+.highcharts-data-label-color-37 text {
+  fill: #2e3838;
+}
+
+.highcharts-data-label-color-38 text {
+  fill: #1c1c1c;
+}
+
+.highcharts-data-label-color-39 text {
+  fill: #1c1c1c;
+}
+
+.highcharts-data-label-color-40 text {
+  fill: #1c1c1c;
+}
+
+.highcharts-data-label-color-41 text {
+  fill: #1c1c1c;
+}
+
+.highcharts-data-label-color-42 text {
+  fill: #2e3838;
+}
+
+.highcharts-data-label-color-43 text {
+  fill: #2e3838;
+}
+
+.highcharts-data-label-color-44 text {
+  fill: #2e3838;
+}
+
+.highcharts-data-label-color-45 text {
+  fill: #1c1c1c;
+}
+
+.highcharts-data-label-color-46 text {
+  fill: #1c1c1c;
+}
+
+.highcharts-data-label-color-47 text {
+  fill: #1c1c1c;
+}
+
+.highcharts-data-label-color-48 text {
+  fill: #1c1c1c;
+}
+
+.highcharts-data-label-color-49 text {
+  fill: #2e3838;
+}
+
+.highcharts-data-label-color-50 text {
+  fill: #1c1c1c;
+}
+
+.highcharts-data-label-color-51 text {
+  fill: #1c1c1c;
+}
+
+.highcharts-data-label-color-52 text {
+  fill: #2e3838;
+}
+
+.highcharts-red0 .highcharts-tracker-line,
+.highcharts-red0 .highcharts-graph {
+  stroke: #fad2d1;
+  stroke-width: 3px;
+}
+
+.highcharts-red0 .highcharts-point,
+.highcharts-red0 .highcharts-halo,
+.highcharts-red0 .highcharts-area {
+  fill: #fad2d1;
+  stroke: #fad2d1;
+}
+
+.highcharts-red1 .highcharts-tracker-line,
+.highcharts-red1 .highcharts-graph {
+  stroke: #f28f8d;
+  stroke-width: 3px;
+}
+
+.highcharts-red1 .highcharts-point,
+.highcharts-red1 .highcharts-halo,
+.highcharts-red1 .highcharts-area {
+  fill: #f28f8d;
+  stroke: #f28f8d;
+}
+
+.highcharts-red2 .highcharts-tracker-line,
+.highcharts-red2 .highcharts-graph {
+  stroke: #ec625f;
+  stroke-width: 3px;
+}
+
+.highcharts-red2 .highcharts-point,
+.highcharts-red2 .highcharts-halo,
+.highcharts-red2 .highcharts-area {
+  fill: #ec625f;
+  stroke: #ec625f;
+}
+
+.highcharts-red3 .highcharts-tracker-line,
+.highcharts-red3 .highcharts-graph {
+  stroke: #c83739;
+  stroke-width: 3px;
+}
+
+.highcharts-red3 .highcharts-point,
+.highcharts-red3 .highcharts-halo,
+.highcharts-red3 .highcharts-area {
+  fill: #c83739;
+  stroke: #c83739;
+}
+
+.highcharts-red4 .highcharts-tracker-line,
+.highcharts-red4 .highcharts-graph {
+  stroke: #a02c2e;
+  stroke-width: 3px;
+}
+
+.highcharts-red4 .highcharts-point,
+.highcharts-red4 .highcharts-halo,
+.highcharts-red4 .highcharts-area {
+  fill: #a02c2e;
+  stroke: #a02c2e;
+}
+
+.highcharts-red5 .highcharts-tracker-line,
+.highcharts-red5 .highcharts-graph {
+  stroke: #641b1d;
+  stroke-width: 3px;
+}
+
+.highcharts-red5 .highcharts-point,
+.highcharts-red5 .highcharts-halo,
+.highcharts-red5 .highcharts-area {
+  fill: #641b1d;
+  stroke: #641b1d;
+}

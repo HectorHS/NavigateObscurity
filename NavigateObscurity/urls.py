@@ -16,6 +16,7 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('data/', include('worlddata.urls'), name='data'),
     path('notes/', include('nodes.urls'), name='notes'),
+    path('cooperation-conflict-lab/', include('cclab.urls'), name='notes'),
     path('about/', AboutView.as_view(), name='about'),
     path('sitemap.xml', sitemap, {'sitemaps': sitemaps}),
     re_path('djga/', include('google_analytics.urls')),

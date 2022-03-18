@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="google-site-verification" content="GU6nMf5UjOgIn1RNgNYoXhmu0fV3sDwFvL2TINDysBs" />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Acme&family=Aldrich&family=Bungee&family=Do+Hyeon&family=Donegal+One&family=Montserrat:wght@300;400;500;600;700;800&family=Quantico:wght@400;700&family=Rhodium+Libre&family=Sarpanch:wght@400;600;700;800&family=Signika:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    {% load static %}
+    <link rel='stylesheet' type="text/css" href={% static "main/css/main.css" %}>
+    <link rel="shortcut icon" type="image/png" href={% static "main/images/favicon.ico" %} />
+    <link rel='stylesheet' type="text/css" href={% static "cclab/css/cclab.css" %}>
+
+    {% load google_analytics_tags %}
+    <div style="display:none">
+        <img src="{% google_analytics %}" width="0" height="0" />
+    </div>
+    {% block styles %}
+    {% endblock %}
+    <title>Navigate Obscurity</title>
+</head>
+
+<body>
+
+    <!--  Navigation bar -->
+    <section class="cclab-nav-bar">
+        <div class="cclab-nav-bar-inner">
+        <div class="cclab-logo">
+            <a href="https://www.cooperationintheapocalypse.org/">
+                <img src={% static "cclab/images/cclab-logo.webp" alt='cooperation and conflict lab logo' %}></a>
+        </div>
+        <nav role="navigation">
+            <div class="cclab-nav-mobile">
+                  <a id="nav_hamburger" href="#!">
+                    <span>
+                    </span>
+                </a>
+            </div>
+            <ul id="cclab_nav_list" class="cclab-nav-list">
+                <li><a href="https://www.cooperationintheapocalypse.org/">Home</a></li>
+                <li><a href="https://www.cooperationintheapocalypse.org/#blog">Blog</a></li>
+                <li><a href="https://www.cooperationintheapocalypse.org/#research">Research</a></li>
+                <li><a href="https://www.cooperationintheapocalypse.org/#support">Support</a></li>
+                <li><a href="https://www.cooperationintheapocalypse.org/#team">Team</a></li>
+                <li><a href="https://www.cooperationintheapocalypse.org/#resources">Resources</a></li>
+                <li><a href="/cooperation-conflict-lab">Data</a></li>
+            </ul>
+            
+        </nav>
+    </div>
+    </section>
+
+    <section>
+        <div class="cclab-banner-container">
+            <div class="cclab-banner-title"></div>
+        </div>
+        <div class="cclab-title-separator">
+
+        </div>
+        <div class="cclab-subtitle-container">
+            <div class="subtitle-1">How will humanity survive?</div>
+            <div class="subtitle-2">Interdisciplinary science and scholarship is our only hope.</div>
+        </div>
+    </section>
+
+
+    {% block content %}
+    {% endblock %}
+
+
+    <!-- Footer -->
+    <div class="cclab-footer">
+        <div class="banner-copy">© 2022 Zombie Apocalypse Medicine Alliance</div>
+    </div>
+
+    <!-- It's here instead of head because we are adding events to existing elements -->
+    <script src={% static "cclab/js/function.js" %}></script>
+
+</body>

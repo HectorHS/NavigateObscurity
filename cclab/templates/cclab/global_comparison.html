@@ -1,0 +1,1283 @@
+{% extends 'cclab/layout.html' %}
+{% load static %}
+
+{% block styles %}
+
+<!-- Meta -->
+<title>Cooperation & Conflict Lab - Navigate Obscurity</title>
+<meta name="description"
+    content="How do we navigate the fundamental tensions between cooperation and conflict that are inherent to social living? The Cooperation and Conflict Lab investigates these process across a variety of systems, from humans food sharing to cooperation in multicellularity and cancer.">
+<meta property="og:image"
+    content="https://www.navigateobscurity.com/static/cclab/images/cooperation-conflict-lab.jpg" />
+<meta property="og:title" content="Cooperation & Conflict Lab" />
+<meta property="og:url" content="https://www.navigateobscurity.com/cooperation-conflict-lab" />
+<meta name="twitter:card" content="summary" />
+<meta name="twitter:url" content="https://www.navigateobscurity.com/cooperation-conflict-lab" />
+<meta name="twitter:title" content="Cooperation & Conflict Lab" />
+<meta name="twitter:description"
+    content="How do we navigate the fundamental tensions between cooperation and conflict that are inherent to social living? The Cooperation and Conflict Lab investigates these process across a variety of systems, from humans food sharing to cooperation in multicellularity and cancer." />
+<meta name="twitter:image"
+    content="https://www.navigateobscurity.com/static/cclab/images/cooperation-conflict-lab.jpg" />
+
+<!-- We use d3 libraries to load data -->
+<script src="https://d3js.org/d3-dsv.v1.min.js"></script>
+<script src="https://d3js.org/d3-fetch.v1.min.js"></script>
+
+<!-- We use highcharts for visualizations -->
+<script src="https://code.highcharts.com/highcharts.js"></script>
+<script src="https://code.highcharts.com/modules/coloraxis.js"></script>
+<script src="https://code.highcharts.com/modules/heatmap.js"></script>
+
+<script src={% static "worlddata/js/chart-helpers.js" %}></script>
+
+<link rel='stylesheet' type="text/css" href={% static "cclab/css/highcharts.css" %}>
+{% endblock %}
+
+{% block content %}
+
+<!-- Viz 2 - Dashboard for older data -->
+<div class="data-container">
+    <section>
+        <div style="padding-bottom: 0px;">
+            <h1> Global cohort - variable comparison </h1> 
+            <div class="dashboard-text">We surveyed 1031 participants from 39 countries every two weeks for
+                six
+                months. During that time
+                they answered almost 500 unique questions for us. Use the dashboard below to see how their
+                responses
+                correlate. </div>
+            <div class="dashboard-instructions">
+                <div class="title">How to use:</div>
+                <div class="text">
+                    <ul>
+                        <li> Choose a primary variable (question) corresponding to the survey question you
+                            are
+                            most
+                            interested in. </li>
+                        <li> Select a date which correspond to the relevant data collection time point. Only
+                            dates
+                            when the primary variable was asked will be available. </li>
+
+                    </ul>
+                    <ul>
+                        <li> Choose a secondary variable (question) so you can see how it correlates with
+                            the
+                            primary
+                            variable.
+                            Only variables available for the selected date will be visible. </li>
+                        <li> If you manipulate the variables / date in a different order you might get
+                            an error. If that happens, just start over again. </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <figure">
+            <div class="dashboard-container-horizontal CCLab-dashboard" style="margin-left: -5px;">
+                <div class="dashboard-container-vertical dashboard-level-1">
+                    <div class="dashboard-container-horizontal dashboard-side-60">
+                        <div class="dashboard-side" style="height: inherit;">
+                            <div class="cclab-stats-container1">
+                                <div class="cclab-stats-container2">
+                                    <div class="cclab-stat-box" style="background-color: #B5AFB2;">
+                                        <div class="cclab-stat-label-container">
+                                            <div class="cclab-stat-label"># of individuals</div>
+                                            <div id="old_sample_date" class="cclab-stat-sublabel"></div>
+                                        </div>
+
+                                        <div id="old_sample" class="cclab-stat-value"></div>
+                                    </div>
+                                    <div class="cclab-stat-box" style="background-color: #709072;">
+                                        <div class="cclab-stat-label-container">
+
+                                            <div class="cclab-stat-label">With pre-existing</div>
+                                            <div id="old_pre_date" class="cclab-stat-sublabel"></div>
+                                        </div>
+
+                                        <div id="old_pre" class="cclab-stat-value"></div>
+                                    </div>
+                                </div>
+                                <div class="cclab-stats-container2">
+                                    <div class="cclab-stat-box" style="background-color: #FDC64B;">
+                                        <div class="cclab-stat-label-container">
+                                            <div class="cclab-stat-label">Covid positive</div>
+                                            <div id="old_covid_date" class="cclab-stat-sublabel"></div>
+                                        </div>
+                                        <div id="old_covid" class="cclab-stat-value"></div>
+                                    </div>
+                                    <div class="cclab-stat-box" style="background-color: #EC625F;">
+                                        <div class="cclab-stat-label-container">
+                                            <div class="cclab-stat-label">With infected contacts</div>
+                                            <div id="old_contacts_date" class="cclab-stat-sublabel"></div>
+                                        </div>
+
+                                        <div id="old_contacts" class="cclab-stat-value"></div>
+                                    </div>
+
+                                </div>
+                            </div>
+
+                            <div class="cclab-chart-container" style="height: 350px;">
+                                <div id="old_heatmap" class="heatmap" style="width:100%;padding-bottom: 20px;">
+                                </div>
+                                <div id="old_heatmap_error" class="error hidden"
+                                    style="padding: 160px 0; bottom:370px;">Invalid date -
+                                    variable
+                                    combination</div>
+                            </div>
+                            <div class="cclab-chart-container" style="height: 400px;">
+                                <div id="old_bars" class="" style="width:100%;"></div>
+                                <div id="old_bars_error" class="error hidden" style="padding: 185px 0; bottom:400px;">
+                                    Invalid
+                                    date
+                                    -
+                                    variable
+                                    combination</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="dashboard-side-40">
+                        <div class="cclab-dashboard-options">
+                            <datalist id="old-var1-datalist"></datalist>
+                            <div class="CCLAB-var-container">
+                                <div class="CCLAB-var-title"> Primary variable: </div>
+                                <div class="search-container">
+                                    <input id="old-var1-search-input" list="old-var1-datalist"
+                                        placeholder="Search for a variable">
+                                </div>
+                            </div>
+                            <div id="old_var1"></div>
+                            <div class="CCLAB-var-container" style="padding-top:40px;">
+                                <div class="CCLAB-var-title">Date:</div>
+                                <div id="date_container" style="width:100%"></div>
+                            </div>
+                            <datalist id="old-var2-datalist"></datalist>
+                            <div class="CCLAB-var-container" style="padding-top:40px;">
+                                <div class="CCLAB-var-title"> Secondary variable: </div>
+                                <div class="search-container">
+                                    <input id="old-var2-search-input" list="old-var2-datalist"
+                                        placeholder="Search for a variable">
+                                </div>
+                            </div>
+                            <div id="old_var2"></div>
+                        </div>
+                        <div class="pies-container">
+                            <div class="cclab-chart-container" style="margin: 5px 5px 0 0; height: 250px; width:100%">
+                                <div id="old_var1_pie" class="cclab-pie" style="width:100%;"></div>
+                                <div id="old_var1_error" class="error hidden" style="padding: 95px 0; bottom: 250px;">
+                                    Invalid date -
+                                    variable combination
+                                </div>
+                            </div>
+                            <div class="cclab-chart-container" style="margin: 5px 0 0 0;height: 250px;width:100%">
+                                <div id="old_var2_pie" class="cclab-pie" style="width:100%;"></div>
+                                <div id="old_var2_error" class="error hidden" style="padding: 95px 0; bottom: 250px;">
+                                    Invalid date -
+                                    variable combination
+                                </div>
+                            </div>
+                        </div>
+                        <div class="cclab-chart-container" style="margin: 5px 0;height: 300px;">
+                            <div id="old_lines" class="lines" style="width:100%;"></div>
+                            <div id="old_lines_error" class="error hidden" style="padding: 135px 0; bottom: 300px;">
+                                Invalid date -
+                                variable
+                                combination</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </figure>
+    </section>
+    <a class="cclab-button" href="/cooperation-conflict-lab">return to data</a>
+
+</div>
+
+
+
+<script>
+    var static_url = "{% get_static_prefix %}";
+    file_old = "cclab/csv/CCLAB-old-ints.csv";
+    old_path = static_url + file_old;
+    file_old_vars = "cclab/csv/CCLAB-old-variableLookup.csv";
+    old_vars_path = static_url + file_old_vars;
+    file_old_desc = "cclab/csv/CCLAB-old-descriptions.csv";
+    old_desc_path = static_url + file_old_desc;
+
+    var oldDashboard = Promise.all([
+        d3.csv(old_path),
+        d3.csv(old_vars_path),
+        d3.csv(old_desc_path)
+    ]).then(function (files) {
+        // All filterable options
+        const all_dates = [...new Set(files[0].map(d => d.Date))];
+        const all_variables = files[0].columns;
+        all_variables.splice(0, 3);
+        // create description lookup
+        let descriptions_lookup = [];
+        for (let row of files[2]) {
+            descriptions_lookup[row.key] = row.description;
+        }
+        let heatmap_xaxis_categories;
+        let heatmap_yaxis_categories;
+        // long variables set up
+        let longVariables = ["Age", "Children", "Under12", "Over12", "SubjectiveSES",
+            "LivingSituation", "RiskmanagementavoidComposite", "RiskmanagementreductionComposite",
+            "NonfoodHave", "NonfoodWant", "FoodHave", "FoodWant", "PrepTimeCovidnotCOVID",
+            "PrepTimeCovidtracking", "PrepTimeCovidtalking", "PrepTimeCovidnewrelationships",
+            "PrepTimeCovidmedical", "PrepTimeCovidfood", "PrepTimeCovidwater", "PrepTimeCovidpower",
+            "PrepTimeCovidhomedefense", "PrepTimeCovidfinancial", "PrepTimeCovidbarter", "PrepTimeCovidother",
+            "PrepCOVIDPoliticalLeaders", "PrepCOVIDLocalGov", "PrepCOVIDNationalHealthcare", "PrepCOVIDLocalHealthcare",
+            "PrepCOVIDNationalMedia", "PrepCOVIDLocalMedia", "PrepCOVIDAirline", "PrepCOVIDEmployer",
+            "PrepCOVIDExtendedFamily", "PrepCOVIDSigOther", "PrepCOVIDParents", "PrepCOVIDSiblings",
+            "Howmuch", "CloseFriendPFIEmpathyComposite", "AcqPFIEmpathyComposite", "NeighborPFIEmpathyComposite",
+            "CountryPFIEmpathyComposite", "HumanityPFIEmpathyComposite", "CloseFriendPFISharedFAteComposite",
+            "AcqPFISharedFAteComposite", "NeighborPFISharedFAteComposite", "CountryPFISharedFAteComposite",
+            "HumanityPFISharedFAteComposite", "PSScomposite", "AnxietyComposite", "WillingnessNeighborComposite",
+            "WillingnessCountryComposite", "WillingnessHumanityComposite", "PerceptionRiskComposite", "PerceptionManagementComposite",
+            "CFICloseFriendComposite", "CFIAcqComposite", "CFINeighborComposite", "CFICountryComposite",
+            "CFIHumanityComposite", "DiseaseAvoidanceComposite", "NBTNeighborComposite", "NBTHumanityComposite", "NBTCountryComposite",
+            "Back2Normal", "MateSeekingComposite", "SocialDistanceComposite", "HoursworkedOutside", "HoursWorkHome", "HoursSpentOthers",
+            "HoursInContact", "HoursVolunteer", "MoneyDonated", "aidindividuals", "aidsmallbusiness", "aidlargebusiness", "aidbanks",
+            "aidgovernment", "RiskManagementcomposite", "WeeksAgoPrepare", "WeeksSinceCovid", "WeeksSinceCovid", "HowManyInfected",
+            "MaskAttitudes1", "MaskAttitudes2", "MaskAttitudes3", "MaskAttitudes4", "MaskAttitudes5", "SafetyProtests",
+            "MoneyProtests", "Movies", "Job1", "Job2", "Job3", "HowLongSocialDist", "HowLongMask", "Contacts24hrs",
+            "Contacts7days", "Streneous", "Moderate", "Mild", "RMETcomposite", "PerspectiveTakingComposite",
+            "PartnerEmpathyAcqComposite", "SharedAgencyAcqComposite", "Dggive", "HouseHold", "NewFriends", "LargeGroups",
+            "AskingHelpComposite", "LikelyGiveHelpComposite", "RiskManagementProtestComposite",
+            "TimesHelpGivenComposite", "HousingInsecurityComposite", "NeedForChaosComposite", "NeedForOrderComposite",
+            "FoodInsecurityComposite", "UseGreenSpacesComposite", "ProportionWearMaskComposite", "CFCcomposite",
+            "CFCcompositeFuture", "CFCcompositeImmediate", "PFISharedFateAcqComposite", "PFIempathyAcqComposite"
+        ];
+        let avg3 = ["HousingInsecurityComposite", "FoodInsecurityComposite", "UseGreenSpacesComposite"]
+        let avg4 = ["AnxietyComposite", "SharedAgencyAcqComposite"];
+        let avg5 = ["PSScomposite", "PerspectiveTakingComposite"];
+        let avg7 = ["RiskmanagementavoidComposite", "RiskmanagementreductionComposite", "CloseFriendPFIEmpathyComposite",
+            "AcqPFIEmpathyComposite", "NeighborPFIEmpathyComposite", "CountryPFIEmpathyComposite", "HumanityPFIEmpathyComposite",
+            "CloseFriendPFISharedFAteComposite", "AcqPFISharedFAteComposite", "NeighborPFISharedFAteComposite",
+            "CountryPFISharedFAteComposite", "HumanityPFISharedFAteComposite", "WillingnessNeighborComposite", "WillingnessCountryComposite",
+            "WillingnessHumanityComposite", "PerceptionRiskComposite", "PerceptionManagementComposite", "DiseaseAvoidanceComposite",
+            "NBTNeighborComposite", "NBTHumanityComposite", "NBTCountryComposite", "MateSeekingComposite", "SocialDistanceComposite",
+            "RiskManagementcomposite", "PartnerEmpathyAcqComposite", "AskingHelpComposite", "LikelyGiveHelpComposite", "RiskManagementProtestComposite",
+            "TimesHelpGivenComposite", "NeedForChaosComposite", "NeedForOrderComposite", "ProportionWearMaskComposite", "PFISharedFateAcqComposite",
+            "PFIempathyAcqComposite"];
+        let avg33 = ["CFICloseFriendComposite", "CFIAcqComposite", "CFINeighborComposite", "CFICountryComposite",
+            "CFIHumanityComposite"];
+        let cat8 = ["MaskAttitudes1", "MaskAttitudes2", "MaskAttitudes3", "MaskAttitudes4", "MaskAttitudes5", "SafetyProtests",
+            "Job1", "Job2", "Job3"];
+        let cat9 = ["SubjectiveSES", "LivingSituation"];
+        let cat10 = ["PrepCOVIDPoliticalLeaders", "PrepCOVIDLocalGov", "PrepCOVIDNationalHealthcare",
+            "PrepCOVIDLocalHealthcare", "PrepCOVIDNationalMedia", "PrepCOVIDLocalMedia", "PrepCOVIDAirline",
+            "PrepCOVIDEmployer", "PrepCOVIDExtendedFamily", "PrepCOVIDSigOther", "PrepCOVIDParents", "PrepCOVIDSiblings",
+            "RMETcomposite", "NewFriends"];
+        let cat10plus = ["Streneous", "Moderate", "Mild", "HouseHold"];
+        let cat12 = ["Back2Normal", "HowLongSocialDist", "HowLongMask"];
+        let cat20plus = ["WeeksAgoPrepare", "WeeksSinceCovid", "WeeksSinceCovid"]
+        let cat50plus = ["HoursworkedOutside", "HoursWorkHome",
+            "HoursSpentOthers", "HoursInContact", "HoursVolunteer", "HowManyInfected", "MoneyProtests", "Movies",
+            "Contacts24hrs", "CFCcompositeFuture", "CFCcompositeImmediate"];
+        let cat100 = ["PrepTimeCovidnotCOVID", "PrepTimeCovidtracking", "PrepTimeCovidtalking",
+            "PrepTimeCovidnewrelationships", "PrepTimeCovidmedical", "PrepTimeCovidfood", "PrepTimeCovidwater",
+            "PrepTimeCovidpower", "PrepTimeCovidhomedefense", "PrepTimeCovidfinancial", "PrepTimeCovidbarter",
+            "PrepTimeCovidother", "aidindividuals", "aidsmallbusiness", "aidlargebusiness", "aidbanks", "aidgovernment",
+            "Dggive", "CFCcomposite"];
+        let cat100plus = ["NonfoodHave", "NonfoodWant", "FoodHave", "FoodWant", "Contacts7days"];
+
+        let variable1 = "Stress";
+        let variable2 = "PerceptionsRisk";
+        let date = "08/22/2020";
+        let heatmapMax = 0;
+        let availableDates = [];
+        let availableVar2 = getVar2Values();
+        let validCombo = true;
+
+        let var1output = document.getElementById("old_var1");
+        var1output.innerHTML = "<b>" + variable1 + "</b>: " + descriptions_lookup[variable1];
+        let var2output = document.getElementById("old_var2");
+        var2output.innerHTML = "<b>" + variable2 + "</b>: " + descriptions_lookup[variable2];
+
+        function getLinesData() {
+            let data = [];
+            slice1 = getLinesDataSlice("one");
+            slice2 = getLinesDataSlice("two");
+
+            data.push(slice1);
+            data.push(slice2);
+            return data;
+        }
+        function getLinesDataSlice(number) {
+            let d1v = 0;
+            let d1c = 0;
+            let d2v = 0;
+            let d2c = 0;
+            let d3v = 0;
+            let d3c = 0;
+            let d4v = 0;
+            let d4c = 0;
+            let d5v = 0;
+            let d5c = 0;
+            let d6v = 0;
+            let d6c = 0;
+            let d7v = 0;
+            let d7c = 0;
+            let d8v = 0;
+            let d8c = 0;
+            let d9v = 0;
+            let d9c = 0;
+            let d10v = 0;
+            let d10c = 0;
+            let d11v = 0;
+            let d11c = 0;
+            let d12v = 0;
+            let d12c = 0;
+            let d13v = 0;
+            let d13c = 0;
+            let d14v = 0;
+            let d14c = 0;
+            let data = [];
+            let variable;
+            let colorIndx;
+            if (number == "one") {
+                variable = variable1;
+                colorIndx = 18;
+            } else if (number == "two") {
+                variable = variable2;
+                colorIndx = 10;
+            }
+
+            // for (let date of all_dates) {
+            for (let row of files[0]) {
+                let val = +row[variable];
+                if (row.Date == "03/06/2020" && val > 0) {
+                    d1v += val;
+                    d1c++;
+                }
+                else if (row.Date == "03/14/2020" && val > 0) {
+                    d2v += val;
+                    d2c++;
+                }
+                else if (row.Date == "03/24/2020" && val > 0) {
+                    d3v += val;
+                    d3c++;
+                }
+                else if (row.Date == "04/03/2020" && val > 0) {
+                    d4v += val;
+                    d4c++;
+                }
+                else if (row.Date == "04/17/2020" && val > 0) {
+                    d5v += val;
+                    d5c++;
+                }
+                else if (row.Date == "05/02/2020" && val > 0) {
+                    d6v += val;
+                    d6c++;
+                }
+                else if (row.Date == "05/16/2020" && val > 0) {
+                    d7v += val;
+                    d7c++;
+                }
+                else if (row.Date == "05/30/2020" && val > 0) {
+                    d8v += val;
+                    d8c++;
+                }
+                else if (row.Date == "06/13/2020" && val > 0) {
+                    d9v += val;
+                    d9c++;
+                }
+                else if (row.Date == "06/27/2020" && val > 0) {
+                    d10v += val;
+                    d10c++;
+                }
+                else if (row.Date == "07/11/2020" && val > 0) {
+                    d11v += val;
+                    d11c++;
+                }
+                else if (row.Date == "07/25/2020" && val > 0) {
+                    d12v += val;
+                    d12c++;
+                }
+                else if (row.Date == "08/08/2020" && val > 0) {
+                    d13v += val;
+                    d13c++;
+                }
+                else if (row.Date == "08/22/2020" && val > 0) {
+                    d14v += val;
+                    d14c++;
+                }
+            }
+
+            data.push((d1v > 0) ? +numberFormatterPercentage(d1v / d1c) : 0);
+            data.push((d2v > 0) ? +numberFormatterPercentage(d2v / d2c) : 0);
+            data.push((d3v > 0) ? +numberFormatterPercentage(d3v / d3c) : 0);
+            data.push((d4v > 0) ? +numberFormatterPercentage(d4v / d4c) : 0);
+            data.push((d5v > 0) ? +numberFormatterPercentage(d5v / d5c) : 0);
+            data.push((d6v > 0) ? +numberFormatterPercentage(d6v / d6c) : 0);
+            data.push((d7v > 0) ? +numberFormatterPercentage(d7v / d7c) : 0);
+            data.push((d8v > 0) ? +numberFormatterPercentage(d8v / d8c) : 0);
+            data.push((d9v > 0) ? +numberFormatterPercentage(d9v / d9c) : 0);
+            data.push((d10v > 0) ? +numberFormatterPercentage(d10v / d10c) : 0);
+            data.push((d11v > 0) ? +numberFormatterPercentage(d11v / d11c) : 0);
+            data.push((d12v > 0) ? +numberFormatterPercentage(d12v / d12c) : 0);
+            data.push((d13v > 0) ? +numberFormatterPercentage(d13v / d13c) : 0);
+            data.push((d14v > 0) ? +numberFormatterPercentage(d14v / d14c) : 0);
+
+            // to hide 0's
+            data.forEach(function (element, index) {
+                if (element === 0) {
+                    data[index] = null;
+                }
+            });
+
+            let slice = { name: variable, data: data, colorIndex: colorIndx };
+            return slice;
+        }
+        function getAvailableDates(var1) {
+            dates = [];
+            for (let row of files[1]) {
+                if (row.Name == var1) {
+                    for (let d of all_dates) {
+                        if (row[d] > 0) {
+                            dates.push(d);
+                        }
+                    }
+                }
+            }
+            return dates;
+        }
+        function removeEmpty(array) {
+            for (let i = 0; i < array.length; i++) {
+                if (array[i] == "" || array[i] == " ") {
+                    array.splice(i, 1);
+                    removeEmpty(array);
+                }
+            }
+            return array;
+        }
+        function getHeatmapAxis(parameter) {
+            let array;
+            // Deal with variables with a lot of unique values
+            if (longVariables.includes(parameter)) {
+                array = getArrayForNewVariable(parameter);
+            } else {
+                // fancy sorting to deal with numerical values
+                array = [...new Set(files[0].map(d => +d[parameter]))].sort((a, b) => a - b);
+                array = removeEmpty(array);
+            }
+
+            return array;
+        }
+        function getHeatmapData() {
+            let xaxis = getHeatmapAxis(variable1);
+            let yaxis = getHeatmapAxis(variable2);
+            let xLoops;
+            let yLoops;
+
+            // define loops - we will be skipping last one for long variables
+            if (longVariables.includes(variable1)) {
+                xLoops = xaxis.length - 1;
+            } else {
+                xLoops = xaxis.length;
+            }
+            if (longVariables.includes(variable2)) {
+                yLoops = yaxis.length - 1;
+            } else {
+                yLoops = yaxis.length;
+            }
+
+            heatmapMax = 0;
+
+            let data = [];
+
+            for (let x = 0; x < xLoops; x++) {
+                for (let y = 0; y < yLoops; y++) {
+                    let counter = 0;
+                    for (let row of files[0]) {
+                        if (longVariables.includes(variable1) && longVariables.includes(variable2)) {
+                            if (row.Date == date && +row[variable1] >= xaxis[x] && +row[variable1] < xaxis[x + 1] && +row[variable2] >= yaxis[y] && +row[variable2] < yaxis[y + 1]) {
+                                counter++;
+                            }
+                        } else if (longVariables.includes(variable1)) {
+                            if (row.Date == date && +row[variable1] >= xaxis[x] && +row[variable1] < xaxis[x + 1] && row[variable2] == yaxis[y]) {
+                                counter++;
+                            }
+                        } else if (longVariables.includes(variable2)) {
+                            if (row.Date == date && row[variable1] == xaxis[x] && +row[variable2] >= yaxis[y] && +row[variable2] < yaxis[y + 1]) {
+                                counter++;
+                            }
+                        } else {
+                            if (row.Date == date && row[variable1] == xaxis[x] && row[variable2] == yaxis[y]) {
+                                counter++;
+                            }
+                        }
+                    }
+                    data.push([x, y, counter]);
+                }
+            }
+            return data;
+        }
+        function getHeatmapMax(heatmapData) {
+            heatmapMax = 0;
+            for (let d of heatmapData) {
+                if (d[2] > heatmapMax) {
+                    heatmapMax = d[2];
+                }
+            }
+        }
+        function getBarsData(heatmap_data) {
+            let yaxis;
+            if (longVariables.includes(variable2)) {
+                yaxis = getCategoriesForNewVariable(variable2);
+            } else {
+                yaxis = getHeatmapAxis(variable2);
+            }
+            let all_data = [];
+
+            for (let i = 0; i < yaxis.length; i++) {
+                let name = variable2 + ": " + yaxis[i];
+                let data = [];
+                for (let d of heatmap_data) {
+                    if (d[1] == i) {
+                        data.push(d[2]);
+                    }
+                }
+                let slice;
+                slice = { name: name, data: data, colorIndex: 7 + i };
+
+                all_data.push(slice);
+            }
+            return all_data;
+        }
+        function getBarBands(categories) {
+            let bands = [];
+            if (categories.length < 8) {
+                for (let i = 0; i < categories.length; i++) {
+                    let from = i - 0.5;
+                    let to = i + 0.5;
+                    let band = { from: from, to: to, className: 'highcharts-band-color-' + (14 + i) };
+                    bands.push(band);
+                }
+            }
+            return bands;
+        }
+        function getVar2Values() {
+            let data = [];
+            for (let row of files[1]) {
+                if (row[date] > 0) {
+                    data.push(row.Name);
+                }
+            }
+            return data;
+        }
+        function getPieData(number) {
+            let data = [];
+            let series = [];
+            let variable;
+            let colorIndx;
+            if (number == "one") {
+                variable = variable1;
+                colorIndx = 14;
+            } else if (number == "two") {
+                variable = variable2;
+                colorIndx = 7;
+            }
+
+            let varValues = getHeatmapAxis(variable);
+
+            if (longVariables.includes(variable)) {
+
+                for (let i = 0; i < varValues.length - 1; i++) {
+                    let counter = 0
+
+                    // In case our categories start from 0, otherwise empty values are counted as zeroes
+                    if (varValues[i] == 0) {
+                        for (let row of files[0]) {
+                            if (row.Date == date && row[variable] == "0") {
+                                counter++;
+                            } else if (row.Date == date && +row[variable] > varValues[i] && +row[variable] < varValues[i + 1]) {
+                                counter++;
+                            }
+                        }
+                    } else {
+                        for (let row of files[0]) {
+                            if (row.Date == date && +row[variable] >= varValues[i] && +row[variable] < varValues[i + 1]) {
+                                counter++;
+                            }
+                        }
+                    }
+                    data.push(counter);
+                }
+            } else {
+                for (let val of varValues) {
+                    let counter = 0
+                    for (let row of files[0]) {
+                        if (row.Date == date && +row[variable] == val) {
+                            counter++;
+                        }
+                    }
+                    data.push(counter);
+                }
+            }
+
+            if (longVariables.includes(variable)) {
+                let varCats = getCategoriesForNewVariable(variable);
+                for (let i = 0; i < varValues.length - 1; i++) {
+
+                    let slice = { name: varCats[i], y: data[i], colorIndex: colorIndx + i };
+                    series.push(slice);
+                }
+            } else {
+                for (let i = 0; i < varValues.length; i++) {
+
+                    let slice = { name: varValues[i], y: data[i], colorIndex: colorIndx + i };
+                    series.push(slice);
+                }
+            }
+
+            return series;
+        }
+        function setStats() {
+            let sample = 0;
+            let contacts = 0;
+            let covid = 0;
+            let pre = 0;
+
+            for (let row of files[0]) {
+                if (row.Date == date && row[variable1] && row[variable2]) {
+                    sample++;
+                    if (row.Preexisting == 1) {
+                        pre++;
+                    }
+                    if (row.WeeksSinceCovid > 0) {
+                        covid++;
+                    }
+                    if (row.KnowSomeoneInfected == 3 || row.HowManyInfected > 0) {
+                        contacts++;
+                    }
+                }
+            }
+
+            let sampleEl = document.getElementById("old_sample");
+            let covidEl = document.getElementById("old_covid");
+            let contactsEl = document.getElementById("old_contacts");
+            let preEl = document.getElementById("old_pre");
+            let sampleDateEl = document.getElementById("old_sample_date");
+            let covidDateEl = document.getElementById("old_covid_date");
+            let contactsDateEl = document.getElementById("old_contacts_date");
+            let preDateEl = document.getElementById("old_pre_date");
+
+            sampleEl.innerHTML = sample;
+            if (covid > 0) {
+                covidEl.innerHTML = covid;
+            } else {
+                covidEl.innerHTML = "N/A";
+            }
+            if (contacts > 0) {
+                contactsEl.innerHTML = contacts;
+            } else {
+                contactsEl.innerHTML = "N/A";
+            }
+            preEl.innerHTML = pre;
+            sampleDateEl.innerHTML = "(" + date + ")";
+            covidDateEl.innerHTML = "(" + date + ")";
+            contactsDateEl.innerHTML = "(" + date + ")";
+            preDateEl.innerHTML = "(" + date + ")";
+        }
+
+        let initial_lines_data = getLinesData();
+        let initial_heatmap_data = getHeatmapData();
+        let initial_var1_pie_data = getPieData("one");
+        let initial_var2_pie_data = getPieData("two");
+        if (longVariables.includes(variable1)) {
+            heatmap_xaxis_categories = getCategoriesForNewVariable(variable1);
+        } else {
+            heatmap_xaxis_categories = getHeatmapAxis(variable1);
+        }
+        if (longVariables.includes(variable2)) {
+            heatmap_yaxis_categories = getCategoriesForNewVariable(variable2);
+        } else {
+            heatmap_yaxis_categories = getHeatmapAxis(variable2);
+        }
+        let initial_bars = getBarsData(initial_heatmap_data);
+        heatmapMax = getHeatmapMax(initial_heatmap_data);
+        availableDates = getAvailableDates(variable1);
+
+        let heatmapXaxis = {
+            categories: heatmap_xaxis_categories,
+            title: {
+                text: variable1,
+            },
+        };
+        let heatmapYaxis = {
+            categories: heatmap_yaxis_categories,
+            title: {
+                text: variable2,
+            },
+        };
+        let barsXaxis = {
+            categories: heatmap_xaxis_categories,
+            title: {
+                text: variable1,
+            },
+            plotBands: getBarBands(heatmap_xaxis_categories)
+        };
+        let heatmapColorAxis = {
+            min: 0,
+            max: heatmapMax,
+            minColor: '#ffffff',
+            maxColor: '#174f1e'
+        };
+        setStats();
+
+        let var1Pie = Highcharts.chart('old_var1_pie', {
+            chart: {
+                plotBackgroundColor: null,
+                plotBorderWidth: null,
+                plotShadow: false,
+                type: 'pie',
+                height: 250,
+
+            },
+            title: {
+                text: "<strong>" + variable1 + "</strong> - breakdown of responses",
+                align: "left",
+                margin: 0
+            },
+            tooltip: {
+                formatter: function () {
+                    return '<text><strong>' + variable1 + "[" + this.key + "] </strong><br># of respondents: " + this.y + "<br>% of respondents: " + numberFormatterPercentage(this.percentage) + '%</text>';
+                },
+
+                useHTML: true
+            },
+            plotOptions: {
+                pie: {
+                    allowPointSelect: true,
+                    cursor: 'pointer',
+                    dataLabels: {
+                        enabled: true,
+                        connectorWidth: 1,
+                        distance: 10,
+                        connectorShape: 'straight',
+                    }
+                }
+            },
+            legend: {
+                margin: 0
+            },
+            series: [{
+                name: "Variable1",
+                innerSize: '40%',
+                data: initial_var1_pie_data
+            }],
+            annotations: [{
+                labels: [{
+                    point: '0'
+                }]
+            }, {
+                visible: false,
+            }]
+        });
+        let var2Pie = Highcharts.chart('old_var2_pie', {
+            chart: {
+                plotBackgroundColor: null,
+                plotBorderWidth: null,
+                plotShadow: false,
+                type: 'pie',
+                height: 250,
+
+            },
+            title: {
+                text: "<strong>" + variable2 + "</strong> - breakdown of responses",
+                align: "left",
+                margin: 0
+            },
+            tooltip: {
+                formatter: function () {
+                    return '<text><strong>' + variable2 + "[" + this.key + "] </strong><br># of respondents: " + this.y + "<br>% of respondents: " + numberFormatterPercentage(this.percentage) + '%</text>';
+                },
+
+                useHTML: true
+            },
+            plotOptions: {
+                pie: {
+                    allowPointSelect: true,
+                    cursor: 'pointer',
+                    dataLabels: {
+                        enabled: true,
+                        connectorWidth: 1,
+                        distance: 10,
+                        connectorShape: 'straight'
+                        //format: '<b>{point.name}</b>: {point.percentage:.1f} %'
+                    }
+                }
+            },
+            legend: {
+                margin: 0
+            },
+            series: [{
+                name: "Variable2",
+                innerSize: '40%',
+                data: initial_var2_pie_data
+            }],
+            annotations: [{
+                labels: [{
+                    point: '0'
+                }]
+            }, {
+                visible: false,
+            }]
+        });
+        var lineChart = Highcharts.chart('old_lines', {
+            chart: {
+                type: 'spline',
+                height: 300
+            },
+            title: {
+                text: 'Average response scores for all available time points',
+                align: "left",
+            },
+            plotOptions: {
+                spline: {
+                    label: {
+                        enabled: false
+                    },
+                    marker: {
+                        enabled: false
+                    },
+                },
+            },
+            tooltip: {
+                formatter: function () {
+                    let var1 = numberFormatterPercentage(this.points[0].y);
+                    let var2 = numberFormatterPercentage(this.points[1].y);
+                    let tip = '<text><b>' + this.x +
+                        '</b><br/>' + this.points[0].series.name + ': ' + var1 +
+                        '<br/>' + this.points[1].series.name + ': ' + var2 + '</text>';
+                    return tip
+                },
+                useHTML: true,
+                shared: true
+            },
+            xAxis: {
+                categories: all_dates,
+            },
+            yAxis: {
+                title: {
+                    text: "Average score"
+                },
+            },
+            series: initial_lines_data,
+        });
+        let heatmap = Highcharts.chart('old_heatmap', {
+            chart: {
+                type: 'heatmap',
+                marginBottom: 80,
+                plotBorderWidth: 1,
+                height: 350
+            },
+            title: {
+                text: 'Frequency of <strong>' + variable1 + "</strong> and <strong>" + variable2 + "</strong> response combinations",
+                align: "left",
+            },
+            xAxis: heatmapXaxis,
+            yAxis: heatmapYaxis,
+            colorAxis: heatmapColorAxis,
+            legend: {
+                align: 'right',
+            },
+            tooltip: {
+                formatter: function () {
+                    return '<text>' + variable1 + ": " + heatmapXaxis.categories[this.point.x] + "<br>" + variable2 + ": " + heatmapYaxis.categories[this.point.y] + "<br>" + "# of individuals: " + this.point.value + '</text>';
+                },
+                useHTML: true
+            },
+
+            series: [{
+
+                data: initial_heatmap_data,
+            }],
+            dataLabels: {
+                enabled: true,
+                color: '#000000'
+            }
+
+        });
+        let bars = Highcharts.chart('old_bars', {
+            chart: {
+                type: 'column',
+                height: 400
+            },
+            title: {
+                text: 'Frequency of <strong>' + variable2 + "</strong> responses, for each <strong>" + variable1 + "</strong> response",
+                align: "left",
+            },
+            xAxis: barsXaxis,
+            yAxis: {
+                min: 0,
+                title: {
+                    text: '# of individuals'
+                }
+            },
+            plotOptions: {
+                column: {
+                    borderRadius: 3,
+                    groupPadding: 0.05,
+                    // pointPadding: 0.2,
+                    // borderWidth: 0
+                }
+            },
+            tooltip: {
+                formatter: function () {
+                    return '<text>' + variable1 + ": " + heatmapXaxis.categories[this.point.x] + "<br>" + this.series.name + "<br>" + "# of individuals: " + this.point.y + '</text>';
+                },
+                useHTML: true
+            },
+            series: initial_bars
+
+        });
+
+        // Dropdowns
+        // Primary variable
+        let var1_search_input = document.getElementById("old-var1-search-input");
+        var1_search_input.addEventListener("change", var1Change);
+        populateSearchList(all_variables, "old-var1-datalist");
+
+        // Update chart data on variable 1 change
+        function var1Change() {
+            // update variables
+            let searchInput = document.getElementById("old-var1-search-input");
+            variable1 = searchInput.value;
+            dateSelect = document.getElementById(dateName + "-select");
+            var1output.innerHTML = "<b>" + variable1 + "</b>: " + descriptions_lookup[variable1];
+
+            // clear search
+            searchInput.value = '';
+
+            // update other dropdowns
+            updatedDateOptions();
+            updatedVar2Options();
+
+            // update chart options
+            let newHeatmapData = getHeatmapData();
+            heatmapXaxis.title.text = variable1;
+            barsXaxis.title.text = variable1;
+            if (longVariables.includes(variable1)) {
+                heatmapXaxis.categories = getCategoriesForNewVariable(variable1);
+                barsXaxis.categories = getCategoriesForNewVariable(variable1);
+            } else {
+                heatmapXaxis.categories = getHeatmapAxis(variable1);
+                barsXaxis.categories = getHeatmapAxis(variable1);
+            }
+            barsXaxis.plotBands = getBarBands(barsXaxis.categories);
+            heatmapColorAxis.max = getHeatmapMax(newHeatmapData);
+            heatmap.update({
+                xAxis: heatmapXaxis
+            });
+            heatmap.update({
+                colorAxis: heatmapColorAxis
+            });
+            heatmap.update({ title: { text: 'Frequency of <strong>' + variable1 + "</strong> and <strong>" + variable2 + "</strong> response combinations", } });
+
+            bars.update({
+                xAxis: barsXaxis
+            });
+            bars.update({ title: { text: 'Frequency of <strong>' + variable2 + "</strong> responses, for each <strong>" + variable1 + "</strong> response", } });
+
+            //update chart data
+            heatmap.series[0].setData(newHeatmapData);
+            updateBarsData(newHeatmapData);
+
+            newLineData = getLinesData();
+            lineChart.update({
+                series: newLineData
+            });
+            updatePieData1();
+            setStats();
+            checkValidity();
+        }
+
+        // date dropdown
+        var dateName = "date-measure",
+            dateWidth = "100%",
+            dateContainer = document.getElementById("date_container");
+        addDropdown(dateContainer, dateName, dateWidth, dateChange, availableDates, date);
+
+        function dateChange() {
+            // update variables
+            date = document.getElementById(dateName + "-select").value;
+            let newHeatmapData = getHeatmapData();
+
+            // update other dropdowns
+            updatedVar2Options();
+
+            // update chart options
+            heatmapColorAxis.max = getHeatmapMax(newHeatmapData);
+            heatmap.update({
+                colorAxis: heatmapColorAxis
+            });
+
+            //update chart data
+            heatmap.series[0].setData(newHeatmapData);
+            updateBarsData(newHeatmapData);
+
+            updatePieData1();
+            updatePieData2();
+            setStats();
+            checkValidity();
+        }
+
+        // variable 2 dropdown
+        // secondary variable
+        let var2_search_input = document.getElementById("old-var2-search-input");
+        var2_search_input.addEventListener("change", var2Change);
+        populateSearchList(availableVar2, "old-var2-datalist");
+
+        // Update chart data on variable 1 change
+        function var2Change() {
+            // update variables
+            let searchInput = document.getElementById("old-var2-search-input");
+            variable2 = searchInput.value;
+            dateSelect = document.getElementById(dateName + "-select");
+            var2output.innerHTML = "<b>" + variable2 + "</b>: " + descriptions_lookup[variable2];
+
+            // clear search
+            searchInput.value = '';
+
+            // update chart options
+            heatmapYaxis.title.text = variable2;
+            if (longVariables.includes(variable2)) {
+                heatmapYaxis.categories = getCategoriesForNewVariable(variable2);
+            } else {
+                heatmapYaxis.categories = getHeatmapAxis(variable2);
+            }
+            heatmap.update({
+                yAxis: heatmapYaxis
+            });
+            heatmap.update({ title: { text: 'Frequency of <strong>' + variable1 + "</strong> and <strong>" + variable2 + "</strong> response combinations", } });
+
+            //update chart data
+            let newHeatmapData = getHeatmapData();
+            heatmap.series[0].setData(newHeatmapData);
+            updateBarsData(newHeatmapData);
+
+            newLineData = getLinesData();
+            lineChart.update({
+                series: newLineData
+            });
+            updatePieData2();
+            setStats();
+            checkValidity();
+        }
+        function updatedDateOptions() {
+            let select = document.getElementById(dateName + "-select");
+            availableDates = getAvailableDates(variable1);
+            select.length = 0;
+            for (let o of availableDates) {
+                select.add(new Option(o));
+            }
+            // set selected value - if possible the previous date
+            if (availableDates.includes(date)) {
+                select.value = date;
+            } else {
+                select.value = "";
+                date = "";
+            }
+        }
+        function updatedVar2Options() {
+            availableVar2 = getVar2Values();
+            populateSearchList(availableVar2, "old-var2-datalist");
+            let select = document.getElementById("old-var2-datalist");
+
+            // set selected value - if possible the previous var2
+            if (availableVar2.includes(variable2)) {
+                select.value = variable2;
+            } else {
+                select.value = "";
+                variable2 = "";
+                var2output.innerHTML = "";
+            }
+
+        }
+        function updateBarsData(newHeatmapData) {
+            let bars_loops = bars.series.length;
+            let updated_bars_data = getBarsData(newHeatmapData);
+
+            // First empty the existing data
+            for (let i = 0; i < bars_loops; i++) {
+                bars.series[0].remove(false);
+            }
+            // Then add the updated data
+            for (let i = 0; i < updated_bars_data.length; i++) {
+                bars.addSeries(updated_bars_data[i], false);
+            }
+            bars.update({ title: { text: 'Frequency of <strong>' + variable2 + "</strong> responses, for each <strong>" + variable1 + "</strong> response", } });
+            bars.redraw();
+        }
+        function populateSearchList(variables, container) {
+            var container = document.getElementById(container);
+            container.innerHTML = '';
+            variables.forEach(function (v) {
+                var item = document.createElement('option');
+                item.value = v;
+                item.label = descriptions_lookup[v];
+                container.appendChild(item);
+            });
+        }
+        function updatePieData1() {
+            newVar1PieData = getPieData("one");
+            var1Pie.update({ title: { text: "<strong>" + variable1 + "</strong> - breakdown of responses", } });
+            var1Pie.series[0].setData(newVar1PieData);
+        }
+        function updatePieData2() {
+            newVar2PieData = getPieData("two");
+            var2Pie.update({ title: { text: "<strong>" + variable2 + "</strong> - breakdown of responses", } });
+            var2Pie.series[0].setData(newVar2PieData);
+        }
+        function updateStackedData2() {
+            newVar2StackData = getStackedData("two");
+            var2Stack.update({ title: { text: "<strong>" + variable2 + "</strong> - breakdown of responses", } });
+
+            // first, remove old series
+            let loops = var2Stack.series.length;
+            for (var i = 0; i < loops; i++) {
+                var2Stack.series[0].remove(false);
+            }
+
+            // then add new ones
+            for (var i = 0; i < newVar2StackData.length; i++) {
+                var2Stack.addSeries(newVar2StackData[i], false);
+            }
+            var2Stack.redraw();
+        }
+        function checkValidity() {
+            let newValidity = false;
+            for (let row of files[1]) {
+                if (row.Name == variable2) {
+                    if (row[date] > 0) {
+                        newValidity = true;
+                    } else {
+                        newValidity = false;
+                    }
+                }
+            }
+            if (newValidity != validCombo) {
+                let heatmapEl = document.getElementById("old_heatmap_error");
+                let barsEl = document.getElementById("old_bars_error");
+                let stack1El = document.getElementById("old_var1_error");
+                let stack2El = document.getElementById("old_var2_error");
+                let linesEl = document.getElementById("old_lines_error");
+
+                if (newValidity) {
+                    heatmapEl.classList.add("hidden");
+                    barsEl.classList.add("hidden");
+                    stack1El.classList.add("hidden");
+                    stack2El.classList.add("hidden");
+                    linesEl.classList.add("hidden");
+                } else {
+                    heatmapEl.classList.remove("hidden");
+                    barsEl.classList.remove("hidden");
+                    stack1El.classList.remove("hidden");
+                    stack2El.classList.remove("hidden");
+                    linesEl.classList.remove("hidden");
+                }
+            }
+            validCombo = newValidity;
+        }
+        function getArrayForNewVariable(variable) {
+            let array = [];
+            if (variable == "Age") {
+                array = [18, 21, 26, 31, 41, 51, 100];
+            } else if (cat8.includes(variable)) {
+                array = [1, 3, 5, 7, 9];
+            } else if (cat10.includes(variable) || cat9.includes(variable)) {
+                array = [1, 3, 5, 7, 9, 11];
+            } else if (cat10plus.includes(variable)) {
+                array = [0, 1, 3, 5, 7, 9, 11, 1000];
+            } else if (cat12.includes(variable)) {
+                array = [1, 3, 5, 7, 9, 11, 13];
+            } else if (cat20plus.includes(variable)) {
+                array = [0, 1, 6, 11, 16, 21, 1000];
+            } else if (cat50plus.includes(variable)) {
+                array = [0, 1, 11, 21, 31, 41, 51, 1000];
+            } else if (cat100.includes(variable)) {
+                array = [0, 21, 41, 61, 81, 101];
+            } else if (cat100plus.includes(variable)) {
+                array = [0, 1, 11, 31, 51, 71, 101, 1000];
+            } else if (avg3.includes(variable)) {
+                array = [1, 1, 2, 3, 4];
+            } else if (avg4.includes(variable)) {
+                array = [1, 2, 3, 4, 5];
+            } else if (avg5.includes(variable)) {
+                array = [1, 2, 3, 4, 5, 6];
+            } else if (avg7.includes(variable)) {
+                array = [1, 2, 3, 4, 5, 6, 7, 8];
+            } else if (avg33.includes(variable)) {
+                array = [-3, -2, -1, 0, 1, 2, 4];
+            } else if (variable == "Children") {
+                array = [0, 1, 2, 3, 4, 5, 50];
+            } else if (variable == "Under12") {
+                array = [0, 1, 2, 3, 4, 5];
+            } else if (variable == "Over12") {
+                array = [0, 1, 2, 3, 4, 5, 6];
+            } else if (variable == "Howmuch") {
+                array = [0, 1, 26, 51, 101, 201, 501, 10000];
+            } else if (variable == "MoneyDonated") {
+                array = [0, 1, 26, 51, 101, 201, 501, 10000];
+            } else if (variable == "LargeGroups") {
+                array = [0, 1, 6, 11, 21, 51, 10000];
+            }
+            return array;
+        }
+        function getCategoriesForNewVariable(variable) {
+            let cats = [];
+            if (variable == "Age") {
+                cats = ["18-20", "21-25", "26-30", "31-40", "41-50", "51+"];
+            } else if (cat8.includes(variable)) {
+                cats = ["1-2", "3-4", "5-6", "7-8"];
+            } else if (cat9.includes(variable)) {
+                cats = ["1-2", "3-4", "5-6", "7-8", "9"];
+            } else if (cat10.includes(variable)) {
+                cats = ["1-2", "3-4", "5-6", "7-8", "9-10"];
+            } else if (cat10plus.includes(variable)) {
+                cats = ["0", "1-2", "3-4", "5-6", "7-8", "9-10", "11+"];
+            } else if (cat12.includes(variable)) {
+                cats = ["1-2", "3-4", "5-6", "7-8", "9-10", "11-12"];
+            } else if (cat20plus.includes(variable)) {
+                cats = ["0", "1-5", "6-10", "11-15", "16-20", "20+"];
+            } else if (cat50plus.includes(variable)) {
+                cats = ["0", "1-10", "11-20", "21-30", "31-40", "40-50", "51+"];
+            } else if (cat100.includes(variable)) {
+                cats = ["0-20", "21-40", "41-60", "61-80", "81-100"];
+            } else if (cat100plus.includes(variable)) {
+                cats = ["0", "1-10", "11-30", "31-50", "51-70", "71-100", "100+"];
+            } else if (avg4.includes(variable)) {
+                cats = ["1-2", "2-3", "3-4", "4"];
+            } else if (avg3.includes(variable)) {
+                cats = ["1", "1-2", "2-3", "3"];
+            } else if (avg5.includes(variable)) {
+                cats = ["1-2", "2-3", "3-4", "4-5", "5"];
+            } else if (avg7.includes(variable)) {
+                cats = ["1-2", "2-3", "3-4", "4-5", "5-6", "6-7", "7"];
+            } else if (avg33.includes(variable)) {
+                cats = ["-3 to -2", "-2 to -1", "-1 to 0", "0 to 1", "1 to 2", "2 to 3"];
+            } else if (variable == "Children") {
+                cats = ["0", "1", "2", "3", "4", "5+"];
+            } else if (variable == "Under12") {
+                cats = ["0", "1", "2", "3", "4"];
+            } else if (variable == "Over12") {
+                cats = ["0", "1", "2", "3", "4", "5"];
+            } else if (variable == "Howmuch") {
+                cats = ["0", "1-25", "26-50", "51-100", "101-200", "201-500", "500+"];
+            } else if (variable == "MoneyDonated") {
+                cats = ["0", "1-25", "26-50", "51-100", "101-200", "201-500", "500+"];
+            } else if (variable == "LargeGroups") {
+                cats = ["0", "1-5", "6-10", "11-20", "21-50", "51+"];
+            }
+            return cats;
+        }
+    })
+        .catch(function (error) {
+            console.log(error);
+        })
+
+</script>
+{% endblock %}
