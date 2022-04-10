@@ -72,7 +72,7 @@
                             (with about the same amount of tests carried out).
                         </li>
                         <li>
-                            Germany had approximatelly 20% more total deaths (from all causes) in 2021 and 2022 compared to the average 
+                            Australia had approximatelly 25% more total deaths (from all causes) in 2021 and 2022 compared to the average 
                             of the previous 5 years.
                         </li>
                         <li>
@@ -383,7 +383,7 @@
                     Historical weekly death toll: <a href="https://www.mortality.org/" target="_blank">Human Mortality
                         Database. University of California, Berkeley (USA), and Max Planck Institute for Demographic
                         Research (Germany).</a>
-                    Downloaded at 15/10/2021.
+                    Downloaded at 07/04/2022.
                 </p>
             </div>
         </div>
@@ -670,6 +670,10 @@
                         if (row.Deaths_2021 > 0) {
                             latest_data.push(+row.Deaths_2021);
                         }
+                    } else if (year == 2022) {
+                        if (row.Deaths_2022 > 0) {
+                            latest_data.push(+row.Deaths_2022);
+                        }
                     }
                 }
             }
@@ -678,6 +682,7 @@
         function excess_data_update() {
             let excess20 = get_latest_excess_data(2020);
             let excess21 = get_latest_excess_data(2021);
+            let excess22 = get_latest_excess_data(2022);
             let old = get_old_excess_data();
             let series20 = {
                 data: [],
@@ -687,6 +692,13 @@
                 }
             }
             let series21 = {
+                data: [],
+                label: {
+                    enabled: false,
+                    format: ''
+                }
+            }
+            let series22 = {
                 data: [],
                 label: {
                     enabled: false,
@@ -742,10 +754,35 @@
                 series21.label.format = total_excess_text_2021;
                 series21.label.enabled = true;
             }
+            if (excess22.length != 0) {
+                let oldTotal = 0;
+                let total2022 = 0;
+                let total_excess_2022 = 0;
+                let total_excess_text_2022 = '';
+
+                for (let i = 0; i < excess22.length; i++) {
+                    total2022 += +excess22[i];
+                    oldTotal += +old[i];
+                }
+                total_excess_2022 = total2022 - oldTotal;
+
+                let val = numberFormatterInteger(total_excess_2022);
+                val = numberFormatterSeparator(val);
+                if (total_excess_2022 > 0) {
+                    total_excess_text_2022 = "+ " + val.toString();
+                } else {
+                    total_excess_text_2022 = val.toString();
+                }
+
+                series22.label.format = total_excess_text_2022;
+                series22.label.enabled = true;
+            }
             series20.data = excess20;
             series21.data = excess21;
+            series22.data = excess22;
             excess_chart.series[1].update(series20, false);
             excess_chart.series[2].update(series21, false);
+            excess_chart.series[3].update(series22, false);
             excess_chart.redraw();
             excess_chart.setSize();
         }
@@ -846,6 +883,7 @@
         initial_old_excess_data = get_old_excess_data();
         initial_2020_excess_data = get_latest_excess_data(2020);
         initial_2021_excess_data = get_latest_excess_data(2021);
+        initial_2022_excess_data = get_latest_excess_data(2022);
         initial_map_response_data = get_map_response_data();
         initial_test_rate_data = get_bar_data("Tests_rate");
         initial_test_rate_30_data = JSON.parse(JSON.stringify(initial_test_rate_data));
@@ -1383,7 +1421,7 @@
                 id: "2020",
                 name: "2020",
                 type: 'spline',
-                colorIndex: 44,
+                colorIndex: 46,
                 data: initial_2020_excess_data,
                 label: {
                     enabled: false,
@@ -1394,8 +1432,19 @@
                 id: "2021",
                 name: "2021",
                 type: 'spline',
-                colorIndex: 9,
+                colorIndex:44,
                 data: initial_2021_excess_data,
+                label: {
+                    enabled: false,
+                    format: ''
+                }
+            },
+            {
+                id: "2022",
+                name: "2022",
+                type: 'spline',
+                colorIndex: 9,
+                data: initial_2022_excess_data,
                 label: {
                     enabled: false,
                     format: ''
