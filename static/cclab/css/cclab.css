@@ -345,6 +345,10 @@ h2 {
   background-image: url(../../cclab/images/glo-lookup.jpg);
 }
 
+.index-container .us-lookup-image {
+  background-image: url(../../cclab/images/us-lookup.jpg);
+}
+
 .index-container .us-summary-image {
   background-image: url(../../cclab/images/US-summary.jpg);
 }
@@ -758,23 +762,23 @@ hr {
   stroke: #776222;
 }
 
-.look-glo-checks-container {
+.look-checks-container {
   width: 100%;
   display: flex;
   background-color: #8c8c8c;
 }
 
-.look-glo-check-container {
+.look-check-container {
   height: 100%;
   width: 100%;
 }
 
-.look-glo-check {
+.look-check {
   height: 40px;
   width: 100%;
 }
 
-.look-glo-check-title {
+.look-check-title {
   text-align: center;
   font-size: 70%;
   margin-bottom: 5px;

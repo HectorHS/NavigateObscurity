@@ -302,6 +302,9 @@ h2{
     .glo-lookup-image {
         background-image: url(../../cclab/images/glo-lookup.jpg);
     }
+    .us-lookup-image {
+        background-image: url(../../cclab/images/us-lookup.jpg);
+    }
     .us-summary-image {
         background-image: url(../../cclab/images/US-summary.jpg);
     }
@@ -693,20 +696,20 @@ hr {
 #usdash_map .highcharts-map-series .highcharts-point {
     stroke: #776222;
 }
-.look-glo-checks-container {
+.look-checks-container {
     width: 100%;
     display: flex;
     background-color: #8c8c8c;
 }
-.look-glo-check-container {
+.look-check-container {
     height: 100%;
     width: 100%;
 }
-.look-glo-check {
+.look-check {
     height: 40px;
     width: 100%;
 }
-.look-glo-check-title {
+.look-check-title {
     text-align: center;
     font-size: 70%;
     margin-bottom: 5px;

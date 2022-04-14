@@ -10,6 +10,9 @@ class GlobalLookupView(TemplateView):
 class USSummaryView(TemplateView):
     template_name = 'cclab/us_summary.html'
 
+class USLookupView(TemplateView):
+    template_name = 'cclab/us_lookup.html'
+
 class USComparisonView(TemplateView):
     template_name = 'cclab/us_comparison.html'
 
