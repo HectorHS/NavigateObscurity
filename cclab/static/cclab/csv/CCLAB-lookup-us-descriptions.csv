@@ -406,7 +406,7 @@ WorriedCovidTG1,"If you celebrated Thanksgiving with people outside of your hous
 WorriedCovidTG2,"If you celebrated Thanksgiving with people outside of your household - How worried were you about the possibility that you could infect others with COVID-19?(1=Not at all, 7=Extremely)",int
 CancelTG,"Did you decide to avoid celebrating Thanksgiving because of COVID-19 related concerns? 1 = no, 2 = yes, 3 = other reason",int
 CancelTGTEXT,Did you decide to avoid celebrating Thanksgiving because of COVID-19 related concerns? other reason:,string
-IOSTG,,int
+IOSTG,Please select the circle that best describes how close you feel with the people you spent (or would have spent) Thanksgiving with (4-10),int
 PresentVfuture1,"Right now I can either focus on the present or focus on the future, but not both (1=Strongly disagree, 7=Strongly agree)",int
 PresentVfuture2,"Right now when I make decisions, I think about the immediate present (1=Strongly disagree, 7=Strongly agree)",int
 PresentVfuture3,"Right now when I make decisions, I think about the distant future (1=Strongly disagree, 7=Strongly agree)",int
@@ -735,14 +735,14 @@ FamilyXmas1,"Are you looking forward to spending time with family during the Chr
 ResponsibilityXmas,"How is the responsibility of preparing for Christmas divvied up among your family members? (1=one person has most of the responsibility, 7=everyone has an equal share of work)",int
 ShareResponsibility1,How large is your share of responsibility for Christmas preparations? (percentage),int
 ConcernCovidXmas,"How worried are you about the possibility of becoming infected with COVID-19 during the Christmas holiday? (1= not at all, 7 = extremely)",int
-ConcernOtherXmas,,int
-PerceptionRiskXmas,,int
-InfectionSeverityXmas,,int
-HowManyXmas,,int
-NotHouseHoldXmas,,int
+ConcernOtherXmas,"How worried are you about the possibility of infecting others with COVID-19 during the Christmas holiday? (1= not at all, 7= extremely)",int
+PerceptionRiskXmas,"How likely do you think it is that you will become infected with COVID-19 during the Christmas holiday?  (1= not at all, 7= extremely)",int
+InfectionSeverityXmas,"If you were to become infected with COVID-19 during the Christmas holiday, how severe do you expect your symptoms to be? (1= not at all, 7= extremely)",int
+HowManyXmas,How many people are you planning to celebrate Christmas with?,int
+NotHouseHoldXmas,How many people are you planning to celebrate Christmas with who are not members of your household?,int
 ChangesXmas,Did you make any changes in your Christmas plans because of COVID?,string
-CancelXmas,,int
-IOSXmas,,int
+CancelXmas,"How likely are you to avoid celebrating Christmas because of COVID-19 related concerns? (1= not at all, 7= extremely)",int
+IOSXmas,Please select the circle that best describes how close you feel with the people you plan to celebrate Christmas with (4-10),int
 AnimalVirus1.1,"Imagine the following scenario: A deadly new virus is found to have emerged from a wild animal population and is now spreading among people in Australia. Scientists confirm that it is highly contagious and that infections are fatal in the great majority of cases; as a consequence, if it is not stopped, within a year the virus would effectively destroy all human life. Experts determine that if humanity pools its resources and contributes a great deal of labor to creating new biotechnology, we may be able to develop an effective vaccine within a year before the virus spreads out of control. But there is a catch. Because global transportation and shipping will have to be completely shut down and all of our efforts will be dedicated to developing the new technology, things on Earth will get worse until the struggle is over. Jobs will be switched to essential work, lockdowns and shortages of food and goods will be widespread, and no resources will be available for humanitarian efforts, entertainment, or non-emergency healthcare. Alternatively, humanity could devote all of its resources to maximizing quality of life until the pandemic hits and wipes out civilization?people could stop working and enjoy their remaining time as they want. Developing technology has a 1% chance of stopping the virus (1=Maximize quality of life, 2=Some of both, 3=Develop the technology)",int
 AnimalVirus1.2,"Imagine the following scenario: A deadly new virus is found to have emerged from a wild animal population and is now spreading among people in Australia. Scientists confirm that it is highly contagious and that infections are fatal in the great majority of cases; as a consequence, if it is not stopped, within a year the virus would effectively destroy all human life. Experts determine that if humanity pools its resources and contributes a great deal of labor to creating new biotechnology, we may be able to develop an effective vaccine within a year before the virus spreads out of control. But there is a catch. Because global transportation and shipping will have to be completely shut down and all of our efforts will be dedicated to developing the new technology, things on Earth will get worse until the struggle is over. Jobs will be switched to essential work, lockdowns and shortages of food and goods will be widespread, and no resources will be available for humanitarian efforts, entertainment, or non-emergency healthcare. Alternatively, humanity could devote all of its resources to maximizing quality of life until the pandemic hits and wipes out civilization?people could stop working and enjoy their remaining time as they want. Developing technology has a 10% chance of stopping the virus  (1=Maximize quality of life, 2=Some of both, 3=Develop the technology)",int
 AnimalVirus1.3,"Imagine the following scenario: A deadly new virus is found to have emerged from a wild animal population and is now spreading among people in Australia. Scientists confirm that it is highly contagious and that infections are fatal in the great majority of cases; as a consequence, if it is not stopped, within a year the virus would effectively destroy all human life. Experts determine that if humanity pools its resources and contributes a great deal of labor to creating new biotechnology, we may be able to develop an effective vaccine within a year before the virus spreads out of control. But there is a catch. Because global transportation and shipping will have to be completely shut down and all of our efforts will be dedicated to developing the new technology, things on Earth will get worse until the struggle is over. Jobs will be switched to essential work, lockdowns and shortages of food and goods will be widespread, and no resources will be available for humanitarian efforts, entertainment, or non-emergency healthcare. Alternatively, humanity could devote all of its resources to maximizing quality of life until the pandemic hits and wipes out civilization?people could stop working and enjoy their remaining time as they want. Developing technology has a 33% chance of stopping the virus  (1=Maximize quality of life, 2=Some of both, 3=Develop the technology)",int
@@ -768,11 +768,11 @@ As you thought about the answers to the scenario questions above (AnimalVirus & 
 Believe50,"As you thought about the answers to the scenario questions above (AnimalVirus & TerroristVirus), when you saw that there was a 50% chance of success stated, how believable did that level of chance of success seem? (1=Very Believable, 5=Very Unbelievable)",int
 Believe10,"As you thought about the answers to the scenario questions above (AnimalVirus & TerroristVirus), when you saw that there was a 10% chance of success stated, how believable did that level of chance of success seem? (1=Very Believable, 5=Very Unbelievable)",int
 BelieveEnd,"As you thought about the answers to the scenario questions above (AnimalVirus & TerroristVirus), Was it believable that humanity would end if we did nothing to fight the virus?  (1=Very Believable, 5=Very Unbelievable)",int
-ProtectiveEffort1,,int
-ProtectiveEffort2,,int
-ProtectiveEffort3,,int
-ProtectiveEffort4,,int
-ProtectiveEffort5,,int
+ProtectiveEffort1,"Since March, 2020 when COVID-19 was declared a pandemic, to what extent have you tried to do the following?: Wearing a mask (1= not at all, 7= a great deal)",int
+ProtectiveEffort2,"Since March, 2020 when COVID-19 was declared a pandemic, to what extent have you tried to do the following?: Social distancing for routine activities (e.g., work, running errands) (1= not at all, 7= a great deal)",int
+ProtectiveEffort3,"Since March, 2020 when COVID-19 was declared a pandemic, to what extent have you tried to do the following?: Social distancing for leisure activities (e.g., gathering with friends/family)  (1= not at all, 7= a great deal)",int
+ProtectiveEffort4,"Since March, 2020 when COVID-19 was declared a pandemic, to what extent have you tried to do the following?: Delaying travel (1= not at all, 7= a great deal)",int
+ProtectiveEffort5,"Since March, 2020 when COVID-19 was declared a pandemic, to what extent have you tried to do the following?: Following health recommendations against COVID (1= not at all, 7= a great deal)",int
 Tired1,"I am tired of wearing a mask (1=not at all, 7=extremely)",int
 Tired2,"I am tired of social distancing for routine activities (e.g., work, running errands)  (1=not at all, 7=extremely)",int
 Tired3,"I am tired of social distancing for leisure activities (e.g., gathering with friends/family)  (1=not at all, 7=extremely)",int
