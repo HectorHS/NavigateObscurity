@@ -305,20 +305,20 @@ TechVSconsume,"When thinking about the best way that humanity can meet these cha
 Income,"What was your combined household income in the previous year before taxes? (1 = under 15k, 2 = 15k-25k, 3 = 25k-35k, 4 = 35k-50k, 5 = 50k-75k, 6 = 75k-100k, 7 = 100k-150k, 8 = 150k-200k, 9 = over 200k, 10 = Prefer not to share)",int
 Savings,"Approximately, what is the total amount of money that you have in all of your checking(s) and saving(s) account? (1 = 0-500, 2 = 500-5k, 3 = 5k-20k, 4 = 20k-45k, 5 = 45k-70k, 6 = 70k-100k, 7 = 100k-150k, 8 = 150k-200k, 9 = over 200k, 10 = Prefer not to share)",int
 Assets,"Approximately, what is the total net worth of all of your assets combined (including your primary residence, other real estate, business, vehicles, stocks, trusts, etc)? (1 = 0-500, 2 = 500-5k, 3 = 5k-20k, 4 = 20k-45k, 5 = 45k-70k, 6 = 70k-100k, 7 = 100k-150k, 8 = 150k-200k, 9 = over 200k, 10 = Prefer not to share)",int
-Optimistic1old,"Optimistic How optimistic do you feel about how things will be in: Two days from now? 1 = very optimistic, 7 = very pessimistic",int
-Optimistic2old,"Optimistic How optimistic do you feel about how things will be in: Two weeks from now? 1 = very optimistic, 7 = very pessimistic",int
-Optimistic3old,"Optimistic How optimistic do you feel about how things will be in: Two months from now? 1 = very optimistic, 7 = very pessimistic",int
-Optimistic4old,"Optimistic How optimistic do you feel about how things will be in: One year from now? 1 = very optimistic, 7 = very pessimistic",int
-Optimistic5old,"Optimistic How optimistic do you feel about how things will be in: Ten years from now? 1 = very optimistic, 7 = very pessimistic",int
-Optimistic1,"Optimistic How optimistic do you feel about how things will be in: Two days from now? (0 = very pessimistic, 100 = very optimistic)",int
-Optimistic2,"Optimistic How optimistic do you feel about how things will be in: Seven days from now?(0 = very pessimistic, 100 = very optimistic)",int
-Optimistic3,"Optimistic How optimistic do you feel about how things will be in: Four weeks from now? (0 = very pessimistic, 100 = very optimistic)",int
-Optimistic4,"Optimistic How optimistic do you feel about how things will be in: Six months from now? (0 = very pessimistic, 100 = very optimistic)",int
-Optimistic5,"Optimistic How optimistic do you feel about how things will be in: One year from now? (0 = very pessimistic, 100 = very optimistic)",int
-Optimistic6,"Optimistic How optimistic do you feel about how things will be in: Five years from now? (0 = very pessimistic, 100 = very optimistic)",int
-Optimistic7,"Optimistic How optimistic do you feel about how things will be in: Ten years from now? (0 = very pessimistic, 100 = very optimistic)",int
-Optimistic8,"Optimistic How optimistic do you feel about how things will be in: 100 years from now? (0 = very pessimistic, 100 = very optimistic)",int
-Optimistic9,"Optimistic How optimistic do you feel about how things will be in: 1000 years from now? (0 = very pessimistic, 100 = very optimistic)",int
+OptimisticOrdinal1,"Optimistic How optimistic do you feel about how things will be in: Two days from now? 1 = very optimistic, 7 = very pessimistic",int
+OptimisticOrdinal2,"Optimistic How optimistic do you feel about how things will be in: Two weeks from now? 1 = very optimistic, 7 = very pessimistic",int
+OptimisticOrdinal3,"Optimistic How optimistic do you feel about how things will be in: Two months from now? 1 = very optimistic, 7 = very pessimistic",int
+OptimisticOrdinal4,"Optimistic How optimistic do you feel about how things will be in: One year from now? 1 = very optimistic, 7 = very pessimistic",int
+OptimisticOrdinal5,"Optimistic How optimistic do you feel about how things will be in: Ten years from now? 1 = very optimistic, 7 = very pessimistic",int
+OptimisticSlider1,"Optimistic How optimistic do you feel about how things will be in: Two days from now? (0 = very pessimistic, 100 = very optimistic)",int
+OptimisticSlider2,"Optimistic How optimistic do you feel about how things will be in: Seven days from now?(0 = very pessimistic, 100 = very optimistic)",int
+OptimisticSlider3,"Optimistic How optimistic do you feel about how things will be in: Four weeks from now? (0 = very pessimistic, 100 = very optimistic)",int
+OptimisticSlider4,"Optimistic How optimistic do you feel about how things will be in: Six months from now? (0 = very pessimistic, 100 = very optimistic)",int
+OptimisticSlider5,"Optimistic How optimistic do you feel about how things will be in: One year from now? (0 = very pessimistic, 100 = very optimistic)",int
+OptimisticSlider6,"Optimistic How optimistic do you feel about how things will be in: Five years from now? (0 = very pessimistic, 100 = very optimistic)",int
+OptimisticSlider7,"Optimistic How optimistic do you feel about how things will be in: Ten years from now? (0 = very pessimistic, 100 = very optimistic)",int
+OptimisticSlider8,"Optimistic How optimistic do you feel about how things will be in: 100 years from now? (0 = very pessimistic, 100 = very optimistic)",int
+OptimisticSlider9,"Optimistic How optimistic do you feel about how things will be in: 1000 years from now? (0 = very pessimistic, 100 = very optimistic)",int
 Optimism7days,When you consider how optimistic/ pessimistic you are about 7 days from now what things come to mind?,string
 Optimism6months,When you consider how optimistic/ pessimistic you are about 6 months from now what things come to mind?,string
 Optimism10years,When you consider how optimistic/ pessimistic you are about 10 years from now what things come to mind?,string
