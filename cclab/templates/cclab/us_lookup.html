@@ -122,6 +122,10 @@
                 <div class="look-check-title">24 Feb 2022 (t15)</div>
                 <div class="look-check check-yes"></div>
             </div>
+            <div class="look-check-container">
+                <div class="look-check-title">25 Apr 2022 (t16)</div>
+                <div class="look-check check-yes"></div>
+            </div>
         </div>
         <div id="look_us_int_chart" class="lookup-line-chart"></div>
         <div id="look_us_str_chart"></div>
@@ -149,7 +153,7 @@
             d3.csv(us_str_path)
         ]).then(function (files) {
 
-            let all_dates = ["09-26-2020", "10-27-2020", "11-28-2020", "12-28-2020", "01-27-2021", "02-26-2021", "03-28-2021", "04-27-2021", "05-27-2021", "06-26-2021", "07-26-2021", "08-25-2021", "10-25-2021", "12-16-2021", "02-24-2022"];
+            let all_dates = ["09-26-2020", "10-27-2020", "11-28-2020", "12-28-2020", "01-27-2021", "02-26-2021", "03-28-2021", "04-27-2021", "05-27-2021", "06-26-2021", "07-26-2021", "08-25-2021", "10-25-2021", "12-16-2021", "02-24-2022", "04-25-2022"];
             const all_variables = [...new Set(files[1].map(d => d.key))];
             let descriptions_lookup = [];
             for (let row of files[1]) {
@@ -233,7 +237,8 @@
                         [Date.UTC(2021, 07, 25, 0, 0, 0), +row.t12],
                         [Date.UTC(2021, 09, 25, 0, 0, 0), +row.t13],
                         [Date.UTC(2021, 11, 16, 0, 0, 0), +row.t14],
-                        [Date.UTC(2022, 01, 24, 0, 0, 0), +row.t15]]
+                        [Date.UTC(2022, 01, 24, 0, 0, 0), +row.t15],
+                        [Date.UTC(2022, 03, 25, 0, 0, 0), +row.t16]]
                     }
                 }
 
@@ -401,6 +406,7 @@
                         look.push(row.t13);
                         look.push(row.t14);
                         look.push(row.t15);
+                        look.push(row.t16);
                     }
                 }
 

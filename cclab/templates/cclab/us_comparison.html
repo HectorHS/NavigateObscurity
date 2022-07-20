@@ -41,11 +41,11 @@
         <div style="padding-bottom: 0px;">
             <h1> US cohort - variable comparison</h1>
         </div>
-        <div class="dashboard-text">We surveyed 921 US based participants every month for sixteen
+        <div class="dashboard-text">We surveyed 921 US based participants every month for twenty
             months.
             During that
             time
-            they answered over 700 unique questions for us. Use the dashboard below to see how their
+            they answered about a thousand unique questions for us. Use the dashboard below to see how their
             responses
             correlate. </div>
         <div class="dashboard-instructions">
@@ -271,7 +271,11 @@
             "FarXmas1", "PrepXmas1", "FamilyXmas1", "ShareResponsibility1", "HowManyXmas", "NotHouseHoldXmas", "tot_t14",
             "PositivePast3", "tot_t15", "MoralCircles1", "MoralCircles2", "MoralCircles3", "MoralCircles4", "MoralCircles5",
             "MoralCircles6", "MoralCircles7", "MoralCircles8", "MoralCircles9", "MoralCircles10", "MoralCircles11", "MoralCircles12",
-            "MoralCircles13", "MoralCircles14", "MoralCircles15", "MoralCircles16"
+            "MoralCircles13", "MoralCircles14", "MoralCircles15", "MoralCircles16", "SpeedTime1","SpeedTime2", "SpeedTime3", "SpeedTime4",
+            "SpeedTime5", "LengthTime1", "LengthTime2",	"TimePassed1", "TimePassed2", "Hope1", "Hope2", "Hope3", "Hope4", "Hope5", "Hope6",
+            "Flourishing1", "Flourishing2", "Flourishing3", "Flourishing4", "Flourishing6", "Flourishing7", "Flourishing8", "Flourishing9", 
+            "Flourishing10", "Flourishing11", "Flourishing12", "Dominance", "Prestige", "AgenticGoal", "CommunalGoal", "PastFocus", 
+            "PresentFocus", "FutureFocus", "HopeAgency", "HopePathways", "StateHopeTotal", "tot_t16"
         ];
         let avg4 = ["Repayment"];
         let avg5 = ["HelpGiven", "HelpReceived", "MutualAid", "Predictability", "TraitEmpathicConcern",
@@ -281,9 +285,11 @@
         let avg7 = ["PFIaffectNeigh", "PFIaffectCountry", "PFIsharedfateNeigh", "PFIsharedfateCountry",
             "EmpatheticConcern", "EmpatheticDistress", "PoliticalOrientation", "RiskReduction", "RiskAvoidance",
             "RiskRetention", "RiskTransfer", "RiskBehaviorComposite", "EntitlementComposite", "SoPA", "SoNA", "SelfEnhancement",
-            "AnticipatedFoodScarcity"];
+            "AnticipatedFoodScarcity", "Dominance", "Prestige", "AgenticGoal", "CommunalGoal"];
         let cat8 = ["ReasonHelp", "TimeTilNewPandemic", "VaccineTV", "VaccinePeers", "FriendsRisks1",
-            "FriendsRisks2", "FriendsRisks3", "FriendsRisks4", "FriendsRisks5", "FriendsRisks6", "FriendsRisks7", "FoodInsecurity"];
+            "FriendsRisks2", "FriendsRisks3", "FriendsRisks4", "FriendsRisks5", "FriendsRisks6", "FriendsRisks7", "FoodInsecurity",
+            "SpeedTime1","SpeedTime2", "SpeedTime3", "SpeedTime4", "SpeedTime5", "LengthTime1", "LengthTime2",	"TimePassed1", "TimePassed2",
+            "Hope1", "Hope2", "Hope3", "Hope4", "Hope5", "Hope6"];
         let cat9 = ["Income", "Savings", "Assests", "Wealth", "QAnon1", "QAnon2", "QAnon3"];
         let cat10 = ["SSES", "OthersVaccine", "VaccineRightThing", "AloneTime", "PostVaccineActivity1",
             "PostVaccineActivity2", "PostVaccineActivity3", "PostVaccineActivity4", "PostVaccineActivity5",
@@ -295,10 +301,11 @@
         let cat12 = ["Back2Normal", "TimeToVaccine", "TimeToVaccine", "NoMaskOutVacc",
             "MaskOutPoliOri", "MaskOutVacc", "NoMaskInPoliOri", "NoMaskInVacc", "MaskInPoliOri", "MaskInVacc",
             "OthersJudgeMask", "JudgeWearMask", "MonthRelStatus", "MonthChangeJob", "tot_t11", "tot_t12", "PFINeighAffectTimeClickCount",
-            "PFINeighFateTimeClickCount", "HelpCountryTimeClickCount"];
+            "PFINeighFateTimeClickCount", "HelpCountryTimeClickCount", "Flourishing1", "Flourishing2", "Flourishing3", "Flourishing4", 
+            "Flourishing6", "Flourishing7", "Flourishing8", "Flourishing9", "Flourishing10", "Flourishing11", "Flourishing12"];
         let cat17 = ["PFIcountryAffectTimeClickCount", "PFIcountryFateTimeClickCount"]
-        let cat30 = ["SmallSooner", "LargerSooner", "@00025.1", "@00039.1", "@00098.1", "@0021.1",
-            "@0034.1", "@0055.1", "@0087.1", "@013.1", "@02.1", "@025.1"];
+        let cat30 = ["SmallSooner", "LargerSooner", "@00025.1", "@00039.1", "@00098.1", "@0021.1", "@0034.1", "@0055.1", "@0087.1", 
+            "@013.1", "@02.1", "@025.1", "PastFocus", "PresentFocus", "FutureFocus", "HopeAgency", "HopePathways"];
         let cat100 = ["CausesExtinction1", "CausesExtinction2", "CausesExtinction3",
             "CausesExtinction4", "CausesExtinction5", "CausesExtinction6", "CausesExtinction8",
             "CausesExtinction9", "CausesExtinction10", "Optimistic1", "Optimistic2",
@@ -380,6 +387,8 @@
             let d14v = 0;
             let d15c = 0;
             let d15v = 0;
+            let d16c = 0;
+            let d16v = 0;
             let data = [];
             let variable;
             let colorIndx;
@@ -439,6 +448,9 @@
                 } else if (row.Date == "02/24/2022" && val > 0) {
                     d15v += val;
                     d15c++;
+                } else if (row.Date == "04/25/2022" && val > 0) {
+                    d16v += val;
+                    d16c++;
                 }
             }
 
@@ -457,6 +469,7 @@
             data.push((d13v > 0) ? +numberFormatterPercentage(d13v / d13c) : 0);
             data.push((d14v > 0) ? +numberFormatterPercentage(d14v / d14c) : 0);
             data.push((d15v > 0) ? +numberFormatterPercentage(d15v / d15c) : 0);
+            data.push((d16v > 0) ? +numberFormatterPercentage(d16v / d16c) : 0);
 
             // to hide 0's
             data.forEach(function (element, index) {
@@ -686,7 +699,7 @@
                     }
                     if (["09/26/2020", "10/27/2020", "11/28/2020", "12/28/2020", "01/27/2021", "02/26/2021",
                         "03/28/2021", "04/27/2021", "05/27/2021", "06/26/2021", "07/26/2021", "08/25/2021",
-                        "10/25/2021", "12/16/2021", "02/24/2022"].includes(row.Date)) {
+                        "10/25/2021", "12/16/2021", "02/24/2022", "04/25/2022"].includes(row.Date)) {
                         if (row.OccupationRisk == 3) {
                             highRisk++;
                         }
@@ -1311,6 +1324,10 @@
                 array = [0, 2, 4, 6, 8, 10, 12, 100];
             } else if (variable == "tot_t15") {
                 array = [0, 3, 6, 9, 12, 100];
+            } else if (variable == "StateHopeTotal") {
+                array = [0, 10, 20, 30, 40, 60];
+            } else if (variable == "tot_t16") {
+                array = [0, 3, 6, 9, 12, 14, 100];
             }
 
 
@@ -1416,7 +1433,12 @@
                 cats = ["1-2", "3-4", "5-6", "7-8", "9-10", "11-12", "13-14"];
             } else if (variable == "tot_t15") {
                 cats = ["1-3", "4-6", "7-9", "10-12", "13-15"];
+            } else if (variable == "StateHopeTotal") {
+                cats = ["1-10", "11-20", "21-30", "31-40", "41-50"];
+            } else if (variable == "tot_t16") {
+                cats = ["1-3", "4-6", "7-9", "10-12", "13-15", "16-17"];
             }
+
             return cats;
         }
         function checkValidity() {
