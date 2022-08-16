@@ -361,6 +361,10 @@ h2 {
   background-image: url(../../cclab/images/glo-comparison.jpg);
 }
 
+.index-container .glo-summary-image {
+  background-image: url(../../cclab/images/glo-summary.jpg);
+}
+
 .dashboard-container-vertical {
   display: flex;
   flex-direction: column;
@@ -717,12 +721,14 @@ hr {
   fill: #1c1c1c;
 }
 
-#us_dash_sex .highcharts-data-label text {
+#us_dash_sex .highcharts-data-label text,
+#glo_dash_sex .highcharts-data-label text {
   fill: #ffffff;
   font-size: 14px;
 }
 
-#us_dash_sex .highcharts-background {
+#us_dash_sex .highcharts-background,
+#glo_dash_sex .highcharts-background {
   fill: #404040;
 }
 

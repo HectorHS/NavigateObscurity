@@ -1,0 +1,36 @@
+Country,Count,Age,Sex,Preexisting
+Angola,1,19,0,0
+Australia,16,31.1,44,3
+Austria,4,23.8,75,1
+Belgium,6,23.8,33,0
+Canada,50,32.6,50,9
+Chile,6,27.5,50,0
+Czech Republic,12,25.1,42,1
+Denmark,5,28,40,0
+Ecuador,1,18,0,0
+Estonia,6,28.3,33,3
+Finland,5,28.8,40,2
+France,10,23.2,70,0
+Germany,9,25.5,44,0
+Greece,46,26.8,24,4
+Hungary,22,26.2,23,4
+Ireland,6,29.3,50,1
+Israel,7,26.6,14,1
+Italy,29,27,52,3
+Latvia,5,21.8,0,1
+Luxembourg,2,28,100,0
+Mexico,36,27.1,31,5
+Netherlands,9,24.2,44,0
+New Zealand,3,33.3,67,
+Norway,4,23,25,1
+Poland,130,23.8,29,7
+Portugal,154,25.1,44,22
+Slovenia,8,19.4,13,2
+South Korea,1,22,100,0
+Spain,49,28.6,43,2
+Sweden,5,30.4,40,0
+Switzerland,4,30.5,50,2
+Turkey,1,24,0,1
+United Kingdom,278,33,67,48
+United States,87,32.1,64,16
+World,1018,28.6,48,139

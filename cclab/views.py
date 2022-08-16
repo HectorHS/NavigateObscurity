@@ -19,5 +19,8 @@ class USComparisonView(TemplateView):
 class GlobalComparisonView(TemplateView):
     template_name = 'cclab/global_comparison.html'
 
+class GlobalSummaryView(TemplateView):
+    template_name = 'cclab/global_summary.html'
+
     
 
