@@ -46,7 +46,17 @@ $cclab-colors: (
     19: #776222,
     20: #483e1e,
     21: #b5afb2,
-    22: #709072 
+    22: #709072,
+    23: #f2f2f2,
+    24: rgba(181, 175, 178, 0.3),
+    25: #91888c,
+    26: #dbe6f0,
+    27: #b8cce0,
+    28: #94b3d1,
+    29: #5e8cba,
+    30: #3d668f,
+    31: #264059,
+    32: #0f1a24
 );
 // Color map for labels
 $text-colors: (
@@ -216,7 +226,7 @@ $indicator-negative-line: #f21313;
 .highcharts-tracker-line {
     stroke-linejoin: round;
     fill: none;
-    stroke-width: 3;
+    stroke-width: 4;
 }
 .highcharts-tracker-area {
     // fill: rgba(192, 192, 192, 0.0001);
@@ -1021,6 +1031,16 @@ text.highcharts-drilldown-data-label,
         stroke: map-get($cclab-reds, ($i - 1));
     }
 }
+
+.highcharts-background {
+    fill: none;
+}
+
+.glodash-container .highcharts-null-point,
+.usdash-container .highcharts-null-point {
+    opacity: 70%;
+}
+
 
 
 

@@ -39,7 +39,7 @@
     <!-- remade us dashboard - public facing -->
     <figure style="margin-bottom:50px;">
 
-        <div class="dashboard-container-horizontal CCLab-dashboard usdash-container">
+        <div class="dashboard-container-horizontal CCLab-dashboard glodash-container">
             <h1>Global cohort - Summary of findings</h1>
             <div class="dashboard-text">We surveyed an international cohort of 1018 participants 14 times
                 between March 2th
@@ -48,7 +48,7 @@
             </div>
             <div class="dash-stats-container1">
                 <div class="dash-stats-container2">
-                    <div class="dash-stat-box" style="background-color: #FDC64B;">
+                    <div class="dash-stat-box dash-stat-box-1">
                         <div class="dash-stat-label-container">
                             <div class="dash-stat-label"># of individuals</div>
                             <div id="glo_dash_sample_country" class="cclab-stat-sublabel"></div>
@@ -56,7 +56,7 @@
 
                         <div id="glo_dash_sample" class="dash-stat-value"></div>
                     </div>
-                    <div class="dash-stat-box" style="background-color: #EC625F;">
+                    <div class="dash-stat-box dash-stat-box-2">
                         <div class="dash-stat-label-container">
                             <div class="dash-stat-label">Average age</div>
                             <div id="glo_dash_age_country" class="cclab-stat-sublabel"></div>
@@ -65,7 +65,7 @@
                     </div>
                 </div>
                 <div class="dash-stats-container2">
-                    <div class="dash-stat-box" style="background-color: #404040; color: #fff; padding-bottom: 10px;">
+                    <div class="dash-stat-box dash-stat-box-3">
                         <div class="dash-stat-label-container">
                             <div class="dash-stat-label">Female </div>
                             <div id="glo_dash_sex_country" class="cclab-stat-sublabel"></div>
@@ -73,7 +73,7 @@
 
                         <div id="glo_dash_sex" class="dash-stat-value"></div>
                     </div>
-                    <div class="dash-stat-box" style="background-color: #ba9043; color: #ffffff; margin-right:0;">
+                    <div class="dash-stat-box dash-stat-box-4">
                         <div class="dash-stat-label-container">
 
                             <div class="dash-stat-label">With preexisting conditions</div>
@@ -84,53 +84,57 @@
                     </div>
                 </div>
             </div>
-            <div class="dashboard-container-vertical dashboard-level-1">
-                <div class="dashboard-container-horizontal dashboard-side-50">
-                    <div class="us-dash-info">We examined how people’s willingness to help others and their
-                        perceived interdependence with others
-                        changed during the COVID-19 pandemic. Use the map below to see how people from different
-                        countries
-                        responded to some of our questions (graphs on the right).</div>
-                    <div class="us-dash-attention" style="height: 60px;">
-                        <div id="glo_dash_country" class="yellow-font"></div>
-                        <div>! Choose a country by clicking on the map</div>
+            <div class="dash-texture">
+                <div class="dashboard-container-vertical dashboard-level-1">
+                    <div class="dashboard-container-horizontal dashboard-side-50">
+                        <div class="dash-info">We examined how people’s willingness to help others and their
+                            perceived interdependence with others
+                            changed during the COVID-19 pandemic. Use the map below to see how people from different
+                            countries
+                            responded to some of our questions (graphs on the right).</div>
+                        <div class="dash-attention" style="height: 60px;">
+                            <div id="glo_dash_country" class="yellow-font"></div>
+                            <div>! Choose a country by clicking on the map</div>
+                        </div>
+                        <div  class="chart-inset">
+                            <div id="glodash_map"></div>
+                        </div>
                     </div>
-                    <div id="glodash_map"></div>
+                    <div class="dashboard-container-horizontal dashboard-side-50">
+                        <div class="dashboard-container-vertical">
+                            <div class="chart-inset " id="glodash_inter1"></div>
+                            <div class="chart-inset " id="glodash_inter2"></div>
+                        </div>
+                        <div class="dashboard-container-vertical">
+            
+                            <div class="chart-inset " id="glodash_will1"></div>
+                            <div class="chart-inset " id="glodash_will2"></div>
+                        </div>
+            
+                    </div>
                 </div>
-                <div class="dashboard-container-horizontal dashboard-side-50">
-                    <div class="dashboard-container-vertical">
-                        <div class="chart-border" id="glodash_inter1"></div>
-                        <div class="chart-border" id="glodash_inter2"></div>
-                    </div>
-                    <div class="dashboard-container-vertical">
-
-                        <div class="chart-border" id="glodash_will1"></div>
-                        <div class="chart-border" id="glodash_will2"></div>
-                    </div>
-
+                <div class="dash-info">
+                    <div style="font-weight: 600; font-size: 120%; padding-bottom: 10px;">Explore further</div>
+                    <div>See how responses changed over time for specific questions broken down by age, sex and COVID-19
+                        infection</div>
                 </div>
+                <div class="dash-attention">
+                    <div id="glodash_question" class="yellow-font"></div>
+                    <div>! Choose a different question:</div>
+                    <div id="glodash-question-dropdown"></div>
+                </div>
+                <div class="dashboard-container-vertical">
+            
+                    <div class="chart-inset dashboard-breakdown" id="glodash_covid"></div>
+                    <div class="chart-inset dashboard-breakdown" id="glodash_age"></div>
+                </div>
+                <div class="dashboard-container-vertical">
+                    <div class="chart-inset dashboard-breakdown" id="glodash_sex_break"></div>
+                    <div class="chart-inset dashboard-breakdown" id="glodash_preexisting"></div>
+                </div>
+            
             </div>
-            <div class="us-dash-info">
-                <div style="font-weight: 600; font-size: 120%; padding-bottom: 10px;">Explore further</div>
-                <div>See how responses changed over time for specific questions broken down by age, sex and COVID-19
-                    infection</div>
             </div>
-            <div class="us-dash-attention">
-                <div id="glodash_question" class="yellow-font"></div>
-                <div>! Choose a different question:</div>
-                <div id="glodash-question-dropdown"></div>
-            </div>
-            <div class="dashboard-container-vertical">
-
-                <div class="chart-border dashboard-breakdown" id="glodash_covid"></div>
-                <div class="chart-border dashboard-breakdown" id="glodash_age"></div>
-            </div>
-            <div class="dashboard-container-vertical">
-                <div class="chart-border dashboard-breakdown" id="glodash_sex_break"></div>
-                <div class="chart-border dashboard-breakdown" id="glodash_preexisting"></div>
-            </div>
-
-        </div>
         <a class="cclab-button" href="https://www.cooperationintheapocalypse.org/#data">return to data</a>
 
     </figure>
@@ -281,8 +285,8 @@
                         leftover = 100 - val;
                     }
                 }
-                new_data.push({ name: 'female', colorIndex: 17, y: val });
-                new_data.push({ name: 'other', colorIndex: 13, y: leftover });
+                new_data.push({ name: 'female', colorIndex: 13, y: val });
+                new_data.push({ name: 'other', colorIndex: 24, y: leftover });
 
                 return new_data;
             }
@@ -462,7 +466,6 @@
                     },
                     series: {
                         groupPadding: 0.1,
-                        color: '#FF0000'
                     }
                 },
                 tooltip: {
@@ -491,7 +494,7 @@
                     {
                         id: "neighborhood",
                         name: "my neighborhood",
-                        colorIndex: 10,
+                        colorIndex: 13,
                         data: initial_inter1_data_nei,
                         label: {
                             enabled: false,
@@ -569,7 +572,7 @@
                     {
                         id: "neighborhood",
                         name: "my neighborhood",
-                        colorIndex: 10,
+                        colorIndex: 13,
                         data: initial_inter2_data_nei,
                         label: {
                             enabled: false,
@@ -585,7 +588,7 @@
             let will_chart = Highcharts.chart('glodash_will1', {
                 chart: {
                     type: 'spline',
-                    height: 370,
+                    height: 408,
                 },
                 title: {
                     align: "left",
@@ -647,7 +650,7 @@
                     {
                         id: "neighborhood",
                         name: "from your neighborhood",
-                        colorIndex: 10,
+                        colorIndex: 13,
                         data: initial_will1_data_nei,
                         label: {
                             enabled: false,
@@ -663,7 +666,7 @@
             let nbt_chart = Highcharts.chart('glodash_will2', {
                 chart: {
                     type: 'spline',
-                    height: 370,
+                    height: 408,
                 },
                 title: {
                     align: "left",
@@ -725,7 +728,7 @@
                     {
                         id: "neighborhood",
                         name: "someone from your neighborhood",
-                        colorIndex: 10,
+                        colorIndex: 13,
                         data: initial_will2_data_nei,
                         label: {
                             enabled: false,
@@ -872,7 +875,7 @@
                         id: "covid_question",
                         type: 'spline',
                         name: "Average score",
-                        colorIndex: 10,
+                        colorIndex: 13,
                         yAxis: 1,
                         data: initial_covid_q_data,
                         label: {
@@ -942,7 +945,7 @@
                     {
                         id: "age1",
                         name: "18-21",
-                        colorIndex: 12,
+                        colorIndex: 13,
                         data: initial_age1_data,
                         label: {
                             enabled: false,
@@ -952,7 +955,7 @@
                     {
                         id: "age2",
                         name: "22-25",
-                        colorIndex: 10,
+                        colorIndex: 11,
                         data: initial_age2_data,
                         label: {
                             enabled: false,
@@ -962,7 +965,7 @@
                     {
                         id: "age3",
                         name: "26-35",
-                        colorIndex: 8,
+                        colorIndex: 9,
                         data: initial_age3_data,
                         label: {
                             enabled: false,
@@ -1046,7 +1049,7 @@
                     {
                         id: "sex1",
                         name: "Male",
-                        colorIndex: 10,
+                        colorIndex: 13,
                         data: initial_sex1_data,
                         label: {
                             enabled: false,
@@ -1066,7 +1069,7 @@
                     {
                         id: "sex3",
                         name: "Other",
-                        colorIndex: 21,
+                        colorIndex: 25,
                         data: initial_sex3_data,
                         label: {
                             enabled: false,
@@ -1128,7 +1131,7 @@
                     {
                         id: "preexisting1",
                         name: "With preexisting condition(s)",
-                        colorIndex: 10,
+                        colorIndex: 13,
                         data: initial_preexisting1_data,
                         label: {
                             enabled: false,
@@ -1138,7 +1141,7 @@
                     {
                         id: "preexisting2",
                         name: "No preexisting conditions",
-                        colorIndex: 21,
+                        colorIndex: 17,
                         data: initial_preexisting2_data,
                         label: {
                             enabled: false,
@@ -1162,6 +1165,7 @@
             age_chart.setSize();
             sex_break_chart.setSize();
             preexisting_chart.setSize();
+            updateCountryText();
 
             // Dropdowns
             // Define dropdown container

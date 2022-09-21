@@ -266,7 +266,8 @@ h1 {
   font-weight: 700;
   color: #242629;
   font-family: bungee, sans-serif;
-  margin: 0;
+  margin: 50px 0;
+  line-height: 50px;
 }
 
 h2 {
@@ -285,6 +286,7 @@ h2 {
   text-transform: uppercase;
   font-weight: 600;
   margin-top: 15px;
+  box-shadow: 2px 2px 7px rgba(23, 28, 28, 0.4);
 }
 
 .cclab-button:hover {
@@ -292,13 +294,25 @@ h2 {
 }
 
 .data-container {
-  padding: 70px 50px;
+  padding: 50px 10px;
   font-size: 18px;
 }
 
 .data-container figure {
   padding: 0;
   margin: 0;
+}
+
+@media only screen and (min-width: 850px) {
+  .data-container {
+    padding: 70px 20px;
+  }
+}
+
+@media only screen and (min-width: 1270px) {
+  .data-container {
+    padding: 70px 50px;
+  }
 }
 
 .index-container {
@@ -329,6 +343,8 @@ h2 {
   background: url(../../cclab/images/glo-lookup.jpg);
   background-position: top;
   background-size: cover;
+  box-shadow: 5px 5px 10px rgba(23, 28, 28, 0.5);
+  border-radius: 5px;
 }
 
 .index-container .index-title {
@@ -411,17 +427,6 @@ h2 {
   list-style-type: square;
 }
 
-.dashboard-side {
-  background-color: white;
-}
-
-.cclab-chart-container {
-  border-width: 4px;
-  border-color: #737373;
-  border-style: solid;
-  margin: 5px;
-}
-
 .dashboard-side-40 {
   width: 100%;
 }
@@ -447,9 +452,6 @@ h2 {
 }
 
 .cclab-dashboard-options {
-  background-color: #737373;
-  color: white;
-  padding: 20px;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -466,6 +468,7 @@ h2 {
   color: #f5bb3d;
   font-weight: 600;
   font-size: 120%;
+  text-shadow: 1px 1px 4px rgba(36, 38, 41, 0.8);
 }
 
 @media only screen and (min-width: 520px) {
@@ -491,6 +494,7 @@ h2 {
   border-width: 1px;
   border-style: solid;
   border-color: #9dafaf;
+  border-radius: 15px;
   position: relative;
   display: block;
   z-index: 10;
@@ -498,7 +502,14 @@ h2 {
   overflow: hidden;
   height: 34px;
   align-self: flex-end;
-  margin-bottom: 10px;
+}
+
+.search-parent {
+  width: 300px;
+  box-shadow: inset 5px 5px 10px #595959, inset -5px -5px 20px #a6a6a6;
+  background-color: rgba(25, 25, 25, 0.5);
+  border-radius: 15px;
+  margin: 10px 30px 10px 10px;
 }
 
 .search-container:hover {
@@ -513,10 +524,22 @@ h2 {
   position: relative;
   padding: 0 10px;
   display: block;
-  background-color: rgba(255, 255, 255, 0.8);
+  background-color: rgba(255, 255, 255, 0);
   width: -webkit-calc(100% - 20px);
   width: -moz-calc(100% - 20px);
   width: calc(100% - 20px);
+}
+
+.search-container input::placeholder {
+  color: #fff;
+}
+
+.search-container input:-ms-input-placeholder {
+  color: #fff;
+}
+
+.search-container input::-ms-input-placeholder {
+  color: #fff;
 }
 
 .dropdown-container {
@@ -527,9 +550,11 @@ h2 {
   overflow: hidden;
   border: 1px solid #9dafaf;
   margin-right: 10px;
+  border-radius: 15px;
 }
 
-.usdash-container .dropdown-container {
+.usdash-container .dropdown-container,
+.glodash-container .dropdown-container {
   max-width: 100%;
 }
 
@@ -574,12 +599,14 @@ h2 {
 .cclab-stats-container1 {
   display: flex;
   flex-direction: column;
-  margin: 2px;
+  margin: 8px;
+  margin-bottom: 20px;
 }
 
 @media only screen and (min-width: 1250px) {
   .cclab-stats-container1 {
     flex-direction: row;
+    margin-top: 10px;
   }
 }
 
@@ -602,7 +629,7 @@ h2 {
 .dash-stats-container1 {
   display: flex;
   flex-direction: column;
-  margin: 3px;
+  margin: 10px 0;
 }
 
 @media only screen and (min-width: 850px) {
@@ -614,27 +641,69 @@ h2 {
 .dash-stat-box {
   padding: 20px;
   width: 100%;
-  margin: 3px;
+  margin: 8px;
+  background-size: cover;
+  background-position: center;
+  box-shadow: 4px 4px 10px rgba(23, 28, 28, 0.6);
+  color: #f2f2f2;
+  text-shadow: 1px 1px 4px rgba(36, 38, 41, 0.8);
+  border-radius: 3px;
 }
 
 @media only screen and (min-width: 850px) {
-  .dash-stat-box {
+  .usdash-container .dash-stats-container1, .glodash-container .dash-stats-container1 {
+    margin-bottom: 8px;
+  }
+  .usdash-container .dash-stat-box, .glodash-container .dash-stat-box {
     margin: 0;
-    margin-right: 5px;
+  }
+  .usdash-container .dash-stat-box-1, .glodash-container .dash-stat-box-1 {
+    margin: 0 10px 0 0;
+  }
+  .usdash-container .dash-stat-box-2, .glodash-container .dash-stat-box-2 {
+    margin: 0 10px;
+  }
+  .usdash-container .dash-stat-box-3, .glodash-container .dash-stat-box-3 {
+    margin: 0 20px 0 10px;
+    padding-right: 0;
   }
 }
 
-.cclab-stat-box {
-  padding: 20px;
-  width: 100%;
-  margin: 3px;
+@media only screen and (min-width: 1250px) {
+  .us-comparison-container .dash-stat-box, .glo-comparison-container .dash-stat-box {
+    margin: 0;
+  }
+  .us-comparison-container .dash-stat-box-1, .glo-comparison-container .dash-stat-box-1 {
+    margin: 0 10px 0 0;
+  }
+  .us-comparison-container .dash-stat-box-2, .glo-comparison-container .dash-stat-box-2 {
+    margin: 0 10px;
+  }
+  .us-comparison-container .dash-stat-box-3, .glo-comparison-container .dash-stat-box-3 {
+    margin: 0 20px 0 10px;
+    padding-right: 0;
+  }
 }
 
-@media only screen and (min-width: 125s0px) {
-  .cclab-stat-box {
-    margin: 0;
-    margin-right: 5px;
-  }
+.dash-stat-box-1 {
+  background-image: url("../../cclab/images/texture-orange-1.jpg");
+  margin: 0 5px 5px 0;
+}
+
+.dash-stat-box-2 {
+  background-image: url("../../cclab/images/texture-orange-2.jpg");
+  margin: 0 0 5px 5px;
+}
+
+.dash-stat-box-3 {
+  background-image: url("../../cclab/images/texture-orange-3.jpg");
+  padding-bottom: 10px;
+  margin: 5px 5px 0 0;
+}
+
+.dash-stat-box-4 {
+  background-image: url("../../cclab/images/texture-orange-4.jpg");
+  margin: 5px 0 0 5px;
 }
 
 .cclab-stat-label-container {
@@ -676,6 +745,14 @@ h2 {
   justify-content: center;
 }
 
+.glodash-container .dashboard-level-1 .dash-info {
+  min-height: 110px;
+}
+
+.usdash-container .dashboard-level-1 .dash-info {
+  min-height: 90px;
+}
+
 .cclab-footer {
   background-color: #1c1c1c;
   height: 30px;
@@ -690,8 +767,10 @@ h2 {
   font-size: 130%;
   background-color: rgba(205, 27, 24, 0.8);
   z-index: 9;
-  width: 100%;
   color: white;
+  box-shadow: inset 5px 5px 10px #891210, inset -5px -5px 20px #ec625f;
+  border-radius: 15px;
+  margin: -12px;
 }
 
 .hidden {
@@ -727,31 +806,47 @@ hr {
   font-size: 14px;
 }
 
-#us_dash_sex .highcharts-background,
-#glo_dash_sex .highcharts-background {
-  fill: #404040;
-}
-
-.chart-border {
-  border-style: solid;
-  border-width: 4px;
-  border-color: #c0c0c0;
-  margin: 2px;
-}
-
-.us-dash-info {
-  background-color: #c0c0c0;
+.chart-inset {
+  margin: 8px;
+  background-position: center;
+  background-size: cover;
+  box-shadow: inset 5px 5px 10px #a6a6a6, inset -5px -5px 20px #cccccc;
   padding: 10px;
-  margin: 3px;
+  border-radius: 15px;
+  background-color: rgba(255, 255, 255, 0.6);
+  flex: 1;
 }
 
-.us-dash-attention {
-  background-color: #709072;
+.dash-texture {
+  background-image: url("../../cclab/images/texture-white-large.jpg");
+  background-position: center;
+  background-size: cover;
+  box-shadow: 4px 4px 10px rgba(23, 28, 28, 0.6);
   padding: 10px;
-  margin: 3px;
+  border-radius: 3px;
+}
+
+.dash-info {
+  padding: 10px;
+  margin: 10px;
+  background-color: rgba(25, 25, 25, 0.5);
+  color: #fff;
+  box-shadow: inset 5px 5px 10px #595959, inset -5px -5px 20px #a6a6a6;
+  padding: 20px;
+  border-radius: 15px;
+}
+
+.dash-attention {
+  padding: 10px;
+  margin: 10px;
   display: flex;
   flex-direction: column;
   justify-content: space-around;
+  color: #fff;
+  background-color: rgba(25, 25, 25, 0.8);
+  box-shadow: inset 5px 5px 10px #1a1a1a, inset -5px -5px 20px #666666;
+  padding: 20px;
+  border-radius: 15px;
 }
 
 .yellow-font {
@@ -769,52 +864,83 @@ hr {
 }
 
 .look-checks-container {
-  width: 100%;
   display: flex;
-  background-color: #8c8c8c;
+  flex-direction: column;
+}
+
+@media only screen and (min-width: 850px) {
+  .look-checks-container {
+    flex-direction: row;
+  }
+}
+
+.look-checks-line {
+  display: flex;
+  flex: 1;
 }
 
 .look-check-container {
-  height: 100%;
   width: 100%;
+  margin: 3px;
+  background-color: rgba(25, 25, 25, 0.5);
+  color: #fff;
+  box-shadow: inset 5px 5px 10px #595959, inset -5px -5px 20px #a6a6a6;
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 }
 
 .look-check {
   height: 40px;
   width: 100%;
+  background-color: rgba(25, 25, 25, 0.7);
+  border-radius: 0 0 10px 10px;
 }
 
 .look-check-title {
   text-align: center;
   font-size: 70%;
-  margin-bottom: 5px;
+  padding: 5px;
+  border-radius: 10px 10px 0 0;
+  display: none;
+}
+
+@media only screen and (min-width: 1250px) {
+  .look-check-title {
+    display: block;
+  }
+}
+
+.look-check-title-small {
+  text-align: center;
+  font-size: 70%;
+  padding: 5px;
+  border-radius: 10px 10px 0 0;
+}
+
+@media only screen and (min-width: 1250px) {
+  .look-check-title-small {
+    display: none;
+  }
 }
 
 .check-yes {
-  background-color: #709072;
+  background-color: rgba(61, 92, 63, 0.8);
   background-image: url(../../cclab/images/yes-100.png);
-  /* height: 200px; */
   background-position: center;
   background-size: contain;
   background-repeat: no-repeat;
   position: relative;
-  /* top: 300px; */
 }
 
 .check-no {
-  background-color: #c83739;
+  background-color: rgba(200, 55, 57, 0.8);
   background-image: url(../../cclab/images/no-100.png);
-  /* height: 200px; */
   background-position: center;
   background-size: contain;
   background-repeat: no-repeat;
   position: relative;
-  /* top: 300px; */
-}
-
-.lookup-dash-info-container {
-  background-color: #8c8c8c;
-  padding: 10px;
 }
 
 .lookup-dash-info {
@@ -826,8 +952,29 @@ hr {
   flex-basis: 180px;
   flex-grow: 0;
   flex-shrink: 0;
+  font-size: 110%;
 }
 
 .lookup-line-chart .highcharts-tracker-line {
   stroke-width: 5px;
+}
+
+.glo-comparison-container .search-container input,
+.us-comparison-container .search-container input {
+  background-color: rgba(255, 255, 255, 0.7);
+}
+
+.glo-comparison-container .search-container input::placeholder,
+.us-comparison-container .search-container input::placeholder {
+  color: #1c1c1c;
+}
+
+.glo-comparison-container .search-container input:-ms-input-placeholder,
+.us-comparison-container .search-container input:-ms-input-placeholder {
+  color: #1c1c1c;
+}
+
+.glo-comparison-container .search-container input::-ms-input-placeholder,
+.us-comparison-container .search-container input::-ms-input-placeholder {
+  color: #1c1c1c;
 }

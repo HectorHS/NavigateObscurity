@@ -36,17 +36,21 @@
 {% block content %}
 
 <!-- Viz 2 - Dashboard for older data -->
-<div class="data-container">
-    <section>
-        <div style="padding-bottom: 0px;">
-            <h1> Global cohort - variable comparison </h1> 
-            <div class="dashboard-text">We surveyed 1031 participants from 39 countries every two weeks for
-                six
-                months. During that time
-                they answered almost 500 unique questions for us. Use the dashboard below to see how their
-                responses
-                correlate. </div>
-            <div class="dashboard-instructions">
+<div class="data-container glo-comparison-container">
+    <div style="padding-bottom: 0px;">
+        <h1> Global cohort - variable comparison </h1>
+        <div class="dashboard-text">We surveyed 1031 participants from 39 countries every two weeks for
+            six
+            months. During that time
+            they answered almost 500 unique questions for us. Use the dashboard below to see how their
+            responses
+            correlate.
+        </div>
+
+    </div>
+    <figure style="margin-bottom:50px;">
+        <div class="dash-texture">
+            <div class="dashboard-instructions dash-info">
                 <div class="title">How to use:</div>
                 <div class="text">
                     <ul>
@@ -70,15 +74,13 @@
                     </ul>
                 </div>
             </div>
-        </div>
-        <figure">
-            <div class="dashboard-container-horizontal CCLab-dashboard" style="margin-left: -5px;">
+            <div class="dashboard-container-horizontal CCLab-dashboard">
                 <div class="dashboard-container-vertical dashboard-level-1">
                     <div class="dashboard-container-horizontal dashboard-side-60">
-                        <div class="dashboard-side" style="height: inherit;">
+                        <div style="height: inherit;">
                             <div class="cclab-stats-container1">
                                 <div class="cclab-stats-container2">
-                                    <div class="cclab-stat-box" style="background-color: #B5AFB2;">
+                                    <div class="dash-stat-box dash-stat-box-1">
                                         <div class="cclab-stat-label-container">
                                             <div class="cclab-stat-label"># of individuals</div>
                                             <div id="old_sample_date" class="cclab-stat-sublabel"></div>
@@ -86,18 +88,18 @@
 
                                         <div id="old_sample" class="cclab-stat-value"></div>
                                     </div>
-                                    <div class="cclab-stat-box" style="background-color: #FDC64B;">
+                                    <div class="dash-stat-box dash-stat-box-2">
                                         <div class="cclab-stat-label-container">
                                             <div class="cclab-stat-label">Covid positive</div>
                                             <div id="old_covid_date" class="cclab-stat-sublabel"></div>
                                         </div>
                                         <div id="old_covid" class="cclab-stat-value"></div>
                                     </div>
-                                    
+
                                 </div>
                                 <div class="cclab-stats-container2">
-                                    
-                                    <div class="cclab-stat-box" style="background-color: #EC625F;">
+
+                                    <div class="dash-stat-box dash-stat-box-3">
                                         <div class="cclab-stat-label-container">
                                             <div class="cclab-stat-label">With infected contacts</div>
                                             <div id="old_contacts_date" class="cclab-stat-sublabel"></div>
@@ -105,7 +107,7 @@
 
                                         <div id="old_contacts" class="cclab-stat-value"></div>
                                     </div>
-                                    <div class="cclab-stat-box" style="background-color: #709072;">
+                                    <div class="dash-stat-box dash-stat-box-4">
                                         <div class="cclab-stat-label-container">
 
                                             <div class="cclab-stat-label">With pre-existing</div>
@@ -118,17 +120,17 @@
                                 </div>
                             </div>
 
-                            <div class="cclab-chart-container" style="height: 350px;">
+                            <div class="chart-inset" style="height: 350px; margin-bottom: 15px;">
                                 <div id="old_heatmap" class="heatmap" style="width:100%;padding-bottom: 20px;">
                                 </div>
                                 <div id="old_heatmap_error" class="error hidden"
-                                    style="padding: 160px 0; bottom:370px;">Invalid date -
+                                    style="padding: 168px 0; bottom:368px;">Invalid date -
                                     variable
                                     combination</div>
                             </div>
-                            <div class="cclab-chart-container" style="height: 400px;">
+                            <div class="chart-inset" style="height: 400px;">
                                 <div id="old_bars" class="" style="width:100%;"></div>
-                                <div id="old_bars_error" class="error hidden" style="padding: 185px 0; bottom:400px;">
+                                <div id="old_bars_error" class="error hidden" style="padding: 195px 0; bottom:398px;">
                                     Invalid
                                     date
                                     -
@@ -138,7 +140,7 @@
                         </div>
                     </div>
                     <div class="dashboard-side-40">
-                        <div class="cclab-dashboard-options">
+                        <div class="cclab-dashboard-options dash-info">
                             <datalist id="old-var1-datalist"></datalist>
                             <div class="CCLAB-var-container">
                                 <div class="CCLAB-var-title"> Primary variable: </div>
@@ -163,24 +165,24 @@
                             <div id="old_var2"></div>
                         </div>
                         <div class="pies-container">
-                            <div class="cclab-chart-container" style="margin: 5px 5px 0 0; height: 250px; width:100%">
+                            <div class="chart-inset" style="height: 250px; width:100%">
                                 <div id="old_var1_pie" class="cclab-pie" style="width:100%;"></div>
-                                <div id="old_var1_error" class="error hidden" style="padding: 95px 0; bottom: 250px;">
+                                <div id="old_var1_error" class="error hidden" style="padding: 101px 0; bottom: 248px;">
                                     Invalid date -
                                     variable combination
                                 </div>
                             </div>
-                            <div class="cclab-chart-container" style="margin: 5px 0 0 0;height: 250px;width:100%">
+                            <div class="chart-inset" style="height: 250px;width:100%">
                                 <div id="old_var2_pie" class="cclab-pie" style="width:100%;"></div>
-                                <div id="old_var2_error" class="error hidden" style="padding: 95px 0; bottom: 250px;">
+                                <div id="old_var2_error" class="error hidden" style="padding: 101px 0; bottom: 248px;">
                                     Invalid date -
                                     variable combination
                                 </div>
                             </div>
                         </div>
-                        <div class="cclab-chart-container" style="margin: 5px 0;height: 300px;">
+                        <div class="chart-inset" style="height: 300px;">
                             <div id="old_lines" class="lines" style="width:100%;"></div>
-                            <div id="old_lines_error" class="error hidden" style="padding: 135px 0; bottom: 300px;">
+                            <div id="old_lines_error" class="error hidden" style="padding: 142px 0; bottom: 298px;">
                                 Invalid date -
                                 variable
                                 combination</div>
@@ -188,13 +190,10 @@
                     </div>
                 </div>
             </div>
-        </figure>
-    </section>
-    <a class="cclab-button" href="https://www.cooperationintheapocalypse.org/#data">return to data</a>
-
+        </div>
+        <a class="cclab-button" href="https://www.cooperationintheapocalypse.org/#data">return to data</a>
+    </figure>
 </div>
-
-
 
 <script>
     var static_url = "{% get_static_prefix %}";
@@ -340,10 +339,10 @@
             let colorIndx;
             if (number == "one") {
                 variable = variable1;
-                colorIndx = 18;
+                colorIndx = 16;
             } else if (number == "two") {
                 variable = variable2;
-                colorIndx = 10;
+                colorIndx = 11;
             }
 
             // for (let date of all_dates) {
@@ -725,7 +724,18 @@
             min: 0,
             max: heatmapMax,
             minColor: '#ffffff',
-            maxColor: '#174f1e'
+            maxColor: '#1e4840',
+            stops:[
+                [0, 'rgba(255,255,255,0)'],
+                [0.125, '#fad2d1'],
+                [0.25, '#f28f8d'],
+                [0.375, '#ec625f'],
+                [0.5, '#c83739'],
+                [0.625, '#a02c2e'],
+                [0.75, '#641b1d'],
+                [0.875, '#280b0c'],
+                [1, '#000000']
+            ]
         };
         setStats();
 

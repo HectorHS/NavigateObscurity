@@ -36,102 +36,136 @@
 
     <!-- Variable lookup - US cohort -->
 
-    <div class="data-container">
+    <div class="data-container us-lookup-container">
+    
         <h1>US cohort - variable lookup</h1>
-        <div class="lookup-dash-info-container">
-            <div class="lookup-dash-info">
-                <datalist id="look_us_datalist"></datalist>
-                <div style="width: 300px; margin-right:30px;">
+        <div class="dashboard-text">915 participants were asked 918 questions across 16 timepoints. Find out what we asked, when we asked it, and how participants responded.</div>
+        <figure style="margin-bottom:50px;">
+            <div class="dash-texture">
+                    <datalist id="look_us_datalist"></datalist>
+                    <div class="search-parent">
+                        <div class="search-container">
+                            <input id="look_us_input" list="look_us_datalist" placeholder="Search for a variable">
+                        </div>
+                    </div>
+                    <div class="dash-info">
+                        <div class="lookup-dash-info">
+                            <div style="display: inline-flex; padding-bottom: 10px;">
+                                <div class="lookup-info-title"> Keyword: </div>
+                                <div id="look_us_key" class="look-text" style="font-size:110%;"></div>
+                            </div>
+                            <div style="display: inline-flex;">
+                                <div class="lookup-info-title"> Description: </div>
+                                <div id="look_us_desc" class="look-text" style="font-size:110%;"></div>
+                            </div>
+                        
+                        </div>
+                        
+                    </div>
+                    <div style="font-size: 110%; padding:5px 0 0 10px;">Available at the following
+                        time points:</div>
+                        
+                    
+    
+                <div class="look-checks-container" style="margin: 0 10px;">
+                    <div class="look-checks-line">
+                    <div class="look-check-container">
+                        <div class="look-check-title">26 Sep 2020 (t1)</div>
+                        <div class="look-check-title-small">t1</div>
+                        <div class="look-check check-yes"></div>
+                    </div>
+                    <div class="look-check-container">
+                        <div class="look-check-title">27 Oct 2020 (t2)</div>
+                        <div class="look-check-title-small">t2</div>
 
-                    <div class="search-container">
-                        <input id="look_us_input" list="look_us_datalist" placeholder="Search for a variable">
+                        <div class="look-check check-yes"></div>
+                    </div>
+                    <div class="look-check-container">
+                        <div class="look-check-title">28 Nov 2020 (t3)</div>
+                        <div class="look-check-title-small">t3</div>
+                        <div class="look-check check-yes"></div>
+                    </div>
+                    <div class="look-check-container">
+                        <div class="look-check-title">28 Dec 2020 (t4)</div>
+                        <div class="look-check-title-small">t4</div>
+                        <div class="look-check check-yes"></div>
+                    </div>
+                    <div class="look-check-container">
+                        <div class="look-check-title">27 Jan 2021 (t5)</div>
+                        <div class="look-check-title-small">t5</div>
+                        <div class="look-check check-yes"></div>
+                    </div>
+                    <div class="look-check-container">
+                        <div class="look-check-title">26 Feb 2021 (t6)</div>
+                        <div class="look-check-title-small">t6</div>
+                        <div class="look-check check-yes"></div>
+                    </div>
+                    <div class="look-check-container">
+                        <div class="look-check-title">28 Mar 2021 (t7)</div>
+                        <div class="look-check-title-small">t7</div>
+                        <div class="look-check check-yes"></div>
+                    </div>
+                    <div class="look-check-container">
+                        <div class="look-check-title">27 Apr 2021 (t8)</div>
+                        <div class="look-check-title-small">t8</div>
+                        <div class="look-check check-yes"></div>
                     </div>
                 </div>
-                <div class="lookup-dash-info">
-                    <div style="display: inline-flex; padding-bottom: 10px;">
-                        <div class="yellow-font lookup-info-title"> Keyword: </div>
-                        <div id="look_us_key" class="look-text" style="font-size:110%;"></div>
+                <div class="look-checks-line">
+                    <div class="look-check-container">
+                        <div class="look-check-title">27 May 2021 (t9)</div>
+                        <div class="look-check-title-small">t9</div>
+                        <div class="look-check check-yes"></div>
                     </div>
-                    <div style="display: inline-flex;">
-                        <div class="yellow-font lookup-info-title"> Description: </div>
-                        <div id="look_us_desc" class="look-text" style="font-size:110%;"></div>
+                    <div class="look-check-container">
+                        <div class="look-check-title">26 Jun 2021 (t10)</div>
+                        <div class="look-check-title-small">t10</div>
+                        <div class="look-check check-no"></div>
+                    </div>
+                    <div class="look-check-container">
+                        <div class="look-check-title">26 Jul 2021 (t11)</div>
+                        <div class="look-check-title-small">t11</div>
+                        <div class="look-check check-yes"></div>
+                    </div>
+                    <div class="look-check-container">
+                        <div class="look-check-title">25 Aug 2021 (t12)</div>
+                        <div class="look-check-title-small">t12</div>
+                        <div class="look-check check-yes"></div>
+                    </div>
+                    <div class="look-check-container">
+                        <div class="look-check-title">25 Oct 2021 (t13)</div>
+                        <div class="look-check-title-small">t13</div>
+                        <div class="look-check check-no"></div>
+                    </div>
+                    <div class="look-check-container">
+                        <div class="look-check-title">16 Dec 2021 (t14)</div>
+                        <div class="look-check-title-small">t14</div>
+                        <div class="look-check check-yes"></div>
+                    </div>
+                    <div class="look-check-container">
+                        <div class="look-check-title">24 Feb 2022 (t15)</div>
+                        <div class="look-check-title-small">t15</div>
+                        <div class="look-check check-yes"></div>
+                    </div>
+                    <div class="look-check-container">
+                        <div class="look-check-title">25 Apr 2022 (t16)</div>
+                        <div class="look-check-title-small">t16</div>
+                        <div class="look-check check-yes"></div>
                     </div>
                 </div>
+                </div>
+                <div class="chart-inset" style="margin:10px;">
+                    <div id="look_us_int_chart" class="lookup-line-chart"></div>
+                    <div id="look_us_str_chart"></div>
+                </div>
             </div>
-        </div>
-        <div class="yellow-font" style="background-color: #8c8c8c; padding:0 10px 10px;">Available at the following
-            time points:</div>
-        <div class="look-checks-container">
-            <div class="look-check-container">
-                <div class="look-check-title">26 Sep 2020 (t1)</div>
-                <div class="look-check check-yes"></div>
-            </div>
-            <div class="look-check-container">
-                <div class="look-check-title">27 Oct 2020 (t2)</div>
-                <div class="look-check check-yes"></div>
-            </div>
-            <div class="look-check-container">
-                <div class="look-check-title">28 Nov 2020 (t3)</div>
-                <div class="look-check check-yes"></div>
-            </div>
-            <div class="look-check-container">
-                <div class="look-check-title">28 Dec 2020 (t4)</div>
-                <div class="look-check check-yes"></div>
-            </div>
-            <div class="look-check-container">
-                <div class="look-check-title">27 Jan 2021 (t5)</div>
-                <div class="look-check check-yes"></div>
-            </div>
-            <div class="look-check-container">
-                <div class="look-check-title">26 Feb 2021 (t6)</div>
-                <div class="look-check check-yes"></div>
-            </div>
-            <div class="look-check-container">
-                <div class="look-check-title">28 Mar 2021 (t7)</div>
-                <div class="look-check check-yes"></div>
-            </div>
-            <div class="look-check-container">
-                <div class="look-check-title">27 Apr 2021 (t8)</div>
-                <div class="look-check check-yes"></div>
-            </div>
-            <div class="look-check-container">
-                <div class="look-check-title">27 May Jun 2021 (t9)</div>
-                <div class="look-check check-yes"></div>
-            </div>
-            <div class="look-check-container">
-                <div class="look-check-title">26 Jun 2021 (t10)</div>
-                <div class="look-check check-no"></div>
-            </div>
-            <div class="look-check-container">
-                <div class="look-check-title">26 Jul 2021 (t11)</div>
-                <div class="look-check check-yes"></div>
-            </div>
-            <div class="look-check-container">
-                <div class="look-check-title">25 Aug 2021 (t12)</div>
-                <div class="look-check check-yes"></div>
-            </div>
-            <div class="look-check-container">
-                <div class="look-check-title">25 Oct 2021 (t13)</div>
-                <div class="look-check check-no"></div>
-            </div>
-            <div class="look-check-container">
-                <div class="look-check-title">16 Dec 2021 (t14)</div>
-                <div class="look-check check-yes"></div>
-            </div>
-            <div class="look-check-container">
-                <div class="look-check-title">24 Feb 2022 (t15)</div>
-                <div class="look-check check-yes"></div>
-            </div>
-            <div class="look-check-container">
-                <div class="look-check-title">25 Apr 2022 (t16)</div>
-                <div class="look-check check-yes"></div>
-            </div>
-        </div>
-        <div id="look_us_int_chart" class="lookup-line-chart"></div>
-        <div id="look_us_str_chart"></div>
-        <a class="cclab-button" href="https://www.cooperationintheapocalypse.org/#data">return to data</a>
+        
+            <a class="cclab-button" href="https://www.cooperationintheapocalypse.org/#data">return to data</a>
+        </figure>
+        
     </div>
     
+
 
     <script>
         var static_url = "{% get_static_prefix %}";
@@ -306,7 +340,7 @@
                 series: [{
                     id: "average",
                     name: "Average score",
-                    colorIndex: 22,
+                    colorIndex: 13,
                     data: initial_average_data,
                     label: {
                         enabled: false,
