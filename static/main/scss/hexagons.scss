@@ -120,6 +120,8 @@
   @extend %hexagon;
   img {
     display: none;
+    height:50%;
+    filter: brightness(0) saturate(100%) invert(17%) sepia(26%) saturate(273%) hue-rotate(131deg) brightness(98%) contrast(89%);
     @media (min-width: $desktop-breakpoint) {
       display: block;
     }
@@ -138,6 +140,7 @@
   @extend %hexagon;
   img {
     height: 60%;
+    filter: brightness(0) saturate(100%) invert(17%) sepia(26%) saturate(273%) hue-rotate(131deg) brightness(98%) contrast(89%);
   }
 }
 .hexagon-node-index {

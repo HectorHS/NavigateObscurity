@@ -838,6 +838,8 @@ nav ul li ul:hover {
 
 .hexagon-data img {
   display: none;
+  height: 50%;
+  filter: brightness(0) saturate(100%) invert(17%) sepia(26%) saturate(273%) hue-rotate(131deg) brightness(98%) contrast(89%);
 }
 
 @media (min-width: 1025px) {
@@ -856,6 +858,7 @@ nav ul li ul:hover {
 
 .hexagon-data-index img {
   height: 60%;
+  filter: brightness(0) saturate(100%) invert(17%) sepia(26%) saturate(273%) hue-rotate(131deg) brightness(98%) contrast(89%);
 }
 
 .hexagon-node-index img {
