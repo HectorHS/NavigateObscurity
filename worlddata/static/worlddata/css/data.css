@@ -910,6 +910,12 @@ figure {
   fill: url("#gradient-52");
 }
 
+.bars .highcharts-color-53.highcharts-point,
+.pie .highcharts-color-53.highcharts-point,
+.scatter .highcharts-color-53.highcharts-point {
+  fill: url("#gradient-53");
+}
+
 .area,
 .bubbles,
 .wheel {
@@ -1656,6 +1662,20 @@ figure {
 .wheel .highcharts-color-52.highcharts-series.highcharts-area-series,
 .wheel .highcharts-color-52.highcharts-point:not(.highcharts-node) {
   fill: url("#gradient-area-52");
+}
+
+.area .highcharts-color-53,
+.bubbles .highcharts-color-53,
+.wheel .highcharts-color-53 {
+  stroke: none;
+}
+
+.area .highcharts-color-53.highcharts-series.highcharts-area-series, .area .highcharts-color-53.highcharts-point:not(.highcharts-node),
+.bubbles .highcharts-color-53.highcharts-series.highcharts-area-series,
+.bubbles .highcharts-color-53.highcharts-point:not(.highcharts-node),
+.wheel .highcharts-color-53.highcharts-series.highcharts-area-series,
+.wheel .highcharts-color-53.highcharts-point:not(.highcharts-node) {
+  fill: url("#gradient-area-53");
 }
 
 .heatmap .highcharts-grid-line,

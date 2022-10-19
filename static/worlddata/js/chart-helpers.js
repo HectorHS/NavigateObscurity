@@ -108,6 +108,7 @@ function getCountryCode(country) {
         "China, Macao SAR": "MAC",
         "Macao": "MAC",
         "China, Hong Kong SAR": "HKG",
+        "China Hong Kong SAR": "HKG",
         "Hong Kong": "HKG",
         "Colombia": "COL",
         "Comoros": "COM",
@@ -322,6 +323,7 @@ function getCountryCode(country) {
         "Tokelau": "TKL",
         "Tonga": "TON",
         "Trinidad and Tobago": "TTO",
+        "Trinidad & Tobago":"TTO",
         "Tunisia": "TUN",
         "Turkey": "TUR",
         "Turkmenistan": "TKM",
@@ -593,6 +595,7 @@ function getIndexColor(indx) {
         "50": "#8B9595",
         "51": "#101414",
         "52": "#DDDDDD",
+        "53": "#394646"
     };
 
     let color = indexColor[indx];

@@ -705,6 +705,15 @@ g.highcharts-series,
   background-image: linear-gradient(to top right, rgba(255, 0, 0, 0) 0%, #DDDDDD 50%);
 }
 
+.highcharts-color-53 {
+  fill: #394646;
+  stroke: #394646;
+}
+
+.legend-color-53 {
+  background-image: linear-gradient(to top right, rgba(255, 0, 0, 0) 0%, #394646 50%);
+}
+
 /* Default gradients */
 #gradient-0 stop {
   stop-color: #B3DBFF;
@@ -1339,6 +1348,18 @@ g.highcharts-series,
 }
 
 #gradient-52 stop[offset="1"] {
+  stop-opacity: 0.5;
+}
+
+#gradient-53 stop {
+  stop-color: #394646;
+}
+
+#gradient-53 stop[offset="0"] {
+  stop-opacity: 1;
+}
+
+#gradient-53 stop[offset="1"] {
   stop-opacity: 0.5;
 }
 
@@ -1978,6 +1999,18 @@ g.highcharts-series,
   stop-opacity: 0.1;
 }
 
+#gradient-area-53 stop {
+  stop-color: #394646;
+}
+
+#gradient-area-53 stop[offset="0"] {
+  stop-opacity: 1;
+}
+
+#gradient-area-53 stop[offset="1"] {
+  stop-opacity: 0.1;
+}
+
 .highcharts-area {
   fill-opacity: 0.75;
   stroke-width: 0;
@@ -2506,7 +2539,7 @@ input.highcharts-range-selector {
 }
 
 .highcharts-null-point {
-  fill: #2e3838 !important;
+  fill: #394646 !important;
 }
 
 /* 3d charts */

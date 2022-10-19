@@ -108,6 +108,7 @@ function getCountryCode(country) {
         "China, Macao SAR": "MAC",
         "Macao": "MAC",
         "China, Hong Kong SAR": "HKG",
+        "China Hong Kong SAR": "HKG",
         "Hong Kong": "HKG",
         "Colombia": "COL",
         "Comoros": "COM",
@@ -322,6 +323,7 @@ function getCountryCode(country) {
         "Tokelau": "TKL",
         "Tonga": "TON",
         "Trinidad and Tobago": "TTO",
+        "Trinidad & Tobago":"TTO",
         "Tunisia": "TUN",
         "Turkey": "TUR",
         "Turkmenistan": "TKM",
@@ -368,46 +370,57 @@ function createLegend(chart_points, data, parentContainer) {
         a.remove()
     })
 
-    $legend = $(parentContainer + ' .chart-legend');
+    legend = document.querySelectorAll(parentContainer + ' .chart-legend')[0];
     // Append legend items
     for (let point of data) {
-        $legend.append('<div class="legend-item"><div class="dot legend-color-' + point.colorIndex + '" ></div><div class="serieName" id="">' + fCapital(point.name) + '</div></div>');
+        legend.innerHTML += '<div class="legend-item"><div class="dot legend-color-' + point.colorIndex + '" ></div><div class="serieName" id="">' + fCapital(point.name) + '</div></div>';
     }
 
     // Click effect for legend
-    $(parentContainer + ' .legend-item').click(function () {
-        var name = this.textContent;
-        for (let point of chart_points) {
-            if (point.name === name || point.from === name) {
-                point.select(true, false);
+    document.querySelectorAll(parentContainer + ' .legend-item').forEach(function (a) {
+        a.addEventListener("click", function() {
+            var name = this.textContent;
+            for (let point of chart_points) {
+                if (point.name === name || point.from === name) {
+                    point.select(true, false);
+                }
             }
-        }
+        });
+
+        
     });
 
     // Hover effect for legend
-    $(parentContainer + ' .legend-item').mouseenter(function () {
-        var name = this.textContent;
+    document.querySelectorAll(parentContainer + ' .legend-item').forEach(function (a) {
+        a.addEventListener("mouseover", function() {
+            var name = this.textContent;
 
-        for (let point of chart_points) {
-            if (point.name === name || point.from === name) { // from is for dependency wheel
-                point.setState('hover');
-            } else {
-                point.setState('inactive');
+            for (let point of chart_points) {
+                if (point.name === name || point.from === name) { // from is for dependency wheel
+                    point.setState('hover');
+                } else {
+                    point.setState('inactive');
+                }
             }
-        }
+        });
+        
     });
 
     // Remove all states on mouse out
-    $(parentContainer + ' .legend-item').mouseout(function (event) {
-        var e = event.toElement || event.relatedTarget,
-            i = 0;
-        if (e.parentNode == this || e == this) {
-            return;
-        }
+    document.querySelectorAll(parentContainer + ' .legend-item').forEach(function (a) {
+        a.addEventListener("mouseout", function() {
+        //     var e = event.toElement || event.relatedTarget,
+        //     i = 0;
+        // if (e.parentNode == this || e == this) {
+        //     return;
+        // }
 
         for (let point of chart_points) {
             point.setState('');
         }
+
+        });
+        
     })
 }
 
@@ -593,6 +606,7 @@ function getIndexColor(indx) {
         "50": "#8B9595",
         "51": "#101414",
         "52": "#DDDDDD",
+        "53": "#394646"
     };
 
     let color = indexColor[indx];
