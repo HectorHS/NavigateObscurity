@@ -749,18 +749,18 @@
                         var value = this.point.value;
                         var text = "";
                         if (parameter == "Fertility rate") {
-                            let val = numberFormatterPercentage(value);
+                            let val = numberFormatter(value);
                             text = val + " births per woman";
                         } else if (parameter == "Life expectancy") {
                             text = "Life expectancy at birth is " + value + " years";
                         } else if (parameter == "Median age") {
-                            let val = numberFormatterPercentage(value);
+                            let val = numberFormatter(value);
                             text = "Median age of the whole population is " + val + " years old";
                         } else if (parameter == "Mortality percentage") {
-                            let val = numberFormatterPercentage(value);
+                            let val = numberFormatter(value);
                             text = "Total amount of deaths this year amounts to " + val + "% of the total population";
                         } else if (parameter == "Population") {
-                            let val = numberFormatterSeparator(value);
+                            let val = numberFormatter(value);
                             text = "Total population of the country is " + val;
                         } else if (parameter == "Population density") {
                             text = value + " people living per square kilometer";
@@ -1009,7 +1009,7 @@
             }
             let dataPC = [];
             for (let d of data) {
-                dataPC.push(+numberFormatterPercentage(d / total * 100));
+                dataPC.push(+numberFormatter(d / total * 100));
             }
 
             // make values negative for male
@@ -1125,9 +1125,9 @@
             tooltip: {
                 formatter: function () {
                     var title = fCapital(this.key);
-                    var deaths = numberFormatterInteger(this.point.value);
+                    var deaths = numberFormatter(this.point.value);
                     var perc = this.point.value / this.series.tree.val * 100;
-                    var per = numberFormatterPercentage(perc);
+                    var per = numberFormatter(perc);
                     return '<text><span style="font-size: 1.1em"><strong>' + title + '</strong></span><br>Total number of deaths: ' + deaths + '<br> Share of deaths: ' + per + '%</text>';
                 },
                 useHTML: true
@@ -1294,7 +1294,7 @@
             tooltip: {
                 formatter: function () {
                     var title = fCapital(this.key);
-                    var per = numberFormatterPercentage(this.point.value);
+                    var per = numberFormatter(this.point.value);
                     if (cause == "All causes") {
                         return '<text><span style="font-size: 1.1em"><strong>' + title + '</strong></span><br>Top cause of death: ' + this.series.name + '<br>Percentage of total deaths: ' + per + '%</text>';
                     } else {
@@ -1355,7 +1355,7 @@
                 },
                 labels: {
                     formatter: function () {
-                        return numberFormatterSeparator(Math.abs(this.value)) + "%";
+                        return numberFormatter(Math.abs(this.value)) + "%";
                     }
                 },
                 accessibility: {
@@ -1377,9 +1377,9 @@
             tooltip: {
                 formatter: function () {
                     return '<strong>Aged from ' + this.x + '</strong><br/>' +
-                        'Male, total number of deaths: ' + numberFormatterSeparator(this.points[0].point.totalValue, 1) + '<br>' +
+                        'Male, total number of deaths: ' + numberFormatter(this.points[0].point.totalValue, 1) + '<br>' +
                         'Male, share of deaths: ' + Math.abs(this.points[0].y) + '%<br>' +
-                        'Female, total number of deaths: ' + numberFormatterSeparator(this.points[1].point.totalValue, 1) + '<br>' +
+                        'Female, total number of deaths: ' + numberFormatter(this.points[1].point.totalValue, 1) + '<br>' +
                         'Female, share of deaths: ' + Math.abs(this.points[1].y) + '%';
                 },
                 shared: true,
@@ -1407,7 +1407,7 @@
                 headerFormat: '',
                 pointFormatter: function () {
                     let sName = fCapital(this.name);
-                    let text = "Associated with " + numberFormatterInteger(this.value) + " deaths";
+                    let text = "Associated with " + numberFormatter(this.value) + " deaths";
                     return '<text><span style="font-size:1.1em"><strong>' + sName + '</strong></span><br>' + text + '</text>';
                 },
             },
@@ -1709,9 +1709,9 @@
                 tooltip: {
                     formatter: function () {
                         var title = fCapital(this.key);
-                        var deaths = numberFormatterInteger(this.point.value);
+                        var deaths = numberFormatter(this.point.value);
                         var perc = this.point.value / this.series.tree.val * 100;
-                        var per = numberFormatterPercentage(perc);
+                        var per = numberFormatter(perc);
                         return '<text><span style="font-size: 1.1em"><strong>' + title + '</strong></span><br>Total number of deaths: ' + deaths + '<br> Percentage: ' + per + '%</text>';
                     },
                     useHTML: true

@@ -406,20 +406,20 @@
                 }
             }
 
-            data.push((d1v > 0) ? +numberFormatterPercentage(d1v / d1c) : 0);
-            data.push((d2v > 0) ? +numberFormatterPercentage(d2v / d2c) : 0);
-            data.push((d3v > 0) ? +numberFormatterPercentage(d3v / d3c) : 0);
-            data.push((d4v > 0) ? +numberFormatterPercentage(d4v / d4c) : 0);
-            data.push((d5v > 0) ? +numberFormatterPercentage(d5v / d5c) : 0);
-            data.push((d6v > 0) ? +numberFormatterPercentage(d6v / d6c) : 0);
-            data.push((d7v > 0) ? +numberFormatterPercentage(d7v / d7c) : 0);
-            data.push((d8v > 0) ? +numberFormatterPercentage(d8v / d8c) : 0);
-            data.push((d9v > 0) ? +numberFormatterPercentage(d9v / d9c) : 0);
-            data.push((d10v > 0) ? +numberFormatterPercentage(d10v / d10c) : 0);
-            data.push((d11v > 0) ? +numberFormatterPercentage(d11v / d11c) : 0);
-            data.push((d12v > 0) ? +numberFormatterPercentage(d12v / d12c) : 0);
-            data.push((d13v > 0) ? +numberFormatterPercentage(d13v / d13c) : 0);
-            data.push((d14v > 0) ? +numberFormatterPercentage(d14v / d14c) : 0);
+            data.push((d1v > 0) ? +numberFormatter(d1v / d1c) : 0);
+            data.push((d2v > 0) ? +numberFormatter(d2v / d2c) : 0);
+            data.push((d3v > 0) ? +numberFormatter(d3v / d3c) : 0);
+            data.push((d4v > 0) ? +numberFormatter(d4v / d4c) : 0);
+            data.push((d5v > 0) ? +numberFormatter(d5v / d5c) : 0);
+            data.push((d6v > 0) ? +numberFormatter(d6v / d6c) : 0);
+            data.push((d7v > 0) ? +numberFormatter(d7v / d7c) : 0);
+            data.push((d8v > 0) ? +numberFormatter(d8v / d8c) : 0);
+            data.push((d9v > 0) ? +numberFormatter(d9v / d9c) : 0);
+            data.push((d10v > 0) ? +numberFormatter(d10v / d10c) : 0);
+            data.push((d11v > 0) ? +numberFormatter(d11v / d11c) : 0);
+            data.push((d12v > 0) ? +numberFormatter(d12v / d12c) : 0);
+            data.push((d13v > 0) ? +numberFormatter(d13v / d13c) : 0);
+            data.push((d14v > 0) ? +numberFormatter(d14v / d14c) : 0);
 
             // to hide 0's
             data.forEach(function (element, index) {
@@ -755,7 +755,7 @@
             },
             tooltip: {
                 formatter: function () {
-                    return '<text><strong>' + variable1 + "[" + this.key + "] </strong><br># of respondents: " + this.y + "<br>% of respondents: " + numberFormatterPercentage(this.percentage) + '%</text>';
+                    return '<text><strong>' + variable1 + "[" + this.key + "] </strong><br># of respondents: " + this.y + "<br>% of respondents: " + numberFormatter(this.percentage) + '%</text>';
                 },
 
                 useHTML: true
@@ -804,7 +804,7 @@
             },
             tooltip: {
                 formatter: function () {
-                    return '<text><strong>' + variable2 + "[" + this.key + "] </strong><br># of respondents: " + this.y + "<br>% of respondents: " + numberFormatterPercentage(this.percentage) + '%</text>';
+                    return '<text><strong>' + variable2 + "[" + this.key + "] </strong><br># of respondents: " + this.y + "<br>% of respondents: " + numberFormatter(this.percentage) + '%</text>';
                 },
 
                 useHTML: true
@@ -859,8 +859,8 @@
             },
             tooltip: {
                 formatter: function () {
-                    let var1 = numberFormatterPercentage(this.points[0].y);
-                    let var2 = numberFormatterPercentage(this.points[1].y);
+                    let var1 = numberFormatter(this.points[0].y);
+                    let var2 = numberFormatter(this.points[1].y);
                     let tip = '<text><b>' + this.x +
                         '</b><br/>' + this.points[0].series.name + ': ' + var1 +
                         '<br/>' + this.points[1].series.name + ': ' + var2 + '</text>';

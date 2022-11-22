@@ -265,9 +265,9 @@
                 tooltip: {
                     formatter: function () {
                         var title = fCapital(this.key);
-                        var value = numberFormatterPercentage(this.point.value);
+                        var value = numberFormatter(this.point.value);
                         var text = "";
-                        var abs = numberFormatterInteger(this.point.absolute);
+                        var abs = numberFormatter(this.point.absolute);
                         if (measure == "Destination of migration") {
                             text = abs + " migrated into the country, <br>consisting " + value + "% of local population";
                         } else if (measure == "Origin of migration") {
@@ -443,7 +443,7 @@
                     headerFormat: '',
                     pointFormatter: function () {
                         var sName = fCapital(this.name),
-                            population = numberFormatterInteger(this.absolute),
+                            population = numberFormatter(this.absolute),
                             text = "";
                         if (parameter == "Destination") {
                             text = population + ' people have migrated to ' + country;
@@ -696,13 +696,13 @@
                         var text = "";
                         if (this.point.formatPrefix == "node") {
                             var region = fCapital(point.name),
-                                population = numberFormatterInteger(point.sum);
+                                population = numberFormatter(point.sum);
 
                             text = "<strong>" + region + "</strong>: " + population;
                         } else {
                             var from = fCapital(point.from),
                                 to = fCapital(point.to),
-                                population = numberFormatterInteger(point.weight);
+                                population = numberFormatter(point.weight);
                             text = from + " &#8594; " + to + ": " + population;
                         }
                         return '<text>' + text + '</text>';

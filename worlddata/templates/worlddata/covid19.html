@@ -661,8 +661,7 @@
                 }
                 total_excess_2020 = total2020 - oldTotal;
 
-                let val = numberFormatterInteger(total_excess_2020);
-                val = numberFormatterSeparator(val);
+                let val = numberFormatter(total_excess_2020);
                 if (total_excess_2020 > 0) {
                     total_excess_text_2020 = "+ " + val.toString();
                 } else {
@@ -684,8 +683,7 @@
                 }
                 total_excess_2021 = total2021 - oldTotal;
 
-                let val = numberFormatterInteger(total_excess_2021);
-                val = numberFormatterSeparator(val);
+                let val = numberFormatter(total_excess_2021);
                 if (total_excess_2021 > 0) {
                     total_excess_text_2021 = "+ " + val.toString();
                 } else {
@@ -707,8 +705,7 @@
                 }
                 total_excess_2022 = total2022 - oldTotal;
 
-                let val = numberFormatterInteger(total_excess_2022);
-                val = numberFormatterSeparator(val);
+                let val = numberFormatter(total_excess_2022);
                 if (total_excess_2022 > 0) {
                     total_excess_text_2022 = "+ " + val.toString();
                 } else {
@@ -773,18 +770,18 @@
 
             for (let row of files[0]) {
                 if (innerCountry == row.Country) {
-                    cases = numberFormatterIntegerLarge(+row.Cases);
-                    cases2020 = numberFormatterIntegerLarge(+row.Cases_2020);
-                    cases2021 = numberFormatterIntegerLarge(+row.Cases_2021);
-                    cases2022 = numberFormatterIntegerLarge(+row.Cases_2022);
-                    casesPc = numberFormatterPercentage(+row.Cases_week);
-                    deaths = numberFormatterIntegerLarge(+row.Deaths);
-                    deaths2020 = numberFormatterIntegerLarge(+row.Deaths_2020);
-                    deaths2021 = numberFormatterIntegerLarge(+row.Deaths_2021);
-                    deaths2022 = numberFormatterIntegerLarge(+row.Deaths_2022);
-                    deathsPc = numberFormatterPercentage(+row.Deaths_week);
-                    vaccinationShare = numberFormatterPercentage(+row.Fully_vaccinated);
-                    boosterShare = numberFormatterPercentage(+row.Vaccinated_booster);
+                    cases = numberFormatter(+row.Cases);
+                    cases2020 = numberFormatter(+row.Cases_2020);
+                    cases2021 = numberFormatter(+row.Cases_2021);
+                    cases2022 = numberFormatter(+row.Cases_2022);
+                    casesPc = numberFormatter(+row.Cases_week);
+                    deaths = numberFormatter(+row.Deaths);
+                    deaths2020 = numberFormatter(+row.Deaths_2020);
+                    deaths2021 = numberFormatter(+row.Deaths_2021);
+                    deaths2022 = numberFormatter(+row.Deaths_2022);
+                    deathsPc = numberFormatter(+row.Deaths_week);
+                    vaccinationShare = numberFormatter(+row.Fully_vaccinated);
+                    boosterShare = numberFormatter(+row.Vaccinated_booster);
                     break;
                 }
             }
@@ -877,13 +874,13 @@
                     var value = this.point.value;
                     var text = "";
                     if (parameter == "Cases per 1 million (7 day average)") {
-                        let val = numberFormatterPercentage(value);
+                        let val = numberFormatter(value);
                         text = val + " cases per 1 million people (average of last 7 days)";
                     } else if (parameter == "Deaths per 1 million (7 day average)") {
-                        let val = numberFormatterPercentage(value);
+                        let val = numberFormatter(value);
                         text = val + " deaths per 1 million people (average of last 7 days)";
                     } else if (parameter == "Fully vaccinated population share") {
-                        let val = numberFormatterPercentage(value);
+                        let val = numberFormatter(value);
                         text = val + "% of total population has been fully vaccinated";
                     }
                     return '<text><span style="font-size: 1.1em"><strong>' + title + '</strong></span><br>' + text + '</text>';
@@ -930,7 +927,7 @@
                 formatter: function () {
                     let rate = "N/A";
                     let title = fCapital(this.x);
-                    let cases = numberFormatterInteger(this.points[0].y);
+                    let cases = numberFormatter(this.points[0].y);
                     
                     return '<b>' + title + '</b><br/>Weekly cases: ' + cases;
                 },
@@ -996,7 +993,7 @@
             tooltip: {
                 formatter: function () {
                     let title = fCapital(this.x);
-                    let cases = numberFormatterInteger(this.points[0].y);
+                    let cases = numberFormatter(this.points[0].y);
                     return '<b>' + title + '</b><br/>Weekly cases: ' + cases;
                 },
                 useHTML: true,
@@ -1050,7 +1047,7 @@
             tooltip: {
                 formatter: function () {
                     var title = fCapital(this.x),
-                        value = numberFormatterInteger(this.y);
+                        value = numberFormatter(this.y);
 
                     return '<b>' + title + '</b><br/>Weekly deaths: ' + value;
                 },
@@ -1103,11 +1100,11 @@
 
                     // no easy way to show both values on tooltip, so doing this
                     if (series == "hospitalization") {
-                        hosp = numberFormatterInteger(value);
-                        icu = numberFormatterInteger(tot - value);
+                        hosp = numberFormatter(value);
+                        icu = numberFormatter(tot - value);
                     } else {
-                        hosp = numberFormatterInteger(tot - value);
-                        icu = numberFormatterInteger(value);
+                        hosp = numberFormatter(tot - value);
+                        icu = numberFormatter(value);
                     }
 
                     if (weeklyCountries.includes(country)) {
@@ -1171,7 +1168,7 @@
             tooltip: {
                 formatter: function () {
                     var title = fCapital(this.x),
-                        value = numberFormatterInteger(this.y);
+                        value = numberFormatter(this.y);
 
                     return '<b>' + title + '</b><br/>Weekly deaths: ' + value;
                 },
@@ -1234,11 +1231,11 @@
 
                     // no easy way to show both values on tooltip, so doing this
                     if (series == "hospitalization") {
-                        hosp = numberFormatterInteger(value);
-                        icu = numberFormatterInteger(tot - value);
+                        hosp = numberFormatter(value);
+                        icu = numberFormatter(tot - value);
                     } else {
-                        hosp = numberFormatterInteger(tot - value);
-                        icu = numberFormatterInteger(value);
+                        hosp = numberFormatter(tot - value);
+                        icu = numberFormatter(value);
                     }
 
                     if (weeklyCountries.includes(country)) {
@@ -1324,10 +1321,10 @@
                 formatter: function () {
                     let twentyone = "N/A";
                     let title = 'Week ' + this.x;
-                    let old = numberFormatterPercentage(this.points[0].y);
-                    let twenty = numberFormatterPercentage(this.points[1].y);
+                    let old = numberFormatter(this.points[0].y);
+                    let twenty = numberFormatter(this.points[1].y);
                     if (this.points.length > 2) {
-                        twentyone = numberFormatterPercentage(this.points[2].y);
+                        twentyone = numberFormatter(this.points[2].y);
                     }
                     return '<b>' + title + '</b><br/>Weekly death toll (average of 2015-9): ' + old + 
                     '<br/>Weekly death toll (2020): ' + twenty + 

@@ -470,8 +470,8 @@
                 },
                 tooltip: {
                     formatter: function () {
-                        let humanity = numberFormatterPercentage(this.points[0].y);
-                        let neigh = numberFormatterPercentage(this.points[1].y);
+                        let humanity = numberFormatter(this.points[0].y);
+                        let neigh = numberFormatter(this.points[1].y);
                         let tip = '<text><b>' + Highcharts.dateFormat('%m/%d/%Y', this.x) +
                             '</b><br/>Humanity: ' + humanity +
                             '<br/>Neighborhood: ' + neigh + '</text>';
@@ -548,8 +548,8 @@
                 },
                 tooltip: {
                     formatter: function () {
-                        let humanity = numberFormatterPercentage(this.points[0].y);
-                        let neigh = numberFormatterPercentage(this.points[1].y);
+                        let humanity = numberFormatter(this.points[0].y);
+                        let neigh = numberFormatter(this.points[1].y);
                         let tip = '<text><b>' + Highcharts.dateFormat('%m/%d/%Y', this.x) +
                             '</b><br/>Humanity: ' + humanity +
                             '<br/>Neighborhood: ' + neigh + '</text>';
@@ -626,8 +626,8 @@
                 },
                 tooltip: {
                     formatter: function () {
-                        let humanity = numberFormatterPercentage(this.points[0].y);
-                        let neigh = numberFormatterPercentage(this.points[1].y);
+                        let humanity = numberFormatter(this.points[0].y);
+                        let neigh = numberFormatter(this.points[1].y);
                         let tip = '<text><b>' + Highcharts.dateFormat('%m/%d/%Y', this.x) +
                             '</b><br/>Who is not a citizen of your own country: ' + humanity +
                             '<br/>From your neighborhood: ' + neigh + '</text>';
@@ -704,8 +704,8 @@
                 },
                 tooltip: {
                     formatter: function () {
-                        let humanity = numberFormatterPercentage(this.points[0].y);
-                        let neigh = numberFormatterPercentage(this.points[1].y);
+                        let humanity = numberFormatter(this.points[0].y);
+                        let neigh = numberFormatter(this.points[1].y);
                         let tip = '<text><b>' + Highcharts.dateFormat('%m/%d/%Y', this.x) +
                             '</b><br/>Who is not a citizen of your own country: ' + humanity +
                             '<br/>From your neighborhood: ' + neigh + '</text>';
@@ -837,9 +837,9 @@
                 },
                 tooltip: {
                     formatter: function () {
-                        let cases = numberFormatterPercentage(this.points[0].y);
-                        let deaths = numberFormatterPercentage(this.points[1].y);
-                        let question = numberFormatterPercentage(this.points[2].y);
+                        let cases = numberFormatter(this.points[0].y);
+                        let deaths = numberFormatter(this.points[1].y);
+                        let question = numberFormatter(this.points[2].y);
                         return '<text><b>' + Highcharts.dateFormat('%m/%d/%Y', this.x) +
                             '</b><br/>COVID-19 cases (7 day average): ' + cases +
                             '<br/>COVID-19 deaths (7 day average): ' + deaths +
@@ -925,11 +925,11 @@
                 },
                 tooltip: {
                     formatter: function () {
-                        let age1 = numberFormatterPercentage(this.points[0].y);
-                        let age2 = numberFormatterPercentage(this.points[1].y);
-                        let age3 = numberFormatterPercentage(this.points[2].y);
-                        let age4 = numberFormatterPercentage(this.points[3].y);
-                        let age5 = numberFormatterPercentage(this.points[4].y);
+                        let age1 = numberFormatter(this.points[0].y);
+                        let age2 = numberFormatter(this.points[1].y);
+                        let age3 = numberFormatter(this.points[2].y);
+                        let age4 = numberFormatter(this.points[3].y);
+                        let age5 = numberFormatter(this.points[4].y);
                         let tip = '<text><b>' + Highcharts.dateFormat('%m/%d/%Y', this.x) +
                             '</b><br/>Aged 18-21: ' + age1 +
                             '<br/>Aged 22-25: ' + age2 +
@@ -1033,9 +1033,9 @@
                 },
                 tooltip: {
                     formatter: function () {
-                        let sex1 = numberFormatterPercentage(this.points[0].y);
-                        let sex2 = numberFormatterPercentage(this.points[1].y);
-                        let sex3 = numberFormatterPercentage(this.points[2].y);
+                        let sex1 = numberFormatter(this.points[0].y);
+                        let sex2 = numberFormatter(this.points[1].y);
+                        let sex3 = numberFormatter(this.points[2].y);
                         let tip = '<text><b>' + Highcharts.dateFormat('%m/%d/%Y', this.x) +
                             '</b><br/>Male: ' + sex1 +
                             '<br/>Female: ' + sex2 +
@@ -1117,8 +1117,8 @@
                 },
                 tooltip: {
                     formatter: function () {
-                        let infected1 = numberFormatterPercentage(this.points[0].y);
-                        let infected2 = numberFormatterPercentage(this.points[1].y);
+                        let infected1 = numberFormatter(this.points[0].y);
+                        let infected2 = numberFormatter(this.points[1].y);
                         let tip = '<text><b>' + Highcharts.dateFormat('%m/%d/%Y', this.x) +
                             '</b><br/>With preexisting conditions: ' + infected1 +
                             '<br/>With no preexisting conditions: ' + infected2 + '</text>';

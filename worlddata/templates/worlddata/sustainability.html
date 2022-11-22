@@ -213,7 +213,7 @@
                 tooltip: {
                     formatter: function () {
                         var title = fCapital(this.key);
-                        var value = numberFormatterPercentage(this.point.value);
+                        var value = numberFormatter(this.point.value);
                         var text = "";
                         if (measure == "Biocapacity") {
                             text = value + " gha per person <br>With a global average of " + getBiocapacityAverage[area];
@@ -594,7 +594,7 @@
                 tooltip: {
                     formatter: function () {
                         var title = fCapital(this.key);
-                        var value = numberFormatterPercentage(this.y);
+                        var value = numberFormatter(this.y);
                         var area = fCapital(this.series.name);
 
                         return '<text><span style="font-size: 1.1em"><strong>' + title + '</strong></span><br>' + area + ": " + value + ' gha</text>';

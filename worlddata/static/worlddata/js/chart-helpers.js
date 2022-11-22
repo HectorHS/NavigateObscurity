@@ -1,37 +1,21 @@
-
-
 function fCapital(string) {
     return string.charAt(0).toUpperCase() + string.slice(1);
 }
 function fLower(string) {
     return string.charAt(0).toLowerCase() + string.slice(1);
 }
-function numberFormatterInteger(number) {
-    var value = number.toLocaleString(undefined, { maximumFractionDigits: 0 });
-    return value;
-}
-function numberFormatterIntegerLarge(number) {
+function numberFormatter(number) {
     let numberFormated;
     if (number > 1000000) {
         let value = number / 1000000;
-        numberFormated = numberFormatterPercentage(value);
+        numberFormated = value.toLocaleString(undefined, { maximumFractionDigits: 0 });
         return numberFormated + "m";
+    } else if (number > 1000) {
+        numberFormated = number.toLocaleString(undefined, { maximumFractionDigits: 0 });
     } else {
-        var value = number.toLocaleString(undefined, { maximumFractionDigits: 0 });
-        return value;
+        numberFormated = number.toLocaleString(undefined, { maximumFractionDigits: 2 });
     }
-}
-function numberFormatterPercentage(number) {
-    let value;
-    if (number > 1000) {
-        value = number.toLocaleString(undefined, { maximumFractionDigits: 0 });
-    } else {
-        value = number.toLocaleString(undefined, { maximumFractionDigits: 2 });
-    }
-    return value;
-}
-function numberFormatterSeparator(number) {
-    return number.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+    return numberFormated;
 }
 function addLineBreaks(input, lineSize) {
     var returnText = [];
