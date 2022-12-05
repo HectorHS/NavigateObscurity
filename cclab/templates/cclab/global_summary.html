@@ -231,6 +231,13 @@
                         new_data = [[Date.UTC(2020, 02, 06, 0, 0, 0), +row.t1], [Date.UTC(2020, 02, 14, 0, 0, 0), +row.t2], [Date.UTC(2020, 02, 24, 0, 0, 0), +row.t3], [Date.UTC(2020, 03, 03, 0, 0, 0), +row.t4], [Date.UTC(2020, 03, 17, 0, 0, 0), +row.t5], [Date.UTC(2020, 04, 02, 0, 0, 0), +row.t6], [Date.UTC(2020, 04, 16, 0, 0, 0), +row.t7], [Date.UTC(2020, 04, 30, 0, 0, 0), +row.t8], [Date.UTC(2020, 05, 13, 0, 0, 0), +row.t9], [Date.UTC(2020, 05, 27, 0, 0, 0), +row.t10], [Date.UTC(2020, 06, 11, 0, 0, 0), +row.t11], [Date.UTC(2020, 06, 25, 0, 0, 0), +row.t12], [Date.UTC(2020, 07, 08, 0, 0, 0), +row.t13], [Date.UTC(2020, 07, 22, 0, 0, 0), +row.t14]]
                     }
                 }
+
+                // removing 0's
+                new_data.forEach(function (element, index) {
+                    if (element[1] === 0) {
+                        new_data[index][1] = null;
+                        }
+                });
                 return new_data;
             }
             function setStats() {
@@ -461,7 +468,9 @@
                             enabled: false
                         },
                         marker: {
-                            enabled: false
+                            enabled: true,
+                            radius: 2,
+                            symbol: 'circle'
                         },
                     },
                     series: {
@@ -470,12 +479,27 @@
                 },
                 tooltip: {
                     formatter: function () {
-                        let humanity = numberFormatter(this.points[0].y);
-                        let neigh = numberFormatter(this.points[1].y);
-                        let tip = '<text><b>' + Highcharts.dateFormat('%m/%d/%Y', this.x) +
-                            '</b><br/>Humanity: ' + humanity +
-                            '<br/>Neighborhood: ' + neigh + '</text>';
-                        return tip
+                        let [hum, neigh] = [0,0];
+                        let [humTip,neighTip] = ["",""]
+                        let points = this.points;
+
+                        for (let point of points) {
+                            if (point.series.name == "all of humanity") {
+                                hum = numberFormatter(point.y);
+                            } else if (point.series.name == "my neighborhood") {
+                                neigh = numberFormatter(point.y);
+                            } 
+                        }
+                        if (hum > 0) {
+                            humTip = '<br/>Humanity: ' + hum;
+                        } 
+                        if (neigh > 0) {
+                            neighTip = '<br/>Neighborhood: ' + neigh;
+                        } 
+                      
+                        let tip = '<text><b>' + Highcharts.dateFormat('%m/%d/%Y', this.x) + '</b>' +
+                            humTip + neighTip + '</text>';
+                        return tip;
                     },
                     useHTML: true,
                     shared: true
@@ -538,7 +562,9 @@
                             enabled: false
                         },
                         marker: {
-                            enabled: false
+                            enabled: true,
+                            radius: 2,
+                            symbol: 'circle'
                         },
                     },
                     series: {
@@ -548,12 +574,27 @@
                 },
                 tooltip: {
                     formatter: function () {
-                        let humanity = numberFormatter(this.points[0].y);
-                        let neigh = numberFormatter(this.points[1].y);
-                        let tip = '<text><b>' + Highcharts.dateFormat('%m/%d/%Y', this.x) +
-                            '</b><br/>Humanity: ' + humanity +
-                            '<br/>Neighborhood: ' + neigh + '</text>';
-                        return tip
+                        let [hum, neigh] = [0,0];
+                        let [humTip,neighTip] = ["",""]
+                        let points = this.points;
+
+                        for (let point of points) {
+                            if (point.series.name == "all of humanity") {
+                                hum = numberFormatter(point.y);
+                            } else if (point.series.name == "my neighborhood") {
+                                neigh = numberFormatter(point.y);
+                            } 
+                        }
+                        if (hum > 0) {
+                            humTip = '<br/>Humanity: ' + hum;
+                        } 
+                        if (neigh > 0) {
+                            neighTip = '<br/>Neighborhood: ' + neigh;
+                        } 
+                      
+                        let tip = '<text><b>' + Highcharts.dateFormat('%m/%d/%Y', this.x) + '</b>' +
+                            humTip + neighTip + '</text>';
+                        return tip;
                     },
                     useHTML: true,
                     shared: true
@@ -616,7 +657,9 @@
                             enabled: false
                         },
                         marker: {
-                            enabled: false
+                            enabled: true,
+                            radius: 2,
+                            symbol: 'circle'
                         },
                     },
                     series: {
@@ -626,12 +669,27 @@
                 },
                 tooltip: {
                     formatter: function () {
-                        let humanity = numberFormatter(this.points[0].y);
-                        let neigh = numberFormatter(this.points[1].y);
-                        let tip = '<text><b>' + Highcharts.dateFormat('%m/%d/%Y', this.x) +
-                            '</b><br/>Who is not a citizen of your own country: ' + humanity +
-                            '<br/>From your neighborhood: ' + neigh + '</text>';
-                        return tip
+                        let [hum, neigh] = [0,0];
+                        let [humTip,neighTip] = ["",""]
+                        let points = this.points;
+
+                        for (let point of points) {
+                            if (point.series.name == "who is not a citizen of your own country") {
+                                hum = numberFormatter(point.y);
+                            } else if (point.series.name == "from your neighborhood") {
+                                neigh = numberFormatter(point.y);
+                            } 
+                        }
+                        if (hum > 0) {
+                            humTip = '<br/>Who is not a citizen of your own country: ' + hum;
+                        } 
+                        if (neigh > 0) {
+                            neighTip = '<br/>From your neighborhood: ' + neigh;
+                        } 
+                      
+                        let tip = '<text><b>' + Highcharts.dateFormat('%m/%d/%Y', this.x) + '</b>' +
+                            humTip + neighTip + '</text>';
+                        return tip;
                     },
                     useHTML: true,
                     shared: true
@@ -694,7 +752,9 @@
                             enabled: false
                         },
                         marker: {
-                            enabled: false
+                            enabled: true,
+                            radius: 2,
+                            symbol: 'circle'
                         },
                     },
                     series: {
@@ -704,12 +764,27 @@
                 },
                 tooltip: {
                     formatter: function () {
-                        let humanity = numberFormatter(this.points[0].y);
-                        let neigh = numberFormatter(this.points[1].y);
-                        let tip = '<text><b>' + Highcharts.dateFormat('%m/%d/%Y', this.x) +
-                            '</b><br/>Who is not a citizen of your own country: ' + humanity +
-                            '<br/>From your neighborhood: ' + neigh + '</text>';
-                        return tip
+                        let [hum, neigh] = [0,0];
+                        let [humTip,neighTip] = ["",""]
+                        let points = this.points;
+
+                        for (let point of points) {
+                            if (point.series.name == "a displaced person who is not a citizen of your own country") {
+                                hum = numberFormatter(point.y);
+                            } else if (point.series.name == "someone from your neighborhood") {
+                                neigh = numberFormatter(point.y);
+                            } 
+                        }
+                        if (hum > 0) {
+                            humTip = '<br/>Who is not a citizen of your own country: ' + hum;
+                        } 
+                        if (neigh > 0) {
+                            neighTip = '<br/>From your neighborhood: ' + neigh;
+                        } 
+                      
+                        let tip = '<text><b>' + Highcharts.dateFormat('%m/%d/%Y', this.x) + '</b>' +
+                            humTip + neighTip + '</text>';
+                        return tip;
                     },
                     useHTML: true,
                     shared: true
@@ -822,7 +897,9 @@
                             enabled: false
                         },
                         marker: {
-                            enabled: false
+                            enabled: true,
+                            radius: 2,
+                            symbol: 'circle'
                         },
                     },
                     area: {
@@ -839,11 +916,23 @@
                     formatter: function () {
                         let cases = numberFormatter(this.points[0].y);
                         let deaths = numberFormatter(this.points[1].y);
-                        let question = numberFormatter(this.points[2].y);
-                        return '<text><b>' + Highcharts.dateFormat('%m/%d/%Y', this.x) +
+                        let questionTip = ""
+                        let question = 0;
+                        let points = this.points;
+
+                        if (this.points.length > 2) {
+                                  question = numberFormatter(this.points[2].y);
+                        }
+
+                        if (question > 0) {
+                            questionTip = '<br/>Average score: ' + question;
+                        } 
+                                             
+                        let tip = '<text><b>' + Highcharts.dateFormat('%m/%d/%Y', this.x) + '</b>' +
                             '</b><br/>COVID-19 cases (7 day average): ' + cases +
                             '<br/>COVID-19 deaths (7 day average): ' + deaths +
-                            '<br/>Average score: ' + question + '</text>';
+                            questionTip + '</text>'
+                        return tip;
                     },
                     useHTML: true,
                     shared: true
@@ -912,7 +1001,9 @@
                 plotOptions: {
                     spline: {
                         marker: {
-                            enabled: false,
+                            enabled: true,
+                            radius: 2,
+                            symbol: 'circle'
                         },
                         label: {
                             enabled: false
@@ -925,17 +1016,41 @@
                 },
                 tooltip: {
                     formatter: function () {
-                        let age1 = numberFormatter(this.points[0].y);
-                        let age2 = numberFormatter(this.points[1].y);
-                        let age3 = numberFormatter(this.points[2].y);
-                        let age4 = numberFormatter(this.points[3].y);
-                        let age5 = numberFormatter(this.points[4].y);
-                        let tip = '<text><b>' + Highcharts.dateFormat('%m/%d/%Y', this.x) +
-                            '</b><br/>Aged 18-21: ' + age1 +
-                            '<br/>Aged 22-25: ' + age2 +
-                            '<br/>Aged 26-35: ' + age3 +
-                            '<br/>Aged 36-50: ' + age4 +
-                            '<br/>Aged 50-80: ' + age5 + '</text>';
+                        let [age1, age2, age3, age4, age5] = [0,0,0,0,0];
+                        let [age1tip,age2tip,age3tip,age4tip,age5tip,age6tip] = ["","","","","",""]
+                        let points = this.points;
+
+                        for (let point of points) {
+                            if (point.series.name == "18-21") {
+                                age1 = numberFormatter(point.y);
+                            } else if (point.series.name == "22-25") {
+                                age2 = numberFormatter(point.y);
+                            } else if (point.series.name == "26-35") {
+                                age3 = numberFormatter(point.y);
+                            } else if (point.series.name == "36-50") {
+                                age4 = numberFormatter(point.y);
+                            } else if (point.series.name == "50-80") {
+                                age5 = numberFormatter(point.y);
+                            } 
+                        }
+                        if (age1 > 0) {
+                            age1tip = '<br/>Aged 18-21: ' + age1;
+                        } 
+                        if (age2 > 0) {
+                            age2tip = '<br/>Aged 22-25: ' + age2;
+                        } 
+                        if (age3 > 0) {
+                            age3tip = '<br/>Aged 26-35: ' + age3;
+                        } 
+                        if (age4 > 0) {
+                            age4tip = '<br/>Aged 36-50: ' + age4;
+                        } 
+                        if (age5 > 0) {
+                            age5tip = '<br/>Aged 50-80: ' + age5;
+                        } 
+                       
+                        let tip = '<text><b>' + Highcharts.dateFormat('%m/%d/%Y', this.x) + '</b>' +
+                            age1tip + age2tip + age3tip + age4tip + age5tip + age6tip + '</text>';
                         return tip
                     },
                     useHTML: true,
@@ -1020,7 +1135,9 @@
                 plotOptions: {
                     spline: {
                         marker: {
-                            enabled: false,
+                            enabled: true,
+                            radius: 2,
+                            symbol: 'circle'
                         },
                         label: {
                             enabled: false
@@ -1033,14 +1150,32 @@
                 },
                 tooltip: {
                     formatter: function () {
-                        let sex1 = numberFormatter(this.points[0].y);
-                        let sex2 = numberFormatter(this.points[1].y);
-                        let sex3 = numberFormatter(this.points[2].y);
-                        let tip = '<text><b>' + Highcharts.dateFormat('%m/%d/%Y', this.x) +
-                            '</b><br/>Male: ' + sex1 +
-                            '<br/>Female: ' + sex2 +
-                            '<br/>Other: ' + sex3 + '</text>';
-                        return tip
+                        let [sex1, sex2, sex3] = [0,0,0];
+                        let [sex1tip,sex2tip,sex3tip] = ["","",""]
+                        let points = this.points;
+
+                        for (let point of points) {
+                            if (point.series.name == "Male") {
+                                sex1 = numberFormatter(point.y);
+                            } else if (point.series.name == "Female") {
+                                sex2 = numberFormatter(point.y);
+                            } else if (point.series.name == "Other") {
+                                sex3 = numberFormatter(point.y);
+                            }
+                        }
+                        if (sex1 > 0) {
+                            sex1tip = '<br/>Male: ' + sex1;
+                        } 
+                        if (sex2 > 0) {
+                            sex2tip = '<br/>Female: ' + sex2;
+                        } 
+                        if (sex3 > 0) {
+                            sex3tip = '<br/>Other: ' + sex3;
+                        } 
+                        
+                        let tip = '<text><b>' + Highcharts.dateFormat('%m/%d/%Y', this.x) + '</b>' +
+                            sex1tip + sex2tip + sex3tip + '</text>';
+                        return tip;
                     },
                     useHTML: true,
                     shared: true
@@ -1104,7 +1239,9 @@
                 plotOptions: {
                     spline: {
                         marker: {
-                            enabled: false,
+                            enabled: true,
+                            radius: 2,
+                            symbol: 'circle'
                         },
                         label: {
                             enabled: false
@@ -1117,12 +1254,28 @@
                 },
                 tooltip: {
                     formatter: function () {
-                        let infected1 = numberFormatter(this.points[0].y);
-                        let infected2 = numberFormatter(this.points[1].y);
-                        let tip = '<text><b>' + Highcharts.dateFormat('%m/%d/%Y', this.x) +
-                            '</b><br/>With preexisting conditions: ' + infected1 +
-                            '<br/>With no preexisting conditions: ' + infected2 + '</text>';
-                        return tip
+                        let [infected1, infected2] = [0,0];
+                        let [infected1tip,infected2tip] = ["",""]
+                        let points = this.points;
+
+                        for (let point of points) {
+                            if (point.series.name == "With preexisting condition(s)") {
+                                infected1 = numberFormatter(point.y);
+                            } else if (point.series.name == "No preexisting conditions") {
+                                infected2 = numberFormatter(point.y);
+                            } 
+                        }
+                        if (infected1 > 0) {
+                            infected1tip = '<br/>With preexisting condition(s): ' + infected1;
+                        } 
+                        if (infected2 > 0) {
+                            infected2tip = '<br/>No preexisting conditions: ' + infected2;
+                        } 
+                      
+                        
+                        let tip = '<text><b>' + Highcharts.dateFormat('%m/%d/%Y', this.x) + '</b>' +
+                            infected1tip + infected2tip + '</text>';
+                        return tip;
                     },
                     useHTML: true,
                     shared: true

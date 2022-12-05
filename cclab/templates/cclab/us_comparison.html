@@ -41,8 +41,7 @@
     <div style="padding-bottom: 0px;">
         <h1> US cohort - variable comparison</h1>
     </div>
-    <div class="dashboard-text">We surveyed 921 US based participants every month for twenty
-        months.
+    <div class="dashboard-text">We surveyed 921 US based participants every one or two months for two years.
         During that
         time
         they answered about a thousand unique questions for us. Use the dashboard below to see how their
@@ -182,7 +181,7 @@
                     </div>
                     <div class="chart-inset" style="height: 320px;">
                         <div id="new_lines" class="lines" style="width:100%;"></div>
-                        <div id="new_lines_error" class="error hidden" style="padding: 142px 0; bottom: 298px;">
+                        <div id="new_lines_error" class="error hidden" style="padding: 154px 0; bottom: 318px;">
                             Invalid date - variable
                             combination</div>
                     </div>
@@ -278,7 +277,14 @@
             "SpeedTime5", "LengthTime1", "LengthTime2",	"TimePassed1", "TimePassed2", "Hope1", "Hope2", "Hope3", "Hope4", "Hope5", "Hope6",
             "Flourishing1", "Flourishing2", "Flourishing3", "Flourishing4", "Flourishing6", "Flourishing7", "Flourishing8", "Flourishing9", 
             "Flourishing10", "Flourishing11", "Flourishing12", "Dominance", "Prestige", "AgenticGoal", "CommunalGoal", "PastFocus", 
-            "PresentFocus", "FutureFocus", "HopeAgency", "HopePathways", "StateHopeTotal", "tot_t16"
+            "PresentFocus", "FutureFocus", "HopeAgency", "HopePathways", "StateHopeTotal", "tot_t16","RecentContactsInfect",
+            "Efficacy1","Efficacy2","Efficacy3","Efficacy4","Efficacy5","Efficacy6","Efficacy7","Efficacy8","Efficacy9",
+            "Efficacy10","Efficacy11","Efficacy12","Efficacy13","Efficacy14","Efficacy15","Efficacy16","Efficacy17","Efficacy18",
+            "Efficacy19","Efficacy20","Efficacy22","Efficacy23","Efficacy24","Efficacy25","Efficacy26","Efficacy27","Efficacy28",
+            "Efficacy29","Efficacy30","Efficacy32","HelpYou","HelpChild","HelpDog","HelpPig","NewPandemic1", "Asteroid6",
+            "UncontrollableRisk1","UncontrollableRisk2","UncontrollableRisk3","EffortSurvival"
+
+
         ];
         let avg4 = ["Repayment"];
         let avg5 = ["HelpGiven", "HelpReceived", "MutualAid", "Predictability", "TraitEmpathicConcern",
@@ -300,7 +306,10 @@
             "PostVaccineActivity10", "PostVaccineActivity11", "PostVaccineActivity12", "PostVaccineActivity13",
             "PostVaccineActivity14", "PostVaccineActivity15", "PostVaccineActivity16", "VaccineUSRightThing", "Booster",
             "BoosterLocalArea", "Identities1", "Identities2", "Identities3", "Identities4", "Identities5", "tot_t9",
-            "HelpNeighTimeClickCount"];
+            "HelpNeighTimeClickCount", "Efficacy1","Efficacy2","Efficacy3","Efficacy4","Efficacy5","Efficacy6","Efficacy7","Efficacy8","Efficacy9",
+            "Efficacy10","Efficacy11","Efficacy12","Efficacy13","Efficacy14","Efficacy15","Efficacy16","Efficacy17","Efficacy18",
+            "Efficacy19","Efficacy20","Efficacy22","Efficacy23","Efficacy24","Efficacy25","Efficacy26","Efficacy27","Efficacy28",
+            "Efficacy29","Efficacy30","Efficacy32"];
         let cat12 = ["Back2Normal", "TimeToVaccine", "TimeToVaccine", "NoMaskOutVacc",
             "MaskOutPoliOri", "MaskOutVacc", "NoMaskInPoliOri", "NoMaskInVacc", "MaskInPoliOri", "MaskInVacc",
             "OthersJudgeMask", "JudgeWearMask", "MonthRelStatus", "MonthChangeJob", "tot_t11", "tot_t12", "PFINeighAffectTimeClickCount",
@@ -327,7 +336,8 @@
             "FarXmas1", "PrepXmas1", "FamilyXmas1", "ShareResponsibility1", "PositivePast3", "MoralCircles1", "MoralCircles2", 
             "MoralCircles3", "MoralCircles4", "MoralCircles5", "MoralCircles6", "MoralCircles7", "MoralCircles8", 
             "MoralCircles9", "MoralCircles10", "MoralCircles11", "MoralCircles12", "MoralCircles13", "MoralCircles14", 
-            "MoralCircles15", "MoralCircles16"];
+            "MoralCircles15", "MoralCircles16","HelpYou","HelpChild","HelpDog","HelpPig","NewPandemic1", "Asteroid6",
+            "UncontrollableRisk1","UncontrollableRisk2","UncontrollableRisk3","EffortSurvival"];
         let firstClick = ["PFINeighAffectTimeFirstClick", "PFINeighFateTimeFirstClick", "HelpNeighTimeFirstClick",
             "PFIcountryAffectTimeFirstClick", "PFIcountryFateTimeFirstClick", "HelpCountryTimeFirstClick"];
         let lastClick = ["PFINeighAffectTimeLastClick", "PFINeighFateTimeLastClick", "HelpNeighTimeLastClick",
@@ -392,6 +402,10 @@
             let d15v = 0;
             let d16c = 0;
             let d16v = 0;
+            let d17c = 0;
+            let d17v = 0;
+            let d18c = 0;
+            let d18v = 0;
             let data = [];
             let variable;
             let colorIndx;
@@ -454,6 +468,12 @@
                 } else if (row.Date == "04/25/2022" && val > 0) {
                     d16v += val;
                     d16c++;
+                } else if (row.Date == "06/24/2022" && val > 0) {
+                    d17v += val;
+                    d17c++;
+                } else if (row.Date == "08/29/2022" && val > 0) {
+                    d18v += val;
+                    d18c++;
                 }
             }
 
@@ -473,6 +493,8 @@
             data.push((d14v > 0) ? +numberFormatter(d14v / d14c) : 0);
             data.push((d15v > 0) ? +numberFormatter(d15v / d15c) : 0);
             data.push((d16v > 0) ? +numberFormatter(d16v / d16c) : 0);
+            data.push((d17v > 0) ? +numberFormatter(d17v / d17c) : 0);
+            data.push((d18v > 0) ? +numberFormatter(d18v / d18c) : 0);
 
             // to hide 0's
             data.forEach(function (element, index) {
@@ -702,7 +724,7 @@
                     }
                     if (["09/26/2020", "10/27/2020", "11/28/2020", "12/28/2020", "01/27/2021", "02/26/2021",
                         "03/28/2021", "04/27/2021", "05/27/2021", "06/26/2021", "07/26/2021", "08/25/2021",
-                        "10/25/2021", "12/16/2021", "02/24/2022", "04/25/2022"].includes(row.Date)) {
+                        "10/25/2021", "12/16/2021", "02/24/2022", "04/25/2022","06/24/2022","08/29/2022"].includes(row.Date)) {
                         if (row.OccupationRisk == 3) {
                             highRisk++;
                         }
@@ -925,9 +947,11 @@
                         enabled: false
                     },
                     marker: {
-                        enabled: false
+                            enabled: true,
+                            radius: 3,
+                            symbol: 'circle'
+                        },
                     },
-                },
                 area: {
                     marker: {
                         enabled: false
@@ -936,17 +960,32 @@
             },
             tooltip: {
                 formatter: function () {
+                    let [var1, var2] = [0,0];
+                    let [var1Tip,var2Tip] = ["",""]
+                    let points = this.points;
                     let cas = numberFormatter(this.points[0].y);
                     let dea = numberFormatter(this.points[1].y);
-                    let var1 = numberFormatter(this.points[2].y);
-                    let var2 = numberFormatter(this.points[3].y);
-                    let tip = '<text><b>' + this.x +
+
+                    let tipCovid = '<b>' + this.x +
                         '</b><br/>' + this.points[0].series.name + ': ' + cas +
-                        '<br/>' + this.points[1].series.name + ': ' + dea +
-                        '<br/>' + this.points[2].series.name + ': ' + var1 +
-                        '<br/>' + this.points[3].series.name + ': ' + var2 +
-                        '</text>';
-                    return tip
+                        '<br/>' + this.points[1].series.name + ': ' + dea;
+
+                    for (let point of points) {
+                        if (point.series.name == variable1) {
+                            var1 = numberFormatter(point.y);
+                        } else if (point.series.name == variable2) {
+                            var2 = numberFormatter(point.y);
+                        } 
+                    }
+                    if (var1 > 0) {
+                        var1Tip = '<br/>' + variable1 + ': ' + var1;
+                    } 
+                    if (var2 > 0) {
+                        var2Tip = '<br/>' + variable2 +': ' + var2;
+                    } 
+                    
+                    let tip = '<text>' + tipCovid + var1Tip + var2Tip + '</text>';
+                    return tip;
                 },
                 useHTML: true,
                 shared: true
@@ -1025,8 +1064,6 @@
                 column: {
                     borderRadius: 3,
                     groupPadding: 0.05,
-                    // pointPadding: 0.2,
-                    // borderWidth: 0
                 }
             },
             tooltip: {
@@ -1341,8 +1378,13 @@
             } else if (variable == "StateHopeTotal") {
                 array = [0, 10, 20, 30, 40, 60];
             } else if (variable == "tot_t16") {
-                array = [0, 3, 6, 9, 12, 14, 100];
+                array = [0, 3, 6, 9, 12, 15, 100];
+            } else if (variable == "RecentContactsInfect") {
+                array = [0, 0, 2, 5, 10, 20, 100];
             }
+
+            
+
 
 
             return array;
@@ -1451,6 +1493,8 @@
                 cats = ["1-10", "11-20", "21-30", "31-40", "41-50"];
             } else if (variable == "tot_t16") {
                 cats = ["1-3", "4-6", "7-9", "10-12", "13-15", "16-17"];
+            } else if (variable == "RecentContactsInfect") {
+                cats = ["0", "1-2", "3-5", "6-10","10-20", "20+"];
             }
 
             return cats;

@@ -39,7 +39,7 @@
     <div class="data-container us-lookup-container">
     
         <h1>US cohort - variable lookup</h1>
-        <div class="dashboard-text">915 participants were asked 918 questions across 16 timepoints. Find out what we asked, when we asked it, and how participants responded.</div>
+        <div class="dashboard-text">915 participants were asked 1033 questions across 18 timepoints. Find out what we asked, when we asked it, and how participants responded.</div>
         <figure style="margin-bottom:50px;">
             <div class="dash-texture">
                     <datalist id="look_us_datalist"></datalist>
@@ -152,6 +152,16 @@
                         <div class="look-check-title-small">t16</div>
                         <div class="look-check check-yes"></div>
                     </div>
+                    <div class="look-check-container">
+                        <div class="look-check-title">24 Jun 2022 (t17)</div>
+                        <div class="look-check-title-small">t17</div>
+                        <div class="look-check check-yes"></div>
+                    </div>
+                    <div class="look-check-container">
+                        <div class="look-check-title">29 Aug 2022 (t18)</div>
+                        <div class="look-check-title-small">t18</div>
+                        <div class="look-check check-yes"></div>
+                    </div>
                 </div>
                 </div>
                 <div class="chart-inset" style="margin:10px;">
@@ -187,7 +197,7 @@
             d3.csv(us_str_path)
         ]).then(function (files) {
 
-            let all_dates = ["09-26-2020", "10-27-2020", "11-28-2020", "12-28-2020", "01-27-2021", "02-26-2021", "03-28-2021", "04-27-2021", "05-27-2021", "06-26-2021", "07-26-2021", "08-25-2021", "10-25-2021", "12-16-2021", "02-24-2022", "04-25-2022"];
+            let all_dates = ["09-26-2020", "10-27-2020", "11-28-2020", "12-28-2020", "01-27-2021", "02-26-2021", "03-28-2021", "04-27-2021", "05-27-2021", "06-26-2021", "07-26-2021", "08-25-2021", "10-25-2021", "12-16-2021", "02-24-2022", "04-25-2022", "06-24-2022", "08-29-2022"];
             const all_variables = [...new Set(files[1].map(d => d.key))];
             let descriptions_lookup = [];
             for (let row of files[1]) {
@@ -217,7 +227,7 @@
 
                 for (let row of files[3]) {
                     if (row.Measure == variableStr) {
-                        text = row.t1.toLowerCase() + " " + row.t2.toLowerCase() + " " + row.t3.toLowerCase() + " " + row.t4.toLowerCase() + " " + row.t5.toLowerCase() + " " + row.t6.toLowerCase() + " " + row.t7.toLowerCase() + " " + row.t8.toLowerCase() + " " + row.t9.toLowerCase() + " " + row.t10.toLowerCase() + " " + row.t11.toLowerCase() + " " + row.t12.toLowerCase() + " " + row.t13.toLowerCase() + " " + row.t14.toLowerCase() + " " + row.t15.toLowerCase() + " " + row.t16.toLowerCase();
+                        text = row.t1.toLowerCase() + " " + row.t2.toLowerCase() + " " + row.t3.toLowerCase() + " " + row.t4.toLowerCase() + " " + row.t5.toLowerCase() + " " + row.t6.toLowerCase() + " " + row.t7.toLowerCase() + " " + row.t8.toLowerCase() + " " + row.t9.toLowerCase() + " " + row.t10.toLowerCase() + " " + row.t11.toLowerCase() + " " + row.t12.toLowerCase() + " " + row.t13.toLowerCase() + " " + row.t14.toLowerCase() + " " + row.t16.toLowerCase() + " " + row.t17.toLowerCase() + " " + row.t18.toLowerCase();
                     }
                 }
                 lines = text.split(/[,\. ]+/g),
@@ -272,7 +282,9 @@
                         [Date.UTC(2021, 09, 25, 0, 0, 0), +row.t13],
                         [Date.UTC(2021, 11, 16, 0, 0, 0), +row.t14],
                         [Date.UTC(2022, 01, 24, 0, 0, 0), +row.t15],
-                        [Date.UTC(2022, 03, 25, 0, 0, 0), +row.t16]]
+                        [Date.UTC(2022, 03, 25, 0, 0, 0), +row.t16],
+                        [Date.UTC(2022, 05, 24, 0, 0, 0), +row.t17],
+                        [Date.UTC(2022, 07, 29, 0, 0, 0), +row.t18]]
                     }
                 }
 
@@ -311,7 +323,7 @@
                     type: 'datetime',
                     minPadding: 0.05,
                     maxPadding: 0.05,
-                    tickPositions: [1601078400000, 1609113600000, 1619481600000, 1629849600000, 1639612800000]
+                    tickPositions: [1601078400000, 1614297600000, 1629849600000, 1645660800000, 1661731200000]
                 },
                 yAxis: {
                     title: {
@@ -441,6 +453,8 @@
                         look.push(row.t14);
                         look.push(row.t15);
                         look.push(row.t16);
+                        look.push(row.t17);
+                        look.push(row.t18);
                     }
                 }
 

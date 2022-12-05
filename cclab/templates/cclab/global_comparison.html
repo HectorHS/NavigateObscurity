@@ -239,7 +239,7 @@
             "CFIHumanityComposite", "DiseaseAvoidanceComposite", "NBTNeighborComposite", "NBTHumanityComposite", "NBTCountryComposite",
             "Back2Normal", "MateSeekingComposite", "SocialDistanceComposite", "HoursworkedOutside", "HoursWorkHome", "HoursSpentOthers",
             "HoursInContact", "HoursVolunteer", "MoneyDonated", "aidindividuals", "aidsmallbusiness", "aidlargebusiness", "aidbanks",
-            "aidgovernment", "RiskManagementcomposite", "WeeksAgoPrepare", "WeeksSinceCovid", "WeeksSinceCovid", "HowManyInfected",
+            "aidgovernment", "RiskManagementcomposite", "WeeksAgoPrepare", "WeeksSinceCovid", "HowManyInfected",
             "MaskAttitudes1", "MaskAttitudes2", "MaskAttitudes3", "MaskAttitudes4", "MaskAttitudes5", "SafetyProtests",
             "MoneyProtests", "Movies", "Job1", "Job2", "Job3", "HowLongSocialDist", "HowLongMask", "Contacts24hrs",
             "Contacts7days", "Streneous", "Moderate", "Mild", "RMETcomposite", "PerspectiveTakingComposite",
@@ -272,7 +272,7 @@
             "RMETcomposite", "NewFriends"];
         let cat10plus = ["Streneous", "Moderate", "Mild", "HouseHold"];
         let cat12 = ["Back2Normal", "HowLongSocialDist", "HowLongMask"];
-        let cat20plus = ["WeeksAgoPrepare", "WeeksSinceCovid", "WeeksSinceCovid"]
+        let cat20plus = ["WeeksAgoPrepare", "WeeksSinceCovid"]
         let cat50plus = ["HoursworkedOutside", "HoursWorkHome",
             "HoursSpentOthers", "HoursInContact", "HoursVolunteer", "HowManyInfected", "MoneyProtests", "Movies",
             "Contacts24hrs", "CFCcompositeFuture", "CFCcompositeImmediate"];
@@ -859,12 +859,27 @@
             },
             tooltip: {
                 formatter: function () {
-                    let var1 = numberFormatter(this.points[0].y);
-                    let var2 = numberFormatter(this.points[1].y);
-                    let tip = '<text><b>' + this.x +
-                        '</b><br/>' + this.points[0].series.name + ': ' + var1 +
-                        '<br/>' + this.points[1].series.name + ': ' + var2 + '</text>';
-                    return tip
+                    let [var1, var2] = [0,0];
+                        let [var1Tip,var2Tip] = ["",""]
+                        let points = this.points;
+
+                        for (let point of points) {
+                            if (point.series.name == variable1) {
+                                var1 = numberFormatter(point.y);
+                            } else if (point.series.name == variable2) {
+                                var2 = numberFormatter(point.y);
+                            } 
+                        }
+                        if (var1 > 0) {
+                            var1Tip = '<br/>' + variable1 + ': ' + var1;
+                        } 
+                        if (var2 > 0) {
+                            var2Tip = '<br/>' + variable2 +': ' + var2;
+                        } 
+                      
+                        let tip = '<text><b>' + this.x + '</b>' +
+                            var1Tip + var2Tip + '</text>';
+                        return tip;
                 },
                 useHTML: true,
                 shared: true

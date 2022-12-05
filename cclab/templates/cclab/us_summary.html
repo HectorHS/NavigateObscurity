@@ -41,9 +41,9 @@
 
         <div class="dashboard-container-horizontal CCLab-dashboard usdash-container">
             <h1>US cohort - Summary of findings</h1>
-            <div class="dashboard-text">We surveyed a representive cohort of 921 US based participants 12 times
+            <div class="dashboard-text">We surveyed a representive cohort of 921 US based participants 18 times
                 between September 26th
-                2020 and October 25th 2021. Here are our main findings regarding cooperation.
+                2020 and August 29th 2022. Here are our main findings regarding cooperation.
 
             </div>
             <div class="dash-stats-container1">
@@ -161,8 +161,8 @@
             d3.csv(us_detail_path)
         ]).then(function (files) {
 
-            let all_dates2 = ["09/26/2020", "10/27/2020", "11/28/2020", "12/28/2020", "01/27/2021", "02/26/2021", "03/28/2021", "04/27/2021", "05/27/2021", "06/26/2021", "07/26/2021", "08/25/2021"];
-            let all_dates = ["2020-09-26", "2020-10-27", "2020-11-28", "2020-12-28", "2021-01-27", "2021-02-26", "2021-03-28", "2021-04-27", "2021-05-27", "2021-06-26", "2021-07-26", "2021-08-25"];
+            let all_dates2 = ["09/26/2020", "10/27/2020", "11/28/2020", "12/28/2020", "01/27/2021", "02/26/2021", "03/28/2021", "04/27/2021", "05/27/2021", "06/26/2021", "07/26/2021", "08/25/2021", "10/25/2021","12/16/2021","02/24/2022","04/25/2022","06/24/2022","08/29/2022"];
+            let all_dates = ["2020-09-26", "2020-10-27", "2020-11-28", "2020-12-28", "2021-01-27", "2021-02-26", "2021-03-28", "2021-04-27", "2021-05-27", "2021-06-26", "2021-07-26", "2021-08-25", "2021-10-25", "2021-12-16", "2022-02-24", "2022-04-25", "2022-06-24", "2022-08-29"];
 
             // set initial values
             let state = "All states";
@@ -231,9 +231,21 @@
                 for (let row of files[1]) {
                     if (row.State == state && row.Measure == measure) {
                         // new_data = [[all_dates[0],+row.t1], [all_dates[1],+row.t2], [all_dates[2],+row.t3], [all_dates[3],+row.t4], [all_dates[4],+row.t5], [all_dates[5],+row.t6], [all_dates[6],+row.t7], [all_dates[7],+row.t8], [all_dates[8],+row.t9], [all_dates[9],+row.t10], [all_dates[10],+row.t11], [all_dates[11],+row.t12]]
-                        new_data = [[Date.UTC(2020, 08, 26, 0, 0, 0), +row.t1], [Date.UTC(2020, 09, 27, 0, 0, 0), +row.t2], [Date.UTC(2020, 10, 28, 0, 0, 0), +row.t3], [Date.UTC(2020, 11, 28, 0, 0, 0), +row.t4], [Date.UTC(2021, 00, 26, 0, 0, 0), +row.t5], [Date.UTC(2021, 01, 26, 0, 0, 0), +row.t6], [Date.UTC(2021, 02, 28, 0, 0, 0), +row.t7], [Date.UTC(2021, 03, 27, 0, 0, 0), +row.t8], [Date.UTC(2021, 04, 27, 0, 0, 0), +row.t9], [Date.UTC(2021, 05, 26, 0, 0, 0), +row.t10], [Date.UTC(2021, 06, 26, 0, 0, 0), +row.t11], [Date.UTC(2021, 07, 25, 0, 0, 0), +row.t12]]
+                        new_data = [[Date.UTC(2020, 08, 26, 0, 0, 0), +row.t1], [Date.UTC(2020, 09, 27, 0, 0, 0), +row.t2], [Date.UTC(2020, 10, 28, 0, 0, 0), +row.t3], 
+                        [Date.UTC(2020, 11, 28, 0, 0, 0), +row.t4], [Date.UTC(2021, 00, 26, 0, 0, 0), +row.t5], [Date.UTC(2021, 01, 26, 0, 0, 0), +row.t6], 
+                        [Date.UTC(2021, 02, 28, 0, 0, 0), +row.t7], [Date.UTC(2021, 03, 27, 0, 0, 0), +row.t8], [Date.UTC(2021, 04, 27, 0, 0, 0), +row.t9], 
+                        [Date.UTC(2021, 05, 26, 0, 0, 0), +row.t10], [Date.UTC(2021, 06, 26, 0, 0, 0), +row.t11], [Date.UTC(2021, 07, 25, 0, 0, 0), +row.t12],
+                        [Date.UTC(2021, 09, 25, 0, 0, 0), +row.t13], [Date.UTC(2021, 11, 16, 0, 0, 0), +row.t14], [Date.UTC(2022, 01, 24, 0, 0, 0), +row.t15],
+                        [Date.UTC(2022, 03, 25, 0, 0, 0), +row.t16], [Date.UTC(2022, 05, 24, 0, 0, 0), +row.t17], [Date.UTC(2022, 07, 29, 0, 0, 0), +row.t18]]
                     }
                 }
+
+                // removing 0's
+                new_data.forEach(function (element, index) {
+                    if (element[1] === 0) {
+                        new_data[index][1] = null;
+                        }
+                });
                 return new_data;
             }
             function setStats() {
@@ -358,7 +370,12 @@
                 var new_data = [];
                 for (let row of files[2]) {
                     if (row.State == state && row.Measure == measure && row.Category == category && row.Subcategory == subcategory) {
-                        new_data = [[Date.UTC(2020, 08, 26, 0, 0, 0), +row.t1], [Date.UTC(2020, 09, 27, 0, 0, 0), +row.t2], [Date.UTC(2020, 10, 28, 0, 0, 0), +row.t3], [Date.UTC(2020, 11, 28, 0, 0, 0), +row.t4], [Date.UTC(2021, 00, 26, 0, 0, 0), +row.t5], [Date.UTC(2021, 01, 26, 0, 0, 0), +row.t6], [Date.UTC(2021, 02, 28, 0, 0, 0), +row.t7], [Date.UTC(2021, 03, 27, 0, 0, 0), +row.t8], [Date.UTC(2021, 04, 27, 0, 0, 0), +row.t9], [Date.UTC(2021, 05, 26, 0, 0, 0), +row.t10], [Date.UTC(2021, 06, 26, 0, 0, 0), +row.t11], [Date.UTC(2021, 07, 25, 0, 0, 0), +row.t12]]
+                        new_data = [[Date.UTC(2020, 08, 26, 0, 0, 0), +row.t1], [Date.UTC(2020, 09, 27, 0, 0, 0), +row.t2], [Date.UTC(2020, 10, 28, 0, 0, 0), +row.t3], 
+                        [Date.UTC(2020, 11, 28, 0, 0, 0), +row.t4], [Date.UTC(2021, 00, 26, 0, 0, 0), +row.t5], [Date.UTC(2021, 01, 26, 0, 0, 0), +row.t6], 
+                        [Date.UTC(2021, 02, 28, 0, 0, 0), +row.t7], [Date.UTC(2021, 03, 27, 0, 0, 0), +row.t8], [Date.UTC(2021, 04, 27, 0, 0, 0), +row.t9], 
+                        [Date.UTC(2021, 05, 26, 0, 0, 0), +row.t10], [Date.UTC(2021, 06, 26, 0, 0, 0), +row.t11], [Date.UTC(2021, 07, 25, 0, 0, 0), +row.t12],
+                        [Date.UTC(2021, 09, 25, 0, 0, 0), +row.t13], [Date.UTC(2021, 11, 16, 0, 0, 0), +row.t14], [Date.UTC(2022, 01, 24, 0, 0, 0), +row.t15],
+                        [Date.UTC(2022, 03, 25, 0, 0, 0), +row.t16], [Date.UTC(2022, 05, 24, 0, 0, 0), +row.t17], [Date.UTC(2022, 07, 29, 0, 0, 0), +row.t18]]
                     }
                 }
 
@@ -454,7 +471,13 @@
                     type: 'datetime',
                     minPadding: 0.05,
                     maxPadding: 0.05,
-                    tickPositions: [1601078400000, 1614297600000, 1629849600000]
+                    tickPositions: [1601078400000, 1629849600000, 1661731200000],
+                    labels: {
+                        formatter: function () {
+                                const time = new Highcharts.Time();
+                                return time.dateFormat('%b %y', this.value);
+                            }
+                    }
                 },
                 yAxis: {
                     title: {
@@ -472,7 +495,9 @@
                             enabled: false
                         },
                         marker: {
-                            enabled: false
+                            enabled: true,
+                            radius: 2,
+                            symbol: 'circle'
                         },
                     },
                     series: {
@@ -532,7 +557,13 @@
                     type: 'datetime',
                     minPadding: 0.05,
                     maxPadding: 0.05,
-                    tickPositions: [1601078400000, 1614297600000, 1629849600000]
+                    tickPositions: [1601078400000, 1629849600000, 1661731200000],
+                    labels: {
+                        formatter: function () {
+                                const time = new Highcharts.Time();
+                                return time.dateFormat('%b %y', this.value);
+                            }
+                    }
                 },
                 yAxis: {
                     title: {
@@ -550,7 +581,9 @@
                             enabled: false
                         },
                         marker: {
-                            enabled: false
+                            enabled: true,
+                            radius: 2,
+                            symbol: 'circle'
                         },
                     },
                     series: {
@@ -610,7 +643,13 @@
                     type: 'datetime',
                     minPadding: 0.05,
                     maxPadding: 0.05,
-                    tickPositions: [1601078400000, 1614297600000, 1629849600000]
+                    tickPositions: [1601078400000, 1629849600000, 1661731200000],
+                    labels: {
+                        formatter: function () {
+                                const time = new Highcharts.Time();
+                                return time.dateFormat('%b %y', this.value);
+                            }
+                    }
                 },
                 yAxis: {
                     title: {
@@ -628,7 +667,9 @@
                             enabled: false
                         },
                         marker: {
-                            enabled: false
+                            enabled: true,
+                            radius: 2,
+                            symbol: 'circle'
                         },
                     },
                     series: {
@@ -688,7 +729,13 @@
                     type: 'datetime',
                     minPadding: 0.05,
                     maxPadding: 0.05,
-                    tickPositions: [1601078400000, 1614297600000, 1629849600000]
+                    tickPositions: [1601078400000, 1629849600000, 1661731200000],
+                    labels: {
+                        formatter: function () {
+                                const time = new Highcharts.Time();
+                                return time.dateFormat('%b %y', this.value);
+                            }
+                    }
                 },
                 yAxis: {
                     title: {
@@ -706,7 +753,9 @@
                             enabled: false
                         },
                         marker: {
-                            enabled: false
+                            enabled: true,
+                            radius: 2,
+                            symbol: 'circle'
                         },
                     },
                     series: {
@@ -809,21 +858,25 @@
                     type: 'datetime',
                     minPadding: 0.05,
                     maxPadding: 0.05,
-                    tickPositions: [1601078400000, 1609113600000, 1619481600000, 1629849600000]
+                    tickPositions: [1601078400000, 1614297600000, 1629849600000, 1645660800000, 1661731200000],
+                    labels: {
+                        formatter: function () {
+                                const time = new Highcharts.Time();
+                                return time.dateFormat('%b %y', this.value);
+                            }
+                    }
                 },
                 yAxis: [{
                     title: {
                         text: 'COVID-19 prevalence',
                     },
-
+                    min: 0
                 }, {
                     title: {
                         text: 'Average score',
                         rotation: 270
                     },
                     opposite: true,
-                    // min: 1,
-                    // max: 6,
                 }],
                 tooltip: {
                     split: false,
@@ -851,11 +904,16 @@
                     formatter: function () {
                         let cases = numberFormatter(this.points[0].y);
                         let deaths = numberFormatter(this.points[1].y);
-                        let question = numberFormatter(this.points[2].y);
+                        let questionTip = "";
+
+                        if (this.points.length > 2) {
+                            questionTip = '<br/>Average score: ' + numberFormatter(this.points[2].y);
+                        }
+                        
                         return '<text><b>' + Highcharts.dateFormat('%m/%d/%Y', this.x) +
                             '</b><br/>COVID-19 cases (7 day average): ' + cases +
                             '<br/>COVID-19 deaths (7 day average): ' + deaths +
-                            '<br/>Average score: ' + question + '</text>';
+                            questionTip + '</text>';
                     },
                     useHTML: true,
                     shared: true
@@ -914,7 +972,13 @@
                     type: 'datetime',
                     minPadding: 0.05,
                     maxPadding: 0.05,
-                    tickPositions: [1601078400000, 1609113600000, 1619481600000, 1629849600000]
+                    tickPositions: [1601078400000, 1614297600000, 1629849600000, 1645660800000, 1661731200000],
+                    labels: {
+                        formatter: function () {
+                                const time = new Highcharts.Time();
+                                return time.dateFormat('%b %y', this.value);
+                            }
+                    }
                 },
                 yAxis: {
                     title: {
@@ -924,7 +988,9 @@
                 plotOptions: {
                     spline: {
                         marker: {
-                            enabled: false,
+                            enabled: true,
+                            radius: 2,
+                            symbol: 'circle'
                         },
                         label: {
                             enabled: false
@@ -937,19 +1003,45 @@
                 },
                 tooltip: {
                     formatter: function () {
-                        let age1 = numberFormatter(this.points[0].y);
-                        let age2 = numberFormatter(this.points[1].y);
-                        let age3 = numberFormatter(this.points[2].y);
-                        let age4 = numberFormatter(this.points[3].y);
-                        let age5 = numberFormatter(this.points[4].y);
-                        let age6 = numberFormatter(this.points[5].y);
-                        let tip = '<text><b>' + Highcharts.dateFormat('%m/%d/%Y', this.x) +
-                            '</b><br/>Aged 18-24: ' + age1 +
-                            '<br/>Aged 25-34: ' + age2 +
-                            '<br/>Aged 35-44: ' + age3 +
-                            '<br/>Aged 45-54: ' + age4 +
-                            '<br/>Aged 55-64: ' + age5 +
-                            '<br/>Aged 65+: ' + age6 + '</text>';
+                        let [age1, age2, age3, age4, age5, age6] = [0,0,0,0,0,0];
+                        let [age1tip,age2tip,age3tip,age4tip,age5tip,age6tip] = ["","","","","",""]
+                        let points = this.points;
+
+                        for (let point of points) {
+                            if (point.series.name == "18-24") {
+                                age1 = numberFormatter(point.y);
+                            } else if (point.series.name == "25-34") {
+                                age2 = numberFormatter(point.y);
+                            } else if (point.series.name == "35-44") {
+                                age3 = numberFormatter(point.y);
+                            } else if (point.series.name == "45-54") {
+                                age4 = numberFormatter(point.y);
+                            } else if (point.series.name == "55-64") {
+                                age5 = numberFormatter(point.y);
+                            } else if (point.series.name == "65+") {
+                                age6 = numberFormatter(point.y);
+                            }
+                        }
+                        if (age1 > 0) {
+                            age1tip = '<br/>Aged 18-24: ' + age1;
+                        } 
+                        if (age2 > 0) {
+                            age2tip = '<br/>Aged 25-34: ' + age2;
+                        } 
+                        if (age3 > 0) {
+                            age3tip = '<br/>Aged 35-44: ' + age3;
+                        } 
+                        if (age4 > 0) {
+                            age4tip = '<br/>Aged 45-54: ' + age4;
+                        } 
+                        if (age5 > 0) {
+                            age5tip = '<br/>Aged 55-64: ' + age5;
+                        } 
+                        if (age6 > 0) {
+                            age6tip = '<br/>Aged 65+: ' + age6;
+                        } 
+                        let tip = '<text><b>' + Highcharts.dateFormat('%m/%d/%Y', this.x) + '</b>' +
+                            age1tip + age2tip + age3tip + age4tip + age5tip + age6tip + '</text>';
                         return tip
                     },
                     useHTML: true,
@@ -1034,7 +1126,13 @@
                     type: 'datetime',
                     minPadding: 0.05,
                     maxPadding: 0.05,
-                    tickPositions: [1601078400000, 1609113600000, 1619481600000, 1629849600000]
+                    tickPositions: [1601078400000, 1614297600000, 1629849600000, 1645660800000, 1661731200000],
+                    labels: {
+                        formatter: function () {
+                                const time = new Highcharts.Time();
+                                return time.dateFormat('%b %y', this.value);
+                            }
+                    }
                 },
                 yAxis: {
                     title: {
@@ -1044,7 +1142,9 @@
                 plotOptions: {
                     spline: {
                         marker: {
-                            enabled: false,
+                            enabled: true,
+                            radius: 2,
+                            symbol: 'circle'
                         },
                         label: {
                             enabled: false
@@ -1057,14 +1157,32 @@
                 },
                 tooltip: {
                     formatter: function () {
-                        let sex1 = numberFormatter(this.points[0].y);
-                        let sex2 = numberFormatter(this.points[1].y);
-                        let sex3 = numberFormatter(this.points[2].y);
-                        let tip = '<text><b>' + Highcharts.dateFormat('%m/%d/%Y', this.x) +
-                            '</b><br/>Male: ' + sex1 +
-                            '<br/>Female: ' + sex2 +
-                            '<br/>Other: ' + sex3 + '</text>';
-                        return tip
+                        let [sex1, sex2, sex3] = [0,0,0];
+                        let [sex1tip,sex2tip,sex3tip] = ["","",""]
+                        let points = this.points;
+
+                        for (let point of points) {
+                            if (point.series.name == "Male") {
+                                sex1 = numberFormatter(point.y);
+                            } else if (point.series.name == "Female") {
+                                sex2 = numberFormatter(point.y);
+                            } else if (point.series.name == "Other") {
+                                sex3 = numberFormatter(point.y);
+                            }
+                        }
+                        if (sex1 > 0) {
+                            sex1tip = '<br/>Male: ' + sex1;
+                        } 
+                        if (sex2 > 0) {
+                            sex2tip = '<br/>Female: ' + sex2;
+                        } 
+                        if (sex3 > 0) {
+                            sex3tip = '<br/>Other: ' + sex3;
+                        } 
+                        
+                        let tip = '<text><b>' + Highcharts.dateFormat('%m/%d/%Y', this.x) + '</b>' +
+                            sex1tip + sex2tip + sex3tip + '</text>';
+                        return tip;
                     },
                     useHTML: true,
                     shared: true
@@ -1118,7 +1236,13 @@
                     type: 'datetime',
                     minPadding: 0.05,
                     maxPadding: 0.05,
-                    tickPositions: [1601078400000, 1609113600000, 1619481600000, 1629849600000]
+                    tickPositions: [1601078400000, 1614297600000, 1629849600000, 1645660800000, 1661731200000],
+                    labels: {
+                        formatter: function () {
+                                const time = new Highcharts.Time();
+                                return time.dateFormat('%b %y', this.value);
+                            }
+                    }
                 },
                 yAxis: {
                     title: {
@@ -1128,7 +1252,9 @@
                 plotOptions: {
                     spline: {
                         marker: {
-                            enabled: false,
+                            enabled: true,
+                            radius: 2,
+                            symbol: 'circle'
                         },
                         label: {
                             enabled: false
@@ -1141,14 +1267,32 @@
                 },
                 tooltip: {
                     formatter: function () {
-                        let infected1 = numberFormatter(this.points[0].y);
-                        let infected2 = numberFormatter(this.points[1].y);
-                        let infected3 = numberFormatter(this.points[2].y);
-                        let tip = '<text><b>' + Highcharts.dateFormat('%m/%d/%Y', this.x) +
-                            '</b><br/>Have been infected: ' + infected1 +
-                            '<br/>Might have been infected: ' + infected2 +
-                            '<br/>Have not been infected: ' + infected3 + '</text>';
-                        return tip
+                        let [infected1, infected2, infected3] = [0,0,0];
+                        let [infected1tip,infected2tip,infected3tip] = ["","",""]
+                        let points = this.points;
+
+                        for (let point of points) {
+                            if (point.series.name == "Have been infected") {
+                                infected1 = numberFormatter(point.y);
+                            } else if (point.series.name == "Might have been infected") {
+                                infected2 = numberFormatter(point.y);
+                            } else if (point.series.name == "Have not been infected") {
+                                infected3 = numberFormatter(point.y);
+                            }
+                        }
+                        if (infected1 > 0) {
+                            infected1tip = '<br/>Have been infected: ' + infected1;
+                        } 
+                        if (infected2 > 0) {
+                            infected2tip = '<br/>Might have been infected: ' + infected2;
+                        } 
+                        if (infected3 > 0) {
+                            infected3tip = '<br/>Have not been infected: ' + infected3;
+                        } 
+                        
+                        let tip = '<text><b>' + Highcharts.dateFormat('%m/%d/%Y', this.x) + '</b>' +
+                            infected1tip + infected2tip + infected3tip + '</text>';
+                        return tip;
                     },
                     useHTML: true,
                     shared: true
