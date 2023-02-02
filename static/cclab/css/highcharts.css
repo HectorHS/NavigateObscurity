@@ -1293,6 +1293,18 @@ g.highcharts-series,
   stop-opacity: 0.5;
 }
 
+#gradient-53 stop {
+  stop-color: #394646;
+}
+
+#gradient-53 stop[offset="0"] {
+  stop-opacity: 1;
+}
+
+#gradient-53 stop[offset="1"] {
+  stop-opacity: 0.5;
+}
+
 #gradient-area-0 stop {
   stop-color: #B3DBFF;
 }
@@ -1926,6 +1938,18 @@ g.highcharts-series,
 }
 
 #gradient-area-52 stop[offset="1"] {
+  stop-opacity: 0.1;
+}
+
+#gradient-area-53 stop {
+  stop-color: #394646;
+}
+
+#gradient-area-53 stop[offset="0"] {
+  stop-opacity: 1;
+}
+
+#gradient-area-53 stop[offset="1"] {
   stop-opacity: 0.1;
 }
 

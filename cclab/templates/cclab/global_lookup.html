@@ -171,7 +171,7 @@
             const all_variables = [...new Set(files[1].map(d => d.key))];
             let descriptions_lookup = [];
             for (let row of files[1]) {
-                descriptions_lookup[row.key] = row.description;
+                descriptions_lookup[row.key] = row.description + " (" + row.response + ")";
             }
             let excluded = ["the", "The", "on", "of", "and", "was", "is", "my", "it", "from", "to", "in", "about", "I", "that", "be", "for", "would", "were", "me", "have", "at", "so", "not", "My", "as", "more", "i", "what", "we", "had", "with", "by", "how", "did", "do", "a", "it", "that", "then", "this", "there", "than", "get", "but", "don't", "i'm", "am", "she", "he", "or", "an", "you", "if", "its", "it's"]
 
@@ -179,6 +179,7 @@
             let variableInt = "Stress";
             let variableStr = "Cause";
             let variableType = "number";
+            let date_lock = variable;
 
             varKey = document.getElementById("look_glo_key");
             varKey.innerHTML = variable;

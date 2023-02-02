@@ -204,8 +204,8 @@
             let initial_sex1_data = getBreakdownData("Sex", "Male");
             let initial_sex2_data = getBreakdownData("Sex", "Female");
             let initial_sex3_data = getBreakdownData("Sex", "Other");
-            let initial_preexisting1_data = getBreakdownData("preexisting", "preexisting_yes");
-            let initial_preexisting2_data = getBreakdownData("preexisting", "preexisting_no");
+            let initial_preexisting1_data = getBreakdownData("Preexisting", "preexisting_yes");
+            let initial_preexisting2_data = getBreakdownData("Preexisting", "preexisting_no");
             setStats();
             let initial_sex_data = getSexData();
             setQuestion();
@@ -333,8 +333,8 @@
                 let new_sex1_data = getBreakdownData("Sex", "Male");
                 let new_sex2_data = getBreakdownData("Sex", "Female");
                 let new_sex3_data = getBreakdownData("Sex", "Other");
-                let new_preexisting1_data = getBreakdownData("preexisting", "preexisting_yes");
-                let new_preexisting2_data = getBreakdownData("preexisting", "preexisting_no");
+                let new_preexisting1_data = getBreakdownData("Preexisting", "preexisting_yes");
+                let new_preexisting2_data = getBreakdownData("Preexisting", "preexisting_no");
 
                 covid_chart.series[0].setData(new_covid_cases_data);
                 covid_chart.series[1].setData(new_covid_deaths_data);
@@ -385,6 +385,7 @@
                             sexDataUpdate();
                             lineChartsDataUpdate();
                             breakdownChartDataUpdate();
+                            highlightCountry(true);
                         }
                     }
                 },
@@ -427,7 +428,14 @@
                     borderWidth: 0.5,
                     events: {
                         click: function (e) {
-                            country = e.point.originalName;
+                            // if same country selected, default to world
+                            if (country == e.point.originalName) {
+                                country = "World";
+                                highlightCountry(true);
+                            } else {
+                                country = e.point.originalName;
+                                highlightCountry(false)
+                            }
                             setStats();
                             updateCountryText();
                             sexDataUpdate();
@@ -1378,6 +1386,23 @@
                 return measure;
             }
 
+            function highlightCountry(deselect) {
+                let elements = document.querySelectorAll(".highcharts-map-series .highcharts-point");
+                if (deselect){
+                    for (let el of elements) {
+                        el.classList.remove("selected-element");
+                    }
+                } else {
+                    let css = getHighchartsMapCSSName(getCountryName(country));
+                    for (let el of elements) {
+                        if (el.classList.contains(css)) {
+                            el.classList.add("selected-element");
+                        } else {
+                            el.classList.remove("selected-element");
+                        }
+                    }
+                }
+            }
         })
             .catch(function (error) {
                 console.log(error);

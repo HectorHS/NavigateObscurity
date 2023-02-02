@@ -494,3 +494,9 @@ CFCcompositeFuture,,,,,,,,,,1,,,,
 CFCcompositeImmediate,,,,,,,,,,1,,,,
 Facial_Coverings,1,1,1,1,1,1,1,1,1,1,1,1,1,1
 Restrictions_on_gatherings,1,1,1,1,1,1,1,1,1,1,1,1,1,1
+RiskmanagementAttention,,,,,1,1,1,1,1,1,1,,1,1
+PFINeighAttention,,,,,1,1,1,1,1,1,1,1,1,1
+PFIHumanityAttention,,,,,1,1,1,1,1,1,1,1,1,1
+IsolateAttention,,,,,1,1,1,1,1,1,1,,1,1
+AskingforhelpAttention,,,,,1,1,1,1,1,,,,,
+GivinghelpAttention,,,,,1,1,1,1,1,,,,,

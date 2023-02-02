@@ -778,12 +778,32 @@ hr {
     color: #fdc64b;
     font-size: 110%;
 }
-#usdash_map .highcharts-legend-item:hover text {
+#usdash_map {
+    .highcharts-legend-item:hover text {
     color: #fdc64b;
     fill: black;
 }
-#usdash_map .highcharts-map-series .highcharts-point {
+    .highcharts-map-series .highcharts-point {
     stroke: #776222;
+        cursor: pointer;
+    }
+    .selected-element {
+        fill: #3c9080 !important;
+        color: #3c9080 !important;
+        stroke: #000 !important;
+        stroke-width: 20px !important;
+    }
+}
+#glodash_map {
+    .selected-element {
+        fill: #3c9080 !important;
+        color: #3c9080 !important;
+        stroke: #000 !important;
+        stroke-width: 20px !important;
+    }
+    .highcharts-point {
+        cursor: pointer;
+    }
 }
 .look-checks-container {
     display: flex;

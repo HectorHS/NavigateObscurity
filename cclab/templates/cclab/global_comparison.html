@@ -199,9 +199,9 @@
     var static_url = "{% get_static_prefix %}";
     file_old = "cclab/csv/CCLAB-old-ints.csv";
     old_path = static_url + file_old;
-    file_old_vars = "cclab/csv/CCLAB-old-variableLookup.csv";
+    file_old_vars = "cclab/csv/CCLAB-lookup-glo-lookup.csv";
     old_vars_path = static_url + file_old_vars;
-    file_old_desc = "cclab/csv/CCLAB-old-descriptions.csv";
+    file_old_desc = "cclab/csv/CCLAB-lookup-glo-descriptions.csv";
     old_desc_path = static_url + file_old_desc;
 
     var oldDashboard = Promise.all([
@@ -211,12 +211,28 @@
     ]).then(function (files) {
         // All filterable options
         const all_dates = [...new Set(files[0].map(d => d.Date))];
+        const getTimepoint = {
+            "2020-03-06":"t1",
+            "2020-03-14":"t2",
+            "2020-03-24":"t3",
+            "2020-04-03":"t4",
+            "2020-04-17":"t5",
+            "2020-05-02":"t6",
+            "2020-05-16":"t7",
+            "2020-05-30":"t8",
+            "2020-06-13":"t9",
+            "2020-06-27":"t10",
+            "2020-07-11":"t11",
+            "2020-07-25":"t12",
+            "2020-08-08":"t13",
+            "2020-08-22":"t4",
+        };
         const all_variables = files[0].columns;
-        all_variables.splice(0, 3);
+        all_variables.splice(0, 2);
         // create description lookup
         let descriptions_lookup = [];
         for (let row of files[2]) {
-            descriptions_lookup[row.key] = row.description;
+            descriptions_lookup[row.key] = row.description + " (" + row.response + ")";
         }
         let heatmap_xaxis_categories;
         let heatmap_yaxis_categories;
@@ -285,7 +301,7 @@
 
         let variable1 = "Stress";
         let variable2 = "PerceptionsRisk";
-        let date = "08/22/2020";
+        let date = "2020-08-22";
         let heatmapMax = 0;
         let availableDates = [];
         let availableVar2 = getVar2Values();
@@ -348,59 +364,59 @@
             // for (let date of all_dates) {
             for (let row of files[0]) {
                 let val = +row[variable];
-                if (row.Date == "03/06/2020" && val > 0) {
+                if (row.Date == "2020-03-06" && val > 0) {
                     d1v += val;
                     d1c++;
                 }
-                else if (row.Date == "03/14/2020" && val > 0) {
+                else if (row.Date == "2020-03-14" && val > 0) {
                     d2v += val;
                     d2c++;
                 }
-                else if (row.Date == "03/24/2020" && val > 0) {
+                else if (row.Date == "2020-03-24" && val > 0) {
                     d3v += val;
                     d3c++;
                 }
-                else if (row.Date == "04/03/2020" && val > 0) {
+                else if (row.Date == "2020-04-03" && val > 0) {
                     d4v += val;
                     d4c++;
                 }
-                else if (row.Date == "04/17/2020" && val > 0) {
+                else if (row.Date == "2020-04-17" && val > 0) {
                     d5v += val;
                     d5c++;
                 }
-                else if (row.Date == "05/02/2020" && val > 0) {
+                else if (row.Date == "2020-05-02" && val > 0) {
                     d6v += val;
                     d6c++;
                 }
-                else if (row.Date == "05/16/2020" && val > 0) {
+                else if (row.Date == "2020-05-16" && val > 0) {
                     d7v += val;
                     d7c++;
                 }
-                else if (row.Date == "05/30/2020" && val > 0) {
+                else if (row.Date == "2020-05-30" && val > 0) {
                     d8v += val;
                     d8c++;
                 }
-                else if (row.Date == "06/13/2020" && val > 0) {
+                else if (row.Date == "2020-06-13" && val > 0) {
                     d9v += val;
                     d9c++;
                 }
-                else if (row.Date == "06/27/2020" && val > 0) {
+                else if (row.Date == "2020-06-27" && val > 0) {
                     d10v += val;
                     d10c++;
                 }
-                else if (row.Date == "07/11/2020" && val > 0) {
+                else if (row.Date == "2020-07-11" && val > 0) {
                     d11v += val;
                     d11c++;
                 }
-                else if (row.Date == "07/25/2020" && val > 0) {
+                else if (row.Date == "2020-07-25" && val > 0) {
                     d12v += val;
                     d12c++;
                 }
-                else if (row.Date == "08/08/2020" && val > 0) {
+                else if (row.Date == "2020-08-08" && val > 0) {
                     d13v += val;
                     d13c++;
                 }
-                else if (row.Date == "08/22/2020" && val > 0) {
+                else if (row.Date == "2020-08-22" && val > 0) {
                     d14v += val;
                     d14c++;
                 }
@@ -436,7 +452,7 @@
             for (let row of files[1]) {
                 if (row.Name == var1) {
                     for (let d of all_dates) {
-                        if (row[d] > 0) {
+                        if (row[getTimepoint[d]] > 0) {
                             dates.push(d);
                         }
                     }
@@ -562,7 +578,7 @@
         function getVar2Values() {
             let data = [];
             for (let row of files[1]) {
-                if (row[date] > 0) {
+                if (row[getTimepoint[date]] > 0) {
                     data.push(row.Name);
                 }
             }
@@ -1179,7 +1195,7 @@
             let newValidity = false;
             for (let row of files[1]) {
                 if (row.Name == variable2) {
-                    if (row[date] > 0) {
+                    if (row[getTimepoint[date]] > 0) {
                         newValidity = true;
                     } else {
                         newValidity = false;

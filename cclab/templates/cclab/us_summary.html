@@ -402,6 +402,7 @@
                             sexDataUpdate();
                             lineChartsDataUpdate();
                             breakdownChartDataUpdate();
+                            highlightCountry(true);
                         }
                     }
                 },
@@ -448,7 +449,14 @@
                     borderWidth: 0.5,
                     events: {
                         click: function (e) {
-                            state = e.point.originalName;
+                             // if same state selected, default to all states
+                             if (state == e.point.originalName) {
+                                state = "All states";
+                                highlightCountry(true);
+                            } else {
+                                state = e.point.originalName;
+                                highlightCountry(false)
+                            }
                             setStats();
                             updateCountryText();
                             sexDataUpdate();
@@ -1404,6 +1412,23 @@
                 return measure;
             }
 
+            function highlightCountry(deselect) {
+                let elements = document.querySelectorAll(".highcharts-map-series .highcharts-point");
+                if (deselect){
+                    for (let el of elements) {
+                        el.classList.remove("selected-element");
+                    }
+                } else {
+                    let css = getHighchartsMapCSSName(state);
+                    for (let el of elements) {
+                        if (el.classList.contains(css)) {
+                            el.classList.add("selected-element");
+                        } else {
+                            el.classList.remove("selected-element");
+                        }
+                    }
+                }
+            }
         })
             .catch(function (error) {
                 console.log(error);

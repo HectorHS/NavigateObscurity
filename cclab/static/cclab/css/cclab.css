@@ -861,6 +861,25 @@ hr {
 
 #usdash_map .highcharts-map-series .highcharts-point {
   stroke: #776222;
+  cursor: pointer;
+}
+
+#usdash_map .selected-element {
+  fill: #3c9080 !important;
+  color: #3c9080 !important;
+  stroke: #000 !important;
+  stroke-width: 20px !important;
+}
+
+#glodash_map .selected-element {
+  fill: #3c9080 !important;
+  color: #3c9080 !important;
+  stroke: #000 !important;
+  stroke-width: 20px !important;
+}
+
+#glodash_map .highcharts-point {
+  cursor: pointer;
 }
 
 .look-checks-container {

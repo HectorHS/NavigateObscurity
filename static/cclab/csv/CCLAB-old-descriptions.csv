@@ -500,3 +500,9 @@ CFCcompositeFuture,
 CFCcompositeImmediate,
 Facial_Coverings,"Government imposed measures on face coverings (0= No policy, 1= Recommended, 2= Required in some specified shared/public spaces outside the home with other people present, or some situations when social distancing not possible, 3= Required in all shared/public spaces outside the home with other people present or all situations when social distancing not possible, 4= Required outside the home at all times regardless of location or presence of other people)"
 Restrictions_on_gatherings,"Government restrictions limiting group gatherings (0= No restrictions, 1= restrictions on very large gatherings (the limit is above 1000 people), 2= restrictions on gatherings between 101-1000 people, 3= restrictions on gatherings between 11-100 people, 4= restrictions on gatherings of 10 people or less)"
+RiskmanagementAttention,"Are you paying attention? (1= Yes, 2= No)"
+PFINeighAttention,"Are you paying attention? (1= Yes, 2= No)"
+PFIHumanityAttention,"Are you paying attention? (1= Yes, 2= No)"
+IsolateAttention,"Are you paying attention? (1= Yes, 2= No)"
+AskingforhelpAttention,"Are you paying attention? (1= Yes, 2= No)"
+GivinghelpAttention,"Are you paying attention? (1= Yes, 2= No)"
