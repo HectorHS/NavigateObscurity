@@ -1,5 +1,5 @@
 from django.urls import path
-from .views import HeadStrongView, IndexView, GotmView, ElasticView
+from .views import HeadStrongView, IndexView, GotmView, ElasticView, GgsView
 
 app_name = 'nodes'
 urlpatterns = [
@@ -7,4 +7,5 @@ urlpatterns = [
     path('head-strong', HeadStrongView.as_view(), name='head-strong'),
     path('gardens-of-the-moon', GotmView.as_view(), name='gardens-of-the-moon'),
     path('elastic-thinking', ElasticView.as_view(), name='elastic-thinking'),
+    path('guns-germs-and-steel', GgsView.as_view(), name='guns-germs-and-steel'),
 ]

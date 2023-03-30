@@ -1,0 +1,1278 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<gexf xmlns="http://gexf.net/1.3" version="1.3" xmlns:viz="http://gexf.net/1.3/viz" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://gexf.net/1.3 http://gexf.net/1.3/gexf.xsd">
+  <meta lastmodifieddate="2023-03-30">
+    <creator>Gephi 0.10.1</creator>
+    <title></title>
+    <description></description>
+  </meta>
+  <graph defaultedgetype="undirected" mode="static">
+    <attributes class="node" mode="static">
+      <attribute id="clustering" title="Clustering Coefficient" type="double">
+        <default>0.0</default>
+      </attribute>
+      <attribute id="triangles" title="Number of triangles" type="integer">
+        <default>0</default>
+      </attribute>
+      <attribute id="degree" title="Degree" type="integer">
+        <default>0</default>
+      </attribute>
+      <attribute id="modularity class" title="modularity class" type="integer"/>
+    </attributes>
+    <nodes>
+      <node id="societal-advantage" label="Societal advantage">
+        <attvalues>
+          <attvalue for="clustering" value="0.0"/>
+          <attvalue for="triangles" value="0"/>
+          <attvalue for="degree" value="0"/>
+          <attvalue for="modularity class" value="4"/>
+        </attvalues>
+        <viz:size value="25.0"/>
+        <viz:position x="32.53125" y="-4.6052895"/>
+        <viz:color r="105" g="196" b="4"/>
+      </node>
+      <node id="people" label="People's inequalities">
+        <attvalues>
+          <attvalue for="clustering" value="0.0"/>
+          <attvalue for="triangles" value="0"/>
+          <attvalue for="degree" value="0"/>
+          <attvalue for="modularity class" value="1"/>
+        </attvalues>
+        <viz:size value="4.6923075"/>
+        <viz:position x="39.400055" y="159.39795"/>
+        <viz:color r="0" g="199" b="255"/>
+      </node>
+      <node id="climate" label="Climate">
+        <attvalues>
+          <attvalue for="clustering" value="0.0"/>
+          <attvalue for="triangles" value="0"/>
+          <attvalue for="degree" value="0"/>
+          <attvalue for="modularity class" value="3"/>
+        </attvalues>
+        <viz:size value="8.641026"/>
+        <viz:position x="208.11644" y="157.01195"/>
+        <viz:color r="128" g="107" b="104"/>
+      </node>
+      <node id="irrigation" label="Irrigation">
+        <attvalues>
+          <attvalue for="clustering" value="0.0"/>
+          <attvalue for="triangles" value="0"/>
+          <attvalue for="degree" value="0"/>
+          <attvalue for="modularity class" value="3"/>
+        </attvalues>
+        <viz:size value="3.0"/>
+        <viz:position x="-19.276161" y="14.712128"/>
+        <viz:color r="128" g="107" b="104"/>
+      </node>
+      <node id="pizarro" label="Pizarro">
+        <attvalues>
+          <attvalue for="clustering" value="0.0"/>
+          <attvalue for="triangles" value="0"/>
+          <attvalue for="degree" value="0"/>
+          <attvalue for="modularity class" value="1"/>
+        </attvalues>
+        <viz:size value="5.2564106"/>
+        <viz:position x="496.12482" y="135.24518"/>
+        <viz:color r="0" g="199" b="255"/>
+      </node>
+      <node id="technology" label="Technology">
+        <attvalues>
+          <attvalue for="clustering" value="0.0"/>
+          <attvalue for="triangles" value="0"/>
+          <attvalue for="degree" value="0"/>
+          <attvalue for="modularity class" value="4"/>
+        </attvalues>
+        <viz:size value="10.897436"/>
+        <viz:position x="132.79913" y="-52.080265"/>
+        <viz:color r="105" g="196" b="4"/>
+      </node>
+      <node id="germs" label="Germs">
+        <attvalues>
+          <attvalue for="clustering" value="0.0"/>
+          <attvalue for="triangles" value="0"/>
+          <attvalue for="degree" value="0"/>
+          <attvalue for="modularity class" value="4"/>
+        </attvalues>
+        <viz:size value="10.333334"/>
+        <viz:position x="331.5365" y="24.593023"/>
+        <viz:color r="105" g="196" b="4"/>
+      </node>
+      <node id="humans" label="Humans">
+        <attvalues>
+          <attvalue for="clustering" value="0.0"/>
+          <attvalue for="triangles" value="0"/>
+          <attvalue for="degree" value="0"/>
+          <attvalue for="modularity class" value="1"/>
+        </attvalues>
+        <viz:size value="6.3846154"/>
+        <viz:position x="248.6364" y="82.874756"/>
+        <viz:color r="0" g="199" b="255"/>
+      </node>
+      <node id="europe" label="Europe">
+        <attvalues>
+          <attvalue for="clustering" value="0.0"/>
+          <attvalue for="triangles" value="0"/>
+          <attvalue for="degree" value="0"/>
+          <attvalue for="modularity class" value="0"/>
+        </attvalues>
+        <viz:size value="19.358974"/>
+        <viz:position x="323.50763" y="136.57802"/>
+        <viz:color r="226" g="139" b="255"/>
+      </node>
+      <node id="africa" label="Africa">
+        <attvalues>
+          <attvalue for="clustering" value="0.0"/>
+          <attvalue for="triangles" value="0"/>
+          <attvalue for="degree" value="0"/>
+          <attvalue for="modularity class" value="0"/>
+        </attvalues>
+        <viz:size value="16.538462"/>
+        <viz:position x="374.92432" y="129.42847"/>
+        <viz:color r="226" g="139" b="255"/>
+      </node>
+      <node id="asia" label="Asia">
+        <attvalues>
+          <attvalue for="clustering" value="0.0"/>
+          <attvalue for="triangles" value="0"/>
+          <attvalue for="degree" value="0"/>
+          <attvalue for="modularity class" value="0"/>
+        </attvalues>
+        <viz:size value="8.076923"/>
+        <viz:position x="267.25833" y="129.54199"/>
+        <viz:color r="226" g="139" b="255"/>
+      </node>
+      <node id="oceania" label="Oceania">
+        <attvalues>
+          <attvalue for="clustering" value="0.0"/>
+          <attvalue for="triangles" value="0"/>
+          <attvalue for="degree" value="0"/>
+          <attvalue for="modularity class" value="0"/>
+        </attvalues>
+        <viz:size value="13.717949"/>
+        <viz:position x="445.8183" y="60.174072"/>
+        <viz:color r="226" g="139" b="255"/>
+      </node>
+      <node id="animals" label="Animals">
+        <attvalues>
+          <attvalue for="clustering" value="0.0"/>
+          <attvalue for="triangles" value="0"/>
+          <attvalue for="degree" value="0"/>
+          <attvalue for="modularity class" value="2"/>
+        </attvalues>
+        <viz:size value="9.769231"/>
+        <viz:position x="141.90094" y="329.91656"/>
+        <viz:color r="250" g="146" b="0"/>
+      </node>
+      <node id="americas" label="Americas">
+        <attvalues>
+          <attvalue for="clustering" value="0.0"/>
+          <attvalue for="triangles" value="0"/>
+          <attvalue for="degree" value="0"/>
+          <attvalue for="modularity class" value="0"/>
+        </attvalues>
+        <viz:size value="16.538462"/>
+        <viz:position x="417.27567" y="101.41439"/>
+        <viz:color r="226" g="139" b="255"/>
+      </node>
+      <node id="new-zealand" label="New Zealand">
+        <attvalues>
+          <attvalue for="clustering" value="0.0"/>
+          <attvalue for="triangles" value="0"/>
+          <attvalue for="degree" value="0"/>
+          <attvalue for="modularity class" value="0"/>
+        </attvalues>
+        <viz:size value="6.3846154"/>
+        <viz:position x="441.48315" y="168.42752"/>
+        <viz:color r="226" g="139" b="255"/>
+      </node>
+      <node id="chatham" label="Chatham Island">
+        <attvalues>
+          <attvalue for="clustering" value="0.0"/>
+          <attvalue for="triangles" value="0"/>
+          <attvalue for="degree" value="0"/>
+          <attvalue for="modularity class" value="0"/>
+        </attvalues>
+        <viz:size value="5.820513"/>
+        <viz:position x="288.926" y="-50.055954"/>
+        <viz:color r="226" g="139" b="255"/>
+      </node>
+      <node id="war" label="War">
+        <attvalues>
+          <attvalue for="clustering" value="0.0"/>
+          <attvalue for="triangles" value="0"/>
+          <attvalue for="degree" value="0"/>
+          <attvalue for="modularity class" value="5"/>
+        </attvalues>
+        <viz:size value="9.205129"/>
+        <viz:position x="292.28748" y="56.572758"/>
+        <viz:color r="0" g="175" b="135"/>
+      </node>
+      <node id="isolation" label="Isolation">
+        <attvalues>
+          <attvalue for="clustering" value="0.0"/>
+          <attvalue for="triangles" value="0"/>
+          <attvalue for="degree" value="0"/>
+          <attvalue for="modularity class" value="3"/>
+        </attvalues>
+        <viz:size value="9.769231"/>
+        <viz:position x="246.37044" y="-14.274893"/>
+        <viz:color r="128" g="107" b="104"/>
+      </node>
+      <node id="size" label="Size">
+        <attvalues>
+          <attvalue for="clustering" value="0.0"/>
+          <attvalue for="triangles" value="0"/>
+          <attvalue for="degree" value="0"/>
+          <attvalue for="modularity class" value="3"/>
+        </attvalues>
+        <viz:size value="6.3846154"/>
+        <viz:position x="189.83388" y="60.551243"/>
+        <viz:color r="128" g="107" b="104"/>
+      </node>
+      <node id="population" label="Population">
+        <attvalues>
+          <attvalue for="clustering" value="0.0"/>
+          <attvalue for="triangles" value="0"/>
+          <attvalue for="degree" value="0"/>
+          <attvalue for="modularity class" value="4"/>
+        </attvalues>
+        <viz:size value="9.205129"/>
+        <viz:position x="51.502567" y="79.24896"/>
+        <viz:color r="105" g="196" b="4"/>
+      </node>
+      <node id="food-production" label="Food production">
+        <attvalues>
+          <attvalue for="clustering" value="0.0"/>
+          <attvalue for="triangles" value="0"/>
+          <attvalue for="degree" value="0"/>
+          <attvalue for="modularity class" value="2"/>
+        </attvalues>
+        <viz:size value="21.615385"/>
+        <viz:position x="149.5288" y="221.31577"/>
+        <viz:color r="250" g="146" b="0"/>
+      </node>
+      <node id="population-displacement" label="Population displacement">
+        <attvalues>
+          <attvalue for="clustering" value="0.0"/>
+          <attvalue for="triangles" value="0"/>
+          <attvalue for="degree" value="0"/>
+          <attvalue for="modularity class" value="5"/>
+        </attvalues>
+        <viz:size value="10.897436"/>
+        <viz:position x="372.6513" y="-52.03685"/>
+        <viz:color r="0" g="175" b="135"/>
+      </node>
+      <node id="incas" label="Incas">
+        <attvalues>
+          <attvalue for="clustering" value="0.0"/>
+          <attvalue for="triangles" value="0"/>
+          <attvalue for="degree" value="0"/>
+          <attvalue for="modularity class" value="1"/>
+        </attvalues>
+        <viz:size value="4.1282053"/>
+        <viz:position x="459.61957" y="114.56653"/>
+        <viz:color r="0" g="199" b="255"/>
+      </node>
+      <node id="central-government" label="Central government">
+        <attvalues>
+          <attvalue for="clustering" value="0.0"/>
+          <attvalue for="triangles" value="0"/>
+          <attvalue for="degree" value="0"/>
+          <attvalue for="modularity class" value="4"/>
+        </attvalues>
+        <viz:size value="6.3846154"/>
+        <viz:position x="187.03693" y="119.0872"/>
+        <viz:color r="105" g="196" b="4"/>
+      </node>
+      <node id="writing" label="Writing">
+        <attvalues>
+          <attvalue for="clustering" value="0.0"/>
+          <attvalue for="triangles" value="0"/>
+          <attvalue for="degree" value="0"/>
+          <attvalue for="modularity class" value="4"/>
+        </attvalues>
+        <viz:size value="8.076923"/>
+        <viz:position x="144.85501" y="5.7049236"/>
+        <viz:color r="105" g="196" b="4"/>
+      </node>
+      <node id="plants" label="Plants">
+        <attvalues>
+          <attvalue for="clustering" value="0.0"/>
+          <attvalue for="triangles" value="0"/>
+          <attvalue for="degree" value="0"/>
+          <attvalue for="modularity class" value="2"/>
+        </attvalues>
+        <viz:size value="6.3846154"/>
+        <viz:position x="268.97986" y="321.29327"/>
+        <viz:color r="250" g="146" b="0"/>
+      </node>
+      <node id="religion" label="Religion">
+        <attvalues>
+          <attvalue for="clustering" value="0.0"/>
+          <attvalue for="triangles" value="0"/>
+          <attvalue for="degree" value="0"/>
+          <attvalue for="modularity class" value="4"/>
+        </attvalues>
+        <viz:size value="4.6923075"/>
+        <viz:position x="-28.122208" y="74.282166"/>
+        <viz:color r="105" g="196" b="4"/>
+      </node>
+      <node id="societies" label="Societies">
+        <attvalues>
+          <attvalue for="clustering" value="0.0"/>
+          <attvalue for="triangles" value="0"/>
+          <attvalue for="degree" value="0"/>
+          <attvalue for="modularity class" value="6"/>
+        </attvalues>
+        <viz:size value="5.820513"/>
+        <viz:position x="9.882774" y="117.50234"/>
+        <viz:color r="255" g="93" b="133"/>
+      </node>
+      <node id="transportation" label="Transportation">
+        <attvalues>
+          <attvalue for="clustering" value="0.0"/>
+          <attvalue for="triangles" value="0"/>
+          <attvalue for="degree" value="0"/>
+          <attvalue for="modularity class" value="4"/>
+        </attvalues>
+        <viz:size value="3.0"/>
+        <viz:position x="193.65773" y="321.6872"/>
+        <viz:color r="105" g="196" b="4"/>
+      </node>
+      <node id="clothes" label="Clothes">
+        <attvalues>
+          <attvalue for="clustering" value="0.0"/>
+          <attvalue for="triangles" value="0"/>
+          <attvalue for="degree" value="0"/>
+          <attvalue for="modularity class" value="4"/>
+        </attvalues>
+        <viz:size value="3.5641026"/>
+        <viz:position x="317.09503" y="330.85294"/>
+        <viz:color r="105" g="196" b="4"/>
+      </node>
+      <node id="plant-domestication" label="Plant domestication">
+        <attvalues>
+          <attvalue for="clustering" value="0.0"/>
+          <attvalue for="triangles" value="0"/>
+          <attvalue for="degree" value="0"/>
+          <attvalue for="modularity class" value="2"/>
+        </attvalues>
+        <viz:size value="5.820513"/>
+        <viz:position x="206.75444" y="271.82593"/>
+        <viz:color r="250" g="146" b="0"/>
+      </node>
+      <node id="animal-domestication" label="Animal domestication">
+        <attvalues>
+          <attvalue for="clustering" value="0.0"/>
+          <attvalue for="triangles" value="0"/>
+          <attvalue for="degree" value="0"/>
+          <attvalue for="modularity class" value="2"/>
+        </attvalues>
+        <viz:size value="9.205129"/>
+        <viz:position x="123.64459" y="286.5913"/>
+        <viz:color r="250" g="146" b="0"/>
+      </node>
+      <node id="founder-package" label="Founder package">
+        <attvalues>
+          <attvalue for="clustering" value="0.0"/>
+          <attvalue for="triangles" value="0"/>
+          <attvalue for="degree" value="0"/>
+          <attvalue for="modularity class" value="2"/>
+        </attvalues>
+        <viz:size value="12.025641"/>
+        <viz:position x="332.03235" y="275.20813"/>
+        <viz:color r="250" g="146" b="0"/>
+      </node>
+      <node id="fertile-crescent" label="Fertile crescent">
+        <attvalues>
+          <attvalue for="clustering" value="0.0"/>
+          <attvalue for="triangles" value="0"/>
+          <attvalue for="degree" value="0"/>
+          <attvalue for="modularity class" value="0"/>
+        </attvalues>
+        <viz:size value="6.948718"/>
+        <viz:position x="320.57144" y="176.73701"/>
+        <viz:color r="226" g="139" b="255"/>
+      </node>
+      <node id="china" label="China">
+        <attvalues>
+          <attvalue for="clustering" value="0.0"/>
+          <attvalue for="triangles" value="0"/>
+          <attvalue for="degree" value="0"/>
+          <attvalue for="modularity class" value="0"/>
+        </attvalues>
+        <viz:size value="13.717949"/>
+        <viz:position x="272.9953" y="187.26312"/>
+        <viz:color r="226" g="139" b="255"/>
+      </node>
+      <node id="mesoamerica" label="Mesoamerica">
+        <attvalues>
+          <attvalue for="clustering" value="0.0"/>
+          <attvalue for="triangles" value="0"/>
+          <attvalue for="degree" value="0"/>
+          <attvalue for="modularity class" value="0"/>
+        </attvalues>
+        <viz:size value="5.820513"/>
+        <viz:position x="448.48404" y="253.23059"/>
+        <viz:color r="226" g="139" b="255"/>
+      </node>
+      <node id="eastern-us" label="Eastern US">
+        <attvalues>
+          <attvalue for="clustering" value="0.0"/>
+          <attvalue for="triangles" value="0"/>
+          <attvalue for="degree" value="0"/>
+          <attvalue for="modularity class" value="0"/>
+        </attvalues>
+        <viz:size value="5.2564106"/>
+        <viz:position x="462.71088" y="276.06204"/>
+        <viz:color r="226" g="139" b="255"/>
+      </node>
+      <node id="sahel-zone" label="Sahel zone">
+        <attvalues>
+          <attvalue for="clustering" value="0.0"/>
+          <attvalue for="triangles" value="0"/>
+          <attvalue for="degree" value="0"/>
+          <attvalue for="modularity class" value="0"/>
+        </attvalues>
+        <viz:size value="4.1282053"/>
+        <viz:position x="387.13107" y="197.67223"/>
+        <viz:color r="226" g="139" b="255"/>
+      </node>
+      <node id="west-africa" label="West Africa">
+        <attvalues>
+          <attvalue for="clustering" value="0.0"/>
+          <attvalue for="triangles" value="0"/>
+          <attvalue for="degree" value="0"/>
+          <attvalue for="modularity class" value="0"/>
+        </attvalues>
+        <viz:size value="4.6923075"/>
+        <viz:position x="411.18396" y="213.98465"/>
+        <viz:color r="226" g="139" b="255"/>
+      </node>
+      <node id="ethiopia" label="Ethiopia">
+        <attvalues>
+          <attvalue for="clustering" value="0.0"/>
+          <attvalue for="triangles" value="0"/>
+          <attvalue for="degree" value="0"/>
+          <attvalue for="modularity class" value="0"/>
+        </attvalues>
+        <viz:size value="4.1282053"/>
+        <viz:position x="361.43933" y="183.53362"/>
+        <viz:color r="226" g="139" b="255"/>
+      </node>
+      <node id="new-guinea" label="New Guinea">
+        <attvalues>
+          <attvalue for="clustering" value="0.0"/>
+          <attvalue for="triangles" value="0"/>
+          <attvalue for="degree" value="0"/>
+          <attvalue for="modularity class" value="0"/>
+        </attvalues>
+        <viz:size value="14.846154"/>
+        <viz:position x="470.91464" y="307.13333"/>
+        <viz:color r="226" g="139" b="255"/>
+      </node>
+      <node id="cultural-diffusion" label="Cultural diffusion">
+        <attvalues>
+          <attvalue for="clustering" value="0.0"/>
+          <attvalue for="triangles" value="0"/>
+          <attvalue for="degree" value="0"/>
+          <attvalue for="modularity class" value="5"/>
+        </attvalues>
+        <viz:size value="6.948718"/>
+        <viz:position x="359.02536" y="-9.500116"/>
+        <viz:color r="0" g="175" b="135"/>
+      </node>
+      <node id="early-food-production" label="Eearly food production">
+        <attvalues>
+          <attvalue for="clustering" value="0.0"/>
+          <attvalue for="triangles" value="0"/>
+          <attvalue for="degree" value="0"/>
+          <attvalue for="modularity class" value="4"/>
+        </attvalues>
+        <viz:size value="5.2564106"/>
+        <viz:position x="172.85936" y="-84.50351"/>
+        <viz:color r="105" g="196" b="4"/>
+      </node>
+      <node id="egypt" label="Egypt">
+        <attvalues>
+          <attvalue for="clustering" value="0.0"/>
+          <attvalue for="triangles" value="0"/>
+          <attvalue for="degree" value="0"/>
+          <attvalue for="modularity class" value="0"/>
+        </attvalues>
+        <viz:size value="3.0"/>
+        <viz:position x="106.61589" y="252.60027"/>
+        <viz:color r="226" g="139" b="255"/>
+      </node>
+      <node id="south-africa" label="South Africa">
+        <attvalues>
+          <attvalue for="clustering" value="0.0"/>
+          <attvalue for="triangles" value="0"/>
+          <attvalue for="degree" value="0"/>
+          <attvalue for="modularity class" value="0"/>
+        </attvalues>
+        <viz:size value="5.2564106"/>
+        <viz:position x="127.81993" y="-100.314095"/>
+        <viz:color r="226" g="139" b="255"/>
+      </node>
+      <node id="south-west-us" label="South-West US">
+        <attvalues>
+          <attvalue for="clustering" value="0.0"/>
+          <attvalue for="triangles" value="0"/>
+          <attvalue for="degree" value="0"/>
+          <attvalue for="modularity class" value="0"/>
+        </attvalues>
+        <viz:size value="3.5641026"/>
+        <viz:position x="31.178017" y="203.32407"/>
+        <viz:color r="226" g="139" b="255"/>
+      </node>
+      <node id="california" label="California">
+        <attvalues>
+          <attvalue for="clustering" value="0.0"/>
+          <attvalue for="triangles" value="0"/>
+          <attvalue for="degree" value="0"/>
+          <attvalue for="modularity class" value="0"/>
+        </attvalues>
+        <viz:size value="4.1282053"/>
+        <viz:position x="24.49795" y="285.73163"/>
+        <viz:color r="226" g="139" b="255"/>
+      </node>
+      <node id="north-west-america" label="North-West America">
+        <attvalues>
+          <attvalue for="clustering" value="0.0"/>
+          <attvalue for="triangles" value="0"/>
+          <attvalue for="degree" value="0"/>
+          <attvalue for="modularity class" value="0"/>
+        </attvalues>
+        <viz:size value="3.5641026"/>
+        <viz:position x="11.772478" y="307.85873"/>
+        <viz:color r="226" g="139" b="255"/>
+      </node>
+      <node id="argentine" label="Argentine">
+        <attvalues>
+          <attvalue for="clustering" value="0.0"/>
+          <attvalue for="triangles" value="0"/>
+          <attvalue for="degree" value="0"/>
+          <attvalue for="modularity class" value="0"/>
+        </attvalues>
+        <viz:size value="3.5641026"/>
+        <viz:position x="13.437965" y="332.13263"/>
+        <viz:color r="226" g="139" b="255"/>
+      </node>
+      <node id="australia" label="Australia">
+        <attvalues>
+          <attvalue for="clustering" value="0.0"/>
+          <attvalue for="triangles" value="0"/>
+          <attvalue for="degree" value="0"/>
+          <attvalue for="modularity class" value="0"/>
+        </attvalues>
+        <viz:size value="11.461538"/>
+        <viz:position x="441.96182" y="21.576046"/>
+        <viz:color r="226" g="139" b="255"/>
+      </node>
+      <node id="siberia" label="Siberia">
+        <attvalues>
+          <attvalue for="clustering" value="0.0"/>
+          <attvalue for="triangles" value="0"/>
+          <attvalue for="degree" value="0"/>
+          <attvalue for="modularity class" value="0"/>
+        </attvalues>
+        <viz:size value="3.5641026"/>
+        <viz:position x="26.231903" y="353.39612"/>
+        <viz:color r="226" g="139" b="255"/>
+      </node>
+      <node id="hunter-gatherers" label="Hunter-gatherers">
+        <attvalues>
+          <attvalue for="clustering" value="0.0"/>
+          <attvalue for="triangles" value="0"/>
+          <attvalue for="degree" value="0"/>
+          <attvalue for="modularity class" value="6"/>
+        </attvalues>
+        <viz:size value="8.076923"/>
+        <viz:position x="49.652283" y="265.16055"/>
+        <viz:color r="255" g="93" b="133"/>
+      </node>
+      <node id="nutrition" label="Nutrition">
+        <attvalues>
+          <attvalue for="clustering" value="0.0"/>
+          <attvalue for="triangles" value="0"/>
+          <attvalue for="degree" value="0"/>
+          <attvalue for="modularity class" value="2"/>
+        </attvalues>
+        <viz:size value="3.0"/>
+        <viz:position x="328.89807" y="310.01422"/>
+        <viz:color r="250" g="146" b="0"/>
+      </node>
+      <node id="environment" label="Environment">
+        <attvalues>
+          <attvalue for="clustering" value="0.0"/>
+          <attvalue for="triangles" value="0"/>
+          <attvalue for="degree" value="0"/>
+          <attvalue for="modularity class" value="3"/>
+        </attvalues>
+        <viz:size value="9.205129"/>
+        <viz:position x="76.268234" y="127.22327"/>
+        <viz:color r="128" g="107" b="104"/>
+      </node>
+      <node id="food-production-inequalities" label="Food production inequalities">
+        <attvalues>
+          <attvalue for="clustering" value="0.0"/>
+          <attvalue for="triangles" value="0"/>
+          <attvalue for="degree" value="0"/>
+          <attvalue for="modularity class" value="4"/>
+        </attvalues>
+        <viz:size value="9.769231"/>
+        <viz:position x="119.480255" y="62.169514"/>
+        <viz:color r="105" g="196" b="4"/>
+      </node>
+      <node id="food-production-spread" label="Food production spread">
+        <attvalues>
+          <attvalue for="clustering" value="0.0"/>
+          <attvalue for="triangles" value="0"/>
+          <attvalue for="degree" value="0"/>
+          <attvalue for="modularity class" value="4"/>
+        </attvalues>
+        <viz:size value="6.3846154"/>
+        <viz:position x="227.75076" y="-89.83079"/>
+        <viz:color r="105" g="196" b="4"/>
+      </node>
+      <node id="geography" label="Geography">
+        <attvalues>
+          <attvalue for="clustering" value="0.0"/>
+          <attvalue for="triangles" value="0"/>
+          <attvalue for="degree" value="0"/>
+          <attvalue for="modularity class" value="3"/>
+        </attvalues>
+        <viz:size value="5.2564106"/>
+        <viz:position x="208.1595" y="20.680069"/>
+        <viz:color r="128" g="107" b="104"/>
+      </node>
+      <node id="technology-adoption" label="Technology adoption">
+        <attvalues>
+          <attvalue for="clustering" value="0.0"/>
+          <attvalue for="triangles" value="0"/>
+          <attvalue for="degree" value="0"/>
+          <attvalue for="modularity class" value="4"/>
+        </attvalues>
+        <viz:size value="5.2564106"/>
+        <viz:position x="264.46927" y="-72.83438"/>
+        <viz:color r="105" g="196" b="4"/>
+      </node>
+      <node id="south-american-andes" label="South American Andes">
+        <attvalues>
+          <attvalue for="clustering" value="0.0"/>
+          <attvalue for="triangles" value="0"/>
+          <attvalue for="degree" value="0"/>
+          <attvalue for="modularity class" value="0"/>
+        </attvalues>
+        <viz:size value="4.6923075"/>
+        <viz:position x="432.34222" y="232.31657"/>
+        <viz:color r="226" g="139" b="255"/>
+      </node>
+      <node id="bands" label="Bands">
+        <attvalues>
+          <attvalue for="clustering" value="0.0"/>
+          <attvalue for="triangles" value="0"/>
+          <attvalue for="degree" value="0"/>
+          <attvalue for="modularity class" value="6"/>
+        </attvalues>
+        <viz:size value="4.6923075"/>
+        <viz:position x="-30.807022" y="194.26268"/>
+        <viz:color r="255" g="93" b="133"/>
+      </node>
+      <node id="tribes" label="Tribes">
+        <attvalues>
+          <attvalue for="clustering" value="0.0"/>
+          <attvalue for="triangles" value="0"/>
+          <attvalue for="degree" value="0"/>
+          <attvalue for="modularity class" value="6"/>
+        </attvalues>
+        <viz:size value="4.1282053"/>
+        <viz:position x="-20.730942" y="218.4482"/>
+        <viz:color r="255" g="93" b="133"/>
+      </node>
+      <node id="chiefdoms" label="Chiefdoms">
+        <attvalues>
+          <attvalue for="clustering" value="0.0"/>
+          <attvalue for="triangles" value="0"/>
+          <attvalue for="degree" value="0"/>
+          <attvalue for="modularity class" value="6"/>
+        </attvalues>
+        <viz:size value="4.6923075"/>
+        <viz:position x="-25.795273" y="166.93867"/>
+        <viz:color r="255" g="93" b="133"/>
+      </node>
+      <node id="states" label="States">
+        <attvalues>
+          <attvalue for="clustering" value="0.0"/>
+          <attvalue for="triangles" value="0"/>
+          <attvalue for="degree" value="0"/>
+          <attvalue for="modularity class" value="6"/>
+        </attvalues>
+        <viz:size value="4.6923075"/>
+        <viz:position x="-9.631443" y="141.14906"/>
+        <viz:color r="255" g="93" b="133"/>
+      </node>
+      <node id="indonesia" label="Indonesia">
+        <attvalues>
+          <attvalue for="clustering" value="0.0"/>
+          <attvalue for="triangles" value="0"/>
+          <attvalue for="degree" value="0"/>
+          <attvalue for="modularity class" value="0"/>
+        </attvalues>
+        <viz:size value="5.820513"/>
+        <viz:position x="487.0912" y="-47.16092"/>
+        <viz:color r="226" g="139" b="255"/>
+      </node>
+      <node id="tasmania" label="Tasmania">
+        <attvalues>
+          <attvalue for="clustering" value="0.0"/>
+          <attvalue for="triangles" value="0"/>
+          <attvalue for="degree" value="0"/>
+          <attvalue for="modularity class" value="0"/>
+        </attvalues>
+        <viz:size value="3.0"/>
+        <viz:position x="487.31342" y="69.35669"/>
+        <viz:color r="226" g="139" b="255"/>
+      </node>
+      <node id="language" label="Language">
+        <attvalues>
+          <attvalue for="clustering" value="0.0"/>
+          <attvalue for="triangles" value="0"/>
+          <attvalue for="degree" value="0"/>
+          <attvalue for="modularity class" value="1"/>
+        </attvalues>
+        <viz:size value="7.5128207"/>
+        <viz:position x="431.13248" y="-50.056374"/>
+        <viz:color r="0" g="199" b="255"/>
+      </node>
+      <node id="genetics" label="Genetics">
+        <attvalues>
+          <attvalue for="clustering" value="0.0"/>
+          <attvalue for="triangles" value="0"/>
+          <attvalue for="degree" value="0"/>
+          <attvalue for="modularity class" value="1"/>
+        </attvalues>
+        <viz:size value="5.2564106"/>
+        <viz:position x="435.79968" y="-80.670616"/>
+        <viz:color r="0" g="199" b="255"/>
+      </node>
+      <node id="east-asians" label="East Asians">
+        <attvalues>
+          <attvalue for="clustering" value="0.0"/>
+          <attvalue for="triangles" value="0"/>
+          <attvalue for="degree" value="0"/>
+          <attvalue for="modularity class" value="1"/>
+        </attvalues>
+        <viz:size value="5.820513"/>
+        <viz:position x="430.7134" y="-110.64333"/>
+        <viz:color r="0" g="199" b="255"/>
+      </node>
+      <node id="philippines" label="Philippines">
+        <attvalues>
+          <attvalue for="clustering" value="0.0"/>
+          <attvalue for="triangles" value="0"/>
+          <attvalue for="degree" value="0"/>
+          <attvalue for="modularity class" value="0"/>
+        </attvalues>
+        <viz:size value="4.6923075"/>
+        <viz:position x="466.5132" y="-34.30246"/>
+        <viz:color r="226" g="139" b="255"/>
+      </node>
+      <node id="austronesean-expansion" label="Austronesean expansion">
+        <attvalues>
+          <attvalue for="clustering" value="0.0"/>
+          <attvalue for="triangles" value="0"/>
+          <attvalue for="degree" value="0"/>
+          <attvalue for="modularity class" value="5"/>
+        </attvalues>
+        <viz:size value="12.589744"/>
+        <viz:position x="418.482" y="-19.39038"/>
+        <viz:color r="0" g="175" b="135"/>
+      </node>
+      <node id="korea" label="Korea">
+        <attvalues>
+          <attvalue for="clustering" value="0.0"/>
+          <attvalue for="triangles" value="0"/>
+          <attvalue for="degree" value="0"/>
+          <attvalue for="modularity class" value="0"/>
+        </attvalues>
+        <viz:size value="3.5641026"/>
+        <viz:position x="474.5602" y="-76.80598"/>
+        <viz:color r="226" g="139" b="255"/>
+      </node>
+      <node id="japan" label="Japan">
+        <attvalues>
+          <attvalue for="clustering" value="0.0"/>
+          <attvalue for="triangles" value="0"/>
+          <attvalue for="degree" value="0"/>
+          <attvalue for="modularity class" value="0"/>
+        </attvalues>
+        <viz:size value="3.5641026"/>
+        <viz:position x="455.41464" y="-64.375786"/>
+        <viz:color r="226" g="139" b="255"/>
+      </node>
+      <node id="polynesia" label="Polynesia">
+        <attvalues>
+          <attvalue for="clustering" value="0.0"/>
+          <attvalue for="triangles" value="0"/>
+          <attvalue for="degree" value="0"/>
+          <attvalue for="modularity class" value="0"/>
+        </attvalues>
+        <viz:size value="5.820513"/>
+        <viz:position x="481.39627" y="39.618538"/>
+        <viz:color r="226" g="139" b="255"/>
+      </node>
+      <node id="hawaii" label="Hawaii">
+        <attvalues>
+          <attvalue for="clustering" value="0.0"/>
+          <attvalue for="triangles" value="0"/>
+          <attvalue for="degree" value="0"/>
+          <attvalue for="modularity class" value="0"/>
+        </attvalues>
+        <viz:size value="4.6923075"/>
+        <viz:position x="515.7725" y="32.5259"/>
+        <viz:color r="226" g="139" b="255"/>
+      </node>
+      <node id="madagascar" label="Madagascar">
+        <attvalues>
+          <attvalue for="clustering" value="0.0"/>
+          <attvalue for="triangles" value="0"/>
+          <attvalue for="degree" value="0"/>
+          <attvalue for="modularity class" value="0"/>
+        </attvalues>
+        <viz:size value="5.2564106"/>
+        <viz:position x="507.52176" y="-60.323982"/>
+        <viz:color r="226" g="139" b="255"/>
+      </node>
+      <node id="malay-peninsula" label="Malay peninsula">
+        <attvalues>
+          <attvalue for="clustering" value="0.0"/>
+          <attvalue for="triangles" value="0"/>
+          <attvalue for="degree" value="0"/>
+          <attvalue for="modularity class" value="0"/>
+        </attvalues>
+        <viz:size value="3.0"/>
+        <viz:position x="444.5621" y="-25.443396"/>
+        <viz:color r="226" g="139" b="255"/>
+      </node>
+      <node id="new-caledonia" label="New Caledonia">
+        <attvalues>
+          <attvalue for="clustering" value="0.0"/>
+          <attvalue for="triangles" value="0"/>
+          <attvalue for="degree" value="0"/>
+          <attvalue for="modularity class" value="0"/>
+        </attvalues>
+        <viz:size value="4.1282053"/>
+        <viz:position x="362.0977" y="63.020607"/>
+        <viz:color r="226" g="139" b="255"/>
+      </node>
+      <node id="blacks" label="Blacks">
+        <attvalues>
+          <attvalue for="clustering" value="0.0"/>
+          <attvalue for="triangles" value="0"/>
+          <attvalue for="degree" value="0"/>
+          <attvalue for="modularity class" value="1"/>
+        </attvalues>
+        <viz:size value="6.948718"/>
+        <viz:position x="303.30197" y="-119.589264"/>
+        <viz:color r="0" g="199" b="255"/>
+      </node>
+      <node id="khoisan" label="Khoisan">
+        <attvalues>
+          <attvalue for="clustering" value="0.0"/>
+          <attvalue for="triangles" value="0"/>
+          <attvalue for="degree" value="0"/>
+          <attvalue for="modularity class" value="1"/>
+        </attvalues>
+        <viz:size value="5.2564106"/>
+        <viz:position x="361.5302" y="-82.43717"/>
+        <viz:color r="0" g="199" b="255"/>
+      </node>
+      <node id="pygmies" label="Pygmies">
+        <attvalues>
+          <attvalue for="clustering" value="0.0"/>
+          <attvalue for="triangles" value="0"/>
+          <attvalue for="degree" value="0"/>
+          <attvalue for="modularity class" value="1"/>
+        </attvalues>
+        <viz:size value="6.3846154"/>
+        <viz:position x="337.47214" y="-105.139824"/>
+        <viz:color r="0" g="199" b="255"/>
+      </node>
+      <node id="south-saharan-africa" label="South-Saharan Africa">
+        <attvalues>
+          <attvalue for="clustering" value="0.0"/>
+          <attvalue for="triangles" value="0"/>
+          <attvalue for="degree" value="0"/>
+          <attvalue for="modularity class" value="0"/>
+        </attvalues>
+        <viz:size value="3.0"/>
+        <viz:position x="280.32892" y="-136.16988"/>
+        <viz:color r="226" g="139" b="255"/>
+      </node>
+      <node id="bantu" label="Bantu">
+        <attvalues>
+          <attvalue for="clustering" value="0.0"/>
+          <attvalue for="triangles" value="0"/>
+          <attvalue for="degree" value="0"/>
+          <attvalue for="modularity class" value="1"/>
+        </attvalues>
+        <viz:size value="6.3846154"/>
+        <viz:position x="260.10333" y="-125.53892"/>
+        <viz:color r="0" g="199" b="255"/>
+      </node>
+    </nodes>
+    <edges>
+      <edge id="1497" source="societal-advantage" target="people" weight="2.0"/>
+      <edge id="1498" source="societal-advantage" target="climate" weight="2.0"/>
+      <edge id="1499" source="societal-advantage" target="irrigation"/>
+      <edge id="1500" source="societal-advantage" target="pizarro"/>
+      <edge id="1501" source="societal-advantage" target="technology" weight="8.0"/>
+      <edge id="1502" source="societal-advantage" target="germs" weight="3.0"/>
+      <edge id="1503" source="humans" target="europe"/>
+      <edge id="1504" source="humans" target="africa"/>
+      <edge id="1505" source="humans" target="asia"/>
+      <edge id="1506" source="europe" target="africa" weight="3.0"/>
+      <edge id="1507" source="europe" target="asia" weight="2.0"/>
+      <edge id="1508" source="africa" target="asia" weight="2.0"/>
+      <edge id="1509" source="humans" target="oceania" weight="2.0"/>
+      <edge id="1510" source="humans" target="animals" weight="2.0"/>
+      <edge id="1511" source="oceania" target="animals" weight="2.0"/>
+      <edge id="1512" source="humans" target="americas" weight="2.0"/>
+      <edge id="1514" source="americas" target="animals"/>
+      <edge id="1515" source="oceania" target="societal-advantage"/>
+      <edge id="1516" source="oceania" target="new-zealand"/>
+      <edge id="1517" source="oceania" target="chatham"/>
+      <edge id="1518" source="oceania" target="war"/>
+      <edge id="1519" source="oceania" target="isolation" weight="2.0"/>
+      <edge id="1520" source="oceania" target="size"/>
+      <edge id="1521" source="societal-advantage" target="population" weight="3.0"/>
+      <edge id="1522" source="societal-advantage" target="isolation" weight="5.0"/>
+      <edge id="1524" source="societal-advantage" target="new-zealand" weight="2.0"/>
+      <edge id="1525" source="societal-advantage" target="chatham" weight="2.0"/>
+      <edge id="1526" source="societal-advantage" target="size" weight="3.0"/>
+      <edge id="1527" source="new-zealand" target="chatham" weight="2.0"/>
+      <edge id="1528" source="new-zealand" target="war"/>
+      <edge id="1531" source="chatham" target="war"/>
+      <edge id="1533" source="chatham" target="size"/>
+      <edge id="1534" source="oceania" target="food-production" weight="2.0"/>
+      <edge id="1536" source="food-production" target="animals" weight="3.0"/>
+      <edge id="1537" source="food-production" target="population" weight="4.0"/>
+      <edge id="1538" source="food-production" target="climate" weight="4.0"/>
+      <edge id="1539" source="societal-advantage" target="americas" weight="6.0"/>
+      <edge id="1541" source="societal-advantage" target="war"/>
+      <edge id="1542" source="societal-advantage" target="population-displacement" weight="3.0"/>
+      <edge id="1543" source="societal-advantage" target="europe" weight="11.0"/>
+      <edge id="1544" source="americas" target="pizarro"/>
+      <edge id="1545" source="americas" target="incas" weight="3.0"/>
+      <edge id="1546" source="americas" target="europe" weight="6.0"/>
+      <edge id="1547" source="americas" target="war"/>
+      <edge id="1548" source="europe" target="war" weight="2.0"/>
+      <edge id="1549" source="europe" target="technology" weight="3.0"/>
+      <edge id="1550" source="pizarro" target="incas" weight="4.0"/>
+      <edge id="1551" source="incas" target="germs"/>
+      <edge id="1555" source="pizarro" target="germs"/>
+      <edge id="1556" source="pizarro" target="europe"/>
+      <edge id="1560" source="societal-advantage" target="central-government" weight="3.0"/>
+      <edge id="1563" source="europe" target="central-government" weight="2.0"/>
+      <edge id="1564" source="americas" target="technology" weight="3.0"/>
+      <edge id="1565" source="americas" target="central-government"/>
+      <edge id="1566" source="societal-advantage" target="writing" weight="2.0"/>
+      <edge id="1569" source="europe" target="writing" weight="2.0"/>
+      <edge id="1572" source="americas" target="writing" weight="3.0"/>
+      <edge id="1576" source="food-production" target="plants"/>
+      <edge id="1577" source="population" target="technology"/>
+      <edge id="1578" source="population" target="central-government" weight="2.0"/>
+      <edge id="1579" source="population" target="writing"/>
+      <edge id="1580" source="population" target="religion"/>
+      <edge id="1581" source="population" target="societies" weight="4.0"/>
+      <edge id="1582" source="animals" target="plants"/>
+      <edge id="1583" source="animals" target="war"/>
+      <edge id="2001" source="transportation" target="animals"/>
+      <edge id="1585" source="plants" target="clothes"/>
+      <edge id="1586" source="food-production" target="plant-domestication"/>
+      <edge id="1587" source="food-production" target="animal-domestication"/>
+      <edge id="1588" source="food-production" target="founder-package" weight="2.0"/>
+      <edge id="1589" source="founder-package" target="plant-domestication"/>
+      <edge id="1590" source="founder-package" target="animal-domestication"/>
+      <edge id="1591" source="founder-package" target="fertile-crescent"/>
+      <edge id="1592" source="founder-package" target="china"/>
+      <edge id="1593" source="founder-package" target="mesoamerica"/>
+      <edge id="1594" source="founder-package" target="south-american-andes"/>
+      <edge id="1595" source="founder-package" target="eastern-us"/>
+      <edge id="1596" source="founder-package" target="sahel-zone"/>
+      <edge id="1597" source="founder-package" target="west-africa"/>
+      <edge id="1598" source="founder-package" target="ethiopia"/>
+      <edge id="1599" source="founder-package" target="new-guinea"/>
+      <edge id="1600" source="fertile-crescent" target="china"/>
+      <edge id="1601" source="africa" target="sahel-zone" weight="2.0"/>
+      <edge id="1602" source="africa" target="west-africa" weight="2.0"/>
+      <edge id="1603" source="africa" target="ethiopia" weight="2.0"/>
+      <edge id="1604" source="americas" target="mesoamerica"/>
+      <edge id="1605" source="americas" target="south-american-andes"/>
+      <edge id="1606" source="americas" target="eastern-us"/>
+      <edge id="1607" source="oceania" target="new-guinea" weight="2.0"/>
+      <edge id="1609" source="food-production" target="cultural-diffusion" weight="2.0"/>
+      <edge id="1610" source="food-production" target="population-displacement" weight="2.0"/>
+      <edge id="1611" source="food-production" target="technology" weight="2.0"/>
+      <edge id="1612" source="food-production" target="germs" weight="2.0"/>
+      <edge id="1613" source="societal-advantage" target="food-production" weight="4.0"/>
+      <edge id="1614" source="societal-advantage" target="early-food-production" weight="4.0"/>
+      <edge id="1616" source="food-production" target="egypt"/>
+      <edge id="1617" source="food-production" target="europe" weight="2.0"/>
+      <edge id="1618" source="food-production" target="south-africa" weight="2.0"/>
+      <edge id="1619" source="food-production" target="south-west-us"/>
+      <edge id="1621" source="food-production" target="california" weight="2.0"/>
+      <edge id="1622" source="food-production" target="north-west-america"/>
+      <edge id="1623" source="food-production" target="argentine"/>
+      <edge id="1624" source="food-production" target="australia" weight="3.0"/>
+      <edge id="1625" source="food-production" target="siberia"/>
+      <edge id="1626" source="hunter-gatherers" target="california"/>
+      <edge id="1627" source="hunter-gatherers" target="north-west-america"/>
+      <edge id="1628" source="hunter-gatherers" target="argentine"/>
+      <edge id="1629" source="hunter-gatherers" target="australia"/>
+      <edge id="1630" source="hunter-gatherers" target="siberia"/>
+      <edge id="1633" source="food-production" target="isolation" weight="3.0"/>
+      <edge id="1635" source="food-production" target="hunter-gatherers"/>
+      <edge id="1639" source="isolation" target="california"/>
+      <edge id="1640" source="isolation" target="south-africa"/>
+      <edge id="1641" source="isolation" target="australia" weight="2.0"/>
+      <edge id="1642" source="plant-domestication" target="fertile-crescent"/>
+      <edge id="1643" source="founder-package" target="plants"/>
+      <edge id="1644" source="founder-package" target="clothes"/>
+      <edge id="1645" source="founder-package" target="nutrition"/>
+      <edge id="1648" source="food-production" target="africa"/>
+      <edge id="1649" source="food-production" target="americas"/>
+      <edge id="1651" source="food-production" target="asia"/>
+      <edge id="1652" source="plant-domestication" target="plants"/>
+      <edge id="1654" source="societal-advantage" target="environment" weight="3.0"/>
+      <edge id="1656" source="societal-advantage" target="food-production-inequalities"/>
+      <edge id="1657" source="food-production-inequalities" target="fertile-crescent" weight="2.0"/>
+      <edge id="1658" source="food-production-inequalities" target="new-guinea"/>
+      <edge id="1659" source="food-production-inequalities" target="south-west-us"/>
+      <edge id="1660" source="food-production-inequalities" target="environment" weight="5.0"/>
+      <edge id="1661" source="food-production-inequalities" target="people" weight="3.0"/>
+      <edge id="1664" source="food-production-inequalities" target="climate"/>
+      <edge id="1665" source="food-production-inequalities" target="mesoamerica"/>
+      <edge id="1666" source="food-production-inequalities" target="size"/>
+      <edge id="1667" source="environment" target="fertile-crescent"/>
+      <edge id="1668" source="environment" target="mesoamerica"/>
+      <edge id="1669" source="environment" target="size"/>
+      <edge id="1672" source="people" target="hunter-gatherers"/>
+      <edge id="1673" source="people" target="new-guinea"/>
+      <edge id="1674" source="new-guinea" target="animal-domestication"/>
+      <edge id="1675" source="new-guinea" target="plant-domestication"/>
+      <edge id="1676" source="new-guinea" target="environment"/>
+      <edge id="1677" source="environment" target="plants" weight="2.0"/>
+      <edge id="1678" source="environment" target="animals" weight="2.0"/>
+      <edge id="1680" source="food-production-inequalities" target="eastern-us"/>
+      <edge id="1683" source="eastern-us" target="plant-domestication"/>
+      <edge id="1684" source="eastern-us" target="animal-domestication"/>
+      <edge id="1686" source="food-production-inequalities" target="plants"/>
+      <edge id="1687" source="food-production-inequalities" target="animals"/>
+      <edge id="1688" source="food-production-inequalities" target="animal-domestication"/>
+      <edge id="1689" source="animal-domestication" target="europe"/>
+      <edge id="1690" source="animal-domestication" target="africa"/>
+      <edge id="1691" source="animal-domestication" target="americas"/>
+      <edge id="1692" source="animal-domestication" target="oceania"/>
+      <edge id="1693" source="animal-domestication" target="humans"/>
+      <edge id="1694" source="animal-domestication" target="societal-advantage"/>
+      <edge id="1695" source="animal-domestication" target="asia"/>
+      <edge id="1699" source="food-production-spread" target="geography"/>
+      <edge id="1700" source="food-production-spread" target="europe"/>
+      <edge id="1701" source="food-production-spread" target="africa"/>
+      <edge id="1702" source="food-production-spread" target="americas"/>
+      <edge id="1703" source="food-production-spread" target="oceania"/>
+      <edge id="1704" source="food-production-spread" target="climate"/>
+      <edge id="1705" source="food-production-spread" target="asia"/>
+      <edge id="1708" source="europe" target="oceania"/>
+      <edge id="1710" source="africa" target="americas"/>
+      <edge id="1711" source="africa" target="oceania"/>
+      <edge id="1713" source="americas" target="oceania"/>
+      <edge id="1714" source="americas" target="asia"/>
+      <edge id="1715" source="oceania" target="asia"/>
+      <edge id="1716" source="germs" target="war"/>
+      <edge id="1717" source="germs" target="americas" weight="2.0"/>
+      <edge id="1718" source="germs" target="europe" weight="3.0"/>
+      <edge id="1719" source="germs" target="africa" weight="2.0"/>
+      <edge id="1720" source="germs" target="oceania"/>
+      <edge id="1722" source="germs" target="animals"/>
+      <edge id="1723" source="germs" target="population"/>
+      <edge id="1726" source="germs" target="asia"/>
+      <edge id="1732" source="writing" target="central-government"/>
+      <edge id="1733" source="writing" target="isolation"/>
+      <edge id="1735" source="writing" target="africa"/>
+      <edge id="1736" source="writing" target="oceania"/>
+      <edge id="1737" source="technology-adoption" target="cultural-diffusion"/>
+      <edge id="1738" source="technology-adoption" target="population-displacement"/>
+      <edge id="1739" source="technology-adoption" target="isolation"/>
+      <edge id="1740" source="technology-adoption" target="europe"/>
+      <edge id="1741" source="technology-adoption" target="asia"/>
+      <edge id="1743" source="technology" target="mesoamerica"/>
+      <edge id="1744" source="technology" target="south-american-andes"/>
+      <edge id="1745" source="mesoamerica" target="south-american-andes"/>
+      <edge id="1747" source="societies" target="bands"/>
+      <edge id="1748" source="bands" target="new-guinea"/>
+      <edge id="1749" source="bands" target="americas"/>
+      <edge id="1750" source="tribes" target="food-production"/>
+      <edge id="1751" source="tribes" target="societies"/>
+      <edge id="1752" source="chiefdoms" target="societies"/>
+      <edge id="1753" source="chiefdoms" target="religion"/>
+      <edge id="1754" source="chiefdoms" target="central-government"/>
+      <edge id="1755" source="chiefdoms" target="technology"/>
+      <edge id="1756" source="states" target="societies"/>
+      <edge id="1757" source="states" target="war"/>
+      <edge id="1758" source="states" target="religion"/>
+      <edge id="1759" source="war" target="religion"/>
+      <edge id="1760" source="states" target="writing"/>
+      <edge id="1763" source="societies" target="war"/>
+      <edge id="1764" source="new-guinea" target="food-production"/>
+      <edge id="1765" source="new-guinea" target="climate"/>
+      <edge id="1766" source="new-guinea" target="population"/>
+      <edge id="1767" source="new-guinea" target="hunter-gatherers"/>
+      <edge id="1768" source="new-guinea" target="technology"/>
+      <edge id="1769" source="new-guinea" target="animals"/>
+      <edge id="1770" source="new-guinea" target="indonesia"/>
+      <edge id="1775" source="population" target="bands"/>
+      <edge id="1776" source="population" target="tribes"/>
+      <edge id="1777" source="australia" target="environment"/>
+      <edge id="1778" source="australia" target="climate"/>
+      <edge id="1780" source="australia" target="indonesia"/>
+      <edge id="1781" source="australia" target="technology"/>
+      <edge id="1782" source="australia" target="animals"/>
+      <edge id="1784" source="australia" target="new-guinea"/>
+      <edge id="1785" source="australia" target="societal-advantage" weight="2.0"/>
+      <edge id="1786" source="isolation" target="technology" weight="2.0"/>
+      <edge id="1789" source="food-production" target="environment"/>
+      <edge id="1790" source="isolation" target="population"/>
+      <edge id="1794" source="oceania" target="australia"/>
+      <edge id="1796" source="oceania" target="tasmania"/>
+      <edge id="1800" source="societal-advantage" target="cultural-diffusion"/>
+      <edge id="1802" source="cultural-diffusion" target="language"/>
+      <edge id="1803" source="cultural-diffusion" target="genetics"/>
+      <edge id="1804" source="population-displacement" target="language" weight="3.0"/>
+      <edge id="1805" source="population-displacement" target="genetics" weight="3.0"/>
+      <edge id="1806" source="new-guinea" target="germs"/>
+      <edge id="1807" source="new-guinea" target="europe" weight="2.0"/>
+      <edge id="1808" source="new-guinea" target="isolation"/>
+      <edge id="1809" source="new-guinea" target="cultural-diffusion"/>
+      <edge id="1810" source="australia" target="europe" weight="2.0"/>
+      <edge id="1811" source="australia" target="population-displacement"/>
+      <edge id="1812" source="australia" target="war" weight="2.0"/>
+      <edge id="1813" source="australia" target="founder-package"/>
+      <edge id="1816" source="societal-advantage" target="new-guinea"/>
+      <edge id="1821" source="china" target="language" weight="2.0"/>
+      <edge id="1822" source="china" target="population-displacement" weight="3.0"/>
+      <edge id="1823" source="china" target="east-asians" weight="2.0"/>
+      <edge id="1824" source="china" target="philippines"/>
+      <edge id="1825" source="china" target="indonesia"/>
+      <edge id="1826" source="china" target="austronesean-expansion" weight="3.0"/>
+      <edge id="1827" source="austronesean-expansion" target="language" weight="4.0"/>
+      <edge id="1828" source="austronesean-expansion" target="philippines"/>
+      <edge id="1829" source="austronesean-expansion" target="indonesia"/>
+      <edge id="1830" source="china" target="food-production"/>
+      <edge id="1831" source="china" target="writing" weight="2.0"/>
+      <edge id="1832" source="china" target="technology"/>
+      <edge id="1833" source="china" target="germs"/>
+      <edge id="1834" source="china" target="early-food-production" weight="2.0"/>
+      <edge id="1839" source="china" target="korea"/>
+      <edge id="1840" source="china" target="japan"/>
+      <edge id="1841" source="china" target="cultural-diffusion"/>
+      <edge id="1844" source="hunter-gatherers" target="east-asians"/>
+      <edge id="1845" source="language" target="east-asians"/>
+      <edge id="1846" source="language" target="korea"/>
+      <edge id="1847" source="language" target="japan"/>
+      <edge id="1849" source="population-displacement" target="austronesean-expansion" weight="2.0"/>
+      <edge id="1850" source="population-displacement" target="east-asians" weight="2.0"/>
+      <edge id="1853" source="austronesean-expansion" target="east-asians" weight="2.0"/>
+      <edge id="1854" source="austronesean-expansion" target="genetics" weight="2.0"/>
+      <edge id="1856" source="austronesean-expansion" target="polynesia"/>
+      <edge id="1857" source="austronesean-expansion" target="hawaii"/>
+      <edge id="1858" source="austronesean-expansion" target="madagascar" weight="2.0"/>
+      <edge id="1859" source="austronesean-expansion" target="chatham"/>
+      <edge id="1863" source="austronesean-expansion" target="technology"/>
+      <edge id="1864" source="austronesean-expansion" target="food-production"/>
+      <edge id="1865" source="austronesean-expansion" target="australia"/>
+      <edge id="1866" source="austronesean-expansion" target="new-guinea"/>
+      <edge id="1867" source="austronesean-expansion" target="malay-peninsula"/>
+      <edge id="1870" source="societal-advantage" target="austronesean-expansion"/>
+      <edge id="1871" source="societal-advantage" target="east-asians"/>
+      <edge id="1872" source="societal-advantage" target="philippines"/>
+      <edge id="1873" source="societal-advantage" target="indonesia"/>
+      <edge id="1874" source="societal-advantage" target="language"/>
+      <edge id="1875" source="societal-advantage" target="genetics"/>
+      <edge id="1880" source="population-displacement" target="philippines"/>
+      <edge id="1881" source="population-displacement" target="indonesia"/>
+      <edge id="1883" source="europe" target="new-zealand"/>
+      <edge id="1884" source="europe" target="hawaii"/>
+      <edge id="1885" source="europe" target="new-caledonia"/>
+      <edge id="1886" source="europe" target="polynesia"/>
+      <edge id="1887" source="europe" target="climate"/>
+      <edge id="1888" source="polynesia" target="new-zealand"/>
+      <edge id="1889" source="polynesia" target="hawaii"/>
+      <edge id="1890" source="polynesia" target="new-caledonia"/>
+      <edge id="1891" source="climate" target="new-zealand"/>
+      <edge id="1892" source="climate" target="hawaii"/>
+      <edge id="1893" source="climate" target="new-caledonia"/>
+      <edge id="1895" source="societal-advantage" target="polynesia"/>
+      <edge id="1901" source="societal-advantage" target="geography" weight="3.0"/>
+      <edge id="1906" source="europe" target="early-food-production" weight="2.0"/>
+      <edge id="1907" source="europe" target="environment"/>
+      <edge id="1908" source="europe" target="isolation"/>
+      <edge id="1909" source="europe" target="geography" weight="2.0"/>
+      <edge id="1913" source="americas" target="early-food-production"/>
+      <edge id="1914" source="americas" target="environment"/>
+      <edge id="1915" source="americas" target="isolation"/>
+      <edge id="1916" source="americas" target="geography"/>
+      <edge id="1924" source="africa" target="blacks"/>
+      <edge id="1925" source="africa" target="khoisan"/>
+      <edge id="1926" source="africa" target="pygmies"/>
+      <edge id="1997" source="transportation" target="animals"/>
+      <edge id="1928" source="africa" target="austronesean-expansion"/>
+      <edge id="1929" source="blacks" target="south-saharan-africa"/>
+      <edge id="1996" source="transportation" target="animals"/>
+      <edge id="1931" source="madagascar" target="blacks"/>
+      <edge id="1932" source="pygmies" target="hunter-gatherers"/>
+      <edge id="1933" source="pygmies" target="south-africa"/>
+      <edge id="1934" source="population-displacement" target="blacks"/>
+      <edge id="1935" source="population-displacement" target="khoisan" weight="2.0"/>
+      <edge id="1936" source="population-displacement" target="pygmies" weight="2.0"/>
+      <edge id="1939" source="blacks" target="khoisan"/>
+      <edge id="1940" source="blacks" target="pygmies"/>
+      <edge id="1941" source="blacks" target="language"/>
+      <edge id="1942" source="blacks" target="genetics"/>
+      <edge id="1943" source="africa" target="founder-package"/>
+      <edge id="1947" source="africa" target="fertile-crescent"/>
+      <edge id="1948" source="africa" target="china"/>
+      <edge id="1949" source="africa" target="animals"/>
+      <edge id="1950" source="madagascar" target="cultural-diffusion"/>
+      <edge id="1951" source="madagascar" target="technology"/>
+      <edge id="1952" source="madagascar" target="food-production"/>
+      <edge id="1954" source="population-displacement" target="bantu"/>
+      <edge id="1957" source="societal-advantage" target="bantu"/>
+      <edge id="1958" source="societal-advantage" target="pygmies"/>
+      <edge id="1959" source="societal-advantage" target="khoisan"/>
+      <edge id="1962" source="west-africa" target="ethiopia"/>
+      <edge id="1963" source="west-africa" target="sahel-zone"/>
+      <edge id="1964" source="bantu" target="pygmies"/>
+      <edge id="1965" source="bantu" target="khoisan"/>
+      <edge id="1966" source="bantu" target="technology"/>
+      <edge id="1967" source="bantu" target="food-production"/>
+      <edge id="1968" source="south-africa" target="bantu"/>
+      <edge id="1969" source="south-africa" target="climate"/>
+      <edge id="1971" source="societal-advantage" target="africa"/>
+      <edge id="1978" source="europe" target="size"/>
+      <edge id="1979" source="africa" target="early-food-production"/>
+      <edge id="1980" source="africa" target="geography"/>
+      <edge id="1981" source="africa" target="size"/>
+      <edge id="1987" source="societal-advantage" target="fertile-crescent"/>
+      <edge id="1989" source="fertile-crescent" target="europe"/>
+      <edge id="1991" source="societal-advantage" target="china"/>
+      <edge id="1993" source="europe" target="china"/>
+      <edge id="1995" source="china" target="central-government"/>
+      <edge id="1998" source="technology" target="americas"/>
+      <edge id="1999" source="technology" target="mesoamerica"/>
+      <edge id="2000" source="technology" target="south-american-andes"/>
+    </edges>
+  </graph>
+</gexf>
