@@ -15,25 +15,14 @@
 <meta name="twitter:description" content="{{ abstract }}" />
 <meta name="twitter:image" content="https://www.navigateobscurity.com/static/worlddata/images/death-social.jpg" />
 
-<!-- We use d3 libraries to load data -->
-<script src="https://d3js.org/d3-dsv.v1.min.js"></script>
-<script src="https://d3js.org/d3-fetch.v1.min.js"></script>
-
-<!-- We use highcharts for visualizations -->
-<script src="https://code.highcharts.com/highcharts.js"></script>
-<script src="https://code.highcharts.com/highcharts-more.js"></script>
-<script src="https://code.highcharts.com/maps/modules/map.js"></script>
-<script src="https://code.highcharts.com/modules/treemap.js"></script>
-<script src="https://code.highcharts.com/modules/data.js"></script>
-<script src="https://code.highcharts.com/mapdata/custom/world.js"></script>
-
-<script src={% static "worlddata/js/chart-helpers.js" %}></script>
+<script type="module" src={% static "worlddata/js/chartOptions.js" %}></script>
 
 <link rel='stylesheet' type="text/css" href={% static "worlddata/css/highcharts.css" %}>
 <link rel='stylesheet' type="text/css" href={% static "worlddata/css/data.css" %}>
 
 <!-- using defer to load after the html -->
-<script type="text/javascript" src={% static "worlddata/js/death.js" %} defer></script> 
+<script type="module" src={% static "worlddata/js/death.js" %} defer></script> 
+
 {% endblock %}
 
 {% block content %}
@@ -183,15 +172,15 @@
 <!-- Death dashboard -->
 <section>
     <h2 class="section-title">The Death Dashboard</h2>
-    <div class="container limited-width">
+    <div id="death_intro" class="container limited-width">
         <div class="q-o-n-container" style="display: flex;">
             <div class="tabs-container">
-                <div class="tab-button tab-active" onclick="tabClickHandler(this)">Questions</div>
-                <div class="tab-button" onclick="tabClickHandler(this)">Obscurity</div>
-                <div class="tab-button" onclick="tabClickHandler(this)">Navigation</div>
+                <div class="tab-button tab-active">Questions</div>
+                <div class="tab-button">Obscurity</div>
+                <div class="tab-button">Navigation</div>
             </div>
             <div class="text-container">
-                <div id="death_dash_questions">
+                <div class="dash-questions">
                     <p style="margin-top: 0;">
                         Half of the following statements are false. Find out which by interacting with the
                         visualisation dashboard below.
@@ -221,7 +210,7 @@
                         </li>
                     </ul>
                 </div>
-                <div id="death_dash_obscurity" class="hide">
+                <div class="hide dash-obscurity">
                     <p style="margin-top: 0;">
                         Attributing a single cause of death for each death happening is a useful simplification that
                         allows us to compare causes of death and get a bird’s eye view of what is killing us. But it
@@ -250,7 +239,7 @@
 
                     </p>
                 </div>
-                <div id="death_dash_navigation" class="hide">
+                <div class="hide dash-navigation">
                     <p style="margin-top: 0;">
                         All data presented here is for 2019.
                     </p>

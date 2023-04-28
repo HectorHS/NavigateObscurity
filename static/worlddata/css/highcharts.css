@@ -714,6 +714,15 @@ g.highcharts-series,
   background-image: linear-gradient(to top right, rgba(255, 0, 0, 0) 0%, #394646 50%);
 }
 
+.highcharts-color-54 {
+  fill: rgba(23, 28, 28, 0.2);
+  stroke: rgba(23, 28, 28, 0.2);
+}
+
+.legend-color-54 {
+  background-image: linear-gradient(to top right, rgba(255, 0, 0, 0) 0%, rgba(23, 28, 28, 0.2) 50%);
+}
+
 /* Default gradients */
 #gradient-0 stop {
   stop-color: #B3DBFF;
@@ -1360,6 +1369,18 @@ g.highcharts-series,
 }
 
 #gradient-53 stop[offset="1"] {
+  stop-opacity: 0.5;
+}
+
+#gradient-54 stop {
+  stop-color: rgba(23, 28, 28, 0.2);
+}
+
+#gradient-54 stop[offset="0"] {
+  stop-opacity: 1;
+}
+
+#gradient-54 stop[offset="1"] {
   stop-opacity: 0.5;
 }
 
@@ -2011,6 +2032,18 @@ g.highcharts-series,
   stop-opacity: 0.1;
 }
 
+#gradient-area-54 stop {
+  stop-color: rgba(23, 28, 28, 0.2);
+}
+
+#gradient-area-54 stop[offset="0"] {
+  stop-opacity: 1;
+}
+
+#gradient-area-54 stop[offset="1"] {
+  stop-opacity: 0.1;
+}
+
 .highcharts-area {
   fill-opacity: 0.75;
   stroke-width: 0;
@@ -2392,17 +2425,19 @@ circle.highcharts-legend-nav-inactive {
 }
 
 .highcharts-button text {
-  fill: #dffcff;
+  fill: #dffcff !important;
 }
 
 .highcharts-button-hover {
   transition: fill 0ms;
-  fill: #dffcff;
+  fill: #1A94FF;
   stroke: #cccccc;
+  cursor: pointer;
 }
 
 .highcharts-button-hover text {
-  fill: #2e3838;
+  fill: #dffcff;
+  font-weight: bold;
 }
 
 .highcharts-button-pressed {
@@ -2523,11 +2558,11 @@ input.highcharts-range-selector {
 }
 
 .highcharts-zoom-in text {
-  transform: translateX(3px) translateY(-2px);
+  transform: translateX(0.5px) translateY(-1.5px);
 }
 
 .highcharts-zoom-out text {
-  transform: translateX(4px) translateY(-2px);
+  transform: translateX(0.5px) translateY(-1.5px);
 }
 
 .highcharts-coloraxis {
@@ -2917,4 +2952,8 @@ text.highcharts-drilldown-data-label,
 
 .highcharts-data-label-color-52 text {
   fill: #2e3838;
+}
+
+.highcharts-breadcrumbs-separator text {
+  fill: #dffcff;
 }

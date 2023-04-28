@@ -14,27 +14,13 @@
 <meta name="twitter:description" content="{{ abstract }}" />
 <meta name="twitter:image" content="https://www.navigateobscurity.com/static/worlddata/images/covid19-social.jpg" />
 
-<!-- We use d3 libraries to load data -->
-<script src="https://d3js.org/d3-dsv.v1.min.js"></script>
-<script src="https://d3js.org/d3-fetch.v1.min.js"></script>
-
-<!-- We use highcharts for visualizations -->
-<script src="https://code.highcharts.com/highcharts.js"></script>
-<script src="https://code.highcharts.com/maps/modules/map.js"></script>
-<script src="https://code.highcharts.com/modules/series-label.js"></script>
-
-<script src="https://code.highcharts.com/mapdata/custom/world.js"></script>
-
-<script src={% static "worlddata/js/chart-helpers.js" %}></script>
+<script type="module" src={% static "worlddata/js/chartOptions.js" %}></script>
 
 <link rel='stylesheet' type="text/css" href={% static "worlddata/css/highcharts.css" %}>
 <link rel='stylesheet' type="text/css" href={% static "worlddata/css/data.css" %}>
 
-<script src="https://kraaden.github.io/autocomplete/autocomplete.js"></script>
-<link rel="stylesheet" type="text/css" href="https://kraaden.github.io/autocomplete/autocomplete.css">
-
 <!-- using defer to load after the html -->
-<script type="text/javascript" src={% static "worlddata/js/covid19.js" %} defer></script> 
+<script type="module" src={% static "worlddata/js/covid19.js" %} defer></script> 
 
 {% endblock %}
 
@@ -45,16 +31,16 @@
 
 <!-- Viz 1 - Dashboard with map, area and bars -->
 <section>
-    <div class="container limited-width">
+    <div id="covid_intro" class="container limited-width">
         <p id="last_update"> <strong>Last update:</strong></p>
         <div class="q-o-n-container" style="display: flex;">
             <div class="tabs-container">
-                <div class="tab-button tab-active" onclick="tabClickHandler(this)">Questions</div>
-                <div class="tab-button" onclick="tabClickHandler(this)">Obscurity</div>
-                <div class="tab-button" onclick="tabClickHandler(this)">Navigation</div>
+                <div class="tab-button tab-active">Questions</div>
+                <div class="tab-button">Obscurity</div>
+                <div class="tab-button">Navigation</div>
             </div>
             <div class="text-container">
-                <div id="covid_dash_questions">
+                <div class="dash-questions">
                     <p style="margin-top: 0;">
                         Half of the following statements are false. Find out which by interacting with the
                         visualisation dashboard below.
@@ -89,7 +75,7 @@
                         </li>
                     </ul>
                 </div>
-                <div id="covid_dash_obscurity" class="hide">
+                <div class="hide dash-obscurity">
                     <p style="margin-top: 0;">
                         Cases numbers are the confirmed cases, so the number of people who have tested positive to covid-19. Of course,
                         since the beginning of the pandemic, we know that this number is not accurate, as not everyone gets tested and /
@@ -127,7 +113,7 @@
                         have any relevant data at all.
                     </p>
                     </div>
-                <div id="covid_dash_navigation" class="hide">
+                <div class="hide dash-navigation">
                     <p style="margin-top: 0;">
                         Although not all data matches, it still gives us an indication of what is going on. So, play with the parameters and
                         use the map to get a rough idea of what is going on around the world. Different policies and metrics make it harder

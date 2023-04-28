@@ -19,16 +19,11 @@
 <script src="https://d3js.org/d3-dsv.v1.min.js"></script>
 <script src="https://d3js.org/d3-fetch.v1.min.js"></script>
 
-<!-- We use highcharts for visualizations -->
-<script src="https://code.highcharts.com/highcharts.js"></script>
-
-<script src={% static "worlddata/js/chart-helpers.js" %}></script>
-
 <link rel='stylesheet' type="text/css" href={% static "worlddata/css/data.css" %}>
 <link rel='stylesheet' type="text/css" href={% static "worlddata/css/highcharts.css" %}>
-
+<script type="module" src={% static "worlddata/js/chartOptions.js" %}></script>
 <!-- using defer to load after the html -->
-<script type="text/javascript" src={% static "worlddata/js/biodiversity.js" %} defer></script> 
+<script type="module" src={% static "worlddata/js/biodiversity.js" %} defer></script> 
 {% endblock %}
 
 {% block content %}

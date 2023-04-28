@@ -16,30 +16,19 @@
 <meta name="twitter:image"
     content="https://www.navigateobscurity.com/static/worlddata/images/sustainability-social.jpg" />
 
-<!-- We use d3 libraries to load data -->
-<script src="https://d3js.org/d3-dsv.v1.min.js"></script>
-<script src="https://d3js.org/d3-fetch.v1.min.js"></script>
-
-<!-- We use highcharts for visualizations -->
-<script src="https://code.highcharts.com/highcharts.js"></script>
-<script src="https://code.highcharts.com/maps/modules/map.js"></script>
-
-<script src="https://code.highcharts.com/mapdata/custom/world.js"></script>
-
-<script src={% static "worlddata/js/chart-helpers.js" %}></script>
+<script type="module" src={% static "worlddata/js/chartOptions.js" %}></script>
 
 <link rel='stylesheet' type="text/css" href={% static "worlddata/css/highcharts.css" %}>
 <link rel='stylesheet' type="text/css" href={% static "worlddata/css/data.css" %}>
 
 <!-- using defer to load after the html -->
-<script type="text/javascript" src={% static "worlddata/js/sustainability.js" %} defer></script> 
+<script type="module" src={% static "worlddata/js/sustainability.js" %} defer></script> 
 {% endblock %}
 
 {% block content %}
 <section class="banner-container">
     <h1 class="header-title-banner">{{title}}</h1>
 </section>
-
 <section>
     <div class="container limited-width">
         <p>

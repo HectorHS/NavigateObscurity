@@ -113,9 +113,9 @@ $highcharts-button-pressed-background: $highlight-color-10 !default;
 $highcharts-button-pressed-border: $neutral-color-20 !default;
 $highcharts-button-pressed-text: $neutral-color-80 !default;
 
-$highcharts-button-hover-background: $neutral-color-80 !default;
+$highcharts-button-hover-background: $bright-blue !default;
 $highcharts-button-hover-border: $neutral-color-20 !default;
-$highcharts-button-hover-text: $neutral-color-3 !default;
+$highcharts-button-hover-text: $neutral-color-100 !default;
 
 // Navigator
 $navigator-series-fill: $highlight-color-80 !default;
@@ -683,15 +683,17 @@ circle.highcharts-legend-nav-inactive {
     transition: fill 250ms;
 }
 .highcharts-button text {
-    fill: $highcharts-button-text;
+    fill: $highcharts-button-text !important;
 }
 .highcharts-button-hover {
     transition: fill 0ms;
     fill: $highcharts-button-hover-background;
     stroke: $highcharts-button-hover-border;
+    cursor: pointer;
 }
 .highcharts-button-hover text {
     fill: $highcharts-button-hover-text;
+    font-weight: bold;
 }
 .highcharts-button-pressed {
     font-weight: bold;
@@ -788,10 +790,10 @@ input.highcharts-range-selector {
     text-align: center;
 }
 .highcharts-zoom-in text {
-    transform: translateX(3px) translateY(-2px);
+    transform: translateX(0.5px) translateY(-1.5px);
 }
 .highcharts-zoom-out text {
-    transform: translateX(4px) translateY(-2px);
+    transform: translateX(0.5px) translateY(-1.5px);
 }
 .highcharts-coloraxis {
     stroke-width: 0;
@@ -960,4 +962,7 @@ text.highcharts-drilldown-data-label,
     .highcharts-data-label-color-#{$i - 1} text {
         fill: map-get($text-colors, ($i - 1));
     }
+}
+.highcharts-breadcrumbs-separator text {
+    fill: $neutral-color-100;
 }
