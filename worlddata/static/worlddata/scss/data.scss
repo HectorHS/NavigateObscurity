@@ -14,6 +14,9 @@ figure {
 .dark-bg {
   background-color: $dark-grey;
 }
+.saturated {
+  filter: saturate(0.2);
+}
 .data-box-container {
   display: grid;
   grid-gap: 50px;
@@ -427,55 +430,184 @@ figure {
   }
 }
 // Dashboard
-.dashboard-title {
-  font-size: 120%;
-  font-weight: 600;
-}
-.dashboard-side-40 {
-  width: 100%;
-  @media only screen and (min-width: $tablet-breakpoint) {
-    width: 40%;
+.dashboard {
+  .dashboard-level-1 {
+    .dashboard-side-40 {
+      border-radius: 30px 30px 0 0;
+      z-index: 1;
+      background-image: linear-gradient(to bottom left, $bright-blue-opacity 7%, $mid-grey 50%);
+    }
   }
-}
-.dashboard-side-60 {
-  width: 100%;
-  @media only screen and (min-width: $tablet-breakpoint) {
-    width: 60%;
+  .dashboard-level-2 {
+    .dashboard-side-60 {
+      @media only screen and (min-width: $tablet-breakpoint) {
+        border-radius: 30px 0px 0px 30px;
+        background-image: linear-gradient(to top right, $bright-blue-opacity 7%, $mid-grey 50%);
+      }
+    }
+    .dashboard-side-40 {
+      background-image: linear-gradient(to top right, $bright-blue-opacity 7%, $mid-grey 50%);
+      @media only screen and (min-width: $tablet-breakpoint) {
+        border-radius: 0 0 30px 0;
+        background-image: none;
+      }
+    }
   }
-}
-.dashboard-side {
-  background-color: $mid-grey;
-}
-.dashboard-container-vertical {
-  display: flex;
-  flex-direction: column;
-  @media only screen and (min-width: $tablet-breakpoint) {
-    flex-direction: row;
+
+  .radio-container {
+    display: flex;
+    align-self: flex-start;
   }
-}
-.dashboard-container-horizontal {
-  display: flex;
-  flex-direction: column;
-}
-.chart-container-dashboard {
-  display: flex;
-  flex-direction: column;
-  background-image: url(../images/spinner-small.gif);
-  background-repeat: no-repeat;
-  background-position: center;
-  .highcharts-title {
-    font-size: 1.2em;
+
+  .dashboard-title {
+    width: inherit;
+    font-size: 120%;
+    font-weight: 600;
   }
-}
-.dark-bg {
-  height: inherit;
-  @media only screen and (min-width: $tablet-breakpoint) {
-    border-radius: 0 0 30px 0;
+
+  .dashboard-side-40 {
+    width: 100%;
+
+    @media only screen and (min-width: $tablet-breakpoint) {
+      width: 40%;
+    }
   }
-}
-.chart-title {
-  font-size: 120%;
-  font-weight: 500;
+
+  .dashboard-side-60 {
+    width: 100%;
+
+    @media only screen and (min-width: $tablet-breakpoint) {
+      width: 60%;
+    }
+  }
+
+  .dashboard-side {
+    background-color: $mid-grey;
+  }
+
+  .dashboard-container-vertical {
+    display: flex;
+    flex-direction: column;
+
+    @media only screen and (min-width: $tablet-breakpoint) {
+      flex-direction: row;
+    }
+  }
+
+  .dashboard-container-horizontal {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .chart-container-dashboard {
+    display: flex;
+    flex-direction: column;
+    background-image: url(../images/spinner-small.gif);
+    background-repeat: no-repeat;
+    background-position: center;
+
+    .highcharts-title {
+      font-size: 1.2em;
+    }
+  }
+
+  .dark-bg {
+    height: inherit;
+
+    @media only screen and (min-width: $tablet-breakpoint) {
+      border-radius: 0 0 30px 0;
+    }
+  }
+
+  .chart-title {
+    font-size: 120%;
+    font-weight: 500;
+  }
+  .chart-filters {
+    text-align: inherit;
+    margin-bottom: 0;
+  }
+  .dashboard-command {
+    width: inherit;
+    color: $bright-blue;
+    font-size: 80%;
+    margin-bottom: 5px;
+    &:before {
+      content: "\2BC6";
+      color: $bright-blue;
+      margin-right: 5px;
+    }
+  }
+  .dashboard-profile {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: flex-start;
+
+    .dashboard-profile-country {
+      display: flex;
+      width: 100%;
+      justify-content: flex-end;
+      color: $bright-blue;
+      font-size: 140%;
+      font-weight: 500;
+      margin: 0;
+      padding-right: 20px;
+      margin-bottom: 10px;
+      text-align: start;
+      @media (min-width: $desktop-breakpoint) {
+        text-align: end;
+      }
+      p {
+        margin: 0;
+        border-style: solid;
+        border-radius: 0 30px;
+        border-width: 2px;
+        padding: 5px 20px;
+        margin-right: -20px;
+        margin-top: -10px;
+      }
+    }
+
+    .profile-container {
+      flex-direction: row;
+      display: flex;
+      justify-content: space-around;
+      width: 100%;
+      margin-bottom: 10px;
+      @media only screen and (min-width: $tablet-breakpoint) {
+        flex-direction: column;
+      }
+      @media only screen and (min-width: $desktop-breakpoint) {
+        flex-direction: row;
+      }
+      .profile-column2 {
+        margin-left: 30px;
+        @media only screen and (min-width: $tablet-breakpoint) {
+          margin-left: 0;
+        }
+        @media only screen and (min-width: $desktop-breakpoint) {
+          margin-left: 30px;
+        }
+      }
+  
+      .profile-item {
+        display: flex;
+        .profile-label {
+        }
+        .profile-title {
+          font-size: 110%;
+          font-weight: 600;
+          text-decoration-line: underline;
+        }
+        .profile-value {
+          // color: $bright-blue;
+          font-weight: 600;
+          margin-left: 10px;
+        }
+      }
+    }
+  }
 }
 
 // chart types
@@ -596,93 +728,13 @@ figure {
 }
 
 .covid-dashboard {
-  .covid-dashboard-options {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    align-items: flex-start;
-  }
-  .chart-filters {
-    text-align: inherit;
-    margin-bottom: 0;
-  }
-  .covid-dashboard-country {
-    display: flex;
-    width: 100%;
-    justify-content: flex-end;
-    color: $bright-blue;
-    font-size: 140%;
-    font-weight: 500;
-    margin: 0;
-    padding-right: 20px;
-    margin-bottom: 10px;
-    text-align: start;
-    @media (min-width: $desktop-breakpoint) {
-      text-align: end;
-    }
-    p {
-      margin: 0;
-      border-style: solid;
-      border-radius: 0 30px;
-      border-width: 2px;
-      padding: 5px 20px;
-      margin-right: -20px;
-      margin-top: -10px;
-    }
-  }
-  .radio-container {
-    min-width: 140px;
-    width: 100%;
-    display: flex;
-    justify-content: flex-end;
-    label {
-      padding-right: 20px;
-    }
-  }
-  
-  .profile-container {
-    flex-direction: row;
-    display: flex;
-    justify-content: space-around;
-    width: 100%;
-    margin-bottom: 10px;
-    @media only screen and (min-width: $tablet-breakpoint) {
-      flex-direction: column;
-    }
-    @media only screen and (min-width: $desktop-breakpoint) {
-      flex-direction: row;
-    }
-    .profile-column2 {
-      margin-left: 30px;
-      @media only screen and (min-width: $tablet-breakpoint) {
-        margin-left: 0;
-      }
-      @media only screen and (min-width: $desktop-breakpoint) {
-        margin-left: 30px;
-      }
-    }
-
-    .profile-item {
-      display: flex;
-      .profile-label {
-      }
-      .profile-title {
-        font-size: 110%;
-        font-weight: 600;
-        text-decoration-line: underline;
-      }
-      .profile-value {
-        // color: $bright-blue;
-        font-weight: 600;
-        margin-left: 10px;
-      }
-    }
-  }
   .covid-map {
     height: 100%;
     .selected-element {
-      fill: black !important;
-      color: black !important;
+      fill: #000 !important;
+      color: #000 !important;
+      stroke: $bright-blue !important;
+      stroke-width: 20px !important;
     }
   }
   
@@ -736,27 +788,6 @@ figure {
       opacity: 0.4;
     }
   }
-  .dashboard-level-1 {
-    .dashboard-side-40 {
-      border-radius: 30px 30px 0px 0;
-      z-index: 1;
-      background-image: linear-gradient(to bottom left, $bright-blue-opacity 7%, $mid-grey 50%);
-    }
-  }
-  .dashboard-level-2 {
-    .covid-deaths-tests-container {
-      @media only screen and (min-width: $tablet-breakpoint) {
-        border-radius: 30px 0px 0px 30px;
-        background-image: linear-gradient(to top right, $bright-blue-opacity 7%, $mid-grey 50%);
-      }
-    }
-    .dashboard-side-40 {
-      background-image: linear-gradient(to top right, $bright-blue-opacity 7%, $mid-grey 50%);
-      @media only screen and (min-width: $tablet-breakpoint) {
-        background-image: none;
-      }
-    }
-  }
   .covid-deaths-tests {
     height: 350px;
     .highcharts-data-label {
@@ -767,26 +798,92 @@ figure {
       margin-right: 0px;
     }
   }
-  .dashboard-command {
-    margin-left: 20px;
-    &:before {
-      content: "\2BC8";
-      color: $almost-white;
-      margin-right: 5px;
-    }
-  }
-  .dark-bg {
-    height: inherit;
-    @media only screen and (min-width: $tablet-breakpoint) {
-      border-radius: 0 0 30px 0;
-    }
-  }
+
   .dashboard-level-2 {
     .dashboard-side-40 {
       border-radius: 0px 0px 30px 30px;
       @media only screen and (min-width: $tablet-breakpoint) {
         border-radius: 0px 0px 30px 0;
       }
+    }
+  }
+}
+
+
+
+.energy-dashboard {
+  .dashboard-profile .profile-container {
+    justify-content: start;
+  }
+  .chart-options .radio-container  {
+    .coal {
+      background-color: nth($colors, 51) !important;
+    }
+    .oil {
+      background-color: nth($colors, 6) !important;
+    }
+    .gas {
+      background-color: nth($colors, 10) !important;
+    }
+    .nuclear{
+      background-color: nth($colors, 18) !important;
+    }
+    .hydro {
+      background-color: nth($colors, 2) !important;
+    }
+    .renewables {
+      background-color: nth($colors, 25) !important;
+    }
+    .all {
+      background-image: linear-gradient(to bottom left, nth($colors, 2) 20%, nth($colors, 23) 40%, nth($colors, 9) 60%, nth($colors, 31) 80%) !important; 
+    }
+  }
+  .sector-pie {
+    .highcharts-point-level1 {
+      cursor: pointer;
+    }
+  }
+
+  .energy-area {
+    height: 340px;
+    margin-top: 10px;
+    .error {
+      position: absolute;
+      top: 400px;
+      text-align: center;
+      width: 90%;
+      font-size: 130%;
+      @media only screen and (min-width: $tablet-breakpoint) {
+        width: 35%;
+      }
+    }
+  }
+  .energy-sector {
+    height: 400px;
+    // margin-bottom: 20px;
+    .error {
+      position: absolute;
+      bottom: 300px;
+      text-align: center;
+      width: 90%;
+      font-size: 130%;
+      @media only screen and (min-width: $tablet-breakpoint) {
+        width: 35%;
+      }
+    }
+  }
+  .import-bars, .export-bars {
+    height: 400px;
+  }
+  .energy-map {
+    .selected-element {
+      fill: #000 !important;
+      color: #000 !important;
+      stroke: $bright-blue !important;
+      stroke-width: 20px !important;
+    }
+    .highcharts-point {
+      cursor: pointer;
     }
   }
 }
@@ -865,43 +962,8 @@ figure {
 
 // Death
 .death-dashboard {
-  .dashboard-level-1 {
-    .dashboard-side-40 {
-      border-radius: 30px 30px 0 0;
-      z-index: 1;
-      background-image: linear-gradient(to bottom left, $bright-blue-opacity 7%, $mid-grey 50%);
-    }
-  }
-  .dashboard-level-2 {
-    .dashboard-side-60 {
-      @media only screen and (min-width: $tablet-breakpoint) {
-        border-radius: 30px 0px 0px 30px;
-        background-image: linear-gradient(to top right, $bright-blue-opacity 7%, $mid-grey 50%);
-      }
-    }
-    .dashboard-side-40 {
-      background-image: linear-gradient(to top right, $bright-blue-opacity 7%, $mid-grey 50%);
-      @media only screen and (min-width: $tablet-breakpoint) {
-        border-radius: 0 0 30px 0;
-        background-image: none;
-      }
-    }
-  }
-  .dark-bg {
-    height: inherit;
-    @media only screen and (min-width: $tablet-breakpoint) {
-      border-radius: 0 0 30px 0;
-    }
-  }
-  .dashboard-command {
-    color: $bright-blue;
-    font-size: 80%;
-    &:before {
-      content: "\2BC8";
-      color: $bright-blue;
-      margin-right: 5px;
-    }
-  }
+  
+  
   .parameters-container {
     display: flex;
     margin-bottom: 10px;
@@ -946,14 +1008,20 @@ figure {
     }
   }
   .radio-container {
-    display: flex;
-    justify-content: flex-end;
+    align-self: flex-end;
   }
   .death-tree {
+    
     height: 300px;
+    .highcharts-button-box  {
+      fill: none;
+    }
   }
   .death-map {
     height: 100%;
+    .highcharts-point {
+      cursor:pointer;
+    }
   }
   .death-pyramid {
     height: 420px;
@@ -986,8 +1054,10 @@ figure {
     }
   }
   .selected-element {
-    fill: $orange !important;
-    color: $orange !important;
+    fill: #000 !important;
+    color: #000 !important;
+    stroke: $orange !important;
+    stroke-width: 20px !important;
   }
   .dashboard-border-container-sm {
     box-shadow: 2px 2px 8px $navbar-color;
