@@ -1,5 +1,3 @@
-import Highcharts from "https://code.highcharts.com/es-modules/masters/highcharts.src.js";
-import HighMaps from "https://code.highcharts.com/maps/es-modules/masters/highmaps.src.js";
 // highcharts global oprions
 Highcharts.setOptions({
     chart: {
@@ -1598,15 +1596,6 @@ Highcharts.setOptions({
                 offset: 1
             }]
         },
-    },
-    credits: {
-        enabled: false
-    },
-});
-
-HighMaps.setOptions({
-    chart: {
-        styledMode: true,
     },
     credits: {
         enabled: false

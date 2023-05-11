@@ -1,20 +1,5 @@
-// for loading data
-import "https://d3js.org/d3-dsv.v1.min.js";
-import "https://d3js.org/d3-fetch.v1.min.js";
 // helpers
 import { fCapital, addDropdown, getCountryCode, numberFormatter, getIndexColor, addSlider, createLegend } from "./chartHelper.js";
-// for visualising data
-import Highcharts from "https://code.highcharts.com/es-modules/masters/highcharts.src.js";
-import HighMaps from "https://code.highcharts.com/maps/es-modules/masters/highmaps.src.js";
-// For treemap functionality - no need for types mapping
-import "https://code.highcharts.com/es-modules/masters/modules/treemap.src.js";
-// For packed bubbles functionality - no need for types mapping
-import "https://code.highcharts.com/es-modules/masters/highcharts-more.src.js";
-// Find modules here: https://unpkg.com/browse/highcharts@8.2.0/es-modules/masters/modules/
-// For sankey functionality - no need for types mapping
-import "https://code.highcharts.com/es-modules/masters/modules/sankey.src.js";
-import "https://code.highcharts.com/es-modules/masters/modules/dependency-wheel.src.js";
-const topology = await fetch('https://code.highcharts.com/mapdata/custom/world-eckert3-highres.geo.json').then(response => response.json());
 let migration_map_path = "/static/worlddata/csv/migration-map.csv";
 let migration_bubbles_path = "/static/worlddata/csv/migration-bubbles.csv";
 let migration_wheel_path = "/static/worlddata/csv/migration-wheel.csv";
@@ -34,7 +19,6 @@ let migrationMap = d3.csv(migration_map_path)
     let income = "All";
     let percentage = 0;
     let container_class = ".migration-map";
-    // let initial_data = [];
     function get_data() {
         let new_data = [];
         // let per = percentage);
@@ -68,11 +52,10 @@ let migrationMap = d3.csv(migration_map_path)
     }
     let initial_data = get_data();
     // Initiate the chart
-    let chart = HighMaps.mapChart({
+    let chart = Highcharts.mapChart({
         chart: {
             height: 500,
             renderTo: 'migration_map',
-            map: topology,
         },
         title: {
             text: undefined
@@ -118,6 +101,7 @@ let migrationMap = d3.csv(migration_map_path)
         },
         series: [{
                 type: 'map',
+                mapData: Highcharts.maps['custom/world'],
                 colorIndex: 2,
                 data: initial_data,
                 joinBy: ['iso-a3', 'country'], // first var: type of geographical data, second: data column name

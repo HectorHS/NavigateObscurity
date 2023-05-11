@@ -1,25 +1,11 @@
-// for loading data
-import "https://d3js.org/d3-dsv.v1.min.js";
-import "https://d3js.org/d3-fetch.v1.min.js";
-declare let d3: any; // Basically saying to typescript there will be a d3 when you need it, trust me
+// Basically saying to typescript these will be here when you need them, trust me
+declare let d3: any; 
+declare let Highcharts: any;
 
 // helpers
 import { fCapital, addDropdown, getCountryCode, numberFormatter, getIndexColor, addTabClickEvents } from "./chartHelper.js";
 
-// for visualising data
-import Highcharts from "https://code.highcharts.com/es-modules/masters/highcharts.src.js";
-import HighMaps from "https://code.highcharts.com/maps/es-modules/masters/highmaps.src.js";
-// For treemap functionality - no need for types mapping
-import "https://code.highcharts.com/es-modules/masters/modules/treemap.src.js";
-// For packed bubbles functionality - no need for types mapping
-import "https://code.highcharts.com/es-modules/masters/highcharts-more.src.js";
-// Find modules here: https://unpkg.com/browse/highcharts@8.2.0/es-modules/masters/modules/
-
 import * as Worlddata from "./worlddataInterfaces.js";
-
-const topology = await fetch(
-    'https://code.highcharts.com/mapdata/custom/world-eckert3-highres.geo.json'
-).then(response => response.json());
 
 let life_map_path = "/static/worlddata/csv/life-map.csv";
 let old_death_path = "/static/worlddata/csv/death-old.csv";
@@ -64,11 +50,10 @@ let LifeMap = d3.csv(life_map_path)
         initial_data = get_data();
 
         // Initiate the chart
-        var chart = HighMaps.mapChart( {
+        var chart = Highcharts.mapChart( {
             chart: {
                 height: 500,
                 renderTo: 'life_map',
-                map: topology,
             },
             title: {
                 text: undefined
@@ -92,10 +77,10 @@ let LifeMap = d3.csv(life_map_path)
                 ],
             },
             tooltip: {
-                formatter: function (this: Highcharts.TooltipFormatterContextObject):string {
+                formatter: function (this: Worlddata.TooltipFormatterContextObject):string {
                     let title = fCapital(this.key!);
                     // let value:number = (<HighMaps.MapPoint>this.point).value!;
-                    let value:number = this.point.value!;
+                    let value:number = this.point!.value!;
                     let text:string = "";
                     if (parameter == "Fertility rate") {
                         let val = numberFormatter(value);
@@ -120,7 +105,8 @@ let LifeMap = d3.csv(life_map_path)
             },
             series: [{
                 type: 'map',
-                colorIndex: 999,
+                mapData: Highcharts.maps['custom/world'],
+                colorIndex: 2,
                 colorKey: 'value',
                 data: initial_data,
                 joinBy: ['iso-a3', 'country'], // first var: type of geographical data, second: data column name
@@ -155,7 +141,7 @@ let LifeMap = d3.csv(life_map_path)
         }
         // adjust color stops according to parameter
         function updateColorStops():void {
-            let updatedColorAxis:HighMaps.ColorAxisOptions = {};
+            let updatedColorAxis:Worlddata.ColorAxisOptions = {};
             if (parameter == "Fertility rate") {
                 updatedColorAxis = {
                     tickInterval: 1,
@@ -272,9 +258,9 @@ let DeathDash = Promise.all([
         }
         return new_data;
     }
-    function get_map_data():Highcharts.SeriesMapOptions[] {
+    function get_map_data():Worlddata.Mapseries[]  {
         let new_data:Worlddata.MapData[] = [];
-        let new_series:Highcharts.SeriesMapOptions[] = [];
+        let new_series:Worlddata.Mapseries[]  = [];
         if (cause == "All causes") {
             for (let caus of ALL_MAIN_CAUSES) {
                 for (let row of files[3]) {
@@ -399,7 +385,7 @@ let DeathDash = Promise.all([
             map_chart.update({
                 plotOptions: { map: { colorAxis: false } }
             }, false);
-            let newColorAxis:HighMaps.ColorAxisOptions = {
+            let newColorAxis:Worlddata.ColorAxisOptions = {
                 visible: false
             }
             map_chart.update({
@@ -416,7 +402,7 @@ let DeathDash = Promise.all([
             }, false);
 
 
-            let newColorAxis:HighMaps.ColorAxisOptions = {
+            let newColorAxis:Worlddata.ColorAxisOptions = {
                 visible: true,
                 minColor: '#222a2a',
                 maxColor: maxMapColor,
@@ -480,10 +466,10 @@ let DeathDash = Promise.all([
             text: undefined
         },
         tooltip: {
-            formatter: function (this: Highcharts.TooltipFormatterContextObject):string {
+            formatter: function (this: Worlddata.TooltipFormatterContextObject):string {
                 let title = fCapital(this.key!);
-                let deaths = numberFormatter(this.point.value!);
-                let perc = this.point.value! / ((this.point as Highcharts.Point).series as Worlddata.TreemapSeries).tree!.val! * 100;
+                let deaths = numberFormatter(this.point!.value!);
+                let perc = this.point!.value! / this.point!.series!.tree!.val! * 100;
                 let per = numberFormatter(perc);
                 return '<text><span style="font-size: 1.1em"><strong>' + title + '</strong></span><br>Total number of deaths: ' + deaths + '<br> Share of deaths: ' + per + '%</text>';
             },
@@ -496,17 +482,17 @@ let DeathDash = Promise.all([
         plotOptions: {
             treemap: {
                 dataLabels: {
-                    formatter: function (this: Highcharts.TooltipFormatterContextObject):string {
+                    formatter: function (this: Worlddata.TooltipFormatterContextObject):string {
                         let boxWidth = 1;
                         let boxHeight = 1;
                         if (this.point.shapeArgs) {
-                            boxWidth = this.point.shapeArgs!.width;
-                            boxHeight = this.point.shapeArgs!.height;
+                            boxWidth = this.point.shapeArgs!.width!;
+                            boxHeight = this.point.shapeArgs!.height!;
                         }
                         
                         let maxLineHeight = (Math.floor(boxHeight / 20)) - 1;
                         let maxLineLength = boxWidth / 8;
-                        let nameParts = this.point.name.split(" ");
+                        let nameParts = this.point.name!.split(" ");
                         let name = [];
                         let newLine = "";
                         let oldLine = "";
@@ -557,7 +543,7 @@ let DeathDash = Promise.all([
             },
             series: {
                 events: {
-                    click: function (e):boolean {
+                    click: function (e:any):boolean {
                         if ((e.point as Worlddata.TreemapPoint).node!.level! < 2) {
                             cause = e.point.name;
                             location = "Global";
@@ -604,12 +590,11 @@ let DeathDash = Promise.all([
             data: initial_treemap_data
         }],
     });
-    let map_chart = HighMaps.mapChart({
+    let map_chart = Highcharts.mapChart({
         chart: {
             renderTo: 'death_map',
-            map: topology,
             events: {
-                click: function (e) {
+                click: function (e:any) {
                     location = "Global";
                     innerLocation = "Global";
                     locationElement.innerHTML = location;
@@ -632,11 +617,12 @@ let DeathDash = Promise.all([
             map: {
                 allAreas: false,
                 joinBy: ['iso-a3', 'country'],
-                colorAxis: false
+                colorAxis: false,
+                mapData: Highcharts.maps['custom/world'],
             },
             series: {
                 events: {
-                    click: function (e) {
+                    click: function (e:any) {
                         location = e.point.name;
                         innerLocation = (e.point as any).originalName;
                         locationElement.innerHTML = location;
@@ -655,11 +641,11 @@ let DeathDash = Promise.all([
             visible: false
         },
         tooltip: {
-            formatter: function ():string {
+            formatter: function (this: Worlddata.TooltipFormatterContextObject):string {
                 var title = fCapital(this.key!);
                 var per = numberFormatter(this.point.value!);
                 if (cause == "All causes") {
-                    return '<text><span style="font-size: 1.1em"><strong>' + title + '</strong></span><br>Top cause of death: ' + this.series.name + '<br>Percentage of total deaths: ' + per + '%</text>';
+                    return '<text><span style="font-size: 1.1em"><strong>' + title + '</strong></span><br>Top cause of death: ' + this.series!.name + '<br>Percentage of total deaths: ' + per + '%</text>';
                 } else {
                     return '<text><span style="font-size: 1.1em"><strong>' + title + '</strong></span><br>Percentage of total deaths: ' + per + '%</text>';
                 }
@@ -676,8 +662,8 @@ let DeathDash = Promise.all([
             type: 'bar',
             renderTo: 'death_pyramid',
             events: {
-                click: function () {
-                    age = this.hoverPoint!.category as string;
+                click: function (this:Worlddata.ClickEvent) {
+                    age = this.hoverPoint!.category!;
                     ageElement.innerHTML = age;
                     setPyramidBands();
                     treemap_data_update();
@@ -717,8 +703,8 @@ let DeathDash = Promise.all([
                 text: null,
             },
             labels: {
-                formatter: function ():string {
-                    return numberFormatter(Math.abs(this.value as number)) + "%";
+                formatter: function (this: Worlddata.TooltipFormatterContextObject):string {
+                    return numberFormatter(Math.abs(this.value!)) + "%";
                 }
             },
             accessibility: {
@@ -730,7 +716,7 @@ let DeathDash = Promise.all([
             series: {
                 stacking: 'normal',
                 events: {
-                    legendItemClick: function (e):boolean {
+                    legendItemClick: function ():boolean {
                         // to disable default effect of hiding series
                         return false;
                     },
@@ -738,7 +724,7 @@ let DeathDash = Promise.all([
             }
         },
         tooltip: {
-            formatter: function ():string {
+            formatter: function (this: Worlddata.TooltipFormatterContextObject):string {
                 return '<strong>Aged from ' + this.x + '</strong><br/>' +
                     'Male, total number of deaths: ' + numberFormatter((this.points![0].point as Worlddata.BarData).totalValue!) + '<br>' +
                     'Male, share of deaths: ' + Math.abs(this.points![0].y!) + '%<br>' +
@@ -771,8 +757,8 @@ let DeathDash = Promise.all([
         tooltip: {
             useHTML: true,
             headerFormat: '',
-            pointFormatter: function ():string {
-                let sName = fCapital(this.name);
+            pointFormatter: function (this: Worlddata.TooltipFormatterContextObject):string {
+                let sName = fCapital(this.name!);
                 let text = "Associated with " + numberFormatter(this.value!) + " deaths";
                 return '<text><span style="font-size:1.1em"><strong>' + sName + '</strong></span><br>' + text + '</text>';
             },
@@ -1074,10 +1060,10 @@ var oldDeathTree = d3.csv(old_death_path)
                 text: undefined
             },
             tooltip: {
-                formatter: function (this: Highcharts.TooltipFormatterContextObject) {
+                formatter: function (this: Worlddata.TooltipFormatterContextObject):string {
                     var title = fCapital(this.key!);
                     var deaths = numberFormatter(this.point.value!);
-                    let perc = this.point.value! / ((this.point as Highcharts.Point).series as Worlddata.TreemapSeries).tree!.val! * 100;
+                    let perc = this.point.value! / this.point.series!.tree!.val! * 100;
                     var per = numberFormatter(perc);
                     return '<text><span style="font-size: 1.1em"><strong>' + title + '</strong></span><br>Total number of deaths: ' + deaths + '<br> Percentage: ' + per + '%</text>';
                 },

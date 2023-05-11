@@ -1,26 +1,40 @@
-import Highcharts from "https://code.highcharts.com/es-modules/masters/highcharts.src.js";
-
-// These are to bypass incomple Highcharts typescript wiring
-export interface TreemapTree {
-    val?: number;
+// Generall
+export interface TooltipFormatterContextObject {
+    key?: string;
+    name?: string;
+    percentage?: number;
+    point: PointOptions;
+    points?: PointOptions[];
+    series?: TooltipSeries;
+    total?: number;
+    value?: number;
+    x?: number | string;
+    y?: number;
 }
-export interface TreemapSeries extends Highcharts.Series {
 
-    tree?: TreemapTree;
+// Chart options
+export interface ColorAxisOptions {
+    endOnTick?: boolean;
+    max?: number;
+    maxColor?: string;
+    min?: number;
+    minColor?: string;
+    startOnTick?: boolean;
+    stops?: Array<[number, string]>;
+    tickInterval?: number;
+    visible?: boolean;
+}
+export interface XAxisOptions {
+    categories?: string[];
+    labels?:LabelOptions;
+    tickInterval?: number;
+    title?: TitleOptions;
+}
 
-    setRootNode?: Function;
-    
-}
-export interface SankeySeries extends Highcharts.Series {
-
-    nodes?: Highcharts.SankeyNodeObject[];
-    
-}
-export interface TreemapNode {
-    level?: number;
-}
-export interface TreemapPoint extends Highcharts.Point {
-    node?: TreemapNode;
+// Events
+export interface ClickEvent {
+    hoverPoint?: PointOptions;
+    point?: PointOptions;
 }
 export interface RootNodeEvent {
     newRootId?: string;
@@ -30,89 +44,129 @@ export interface RootNodeEvent {
     type?: string;
 }
 
-// The data input we use for each chart type
-export interface BarData {
-    y: number; 
-    
+// Points
+export interface PointOptions {
+    category?: string;
+    name?: string;
+    point?: PointOptions;
+    series?: TreeSeriesOptions;
+    shapeArgs?: ShapeArgsOptions;
+    total?: number;
     totalValue?: number;
+    value?: number;
+    y?: number;
+}
+export interface TreemapPoint extends PointOptions {
+    node?: TreemapNode;
+}
+export interface TreePointOptions extends PointOptions {
+    val?: number;
 }
 
+// Series
+export interface Series {
+    colorIndex?: number;
+    id?: string;
+    name?: string;
+    showInLegend?: boolean;
+}
+export interface AreaSeries extends Series{
+    data: number[];
+    type: 'area';
+}
+export interface BarSeries extends Series {
+    data: BarData[] | number[];
+    type: 'bar';
+}
+export interface Mapseries extends Series {
+    data: MapData[]; 
+    type: "map";
+}
+export interface TreemapSeries extends Series {
+    setRootNode?: Function;
+    tree?: TreemapTree;
+}
+
+// Data
+export interface BarData {
+    totalValue?: number;
+    y: number; 
+}
 export interface BubblesData {
+    absolute?:number;
+    colorIndex: number;
     id: string;
     name: string;
     value: number;
-    colorIndex: number;
-    absolute?:number;
 }
-
 export interface MapData {
-    // ISO-3 code
-    country:string; 
-
-    value:number;
-
-    originalName?: string;
-
-    note?: string;
-
     absolute?: number;
+    country:string; // ISO-3 code
+    id?: string;
+    note?: string;
+    originalName?: string;
+    value:number;
 }
-
-export interface Mapseries {
-    type: "map";
-
-    data: MapData[]; 
-    
-    name: string; 
-    
-    colorIndex?: number; 
-    
-    showInLegend?: boolean;
-}
-
 export interface PieData {
-    
-    id: string;
-    
-    name: string;
-    
-    // value
-    y:number;
-
-    // only for styled mode, color indexes found in variables.scss
     colorIndex: number;
+    id: string;
+    name: string;
+    y:number;
 }
 
 export interface SankeyData {
+    colorIndex?: number;
     from: string;
     to: string;
     weight: number;
-    colorIndex?: number;
 }
 
 export interface ScatterData {
-    
-    name: string; 
-    
-    y: number; 
-    
-    x:number; 
-
-    // only for styled mode, color indexes found in variables.scss
     colorIndex: number;
+    name: string; 
+    x:number; 
+    y: number; 
+}
+
+export interface SunburstData {
+    className?: string;
+    colorIndex?: number; 
+    id: string, 
+    name: string; 
+    parent: string; 
+    value: number; 
 }
 
 export interface TreemapData {
-    id?: string; 
-    
-    name: string; 
-      
-    value: number;
-
-    // optional as child nodes are expected to inherit their color from their parents
     colorIndex?: number;
-
+    id?: string; 
+    name: string; 
     parent?: string; 
+    value: number;
+}
 
-    
+
+// Secondary
+export interface LabelOptions {
+    enabled?: boolean;
+}
+export interface ShapeArgsOptions {
+    height?: number;
+    width?: number;
+}
+export interface TitleOptions {
+    text?: string | undefined;
+}
+export interface TooltipSeries {
+    name?: string;
+    points?: PointOptions[];
+}
+export interface TreemapTree {
+    val?: number;
+}
+export interface TreemapNode {
+    level?: number;
+}
+export interface TreeSeriesOptions {
+    tree?:TreePointOptions;
 }

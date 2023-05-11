@@ -1,12 +1,5 @@
-// for loading data
-import "https://d3js.org/d3-dsv.v1.min.js";
-import "https://d3js.org/d3-fetch.v1.min.js";
 // helpers
 import { fCapital, addDropdown, getCountryCode, numberFormatter, getIndexColor, createLegend } from "./chartHelper.js";
-// for visualising data
-import Highcharts from "https://code.highcharts.com/es-modules/masters/highcharts.src.js";
-import HighMaps from "https://code.highcharts.com/maps/es-modules/masters/highmaps.src.js";
-const topology = await fetch('https://code.highcharts.com/mapdata/custom/world-eckert3-highres.geo.json').then(response => response.json());
 let sustain_map_path = "/static/worlddata/csv/sustainability-map.csv";
 let sustain_area_path = "/static/worlddata/csv/sustainability-area.csv";
 var sustainabilityMap = d3.csv(sustain_map_path)
@@ -43,11 +36,10 @@ var sustainabilityMap = d3.csv(sustain_map_path)
     }
     initial_data = get_data();
     // Initiate the chart
-    let chart = HighMaps.mapChart({
+    let chart = Highcharts.mapChart({
         chart: {
             height: 500,
             renderTo: 'sustain_map',
-            map: topology,
         },
         title: {
             text: undefined
@@ -95,6 +87,7 @@ var sustainabilityMap = d3.csv(sustain_map_path)
         },
         series: [{
                 type: 'map',
+                mapData: Highcharts.maps['custom/world'],
                 colorIndex: 2,
                 data: initial_data,
                 joinBy: ['iso-a3', 'country'], // first var: type of geographical data, second: data column name

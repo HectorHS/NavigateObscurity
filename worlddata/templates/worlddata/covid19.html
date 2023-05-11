@@ -14,10 +14,19 @@
 <meta name="twitter:description" content="{{ abstract }}" />
 <meta name="twitter:image" content="https://www.navigateobscurity.com/static/worlddata/images/covid19-social.jpg" />
 
-<script type="module" src={% static "worlddata/js/chartOptions.js" %}></script>
+<!-- We use d3 libraries to load data -->
+<script src="https://d3js.org/d3-dsv.v1.min.js"></script>
+<script src="https://d3js.org/d3-fetch.v1.min.js"></script>
+
+<!-- We use highcharts for visualizations -->
+<script src="https://code.highcharts.com/highcharts.js"></script>
+<script src="https://code.highcharts.com/maps/modules/map.js"></script>
+<script src="https://code.highcharts.com/modules/series-label.js"></script>
+<script src="https://code.highcharts.com/mapdata/custom/world.js"></script>
 
 <link rel='stylesheet' type="text/css" href={% static "worlddata/css/highcharts.css" %}>
 <link rel='stylesheet' type="text/css" href={% static "worlddata/css/data.css" %}>
+<script type="module" src={% static "worlddata/js/chartOptions.js" %}></script>
 
 <!-- using defer to load after the html -->
 <script type="module" src={% static "worlddata/js/covid19.js" %} defer></script> 
@@ -31,6 +40,7 @@
 
 <!-- Viz 1 - Dashboard with map, area and bars -->
 <section>
+    <div id="migration_map2"></div> 
     <div id="covid_intro" class="container limited-width">
         <p id="last_update"> <strong>Last update:</strong></p>
         <div class="q-o-n-container" style="display: flex;">

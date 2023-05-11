@@ -1,21 +1,11 @@
-// for loading data
-import "https://d3js.org/d3-dsv.v1.min.js";
-import "https://d3js.org/d3-fetch.v1.min.js";
-declare let d3: any; // Basically saying to typescript there will be a d3 when you need it, trust me
+// Basically saying to typescript these will be here when you need them, trust me
+declare let d3: any; 
+declare let Highcharts: any;
 
 // helpers
 import { fCapital, addDropdown, getCountryCode, numberFormatter, getIndexColor, createLegend } from "./chartHelper.js";
 
-// for visualising data
-import Highcharts from "https://code.highcharts.com/es-modules/masters/highcharts.src.js";
-import HighMaps from "https://code.highcharts.com/maps/es-modules/masters/highmaps.src.js";
-
 import * as Worlddata from "./worlddataInterfaces.js";
-
-const topology = await fetch(
-    'https://code.highcharts.com/mapdata/custom/world-eckert3-highres.geo.json'
-).then(response => response.json());
-
 
 let sustain_map_path = "/static/worlddata/csv/sustainability-map.csv";
 let sustain_area_path = "/static/worlddata/csv/sustainability-area.csv";
@@ -58,11 +48,10 @@ var sustainabilityMap = d3.csv(sustain_map_path)
         initial_data = get_data();
 
         // Initiate the chart
-        let chart = HighMaps.mapChart({
+        let chart = Highcharts.mapChart({
             chart: {
                 height: 500,
                 renderTo: 'sustain_map',
-                map: topology,
             },
             title: {
                 text: undefined
@@ -85,7 +74,7 @@ var sustainabilityMap = d3.csv(sustain_map_path)
                 ],
             },
             tooltip: {
-                formatter: function (this: Highcharts.TooltipFormatterContextObject):string {
+                formatter: function (this: Worlddata.TooltipFormatterContextObject):string {
                     let title:string = fCapital(this.key!);
                     let val:number = this.point.value!;
                     let value:string = numberFormatter(val);
@@ -107,6 +96,7 @@ var sustainabilityMap = d3.csv(sustain_map_path)
             },
             series: [{
                 type: 'map',
+                mapData: Highcharts.maps['custom/world'],
                 colorIndex: 2,
                 data: initial_data,
                 joinBy: ['iso-a3', 'country'], // first var: type of geographical data, second: data column name
@@ -157,7 +147,7 @@ var sustainabilityMap = d3.csv(sustain_map_path)
         // To reverse color coding for biocapacity where larger numbers are better
         // And to better centre and distribute colors. Max is always double the average value.
         function updateColorAxis():void {
-            let updatedColorAxis:HighMaps.ColorAxisOptions = {};
+            let updatedColorAxis:Worlddata.ColorAxisOptions = {};
             if (measure == "Biocapacity") {
                 updatedColorAxis = {
                     stops: [
@@ -290,7 +280,7 @@ let sustainabilityArea = d3.csv(sustain_area_path)
         let country = "World";
 
         let container_class = ".sustain-area";
-        let initial_data:Highcharts.SeriesAreaOptions[] = [];
+        let initial_data:Worlddata.AreaSeries[] = [];
 
         let getColor = new Map<string, number>();
         getColor.set('Built up land',50);
@@ -299,8 +289,8 @@ let sustainabilityArea = d3.csv(sustain_area_path)
         getColor.set("Forest land",25);
         getColor.set("Grazing land",20);
 
-        function get_data():Highcharts.SeriesAreaOptions[] {
-            let new_data:Highcharts.SeriesAreaOptions[] = [];
+        function get_data():Worlddata.AreaSeries[] {
+            let new_data:Worlddata.AreaSeries[] = [];
             for (let row of data) {
                 if (row.record == measure && row.country == country) {
                     let year_data:number[] = [];
@@ -349,10 +339,10 @@ let sustainabilityArea = d3.csv(sustain_area_path)
                 },
             },
             tooltip: {
-                formatter: function (this: Highcharts.TooltipFormatterContextObject):string {
+                formatter: function (this: Worlddata.TooltipFormatterContextObject):string {
                     var title = fCapital(this.key!);
                     var value = numberFormatter(this.y!);
-                    var area = fCapital(this.series.name);
+                    var area = fCapital(this.series!.name!);
 
                     return '<text><span style="font-size: 1.1em"><strong>' + title + '</strong></span><br>' + area + ": " + value + ' gha</text>';
                 },

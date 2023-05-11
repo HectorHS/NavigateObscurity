@@ -14,10 +14,21 @@
 <meta name="twitter:description" content="{{ abstract }}" />
 <meta name="twitter:image" content="https://www.navigateobscurity.com/static/worlddata/images/migration-social.jpg" />
 
-<script type="module" src={% static "worlddata/js/chartOptions.js" %}></script>
+<!-- We use d3 libraries to load data -->
+<script src="https://d3js.org/d3-dsv.v1.min.js"></script>
+<script src="https://d3js.org/d3-fetch.v1.min.js"></script>
+
+<!-- We use highcharts for visualizations -->
+<script src="https://code.highcharts.com/highcharts.js"></script>
+<script src="https://code.highcharts.com/maps/modules/map.js"></script>
+<script src="https://code.highcharts.com/mapdata/custom/world.js"></script>
+<script src="https://code.highcharts.com/highcharts-more.js"></script>
+<script src="https://code.highcharts.com/modules/sankey.js"></script>
+<script src="https://code.highcharts.com/modules/dependency-wheel.js"></script>
 
 <link rel='stylesheet' type="text/css" href={% static "worlddata/css/highcharts.css" %}>
 <link rel='stylesheet' type="text/css" href={% static "worlddata/css/data.css" %}>
+<script type="module" src={% static "worlddata/js/chartOptions.js" %}></script>
 
 <!-- using defer to load after the html -->
 <script type="module" src={% static "worlddata/js/migration.js" %} defer></script> 

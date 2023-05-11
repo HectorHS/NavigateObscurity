@@ -1,16 +1,5 @@
-// for loading data
-import "https://d3js.org/d3-dsv.v1.min.js";
-import "https://d3js.org/d3-fetch.v1.min.js";
 // helpers
 import { fCapital, addDropdown, getCountryCode, numberFormatter, getIndexColor, addTabClickEvents } from "./chartHelper.js";
-// for visualising data
-import Highcharts from "https://code.highcharts.com/es-modules/masters/highcharts.src.js";
-import HighMaps from "https://code.highcharts.com/maps/es-modules/masters/highmaps.src.js";
-// For treemap functionality - no need for types mapping
-import "https://code.highcharts.com/es-modules/masters/modules/treemap.src.js";
-// For packed bubbles functionality - no need for types mapping
-import "https://code.highcharts.com/es-modules/masters/highcharts-more.src.js";
-const topology = await fetch('https://code.highcharts.com/mapdata/custom/world-eckert3-highres.geo.json').then(response => response.json());
 let life_map_path = "/static/worlddata/csv/life-map.csv";
 let old_death_path = "/static/worlddata/csv/death-old.csv";
 let death_causes_path = "/static/worlddata/csv/death-causes.csv";
@@ -47,11 +36,10 @@ let LifeMap = d3.csv(life_map_path)
     }
     initial_data = get_data();
     // Initiate the chart
-    var chart = HighMaps.mapChart({
+    var chart = Highcharts.mapChart({
         chart: {
             height: 500,
             renderTo: 'life_map',
-            map: topology,
         },
         title: {
             text: undefined
@@ -107,7 +95,8 @@ let LifeMap = d3.csv(life_map_path)
         },
         series: [{
                 type: 'map',
-                colorIndex: 999,
+                mapData: Highcharts.maps['custom/world'],
+                colorIndex: 2,
                 colorKey: 'value',
                 data: initial_data,
                 joinBy: ['iso-a3', 'country'], // first var: type of geographical data, second: data column name
@@ -573,10 +562,9 @@ let DeathDash = Promise.all([
                 data: initial_treemap_data
             }],
     });
-    let map_chart = HighMaps.mapChart({
+    let map_chart = Highcharts.mapChart({
         chart: {
             renderTo: 'death_map',
-            map: topology,
             events: {
                 click: function (e) {
                     location = "Global";
@@ -601,7 +589,8 @@ let DeathDash = Promise.all([
             map: {
                 allAreas: false,
                 joinBy: ['iso-a3', 'country'],
-                colorAxis: false
+                colorAxis: false,
+                mapData: Highcharts.maps['custom/world'],
             },
             series: {
                 events: {
@@ -698,7 +687,7 @@ let DeathDash = Promise.all([
             series: {
                 stacking: 'normal',
                 events: {
-                    legendItemClick: function (e) {
+                    legendItemClick: function () {
                         // to disable default effect of hiding series
                         return false;
                     },

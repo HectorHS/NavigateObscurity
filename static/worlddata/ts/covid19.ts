@@ -1,21 +1,10 @@
-// for loading data
-import "https://d3js.org/d3-dsv.v1.min.js";
-import "https://d3js.org/d3-fetch.v1.min.js";
-declare let d3: any; // Basically saying to typescript there will be a d3 when you need it, trust me
-
+// Basically saying to typescript these will be here when you need them, trust me
+declare let d3: any; 
+declare let Highcharts: any;
 // helpers
 import { fCapital, addDropdown, getCountryCode, numberFormatter, getIndexColor, addLineBreaks, createLegend, addSlider, addTabClickEvents  } from "./chartHelper.js";
 
-// for visualising data
-import Highcharts from "https://code.highcharts.com/es-modules/masters/highcharts.src.js";
-import HighMaps from "https://code.highcharts.com/maps/es-modules/masters/highmaps.src.js";
-// Find modules here: https://unpkg.com/browse/highcharts@8.2.0/es-modules/masters/modules/
-
 import * as Worlddata from "./worlddataInterfaces.js";
-
-const topology = await fetch(
-    'https://code.highcharts.com/mapdata/custom/world-eckert3-highres.geo.json'
-).then(response => response.json());
 
 let covid_map_path = "/static/worlddata/csv/covid-map.csv";
 let covid_area_path = "/static/worlddata/csv/covid-time.csv";
@@ -328,8 +317,8 @@ let CovidDashboard = Promise.all([
         excess_chart.redraw();
         excess_chart.setSize();
     }
-    function get_map_response_data():Highcharts.SeriesMapOptions[] {
-        let new_data:Highcharts.SeriesMapOptions[] = [];
+    function get_map_response_data():Worlddata.Mapseries[] {
+        let new_data:Worlddata.Mapseries[] = [];
         let lock_data:Worlddata.MapData[] = [];
         let cur_data:Worlddata.MapData[] = [];
         let some_data:Worlddata.MapData[] = [];
@@ -447,7 +436,7 @@ let CovidDashboard = Promise.all([
     let initial_icu_26_data = JSON.parse(JSON.stringify(initial_icu_data));
     initial_icu_26_data = initial_icu_26_data.slice(Math.max(initial_icu_26_data.length - 26, 0));
     setStats();
-    let chartXAxis:Highcharts.XAxisOptions = {
+    let chartXAxis:Worlddata.XAxisOptions = {
         categories: ALL_DATES,
         tickInterval: 20,
         labels: {
@@ -459,15 +448,14 @@ let CovidDashboard = Promise.all([
     };
 
     // Dashboard 1
-    let chart = HighMaps.mapChart({
+    let chart = Highcharts.mapChart({
         chart: {
             renderTo: 'covid_map',
-            map: topology,
             // styledMode: true,
             height: 526,
             marginBottom: 20,
             events: {
-                click: function (e) {
+                click: function () {
                     country = "World";
                     innerCountry = "World";
                     change_dashboard_country_text(country);
@@ -499,9 +487,9 @@ let CovidDashboard = Promise.all([
             ],
         },
         tooltip: {
-            formatter: function (this: Highcharts.TooltipFormatterContextObject):string {
+            formatter: function (this: Worlddata.TooltipFormatterContextObject):string {
                 let title:string = fCapital(this.key as string);
-                let value:number = this.point.value!;
+                let value:number = this.point!.value!;
                 var text = "";
                 if (parameter == "Cases per 1 million (7 day average)") {
                     let val = numberFormatter(value);
@@ -523,11 +511,12 @@ let CovidDashboard = Promise.all([
         },
         series: [{
             type: 'map',
+            mapData: Highcharts.maps['custom/world'],
             colorIndex: 2, // color for tooltip border is grabbed from here
             data: initial_map_data,
             joinBy: ['iso-a3', 'country'], // first var: type of geographical data, second: data column name
             events: {
-                click: function (e) {
+                click: function (e:any) {
                     country = e.point.name;
                     innerCountry = (e.point as any).originalName;
                     change_dashboard_country_text(country);
@@ -557,8 +546,7 @@ let CovidDashboard = Promise.all([
             endOnTick: false
         },
         tooltip: {
-            formatter: function (this: Highcharts.TooltipFormatterContextObject):string {
-                let rate = "N/A";
+            formatter: function (this: Worlddata.TooltipFormatterContextObject):string {
                 let title = fCapital(this.x as string);
                 let cases = numberFormatter(this.points![0].y!);
 
@@ -623,7 +611,7 @@ let CovidDashboard = Promise.all([
             endOnTick: false
         },
         tooltip: {
-            formatter: function (this: Highcharts.TooltipFormatterContextObject):string {
+            formatter: function (this: Worlddata.TooltipFormatterContextObject):string {
                 let title = fCapital(this.x as string);
                 let cases = numberFormatter(this.points![0].y!);
                 return '<b>' + title + '</b><br/>Weekly cases: ' + cases;
@@ -676,7 +664,7 @@ let CovidDashboard = Promise.all([
             endOnTick: false
         },
         tooltip: {
-            formatter: function (this: Highcharts.TooltipFormatterContextObject):string {
+            formatter: function (this: Worlddata.TooltipFormatterContextObject):string {
                 let title = fCapital(this.x as string);
                 let value = numberFormatter(this.y!);
 
@@ -719,12 +707,12 @@ let CovidDashboard = Promise.all([
             endOnTick: false
         },
         tooltip: {
-            formatter: function (this: Highcharts.TooltipFormatterContextObject):string {
+            formatter: function (this: Worlddata.TooltipFormatterContextObject):string {
                 let weeklyCountries:string[] = ["Greece", "Liechtenstein", "Russia", "Singapore", "Latvia", "Malta", "Chile", "Germany"];
                 let title:string = fCapital(this.x as string)
-                let value:number = this.point.y!;
-                let tot:number = this.point.total!;
-                let series:string = this.series.name;
+                let value:number = this.point!.y!;
+                let tot:number = this.point!.total!;
+                let series:string = this.series!.name!;
                 let hosp = '';
                 let icu = '';
                 let text = '';
@@ -798,7 +786,7 @@ let CovidDashboard = Promise.all([
             endOnTick: false
         },
         tooltip: {
-            formatter: function (this: Highcharts.TooltipFormatterContextObject):string {
+            formatter: function (this: Worlddata.TooltipFormatterContextObject):string {
                 let title = fCapital(this.x as string);
                 let value = numberFormatter(this.y!);
 
@@ -851,12 +839,12 @@ let CovidDashboard = Promise.all([
             endOnTick: false
         },
         tooltip: {
-            formatter: function (this: Highcharts.TooltipFormatterContextObject):string {
+            formatter: function (this: Worlddata.TooltipFormatterContextObject):string {
                 let weeklyCountries = ["Greece", "Liechtenstein", "Russia", "Singapore", "Latvia", "Malta", "Chile", "Germany"];
                 let title:string = fCapital(this.x as string);
-                let value:number = this.point.y!;
-                let tot:number = this.point.total!;
-                let series = this.series.name;
+                let value:number = this.point!.y!;
+                let tot:number = this.point!.total!;
+                let series = this.series!.name;
                 let hosp = '';
                 let icu = '';
                 let text = '';
@@ -946,7 +934,7 @@ let CovidDashboard = Promise.all([
             },
         },
         tooltip: {
-            formatter: function (this: Highcharts.TooltipFormatterContextObject):string {
+            formatter: function (this: Worlddata.TooltipFormatterContextObject):string {
                 let twentyone = "N/A";
                 let title:string = 'Week ' + this.x;
                 let old:string = numberFormatter(this.points![0].y!);
@@ -1010,16 +998,16 @@ let CovidDashboard = Promise.all([
     });
 
     // Dashboard 2
-    let map_repsonse_chart = HighMaps.mapChart({
+    let map_repsonse_chart = Highcharts.mapChart({
         chart: {
             height: 500,
             renderTo: 'lockdown_map',
-            map: topology,
         },
         plotOptions: {
             map: {
                 allAreas: false,
                 joinBy: ['iso-a3', 'country'],
+                mapData: Highcharts.maps['custom/world'],
             },
         },
         title: {
@@ -1031,7 +1019,7 @@ let CovidDashboard = Promise.all([
             enableButtons: true,
         },
         tooltip: {
-            formatter: function (this: Highcharts.TooltipFormatterContextObject):string {
+            formatter: function (this: Worlddata.TooltipFormatterContextObject):string {
                 let title:string = fCapital(this.key as string);
                 let note:string = (this.point as any).note!;
                 let textArray:string[] = addLineBreaks(note, 60);
@@ -1083,7 +1071,7 @@ let CovidDashboard = Promise.all([
 
     // adjust map color stops according to parameter
     function updateColorAxis() {
-        let updatedAxis:Highcharts.ColorAxisOptions = {};
+        let updatedAxis:Worlddata.ColorAxisOptions = {};
         if (parameter == "Cases per 1 million (7 day average)") {
             updatedAxis = {
                 tickInterval: 400,

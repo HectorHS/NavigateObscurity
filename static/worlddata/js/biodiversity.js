@@ -1,6 +1,4 @@
-// import "https://code.highcharts.com/es-modules/masters/modules/exporting.src.js";
 import { fCapital, createLegend, addDropdown } from "./chartHelper.js";
-import Highcharts from "https://code.highcharts.com/es-modules/masters/highcharts.src.js";
 let donut_path = "/static/worlddata/csv/biodiversity-pie.csv";
 let scatter_path = "/static/worlddata/csv/biomass-scatter.csv";
 let pieChart = d3.csv(donut_path)

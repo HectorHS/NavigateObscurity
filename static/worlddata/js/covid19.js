@@ -1,12 +1,5 @@
-// for loading data
-import "https://d3js.org/d3-dsv.v1.min.js";
-import "https://d3js.org/d3-fetch.v1.min.js";
 // helpers
 import { fCapital, addDropdown, getCountryCode, numberFormatter, getIndexColor, addLineBreaks, createLegend, addSlider, addTabClickEvents } from "./chartHelper.js";
-// for visualising data
-import Highcharts from "https://code.highcharts.com/es-modules/masters/highcharts.src.js";
-import HighMaps from "https://code.highcharts.com/maps/es-modules/masters/highmaps.src.js";
-const topology = await fetch('https://code.highcharts.com/mapdata/custom/world-eckert3-highres.geo.json').then(response => response.json());
 let covid_map_path = "/static/worlddata/csv/covid-map.csv";
 let covid_area_path = "/static/worlddata/csv/covid-time.csv";
 let covid_lockdown_path = "/static/worlddata/csv/covid-lockdown.csv";
@@ -421,15 +414,14 @@ let CovidDashboard = Promise.all([
         },
     };
     // Dashboard 1
-    let chart = HighMaps.mapChart({
+    let chart = Highcharts.mapChart({
         chart: {
             renderTo: 'covid_map',
-            map: topology,
             // styledMode: true,
             height: 526,
             marginBottom: 20,
             events: {
-                click: function (e) {
+                click: function () {
                     country = "World";
                     innerCountry = "World";
                     change_dashboard_country_text(country);
@@ -487,6 +479,7 @@ let CovidDashboard = Promise.all([
         },
         series: [{
                 type: 'map',
+                mapData: Highcharts.maps['custom/world'],
                 colorIndex: 2,
                 data: initial_map_data,
                 joinBy: ['iso-a3', 'country'],
@@ -522,7 +515,6 @@ let CovidDashboard = Promise.all([
         },
         tooltip: {
             formatter: function () {
-                let rate = "N/A";
                 let title = fCapital(this.x);
                 let cases = numberFormatter(this.points[0].y);
                 return '<b>' + title + '</b><br/>Weekly cases: ' + cases;
@@ -962,16 +954,16 @@ let CovidDashboard = Promise.all([
         }
     });
     // Dashboard 2
-    let map_repsonse_chart = HighMaps.mapChart({
+    let map_repsonse_chart = Highcharts.mapChart({
         chart: {
             height: 500,
             renderTo: 'lockdown_map',
-            map: topology,
         },
         plotOptions: {
             map: {
                 allAreas: false,
                 joinBy: ['iso-a3', 'country'],
+                mapData: Highcharts.maps['custom/world'],
             },
         },
         title: {

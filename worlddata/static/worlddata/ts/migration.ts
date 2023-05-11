@@ -1,31 +1,10 @@
-// for loading data
-import "https://d3js.org/d3-dsv.v1.min.js";
-import "https://d3js.org/d3-fetch.v1.min.js";
-declare let d3: any; // Basically saying to typescript there will be a d3 when you need it, trust me
-
+// Basically saying to typescript these will be here when you need them, trust me
+declare let d3: any; 
+declare let Highcharts: any;
 // helpers
 import { fCapital, addDropdown, getCountryCode, numberFormatter, getIndexColor, addSlider, createLegend } from "./chartHelper.js";
 
-// for visualising data
-import Highcharts from "https://code.highcharts.com/es-modules/masters/highcharts.src.js";
-import HighMaps from "https://code.highcharts.com/maps/es-modules/masters/highmaps.src.js";
-// For treemap functionality - no need for types mapping
-import "https://code.highcharts.com/es-modules/masters/modules/treemap.src.js";
-// For packed bubbles functionality - no need for types mapping
-import "https://code.highcharts.com/es-modules/masters/highcharts-more.src.js";
-// Find modules here: https://unpkg.com/browse/highcharts@8.2.0/es-modules/masters/modules/
-// For sankey functionality - no need for types mapping
-import "https://code.highcharts.com/es-modules/masters/modules/sankey.src.js";
-import "https://code.highcharts.com/es-modules/masters/modules/dependency-wheel.src.js";
-
-
-
 import * as Worlddata from "./worlddataInterfaces.js";
-
-const topology = await fetch(
-    'https://code.highcharts.com/mapdata/custom/world-eckert3-highres.geo.json'
-).then(response => response.json());
-
 
 let migration_map_path = "/static/worlddata/csv/migration-map.csv";
 let migration_bubbles_path = "/static/worlddata/csv/migration-bubbles.csv";
@@ -50,7 +29,6 @@ let migrationMap = d3.csv(migration_map_path)
         let percentage = 0;
 
         let container_class = ".migration-map";
-        // let initial_data = [];
 
         function get_data():Worlddata.MapData[] {
             let new_data:Worlddata.MapData[] = [];
@@ -82,13 +60,12 @@ let migrationMap = d3.csv(migration_map_path)
         }
 
         let initial_data = get_data();
-
+     
         // Initiate the chart
-        let chart = HighMaps.mapChart({
+        let chart = Highcharts.mapChart({
             chart: {
                 height: 500,
                 renderTo: 'migration_map',
-                map: topology,
             },
             title: {
                 text: undefined
@@ -111,7 +88,7 @@ let migrationMap = d3.csv(migration_map_path)
                 ],
             },
             tooltip: {
-                formatter: function (this: Highcharts.TooltipFormatterContextObject):string {
+                formatter: function (this: Worlddata.TooltipFormatterContextObject):string {
                     let title:string = fCapital(this.key!);
                     let value:string = numberFormatter(this.point.value!);
                     let text = "";
@@ -132,6 +109,7 @@ let migrationMap = d3.csv(migration_map_path)
             },
             series: [{
                 type: 'map',
+                mapData: Highcharts.maps['custom/world'],
                 colorIndex: 2,
                 data: initial_data,
                 joinBy: ['iso-a3', 'country'], // first var: type of geographical data, second: data column name
@@ -194,7 +172,7 @@ let migrationMap = d3.csv(migration_map_path)
         }
 
         function updateColorStops():void {
-            let updatedColorAxis:HighMaps.ColorAxisOptions = {};
+            let updatedColorAxis:Worlddata.ColorAxisOptions = {};
             if (measure == "Destination of migration") {
                 updatedColorAxis = {
                     tickInterval: 1,
@@ -292,8 +270,8 @@ var migrationBubbles = d3.csv(migration_bubbles_path)
             tooltip: {
                 useHTML: true,
                 headerFormat: '',
-                pointFormatter: function ():string {
-                    var sName = fCapital(this.name),
+                pointFormatter: function (this: Worlddata.TooltipFormatterContextObject):string {
+                    var sName = fCapital(this.name!),
                         population = numberFormatter((this as any).absolute),
                         text = "";
                     if (parameter == "Destination") {
@@ -538,11 +516,11 @@ let migrationWheel = d3.csv(migration_wheel_path)
             tooltip: {
                 useHTML: true,
                 headerFormat: '',
-                formatter: function (this: Highcharts.TooltipFormatterContextObject):string {
+                formatter: function (this: Worlddata.TooltipFormatterContextObject):string {
                     let point = this.point;
                     let text = "";
                     if ((this.point as any).formatPrefix == "node") {
-                        let region = fCapital(point.name);
+                        let region = fCapital(point.name!);
                         let population = numberFormatter((point as any).sum);
 
                         text = "<strong>" + region + "</strong>: " + population;
@@ -650,8 +628,8 @@ let migrationWheel = d3.csv(migration_wheel_path)
         // for some reason rearragnes the chart and its prettier
         chart.setSize();
         // Add a legend
-        let chart_nodes: Highcharts.SankeyNodeObject[] = (chart.series[0] as Worlddata.SankeySeries).nodes!;
-        let chart_points:Highcharts.Point[] = chart.series[0].data;
+        let chart_nodes:Worlddata.PointOptions[] = chart.series[0].nodes;
+        let chart_points:Worlddata.PointOptions[] = chart.series[0].data;
         createLegend(chart_points, chart_nodes, container_class);
 
         // Dropdowns
@@ -669,7 +647,7 @@ let migrationWheel = d3.csv(migration_wheel_path)
             chart.series[0].setData(get_data());
             chart.setSize();
 
-            chart_nodes = (chart.series[0] as Worlddata.SankeySeries).nodes!;
+            chart_nodes = chart.series[0].nodes;
             chart_points = chart.series[0].data;
             createLegend(chart_points, chart_nodes, container_class);
         }
