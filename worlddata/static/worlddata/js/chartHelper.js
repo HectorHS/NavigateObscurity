@@ -1,4 +1,3 @@
-// import Highcharts from "https://code.highcharts.com/es-modules/masters/highcharts.src.js";
 export function fCapital(string) {
     return string.charAt(0).toUpperCase() + string.slice(1);
 }
@@ -836,7 +835,14 @@ export function createLegend(chart_points, data, parentContainer) {
         a.addEventListener("click", function () {
             var name = this.textContent;
             for (let point of chart_points) {
-                if (point.name === name || point.from === name) {
+                let nam = '';
+                if (point.name) {
+                    nam = fCapital(point.name);
+                }
+                else if (point.from) {
+                    nam = fCapital(point.from);
+                }
+                if (nam === name) {
                     point.select(true, false);
                 }
             }
@@ -847,7 +853,15 @@ export function createLegend(chart_points, data, parentContainer) {
         a.addEventListener("mouseover", function () {
             var name = this.textContent;
             for (let point of chart_points) {
-                if (point.name === name || point.from === name) { // from is for dependency wheel
+                let nam = '';
+                // from is for dependency wheel
+                if (point.name) {
+                    nam = fCapital(point.name);
+                }
+                else if (point.from) {
+                    nam = fCapital(point.from);
+                }
+                if (nam === name) {
                     point.setState('hover');
                 }
                 else {
