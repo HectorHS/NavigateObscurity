@@ -40,9 +40,9 @@
 
 <!-- Viz 1 - Dashboard with map, area and bars -->
 <section>
-    <div id="migration_map2"></div> 
+    <h2 class="section-title">The COVID-19 Dashboard</h2>
+    <p>All data presented here cover the first 3 years of the pandemic (2020 - 2022).</p>
     <div id="covid_intro" class="container limited-width">
-        <p id="last_update"> <strong>Last update:</strong></p>
         <div class="q-o-n-container" style="display: flex;">
             <div class="tabs-container">
                 <div class="tab-button tab-active">Questions</div>
@@ -57,91 +57,113 @@
                     </p>
                     <ul style="margin-bottom: 0;">
                         <li>
-                            During the first two years of the pandemic, Chile had a 50% increase in its total yearly 
-                            death toll (from all causes) compared to the average of the previous five years.
+                            For each of the first three years of the pandemic, Chile had a 50% increase in its total yearly death toll (from
+                            all causes) compared to the average of the previous five years, and only about half of these deaths correspond
+                            to the recorded covid-19 deaths.
                         </li>
                         <li>
-                            The COVID-19 death toll for New Zealand in 2021 and 2022 was similar to its yearly death toll 
-                            of suicide (you might need to check some <a
-                            href="{% url 'worlddata:'|add:'death' %}" target="_blank">death data
-                        </a> for this).
+                            The COVID-19 death toll for New Zealand in 2020 and 2021 was similar to its yearly suicide death toll (you might
+                            need to check some <a href="{% url 'worlddata:'|add:'death' %}" target="_blank">death data
+                            </a> for this).
                         </li>
                         <li>
-                            USA had about 3 times more COVID-19 cases in the begining of 2022 compared to the same time the year before 
-                            (with about the same amount of tests carried out).
+                            At some point during the first three years of the pandemic, some movement restriction was imposed in all
+                            countries at the same time (at least in all countries we have data for).
                         </li>
                         <li>
-                            Australia had approximatelly 25% more total deaths (from all causes) in 2021 and 2022 compared to the average 
-                            of the previous 5 years.
+                            Only about half of the excess mortality (deaths exceeding the average of previous years) for the USA, Brazil,
+                            Spain, France and Sweden, can be accounted for by the direct COVID-19 deaths recorded in the first three years
+                            of the pandemic.
                         </li>
                         <li>
-                            Russia, Cuba, and the US have approximately the same vaccination rate.
+                            Despite the dramatic increase in vaccinations in 2021, the number of total cases, hospitalizations, and deaths
+                            weren't so different between January 2021 and January 2022 for the UK, France, and Italy.
                         </li>
                         <li>
-                            More people died from covid-19 in 2020, than the number of deaths caused by wars,
-                            violent crimes, terrorism, and drug abuse combined in a year (you might need to check some <a
-                                href="{% url 'worlddata:'|add:'death' %}" target="_blank">death data
+                            For each of the first three years of the pandemic, more people died from COVID-19, than the number of deaths
+                            caused in a typical year by wars, violent crimes, terrorism, and drug abuse combined (you might need to check
+                            some <a href="{% url 'worlddata:'|add:'death' %}" target="_blank">death data
                             </a> for this).
                         </li>
                     </ul>
-                </div>
-                <div class="hide dash-obscurity">
-                    <p style="margin-top: 0;">
-                        Cases numbers are the confirmed cases, so the number of people who have tested positive to covid-19. Of course,
-                        since the beginning of the pandemic, we know that this number is not accurate, as not everyone gets tested and /
-                        or recorded in official figures. Testing strategies have differed significantly across countries and stages of
-                        the pandemic impacting significantly the confirmed cases figures.
-                    </p>
-                    <p>
-                        Death data might be a better metric to gauge the impact of the pandemic at a certain time, but again it is not
-                        perfect. Covid-19 deaths are counted slightly differently in different places. Sometimes even on the same place
-                        in
-                        different times. For instance, in the UK, up until the 12 of August of 2020 all deaths following a positive
-                        covid-19
-                        test were counted in the covid-19 death sum. Then, officials decided to only include deaths occurring up until
-                        28
-                        days after the initial positive test cutting down the total number of deaths by over 5 thousand. In many other
-                        countries, covid-19 needs to be specifically listed in the causes of death of a patient. And of course, covid-19
-                        is
-                        rarely the only cause of death, so how do I even know what the patient died from?! First of all, take a deep
-                        breath
-                        and relax. You can’t know, but the professionals filling out those death certificates have had some practice.
-                        This
-                        is not a new problem. Terminally ill people are very often challenged in multiple fronts. Another way to look at
-                        death data, is to simply sum up all deaths occurring over a week and compare the total weekly sums with previous
-                        years. The gross simplification here is that any excess deaths this year should correspond to covid-19’s impact.
-                        True, but impact is not just people directly dying from covid-19, but also from the side effects of the
-                        pandemic.
-                        Like hospitals being full, patients avoiding to visit them out of fear and so on.
-                    </p>
-                    <p>
-                        To get an idea of how bad the health care system was hit, we can look at the number of people who were hospitalised
-                        or even put into ICUs (intensive care units) due to covid-19. We have 2 different kinds of metrics here, one about
-                        the total number of patients in hospitals (or ICUs) in any given time, and another about new admissions. I am
-                        showing data for the first kind of data where possible, but you might notice that we only have new admissions data
-                        for some countries, others only report on hospitalizations or ICUS but not both, and for many countries we do not
-                        have any relevant data at all.
-                    </p>
                     </div>
-                <div class="hide dash-navigation">
-                    <p style="margin-top: 0;">
-                        Although not all data matches, it still gives us an indication of what is going on. So, play with the parameters and
-                        use the map to get a rough idea of what is going on around the world. Different policies and metrics make it harder
-                        to simply compare numbers between countries, but ultimately, the numbers are more useful if seen like body weight
-                        readings. Sure, you can compare your number with everyone else’s, but it’s probably more useful to just compare it
-                        with the one you had a week ago, a month ago or a year ago.
-                    </p>
-                    <p>
-                        In this regard, the various bar charts should give you an idea of how cases or deaths compare to the past few weeks
-                        or months. These graphs are primarily useful to detect spikes and plateaus of the disease spread and impact.
-                    
-                    </p>
-                    <p style="margin-bottom: 0;">
-                        The weekly death toll is a clear testament that something is going on the past couple of years that we should be
-                        paying attention to. Beyond debates of how deadly the virus is, whether the patients were old and sickly and would
-                        die by the flu instead, or whether it even exists or not, here is a clear metric of the cost of life of the pandemic
-                        and how we handle it.
-                    </p>
+                    <div class="hide dash-obscurity">
+                        <p style="margin-top: 0;">
+                            Cases numbers are the confirmed cases, so the number of people who have tested positive for COVID-19. Of course,
+                            since the beginning of the pandemic, we know that this number is not accurate, as not everyone gets tested
+                            and/or recorded in official figures. Testing strategies have differed significantly across countries and stages
+                            of the pandemic impacting significantly the confirmed cases figures. Test data is missing from this dashboard
+                            because of significant mismatches and missing data.
+                        </p>
+                        <p>
+                            Death data might be a better metric to gauge the impact of the pandemic at a certain time, but again it is not
+                            perfect. COVID-19 deaths are counted slightly differently in different places. Sometimes even in the same place
+                            at different times. For instance, in the UK, up until the 12 of August 2020, all deaths following a positive
+                            COVID-19 test were counted in the COVID-19 death sum. Then, officials decided to only include deaths occurring
+                            up until 28 days after the initial positive test cutting down the total number of deaths by over 5 thousand. In
+                            many other countries, COVID-19 needs to be specifically listed in the causes of death of a patient. And of
+                            course, COVID-19 is rarely the only cause of death. This is not a new problem. Terminally ill people are very
+                            often challenged on multiple fronts.
+                        </p>
+                        <p>
+                            Another way to look at death data is to simply sum up all deaths occurring over a month (or week) and compare
+                            the total monthly (or weekly) sums with previous years. The gross simplification here is that any excess deaths
+                            should correspond to COVID-19’s impact. True, but impact is not just people directly dying from COVID-19, but
+                            also from the side effects of the pandemic. Like hospitals being full, patients avoid visiting them out of fear
+                            and so on. Unfortunately, this data is missing for many countries, including China, India, Indonesia and
+                            Pakistan, which combined constitute about half of the Earth’s population.
+                        </p>
+                        <p>
+                            To get an idea of how badly the healthcare system was hit, we can look at the number of people who were
+                            hospitalized or even put into ICUs (intensive care units) due to COVID-19. We have 2 different kinds of metrics
+                            here, one about the total number of patients in hospitals (or ICUs) at any given time, and another about new
+                            admissions. I am showing data for the first kind of data where possible, but you might notice that we only have
+                            new admissions data for some countries, others only report on hospitalizations or ICUs but not both, and for
+                            many countries we do not have any relevant data at all.
+                        </p>
+                        <p>
+                            Of course, all of the above were impacted by the different policies each country imposed on its citizens and borders,
+                            adding another level of obscurity when trying to compare these measures. These policies were very diverse and hard to
+                            quantify, so in order to provide some visual representation here (as seen on the map chart when selecting "movement
+                            restrictions imposed") I have made two simplifications. First, I have only focused on movement restriction policies and
+                            in this way ignored a wide variety of other policies including mask wearing, working from home, closure of schools and
+                            businesses, and restriction of gatherings. This is not because I have proof that movement restriction policies were more
+                            effective in battling COVID-19 than other policies, it is simply because I found these policies to be the most severe
+                            and hard to comply to. Second, I am simplyfying these responses by grouping them in 4 categories: "generall lockdown",
+                            and "general curfew", when a lockdown or curfew was imposed on the whole country; "non general restrictions", when a
+                            movement restricion was only imposed on part of the population, like a localised lockdown or curfew; and
+                            "test/vaccination based restrictions" when restrictions were only imposed on people without a proof of vaccination
+                            and/or test, most commonly imposed on travel.
+                        </p>
+                    </div>
+                    <div class="hide dash-navigation">
+                        <p style="margin-top: 0;">
+                            Cases and death data are provided on a "per million people" basis (as seen on the map chart) so that values
+                            between countries are comparable, and on a "total number" basis (as seen on the bar charts) to make comparisons
+                            across time easier to decipher. Due to the various obscurities described above, the data is better suited for
+                            comparing values across time for the same country, than comparing values between countries. So ultimately, the
+                            numbers are more useful if seen like body weight readings. Sure, you can compare your number with everyone
+                            else’s, but it’s probably more useful to just compare it with the one you had a week ago, a month ago or a year
+                            ago. All things considered, the best way to get a bird's eye view of this data is via the animation feature of
+                            the map (click the play button!), which allows you to compare data across countries and time simultaneously,
+                            while also providing a clear view of the different waves of the pandemic.
+                        </p>
+                        <p>
+                            The hospitalisation, vaccination, and movement restriction data can provide further context to the cases and
+                            deaths data. Take Germany as an example. The ratio between cases, hospitalizations, and deaths, remained very
+                            similar during the first two winters of the pandemic. In the winter of 2021-22, case numbers exploded (far
+                            exceeding what can be explained by increased testing alone), but hospitalization numbers did not see a similar
+                            increase, and more importantly, deaths were reduced compared to the previous winter. The less strict movement
+                            restrictions in this third winter likely contributed to the increased cases, but the increased vaccination
+                            likely contributed to the reduced deaths. At the same time, the winter peaks in cases, hospitalizations and
+                            deaths can partly explain the increased movement restrictions imposed during winters, which is a theme shared
+                            with most countries of similar geographies (climate).
+                        </p>
+                        <p style="margin-bottom: 0;">
+                            Finally, the overall excess of deaths is arguably the best testament to COVID-19's impact. Beyond debates about
+                            the virus' deadliness, and the reliability of the various available data, here is a clear metric of the cost of
+                            life of the pandemic and how we handled it.
+                        </p>
                 </div>
             </div>
         </div>
@@ -156,12 +178,17 @@
                         <div class="dashboard-side" style="height: inherit;">
                             <div class="dark-bg">
                                 <div class="chart-options chart-options-map" style="max-width:100%; padding-left:0;">
-                                    <div class="chart-filters"
-                                        style="display: flex; flex-direction: row-reverse; justify-content: flex-end; height: 50px;">
-                                        <div class="dashboard-command">Click on the map to select a country</div>
+                                    <div class="chart-filters row1">
+                                        <div class="dashboard-command left">Select a measure</div>
                                     </div>
+                                    <div class="chart-filters row2">
+                                        <div class="dashboard-command left">Click on the play button to animate</div>
+                                        <div class="play-container"></div>
+                                    </div>
+                                    
+                                    <div class="dashboard-command" style="margin: 10px 0px;">Click on the map to select a country</div>
                                 </div>
-                                <div id="covid_map" class="map" style="width:100%;padding-bottom: 20px; "></div>
+                                <div id="covid_map" class="map" style="width:100%;"></div>
                             </div>
 
                         </div>
@@ -173,13 +200,11 @@
                             <div class="dashboard-profile-country">
                                 <p>World</p>
                             </div>
+                            <div class="profile-title">Total (2020-2022)</div>
                             <div class="profile-container">
-                                <div>
+                                <div class="profile-column1">
                                     <div class="profile-item">
-                                        <div class="profile-title">Total</div>
-                                    </div>
-                                    <div class="profile-item">
-                                        <div class="profile-label">Cases:</div>
+                                        <div class="profile-label">COVID-19 cases:</div>
                                         <div id="stat_cases" class="profile-value"></div>
                                         <div class="i-info tooltip">
                                             <div class="tooltiptext">
@@ -196,12 +221,11 @@
                                                     <div class="profile-label">2022:</div>
                                                     <div id="stat_cases_2022" class="profile-value"></div>
                                                 </div>
-                                                
                                             </div>
                                         </div>
                                     </div>
                                     <div class="profile-item">
-                                        <div class="profile-label">Deaths:</div>
+                                        <div class="profile-label">COVID-19 deaths:</div>
                                         <div id="stat_deaths" class="profile-value"></div>
                                         <div class="i-info tooltip">
                                             <div class="tooltiptext">
@@ -221,95 +245,93 @@
                                             </div>
                                         </div>
                                     </div>
+                                </div>
+                                <div class="profile-column2">
                                     <div class="profile-item">
                                         <div class="profile-label">Fully vaccinated:</div>
                                         <div id="stat_vaccination_share" class="profile-value"></div>
                                     </div>
                                     <div class="profile-item">
-                                        <div class="profile-label">+ booster shot:</div>
-                                        <div id="stat_booster_share" class="profile-value"></div>
-                                    </div>
-                                    
-                                </div>
-                                <div class="profile-column2">
-                                    <div class="profile-item">
-                                        <div class="profile-title">New (7 day average)</div>
-                                    </div>
-                                    <div class="profile-item">
-                                        <div class="profile-label">Cases per 1m:</div>
-                                        <div id="stat_cases_pc" class="profile-value"></div>
-                                    </div>
-                                    <div class="profile-item">
-                                        <div class="profile-label">Deaths per 1m:</div>
-                                        <div id="stat_deaths_pc" class="profile-value"></div>
+                                        <div class="profile-label">Excess deaths:</div>
+                                        <div id="stat_excess" class="profile-value"></div>
+                                        <div class="i-info tooltip">
+                                            <div class="tooltiptext right">
+                                                <div style="font-weight: 600;">Total excess deaths</div>
+                                                <div class="profile-item">
+                                                    <div class="profile-label">2020:</div>
+                                                    <div id="stat_excess_2020" class="profile-value"></div>
+                                                </div>
+                                                <div class="profile-item">
+                                                    <div class="profile-label">2021:</div>
+                                                    <div id="stat_excess_2021" class="profile-value"></div>
+                                                </div>
+                                                <div class="profile-item">
+                                                    <div class="profile-label">2022:</div>
+                                                    <div id="stat_excess_2022" class="profile-value"></div>
+                                                </div>
+                                            </div>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
                         </div>
                     </div>
-                    <div class="side-chart-container cases-chart" style="margin-bottom:0;">
-                        <div class="chart-options" style="max-width:100%; ">
-                            <div class="dashboard-title">
-                                Cases
-                            </div>                
+                    
+                        <div  class="chart-container-dashboard side-chart-container covid-excess filters-on-top bar-line">
+                            <div class="chart-options" style="max-width:100%; ">
+                                <div class="dashboard-title">
+                                    Excess mortality
+                                </div> 
+                                <div class="dashboard-subtitle">
+                                    Expected deaths (without considering the pandemic) vs estimated actual deaths
+                                </div> 
+                            </div> 
+                            <div id="excess_deaths" style="width:100%;"></div>
+                            <div id="excess_error" class="error">No data available</div>
                         </div>
-                        <div class="chart-container-dashboard bars-all filters-on-top bars">
-                            <div id="cases_bars_all" class="bars" style="width:100%;"></div>
-                        </div>
-                        <div class="chart-container-dashboard bars-30 filters-on-top bars">
-                            <div id="cases_bars_26" class="bars" style="width:100%;"></div>
-                        </div>
-                    </div>
+
+                    <!-- </div> -->
 
                 </div>
             </div>
             <div class="dashboard-container-vertical dashboard-level-2">
-                <div class="dashboard-container-horizontal dashboard-side-60">
-                    <div class="covid-deaths-tests-container dashboard-container-vertical dashboard-side">
-                        <div class="side-chart-container covid-deaths-tests">
+                <div class="dashboard-container-vertical dashboard-side-100">
+                    <div class="dashboard-container-horizontal covid-bar-container">
+                        <div class="side-chart-container" style="margin-bottom:0;">
                             <div class="chart-options" style="max-width:100%; ">
-                                <div class="dashboard-title">
-                                    Hospitalizations
-                                </div>                
+                                <div class="dashboard-title">COVID-19 cases</div>                
                             </div>
-                            <div class="chart-container-dashboard bars-all filters-on-top area">
-                                <div id="hospital_bars_all" class="bars" style="width:100%;"></div>
-                                <div id="hospital_all_error" class="error1">No data available</div>
-                            </div>
-                            <div class="chart-container-dashboard bars-30 filters-on-top bars">
-                                <div id="hospital_bars_26" class="bars" style="width:100%;"></div>
-                                <div id="hospital_26_error" class="error2">No data available</div>
+                            <div class="chart-container-dashboard bars filters-on-top">
+                                <div id="cases_bars" class="bars" style="width:100%;"></div>
                             </div>
                         </div>
-                        <div class="side-chart-container covid-deaths-tests"
-                            style="z-index: 1;">
+                        <div class="side-chart-container">
                             <div class="chart-options" style="max-width:100%; ">
-                                <div class="dashboard-title">
-                                    Deaths
-                                </div>                
+                                <div class="dashboard-title">COVID-19 hospitalizations</div>                
                             </div>
-                            <div class="chart-container-dashboard bars-all filters-on-top area">
-                                <div id="deaths_bars_all" class="bars" style="width:100%;"></div>
-                            </div>
-                            <div class="chart-container-dashboard bars-30 filters-on-top bars">
-                                <div id="deaths_bars_26" class="bars" style="width:100%;"></div>
+                            <div class="chart-container-dashboard bars filters-on-top bars">
+                                <div id="hospital_bars" class="bars" style="width:100%;"></div>
+                                <div id="hospital_error" class="error2">No data available</div>
                             </div>
                         </div>
                     </div>
-                </div>
-                <div class="dashboard-side-40 dashboard-side">
-                    <div class=" filters-on-top">
-                        <div  class="chart-container-dashboard side-chart-container covid-excess filters-on-top bar-line">
+                    <div class="dashboard-container-horizontal covid-bar-container">
+                        <div class="side-chart-container"
+                            style="z-index: 1;margin-bottom:0;">
                             <div class="chart-options" style="max-width:100%; ">
-                                <div class="dashboard-title">
-                                    Weekly death toll for all causes
-                                </div> 
-                            </div> 
-                            <div id="excess_deaths" class="bars" style="width:100%;"></div>
-                            <div class="chart-options" style="max-width:100%">
-                                <div class="chart-legend"></div>
+                                <div class="dashboard-title">COVID-19 deaths</div>                
                             </div>
-                            <div id="excess_error" class="error">No data available</div>
+                            <div class="chart-container-dashboard bars filters-on-top">
+                                <div id="deaths_bars" class="bars" style="width:100%;"></div>
+                            </div>
+                        </div>
+                        <div class="side-chart-container">
+                            <div class="chart-options" style="max-width:100%; ">
+                                <div class="dashboard-title">COVID-19 vaccinations</div>                
+                            </div>
+                            <div class="chart-container-dashboard bars filters-on-top bars">
+                                <div id="vaccination_bars" class="bars" style="width:100%;"></div>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -318,16 +340,16 @@
             <div class="source-text">
                 <p>
                     *Sources:
-                    Confirmed, deaths, recovered, active data: <a href="https://github.com/CSSEGISandData/COVID-19"
-                        target="_blank">Johns Hopkins University.</a><span id="JHU_date"> Downloaded</span>
+                    cases & deaths data: <a href="https://github.com/CSSEGISandData/COVID-19"
+                        target="_blank">Johns Hopkins University.</a>Downloaded on 11/05/2023.</span>
                     <br />
-                    Test & vaccination data: <a href="https://github.com/owid/covid-19-data" target="_blank">Our World
-                        in Data.</a>
-                    <span id="Test_date"> Downloaded</span> <br />
-                    Historical weekly death toll: <a href="https://www.mortality.org/" target="_blank">Human Mortality
-                        Database. University of California, Berkeley (USA), and Max Planck Institute for Demographic
-                        Research (Germany).</a>
-                    Downloaded at 14/10/2022.
+                    Hospitalization & vaccination data: <a href="https://github.com/owid/covid-19-data" target="_blank">Our World
+                        in Data.</a>Downloaded on 11/05/2023. <br />
+                    Historical weekly death toll & excess mortality: <a href="https://www.mortality.org/" target="_blank">Human Mortality
+                        Database</a>, <a href="https://github.com/akarlinsky/world_mortality/tree/main" target="_blank">World Mortality Dataset</a>, 
+                        & <a href="https://www.who.int/data/sets/global-excess-deaths-associated-with-covid-19-modelled-estimates" target="_blank">WHO</a>, all downloaded on 30/05/2023.
+                        <br/>Movement restriction data: <a href="https://github.com/OxCGRT/covid-policy-tracker" target="_blank">Oxford University.</a>
+                        Downloaded on 22/05/2023.
                 </p>
             </div>
         </div>
@@ -336,47 +358,6 @@
 
 </section>
 
-<!-- Viz 2 - lockdown map -->
-<div class="container limited-width">
-    <p>
-        Wherever you were, chances are that sometime during 2020 you were told to stay home. Some governments
-        merely outlined recommendations for the public, but most enforced rules to make citizens comply. Here you can
-        see a rough visualization of government responses when it came to public movement restrictions. For simplicity I
-        am only using 4 broad categories of responses, but you can find more specific information by hovering over each
-        country. The four categories range from no restrictions imposed (although recommendations were typically made),
-        to
-        movement restrictions only in parts of the country, to restrictions for the whole country but only in particular
-        times (curfew), to restrictions in the whole country all of the time (lockdown). Of course, many more government
-        responses were put in place at the same time like banning gatherings, imposing social distancing rules, closing
-        businesses etc, but the scope of this visualisation remains solely the movement restriction policies.
-    </p>
-</div>
-<section>
-    <figure>
-        <!-- <div class="container dashboard-container-vertical covid-dashboard">
-            <div class="dashboard-container-horizontal"> -->
-        <div class="container chart-container lockdown-map filters-on-top">
-            <div class="chart-options chart-options-map" style="max-width:100%">
-                <div class="chart-filters">
-
-                </div>
-            </div>
-            <div id="lockdown_map" class="map" style="width:100%;"></div>
-            <div class="chart-options" style="max-width:100%">
-                <div class="secondary-legend"></div>
-            </div>
-        </div>
-
-
-        <div class="source-text">
-            <p>
-                *Source:
-                <a href="https://github.com/OxCGRT/covid-policy-tracker" target="_blank">Oxford University.</a>
-                Downloaded at 10/01/2021
-            </p>
-        </div>
-    </figure>
-</section>
 <!-- Comments -->
 <section>
     <div class="container">

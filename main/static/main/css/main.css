@@ -1145,7 +1145,7 @@ hr {
   align-items: center;
 }
 
-@media (min-width: 768px) {
+@media (min-width: 1025px) {
   .limited-width {
     padding-right: 30%;
   }

@@ -177,6 +177,7 @@ export function getCountryCode(country: string): string {
     countryCode.set("Dem. People's Republic of Korea", "PRK");
     countryCode.set("Democratic People's Republic of Korea", "PRK");
     countryCode.set("Korea, Dem. People's Rep.", "PRK");
+    countryCode.set("Korea, North", "PRK");
     countryCode.set("Korea, Republic of", "KOR");
     countryCode.set("Republic of Korea", "KOR");
     countryCode.set("Korea, South", "KOR");
@@ -217,6 +218,7 @@ export function getCountryCode(country: string): string {
     countryCode.set("Federated States of Micronesia", "FSM");
     countryCode.set("Micronesia (Federated States of)", "FSM");
     countryCode.set("Micronesia (country)", "FSM");
+    countryCode.set("Micronesia", "FSM");
     countryCode.set("Moldova", "MDA");
     countryCode.set("Republic of Moldova", "MDA");
     countryCode.set("Monaco", "MCO");
@@ -612,38 +614,54 @@ export function getCountryName(country: string): string {
     countryName.set("UMI", "United States Minor Outlying Islands");
     countryName.set("VGB", "British Virgin Islands");
     countryName.set("GLO", "World");
+    countryName.set("Afghanistan", "Afghanistan");
     countryName.set("Albania", "Albania");
     countryName.set("Algeria", "Algeria");
+    countryName.set("Andorra", "Andorra");
+    countryName.set("Antigua and Barbuda", "Antigua and Barbuda");
     countryName.set("Angola", "Angola");
     countryName.set("Argentina", "Argentina");
     countryName.set("Armenia", "Armenia");
+    countryName.set("Aruba", "Aruba");
     countryName.set("Australia", "Australia");
     countryName.set("Austria", "Austria");
     countryName.set("Azerbaijan", "Azerbaijan");
+    countryName.set("Bahamas", "Bahamas");
     countryName.set("Bahrain", "Bahrain");
+    countryName.set("Barbados", "Barbados");
     countryName.set("Bangladesh", "Bangladesh");
     countryName.set("Benin", "Benin");
     countryName.set("Belarus", "Belarus");
     countryName.set("Belgium", "Belgium");
+    countryName.set("Bhutan", "Bhutan");
     countryName.set("Bolivia", "Bolivia");
     countryName.set("Belize", "Belize");
     countryName.set("Bosnia and Herzegovina", "Bosnia and Herzegovina");
     countryName.set("Botswana", "Botswana");
     countryName.set("Brazil", "Brazil");
     countryName.set("Brunei Darussalam", "Brunei");
+    countryName.set("Brunei", "Brunei");
     countryName.set("Bulgaria", "Bulgaria");
+    countryName.set("Burkina Faso", "Burkina Faso");
+    countryName.set("Burundi", "Burundi");
+    countryName.set("Cabo Verde", "Cape Verde");
     countryName.set("Cambodia", "Cambodia");
     countryName.set("Cameroon", "Cameroon");
     countryName.set("Canada", "Canada");
+    countryName.set("Central African Republic", "Central African Republic");
     countryName.set("Chad", "Chad");
     countryName.set("Chile", "Chile");
     countryName.set("China", "China");
     countryName.set("China Hong Kong SAR", "Hong Kong");
     countryName.set("Colombia", "Colombia");
+    countryName.set("Comoros", "Comoros");
     countryName.set("Congo, Dem. Rep.", "Congo (Kinshasa)");
+    countryName.set("Congo (Kinshasa)", "Congo (Kinshasa)");
     countryName.set("Democratic Republic of the Congo", "Congo (Kinshasa)");
     countryName.set("Congo, Rep.", "Congo (Brazzaville)");
+    countryName.set("Congo (Brazzaville)", "Congo (Brazzaville)");
     countryName.set("Republic of Congo", "Congo (Brazzaville)");
+    countryName.set("Cook Islands", "Cook Islands");
     countryName.set("Costa Rica", "Costa Rica");
     countryName.set("Cote d'Ivoire", "Cote d'Ivoire");
     countryName.set("Ivory Coast", "Cote d'Ivoire");
@@ -652,25 +670,39 @@ export function getCountryName(country: string): string {
     countryName.set("Curacao", "Curacao");
     countryName.set("Cyprus", "Cyprus");
     countryName.set("Czech Republic", "Czech Republic");
+    countryName.set("Czechia", "Czech Republic");
     countryName.set("Denmark", "Denmark");
+    countryName.set("Djibouti", "Djibouti");
+    countryName.set("Dominica", "Dominica");
     countryName.set("Dominican Republic", "Dominican Republic");
     countryName.set("Ecuador", "Ecuador");
     countryName.set("Egypt", "Egypt");
     countryName.set("Egypt, Arab Rep.", "Egypt");
     countryName.set("El Salvador", "El Salvador");
+    countryName.set("Equatorial Guinea", "Equatorial Guinea");
     countryName.set("Eritrea", "Eritrea");
     countryName.set("Estonia", "Estonia");
+    countryName.set("Eswatini", "Eswatini");
     countryName.set("Ethiopia", "Ethiopia");
+    countryName.set("Faroe Islands", "Faroe Islands");
+    countryName.set("Federated States of Micronesia", "Federated States of Micronesia");
+    countryName.set("Micronesia", "Federated States of Micronesia");
+    countryName.set("Fiji", "Fiji");
     countryName.set("Finland", "Finland");
     countryName.set("France", "France");
     countryName.set("Gabon", "Gabon");
+    countryName.set("Gambia", "Gambia");
     countryName.set("Ghana", "Ghana");
     countryName.set("Georgia", "Georgia");
     countryName.set("Germany", "Germany");
     countryName.set("Gibraltar", "Gibraltar");
     countryName.set("Greece", "Greece");
     countryName.set("Greenland", "Greenland");
+    countryName.set("Grenada", "Grenada");
     countryName.set("Guatemala", "Guatemala");
+    countryName.set("Guinea", "Guinea");
+    countryName.set("Guinea-Bissau", "Guinea-Bissau");
+    countryName.set("Guyana", "Guyana");
     countryName.set("Haiti", "Haiti");
     countryName.set("Honduras", "Honduras");
     countryName.set("Hong Kong SAR, China", "Hong Kong");
@@ -694,38 +726,59 @@ export function getCountryName(country: string): string {
     countryName.set("Korea, Rep.", "South Korea");
     countryName.set("Korea", "South Korea");
     countryName.set("Kosovo", "Kosovo");
+    countryName.set("Kiribati", "Kiribati");
     countryName.set("Kuwait", "Kuwait");
     countryName.set("Kyrgyz Republic", "Kyrgyzstan");
     countryName.set("Kyrgyzstan", "Kyrgyzstan");
+    countryName.set("Laos", "Laos");
     countryName.set("Latvia", "Latvia");
     countryName.set("Lebanon", "Lebanon");
+    countryName.set("Lesotho", "Lesotho");
+    countryName.set("Liberia", "Liberia");
     countryName.set("Libya", "Libya");
+    countryName.set("Liechtenstein", "Liechtenstein");
     countryName.set("Lithuania", "Lithuania");
     countryName.set("Luxembourg", "Luxembourg");
+    countryName.set("Madagascar", "Madagascar");
     countryName.set("Malaysia", "Malaysia");
+    countryName.set("Malawi", "Malawi");
     countryName.set("Malta", "Malta");
+    countryName.set("Maldives", "Maldives");
+    countryName.set("Mali", "Mali");
+    countryName.set("Marshall Islands", "Marshall Islands");
+    countryName.set("Mauritania", "Mauritania");
     countryName.set("Mauritius", "Mauritius");
     countryName.set("Mexico", "Mexico");
     countryName.set("Moldova", "Moldova");
+    countryName.set("Monaco", "Monaco");
     countryName.set("Mongolia", "Mongolia");
     countryName.set("Montenegro", "Montenegro");
     countryName.set("Morocco", "Morocco");
     countryName.set("Mozambique", "Mozambique");
     countryName.set("Myanmar", "Myanmar");
+    countryName.set("Burma", "Myanmar");
     countryName.set("Namibia", "Namibia");
+    countryName.set("Nauru", "Nauru");
     countryName.set("Nepal", "Nepal");
     countryName.set("Netherlands", "Netherlands");
     countryName.set("New Zealand", "New Zealand");
     countryName.set("Nicaragua", "Nicaragua");
     countryName.set("Niger", "Niger");
     countryName.set("Nigeria", "Nigeria");
+    countryName.set("Niue", "Niue");
     countryName.set("North Korea", "North Korea");
-    countryName.set("North Macedonia", "North Macedonia");
+    countryName.set("Korea, North", "North Korea");
+    countryName.set("North Macedonia", "North Macedonia");    
+    countryName.set("Macedonia", "North Macedonia");
     countryName.set("Norway", "Norway");
     countryName.set("Oman", "Oman");
+    countryName.set("Palestine", "Palestine");
+    countryName.set("West Bank and Gaza", "Palestine");
     countryName.set("Panama", "Panama");
     countryName.set("Paraguay", "Paraguay");
     countryName.set("Pakistan", "Pakistan");
+    countryName.set("Palau", "Palau");
+    countryName.set("Papua New Guinea", "Papua New Guinea");
     countryName.set("People's Republic of China", "China");
     countryName.set("Peru", "Peru");
     countryName.set("Philippines", "Philippines");
@@ -737,16 +790,29 @@ export function getCountryName(country: string): string {
     countryName.set("Romania", "Romania");
     countryName.set("Russian Federation", "Russia");
     countryName.set("Russia", "Russia");
+    countryName.set("Rwanda", "Rwanda");
+    countryName.set("Saint Barthelemy", "Saint Barthelemy");
+    countryName.set("Saint Kitts and Nevis", "Saint Kitts and Nevis");
+    countryName.set("Saint Lucia", "Saint Lucia");
+    countryName.set("Saint Vincent and the Grenadines", "Saint Vincent and the Grenadines");
+    countryName.set("Samoa", "Samoa");
+    countryName.set("San Marino", "San Marino");
+    countryName.set("Sao Tome and Principe", "Sao Tome and Principe");
     countryName.set("Saudi Arabia", "Saudi Arabia");
     countryName.set("Senegal", "Senegal");
     countryName.set("Serbia", "Republic of Serbia");
     countryName.set("Republic of Serbia", "Serbia");
+    countryName.set("Seychelles", "Seychelles");
+    countryName.set("Sierra Leone", "Sierra Leone");
     countryName.set("Singapore", "Singapore");
     countryName.set("Slovak Republic", "Slovakia");
     countryName.set("Slovakia", "Slovakia");
     countryName.set("Slovenia", "Slovenia");
+    countryName.set("Solomon Islands", "Solomon Islands");
+    countryName.set("Somalia", "Somalia");
     countryName.set("South Africa", "South Africa");
     countryName.set("South Korea", "South Korea");
+    countryName.set("Korea, South", "South Korea");
     countryName.set("South Sudan", "South Sudan");
     countryName.set("Spain", "Spain");
     countryName.set("Sri Lanka", "Sri Lanka");
@@ -761,12 +827,17 @@ export function getCountryName(country: string): string {
     countryName.set("Tanzania", "Tanzania");
     countryName.set("United Republic of Tanzania", "Tanzania");
     countryName.set("Thailand", "Thailand");
+    countryName.set("Timor-Leste", "Timor-Leste");
     countryName.set("Togo", "Togo");
+    countryName.set("Tonga", "Tonga");
     countryName.set("Trinidad & Tobago", "Trinidad and Tobago");
+    countryName.set("Trinidad and Tobago", "Trinidad and Tobago");
     countryName.set("Tunisia", "Tunisia");
     countryName.set("Turkey", "Turkey");
     countryName.set("Turkiye", "Turkey");
     countryName.set("Turkmenistan", "Turkmenistan");
+    countryName.set("Tuvalu", "Tuvalu");
+    countryName.set("Uganda", "Uganda");
     countryName.set("Ukraine", "Ukraine");
     countryName.set("United Arab Emirates", "United Arab Emirates");
     countryName.set("United Kingdom", "United Kingdom");
@@ -776,24 +847,26 @@ export function getCountryName(country: string): string {
     countryName.set("United States of America", "USA");
     countryName.set("US", "USA");
     countryName.set("Uzbekistan", "Uzbekistan");
+    countryName.set("Vanuatu", "Vanuatu");
     countryName.set("Venezuela", "Venezuela");
     countryName.set("Venezuela, RB", "Venezuela");
     countryName.set("Vietnam", "Vietnam");
     countryName.set("World", "World");
-    countryName.set("Trinidad and Tobago", "Trinidad and Tobago");
-    countryName.set("Macedonia", "North Macedonia");
-    countryName.set("World", "World");
+    countryName.set("Yemen", "Yemen");
+    countryName.set("Zambia", "Zambia");
+    countryName.set("Zimbabwe", "Zimbabwe");
 
     let name: string = countryName.get(country)!;
     if (!name) {
-        console.log("Name not found for " + country)
+        console.log("Name not found for " + country);
+        name = country;
     }
     return name;
 }
 
 export function getHighchartsMapCSSName(country: string): string {
     let css: string;
-    if (country == "USA") {
+    if (country == "USA"|| country == "United States" || country == "United States of Americawenm") {
         css = 'highcharts-name-united-states-of-america';
     } else if (country == "Serbia") {
         css = 'highcharts-name-republic-of-serbia';
@@ -883,7 +956,9 @@ export function createLegend(chart_points: any[], data: any[], parentContainer: 
 export function addDropdown(parent: Element, name: string, width: string, taxonChange: any, options: string[], selected: string): void {
     let selectContainer = document.createElement("div");
     selectContainer.classList.add("dropdown-container");
-    selectContainer.style.width = width;
+    if (width != ""){
+        selectContainer.style.width = width;
+    }
     parent.appendChild(selectContainer);
 
     // Create and append list
@@ -901,7 +976,9 @@ export function addDropdown(parent: Element, name: string, width: string, taxonC
 export function addSlider(parent: Element, name: string, min: number, max: number, value: number, containerWidth: number, width: number, onChange: any): void {
     let sliderContainer = document.createElement("div");
     sliderContainer.classList.add("slider-container");
-    sliderContainer.style.width = containerWidth + "px";
+    if (containerWidth > 0){
+        sliderContainer.style.width = containerWidth + "px";
+    }
     parent.appendChild(sliderContainer);
 
     let slider = document.createElement("input");

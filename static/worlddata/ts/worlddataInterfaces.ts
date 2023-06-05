@@ -11,6 +11,11 @@ export interface TooltipFormatterContextObject {
     x?: number | string;
     y?: number;
 }
+export interface Bands {
+    from: number;
+    to: number;
+    className?: string;
+}
 
 // Chart options
 export interface ColorAxisOptions {
@@ -19,6 +24,7 @@ export interface ColorAxisOptions {
     maxColor?: string;
     min?: number;
     minColor?: string;
+    showInLegend?: boolean,
     startOnTick?: boolean;
     stops?: Array<[number, string]>;
     tickInterval?: number;
@@ -29,6 +35,10 @@ export interface XAxisOptions {
     labels?:LabelOptions;
     tickInterval?: number;
     title?: TitleOptions;
+    type?: string;
+}
+export interface PlotOptions {
+    colorAxis?: boolean | number;
 }
 
 // Events
@@ -102,9 +112,10 @@ export interface BubblesData {
 export interface MapData {
     absolute?: number;
     country:string; // ISO-3 code
+    countryName?:string;
     id?: string;
     note?: string;
-    originalName?: string;
+    originalName?: string; //to be removed?
     value:number;
 }
 export interface PieData {
@@ -149,6 +160,7 @@ export interface TreemapData {
 // Secondary
 export interface LabelOptions {
     enabled?: boolean;
+    format?: string;
 }
 export interface ShapeArgsOptions {
     height?: number;
