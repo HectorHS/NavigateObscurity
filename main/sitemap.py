@@ -15,9 +15,11 @@ class MainSitemap(Sitemap):
             'worlddata:migration',
             'worlddata:covid-19',
             'nodes:index',
+            'nodes:guns-germs-and-steel',
             'nodes:head-strong',
             'nodes:gardens-of-the-moon',
-            'nodes:elastic-thinking'
+            'nodes:elastic-thinking',
+            
         ]
 
     def location(self, item):
