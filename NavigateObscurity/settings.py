@@ -42,6 +42,7 @@ INSTALLED_APPS = [
     'nodes',
     'worlddata',
     'cclab',
+    'django_sass',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
