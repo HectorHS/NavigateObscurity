@@ -436,29 +436,48 @@ figure {
       border-radius: 30px 30px 0 0;
       z-index: 1;
       background-image: linear-gradient(to bottom left, $bright-blue-opacity 7%, $mid-grey 50%);
+      padding: 20px;
+      @media only screen and (min-width: $tablet-breakpoint) {
+        padding-bottom: 0;
+      }
     }
   }
   .dashboard-level-2 {
     .dashboard-side-60 {
+      padding:0 20px 20px 20px;
       @media only screen and (min-width: $tablet-breakpoint) {
         border-radius: 30px 0px 0px 30px;
         background-image: linear-gradient(to top right, $bright-blue-opacity 7%, $mid-grey 50%);
+        padding: 20px;
       }
     }
     .dashboard-side-40 {
       background-image: linear-gradient(to top right, $bright-blue-opacity 7%, $mid-grey 50%);
+      padding:0 20px;
       @media only screen and (min-width: $tablet-breakpoint) {
         border-radius: 0 0 30px 0;
         background-image: none;
+        padding: 20px 20px 20px 0;
       }
     }
     .dashboard-side-100 {
       background-image: linear-gradient(to top right, $bright-blue-opacity 7%, $mid-grey 50%);
       border-radius: 0 0 30px 30px;
-      padding-bottom: 20px;
+      padding: 0 20px;
       @media only screen and (min-width: $tablet-breakpoint) {
         border-radius: 30px 0 30px 30px;
-        padding-bottom: 0;
+        padding: 20px;
+      }
+      .column {
+        @media only screen and (min-width: $tablet-breakpoint) {
+          padding-right:20px;
+        }
+      }
+      .dashboard-container-horizontal {
+        padding-bottom: 20px;
+        @media only screen and (min-width: $tablet-breakpoint) {
+          padding-bottom: 0;
+        }
       }
     }
   }
@@ -479,7 +498,6 @@ figure {
   }
 
   .dashboard-side-40 {
-    width: 100%;
     @media only screen and (min-width: $tablet-breakpoint) {
       width: 50%;
     }
@@ -489,8 +507,6 @@ figure {
   }
 
   .dashboard-side-60 {
-    width: 100%;
-
     @media only screen and (min-width: $tablet-breakpoint) {
       width: 50%;
     }
@@ -499,7 +515,10 @@ figure {
     }
   }
   .dashboard-side-100 {
-    width: 100%;
+    // width: 90%;
+    @media only screen and (min-width: $tablet-breakpoint) {
+      width: 100%;
+    }
   }
 
   .dashboard-side {
@@ -735,13 +754,15 @@ figure {
 .side-chart-container {
   box-shadow: 2px 2px 8px $navbar-color;
   padding: 10px;
-  margin: 20px;
-  margin-bottom: 0px;
+  // margin: 20px;
+  margin-bottom: 20px;
   background-color: #2e3838;
   border-radius: 30px;
-  @media only screen and (min-width: $tablet-breakpoint) {
-    margin-bottom: 20px;
+  &.bottom {
+    margin-bottom: 0;
+   
   }
+  
 }
 
 .covid-dashboard {
@@ -760,7 +781,6 @@ figure {
   
   .covid-excess {
     height: 350px;
-    margin-bottom: 5px;
     .error {
       position: absolute;
       top: 400px;
@@ -905,13 +925,13 @@ figure {
       background-color: nth($colors, 51) !important;
     }
     .oil {
-      background-color: nth($colors, 6) !important;
+      background-color: nth($colors, 12) !important;
     }
     .gas {
-      background-color: nth($colors, 10) !important;
+      background-color: nth($colors, 9) !important;
     }
     .nuclear{
-      background-color: nth($colors, 18) !important;
+      background-color: nth($colors, 6) !important;
     }
     .hydro {
       background-color: nth($colors, 2) !important;
@@ -920,7 +940,7 @@ figure {
       background-color: nth($colors, 25) !important;
     }
     .all {
-      background-image: linear-gradient(to bottom left, nth($colors, 2) 20%, nth($colors, 23) 40%, nth($colors, 9) 60%, nth($colors, 31) 80%) !important; 
+      background-image: linear-gradient(to bottom left, nth($colors, 3) 25%, nth($colors, 50) 55%, nth($colors, 45) 75%) !important; 
     }
   }
   .sector-pie {
@@ -944,8 +964,7 @@ figure {
     }
   }
   .energy-sector {
-    height: 400px;
-    // margin-bottom: 20px;
+    height: 350px;
     .error {
       position: absolute;
       bottom: 300px;
@@ -958,7 +977,7 @@ figure {
     }
   }
   .import-bars, .export-bars {
-    height: 400px;
+    height: 350px;
   }
   .energy-map {
     .selected-element {
@@ -1158,7 +1177,6 @@ figure {
     box-shadow: 2px 2px 8px $navbar-color;
   }
   .dashboard-level-2 .dashboard-side-40 {
-    padding-bottom: 20px;
     border-radius: 0 0 30px 30px;
     @media only screen and (min-width: $tablet-breakpoint) {
       padding-bottom: 0px;

@@ -329,6 +329,9 @@ g.highcharts-series,
     .highcharts-color-#{$i - 1} {
         fill: $color;
         stroke: $color;
+        .highcharts-axis-title {
+            fill: $color;
+        }
     }
     .legend-color-#{$i - 1} {
         background-image: linear-gradient(to top right, rgba(255, 0, 0, 0) 0%, $color 50%);

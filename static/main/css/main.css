@@ -1022,7 +1022,7 @@ hr {
   padding: 20px;
 }
 
-@media (min-width: 768px) {
+@media (min-width: 1025px) {
   .container {
     padding: 20px 50px;
   }

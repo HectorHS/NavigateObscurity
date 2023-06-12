@@ -116,14 +116,11 @@ let CovidDashboard = Promise.all([
         }
         for (let row of files[0]) {
             if (row.variable == newMeasure && row.Country == country) {
-                for (let day in ALL_DATES) {
-                    let val = +row[ALL_DATES[day]];
-                    // this especially helpful for test positive rates where we are missing a lot of values
-                    if (val == 0) {
-                        val = null;
-                    }
-                    data.push(val);
-                }
+                // instead of iterating, turn the whole row into an array
+                data = Object.values(row);
+                data.shift();
+                data.shift();
+                data = data.map(Number);
                 return data;
             }
         }
@@ -135,12 +132,39 @@ let CovidDashboard = Promise.all([
         let updated_hospitalization_data = get_bar_data("Hospital");
         let updated_icu_data = get_bar_data("ICU");
         let updated_vaccination_data = get_bar_data("vaccinations");
+        let updated_test_data1 = get_bar_data("tests_people");
+        let updated_test_data2 = get_bar_data("tests_samples");
+        let updated_test_data3 = get_bar_data("tests_tests");
+        let updated_test_data4 = get_bar_data("tests_unclear");
+        let updated_test_ratio_data = get_bar_data("tests_pc");
+        let hospitalYAxis = {
+            title: {
+                text: undefined
+            },
+            endOnTick: false
+        };
+        if (hospitalDateType == "week") {
+            hospitalYAxis.title.text = "Sum of admissions";
+        }
+        else if (hospitalDateType == "day") {
+            hospitalYAxis.title.text = "Daily occupancy";
+        }
+        hospital_chart.update({
+            yAxis: hospitalYAxis,
+        }, false);
         // Then add the updated data
-        cases_chart.series[0].setData(updated_cases_data);
-        deaths_chart.series[0].setData(updated_deaths_data);
-        hospital_chart.series[0].setData(updated_hospitalization_data);
-        hospital_chart.series[1].setData(updated_icu_data);
-        vaccination_chart.series[0].setData(updated_vaccination_data);
+        // cases_chart.series[0].update(updated_cases_data, false);
+        // cases_chart.series[1].update(updated_test_ratio_data, false);
+        cases_chart.series[0].setData(updated_cases_data, false);
+        cases_chart.series[1].setData(updated_test_ratio_data, false);
+        deaths_chart.series[0].setData(updated_deaths_data, false);
+        hospital_chart.series[0].setData(updated_hospitalization_data, false);
+        hospital_chart.series[1].setData(updated_icu_data, false);
+        vaccination_chart.series[0].setData(updated_vaccination_data, false);
+        vaccination_chart.series[1].setData(updated_test_data1, false);
+        vaccination_chart.series[2].setData(updated_test_data2, false);
+        vaccination_chart.series[3].setData(updated_test_data3, false);
+        vaccination_chart.series[4].setData(updated_test_data4, false);
         // Hide / show errors for test graphs (we miss test data for many countries)
         let err1 = document.getElementById("hospital_error");
         if (updated_hospitalization_data.length > 1 || updated_icu_data.length > 1) {
@@ -215,6 +239,30 @@ let CovidDashboard = Promise.all([
         }
         return latest_data;
     }
+    function get_excess_total(year) {
+        let value = null;
+        for (let row of files[2]) {
+            if (country == row.Country) {
+                if (year == 2020) {
+                    if (row.Excess_Deaths_2020 != '') {
+                        value = +row.Excess_Deaths_2020;
+                    }
+                }
+                else if (year == 2021) {
+                    if (row.Excess_Deaths_2021 != '') {
+                        value = +row.Excess_Deaths_2021;
+                    }
+                }
+                else if (year == 2022) {
+                    if (row.Excess_Deaths_2022 != '') {
+                        value = +row.Excess_Deaths_2022;
+                    }
+                }
+                return value;
+            }
+        }
+        return value;
+    }
     function excess_data_update() {
         let excess20 = get_latest_excess_data(2020);
         let excess21 = get_latest_excess_data(2021);
@@ -268,64 +316,53 @@ let CovidDashboard = Promise.all([
                 format: ''
             }
         };
-        if (excess20.length != 0) {
-            let oldTotal = 0;
-            let total2020 = 0;
-            let total_excess_text_2020 = '';
-            for (let i = 0; i < excess20.length; i++) {
-                total2020 += excess20[i];
-                oldTotal += old[i];
-            }
-            let total_excess_2020 = total2020 - oldTotal;
-            let val = numberFormatter(total_excess_2020);
-            if (total_excess_2020 > 0) {
-                total_excess_text_2020 = "+ " + val;
+        let total2020 = get_excess_total(2020);
+        let total2021 = get_excess_total(2021);
+        let total2022 = get_excess_total(2022);
+        if (total2020 != null) {
+            let total2020Text = "";
+            if (total2020 > 0) {
+                total2020Text = "+ " + numberFormatter(total2020);
             }
             else {
-                total_excess_text_2020 = val;
+                total2020Text = numberFormatter(total2020);
             }
-            series20.label.format = total_excess_text_2020;
+            series20.label.format = total2020Text;
             series20.label.enabled = true;
         }
-        if (excess21.length != 0) {
-            let oldTotal = 0;
-            let total2021 = 0;
-            let total_excess_2021 = 0;
-            let total_excess_text_2021 = '';
-            for (let i = 0; i < excess21.length; i++) {
-                total2021 += excess21[i];
-                oldTotal += old[i];
-            }
-            total_excess_2021 = total2021 - oldTotal;
-            let val = numberFormatter(total_excess_2021);
-            if (total_excess_2021 > 0) {
-                total_excess_text_2021 = "+ " + val;
+        else {
+            series20.label.format = '';
+            series20.label.enabled = false;
+        }
+        if (total2021 != null) {
+            let total2021Text = "";
+            if (total2021 > 0) {
+                total2021Text = "+ " + numberFormatter(total2021);
             }
             else {
-                total_excess_text_2021 = val;
+                total2021Text = numberFormatter(total2021);
             }
-            series21.label.format = total_excess_text_2021;
+            series21.label.format = total2021Text;
             series21.label.enabled = true;
         }
-        if (excess22.length != 0) {
-            let oldTotal = 0;
-            let total2022 = 0;
-            let total_excess_2022 = 0;
-            let total_excess_text_2022 = '';
-            for (let i = 0; i < excess22.length; i++) {
-                total2022 += excess22[i];
-                oldTotal += old[i];
-            }
-            total_excess_2022 = total2022 - oldTotal;
-            let val = numberFormatter(total_excess_2022);
-            if (total_excess_2022 > 0) {
-                total_excess_text_2022 = "+ " + val;
+        else {
+            series21.label.format = '';
+            series21.label.enabled = false;
+        }
+        if (total2022 != null) {
+            let total2022Text = "";
+            if (total2022 > 0) {
+                total2022Text = "+ " + numberFormatter(total2022);
             }
             else {
-                total_excess_text_2022 = val;
+                total2022Text = numberFormatter(total2022);
             }
-            series22.label.format = total_excess_text_2022;
+            series22.label.format = total2022Text;
             series22.label.enabled = true;
+        }
+        else {
+            series22.label.format = '';
+            series22.label.enabled = false;
         }
         // update data
         series20.data = excess20;
@@ -485,6 +522,13 @@ let CovidDashboard = Promise.all([
     let initial_hospitalization_data = get_bar_data("Hospital");
     let initial_icu_data = get_bar_data("ICU");
     let initial_vaccination_data = get_bar_data("vaccinations");
+    let initial_tests_data1 = get_bar_data("tests_people");
+    let initial_tests_data2 = get_bar_data("tests_samples");
+    let initial_tests_data3 = get_bar_data("tests_tests");
+    let initial_tests_data4 = get_bar_data("tests_unclear");
+    let initial_test_ratio_data = get_bar_data("tests_pc");
+    let initial_excess2020Total = numberFormatter(get_excess_total(2020));
+    let initial_excess2021Total = numberFormatter(get_excess_total(2021));
     setStats();
     let chartXAxis = {
         categories: ALL_DATES,
@@ -499,29 +543,52 @@ let CovidDashboard = Promise.all([
     let cases_chart = Highcharts.chart({
         chart: {
             type: 'column',
-            renderTo: 'cases_bars'
+            renderTo: 'cases_bars',
         },
         title: {
             text: undefined
         },
         xAxis: chartXAxis,
-        yAxis: {
-            min: 0,
-            endOnTick: false,
-            title: {
-                text: "Weekly sum"
-            },
-        },
+        yAxis: [{
+                min: 0,
+                endOnTick: false,
+                title: {
+                    text: "Sum of cases"
+                },
+                className: 'highcharts-color-3',
+            }, {
+                min: 0,
+                endOnTick: false,
+                title: {
+                    text: "Tests per case"
+                },
+                className: 'highcharts-color-36',
+                opposite: true
+            }],
         tooltip: {
             formatter: function () {
                 let title = getCountryName(country);
                 let date = this.x;
                 let cases = numberFormatter(this.points[0].y);
+                let casesText = 'Sum of cases:<b> ' + cases + '</b>';
+                let ratio = 0;
+                if (this.points.length > 1) {
+                    ratio = this.points[1].y;
+                }
+                let ratioText = "";
+                if (ratio > 0) {
+                    ratioText = '<b>' + numberFormatter(ratio) + "</b> tests for each case";
+                }
+                else {
+                    ratioText = "No test data available";
+                }
                 return '<span style="font-size: 1.1em"><b>' + title +
-                    '</b><br></span>For week ending on: <b>' + date + '</b><br>Sum of cases:<b> ' + cases + '</b>';
+                    '</b><br></span>For week ending on: <b>' + date + '</b><br>' + casesText +
+                    '<br/>' + ratioText;
             },
             useHTML: true,
-            shared: true
+            shared: true,
+            split: false,
         },
         plotOptions: {
             spline: {
@@ -530,21 +597,32 @@ let CovidDashboard = Promise.all([
                 },
                 label: {
                     enabled: false
-                }
+                },
+                connectNulls: false
             },
             column: {
                 stacking: 'normal',
                 borderRadius: 3,
                 pointPadding: 0,
                 groupPadding: 0.1,
+                crisp: false
             }
         },
         series: [{
-                id: "cases",
                 name: "COVID-19 cases",
                 type: 'column',
-                colorIndex: 1,
+                colorIndex: 3,
                 data: initial_cases_data,
+                yAxis: 0
+            }, {
+                name: "Positive test ratio",
+                type: 'spline',
+                colorIndex: 36,
+                data: initial_test_ratio_data,
+                yAxis: 1,
+                label: {
+                    enabled: true,
+                }
             }],
         legend: {
             enabled: false
@@ -582,6 +660,7 @@ let CovidDashboard = Promise.all([
                 borderRadius: 3,
                 pointPadding: 0,
                 groupPadding: 0.1,
+                crisp: false
             },
         },
         series: [{
@@ -653,6 +732,7 @@ let CovidDashboard = Promise.all([
                 borderRadius: 3,
                 pointPadding: 0,
                 groupPadding: 0.1,
+                crisp: false
             },
         },
         series: [{
@@ -679,25 +759,76 @@ let CovidDashboard = Promise.all([
             text: undefined
         },
         xAxis: chartXAxis,
-        yAxis: {
-            title: {
-                text: "Population share"
+        yAxis: [{
+                title: {
+                    text: "Sum of tests"
+                },
+                endOnTick: false,
+                min: 0,
+                className: 'highcharts-color-24',
             },
-            labels: {
-                format: '{text}%'
-            },
-            endOnTick: true,
-            max: 100
-        },
+            {
+                title: {
+                    text: "Population share"
+                },
+                labels: {
+                    format: '{text}%'
+                },
+                endOnTick: true,
+                max: 100,
+                opposite: true,
+                className: 'highcharts-color-35',
+            }],
         tooltip: {
             formatter: function () {
                 let title = getCountryName(country);
                 let date = this.x;
-                let value = numberFormatter(this.y);
+                let vacc = numberFormatter(this.points[0].y);
+                let vaccText = "<b>" + vacc + "%</b> of the population had been vaccinated<br/>";
+                let testText = "";
+                if (title == "World") {
+                    let test1 = this.points[1].y;
+                    let test2 = this.points[2].y;
+                    let test3 = this.points[3].y;
+                    let test4 = this.points[4].y;
+                    let testTotal = test1 + test2 + test3 + test4;
+                    if (testTotal > 0) {
+                        testText = "A total of <b>" + numberFormatter(testTotal) + "</b> mixed unit tests were carried out <br/>(" +
+                            numberFormatter(test1) + " people + " + numberFormatter(test2) + " samples +<br/>" +
+                            numberFormatter(test3) + " tests + " + numberFormatter(test4) + " unknown units)";
+                    }
+                    else {
+                        testText = "No test data available";
+                    }
+                }
+                else {
+                    // we only have one, check series name to see which one
+                    let val = this.points[1].y;
+                    if (val > 0) {
+                        let type = this.points[1].series.name;
+                        if (type == "tests_people") {
+                            testText = "<b>" + numberFormatter(val) + "</b> people were tested";
+                        }
+                        else if (type == "tests_samples") {
+                            testText = "<b>" + numberFormatter(val) + "</b> samples were tested";
+                        }
+                        else if (type == "tests_tests") {
+                            testText = "<b>" + numberFormatter(val) + "</b> tests were carried out";
+                        }
+                        else if (type == "tests_unclear") {
+                            testText = "<b>" + numberFormatter(val) + "</b> tests were carried out (unclear units)";
+                        }
+                    }
+                    else {
+                        testText = "No test data available";
+                    }
+                }
                 return '<span style="font-size: 1.1em"><b>' + title + '</b><br></span>For week ending on <b>' + date +
-                    '<br/>' + value + '%</b> of the population had been vaccinated';
+                    '</b><br/>' + vaccText + testText;
             },
             useHTML: true,
+            shared: true,
+            split: false,
         },
         plotOptions: {
             column: {
@@ -705,21 +836,60 @@ let CovidDashboard = Promise.all([
                 borderRadius: 3,
                 pointPadding: 0,
                 groupPadding: 0.1,
+                crisp: false
             },
         },
         series: [{
-                colorIndex: 24,
-                name: 'Covid19',
-                type: 'column',
+                colorIndex: 35,
+                name: 'Vaccinations',
+                type: 'spline',
                 data: initial_vaccination_data,
-            }],
+                yAxis: 1,
+                zIndex: 1
+            }, {
+                name: "tests_people",
+                type: 'column',
+                colorIndex: 24,
+                data: initial_tests_data1,
+                label: {
+                    enabled: false,
+                    format: ''
+                }
+            }, {
+                name: "tests_samples",
+                type: 'column',
+                colorIndex: 24,
+                data: initial_tests_data2,
+                label: {
+                    enabled: false,
+                    format: ''
+                }
+            }, {
+                name: "tests_tests",
+                type: 'column',
+                colorIndex: 24,
+                data: initial_tests_data3,
+                label: {
+                    enabled: false,
+                    format: ''
+                }
+            }, {
+                name: "tests_unclear",
+                type: 'column',
+                colorIndex: 24,
+                data: initial_tests_data4,
+                label: {
+                    enabled: false,
+                    format: ''
+                }
+            },],
         legend: {
             enabled: false
         }
     });
     let excess_chart = Highcharts.chart({
         chart: {
-            type: 'area',
+            type: 'spline',
             renderTo: 'excess_deaths'
         },
         title: {
@@ -737,7 +907,7 @@ let CovidDashboard = Promise.all([
         },
         yAxis: {
             title: {
-                text: 'Total deaths (for all causes)'
+                text: 'Total deaths (all causes)'
             },
             endOnTick: false
         },
@@ -755,6 +925,7 @@ let CovidDashboard = Promise.all([
                 borderRadius: 3,
                 pointPadding: 0,
                 groupPadding: 0.1,
+                crisp: false
             },
         },
         tooltip: {
@@ -831,7 +1002,7 @@ let CovidDashboard = Promise.all([
                 id: "old",
                 name: "Expected deaths",
                 type: 'column',
-                colorIndex: 50,
+                colorIndex: 6,
                 data: initial_old_excess_data,
             },
             {
@@ -841,8 +1012,8 @@ let CovidDashboard = Promise.all([
                 colorIndex: 46,
                 data: initial_2020_excess_data,
                 label: {
-                    enabled: false,
-                    format: ''
+                    enabled: true,
+                    format: initial_excess2020Total
                 }
             },
             {
@@ -852,8 +1023,8 @@ let CovidDashboard = Promise.all([
                 colorIndex: 44,
                 data: initial_2021_excess_data,
                 label: {
-                    enabled: false,
-                    format: ''
+                    enabled: true,
+                    format: initial_excess2021Total
                 }
             },
             {
@@ -1059,7 +1230,7 @@ let CovidDashboard = Promise.all([
                     dateChange();
                     loopi++;
                 }
-            }, 250);
+            }, 150);
         }
     }
     // adjust map color stops according to parameter

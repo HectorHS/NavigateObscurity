@@ -522,35 +522,65 @@ figure {
   border-radius: 30px 30px 0 0;
   z-index: 1;
   background-image: linear-gradient(to bottom left, rgba(26, 148, 255, 0.4) 7%, #3f5050 50%);
+  padding: 20px;
+}
+
+@media only screen and (min-width: 850px) {
+  .dashboard .dashboard-level-1 .dashboard-side-40 {
+    padding-bottom: 0;
+  }
+}
+
+.dashboard .dashboard-level-2 .dashboard-side-60 {
+  padding: 0 20px 20px 20px;
 }
 
 @media only screen and (min-width: 850px) {
   .dashboard .dashboard-level-2 .dashboard-side-60 {
     border-radius: 30px 0px 0px 30px;
     background-image: linear-gradient(to top right, rgba(26, 148, 255, 0.4) 7%, #3f5050 50%);
+    padding: 20px;
   }
 }
 
 .dashboard .dashboard-level-2 .dashboard-side-40 {
   background-image: linear-gradient(to top right, rgba(26, 148, 255, 0.4) 7%, #3f5050 50%);
+  padding: 0 20px;
 }
 
 @media only screen and (min-width: 850px) {
   .dashboard .dashboard-level-2 .dashboard-side-40 {
     border-radius: 0 0 30px 0;
     background-image: none;
+    padding: 20px 20px 20px 0;
   }
 }
 
 .dashboard .dashboard-level-2 .dashboard-side-100 {
   background-image: linear-gradient(to top right, rgba(26, 148, 255, 0.4) 7%, #3f5050 50%);
   border-radius: 0 0 30px 30px;
-  padding-bottom: 20px;
+  padding: 0 20px;
 }
 
 @media only screen and (min-width: 850px) {
   .dashboard .dashboard-level-2 .dashboard-side-100 {
     border-radius: 30px 0 30px 30px;
+    padding: 20px;
+  }
+}
+
+@media only screen and (min-width: 850px) {
+  .dashboard .dashboard-level-2 .dashboard-side-100 .column {
+    padding-right: 20px;
+  }
+}
+
+.dashboard .dashboard-level-2 .dashboard-side-100 .dashboard-container-horizontal {
+  padding-bottom: 20px;
+}
+
+@media only screen and (min-width: 850px) {
+  .dashboard .dashboard-level-2 .dashboard-side-100 .dashboard-container-horizontal {
     padding-bottom: 0;
   }
 }
@@ -571,10 +601,6 @@ figure {
   font-weight: 400;
 }
 
-.dashboard .dashboard-side-40 {
-  width: 100%;
-}
-
 @media only screen and (min-width: 850px) {
   .dashboard .dashboard-side-40 {
     width: 50%;
@@ -585,10 +611,6 @@ figure {
   .dashboard .dashboard-side-40 {
     width: 40%;
   }
-}
-
-.dashboard .dashboard-side-60 {
-  width: 100%;
 }
 
 @media only screen and (min-width: 850px) {
@@ -603,8 +625,10 @@ figure {
   }
 }
 
-.dashboard .dashboard-side-100 {
-  width: 100%;
+@media only screen and (min-width: 850px) {
+  .dashboard .dashboard-side-100 {
+    width: 100%;
+  }
 }
 
 .dashboard .dashboard-side {
@@ -1949,16 +1973,13 @@ figure {
 .side-chart-container {
   box-shadow: 2px 2px 8px rgba(23, 28, 28, 0.9);
   padding: 10px;
-  margin: 20px;
-  margin-bottom: 0px;
+  margin-bottom: 20px;
   background-color: #2e3838;
   border-radius: 30px;
 }
 
-@media only screen and (min-width: 850px) {
-  .side-chart-container {
-    margin-bottom: 20px;
-  }
+.side-chart-container.bottom {
+  margin-bottom: 0;
 }
 
 .covid-dashboard .covid-map {
@@ -1978,7 +1999,6 @@ figure {
 
 .covid-dashboard .covid-excess {
   height: 350px;
-  margin-bottom: 5px;
 }
 
 .covid-dashboard .covid-excess .error {
@@ -2168,15 +2188,15 @@ figure {
 }
 
 .energy-dashboard .chart-options .radio-container .oil {
-  background-color: #003666 !important;
+  background-color: #919108 !important;
 }
 
 .energy-dashboard .chart-options .radio-container .gas {
-  background-color: #FFFF1A !important;
+  background-color: #FFFF4D !important;
 }
 
 .energy-dashboard .chart-options .radio-container .nuclear {
-  background-color: #D1158F !important;
+  background-color: #003666 !important;
 }
 
 .energy-dashboard .chart-options .radio-container .hydro {
@@ -2188,7 +2208,7 @@ figure {
 }
 
 .energy-dashboard .chart-options .radio-container .all {
-  background-image: linear-gradient(to bottom left, #66B8FF 20%, #52E052 40%, #FFFF4D 60%, #E63333 80%) !important;
+  background-image: linear-gradient(to bottom left, #1A94FF 25%, #ddc3c3 55%, #FFA033 75%) !important;
 }
 
 .energy-dashboard .sector-pie .highcharts-point-level1 {
@@ -2215,7 +2235,7 @@ figure {
 }
 
 .energy-dashboard .energy-sector {
-  height: 400px;
+  height: 350px;
 }
 
 .energy-dashboard .energy-sector .error {
@@ -2233,7 +2253,7 @@ figure {
 }
 
 .energy-dashboard .import-bars, .energy-dashboard .export-bars {
-  height: 400px;
+  height: 350px;
 }
 
 .energy-dashboard .energy-map .selected-element {
@@ -2453,7 +2473,6 @@ figure {
 }
 
 .death-dashboard .dashboard-level-2 .dashboard-side-40 {
-  padding-bottom: 20px;
   border-radius: 0 0 30px 30px;
 }
 

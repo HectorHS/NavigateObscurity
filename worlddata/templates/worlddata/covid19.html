@@ -41,7 +41,10 @@
 <!-- Viz 1 - Dashboard with map, area and bars -->
 <section>
     <h2 class="section-title">The COVID-19 Dashboard</h2>
-    <p>All data presented here cover the first 3 years of the pandemic (2020 - 2022).</p>
+    <div class="container limited-width">
+        <p>All data presented here cover the first 3 years of the pandemic (2020 - 2022).</p>
+    </div>
+    
     <div id="covid_intro" class="container limited-width">
         <div class="q-o-n-container" style="display: flex;">
             <div class="tabs-container">
@@ -72,7 +75,7 @@
                         </li>
                         <li>
                             Only about half of the excess mortality (deaths exceeding the average of previous years) for the USA, Brazil,
-                            Spain, France and Sweden, can be accounted for by the direct COVID-19 deaths recorded in the first three years
+                            Spain, France and Sweden, can be accounted for by the COVID-19 deaths recorded in the first three years
                             of the pandemic.
                         </li>
                         <li>
@@ -89,11 +92,17 @@
                     </div>
                     <div class="hide dash-obscurity">
                         <p style="margin-top: 0;">
-                            Cases numbers are the confirmed cases, so the number of people who have tested positive for COVID-19. Of course,
-                            since the beginning of the pandemic, we know that this number is not accurate, as not everyone gets tested
-                            and/or recorded in official figures. Testing strategies have differed significantly across countries and stages
-                            of the pandemic impacting significantly the confirmed cases figures. Test data is missing from this dashboard
-                            because of significant mismatches and missing data.
+                            Cases numbers are the confirmed cases, so the number of people who have tested positive for COVID-19. Since the
+                            begining of the pandemic, we have known that since everyone was not constantly being tested, the confirmed cases
+                            figures must be undervaluing the true spread of the virus. The question is, by how much? A good indication is to
+                            look at how many tests have been done for every positive result. If we have done 100 tests for every positive one
+                            (100 ratio), our total numbers are probably much more accurate than having done 2 tests for each positive one (2
+                            ratio). Ok, so I can look at the total confirmed cases, and then on the positive ratio, come up with a fancy
+                            calculation formula and then I’ll know. Getting closer, but not there yet. Testing is carried out very differently
+                            in different parts of the world. Some countries count the number of people tested, others the number of samples
+                            tested, and for many countries we don’t even have data. Some countries test widely, some narrowly in high-risk
+                            populations, others use track and test systems and so on. All these different approaches cannot be accurately
+                            quantified at this point, but some data is better than none.
                         </p>
                         <p>
                             Death data might be a better metric to gauge the impact of the pandemic at a certain time, but again it is not
@@ -147,23 +156,25 @@
                             ago. All things considered, the best way to get a bird's eye view of this data is via the animation feature of
                             the map (click the play button!), which allows you to compare data across countries and time simultaneously,
                             while also providing a clear view of the different waves of the pandemic.
-                        </p>
-                        <p>
-                            The hospitalisation, vaccination, and movement restriction data can provide further context to the cases and
-                            deaths data. Take Germany as an example. The ratio between cases, hospitalizations, and deaths, remained very
-                            similar during the first two winters of the pandemic. In the winter of 2021-22, case numbers exploded (far
-                            exceeding what can be explained by increased testing alone), but hospitalization numbers did not see a similar
-                            increase, and more importantly, deaths were reduced compared to the previous winter. The less strict movement
-                            restrictions in this third winter likely contributed to the increased cases, but the increased vaccination
-                            likely contributed to the reduced deaths. At the same time, the winter peaks in cases, hospitalizations and
-                            deaths can partly explain the increased movement restrictions imposed during winters, which is a theme shared
-                            with most countries of similar geographies (climate).
-                        </p>
-                        <p style="margin-bottom: 0;">
-                            Finally, the overall excess of deaths is arguably the best testament to COVID-19's impact. Beyond debates about
-                            the virus' deadliness, and the reliability of the various available data, here is a clear metric of the cost of
-                            life of the pandemic and how we handled it.
-                        </p>
+                            </p>
+                            <p>
+                                The hospitalisation, vaccination, and movement restriction data can provide further context to the cases and
+                                deaths data. Take Germany as an example. The ratio between cases, hospitalizations, and deaths, remained very
+                                similar during the first two winters of the pandemic. Then, in the beginning of 2022, case numbers exploded while
+                                the positive test ratio hit an all-time low indicating that the real number of cases was almost certainly even
+                                higher. At the same time, deaths were actually reduced compared to the previous winter. This is particularly
+                                surprising after seeing that hospitalisations were actually pretty high for a very long time in 2022. The less
+                                strict movement restrictions in this third winter likely contributed to the increased cases, but the increased
+                                vaccination likely contributed to the reduced deaths. The total excess deaths, however, were significantly higher in
+                                2022, possibly hinting at the hidden impacts of an over encumbered health system. Lastly, the winter peaks in cases,
+                                hospitalizations and deaths can partly explain the increased movement restrictions imposed during winters, which is
+                                a theme shared with most countries of similar geographies (climate).
+                            </p>
+                            <p style="margin-bottom: 0;">
+                                Finally, the overall excess of deaths is arguably the best testament to COVID-19's impact. Beyond debates about
+                                the virus' deadliness, and the reliability of the various available data, here is a clear metric of the cost of
+                                life of the pandemic and how we handled it.
+                            </p>
                 </div>
             </div>
         </div>
@@ -188,7 +199,7 @@
                                     
                                     <div class="dashboard-command" style="margin: 10px 0px;">Click on the map to select a country</div>
                                 </div>
-                                <div id="covid_map" class="map" style="width:100%;"></div>
+                                <div id="covid_map" class="map" style="width:100%;border-radius:30px;"></div>
                             </div>
 
                         </div>
@@ -277,7 +288,7 @@
                         </div>
                     </div>
                     
-                        <div  class="chart-container-dashboard side-chart-container covid-excess filters-on-top bar-line">
+                        <div  class="chart-container-dashboard side-chart-container covid-excess filters-on-top bar-line bottom">
                             <div class="chart-options" style="max-width:100%; ">
                                 <div class="dashboard-title">
                                     Excess mortality
@@ -296,41 +307,42 @@
             </div>
             <div class="dashboard-container-vertical dashboard-level-2">
                 <div class="dashboard-container-vertical dashboard-side-100">
-                    <div class="dashboard-container-horizontal covid-bar-container">
-                        <div class="side-chart-container" style="margin-bottom:0;">
+                    <div class="dashboard-container-horizontal covid-bar-container column">
+                        <div class="side-chart-container">
                             <div class="chart-options" style="max-width:100%; ">
-                                <div class="dashboard-title">COVID-19 cases</div>                
+                                <div class="dashboard-title">COVID-19 cases & positive test ratio</div>                
                             </div>
                             <div class="chart-container-dashboard bars filters-on-top">
                                 <div id="cases_bars" class="bars" style="width:100%;"></div>
                             </div>
                         </div>
-                        <div class="side-chart-container">
-                            <div class="chart-options" style="max-width:100%; ">
-                                <div class="dashboard-title">COVID-19 hospitalizations</div>                
-                            </div>
-                            <div class="chart-container-dashboard bars filters-on-top bars">
-                                <div id="hospital_bars" class="bars" style="width:100%;"></div>
-                                <div id="hospital_error" class="error2">No data available</div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="dashboard-container-horizontal covid-bar-container">
-                        <div class="side-chart-container"
-                            style="z-index: 1;margin-bottom:0;">
+                        <div class="side-chart-container bottom">
                             <div class="chart-options" style="max-width:100%; ">
                                 <div class="dashboard-title">COVID-19 deaths</div>                
                             </div>
                             <div class="chart-container-dashboard bars filters-on-top">
                                 <div id="deaths_bars" class="bars" style="width:100%;"></div>
                             </div>
+                            
                         </div>
-                        <div class="side-chart-container">
+                    </div>
+                    <div class="dashboard-container-horizontal covid-bar-container">
+                        <div class="side-chart-container" style="z-index: 1;">
                             <div class="chart-options" style="max-width:100%; ">
-                                <div class="dashboard-title">COVID-19 vaccinations</div>                
+                                <div class="dashboard-title">COVID-19 tests & vaccinations</div>                
                             </div>
                             <div class="chart-container-dashboard bars filters-on-top bars">
                                 <div id="vaccination_bars" class="bars" style="width:100%;"></div>
+                            </div>
+                        </div>
+                        <div class="side-chart-container bottom">
+                            
+                            <div class="chart-options" style="max-width:100%; ">
+                                <div class="dashboard-title">COVID-19 hospitalizations</div>                
+                            </div>
+                            <div class="chart-container-dashboard bars filters-on-top bars">
+                                <div id="hospital_bars" class="bars" style="width:100%;"></div>
+                                <div id="hospital_error" class="error2">No data available</div>
                             </div>
                         </div>
                     </div>

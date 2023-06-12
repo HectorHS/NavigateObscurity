@@ -233,6 +233,10 @@ g.highcharts-series,
   stroke: #B3DBFF;
 }
 
+.highcharts-color-0 .highcharts-axis-title {
+  fill: #B3DBFF;
+}
+
 .legend-color-0 {
   background-image: linear-gradient(to top right, rgba(255, 0, 0, 0) 0%, #B3DBFF 50%);
 }
@@ -240,6 +244,10 @@ g.highcharts-series,
 .highcharts-color-1 {
   fill: #66B8FF;
   stroke: #66B8FF;
+}
+
+.highcharts-color-1 .highcharts-axis-title {
+  fill: #66B8FF;
 }
 
 .legend-color-1 {
@@ -251,6 +259,10 @@ g.highcharts-series,
   stroke: #1A94FF;
 }
 
+.highcharts-color-2 .highcharts-axis-title {
+  fill: #1A94FF;
+}
+
 .legend-color-2 {
   background-image: linear-gradient(to top right, rgba(255, 0, 0, 0) 0%, #1A94FF 50%);
 }
@@ -258,6 +270,10 @@ g.highcharts-series,
 .highcharts-color-3 {
   fill: #0070D1;
   stroke: #0070D1;
+}
+
+.highcharts-color-3 .highcharts-axis-title {
+  fill: #0070D1;
 }
 
 .legend-color-3 {
@@ -269,6 +285,10 @@ g.highcharts-series,
   stroke: #005299;
 }
 
+.highcharts-color-4 .highcharts-axis-title {
+  fill: #005299;
+}
+
 .legend-color-4 {
   background-image: linear-gradient(to top right, rgba(255, 0, 0, 0) 0%, #005299 50%);
 }
@@ -276,6 +296,10 @@ g.highcharts-series,
 .highcharts-color-5 {
   fill: #003666;
   stroke: #003666;
+}
+
+.highcharts-color-5 .highcharts-axis-title {
+  fill: #003666;
 }
 
 .legend-color-5 {
@@ -287,6 +311,10 @@ g.highcharts-series,
   stroke: #001B33;
 }
 
+.highcharts-color-6 .highcharts-axis-title {
+  fill: #001B33;
+}
+
 .legend-color-6 {
   background-image: linear-gradient(to top right, rgba(255, 0, 0, 0) 0%, #001B33 50%);
 }
@@ -294,6 +322,10 @@ g.highcharts-series,
 .highcharts-color-7 {
   fill: #FFFF99;
   stroke: #FFFF99;
+}
+
+.highcharts-color-7 .highcharts-axis-title {
+  fill: #FFFF99;
 }
 
 .legend-color-7 {
@@ -305,6 +337,10 @@ g.highcharts-series,
   stroke: #FFFF4D;
 }
 
+.highcharts-color-8 .highcharts-axis-title {
+  fill: #FFFF4D;
+}
+
 .legend-color-8 {
   background-image: linear-gradient(to top right, rgba(255, 0, 0, 0) 0%, #FFFF4D 50%);
 }
@@ -312,6 +348,10 @@ g.highcharts-series,
 .highcharts-color-9 {
   fill: #FFFF1A;
   stroke: #FFFF1A;
+}
+
+.highcharts-color-9 .highcharts-axis-title {
+  fill: #FFFF1A;
 }
 
 .legend-color-9 {
@@ -323,6 +363,10 @@ g.highcharts-series,
   stroke: #C7C705;
 }
 
+.highcharts-color-10 .highcharts-axis-title {
+  fill: #C7C705;
+}
+
 .legend-color-10 {
   background-image: linear-gradient(to top right, rgba(255, 0, 0, 0) 0%, #C7C705 50%);
 }
@@ -330,6 +374,10 @@ g.highcharts-series,
 .highcharts-color-11 {
   fill: #919108;
   stroke: #919108;
+}
+
+.highcharts-color-11 .highcharts-axis-title {
+  fill: #919108;
 }
 
 .legend-color-11 {
@@ -341,6 +389,10 @@ g.highcharts-series,
   stroke: #5E5E08;
 }
 
+.highcharts-color-12 .highcharts-axis-title {
+  fill: #5E5E08;
+}
+
 .legend-color-12 {
   background-image: linear-gradient(to top right, rgba(255, 0, 0, 0) 0%, #5E5E08 50%);
 }
@@ -348,6 +400,10 @@ g.highcharts-series,
 .highcharts-color-13 {
   fill: #2E2E05;
   stroke: #2E2E05;
+}
+
+.highcharts-color-13 .highcharts-axis-title {
+  fill: #2E2E05;
 }
 
 .legend-color-13 {
@@ -359,6 +415,10 @@ g.highcharts-series,
   stroke: #FAD1EC;
 }
 
+.highcharts-color-14 .highcharts-axis-title {
+  fill: #FAD1EC;
+}
+
 .legend-color-14 {
   background-image: linear-gradient(to top right, rgba(255, 0, 0, 0) 0%, #FAD1EC 50%);
 }
@@ -366,6 +426,10 @@ g.highcharts-series,
 .highcharts-color-15 {
   fill: #F48BCF;
   stroke: #F48BCF;
+}
+
+.highcharts-color-15 .highcharts-axis-title {
+  fill: #F48BCF;
 }
 
 .legend-color-15 {
@@ -377,6 +441,10 @@ g.highcharts-series,
   stroke: #ED45B2;
 }
 
+.highcharts-color-16 .highcharts-axis-title {
+  fill: #ED45B2;
+}
+
 .legend-color-16 {
   background-image: linear-gradient(to top right, rgba(255, 0, 0, 0) 0%, #ED45B2 50%);
 }
@@ -384,6 +452,10 @@ g.highcharts-series,
 .highcharts-color-17 {
   fill: #D1158F;
   stroke: #D1158F;
+}
+
+.highcharts-color-17 .highcharts-axis-title {
+  fill: #D1158F;
 }
 
 .legend-color-17 {
@@ -395,6 +467,10 @@ g.highcharts-series,
   stroke: #970F67;
 }
 
+.highcharts-color-18 .highcharts-axis-title {
+  fill: #970F67;
+}
+
 .legend-color-18 {
   background-image: linear-gradient(to top right, rgba(255, 0, 0, 0) 0%, #970F67 50%);
 }
@@ -402,6 +478,10 @@ g.highcharts-series,
 .highcharts-color-19 {
   fill: #5D0940;
   stroke: #5D0940;
+}
+
+.highcharts-color-19 .highcharts-axis-title {
+  fill: #5D0940;
 }
 
 .legend-color-19 {
@@ -413,6 +493,10 @@ g.highcharts-series,
   stroke: #2E0520;
 }
 
+.highcharts-color-20 .highcharts-axis-title {
+  fill: #2E0520;
+}
+
 .legend-color-20 {
   background-image: linear-gradient(to top right, rgba(255, 0, 0, 0) 0%, #2E0520 50%);
 }
@@ -420,6 +504,10 @@ g.highcharts-series,
 .highcharts-color-21 {
   fill: #7DE87D;
   stroke: #7DE87D;
+}
+
+.highcharts-color-21 .highcharts-axis-title {
+  fill: #7DE87D;
 }
 
 .legend-color-21 {
@@ -431,6 +519,10 @@ g.highcharts-series,
   stroke: #52E052;
 }
 
+.highcharts-color-22 .highcharts-axis-title {
+  fill: #52E052;
+}
+
 .legend-color-22 {
   background-image: linear-gradient(to top right, rgba(255, 0, 0, 0) 0%, #52E052 50%);
 }
@@ -438,6 +530,10 @@ g.highcharts-series,
 .highcharts-color-23 {
   fill: #23CA23;
   stroke: #23CA23;
+}
+
+.highcharts-color-23 .highcharts-axis-title {
+  fill: #23CA23;
 }
 
 .legend-color-23 {
@@ -449,6 +545,10 @@ g.highcharts-series,
   stroke: #1B981B;
 }
 
+.highcharts-color-24 .highcharts-axis-title {
+  fill: #1B981B;
+}
+
 .legend-color-24 {
   background-image: linear-gradient(to top right, rgba(255, 0, 0, 0) 0%, #1B981B 50%);
 }
@@ -456,6 +556,10 @@ g.highcharts-series,
 .highcharts-color-25 {
   fill: #136C13;
   stroke: #136C13;
+}
+
+.highcharts-color-25 .highcharts-axis-title {
+  fill: #136C13;
 }
 
 .legend-color-25 {
@@ -467,6 +571,10 @@ g.highcharts-series,
   stroke: #0B410B;
 }
 
+.highcharts-color-26 .highcharts-axis-title {
+  fill: #0B410B;
+}
+
 .legend-color-26 {
   background-image: linear-gradient(to top right, rgba(255, 0, 0, 0) 0%, #0B410B 50%);
 }
@@ -474,6 +582,10 @@ g.highcharts-series,
 .highcharts-color-27 {
   fill: #041604;
   stroke: #041604;
+}
+
+.highcharts-color-27 .highcharts-axis-title {
+  fill: #041604;
 }
 
 .legend-color-27 {
@@ -485,6 +597,10 @@ g.highcharts-series,
   stroke: #F18E8E;
 }
 
+.highcharts-color-28 .highcharts-axis-title {
+  fill: #F18E8E;
+}
+
 .legend-color-28 {
   background-image: linear-gradient(to top right, rgba(255, 0, 0, 0) 0%, #F18E8E 50%);
 }
@@ -492,6 +608,10 @@ g.highcharts-series,
 .highcharts-color-29 {
   fill: #EB6060;
   stroke: #EB6060;
+}
+
+.highcharts-color-29 .highcharts-axis-title {
+  fill: #EB6060;
 }
 
 .legend-color-29 {
@@ -503,6 +623,10 @@ g.highcharts-series,
   stroke: #E63333;
 }
 
+.highcharts-color-30 .highcharts-axis-title {
+  fill: #E63333;
+}
+
 .legend-color-30 {
   background-image: linear-gradient(to top right, rgba(255, 0, 0, 0) 0%, #E63333 50%);
 }
@@ -510,6 +634,10 @@ g.highcharts-series,
 .highcharts-color-31 {
   fill: #CC1919;
   stroke: #CC1919;
+}
+
+.highcharts-color-31 .highcharts-axis-title {
+  fill: #CC1919;
 }
 
 .legend-color-31 {
@@ -521,6 +649,10 @@ g.highcharts-series,
   stroke: #881111;
 }
 
+.highcharts-color-32 .highcharts-axis-title {
+  fill: #881111;
+}
+
 .legend-color-32 {
   background-image: linear-gradient(to top right, rgba(255, 0, 0, 0) 0%, #881111 50%);
 }
@@ -528,6 +660,10 @@ g.highcharts-series,
 .highcharts-color-33 {
   fill: #440808;
   stroke: #440808;
+}
+
+.highcharts-color-33 .highcharts-axis-title {
+  fill: #440808;
 }
 
 .legend-color-33 {
@@ -539,6 +675,10 @@ g.highcharts-series,
   stroke: #170303;
 }
 
+.highcharts-color-34 .highcharts-axis-title {
+  fill: #170303;
+}
+
 .legend-color-34 {
   background-image: linear-gradient(to top right, rgba(255, 0, 0, 0) 0%, #170303 50%);
 }
@@ -546,6 +686,10 @@ g.highcharts-series,
 .highcharts-color-35 {
   fill: #e7d7f4;
   stroke: #e7d7f4;
+}
+
+.highcharts-color-35 .highcharts-axis-title {
+  fill: #e7d7f4;
 }
 
 .legend-color-35 {
@@ -557,6 +701,10 @@ g.highcharts-series,
   stroke: #C29CE2;
 }
 
+.highcharts-color-36 .highcharts-axis-title {
+  fill: #C29CE2;
+}
+
 .legend-color-36 {
   background-image: linear-gradient(to top right, rgba(255, 0, 0, 0) 0%, #C29CE2 50%);
 }
@@ -564,6 +712,10 @@ g.highcharts-series,
 .highcharts-color-37 {
   fill: #9D61D1;
   stroke: #9D61D1;
+}
+
+.highcharts-color-37 .highcharts-axis-title {
+  fill: #9D61D1;
 }
 
 .legend-color-37 {
@@ -575,6 +727,10 @@ g.highcharts-series,
   stroke: #772EB8;
 }
 
+.highcharts-color-38 .highcharts-axis-title {
+  fill: #772EB8;
+}
+
 .legend-color-38 {
   background-image: linear-gradient(to top right, rgba(255, 0, 0, 0) 0%, #772EB8 50%);
 }
@@ -582,6 +738,10 @@ g.highcharts-series,
 .highcharts-color-39 {
   fill: #501980;
   stroke: #501980;
+}
+
+.highcharts-color-39 .highcharts-axis-title {
+  fill: #501980;
 }
 
 .legend-color-39 {
@@ -593,6 +753,10 @@ g.highcharts-series,
   stroke: #360D59;
 }
 
+.highcharts-color-40 .highcharts-axis-title {
+  fill: #360D59;
+}
+
 .legend-color-40 {
   background-image: linear-gradient(to top right, rgba(255, 0, 0, 0) 0%, #360D59 50%);
 }
@@ -600,6 +764,10 @@ g.highcharts-series,
 .highcharts-color-41 {
   fill: #1B042F;
   stroke: #1B042F;
+}
+
+.highcharts-color-41 .highcharts-axis-title {
+  fill: #1B042F;
 }
 
 .legend-color-41 {
@@ -611,6 +779,10 @@ g.highcharts-series,
   stroke: #FFDBB3;
 }
 
+.highcharts-color-42 .highcharts-axis-title {
+  fill: #FFDBB3;
+}
+
 .legend-color-42 {
   background-image: linear-gradient(to top right, rgba(255, 0, 0, 0) 0%, #FFDBB3 50%);
 }
@@ -618,6 +790,10 @@ g.highcharts-series,
 .highcharts-color-43 {
   fill: #FFB866;
   stroke: #FFB866;
+}
+
+.highcharts-color-43 .highcharts-axis-title {
+  fill: #FFB866;
 }
 
 .legend-color-43 {
@@ -629,6 +805,10 @@ g.highcharts-series,
   stroke: #FFA033;
 }
 
+.highcharts-color-44 .highcharts-axis-title {
+  fill: #FFA033;
+}
+
 .legend-color-44 {
   background-image: linear-gradient(to top right, rgba(255, 0, 0, 0) 0%, #FFA033 50%);
 }
@@ -636,6 +816,10 @@ g.highcharts-series,
 .highcharts-color-45 {
   fill: #FF8800;
   stroke: #FF8800;
+}
+
+.highcharts-color-45 .highcharts-axis-title {
+  fill: #FF8800;
 }
 
 .legend-color-45 {
@@ -647,6 +831,10 @@ g.highcharts-series,
   stroke: #CC6D00;
 }
 
+.highcharts-color-46 .highcharts-axis-title {
+  fill: #CC6D00;
+}
+
 .legend-color-46 {
   background-image: linear-gradient(to top right, rgba(255, 0, 0, 0) 0%, #CC6D00 50%);
 }
@@ -654,6 +842,10 @@ g.highcharts-series,
 .highcharts-color-47 {
   fill: #804400;
   stroke: #804400;
+}
+
+.highcharts-color-47 .highcharts-axis-title {
+  fill: #804400;
 }
 
 .legend-color-47 {
@@ -665,6 +857,10 @@ g.highcharts-series,
   stroke: #4D2900;
 }
 
+.highcharts-color-48 .highcharts-axis-title {
+  fill: #4D2900;
+}
+
 .legend-color-48 {
   background-image: linear-gradient(to top right, rgba(255, 0, 0, 0) 0%, #4D2900 50%);
 }
@@ -672,6 +868,10 @@ g.highcharts-series,
 .highcharts-color-49 {
   fill: #ddc3c3;
   stroke: #ddc3c3;
+}
+
+.highcharts-color-49 .highcharts-axis-title {
+  fill: #ddc3c3;
 }
 
 .legend-color-49 {
@@ -683,6 +883,10 @@ g.highcharts-series,
   stroke: #8B9595;
 }
 
+.highcharts-color-50 .highcharts-axis-title {
+  fill: #8B9595;
+}
+
 .legend-color-50 {
   background-image: linear-gradient(to top right, rgba(255, 0, 0, 0) 0%, #8B9595 50%);
 }
@@ -690,6 +894,10 @@ g.highcharts-series,
 .highcharts-color-51 {
   fill: #101414;
   stroke: #101414;
+}
+
+.highcharts-color-51 .highcharts-axis-title {
+  fill: #101414;
 }
 
 .legend-color-51 {
@@ -701,6 +909,10 @@ g.highcharts-series,
   stroke: #DDDDDD;
 }
 
+.highcharts-color-52 .highcharts-axis-title {
+  fill: #DDDDDD;
+}
+
 .legend-color-52 {
   background-image: linear-gradient(to top right, rgba(255, 0, 0, 0) 0%, #DDDDDD 50%);
 }
@@ -710,6 +922,10 @@ g.highcharts-series,
   stroke: #394646;
 }
 
+.highcharts-color-53 .highcharts-axis-title {
+  fill: #394646;
+}
+
 .legend-color-53 {
   background-image: linear-gradient(to top right, rgba(255, 0, 0, 0) 0%, #394646 50%);
 }
@@ -717,6 +933,10 @@ g.highcharts-series,
 .highcharts-color-54 {
   fill: rgba(23, 28, 28, 0.2);
   stroke: rgba(23, 28, 28, 0.2);
+}
+
+.highcharts-color-54 .highcharts-axis-title {
+  fill: rgba(23, 28, 28, 0.2);
 }
 
 .legend-color-54 {
