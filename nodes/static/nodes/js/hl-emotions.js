@@ -1,6 +1,6 @@
-let static_url = elastic_graph_gexf = "/static/nodes/gexf/elastic.gexf",
-    elastic_context = "/static/nodes/csv/elastic-context.csv",
-    elastic_context_links = "/static/nodes/csv/elastic-context-links.csv";
+let hl_emotions_graph_gexf = "/static/nodes/gexf/hl-emotions.gexf";
+let hl_emotions_context = "/static/nodes/csv/hl-emotions-context.csv";
+let hl_emotions_context_links = "/static/nodes/csv/hl-emotions-context-links.csv";
 
   let selected = [];
   MiniBarOptions = {
@@ -30,34 +30,35 @@ let static_url = elastic_graph_gexf = "/static/nodes/gexf/elastic.gexf",
       }
     ],
     settings: {
-      minNodeSize: 1,
-      maxNodeSize: 20,
-      minEdgeSize: 0.1,
-      maxEdgeSize: 0.5,
-      defaultEdgeType: "curve", // only works on canvas renderer
-      labelColor: "node",
-      labelHoverBGColor: "default",
-      defaultHoverLabelBGColor: "#171c1c",
-      defaultLabelHoverColor: "#fff",
-      font: "Poppins",
-      drawLabels: false,
-      mouseWheelEnabled: false,
-      doubleClickEnabled: false,
-      touchEnabled: false,
+        minNodeSize: 1,
+        maxNodeSize: 20,
+        minEdgeSize: 0.1,
+        maxEdgeSize: 3,
+        defaultEdgeType: "curve", // only works on canvas renderer
+        defaultLabelColor: "#dffcff",
+        labelColor:"#dffcff",
+        // labelHoverBGColor: "default",
+        defaultHoverLabelBGColor: "#171c1c",
+        defaultLabelHoverColor: "#dffcff",
+        font: "Poppins",
+        drawLabels: true,
+        mouseWheelEnabled: false,
+        doubleClickEnabled: false,
+        touchEnabled: false,
     },
   });
 
   // Load all notes
   Promise.all([
-    d3.csv(elastic_context),
-    d3.csv(elastic_context_links),
+    d3.csv(hl_emotions_context),
+    d3.csv(hl_emotions_context_links),
   ]).then(function (files) {
 
-    var contexts = files[0],
+    let contexts = files[0],
       context_links = files[1];
 
     // Load data to the graph
-    sigma.parsers.gexf(elastic_graph_gexf, s,
+    sigma.parsers.gexf(hl_emotions_graph_gexf, s,
       function (s) {
         // Add various parameters to nodes and edges
         s.graph.nodes().forEach(function (n) {
@@ -84,7 +85,7 @@ let static_url = elastic_graph_gexf = "/static/nodes/gexf/elastic.gexf",
         zoomOutButton.addEventListener("click", zoomOut);
       });
 
-    updateContextText(contexts, context_links, selected, null, "simple");
+      updateContextText(contexts, context_links, selected, null, "reference");
     createLegend();
 
     function searchChange(e) {
@@ -98,7 +99,7 @@ let static_url = elastic_graph_gexf = "/static/nodes/gexf/elastic.gexf",
           }
         }
       });
-      nodeSelect(s, selected, contexts, context_links, files[0], files[1], null, "simple");
+      nodeSelect(s, selected, contexts, context_links, files[0], files[1], null, "reference");
     }
 
     function zoomIn() {
@@ -124,7 +125,7 @@ let static_url = elastic_graph_gexf = "/static/nodes/gexf/elastic.gexf",
         delete selected[e.data.node.id];
       }
 
-      nodeSelect(s, selected, contexts, context_links, files[0], files[1], null, "simple");
+      nodeSelect(s, selected, contexts, context_links, files[0], files[1], null, "reference");
     });
 
     // Mouse over event
@@ -142,20 +143,20 @@ let static_url = elastic_graph_gexf = "/static/nodes/gexf/elastic.gexf",
       selected = [];
       resetStates(s);
       showSelectedNodes(selected);
-      updateContextText(contexts, context_links, selected, null, "simple");
+      updateContextText(contexts, context_links, selected, null, "reference");
       s.refresh();
     });
 
     function createLegend() {
       var categories = [
-        { class: "2", name: "Hardware" },
-        { class: "0", name: "Legacy" },
-        { class: "3", name: "Frozen thinking" },
-        { class: "4", name: "Analytical thinking" },
-        { class: "5", name: "Elastic thinking" },
-        { class: "1", name: "Drives" },
-        { class: "6", name: "Outcomes" },
-        { class: "7", name: "Substances" },
+        { class: "6", name: "Concepts" },
+        { class: "2", name: "Behaviours" },
+        { class: "5", name: "Psychological components" },
+        { class: "4", name: "Physiological components" },
+        { class: "0", name: "Molecules" },
+        { class: "1", name: "Consumables" },
+        { class: "3", name: "Conditions" },
+        
       ];
 
       var container = document.getElementById('node-legend');
@@ -193,12 +194,11 @@ let static_url = elastic_graph_gexf = "/static/nodes/gexf/elastic.gexf",
   })
 
   getColor = {
-    "0": "#8B9595",
-    "1": "#F18E8E",
-    "2": "#9D61D1",
-    "3": "#CC1919",
-    "4": "#23CA23",
-    "5": "#0070D1",
-    "6": "#FFFF1A",
-    "7": "#101414"
+    "0": "#FF8800",
+    "1": "#FFFF4D",
+    "2": "#23CA23",
+    "3": "#170303",
+    "4": "#0070D1",
+    "5": "#C29CE2",
+    "6": "#D1158F"
   };

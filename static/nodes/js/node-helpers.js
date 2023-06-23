@@ -1,4 +1,4 @@
-// Show all selected nodes next to the notes for quick reference
+// Show all selected nodes next to the notes for quick referencelast
 function showSelectedNodes(selected) {
     // Remove old selecteed nodes
     document.querySelectorAll('.selected-node').forEach(function (a) {
@@ -17,7 +17,7 @@ function showSelectedNodes(selected) {
 }
 
 // Only show notes relevant to selected nodes, or all notes if no nodes are selected
-function updateContextText(contexts, context_links, selected, percent) {
+function updateContextText(contexts, context_links, selected, percent, type) {
     let contextsToKeep,
         linksToKeep;
 
@@ -56,17 +56,7 @@ function updateContextText(contexts, context_links, selected, percent) {
         contextsToKeep = contextsToKeep.filter(c => +c.Percent <= percent);
     }
 
-    // Append a header
-    let context_header = document.createElement("h4");
-    context_header.innerHTML = "Notes:";
-    context_wrapper.appendChild(context_header);
-
-    // Append a p element for each context
-    for (let context of contextsToKeep) {
-        let context_text = document.createElement("p");
-        context_text.innerHTML = context.Context;
-        context_wrapper.appendChild(context_text);
-    }
+    setContextNotes(type, contextsToKeep, context_wrapper)  
 
     // wrap the container on a simplebar for customised scroll bars
     new SimpleBar(context_wrapper, {
@@ -74,8 +64,64 @@ function updateContextText(contexts, context_links, selected, percent) {
     });
 }
 
+function setContextNotes(type, contextsToKeep, context_wrapper) {
+    // Append a header
+    let context_header = document.createElement("h4");
+    context_header.innerHTML = "Notes:";
+    context_wrapper.appendChild(context_header);
+
+    if (type == "reference") {
+        // create context elements
+        for (let context of contextsToKeep) {
+            let note = context.Context;
+            let video = "";
+
+            // TODO this should be handled on the individual page
+            if (context.Video == "podcast_10") {
+                video = "https://www.youtube.com/watch?v=ntfcfJ28eiU";
+            } else if (context.Video == "podcast_11") {
+                video = "https://www.youtube.com/watch?v=XfURDjegrAw";
+            } else if (context.Video == "podcast_12") {
+                video = "https://www.youtube.com/watch?v=vA50EK70whE";
+            } else if (context.Video == "podcast_13") {
+                video = "https://www.youtube.com/watch?v=hcuMLQVAgEg";
+            }
+            let full_time = context.Time;
+            let time_array = full_time.split(".");
+            let hours = +time_array[0];
+            let mins = +time_array[1];
+            let secs = +time_array[2];
+            let seconds = hours * 3600 + mins * 60 + secs;
+
+            let link = video + "&t=" + seconds + "s";
+
+            let note_container = document.createElement("div");
+            note_container.classList.add("note-container");
+            let note_element = document.createElement("div");
+            note_element.classList.add("note");
+            note_element.innerHTML = note;
+            note_container.appendChild(note_element);
+            let note_link_container = document.createElement("div");
+            note_link_container.classList.add("reference");
+            let note_link = document.createElement("a");
+            note_link.setAttribute('href', link);
+            note_link.setAttribute('target', "_blank");
+            note_link.innerHTML = "<i>Link to video</i>";
+            note_link_container.appendChild(note_link);
+            note_container.appendChild(note_link_container);
+            context_wrapper.appendChild(note_container);
+        }
+    } else if (type == "simple") {
+        for (let context of contextsToKeep) {
+            let context_text = document.createElement("p");
+            context_text.innerHTML = context.Context;
+            context_wrapper.appendChild(context_text);
+        }
+    }
+}
+
 // Toggle select a node
-function nodeSelect(s, selected, contexts, context_links, file1, file2, percent) {
+function nodeSelect(s, selected, contexts, context_links, file1, file2, percent, type) {
     // Making sure we have at least one node selected
     if (Object.keys(selected).length > 0) {
         var toKeep = nodesToKeep(s, selected, file1, file2, percent);
@@ -87,7 +133,7 @@ function nodeSelect(s, selected, contexts, context_links, file1, file2, percent)
         resetStates(s);
     }
     showSelectedNodes(selected);
-    updateContextText(contexts, context_links, selected, percent);
+    updateContextText(contexts, context_links, selected, percent, type);
     s.refresh();
 }
 
@@ -194,7 +240,7 @@ function nodesToKeep(s, selected, file1, file2, percent) {
         }
     }
 
-    if (percent < 100) {
+    if (percent != null && percent < 100) {
         let perNodes = percentNodesToKeep(s, file1, file2, percent);
         toKeep = returnMatchingNodes(toKeep, perNodes);
     }

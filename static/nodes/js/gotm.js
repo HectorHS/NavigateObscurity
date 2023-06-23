@@ -85,7 +85,7 @@ Promise.all([
             zoomOutButton.addEventListener("click", zoomOut);
         });
 
-    updateContextText(contexts, context_links, selected, percent);
+    updateContextText(contexts, context_links, selected, percent, "simple");
     createLegend();
 
     // Create slider
@@ -105,7 +105,7 @@ Promise.all([
 
         filterByPercent(s, selected, files[0], files[1], percent);
 
-        updateContextText(contexts, context_links, selected, percent);
+        updateContextText(contexts, context_links, selected, percent, "simple");
         s.refresh();
 
     }
@@ -120,7 +120,7 @@ Promise.all([
                 }
             }
         });
-        nodeSelect(s, selected, contexts, context_links, files[0], files[1], percent);
+        nodeSelect(s, selected, contexts, context_links, files[0], files[1], percent, "simple");
     }
 
     function zoomIn() {
@@ -146,7 +146,7 @@ Promise.all([
             delete selected[e.data.node.id];
         }
 
-        nodeSelect(s, selected, contexts, context_links, files[0], files[1], percent);
+        nodeSelect(s, selected, contexts, context_links, files[0], files[1], percent, "simple");
     });
 
     // Mouse over event
@@ -164,7 +164,7 @@ Promise.all([
         selected = [];
         resetStates(s);
         showSelectedNodes(selected);
-        updateContextText(contexts, context_links, selected, percent);
+        updateContextText(contexts, context_links, selected, percent, "simple");
         s.refresh();
     });
 

@@ -85,7 +85,7 @@ let ggs_graph_gexf = "/static/nodes/gexf/ggs.gexf",
         zoomOutButton.addEventListener("click", zoomOut);
       });
 
-    updateContextText(contexts, context_links, selected);
+    updateContextText(contexts, context_links, selected, null, "simple");
     createLegend();
 
     function searchChange(e) {
@@ -99,7 +99,7 @@ let ggs_graph_gexf = "/static/nodes/gexf/ggs.gexf",
           }
         }
       });
-      nodeSelect(s, selected, contexts, context_links, files[0], files[1]);
+      nodeSelect(s, selected, contexts, context_links, files[0], files[1], null, "simple");
     }
 
     function zoomIn() {
@@ -125,7 +125,7 @@ let ggs_graph_gexf = "/static/nodes/gexf/ggs.gexf",
         delete selected[e.data.node.id];
       }
 
-      nodeSelect(s, selected, contexts, context_links, files[0], files[1]);
+      nodeSelect(s, selected, contexts, context_links, files[0], files[1], null, "simple");
     });
 
     // Mouse over event
@@ -143,7 +143,7 @@ let ggs_graph_gexf = "/static/nodes/gexf/ggs.gexf",
       selected = [];
       resetStates(s);
       showSelectedNodes(selected);
-      updateContextText(contexts, context_links, selected);
+      updateContextText(contexts, context_links, selected, null, "simple");
       s.refresh();
     });
 

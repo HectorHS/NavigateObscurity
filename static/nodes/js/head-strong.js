@@ -84,7 +84,7 @@ sigma.parsers.gexf(head_strong_gexf, s,
     zoomOutButton.addEventListener("click", zoomOut);
   });
 
-updateContextText(contexts, context_links, selected);
+updateContextText(contexts, context_links, selected, null, "simple");
 createLegend();
 
 function searchChange(e) {
@@ -98,7 +98,7 @@ function searchChange(e) {
       }
     }
   });
-  nodeSelect(s, selected, contexts, context_links);
+  nodeSelect(s, selected, contexts, context_links, null, null, null, "simple");
 }
 
 function zoomIn() {
@@ -124,7 +124,7 @@ s.bind('clickNode', function (e) {
     delete selected[e.data.node.id];
   }
 
-  nodeSelect(s, selected, contexts, context_links);
+  nodeSelect(s, selected, contexts, context_links, null, null, null, "simple");
 });
 
 // Mouse over event
@@ -142,7 +142,7 @@ s.bind('clickStage', function (e) {
   selected = [];
   resetStates(s);
   showSelectedNodes(selected);
-  updateContextText(contexts, context_links, selected);
+  updateContextText(contexts, context_links, selected, null, "simple");
   s.refresh();
 });
 

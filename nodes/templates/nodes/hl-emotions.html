@@ -1,0 +1,131 @@
+{% extends 'main/layout.html' %}
+{% load static %}
+
+{% block styles %}
+<!-- Meta -->
+<title>{{ title }} - Navigate Obscurity</title>
+<meta name="description" content="{{ abstract }}">
+<meta property="og:image" content="https://www.navigateobscurity.com/static/nodes/images/huberman-lab-emotions-social" />
+<meta property="og:title" content="{{ title }} - Navigate Obscurity" />
+<meta property="og:url" content="https://www.navigateobscurity.com/notes/huberman-lab-emotions" />
+<meta name="twitter:card" content="summary" />
+<meta name="twitter:url" content="https://www.navigateobscurity.com/notes/huberman-lab-emotions" />
+<meta name="twitter:title" content="{{ title }} - Navigate Obscurity" />
+<meta name="twitter:description" content="{{ abstract }}" />
+<meta name="twitter:image" content="https://www.navigateobscurity.com/static/nodes/images/huberman-lab-emotions-social" />
+
+<!-- We use d3 libraries to load data -->
+<script src="https://d3js.org/d3-dsv.v1.min.js"></script>
+<script src="https://d3js.org/d3-fetch.v1.min.js"></script>
+<!-- simplebar for custom styled scroll bars -->
+<link rel="stylesheet" href="https://unpkg.com/simplebar@latest/dist/simplebar.css" />
+<script src="https://unpkg.com/simplebar@latest/dist/simplebar.min.js"></script>
+<!-- We use sigma to visualise the graph -->
+<script src={% static "nodes/js/sigma.min.js" %}></script>
+<script src={% static "nodes/js/sigma.parsers.gexf.min.js" %}></script>
+<script src={% static "nodes/js/sigma.renderers.parallelEdges.min.js" %}></script>
+
+<script src={% static "nodes/js/node-helpers.js" %}></script>
+
+<link rel='stylesheet' type="text/css" href={% static "nodes/css/nodes.css" %}>
+<!-- using defer to load after the html -->
+<script type="text/javascript" src={% static "nodes/js/hl-emotions.js" %} defer></script> 
+<noscript>
+  <style>
+    /**
+    * Reinstate scrolling for non-JS clients
+    */
+    .simplebar-content-wrapper {
+      overflow: auto;
+    }
+  </style>
+</noscript>
+{% endblock %}
+
+{% block content %}
+<section class="banner-container">
+  <h1 class="header-title-banner">{{title}} - by the Huberman Lab</h1>
+</section>
+<!-- Intro -->
+<section>
+  <div class="container limited-width">
+    <p>
+      In a series of 4 podcasts dedicated to emotions, Andrew Huberman, takes a deep dive into stress, nutrition, motivation, and relationships, discussing how each of these impacts our mood and emotions. Through this discussion Huberman provides valuable concepts we can use to better understand and communicate our own emotions and explains the various tools we can use to influence and change them, ranging from the things we consume to the various behaviours we can implement for results both in the short and the long term.
+    </p>
+
+  </div>
+</section>
+<!-- How to use -->
+<section class="container">
+  <div class="graph-instructions">
+    <h5>How to use:</h5>
+    <div class="two-column-text notes">
+      <ul>
+        <li> Hover over a node to see its name, and which other nodes it connects to. </li>
+        <li> Click on a node to see all relevant notes. </li>
+        <li> Click on a second node to only see notes related to both nodes. </li>
+        <li> Click on the background to reset all selections. </li>
+      </ul>
+      <ul>
+        <li> Use the search box to find a node - suggestions will be shown when you start typing. </li>
+        <li> Click on the + / - buttons to zoom in and out. </li>
+        <li> Click and drag the background to move the view of the graph.</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- Graph -->
+<section class="node-container">
+  <div id="context-container" class="nodes-text"> </div>
+  <div id="graph-container" class="nodes" style="width:100%;">
+    <div id="selected-nodes"></div>
+    <div class="node-controls">
+      <div id="slider_container"></div>
+      <div class="search-container">
+        <input id="search-input" list="nodes-datalist" placeholder="Search for a node">
+      </div>
+      <datalist id="nodes-datalist"></datalist>
+      <button type="button" id="zoom-in-button" class="zoom-button zoom-in">+</button>
+      <button type="button" id="zoom-out-button" class="zoom-button zoom-out">-</button>
+    </div>
+
+  </div>
+</section>
+<!-- Legend -->
+<section id="node-legend">
+</section>
+<!-- Comments -->
+<section>
+  <div class="container">
+    <hr>
+    <div class="comment-container">
+      {% for comment in comments %}
+      {% if comment.approved_comment %}
+      <div class="comment-author">{{ comment.author }}</div>
+      <div class="comment-date">{{ comment.created_date }}</div>
+      {{ comment.message|linebreaks }}
+      {% endif %}
+      {% empty %}
+      <p>No comments here yet :(</p>
+      {% endfor %}
+    </div>
+    <hr>
+    <div class="comment-form-container">
+      <h3>Leave a comment</h3>
+      <form method="post">
+        {% csrf_token %}
+        <div>
+          {{comment_form.author}}
+        </div>
+        <div>
+          {{ comment_form.message }}
+        </div>
+        <div>
+          <button class="button" type="submit" formmethod="post">Post comment</button>
+        </div>
+      </form>
+    </div>
+  </div>
+</section>
+{% endblock %}

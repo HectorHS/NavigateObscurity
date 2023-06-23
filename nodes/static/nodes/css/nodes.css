@@ -313,3 +313,12 @@
     width: 150px;
   }
 }
+
+.note-container {
+  margin-bottom: 15px;
+}
+
+.note-container .reference {
+  text-align: end;
+  font-size: 80%;
+}
