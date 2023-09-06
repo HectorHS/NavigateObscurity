@@ -1,6 +1,6 @@
 // Hexagons from https://github.com/web-tiki/responsive-grid-of-hexagons
 #hexagon-grid {
-  display: grid;
+  @include displayGrid;
   grid-gap: 15px;
   grid-template-columns: repeat(6, 1fr);
   width: 90%;
@@ -9,18 +9,6 @@
   padding-inline-start: 0;
   list-style-type: none;
   overflow: hidden;
-
-  @media (min-width: $mobile-breakpoint) {
-    /* <- 2-1  hexagons per row */
-    grid-template-columns: repeat(4, 1fr);
-    padding-bottom: 12.2%;
-    grid-gap: 10px;
-    @media (min-width: $desktop-breakpoint) {
-      /* <- 2-3  hexagons per row */
-      grid-template-columns: repeat(6, 1fr);
-      padding-bottom: 8.4%;
-    }
-  }
 }
 #hexagon-grid-data-index {
   margin: 0 auto;
@@ -48,16 +36,10 @@
     width: 100%;
     margin: 0;
     overflow-wrap: break-word;
-    font-size: 2.8vw;
+    font-size: clamp(0.9rem, 1.7vw, 1.3rem);
     color: $darker-grey;
-    @media (min-width: $mobile-breakpoint) {
-      font-size: 2vw;
-      @media (min-width: $tablet-breakpoint) {
-        font-size: 1.5vw;
-        @media (min-width: $desktop-breakpoint) {
-          display: none;
-        }
-      }
+    @media (min-width: $desktop-breakpoint) {
+      display: none;
     }
   }
   &:after {
@@ -65,8 +47,13 @@
     display: block;
     padding-bottom: 86.602%; /* =  100 / tan(60) * 1.5 */
   }
-  &:nth-child(5n + 1) .hexagon-link-main {
-    background-image: $blue-shade-2;
+  &:nth-child(5n + 1) {
+    /* first hexagon of odd rows */
+    grid-column-start: 2;
+    
+    .hexagon-link-main {
+      background-image: $blue-shade-2;
+    }
   }
   &:nth-child(5n + 2) .hexagon-link-main {
     background-image: $blue-shade-4;
@@ -80,48 +67,13 @@
   &:nth-child(5n + 5) .hexagon-link-main {
     background-image: $blue-shade-5;
   }
-  @media (min-width: $desktop-breakpoint) {
-    /* <- 2-3  hexagons per row */
-    &:nth-child(5n + 1) {
-      /* first hexagon of odd rows */
-      grid-column-start: 2;
-    }
-  }
-  @media (min-width: $mobile-breakpoint) and (max-width: ($desktop-breakpoint - 1px)) {
-    /* <- 2-1  hexagons per row */
-    &:nth-child(3n + 3) {
-      /* first hexagon of even rows */
-      grid-column-start: 2;
-    }
-    &:nth-child(5n + 1) .hexagon-link-main {
-      background-image: $blue-shade-1;
-    }
-    &:nth-child(5n + 2) .hexagon-link-main {
-      background-image: $blue-shade-2;
-    }
-    &:nth-child(5n + 3) .hexagon-link-main {
-      background-image: $blue-shade-3;
-    }
-    &:nth-child(5n + 4) .hexagon-link-main {
-      background-image: $blue-shade-4;
-    }
-    &:nth-child(5n + 5) .hexagon-link-main {
-      background-image: $blue-shade-5;
-    }
-  }
-  @media (max-width: ($mobile-breakpoint - 1px)) {
-    &:nth-child(5n + 1) {
-      /* first hexagon of odd rows */
-      grid-column-start: 2;
-    }
-  }
 }
 .hexagon-data {
   @extend %hexagon;
   img {
     display: none;
     height:50%;
-    filter: brightness(0) saturate(100%) invert(17%) sepia(26%) saturate(273%) hue-rotate(131deg) brightness(98%) contrast(89%);
+    @include filter(brightness(0) saturate(100%) invert(17%) sepia(26%) saturate(273%) hue-rotate(131deg) brightness(98%) contrast(89%));
     @media (min-width: $desktop-breakpoint) {
       display: block;
     }
@@ -140,7 +92,7 @@
   @extend %hexagon;
   img {
     height: 60%;
-    filter: brightness(0) saturate(100%) invert(17%) sepia(26%) saturate(273%) hue-rotate(131deg) brightness(98%) contrast(89%);
+    @include filter(brightness(0) saturate(100%) invert(17%) sepia(26%) saturate(273%) hue-rotate(131deg) brightness(98%) contrast(89%));
   }
 }
 .hexagon-node-index {
@@ -164,7 +116,7 @@
   outline: 1px solid transparent; /* fix for jagged edges in FF on hover transition */
 }
 %hexagon-link {
-  display: flex;
+  @include displayFlex;
   align-items: center;
   width: 100%;
   height: 100%;

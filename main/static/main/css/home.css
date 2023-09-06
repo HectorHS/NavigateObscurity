@@ -12,10 +12,11 @@
   padding-left: 10px;
   border-left: 5px solid #1A94FF;
   color: #1A94FF;
-  font-size: 1.5em;
+  font-size: clamp(1.1rem, 3vw, 1.5rem);
   font-weight: 500;
-  letter-spacing: 2px;
+  letter-spacing: 0.1rem;
   z-index: 10;
+  width: clamp(10ch, 70%, 95ch);
 }
 
 .header-container {
@@ -25,13 +26,7 @@
 
 .header-title-main {
   bottom: 5vh;
-  left: 20px;
-}
-
-@media (min-width: 768px) {
-  .header-title-main {
-    left: 50px;
-  }
+  left: clamp(5px, 5vw, 50px);
 }
 
 .data-container {
@@ -41,18 +36,6 @@
 }
 
 @media (min-width: 768px) {
-  .data-container {
-    grid-template-columns: 1fr 1fr;
-  }
-}
-
-@media (min-width: 768px) and (min-width: 850px) {
-  .data-container {
-    grid-template-columns: 2fr 1fr;
-  }
-}
-
-@media (min-width: 768px) and (min-width: 850px) and (min-width: 1025px) {
   .data-container {
     grid-template-columns: 1fr 1fr;
   }
@@ -78,18 +61,6 @@
 }
 
 @media (min-width: 768px) {
-  .notes-container {
-    grid-template-columns: 1fr 1fr;
-  }
-}
-
-@media (min-width: 768px) and (min-width: 850px) {
-  .notes-container {
-    grid-template-columns: 1fr 2fr;
-  }
-}
-
-@media (min-width: 768px) and (min-width: 850px) and (min-width: 1025px) {
   .notes-container {
     grid-template-columns: 1fr 1fr;
   }

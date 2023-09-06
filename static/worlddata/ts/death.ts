@@ -52,7 +52,7 @@ let LifeMap = d3.csv(life_map_path)
         // Initiate the chart
         var chart = Highcharts.mapChart( {
             chart: {
-                height: 500,
+                // height: 500,
                 renderTo: 'life_map',
             },
             title: {

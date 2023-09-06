@@ -9,18 +9,13 @@
   .footer-title {
     position: absolute;
     bottom: 5vh;
-    left: 20px;
     padding-left: 10px;
     border-left: 5px solid $bright-blue;
     color: $darker-grey;
-    font-size: 150%;
+    font-size: clamp(0.8rem, 3vw, 1.8rem);
     font-weight: 600;
-    letter-spacing: 1px;
-    word-spacing: 3px;
     word-break: break-word;
-    @media (min-width: $mobile-breakpoint) {
-      left:50px;
-    }
+    margin-left:$base-margin;
   }
   .bottom-bar {
     background-color: black;
@@ -28,7 +23,7 @@
     margin:0;
     padding:5px;
     color: $almost-white;
-    font-size: 80%;
+    font-size: clamp(0.4rem, 2vw, 0.9rem);
     text-align: center;
 
     p {
@@ -42,10 +37,9 @@
 
       img {
         position: relative;
-        top: 3px;
+        top: 2px;
         margin-left: 5px;
-        height: 15px;
-        width: 15px;
+        height: 90%;
       }
     }
   }

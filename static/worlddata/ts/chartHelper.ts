@@ -896,11 +896,15 @@ export function createLegend(chart_points: any[], data: any[], parentContainer: 
         a.remove()
     })
 
-    let legend: Element = document.querySelectorAll(parentContainer + ' .chart-legend')[0];
-    // Append legend items
-    for (let point of data) {
-        legend.innerHTML += '<div class="legend-item"><div class="dot legend-color-' + point.colorIndex + '" ></div><div class="serieName" id="">' + fCapital(point.name) + '</div></div>';
+    let legends: Element[] = Array.from(document.querySelectorAll(parentContainer + ' .chart-legend'));
+    // sometimes we have multiple legends, eg one for mobile, one for desktop
+    for (let legend of legends) {
+        // Append legend items
+        for (let point of data) {
+            legend.innerHTML += '<div class="legend-item"><div class="dot legend-color-' + point.colorIndex + '" ></div><div class="serieName" id="">' + fCapital(point.name) + '</div></div>';
+        }
     }
+    
 
     // Click effect for legend
     document.querySelectorAll(parentContainer + ' .legend-item').forEach(function (a) {
@@ -973,12 +977,9 @@ export function addDropdown(parent: Element, name: string, width: string, taxonC
     select.value = selected;
 }
 
-export function addSlider(parent: Element, name: string, min: number, max: number, value: number, containerWidth: number, width: number, onChange: any): void {
+export function addSlider(parent: Element, name: string, min: number, max: number, value: number, width: number, onChange: any): void {
     let sliderContainer = document.createElement("div");
     sliderContainer.classList.add("slider-container");
-    if (containerWidth > 0){
-        sliderContainer.style.width = containerWidth + "px";
-    }
     parent.appendChild(sliderContainer);
 
     let slider = document.createElement("input");
@@ -987,7 +988,6 @@ export function addSlider(parent: Element, name: string, min: number, max: numbe
     slider.min = min.toString();
     slider.max = max.toString();
     slider.value = value.toString();
-    slider.style.width = (containerWidth - width - 40) + "px";
     slider.classList.add("slider");
     slider.onchange = onChange;
     sliderContainer.appendChild(slider);
@@ -995,7 +995,6 @@ export function addSlider(parent: Element, name: string, min: number, max: numbe
     // Add a span to show the slider's value
     let sliderOutput = document.createElement("span");
     sliderOutput.id = name + "-slider-output";
-    //percentageSliderOutput.for = "mapPercentageSlider";
     sliderOutput.classList.add("slider-output");
     sliderOutput.innerHTML = value.toString();
     sliderOutput.style.width = width + "px";

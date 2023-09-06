@@ -7,97 +7,86 @@
 
 
 $colors:
-#B3DBFF
-#66B8FF
-#1A94FF
-#0070D1
-#005299
-#003666
-#001B33
-#FFFF99
-#FFFF4D
-#FFFF1A
-#C7C705
-#919108
-#5E5E08
-#2E2E05
-#FAD1EC
-#F48BCF
-#ED45B2
-#D1158F
-#970F67
-#5D0940
-#2E0520
-#7DE87D
-#52E052
-#23CA23
-#1B981B
-#136C13
-#0B410B
-#041604
-#F18E8E
-#EB6060
-#E63333
-#CC1919
-#881111
-#440808
-#170303
-#e7d7f4
-#C29CE2
-#9D61D1
-#772EB8
-#501980
-#360D59
-#1B042F
-#FFDBB3
-#FFB866
-#FFA033
-#FF8800
-#CC6D00
-#804400
-#4D2900
-#ddc3c3
-#8B9595
-#101414
-#DDDDDD
-#394646
-rgba(23, 28, 28, 0.2)
+hsl(208, 100%, 85%)
+hsl(208, 100%, 70%)
+hsl(208, 100%, 55%)
+hsl(208, 100%, 40%)
+hsl(208, 100%, 30%)
+hsl(208, 100%, 20%)
+hsl(208, 100%, 10%)
+hsl(60, 100%, 80%)
+hsl(60, 100%, 65%)
+hsl(60, 100%, 50%)
+hsl(60, 100%, 35%)
+hsl(60, 100%, 25%)
+hsl(60, 100%, 15%)
+hsl(60, 100%, 8%)
+hsl(320, 80%, 90%)
+hsl(320, 80%, 75%)
+hsl(320, 80%, 60%)
+hsl(320, 80%, 45%)
+hsl(320, 80%, 30%)
+hsl(320, 80%, 20%)
+hsl(320, 80%, 10%)
+hsl(120, 70%, 85%)
+hsl(120, 70%, 70%)
+hsl(120, 70%, 55%)
+hsl(120, 70%, 40%)
+hsl(120, 70%, 30%)
+hsl(120, 70%, 20%)
+hsl(120, 70%, 10%)
+hsl(0, 78%, 80%)
+hsl(0, 78%, 65%)
+hsl(0, 78%, 50%)
+hsl(0, 78%, 35%)
+hsl(0, 78%, 25%)
+hsl(0, 78%, 15%)
+hsl(0, 78%, 8%)
+hsl(273, 57%, 90%)
+hsl(273, 57%, 75%)
+hsl(273, 57%, 60%)
+hsl(273, 57%, 45%)
+hsl(273, 57%, 30%)
+hsl(273, 57%, 20%)
+hsl(273, 57%, 10%)
+hsl(32, 100%, 85%)
+hsl(32, 100%, 70%)
+hsl(32, 100%, 55%)
+hsl(32, 100%, 40%)
+hsl(32, 100%, 30%)
+hsl(32, 100%, 20%)
+hsl(32, 100%, 12%)
+hsl(0, 28%, 82%)
+hsl(180, 5%, 56%)
+hsl(180, 11%, 7%)
+hsl(0, 0%, 87%)
+hsl(180, 10%, 25%)
+hsla(180, 10%, 10%, 0.2)
 !default;
 
 
 
 
 
-$blue: #0070D1;
-$orange: #d66808;
-$bright-blue: #1A94FF;
-$bright-blue-opacity: rgba(26, 148, 255, 0.4);
-$almost-white: #dffcff;
+$blue: hsl(208, 100%, 41%);
+$orange: hsl(28, 93%, 44%);
+$bright-blue: hsl(208, 100%, 55%);
+$bright-blue-opacity: hsla(208, 100%, 55%, 0.4);
+$almost-white: hsl(186, 100%, 94%);
 $light-grey: hsl(180, 10%, 65%);
-$mid-grey: #3f5050;
-$dark-grey: #2e3838;
-$dark-grey-opacity: rgba(46, 56, 56, 0.8);
-$darker-grey: #222a2a;
-$blue-shade-1: linear-gradient(to top right, #fbc99d, #539dc6);
-$blue-shade-2: linear-gradient(to top right, #66b8ff, #3984ac);
-$blue-shade-3: linear-gradient(to top right, #33a0ff, #2d6786);
-$blue-shade-4: linear-gradient(to top right, #0088ff, #204960);
-$blue-shade-5: linear-gradient(to top right, #0070D1, #132c39);
-$navbar-color: rgba(23, 28, 28, 0.9);
-$main-font: 
-// Noto Sans, sans-serif;
-//  'Varela', sans-serif;
-//  'Varela Round', sans-serif;
-// 'Source Sans Pro', sans-serif;
-// 'Ubuntu', sans-serif;
-    "Poppins", Helvetica, sans-serif;
-// 'Roboto', sans-serif;
-// 'Yantramanav', sans-serif;
-// 'Vollkorn', serif;
-// 'Hepta Slab', serif;
-// 'Noto Sans TC', sans-serif;
-// 'Comfortaa', cursive;
+$mid-grey: hsl(180, 12%, 28%);
+$dark-grey: hsl(180, 10%, 20%);
+$dark-grey-opacity: hsla(180, 10%, 20%, 0.8);
+$darker-grey: hsl(180, 11%, 15%);
+$blue-shade-1: linear-gradient(to top right, hsl(28, 92%, 80%), hsl(201, 50%, 55%));
+$blue-shade-2: linear-gradient(to top right, hsl(208, 100%, 70%), hsl(201, 50%, 45%));
+$blue-shade-3: linear-gradient(to top right, hsl(208, 100%, 60%), hsl(201, 50%, 35%));
+$blue-shade-4: linear-gradient(to top right, hsl(208, 100%, 50%), hsl(202, 50%, 25%));
+$blue-shade-5: linear-gradient(to top right, hsl(208, 100%, 41%), hsl(201, 50%, 15%));
+$navbar-color: hsla(180, 10%, 10%, 0.9);
+$main-font: "Poppins", Helvetica, sans-serif;
 $nav-height: 40px;
-$mobile-breakpoint: 768px;
-$tablet-breakpoint: 850px;
-$desktop-breakpoint: 1025px;
+$mobile-breakpoint: 768px; // for most responsive stuff
+$tablet-breakpoint: 850px; // mostly for rearranging items in dashboards
+$desktop-breakpoint: 1025px; // for minor stuff like text prompts in dashboards
+$base-margin: clamp(5px, 5vw, 50px);

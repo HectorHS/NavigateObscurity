@@ -55,12 +55,12 @@
     </div>
     <figure>
         <div class="container chart-container biomass-pie legend-right filters-right">
-            <div class="chart-options" style="min-width:260px">
+            <div class="chart-options">
                 <div class="chart-filters"></div>
                 <div class="chart-legend wide-screen-legend"></div>
             </div>
             <div id="pie_chart" class="pie" style="width:100%"></div>
-            <div class="chart-options mobile-legend" style="min-width:260px">
+            <div class="chart-options mobile-legend">
                 <div class="chart-legend"></div>
             </div>
         </div>
@@ -84,9 +84,9 @@
         </p>
     </div>
     <figure>
-        <div class="container chart-container biomass-scatter legend-below">
+        <div class="container chart-container biomass-scatter filters-on-top">
             <div id="scatter_plot" class="scatter" style="width:100%;"></div>
-            <div class="chart-options">
+            <div class="chart-options" style="max-width:100%">
                 <div class="chart-legend"></div>
             </div>
         </div>
@@ -104,33 +104,35 @@
 <!-- Comments -->
 <section>
     <div class="container">
-        <hr>
         <div class="comment-container">
-            {% for comment in comments %}
-            {% if comment.approved_comment %}
-            <div class="comment-author">{{ comment.author }}</div>
-            <div class="comment-date">{{ comment.created_date }}</div>
-            {{ comment.message|linebreaks }}
-            {% endif %}
-            {% empty %}
-            <p>No comments here yet :(</p>
-            {% endfor %}
-        </div>
-        <hr>
-        <div class="comment-form-container">
-            <h3>Leave a comment</h3>
-            <form method="post">
-                {% csrf_token %}
-                <div>
-                    {{comment_form.author}}
-                </div>
-                <div>
-                    {{ comment_form.message }}
-                </div>
-                <div>
-                    <button type="submit" class="button" formmethod="post">Post comment</button>
-                </div>
-            </form>
+            <hr>
+            <div>
+                {% for comment in comments %}
+                {% if comment.approved_comment %}
+                <div class="comment-author">{{ comment.author }}</div>
+                <div class="comment-date">{{ comment.created_date }}</div>
+                {{ comment.message|linebreaks }}
+                {% endif %}
+                {% empty %}
+                <p>No comments here yet :(</p>
+                {% endfor %}
+            </div>
+            <hr>
+            <div class="comment-form-container">
+                <h3>Leave a comment</h3>
+                <form method="post">
+                    {% csrf_token %}
+                    <div>
+                        {{comment_form.author}}
+                    </div>
+                    <div>
+                        {{ comment_form.message }}
+                    </div>
+                    <div>
+                        <button type="submit" class="button" formmethod="post">Post comment</button>
+                    </div>
+                </form>
+            </div>
         </div>
     </div>
 </section>

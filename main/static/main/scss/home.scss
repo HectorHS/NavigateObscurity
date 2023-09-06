@@ -9,25 +9,16 @@
 }
 .header-title-main {
   bottom: 5vh;
-  left:20px;
+  left: $base-margin;
   @extend %header-title;
-  @media (min-width: $mobile-breakpoint) {
-    left:50px;
-  }
 }
 .data-container {
-  display: grid;
+  @include displayGrid;
   grid-template-columns: 1fr;
   grid-gap: 50px;
   
   @media (min-width: $mobile-breakpoint) {
     grid-template-columns: 1fr 1fr; 
-    @media (min-width: $tablet-breakpoint) {
-      grid-template-columns: 2fr 1fr; 
-      @media (min-width: $desktop-breakpoint) {
-        grid-template-columns: 1fr 1fr; 
-      }
-    }
   }
 }
 .data-hexagons {
@@ -42,18 +33,12 @@
   }
 }
 .notes-container {
-  display: grid;
+  @include displayGrid;
   grid-template-columns: 1fr;
   grid-gap: 50px;
   
   @media (min-width: $mobile-breakpoint) {
     grid-template-columns: 1fr 1fr; 
-    @media (min-width: $tablet-breakpoint) {
-      grid-template-columns: 1fr 2fr; 
-      @media (min-width: $desktop-breakpoint) {
-        grid-template-columns: 1fr 1fr; 
-      }
-    }
   }
 }
 

@@ -11,7 +11,7 @@ html {
   height: 100%;
 }
 body {
-  font: 100% $main-font;
+  font: 1rem $main-font;
   margin: 0;
   height: 100%;
   background-color: $dark-grey;
@@ -52,11 +52,11 @@ textarea {
   border: none;
   border-radius: 35px;
   box-shadow: 1px 1px 8px $navbar-color;
-  transition: background-image 0.5s ease;
+  @include transition(background-image 0.5s ease);
   background-image: linear-gradient(to top right, $dark-grey 0%, $bright-blue 60%);
   cursor: pointer;
   color: $darker-grey;
-  font-size: 110%;
+  font-size: clamp(0.9rem, 3vw, 1.1rem);
   font-weight: 800;
   text-decoration: none;
   letter-spacing: 0.05em;
@@ -85,23 +85,14 @@ h4 {
   font-size: 110%;
 }
 hr {
-  width: 94%;
+  width: 100%;
   margin-top: 50px;
   margin-bottom: 20px;
   border-width: 1px;
   border-color: $bright-blue;
-  @media (min-width: $mobile-breakpoint) {
-    width: 80%;
-    @media (min-width: $desktop-breakpoint) {
-      width: 70%;
-    }
-  }
 }
 .container {
-  padding: 20px;
-  @media (min-width: $desktop-breakpoint) {
-    padding: 20px 50px;
-  }
+  padding: 20px $base-margin;
 }
 .banner-container {
   height: 50vh;
@@ -110,22 +101,13 @@ hr {
 }
 .header-title-banner {
   top: 35vh;
-  left: 20px;
+  left: $base-margin;
   @extend %header-title;
-  @media (min-width: $mobile-breakpoint) {
-    left: 50px;
-  }
 }
 .comment-container {
-  padding: 0 3%;
+  padding: 0 clamp(5px, 15vw, 500px);
   p {
     margin-left: 20px;
-  }
-  @media (min-width: $mobile-breakpoint) {
-    padding: 0 10%;
-    @media (min-width: $desktop-breakpoint) {
-      padding: 0 15%;
-    }
   }
 }
 .comment-author {
@@ -136,32 +118,19 @@ hr {
   font-size: 80%;
 }
 .comment-form-container {
-  padding: 0 3%;
   color: $almost-white;
   #id_author {
     background-color: $dark-grey;
     margin: 20px 0;
     padding: 10px;
-    width: 100%;
+    width: clamp(5px, 100%, 400px);
     border-width: 2px;
     border-color: $almost-white;
     border-radius: 5px;
-    @media (min-width: $mobile-breakpoint) {
-      width: 50%;
-      @media (min-width: $desktop-breakpoint) {
-        width: 30%;
-      }
-    }
-  }
-  @media (min-width: $mobile-breakpoint) {
-    padding: 0 10%;
-    @media (min-width: $desktop-breakpoint) {
-      padding: 0 15%;
-    }
   }
 }
 .two-column-text {
-  display: grid;
+  @include displayGrid;
   grid-template-columns: 1fr;
 
   @media (min-width: $mobile-breakpoint) {
@@ -180,19 +149,17 @@ hr {
   background-attachment: fixed;
   background-position: center;
   background-repeat: no-repeat;
-  background-size: cover;
+  @include background-size(cover);
 }
 .container {
   position: relative;
 }
 .v-align {
-  display: flex;
+  @include displayFlex;
   align-items: center;
 }
 .limited-width {
-  @media (min-width: $desktop-breakpoint) {
-    padding-right: 30%;
-  }
+  width: clamp(35ch, 90%, 95ch);
 }
 
 .source-text {

@@ -22,14 +22,14 @@ function updateContextText(contexts, context_links, selected, percent, type) {
         linksToKeep;
 
     // Remove old wrapper
-    document.querySelectorAll('#context-wrapper').forEach(function (a) {
+    document.querySelectorAll('#context_wrapper').forEach(function (a) {
         a.remove()
     });
 
     // Initialise new wrapper
-    let context_container = document.getElementById('context-container');
+    let context_container = document.getElementById('context_container');
     let context_wrapper = document.createElement("div");
-    context_wrapper.id = "context-wrapper";
+    context_wrapper.id = "context_wrapper";
     context_container.appendChild(context_wrapper);
 
     // Show only relevant contexts, or all contexts if none is selected

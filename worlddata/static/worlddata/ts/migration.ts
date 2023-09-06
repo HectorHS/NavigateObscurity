@@ -161,7 +161,7 @@ let migrationMap = d3.csv(migration_map_path)
         let value = 0;
         let containerWidth = 250;
         let sliderWidth = 40;
-        addSlider(filters, percentageName, min, max, value, containerWidth, sliderWidth, percentageChange);
+        addSlider(filters, percentageName, min, max, value, sliderWidth, percentageChange);
 
 
         // Update chart data on percentage change

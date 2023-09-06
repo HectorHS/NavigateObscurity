@@ -1,0 +1,126 @@
+@import "../../../../main/static/main/scss/variables.scss";
+@import "../../../../main/static/main/scss/mixins.scss";
+@import "../../../../main/static/main/scss/parents.scss";
+
+.covid-dashboard {
+    .covid-map {
+      height: 100%;
+      .map {
+        height: 420px;
+      }
+      .selected-element {
+        fill: hsl(0, 0%, 0%) !important;
+        color: hsl(0, 0%, 0%) !important;
+        stroke: $bright-blue !important;
+        stroke-width: 20px !important;
+      }
+    }
+    
+    .covid-excess {
+      height: 350px;
+      .error {
+        position: absolute;
+        top: 1000px;
+        text-align: center;
+        width: 85%;
+        font-size: 130%;
+        @media only screen and (min-width: $tablet-breakpoint) {
+          width: 35%;
+          top: 400px;
+        }
+      }
+    }
+    .covid-bar-container {
+      @media only screen and (min-width: $tablet-breakpoint) {
+        width: 50%;
+      }
+    }
+    .bars {
+      padding-bottom: 0;
+      height: 170px;
+      .error2 {
+        position: relative;
+        bottom: 70px;
+        text-align: center;
+        width: 90%;
+        font-size: 110%;
+        @media only screen and (min-width: $tablet-breakpoint) {
+          width: 38%;
+          position: absolute;
+          bottom: 205px;
+        }
+      }
+    }
+  
+    .dashboard-level-2 {
+      .dashboard-side-40 {
+        border-radius: 0px 0px 30px 30px;
+        @media only screen and (min-width: $tablet-breakpoint) {
+          border-radius: 0px 0px 30px 0;
+        }
+      }
+    }
+    .chart-options .chart-filters {
+      &.row1 {
+        @include displayFlex;
+        flex-direction: column;
+        justify-content: flex-end; 
+        align-items: flex-start;
+        margin-bottom: 10px;
+        @media only screen and (min-width: $desktop-breakpoint) {
+          flex-direction: row-reverse;
+          align-items: center;
+          justify-content: left; 
+        }
+        .dropdown-container {
+          width: clamp(250px, 100%, 450px);
+        }
+      }
+      &.row2 {
+        @include displayFlex;
+        flex-direction: column;
+        justify-content: flex-end; 
+        align-items: flex-start;
+        @media only screen and (min-width: $desktop-breakpoint) {
+          flex-direction: row-reverse; 
+          align-items: center;
+          justify-content: left; 
+        }
+        .play-container {
+          width: clamp(250px, 100%, 450px);
+          @include displayFlex;
+          @media only screen and (min-width: $desktop-breakpoint) {
+            margin-right: 10px;
+          }
+          .play-button{
+            margin-right: clamp(10px, 2vw, 20px);
+          }
+  
+        }
+        .slider-container {
+          width: inherit;
+          margin-top: 0;
+          position: inherit;
+          @include displayFlex;
+          flex-direction: row;
+          justify-content: space-between;
+          .slider {
+            margin-top: 15px;
+            width: calc(100% - 120px) !important;
+            max-width: 235px;
+          }
+          .slider-output {
+            top: 1px;
+            line-height: inherit;
+          }
+        }
+      }
+      .slider-container {
+        top: -5px;
+      }
+    }
+  }
+  
+  #covid_top_cases .highcharts-data-label-color-1 text {
+    fill: #fff;
+  }

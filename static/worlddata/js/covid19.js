@@ -1174,7 +1174,7 @@ let CovidDashboard = Promise.all([
     let value = max;
     let containerWidth = 375;
     let sliderWidth = 100;
-    addSlider(map_playButton_container, sliderName, min, max, value, containerWidth, sliderWidth, sliderDateChange);
+    addSlider(map_playButton_container, sliderName, min, max, value, sliderWidth, sliderDateChange);
     let loopi = 0;
     let slider = document.getElementById(sliderName + "-slider");
     let shownDate = document.getElementById(sliderName + "-slider-output");

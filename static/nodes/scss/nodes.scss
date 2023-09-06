@@ -3,7 +3,7 @@
 @import "../../../../main/static/main/scss/parents.scss";
 
 .node-box-container {
-  display: grid;
+  @include displayGrid;
   grid-gap: 50px;
   grid-template-columns: (1fr 3fr);
   padding: 30px 0;
@@ -51,30 +51,40 @@
   }
 }
 .node-container {
-  display: flex;
+  @include displayFlex;
   flex-direction: column-reverse;
   background-color: $dark-grey;
-  padding: 0 20px;
+  padding: 0 $base-margin;
   height: 150vh;
   @media only screen and (min-width: $mobile-breakpoint) {
     height: 85vh;
     flex-direction: row;
-    padding: 0 50px;
   }
-  #context-container {
-    flex: 1;
+  #context_container {
+    @include flex(1);
     color: $almost-white;
     background-color: $darker-grey;
     max-width: 100%;
     border-radius: 20px;
     box-shadow: 2px 4px 10px $navbar-color;
-    h4 {
-      margin-top: 0;
+    .context-title-container {
+        font-size: clamp(1em, 3vw, 1.2em);
+        font-weight: 500;
+        margin-bottom: 20px;
+      .context-title {
+        display: inline;
+      }
+      .node-item {
+        display: inline;
+        margin: 5px;
+        color: $bright-blue;
+        font-style: italic;
+      }
     }
     .simplebar-scrollbar:before {
-      background-color: #fff;
+      background-color: hsl(0, 0%, 100%);
     }
-    #context-wrapper {
+    #context_wrapper {
       max-height: 85vh;
       padding: 20px;
     }
@@ -83,16 +93,16 @@
     margin: 10px 5px;
   }
   .nodes {
-    flex: 2;
+    @include flex(2);
   }
   #graph-container {
     .node-controls {
-      display: flex;
+      @include displayFlex;
       flex-direction: column;
       float: right;
+      width: clamp(250px, 100%, 400px);
     }
     .search-container {
-      width: 150px;
       border-radius: 10px;
       border-width: 1px;
       border-style: solid;
@@ -117,6 +127,7 @@
         padding: 0 10px;
         display: block;
         background-color: $dark-grey-opacity;
+        width: calc(100% - 20px);
       }
       @media only screen and (min-width: $mobile-breakpoint) {
         width: inherit;
@@ -187,26 +198,24 @@
 #slider_container {
   z-index: 10;
 }
-
 .slider-container {
   display: inline-block;
   position: relative;
   top: -15px;
   margin-top: 10px;
-  width: 280px;
+  width: 100%;
 
   .slider {
-    -webkit-appearance: none;
+    @include appearance(none);
     height: 3px;
-    width: 110px;
+    width: calc(100% - 167px);
     background: $light-grey;
     border-radius: 5px;
     outline: none;
-    -webkit-transition: 0.2s;
-    transition: opacity 0.2s;
+    @include transition(opacity 0.2s);
+
     &::-webkit-slider-thumb {
-      -webkit-appearance: none;
-      appearance: none;
+      @include appearance(none);
       width: 25px;
       height: 25px;
       background: $dark-grey;
@@ -262,15 +271,6 @@
       border-right: 7px solid $light-grey;
       border-bottom: 7px solid transparent;
       content: "";
-    }
-  }
-  @media only screen and (min-width: $mobile-breakpoint) {
-    width: 400px;
-    .slider {
-      width: 210px;
-    }
-    .slider-output {
-      width: 150px;
     }
   }
 }

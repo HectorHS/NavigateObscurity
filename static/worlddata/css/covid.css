@@ -1,0 +1,180 @@
+.covid-dashboard .covid-map {
+  height: 100%;
+}
+
+.covid-dashboard .covid-map .map {
+  height: 420px;
+}
+
+.covid-dashboard .covid-map .selected-element {
+  fill: black !important;
+  color: black !important;
+  stroke: #1a94ff !important;
+  stroke-width: 20px !important;
+}
+
+.covid-dashboard .covid-excess {
+  height: 350px;
+}
+
+.covid-dashboard .covid-excess .error {
+  position: absolute;
+  top: 1000px;
+  text-align: center;
+  width: 85%;
+  font-size: 130%;
+}
+
+@media only screen and (min-width: 850px) {
+  .covid-dashboard .covid-excess .error {
+    width: 35%;
+    top: 400px;
+  }
+}
+
+@media only screen and (min-width: 850px) {
+  .covid-dashboard .covid-bar-container {
+    width: 50%;
+  }
+}
+
+.covid-dashboard .bars {
+  padding-bottom: 0;
+  height: 170px;
+}
+
+.covid-dashboard .bars .error2 {
+  position: relative;
+  bottom: 70px;
+  text-align: center;
+  width: 90%;
+  font-size: 110%;
+}
+
+@media only screen and (min-width: 850px) {
+  .covid-dashboard .bars .error2 {
+    width: 38%;
+    position: absolute;
+    bottom: 205px;
+  }
+}
+
+.covid-dashboard .dashboard-level-2 .dashboard-side-40 {
+  border-radius: 0px 0px 30px 30px;
+}
+
+@media only screen and (min-width: 850px) {
+  .covid-dashboard .dashboard-level-2 .dashboard-side-40 {
+    border-radius: 0px 0px 30px 0;
+  }
+}
+
+.covid-dashboard .chart-options .chart-filters.row1 {
+  display: -webkit-box;
+  /* OLD - iOS 6-, Safari 3.1-6 */
+  display: -moz-box;
+  /* OLD - Firefox 19- (buggy but mostly works) */
+  display: -ms-flexbox;
+  /* TWEENER - IE 10 */
+  display: -webkit-flex;
+  /* NEW - Chrome */
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  align-items: flex-start;
+  margin-bottom: 10px;
+}
+
+@media only screen and (min-width: 1025px) {
+  .covid-dashboard .chart-options .chart-filters.row1 {
+    flex-direction: row-reverse;
+    align-items: center;
+    justify-content: left;
+  }
+}
+
+.covid-dashboard .chart-options .chart-filters.row1 .dropdown-container {
+  width: clamp(250px, 100%, 450px);
+}
+
+.covid-dashboard .chart-options .chart-filters.row2 {
+  display: -webkit-box;
+  /* OLD - iOS 6-, Safari 3.1-6 */
+  display: -moz-box;
+  /* OLD - Firefox 19- (buggy but mostly works) */
+  display: -ms-flexbox;
+  /* TWEENER - IE 10 */
+  display: -webkit-flex;
+  /* NEW - Chrome */
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  align-items: flex-start;
+}
+
+@media only screen and (min-width: 1025px) {
+  .covid-dashboard .chart-options .chart-filters.row2 {
+    flex-direction: row-reverse;
+    align-items: center;
+    justify-content: left;
+  }
+}
+
+.covid-dashboard .chart-options .chart-filters.row2 .play-container {
+  width: clamp(250px, 100%, 450px);
+  display: -webkit-box;
+  /* OLD - iOS 6-, Safari 3.1-6 */
+  display: -moz-box;
+  /* OLD - Firefox 19- (buggy but mostly works) */
+  display: -ms-flexbox;
+  /* TWEENER - IE 10 */
+  display: -webkit-flex;
+  /* NEW - Chrome */
+  display: flex;
+}
+
+@media only screen and (min-width: 1025px) {
+  .covid-dashboard .chart-options .chart-filters.row2 .play-container {
+    margin-right: 10px;
+  }
+}
+
+.covid-dashboard .chart-options .chart-filters.row2 .play-container .play-button {
+  margin-right: clamp(10px, 2vw, 20px);
+}
+
+.covid-dashboard .chart-options .chart-filters.row2 .slider-container {
+  width: inherit;
+  margin-top: 0;
+  position: inherit;
+  display: -webkit-box;
+  /* OLD - iOS 6-, Safari 3.1-6 */
+  display: -moz-box;
+  /* OLD - Firefox 19- (buggy but mostly works) */
+  display: -ms-flexbox;
+  /* TWEENER - IE 10 */
+  display: -webkit-flex;
+  /* NEW - Chrome */
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.covid-dashboard .chart-options .chart-filters.row2 .slider-container .slider {
+  margin-top: 15px;
+  width: calc(100% - 120px) !important;
+  max-width: 235px;
+}
+
+.covid-dashboard .chart-options .chart-filters.row2 .slider-container .slider-output {
+  top: 1px;
+  line-height: inherit;
+}
+
+.covid-dashboard .chart-options .chart-filters .slider-container {
+  top: -5px;
+}
+
+#covid_top_cases .highcharts-data-label-color-1 text {
+  fill: #fff;
+}

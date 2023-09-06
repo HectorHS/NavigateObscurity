@@ -23,3 +23,30 @@
   -o-transition: $args;
   transition: $args;
 }
+@mixin filter($property) {
+  -webkit-filter: $property;
+  filter: $property;
+}
+@mixin displayFlex {
+  display: -webkit-box;      /* OLD - iOS 6-, Safari 3.1-6 */
+  display: -moz-box;         /* OLD - Firefox 19- (buggy but mostly works) */
+  display: -ms-flexbox;      /* TWEENER - IE 10 */
+  display: -webkit-flex;     /* NEW - Chrome */
+  display: flex; 
+}
+@mixin flex($property) {
+  -webkit-box-flex: $property;      /* OLD - iOS 6-, Safari 3.1-6 */
+  -moz-box-flex: $property;         /* OLD - Firefox 19- */
+  -webkit-flex: $property;          /* Chrome */
+  -ms-flex: $property;              /* IE 10 */
+  flex: $property; 
+}
+@mixin displayGrid {
+  display: -ms-grid;
+  display: grid;
+}
+@mixin appearance($property){
+  -webkit-appearance: $property;
+  -moz-appearance: $property;
+  appearance: $property;
+}

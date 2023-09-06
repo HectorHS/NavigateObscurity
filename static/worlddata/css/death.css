@@ -1,0 +1,220 @@
+.pl-africa {
+  background-color: #ffff1a;
+}
+
+.pl-asia {
+  background-color: #d1158f;
+}
+
+.pl-europe {
+  background-color: #0070d1;
+}
+
+.pl-lac {
+  background-color: #23ca23;
+}
+
+.pl-na {
+  background-color: #e63333;
+}
+
+.pl-oceania {
+  background-color: #772eb8;
+}
+
+.pl-births {
+  background-color: #ddc3c3;
+}
+
+.pl-deaths {
+  background-color: #101414;
+}
+
+.births-container {
+  display: inline-block;
+  margin-left: 20px;
+}
+
+.births-container p {
+  display: inline-block;
+  font-size: 150%;
+  margin: 0;
+  color: #ddc3c3;
+  line-height: 0.8;
+}
+
+.deaths-container {
+  display: inline-block;
+  margin-left: 20px;
+}
+
+.deaths-container p {
+  display: inline-block;
+  font-size: 150%;
+  margin: 0;
+  color: #101414;
+  line-height: 0.8;
+}
+
+.population-line {
+  display: inline-block;
+  height: 20px;
+  width: 5px;
+  border-radius: 5px;
+}
+
+.old-death-tree {
+  min-height: 300px;
+}
+
+.death-dashboard .parameters-container {
+  display: -webkit-box;
+  /* OLD - iOS 6-, Safari 3.1-6 */
+  display: -moz-box;
+  /* OLD - Firefox 19- (buggy but mostly works) */
+  display: -ms-flexbox;
+  /* TWEENER - IE 10 */
+  display: -webkit-flex;
+  /* NEW - Chrome */
+  display: flex;
+  margin-bottom: 10px;
+}
+
+.death-dashboard .parameter-container {
+  width: 100%;
+  margin: 5px;
+  border-radius: 20px 0;
+  margin-bottom: 10px;
+  justify-content: space-between;
+  display: -webkit-box;
+  /* OLD - iOS 6-, Safari 3.1-6 */
+  display: -moz-box;
+  /* OLD - Firefox 19- (buggy but mostly works) */
+  display: -ms-flexbox;
+  /* TWEENER - IE 10 */
+  display: -webkit-flex;
+  /* NEW - Chrome */
+  display: flex;
+  flex-direction: column;
+  background-image: linear-gradient(160deg, #3f5050 20%, #2e3838 80%);
+}
+
+.death-dashboard .parameter-container .parameter {
+  text-align: center;
+  font-weight: 700;
+  font-size: clamp(1.1rem, 3vw, 1.5rem);
+  margin-bottom: 15px;
+  overflow: hidden;
+}
+
+.death-dashboard .parameter-container .parameter-label {
+  padding: 5px 10px;
+}
+
+.death-dashboard .parameter-container .parameter-button {
+  margin: 0;
+  font-size: 100%;
+  font-weight: 600;
+  height: 30px;
+  width: 100%;
+  padding: 0;
+  border-radius: 0 0 15px;
+  background-image: linear-gradient(to bottom left, #2e3838 0%, #1a94ff 60%);
+  text-align: center;
+  color: #2e3838;
+  padding-top: 5px;
+  box-shadow: none;
+}
+
+.death-dashboard .parameter-container .parameter-button:before {
+  background-image: linear-gradient(to top right, #2e3838 0%, #d96908 60%);
+  border-radius: 0 0 15px;
+}
+
+.death-dashboard .radio-container {
+  align-self: flex-end;
+}
+
+.death-dashboard .death-tree {
+  border-radius: 30px;
+  padding: 15px 20px;
+  overflow: hidden;
+  z-index: 2;
+  height: 300px;
+}
+
+.death-dashboard .death-tree .highcharts-button-box {
+  fill: none;
+}
+
+@media only screen and (min-width: 850px) {
+  .death-dashboard .death-tree {
+    margin-right: 0;
+  }
+}
+
+.death-dashboard .death-map {
+  height: 100%;
+}
+
+.death-dashboard .death-map .highcharts-point {
+  cursor: pointer;
+}
+
+.death-dashboard .death-pyramid {
+  height: 420px;
+}
+
+.death-dashboard .death-bubbles {
+  height: 300px;
+}
+
+.death-dashboard .pyramid-label-selected {
+  fill: #d96908;
+}
+
+.death-dashboard .death-pyramid .pyramid-band {
+  fill: #2e3838;
+  fill-opacity: 0.7;
+  cursor: pointer;
+}
+
+.death-dashboard .death-pyramid .pyramid-band:hover {
+  fill: #1a94ff;
+}
+
+.death-dashboard .death-pyramid .pyramid-band-selected {
+  fill: #d96908;
+  fill-opacity: 1;
+  cursor: pointer;
+}
+
+.death-dashboard .death-pyramid .pyramid-band-selected:hover {
+  fill: #1a94ff;
+}
+
+.death-dashboard .death-pyramid .pyramid-series-inactive {
+  opacity: 0.2;
+}
+
+.death-dashboard .selected-element {
+  fill: #000 !important;
+  color: #000 !important;
+  stroke: #d96908 !important;
+  stroke-width: 20px !important;
+}
+
+.death-dashboard .dashboard-border-container-sm {
+  box-shadow: 2px 2px 8px rgba(23, 28, 28, 0.9);
+}
+
+.death-dashboard .dashboard-level-2 .dashboard-side-40 {
+  border-radius: 0 0 30px 30px;
+}
+
+@media only screen and (min-width: 850px) {
+  .death-dashboard .dashboard-level-2 .dashboard-side-40 {
+    padding-bottom: 0px;
+    border-radius: 0 0 30px 0;
+  }
+}

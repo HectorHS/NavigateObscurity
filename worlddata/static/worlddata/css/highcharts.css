@@ -132,6 +132,10 @@
   cursor: pointer;
   fill: #dffcff;
   font-size: 0.7em;
+  -webkit-transition: fill 250ms, font-size 250ms;
+  -moz-transition: fill 250ms, font-size 250ms;
+  -ms-transition: fill 250ms, font-size 250ms;
+  -o-transition: fill 250ms, font-size 250ms;
   transition: fill 250ms, font-size 250ms;
 }
 
@@ -145,6 +149,10 @@
   cursor: default;
   pointer-events: none;
   white-space: nowrap;
+  -webkit-transition: stroke 150ms;
+  -moz-transition: stroke 150ms;
+  -ms-transition: stroke 150ms;
+  -o-transition: stroke 150ms;
   transition: stroke 150ms;
 }
 
@@ -170,6 +178,7 @@
 }
 
 div.highcharts-tooltip {
+  -webkit-filter: none;
   filter: none;
 }
 
@@ -191,22 +200,38 @@ div.highcharts-tooltip {
 
 .highcharts-point-inactive {
   opacity: 0.3;
+  -webkit-transition: opacity 100ms;
+  -moz-transition: opacity 100ms;
+  -ms-transition: opacity 100ms;
+  -o-transition: opacity 100ms;
   transition: opacity 100ms;
   /* quick in */
 }
 
 .highcharts-series-inactive {
   opacity: 0.3;
+  -webkit-transition: opacity 100ms;
+  -moz-transition: opacity 100ms;
+  -ms-transition: opacity 100ms;
+  -o-transition: opacity 100ms;
   transition: opacity 100ms;
   /* quick in */
 }
 
 .highcharts-state-hover path {
+  -webkit-transition: stroke-width 50ms;
+  -moz-transition: stroke-width 50ms;
+  -ms-transition: stroke-width 50ms;
+  -o-transition: stroke-width 50ms;
   transition: stroke-width 50ms;
   /* quick in */
 }
 
 .highcharts-state-normal path {
+  -webkit-transition: stroke-width 50ms;
+  -moz-transition: stroke-width 50ms;
+  -ms-transition: stroke-width 50ms;
+  -o-transition: stroke-width 50ms;
   transition: stroke-width 50ms;
   /* slow out */
 }
@@ -216,6 +241,10 @@ g.highcharts-series,
 .highcharts-point,
 .highcharts-markers,
 .highcharts-data-labels {
+  -webkit-transition: opacity 150ms;
+  -moz-transition: opacity 150ms;
+  -ms-transition: opacity 150ms;
+  -o-transition: opacity 150ms;
   transition: opacity 150ms;
 }
 
@@ -229,55 +258,55 @@ g.highcharts-series,
 /* Series options */
 /* Default colors */
 .highcharts-color-0 {
-  fill: #B3DBFF;
-  stroke: #B3DBFF;
+  fill: #b3dbff;
+  stroke: #b3dbff;
 }
 
 .highcharts-color-0 .highcharts-axis-title {
-  fill: #B3DBFF;
+  fill: #b3dbff;
 }
 
 .legend-color-0 {
-  background-image: linear-gradient(to top right, rgba(255, 0, 0, 0) 0%, #B3DBFF 50%);
+  background-image: linear-gradient(to top right, rgba(255, 0, 0, 0) 0%, #b3dbff 50%);
 }
 
 .highcharts-color-1 {
-  fill: #66B8FF;
-  stroke: #66B8FF;
+  fill: #66b8ff;
+  stroke: #66b8ff;
 }
 
 .highcharts-color-1 .highcharts-axis-title {
-  fill: #66B8FF;
+  fill: #66b8ff;
 }
 
 .legend-color-1 {
-  background-image: linear-gradient(to top right, rgba(255, 0, 0, 0) 0%, #66B8FF 50%);
+  background-image: linear-gradient(to top right, rgba(255, 0, 0, 0) 0%, #66b8ff 50%);
 }
 
 .highcharts-color-2 {
-  fill: #1A94FF;
-  stroke: #1A94FF;
+  fill: #1a94ff;
+  stroke: #1a94ff;
 }
 
 .highcharts-color-2 .highcharts-axis-title {
-  fill: #1A94FF;
+  fill: #1a94ff;
 }
 
 .legend-color-2 {
-  background-image: linear-gradient(to top right, rgba(255, 0, 0, 0) 0%, #1A94FF 50%);
+  background-image: linear-gradient(to top right, rgba(255, 0, 0, 0) 0%, #1a94ff 50%);
 }
 
 .highcharts-color-3 {
-  fill: #0070D1;
-  stroke: #0070D1;
+  fill: #006dcc;
+  stroke: #006dcc;
 }
 
 .highcharts-color-3 .highcharts-axis-title {
-  fill: #0070D1;
+  fill: #006dcc;
 }
 
 .legend-color-3 {
-  background-image: linear-gradient(to top right, rgba(255, 0, 0, 0) 0%, #0070D1 50%);
+  background-image: linear-gradient(to top right, rgba(255, 0, 0, 0) 0%, #006dcc 50%);
 }
 
 .highcharts-color-4 {
@@ -307,354 +336,354 @@ g.highcharts-series,
 }
 
 .highcharts-color-6 {
-  fill: #001B33;
-  stroke: #001B33;
+  fill: #001b33;
+  stroke: #001b33;
 }
 
 .highcharts-color-6 .highcharts-axis-title {
-  fill: #001B33;
+  fill: #001b33;
 }
 
 .legend-color-6 {
-  background-image: linear-gradient(to top right, rgba(255, 0, 0, 0) 0%, #001B33 50%);
+  background-image: linear-gradient(to top right, rgba(255, 0, 0, 0) 0%, #001b33 50%);
 }
 
 .highcharts-color-7 {
-  fill: #FFFF99;
-  stroke: #FFFF99;
+  fill: #ffff99;
+  stroke: #ffff99;
 }
 
 .highcharts-color-7 .highcharts-axis-title {
-  fill: #FFFF99;
+  fill: #ffff99;
 }
 
 .legend-color-7 {
-  background-image: linear-gradient(to top right, rgba(255, 0, 0, 0) 0%, #FFFF99 50%);
+  background-image: linear-gradient(to top right, rgba(255, 0, 0, 0) 0%, #ffff99 50%);
 }
 
 .highcharts-color-8 {
-  fill: #FFFF4D;
-  stroke: #FFFF4D;
+  fill: #ffff4d;
+  stroke: #ffff4d;
 }
 
 .highcharts-color-8 .highcharts-axis-title {
-  fill: #FFFF4D;
+  fill: #ffff4d;
 }
 
 .legend-color-8 {
-  background-image: linear-gradient(to top right, rgba(255, 0, 0, 0) 0%, #FFFF4D 50%);
+  background-image: linear-gradient(to top right, rgba(255, 0, 0, 0) 0%, #ffff4d 50%);
 }
 
 .highcharts-color-9 {
-  fill: #FFFF1A;
-  stroke: #FFFF1A;
+  fill: yellow;
+  stroke: yellow;
 }
 
 .highcharts-color-9 .highcharts-axis-title {
-  fill: #FFFF1A;
+  fill: yellow;
 }
 
 .legend-color-9 {
-  background-image: linear-gradient(to top right, rgba(255, 0, 0, 0) 0%, #FFFF1A 50%);
+  background-image: linear-gradient(to top right, rgba(255, 0, 0, 0) 0%, yellow 50%);
 }
 
 .highcharts-color-10 {
-  fill: #C7C705;
-  stroke: #C7C705;
+  fill: #b3b300;
+  stroke: #b3b300;
 }
 
 .highcharts-color-10 .highcharts-axis-title {
-  fill: #C7C705;
+  fill: #b3b300;
 }
 
 .legend-color-10 {
-  background-image: linear-gradient(to top right, rgba(255, 0, 0, 0) 0%, #C7C705 50%);
+  background-image: linear-gradient(to top right, rgba(255, 0, 0, 0) 0%, #b3b300 50%);
 }
 
 .highcharts-color-11 {
-  fill: #919108;
-  stroke: #919108;
+  fill: olive;
+  stroke: olive;
 }
 
 .highcharts-color-11 .highcharts-axis-title {
-  fill: #919108;
+  fill: olive;
 }
 
 .legend-color-11 {
-  background-image: linear-gradient(to top right, rgba(255, 0, 0, 0) 0%, #919108 50%);
+  background-image: linear-gradient(to top right, rgba(255, 0, 0, 0) 0%, olive 50%);
 }
 
 .highcharts-color-12 {
-  fill: #5E5E08;
-  stroke: #5E5E08;
+  fill: #4d4d00;
+  stroke: #4d4d00;
 }
 
 .highcharts-color-12 .highcharts-axis-title {
-  fill: #5E5E08;
+  fill: #4d4d00;
 }
 
 .legend-color-12 {
-  background-image: linear-gradient(to top right, rgba(255, 0, 0, 0) 0%, #5E5E08 50%);
+  background-image: linear-gradient(to top right, rgba(255, 0, 0, 0) 0%, #4d4d00 50%);
 }
 
 .highcharts-color-13 {
-  fill: #2E2E05;
-  stroke: #2E2E05;
+  fill: #292900;
+  stroke: #292900;
 }
 
 .highcharts-color-13 .highcharts-axis-title {
-  fill: #2E2E05;
+  fill: #292900;
 }
 
 .legend-color-13 {
-  background-image: linear-gradient(to top right, rgba(255, 0, 0, 0) 0%, #2E2E05 50%);
+  background-image: linear-gradient(to top right, rgba(255, 0, 0, 0) 0%, #292900 50%);
 }
 
 .highcharts-color-14 {
-  fill: #FAD1EC;
-  stroke: #FAD1EC;
+  fill: #fad1ec;
+  stroke: #fad1ec;
 }
 
 .highcharts-color-14 .highcharts-axis-title {
-  fill: #FAD1EC;
+  fill: #fad1ec;
 }
 
 .legend-color-14 {
-  background-image: linear-gradient(to top right, rgba(255, 0, 0, 0) 0%, #FAD1EC 50%);
+  background-image: linear-gradient(to top right, rgba(255, 0, 0, 0) 0%, #fad1ec 50%);
 }
 
 .highcharts-color-15 {
-  fill: #F48BCF;
-  stroke: #F48BCF;
+  fill: #f28cd0;
+  stroke: #f28cd0;
 }
 
 .highcharts-color-15 .highcharts-axis-title {
-  fill: #F48BCF;
+  fill: #f28cd0;
 }
 
 .legend-color-15 {
-  background-image: linear-gradient(to top right, rgba(255, 0, 0, 0) 0%, #F48BCF 50%);
+  background-image: linear-gradient(to top right, rgba(255, 0, 0, 0) 0%, #f28cd0 50%);
 }
 
 .highcharts-color-16 {
-  fill: #ED45B2;
-  stroke: #ED45B2;
+  fill: #eb47b4;
+  stroke: #eb47b4;
 }
 
 .highcharts-color-16 .highcharts-axis-title {
-  fill: #ED45B2;
+  fill: #eb47b4;
 }
 
 .legend-color-16 {
-  background-image: linear-gradient(to top right, rgba(255, 0, 0, 0) 0%, #ED45B2 50%);
+  background-image: linear-gradient(to top right, rgba(255, 0, 0, 0) 0%, #eb47b4 50%);
 }
 
 .highcharts-color-17 {
-  fill: #D1158F;
-  stroke: #D1158F;
+  fill: #cf1791;
+  stroke: #cf1791;
 }
 
 .highcharts-color-17 .highcharts-axis-title {
-  fill: #D1158F;
+  fill: #cf1791;
 }
 
 .legend-color-17 {
-  background-image: linear-gradient(to top right, rgba(255, 0, 0, 0) 0%, #D1158F 50%);
+  background-image: linear-gradient(to top right, rgba(255, 0, 0, 0) 0%, #cf1791 50%);
 }
 
 .highcharts-color-18 {
-  fill: #970F67;
-  stroke: #970F67;
+  fill: #8a0f61;
+  stroke: #8a0f61;
 }
 
 .highcharts-color-18 .highcharts-axis-title {
-  fill: #970F67;
+  fill: #8a0f61;
 }
 
 .legend-color-18 {
-  background-image: linear-gradient(to top right, rgba(255, 0, 0, 0) 0%, #970F67 50%);
+  background-image: linear-gradient(to top right, rgba(255, 0, 0, 0) 0%, #8a0f61 50%);
 }
 
 .highcharts-color-19 {
-  fill: #5D0940;
-  stroke: #5D0940;
+  fill: #5c0a41;
+  stroke: #5c0a41;
 }
 
 .highcharts-color-19 .highcharts-axis-title {
-  fill: #5D0940;
+  fill: #5c0a41;
 }
 
 .legend-color-19 {
-  background-image: linear-gradient(to top right, rgba(255, 0, 0, 0) 0%, #5D0940 50%);
+  background-image: linear-gradient(to top right, rgba(255, 0, 0, 0) 0%, #5c0a41 50%);
 }
 
 .highcharts-color-20 {
-  fill: #2E0520;
-  stroke: #2E0520;
+  fill: #2e0520;
+  stroke: #2e0520;
 }
 
 .highcharts-color-20 .highcharts-axis-title {
-  fill: #2E0520;
+  fill: #2e0520;
 }
 
 .legend-color-20 {
-  background-image: linear-gradient(to top right, rgba(255, 0, 0, 0) 0%, #2E0520 50%);
+  background-image: linear-gradient(to top right, rgba(255, 0, 0, 0) 0%, #2e0520 50%);
 }
 
 .highcharts-color-21 {
-  fill: #7DE87D;
-  stroke: #7DE87D;
+  fill: #bef4be;
+  stroke: #bef4be;
 }
 
 .highcharts-color-21 .highcharts-axis-title {
-  fill: #7DE87D;
+  fill: #bef4be;
 }
 
 .legend-color-21 {
-  background-image: linear-gradient(to top right, rgba(255, 0, 0, 0) 0%, #7DE87D 50%);
+  background-image: linear-gradient(to top right, rgba(255, 0, 0, 0) 0%, #bef4be 50%);
 }
 
 .highcharts-color-22 {
-  fill: #52E052;
-  stroke: #52E052;
+  fill: #7de87d;
+  stroke: #7de87d;
 }
 
 .highcharts-color-22 .highcharts-axis-title {
-  fill: #52E052;
+  fill: #7de87d;
 }
 
 .legend-color-22 {
-  background-image: linear-gradient(to top right, rgba(255, 0, 0, 0) 0%, #52E052 50%);
+  background-image: linear-gradient(to top right, rgba(255, 0, 0, 0) 0%, #7de87d 50%);
 }
 
 .highcharts-color-23 {
-  fill: #23CA23;
-  stroke: #23CA23;
+  fill: #3cdd3c;
+  stroke: #3cdd3c;
 }
 
 .highcharts-color-23 .highcharts-axis-title {
-  fill: #23CA23;
+  fill: #3cdd3c;
 }
 
 .legend-color-23 {
-  background-image: linear-gradient(to top right, rgba(255, 0, 0, 0) 0%, #23CA23 50%);
+  background-image: linear-gradient(to top right, rgba(255, 0, 0, 0) 0%, #3cdd3c 50%);
 }
 
 .highcharts-color-24 {
-  fill: #1B981B;
-  stroke: #1B981B;
+  fill: #1fad1f;
+  stroke: #1fad1f;
 }
 
 .highcharts-color-24 .highcharts-axis-title {
-  fill: #1B981B;
+  fill: #1fad1f;
 }
 
 .legend-color-24 {
-  background-image: linear-gradient(to top right, rgba(255, 0, 0, 0) 0%, #1B981B 50%);
+  background-image: linear-gradient(to top right, rgba(255, 0, 0, 0) 0%, #1fad1f 50%);
 }
 
 .highcharts-color-25 {
-  fill: #136C13;
-  stroke: #136C13;
+  fill: #178217;
+  stroke: #178217;
 }
 
 .highcharts-color-25 .highcharts-axis-title {
-  fill: #136C13;
+  fill: #178217;
 }
 
 .legend-color-25 {
-  background-image: linear-gradient(to top right, rgba(255, 0, 0, 0) 0%, #136C13 50%);
+  background-image: linear-gradient(to top right, rgba(255, 0, 0, 0) 0%, #178217 50%);
 }
 
 .highcharts-color-26 {
-  fill: #0B410B;
-  stroke: #0B410B;
+  fill: #0f570f;
+  stroke: #0f570f;
 }
 
 .highcharts-color-26 .highcharts-axis-title {
-  fill: #0B410B;
+  fill: #0f570f;
 }
 
 .legend-color-26 {
-  background-image: linear-gradient(to top right, rgba(255, 0, 0, 0) 0%, #0B410B 50%);
+  background-image: linear-gradient(to top right, rgba(255, 0, 0, 0) 0%, #0f570f 50%);
 }
 
 .highcharts-color-27 {
-  fill: #041604;
-  stroke: #041604;
+  fill: #082b08;
+  stroke: #082b08;
 }
 
 .highcharts-color-27 .highcharts-axis-title {
-  fill: #041604;
+  fill: #082b08;
 }
 
 .legend-color-27 {
-  background-image: linear-gradient(to top right, rgba(255, 0, 0, 0) 0%, #041604 50%);
+  background-image: linear-gradient(to top right, rgba(255, 0, 0, 0) 0%, #082b08 50%);
 }
 
 .highcharts-color-28 {
-  fill: #F18E8E;
-  stroke: #F18E8E;
+  fill: #f4a4a4;
+  stroke: #f4a4a4;
 }
 
 .highcharts-color-28 .highcharts-axis-title {
-  fill: #F18E8E;
+  fill: #f4a4a4;
 }
 
 .legend-color-28 {
-  background-image: linear-gradient(to top right, rgba(255, 0, 0, 0) 0%, #F18E8E 50%);
+  background-image: linear-gradient(to top right, rgba(255, 0, 0, 0) 0%, #f4a4a4 50%);
 }
 
 .highcharts-color-29 {
-  fill: #EB6060;
-  stroke: #EB6060;
+  fill: #eb6060;
+  stroke: #eb6060;
 }
 
 .highcharts-color-29 .highcharts-axis-title {
-  fill: #EB6060;
+  fill: #eb6060;
 }
 
 .legend-color-29 {
-  background-image: linear-gradient(to top right, rgba(255, 0, 0, 0) 0%, #EB6060 50%);
+  background-image: linear-gradient(to top right, rgba(255, 0, 0, 0) 0%, #eb6060 50%);
 }
 
 .highcharts-color-30 {
-  fill: #E63333;
-  stroke: #E63333;
+  fill: #e31c1c;
+  stroke: #e31c1c;
 }
 
 .highcharts-color-30 .highcharts-axis-title {
-  fill: #E63333;
+  fill: #e31c1c;
 }
 
 .legend-color-30 {
-  background-image: linear-gradient(to top right, rgba(255, 0, 0, 0) 0%, #E63333 50%);
+  background-image: linear-gradient(to top right, rgba(255, 0, 0, 0) 0%, #e31c1c 50%);
 }
 
 .highcharts-color-31 {
-  fill: #CC1919;
-  stroke: #CC1919;
+  fill: #9f1414;
+  stroke: #9f1414;
 }
 
 .highcharts-color-31 .highcharts-axis-title {
-  fill: #CC1919;
+  fill: #9f1414;
 }
 
 .legend-color-31 {
-  background-image: linear-gradient(to top right, rgba(255, 0, 0, 0) 0%, #CC1919 50%);
+  background-image: linear-gradient(to top right, rgba(255, 0, 0, 0) 0%, #9f1414 50%);
 }
 
 .highcharts-color-32 {
-  fill: #881111;
-  stroke: #881111;
+  fill: #710e0e;
+  stroke: #710e0e;
 }
 
 .highcharts-color-32 .highcharts-axis-title {
-  fill: #881111;
+  fill: #710e0e;
 }
 
 .legend-color-32 {
-  background-image: linear-gradient(to top right, rgba(255, 0, 0, 0) 0%, #881111 50%);
+  background-image: linear-gradient(to top right, rgba(255, 0, 0, 0) 0%, #710e0e 50%);
 }
 
 .highcharts-color-33 {
@@ -671,16 +700,16 @@ g.highcharts-series,
 }
 
 .highcharts-color-34 {
-  fill: #170303;
-  stroke: #170303;
+  fill: #240404;
+  stroke: #240404;
 }
 
 .highcharts-color-34 .highcharts-axis-title {
-  fill: #170303;
+  fill: #240404;
 }
 
 .legend-color-34 {
-  background-image: linear-gradient(to top right, rgba(255, 0, 0, 0) 0%, #170303 50%);
+  background-image: linear-gradient(to top right, rgba(255, 0, 0, 0) 0%, #240404 50%);
 }
 
 .highcharts-color-35 {
@@ -697,198 +726,198 @@ g.highcharts-series,
 }
 
 .highcharts-color-36 {
-  fill: #C29CE2;
-  stroke: #C29CE2;
+  fill: #c39be4;
+  stroke: #c39be4;
 }
 
 .highcharts-color-36 .highcharts-axis-title {
-  fill: #C29CE2;
+  fill: #c39be4;
 }
 
 .legend-color-36 {
-  background-image: linear-gradient(to top right, rgba(255, 0, 0, 0) 0%, #C29CE2 50%);
+  background-image: linear-gradient(to top right, rgba(255, 0, 0, 0) 0%, #c39be4 50%);
 }
 
 .highcharts-color-37 {
-  fill: #9D61D1;
-  stroke: #9D61D1;
+  fill: #9f5fd3;
+  stroke: #9f5fd3;
 }
 
 .highcharts-color-37 .highcharts-axis-title {
-  fill: #9D61D1;
+  fill: #9f5fd3;
 }
 
 .legend-color-37 {
-  background-image: linear-gradient(to top right, rgba(255, 0, 0, 0) 0%, #9D61D1 50%);
+  background-image: linear-gradient(to top right, rgba(255, 0, 0, 0) 0%, #9f5fd3 50%);
 }
 
 .highcharts-color-38 {
-  fill: #772EB8;
-  stroke: #772EB8;
+  fill: #7931b4;
+  stroke: #7931b4;
 }
 
 .highcharts-color-38 .highcharts-axis-title {
-  fill: #772EB8;
+  fill: #7931b4;
 }
 
 .legend-color-38 {
-  background-image: linear-gradient(to top right, rgba(255, 0, 0, 0) 0%, #772EB8 50%);
+  background-image: linear-gradient(to top right, rgba(255, 0, 0, 0) 0%, #7931b4 50%);
 }
 
 .highcharts-color-39 {
-  fill: #501980;
-  stroke: #501980;
+  fill: #512178;
+  stroke: #512178;
 }
 
 .highcharts-color-39 .highcharts-axis-title {
-  fill: #501980;
+  fill: #512178;
 }
 
 .legend-color-39 {
-  background-image: linear-gradient(to top right, rgba(255, 0, 0, 0) 0%, #501980 50%);
+  background-image: linear-gradient(to top right, rgba(255, 0, 0, 0) 0%, #512178 50%);
 }
 
 .highcharts-color-40 {
-  fill: #360D59;
-  stroke: #360D59;
+  fill: #361650;
+  stroke: #361650;
 }
 
 .highcharts-color-40 .highcharts-axis-title {
-  fill: #360D59;
+  fill: #361650;
 }
 
 .legend-color-40 {
-  background-image: linear-gradient(to top right, rgba(255, 0, 0, 0) 0%, #360D59 50%);
+  background-image: linear-gradient(to top right, rgba(255, 0, 0, 0) 0%, #361650 50%);
 }
 
 .highcharts-color-41 {
-  fill: #1B042F;
-  stroke: #1B042F;
+  fill: #1b0b28;
+  stroke: #1b0b28;
 }
 
 .highcharts-color-41 .highcharts-axis-title {
-  fill: #1B042F;
+  fill: #1b0b28;
 }
 
 .legend-color-41 {
-  background-image: linear-gradient(to top right, rgba(255, 0, 0, 0) 0%, #1B042F 50%);
+  background-image: linear-gradient(to top right, rgba(255, 0, 0, 0) 0%, #1b0b28 50%);
 }
 
 .highcharts-color-42 {
-  fill: #FFDBB3;
-  stroke: #FFDBB3;
+  fill: #ffdbb3;
+  stroke: #ffdbb3;
 }
 
 .highcharts-color-42 .highcharts-axis-title {
-  fill: #FFDBB3;
+  fill: #ffdbb3;
 }
 
 .legend-color-42 {
-  background-image: linear-gradient(to top right, rgba(255, 0, 0, 0) 0%, #FFDBB3 50%);
+  background-image: linear-gradient(to top right, rgba(255, 0, 0, 0) 0%, #ffdbb3 50%);
 }
 
 .highcharts-color-43 {
-  fill: #FFB866;
-  stroke: #FFB866;
+  fill: #ffb866;
+  stroke: #ffb866;
 }
 
 .highcharts-color-43 .highcharts-axis-title {
-  fill: #FFB866;
+  fill: #ffb866;
 }
 
 .legend-color-43 {
-  background-image: linear-gradient(to top right, rgba(255, 0, 0, 0) 0%, #FFB866 50%);
+  background-image: linear-gradient(to top right, rgba(255, 0, 0, 0) 0%, #ffb866 50%);
 }
 
 .highcharts-color-44 {
-  fill: #FFA033;
-  stroke: #FFA033;
+  fill: #ff941a;
+  stroke: #ff941a;
 }
 
 .highcharts-color-44 .highcharts-axis-title {
-  fill: #FFA033;
+  fill: #ff941a;
 }
 
 .legend-color-44 {
-  background-image: linear-gradient(to top right, rgba(255, 0, 0, 0) 0%, #FFA033 50%);
+  background-image: linear-gradient(to top right, rgba(255, 0, 0, 0) 0%, #ff941a 50%);
 }
 
 .highcharts-color-45 {
-  fill: #FF8800;
-  stroke: #FF8800;
+  fill: #cc6d00;
+  stroke: #cc6d00;
 }
 
 .highcharts-color-45 .highcharts-axis-title {
-  fill: #FF8800;
+  fill: #cc6d00;
 }
 
 .legend-color-45 {
-  background-image: linear-gradient(to top right, rgba(255, 0, 0, 0) 0%, #FF8800 50%);
+  background-image: linear-gradient(to top right, rgba(255, 0, 0, 0) 0%, #cc6d00 50%);
 }
 
 .highcharts-color-46 {
-  fill: #CC6D00;
-  stroke: #CC6D00;
+  fill: #995200;
+  stroke: #995200;
 }
 
 .highcharts-color-46 .highcharts-axis-title {
-  fill: #CC6D00;
+  fill: #995200;
 }
 
 .legend-color-46 {
-  background-image: linear-gradient(to top right, rgba(255, 0, 0, 0) 0%, #CC6D00 50%);
+  background-image: linear-gradient(to top right, rgba(255, 0, 0, 0) 0%, #995200 50%);
 }
 
 .highcharts-color-47 {
-  fill: #804400;
-  stroke: #804400;
+  fill: #663600;
+  stroke: #663600;
 }
 
 .highcharts-color-47 .highcharts-axis-title {
-  fill: #804400;
+  fill: #663600;
 }
 
 .legend-color-47 {
-  background-image: linear-gradient(to top right, rgba(255, 0, 0, 0) 0%, #804400 50%);
+  background-image: linear-gradient(to top right, rgba(255, 0, 0, 0) 0%, #663600 50%);
 }
 
 .highcharts-color-48 {
-  fill: #4D2900;
-  stroke: #4D2900;
+  fill: #3d2100;
+  stroke: #3d2100;
 }
 
 .highcharts-color-48 .highcharts-axis-title {
-  fill: #4D2900;
+  fill: #3d2100;
 }
 
 .legend-color-48 {
-  background-image: linear-gradient(to top right, rgba(255, 0, 0, 0) 0%, #4D2900 50%);
+  background-image: linear-gradient(to top right, rgba(255, 0, 0, 0) 0%, #3d2100 50%);
 }
 
 .highcharts-color-49 {
-  fill: #ddc3c3;
-  stroke: #ddc3c3;
+  fill: #dec4c4;
+  stroke: #dec4c4;
 }
 
 .highcharts-color-49 .highcharts-axis-title {
-  fill: #ddc3c3;
+  fill: #dec4c4;
 }
 
 .legend-color-49 {
-  background-image: linear-gradient(to top right, rgba(255, 0, 0, 0) 0%, #ddc3c3 50%);
+  background-image: linear-gradient(to top right, rgba(255, 0, 0, 0) 0%, #dec4c4 50%);
 }
 
 .highcharts-color-50 {
-  fill: #8B9595;
-  stroke: #8B9595;
+  fill: #899494;
+  stroke: #899494;
 }
 
 .highcharts-color-50 .highcharts-axis-title {
-  fill: #8B9595;
+  fill: #899494;
 }
 
 .legend-color-50 {
-  background-image: linear-gradient(to top right, rgba(255, 0, 0, 0) 0%, #8B9595 50%);
+  background-image: linear-gradient(to top right, rgba(255, 0, 0, 0) 0%, #899494 50%);
 }
 
 .highcharts-color-51 {
@@ -905,16 +934,16 @@ g.highcharts-series,
 }
 
 .highcharts-color-52 {
-  fill: #DDDDDD;
-  stroke: #DDDDDD;
+  fill: #dedede;
+  stroke: #dedede;
 }
 
 .highcharts-color-52 .highcharts-axis-title {
-  fill: #DDDDDD;
+  fill: #dedede;
 }
 
 .legend-color-52 {
-  background-image: linear-gradient(to top right, rgba(255, 0, 0, 0) 0%, #DDDDDD 50%);
+  background-image: linear-gradient(to top right, rgba(255, 0, 0, 0) 0%, #dedede 50%);
 }
 
 .highcharts-color-53 {
@@ -945,7 +974,7 @@ g.highcharts-series,
 
 /* Default gradients */
 #gradient-0 stop {
-  stop-color: #B3DBFF;
+  stop-color: #b3dbff;
 }
 
 #gradient-0 stop[offset="0"] {
@@ -957,7 +986,7 @@ g.highcharts-series,
 }
 
 #gradient-1 stop {
-  stop-color: #66B8FF;
+  stop-color: #66b8ff;
 }
 
 #gradient-1 stop[offset="0"] {
@@ -969,7 +998,7 @@ g.highcharts-series,
 }
 
 #gradient-2 stop {
-  stop-color: #1A94FF;
+  stop-color: #1a94ff;
 }
 
 #gradient-2 stop[offset="0"] {
@@ -981,7 +1010,7 @@ g.highcharts-series,
 }
 
 #gradient-3 stop {
-  stop-color: #0070D1;
+  stop-color: #006dcc;
 }
 
 #gradient-3 stop[offset="0"] {
@@ -1017,7 +1046,7 @@ g.highcharts-series,
 }
 
 #gradient-6 stop {
-  stop-color: #001B33;
+  stop-color: #001b33;
 }
 
 #gradient-6 stop[offset="0"] {
@@ -1029,7 +1058,7 @@ g.highcharts-series,
 }
 
 #gradient-7 stop {
-  stop-color: #FFFF99;
+  stop-color: #ffff99;
 }
 
 #gradient-7 stop[offset="0"] {
@@ -1041,7 +1070,7 @@ g.highcharts-series,
 }
 
 #gradient-8 stop {
-  stop-color: #FFFF4D;
+  stop-color: #ffff4d;
 }
 
 #gradient-8 stop[offset="0"] {
@@ -1053,7 +1082,7 @@ g.highcharts-series,
 }
 
 #gradient-9 stop {
-  stop-color: #FFFF1A;
+  stop-color: yellow;
 }
 
 #gradient-9 stop[offset="0"] {
@@ -1065,7 +1094,7 @@ g.highcharts-series,
 }
 
 #gradient-10 stop {
-  stop-color: #C7C705;
+  stop-color: #b3b300;
 }
 
 #gradient-10 stop[offset="0"] {
@@ -1077,7 +1106,7 @@ g.highcharts-series,
 }
 
 #gradient-11 stop {
-  stop-color: #919108;
+  stop-color: olive;
 }
 
 #gradient-11 stop[offset="0"] {
@@ -1089,7 +1118,7 @@ g.highcharts-series,
 }
 
 #gradient-12 stop {
-  stop-color: #5E5E08;
+  stop-color: #4d4d00;
 }
 
 #gradient-12 stop[offset="0"] {
@@ -1101,7 +1130,7 @@ g.highcharts-series,
 }
 
 #gradient-13 stop {
-  stop-color: #2E2E05;
+  stop-color: #292900;
 }
 
 #gradient-13 stop[offset="0"] {
@@ -1113,7 +1142,7 @@ g.highcharts-series,
 }
 
 #gradient-14 stop {
-  stop-color: #FAD1EC;
+  stop-color: #fad1ec;
 }
 
 #gradient-14 stop[offset="0"] {
@@ -1125,7 +1154,7 @@ g.highcharts-series,
 }
 
 #gradient-15 stop {
-  stop-color: #F48BCF;
+  stop-color: #f28cd0;
 }
 
 #gradient-15 stop[offset="0"] {
@@ -1137,7 +1166,7 @@ g.highcharts-series,
 }
 
 #gradient-16 stop {
-  stop-color: #ED45B2;
+  stop-color: #eb47b4;
 }
 
 #gradient-16 stop[offset="0"] {
@@ -1149,7 +1178,7 @@ g.highcharts-series,
 }
 
 #gradient-17 stop {
-  stop-color: #D1158F;
+  stop-color: #cf1791;
 }
 
 #gradient-17 stop[offset="0"] {
@@ -1161,7 +1190,7 @@ g.highcharts-series,
 }
 
 #gradient-18 stop {
-  stop-color: #970F67;
+  stop-color: #8a0f61;
 }
 
 #gradient-18 stop[offset="0"] {
@@ -1173,7 +1202,7 @@ g.highcharts-series,
 }
 
 #gradient-19 stop {
-  stop-color: #5D0940;
+  stop-color: #5c0a41;
 }
 
 #gradient-19 stop[offset="0"] {
@@ -1185,7 +1214,7 @@ g.highcharts-series,
 }
 
 #gradient-20 stop {
-  stop-color: #2E0520;
+  stop-color: #2e0520;
 }
 
 #gradient-20 stop[offset="0"] {
@@ -1197,7 +1226,7 @@ g.highcharts-series,
 }
 
 #gradient-21 stop {
-  stop-color: #7DE87D;
+  stop-color: #bef4be;
 }
 
 #gradient-21 stop[offset="0"] {
@@ -1209,7 +1238,7 @@ g.highcharts-series,
 }
 
 #gradient-22 stop {
-  stop-color: #52E052;
+  stop-color: #7de87d;
 }
 
 #gradient-22 stop[offset="0"] {
@@ -1221,7 +1250,7 @@ g.highcharts-series,
 }
 
 #gradient-23 stop {
-  stop-color: #23CA23;
+  stop-color: #3cdd3c;
 }
 
 #gradient-23 stop[offset="0"] {
@@ -1233,7 +1262,7 @@ g.highcharts-series,
 }
 
 #gradient-24 stop {
-  stop-color: #1B981B;
+  stop-color: #1fad1f;
 }
 
 #gradient-24 stop[offset="0"] {
@@ -1245,7 +1274,7 @@ g.highcharts-series,
 }
 
 #gradient-25 stop {
-  stop-color: #136C13;
+  stop-color: #178217;
 }
 
 #gradient-25 stop[offset="0"] {
@@ -1257,7 +1286,7 @@ g.highcharts-series,
 }
 
 #gradient-26 stop {
-  stop-color: #0B410B;
+  stop-color: #0f570f;
 }
 
 #gradient-26 stop[offset="0"] {
@@ -1269,7 +1298,7 @@ g.highcharts-series,
 }
 
 #gradient-27 stop {
-  stop-color: #041604;
+  stop-color: #082b08;
 }
 
 #gradient-27 stop[offset="0"] {
@@ -1281,7 +1310,7 @@ g.highcharts-series,
 }
 
 #gradient-28 stop {
-  stop-color: #F18E8E;
+  stop-color: #f4a4a4;
 }
 
 #gradient-28 stop[offset="0"] {
@@ -1293,7 +1322,7 @@ g.highcharts-series,
 }
 
 #gradient-29 stop {
-  stop-color: #EB6060;
+  stop-color: #eb6060;
 }
 
 #gradient-29 stop[offset="0"] {
@@ -1305,7 +1334,7 @@ g.highcharts-series,
 }
 
 #gradient-30 stop {
-  stop-color: #E63333;
+  stop-color: #e31c1c;
 }
 
 #gradient-30 stop[offset="0"] {
@@ -1317,7 +1346,7 @@ g.highcharts-series,
 }
 
 #gradient-31 stop {
-  stop-color: #CC1919;
+  stop-color: #9f1414;
 }
 
 #gradient-31 stop[offset="0"] {
@@ -1329,7 +1358,7 @@ g.highcharts-series,
 }
 
 #gradient-32 stop {
-  stop-color: #881111;
+  stop-color: #710e0e;
 }
 
 #gradient-32 stop[offset="0"] {
@@ -1353,7 +1382,7 @@ g.highcharts-series,
 }
 
 #gradient-34 stop {
-  stop-color: #170303;
+  stop-color: #240404;
 }
 
 #gradient-34 stop[offset="0"] {
@@ -1377,7 +1406,7 @@ g.highcharts-series,
 }
 
 #gradient-36 stop {
-  stop-color: #C29CE2;
+  stop-color: #c39be4;
 }
 
 #gradient-36 stop[offset="0"] {
@@ -1389,7 +1418,7 @@ g.highcharts-series,
 }
 
 #gradient-37 stop {
-  stop-color: #9D61D1;
+  stop-color: #9f5fd3;
 }
 
 #gradient-37 stop[offset="0"] {
@@ -1401,7 +1430,7 @@ g.highcharts-series,
 }
 
 #gradient-38 stop {
-  stop-color: #772EB8;
+  stop-color: #7931b4;
 }
 
 #gradient-38 stop[offset="0"] {
@@ -1413,7 +1442,7 @@ g.highcharts-series,
 }
 
 #gradient-39 stop {
-  stop-color: #501980;
+  stop-color: #512178;
 }
 
 #gradient-39 stop[offset="0"] {
@@ -1425,7 +1454,7 @@ g.highcharts-series,
 }
 
 #gradient-40 stop {
-  stop-color: #360D59;
+  stop-color: #361650;
 }
 
 #gradient-40 stop[offset="0"] {
@@ -1437,7 +1466,7 @@ g.highcharts-series,
 }
 
 #gradient-41 stop {
-  stop-color: #1B042F;
+  stop-color: #1b0b28;
 }
 
 #gradient-41 stop[offset="0"] {
@@ -1449,7 +1478,7 @@ g.highcharts-series,
 }
 
 #gradient-42 stop {
-  stop-color: #FFDBB3;
+  stop-color: #ffdbb3;
 }
 
 #gradient-42 stop[offset="0"] {
@@ -1461,7 +1490,7 @@ g.highcharts-series,
 }
 
 #gradient-43 stop {
-  stop-color: #FFB866;
+  stop-color: #ffb866;
 }
 
 #gradient-43 stop[offset="0"] {
@@ -1473,7 +1502,7 @@ g.highcharts-series,
 }
 
 #gradient-44 stop {
-  stop-color: #FFA033;
+  stop-color: #ff941a;
 }
 
 #gradient-44 stop[offset="0"] {
@@ -1485,7 +1514,7 @@ g.highcharts-series,
 }
 
 #gradient-45 stop {
-  stop-color: #FF8800;
+  stop-color: #cc6d00;
 }
 
 #gradient-45 stop[offset="0"] {
@@ -1497,7 +1526,7 @@ g.highcharts-series,
 }
 
 #gradient-46 stop {
-  stop-color: #CC6D00;
+  stop-color: #995200;
 }
 
 #gradient-46 stop[offset="0"] {
@@ -1509,7 +1538,7 @@ g.highcharts-series,
 }
 
 #gradient-47 stop {
-  stop-color: #804400;
+  stop-color: #663600;
 }
 
 #gradient-47 stop[offset="0"] {
@@ -1521,7 +1550,7 @@ g.highcharts-series,
 }
 
 #gradient-48 stop {
-  stop-color: #4D2900;
+  stop-color: #3d2100;
 }
 
 #gradient-48 stop[offset="0"] {
@@ -1533,7 +1562,7 @@ g.highcharts-series,
 }
 
 #gradient-49 stop {
-  stop-color: #ddc3c3;
+  stop-color: #dec4c4;
 }
 
 #gradient-49 stop[offset="0"] {
@@ -1545,7 +1574,7 @@ g.highcharts-series,
 }
 
 #gradient-50 stop {
-  stop-color: #8B9595;
+  stop-color: #899494;
 }
 
 #gradient-50 stop[offset="0"] {
@@ -1569,7 +1598,7 @@ g.highcharts-series,
 }
 
 #gradient-52 stop {
-  stop-color: #DDDDDD;
+  stop-color: #dedede;
 }
 
 #gradient-52 stop[offset="0"] {
@@ -1605,7 +1634,7 @@ g.highcharts-series,
 }
 
 #gradient-area-0 stop {
-  stop-color: #B3DBFF;
+  stop-color: #b3dbff;
 }
 
 #gradient-area-0 stop[offset="0"] {
@@ -1617,7 +1646,7 @@ g.highcharts-series,
 }
 
 #gradient-area-1 stop {
-  stop-color: #66B8FF;
+  stop-color: #66b8ff;
 }
 
 #gradient-area-1 stop[offset="0"] {
@@ -1629,7 +1658,7 @@ g.highcharts-series,
 }
 
 #gradient-area-2 stop {
-  stop-color: #1A94FF;
+  stop-color: #1a94ff;
 }
 
 #gradient-area-2 stop[offset="0"] {
@@ -1641,7 +1670,7 @@ g.highcharts-series,
 }
 
 #gradient-area-3 stop {
-  stop-color: #0070D1;
+  stop-color: #006dcc;
 }
 
 #gradient-area-3 stop[offset="0"] {
@@ -1677,7 +1706,7 @@ g.highcharts-series,
 }
 
 #gradient-area-6 stop {
-  stop-color: #001B33;
+  stop-color: #001b33;
 }
 
 #gradient-area-6 stop[offset="0"] {
@@ -1689,7 +1718,7 @@ g.highcharts-series,
 }
 
 #gradient-area-7 stop {
-  stop-color: #FFFF99;
+  stop-color: #ffff99;
 }
 
 #gradient-area-7 stop[offset="0"] {
@@ -1701,7 +1730,7 @@ g.highcharts-series,
 }
 
 #gradient-area-8 stop {
-  stop-color: #FFFF4D;
+  stop-color: #ffff4d;
 }
 
 #gradient-area-8 stop[offset="0"] {
@@ -1713,7 +1742,7 @@ g.highcharts-series,
 }
 
 #gradient-area-9 stop {
-  stop-color: #FFFF1A;
+  stop-color: yellow;
 }
 
 #gradient-area-9 stop[offset="0"] {
@@ -1725,7 +1754,7 @@ g.highcharts-series,
 }
 
 #gradient-area-10 stop {
-  stop-color: #C7C705;
+  stop-color: #b3b300;
 }
 
 #gradient-area-10 stop[offset="0"] {
@@ -1737,7 +1766,7 @@ g.highcharts-series,
 }
 
 #gradient-area-11 stop {
-  stop-color: #919108;
+  stop-color: olive;
 }
 
 #gradient-area-11 stop[offset="0"] {
@@ -1749,7 +1778,7 @@ g.highcharts-series,
 }
 
 #gradient-area-12 stop {
-  stop-color: #5E5E08;
+  stop-color: #4d4d00;
 }
 
 #gradient-area-12 stop[offset="0"] {
@@ -1761,7 +1790,7 @@ g.highcharts-series,
 }
 
 #gradient-area-13 stop {
-  stop-color: #2E2E05;
+  stop-color: #292900;
 }
 
 #gradient-area-13 stop[offset="0"] {
@@ -1773,7 +1802,7 @@ g.highcharts-series,
 }
 
 #gradient-area-14 stop {
-  stop-color: #FAD1EC;
+  stop-color: #fad1ec;
 }
 
 #gradient-area-14 stop[offset="0"] {
@@ -1785,7 +1814,7 @@ g.highcharts-series,
 }
 
 #gradient-area-15 stop {
-  stop-color: #F48BCF;
+  stop-color: #f28cd0;
 }
 
 #gradient-area-15 stop[offset="0"] {
@@ -1797,7 +1826,7 @@ g.highcharts-series,
 }
 
 #gradient-area-16 stop {
-  stop-color: #ED45B2;
+  stop-color: #eb47b4;
 }
 
 #gradient-area-16 stop[offset="0"] {
@@ -1809,7 +1838,7 @@ g.highcharts-series,
 }
 
 #gradient-area-17 stop {
-  stop-color: #D1158F;
+  stop-color: #cf1791;
 }
 
 #gradient-area-17 stop[offset="0"] {
@@ -1821,7 +1850,7 @@ g.highcharts-series,
 }
 
 #gradient-area-18 stop {
-  stop-color: #970F67;
+  stop-color: #8a0f61;
 }
 
 #gradient-area-18 stop[offset="0"] {
@@ -1833,7 +1862,7 @@ g.highcharts-series,
 }
 
 #gradient-area-19 stop {
-  stop-color: #5D0940;
+  stop-color: #5c0a41;
 }
 
 #gradient-area-19 stop[offset="0"] {
@@ -1845,7 +1874,7 @@ g.highcharts-series,
 }
 
 #gradient-area-20 stop {
-  stop-color: #2E0520;
+  stop-color: #2e0520;
 }
 
 #gradient-area-20 stop[offset="0"] {
@@ -1857,7 +1886,7 @@ g.highcharts-series,
 }
 
 #gradient-area-21 stop {
-  stop-color: #7DE87D;
+  stop-color: #bef4be;
 }
 
 #gradient-area-21 stop[offset="0"] {
@@ -1869,7 +1898,7 @@ g.highcharts-series,
 }
 
 #gradient-area-22 stop {
-  stop-color: #52E052;
+  stop-color: #7de87d;
 }
 
 #gradient-area-22 stop[offset="0"] {
@@ -1881,7 +1910,7 @@ g.highcharts-series,
 }
 
 #gradient-area-23 stop {
-  stop-color: #23CA23;
+  stop-color: #3cdd3c;
 }
 
 #gradient-area-23 stop[offset="0"] {
@@ -1893,7 +1922,7 @@ g.highcharts-series,
 }
 
 #gradient-area-24 stop {
-  stop-color: #1B981B;
+  stop-color: #1fad1f;
 }
 
 #gradient-area-24 stop[offset="0"] {
@@ -1905,7 +1934,7 @@ g.highcharts-series,
 }
 
 #gradient-area-25 stop {
-  stop-color: #136C13;
+  stop-color: #178217;
 }
 
 #gradient-area-25 stop[offset="0"] {
@@ -1917,7 +1946,7 @@ g.highcharts-series,
 }
 
 #gradient-area-26 stop {
-  stop-color: #0B410B;
+  stop-color: #0f570f;
 }
 
 #gradient-area-26 stop[offset="0"] {
@@ -1929,7 +1958,7 @@ g.highcharts-series,
 }
 
 #gradient-area-27 stop {
-  stop-color: #041604;
+  stop-color: #082b08;
 }
 
 #gradient-area-27 stop[offset="0"] {
@@ -1941,7 +1970,7 @@ g.highcharts-series,
 }
 
 #gradient-area-28 stop {
-  stop-color: #F18E8E;
+  stop-color: #f4a4a4;
 }
 
 #gradient-area-28 stop[offset="0"] {
@@ -1953,7 +1982,7 @@ g.highcharts-series,
 }
 
 #gradient-area-29 stop {
-  stop-color: #EB6060;
+  stop-color: #eb6060;
 }
 
 #gradient-area-29 stop[offset="0"] {
@@ -1965,7 +1994,7 @@ g.highcharts-series,
 }
 
 #gradient-area-30 stop {
-  stop-color: #E63333;
+  stop-color: #e31c1c;
 }
 
 #gradient-area-30 stop[offset="0"] {
@@ -1977,7 +2006,7 @@ g.highcharts-series,
 }
 
 #gradient-area-31 stop {
-  stop-color: #CC1919;
+  stop-color: #9f1414;
 }
 
 #gradient-area-31 stop[offset="0"] {
@@ -1989,7 +2018,7 @@ g.highcharts-series,
 }
 
 #gradient-area-32 stop {
-  stop-color: #881111;
+  stop-color: #710e0e;
 }
 
 #gradient-area-32 stop[offset="0"] {
@@ -2013,7 +2042,7 @@ g.highcharts-series,
 }
 
 #gradient-area-34 stop {
-  stop-color: #170303;
+  stop-color: #240404;
 }
 
 #gradient-area-34 stop[offset="0"] {
@@ -2037,7 +2066,7 @@ g.highcharts-series,
 }
 
 #gradient-area-36 stop {
-  stop-color: #C29CE2;
+  stop-color: #c39be4;
 }
 
 #gradient-area-36 stop[offset="0"] {
@@ -2049,7 +2078,7 @@ g.highcharts-series,
 }
 
 #gradient-area-37 stop {
-  stop-color: #9D61D1;
+  stop-color: #9f5fd3;
 }
 
 #gradient-area-37 stop[offset="0"] {
@@ -2061,7 +2090,7 @@ g.highcharts-series,
 }
 
 #gradient-area-38 stop {
-  stop-color: #772EB8;
+  stop-color: #7931b4;
 }
 
 #gradient-area-38 stop[offset="0"] {
@@ -2073,7 +2102,7 @@ g.highcharts-series,
 }
 
 #gradient-area-39 stop {
-  stop-color: #501980;
+  stop-color: #512178;
 }
 
 #gradient-area-39 stop[offset="0"] {
@@ -2085,7 +2114,7 @@ g.highcharts-series,
 }
 
 #gradient-area-40 stop {
-  stop-color: #360D59;
+  stop-color: #361650;
 }
 
 #gradient-area-40 stop[offset="0"] {
@@ -2097,7 +2126,7 @@ g.highcharts-series,
 }
 
 #gradient-area-41 stop {
-  stop-color: #1B042F;
+  stop-color: #1b0b28;
 }
 
 #gradient-area-41 stop[offset="0"] {
@@ -2109,7 +2138,7 @@ g.highcharts-series,
 }
 
 #gradient-area-42 stop {
-  stop-color: #FFDBB3;
+  stop-color: #ffdbb3;
 }
 
 #gradient-area-42 stop[offset="0"] {
@@ -2121,7 +2150,7 @@ g.highcharts-series,
 }
 
 #gradient-area-43 stop {
-  stop-color: #FFB866;
+  stop-color: #ffb866;
 }
 
 #gradient-area-43 stop[offset="0"] {
@@ -2133,7 +2162,7 @@ g.highcharts-series,
 }
 
 #gradient-area-44 stop {
-  stop-color: #FFA033;
+  stop-color: #ff941a;
 }
 
 #gradient-area-44 stop[offset="0"] {
@@ -2145,7 +2174,7 @@ g.highcharts-series,
 }
 
 #gradient-area-45 stop {
-  stop-color: #FF8800;
+  stop-color: #cc6d00;
 }
 
 #gradient-area-45 stop[offset="0"] {
@@ -2157,7 +2186,7 @@ g.highcharts-series,
 }
 
 #gradient-area-46 stop {
-  stop-color: #CC6D00;
+  stop-color: #995200;
 }
 
 #gradient-area-46 stop[offset="0"] {
@@ -2169,7 +2198,7 @@ g.highcharts-series,
 }
 
 #gradient-area-47 stop {
-  stop-color: #804400;
+  stop-color: #663600;
 }
 
 #gradient-area-47 stop[offset="0"] {
@@ -2181,7 +2210,7 @@ g.highcharts-series,
 }
 
 #gradient-area-48 stop {
-  stop-color: #4D2900;
+  stop-color: #3d2100;
 }
 
 #gradient-area-48 stop[offset="0"] {
@@ -2193,7 +2222,7 @@ g.highcharts-series,
 }
 
 #gradient-area-49 stop {
-  stop-color: #ddc3c3;
+  stop-color: #dec4c4;
 }
 
 #gradient-area-49 stop[offset="0"] {
@@ -2205,7 +2234,7 @@ g.highcharts-series,
 }
 
 #gradient-area-50 stop {
-  stop-color: #8B9595;
+  stop-color: #899494;
 }
 
 #gradient-area-50 stop[offset="0"] {
@@ -2229,7 +2258,7 @@ g.highcharts-series,
 }
 
 #gradient-area-52 stop {
-  stop-color: #DDDDDD;
+  stop-color: #dedede;
 }
 
 #gradient-area-52 stop[offset="0"] {
@@ -2312,11 +2341,19 @@ text.highcharts-data-label {
 }
 
 .highcharts-column-series .highcharts-point {
+  -webkit-transition: fill-opacity 250ms;
+  -moz-transition: fill-opacity 250ms;
+  -ms-transition: fill-opacity 250ms;
+  -o-transition: fill-opacity 250ms;
   transition: fill-opacity 250ms;
 }
 
 .highcharts-column-series .highcharts-point-hover {
   fill-opacity: 0.75;
+  -webkit-transition: fill-opacity 50ms;
+  -moz-transition: fill-opacity 50ms;
+  -ms-transition: fill-opacity 50ms;
+  -o-transition: fill-opacity 50ms;
   transition: fill-opacity 50ms;
 }
 
@@ -2328,6 +2365,10 @@ text.highcharts-data-label {
 
 .highcharts-pie-series .highcharts-point-hover {
   fill-opacity: 1;
+  -webkit-transition: fill-opacity 50ms;
+  -moz-transition: fill-opacity 50ms;
+  -ms-transition: fill-opacity 50ms;
+  -o-transition: fill-opacity 50ms;
   transition: fill-opacity 50ms;
 }
 
@@ -2338,6 +2379,10 @@ text.highcharts-data-label {
 
 .highcharts-funnel-series .highcharts-point-hover {
   fill-opacity: 0.75;
+  -webkit-transition: fill-opacity 50ms;
+  -moz-transition: fill-opacity 50ms;
+  -ms-transition: fill-opacity 50ms;
+  -o-transition: fill-opacity 50ms;
   transition: fill-opacity 50ms;
 }
 
@@ -2353,6 +2398,10 @@ text.highcharts-data-label {
 
 .highcharts-pyramid-series .highcharts-point-hover {
   fill-opacity: 0.75;
+  -webkit-transition: fill-opacity 50ms;
+  -moz-transition: fill-opacity 50ms;
+  -ms-transition: fill-opacity 50ms;
+  -o-transition: fill-opacity 50ms;
   transition: fill-opacity 50ms;
 }
 
@@ -2368,12 +2417,20 @@ text.highcharts-data-label {
 .highcharts-treemap-series .highcharts-point {
   stroke-width: 2px;
   stroke: #2e3838;
+  -webkit-transition: stroke 250ms, fill 250ms, fill-opacity 250ms;
+  -moz-transition: stroke 250ms, fill 250ms, fill-opacity 250ms;
+  -ms-transition: stroke 250ms, fill 250ms, fill-opacity 250ms;
+  -o-transition: stroke 250ms, fill 250ms, fill-opacity 250ms;
   transition: stroke 250ms, fill 250ms, fill-opacity 250ms;
   opacity: 0.8;
 }
 
 .highcharts-treemap-series .highcharts-point-hover {
   stroke: #dffcff;
+  -webkit-transition: stroke 25ms, fill 25ms, fill-opacity 25ms;
+  -moz-transition: stroke 25ms, fill 25ms, fill-opacity 25ms;
+  -ms-transition: stroke 25ms, fill 25ms, fill-opacity 25ms;
+  -o-transition: stroke 25ms, fill 25ms, fill-opacity 25ms;
   transition: stroke 25ms, fill 25ms, fill-opacity 25ms;
   opacity: 1;
 }
@@ -2430,6 +2487,10 @@ text.highcharts-data-label {
 .highcharts-legend-item-hidden * {
   fill: #cccccc !important;
   stroke: #cccccc !important;
+  -webkit-transition: fill 250ms;
+  -moz-transition: fill 250ms;
+  -ms-transition: fill 250ms;
+  -o-transition: fill 250ms;
   transition: fill 250ms;
 }
 
@@ -2474,6 +2535,10 @@ circle.highcharts-legend-nav-inactive {
   opacity: 0.5;
   text-align: center;
   z-index: 10;
+  -webkit-transition: opacity 250ms;
+  -moz-transition: opacity 250ms;
+  -ms-transition: opacity 250ms;
+  -o-transition: opacity 250ms;
   transition: opacity 250ms;
 }
 
@@ -2481,6 +2546,10 @@ circle.highcharts-legend-nav-inactive {
   height: 0 !important;
   opacity: 0;
   overflow: hidden;
+  -webkit-transition: opacity 250ms, height 250ms step-end;
+  -moz-transition: opacity 250ms, height 250ms step-end;
+  -ms-transition: opacity 250ms, height 250ms step-end;
+  -o-transition: opacity 250ms, height 250ms step-end;
   transition: opacity 250ms, height 250ms step-end;
 }
 
@@ -2545,11 +2614,19 @@ circle.highcharts-legend-nav-inactive {
 }
 
 .highcharts-sankey-series .highcharts-link {
+  -webkit-transition: fill 250ms, fill-opacity 250ms;
+  -moz-transition: fill 250ms, fill-opacity 250ms;
+  -ms-transition: fill 250ms, fill-opacity 250ms;
+  -o-transition: fill 250ms, fill-opacity 250ms;
   transition: fill 250ms, fill-opacity 250ms;
   fill-opacity: 0.5;
 }
 
 .highcharts-sankey-series .highcharts-point-hover.highcharts-link {
+  -webkit-transition: fill 50ms, fill-opacity 50ms;
+  -moz-transition: fill 50ms, fill-opacity 50ms;
+  -ms-transition: fill 50ms, fill-opacity 50ms;
+  -o-transition: fill 50ms, fill-opacity 50ms;
   transition: fill 50ms, fill-opacity 50ms;
   fill-opacity: 1;
 }
@@ -2557,6 +2634,10 @@ circle.highcharts-legend-nav-inactive {
 .highcharts-venn-series .highcharts-point {
   fill-opacity: 0.75;
   stroke: #cccccc;
+  -webkit-transition: stroke 250ms, fill-opacity 250ms;
+  -moz-transition: stroke 250ms, fill-opacity 250ms;
+  -ms-transition: stroke 250ms, fill-opacity 250ms;
+  -o-transition: stroke 250ms, fill-opacity 250ms;
   transition: stroke 250ms, fill-opacity 250ms;
 }
 
@@ -2641,6 +2722,10 @@ circle.highcharts-legend-nav-inactive {
   stroke: #cccccc;
   cursor: default;
   stroke-width: 1px;
+  -webkit-transition: fill 250ms;
+  -moz-transition: fill 250ms;
+  -ms-transition: fill 250ms;
+  -o-transition: fill 250ms;
   transition: fill 250ms;
 }
 
@@ -2649,8 +2734,12 @@ circle.highcharts-legend-nav-inactive {
 }
 
 .highcharts-button-hover {
+  -webkit-transition: fill 0ms;
+  -moz-transition: fill 0ms;
+  -ms-transition: fill 0ms;
+  -o-transition: fill 0ms;
   transition: fill 0ms;
-  fill: #1A94FF;
+  fill: #1a94ff;
   stroke: #cccccc;
   cursor: pointer;
 }
@@ -2737,6 +2826,10 @@ input.highcharts-range-selector {
 .highcharts-flags-series .highcharts-point .highcharts-label-box {
   stroke: #dffcff;
   fill: #2e3838;
+  -webkit-transition: fill 250ms;
+  -moz-transition: fill 250ms;
+  -ms-transition: fill 250ms;
+  -o-transition: fill 250ms;
   transition: fill 250ms;
 }
 
@@ -2753,12 +2846,20 @@ input.highcharts-range-selector {
 
 /* Highmaps */
 .highcharts-map-series .highcharts-point {
+  -webkit-transition: fill 500ms, fill-opacity 500ms, stroke-width 250ms;
+  -moz-transition: fill 500ms, fill-opacity 500ms, stroke-width 250ms;
+  -ms-transition: fill 500ms, fill-opacity 500ms, stroke-width 250ms;
+  -o-transition: fill 500ms, fill-opacity 500ms, stroke-width 250ms;
   transition: fill 500ms, fill-opacity 500ms, stroke-width 250ms;
   stroke: #2e3838;
   stroke-width: 0.5px;
 }
 
 .highcharts-map-series .highcharts-point-hover {
+  -webkit-transition: fill 0ms, fill-opacity 0ms;
+  -moz-transition: fill 0ms, fill-opacity 0ms;
+  -ms-transition: fill 0ms, fill-opacity 0ms;
+  -o-transition: fill 0ms, fill-opacity 0ms;
   transition: fill 0ms, fill-opacity 0ms;
   fill-opacity: 0.5;
   stroke-width: 2px;
@@ -2778,10 +2879,14 @@ input.highcharts-range-selector {
 }
 
 .highcharts-zoom-in text {
+  -webkit-transform: translateX(0.5px) translateY(-1.5px);
+  -ms-transform: translateX(0.5px) translateY(-1.5px);
   transform: translateX(0.5px) translateY(-1.5px);
 }
 
 .highcharts-zoom-out text {
+  -webkit-transform: translateX(0.5px) translateY(-1.5px);
+  -ms-transform: translateX(0.5px) translateY(-1.5px);
   transform: translateX(0.5px) translateY(-1.5px);
 }
 
@@ -2832,6 +2937,10 @@ input.highcharts-range-selector {
   background: none;
   color: #dffcff;
   cursor: pointer;
+  -webkit-transition: background 250ms, color 250ms;
+  -moz-transition: background 250ms, color 250ms;
+  -ms-transition: background 250ms, color 250ms;
+  -o-transition: background 250ms, color 250ms;
   transition: background 250ms, color 250ms;
 }
 

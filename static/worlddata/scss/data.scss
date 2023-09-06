@@ -6,71 +6,28 @@ figure {
   margin: 0;
 }
 .section-title {
-  padding-left: 20px;
-  @media only screen and (min-width: $mobile-breakpoint) {
-    padding-left: 50px;
-  }
+  padding-left: $base-margin;
+  font-size: clamp(1.1rem, 3vw, 1.5rem);
 }
 .dark-bg {
   background-color: $dark-grey;
 }
-.saturated {
-  filter: saturate(0.7);
-}
-.data-box-container {
-  display: grid;
-  grid-gap: 50px;
-  grid-template-columns: (1fr 3fr);
-  padding: 30px 0;
-  &:nth-child(5n + 1) .hexagon-link-single {
-    background-image: $blue-shade-1;
-  }
-  &:nth-child(5n + 2) .hexagon-link-single {
-    background-image: $blue-shade-2;
-  }
-  &:nth-child(5n + 3) .hexagon-link-single {
-    background-image: $blue-shade-3;
-  }
-  &:nth-child(5n + 4) .hexagon-link-single {
-    background-image: $blue-shade-4;
-  }
-  &:nth-child(5n + 5) .hexagon-link-single {
-    background-image: $blue-shade-5;
-  }
-}
-.data-index-container {
-  ul {
-    margin: 0;
-    padding: 0;
-    list-style-type: none;
-  }
-  p {
-    color: $almost-white;
-  }
-}
-.data-box-text {
-  max-width: 600px;
-}
+
 .q-o-n-container {
-  display: flex;
+  @include displayFlex;
   flex-direction: column;
   
   @media only screen and (min-width: $mobile-breakpoint) {
     flex-direction: row;
   }
   .text-container {
-    padding: 20px 10px;
+    padding: 20px clamp(10px, 2vw, 20px);
     background-image: linear-gradient(160deg, $bright-blue-opacity 1%, $dark-grey 30%);
-    @media only screen and (min-width: $mobile-breakpoint) {
-      width: 80%;
-      padding: 20px;
-      background-image: linear-gradient(160deg, $bright-blue-opacity 1%, $dark-grey 30%);
-    }
   }
 
   .tabs-container {
     border-bottom: 5px solid $bright-blue;
-    display: flex;
+    @include displayFlex;
     flex-direction: row;
     @media only screen and (min-width: $mobile-breakpoint) {
       flex-direction: column;
@@ -91,7 +48,7 @@ figure {
       &:before {
         @extend %gradient-transition-before;
         @include transition(all 0.3s ease);
-        background-image: linear-gradient(to top right, rgba(255, 0, 0, 0) 0%, $orange 60%);
+        background-image: linear-gradient(to top right, hsla(0, 0%, 0%, 0) 0%, $orange 60%);
         border-radius: 20px 20px 0 0;
       }
       &:hover::before {
@@ -129,7 +86,7 @@ figure {
 }
 
 .chart-container {
-  display: flex;
+  @include displayFlex;
   flex-direction: column;
   background-image: url(../images/spinner.gif);
   background-repeat: no-repeat;
@@ -143,25 +100,19 @@ figure {
 }
 
 .chart-options {
-  flex: 1;
-  display: flex;
+  @include flex(1);
+  @include displayFlex;
   flex-direction: column;
   color: $almost-white;
   padding: 0 10px;
-
-  .options-below {
-    flex-direction: row;
-  }
   .chart-filters {
     align-items: center;
     margin-bottom: 20px;
     overflow: visible;
     text-align: center;
-
     @media only screen and (min-width: $mobile-breakpoint) {
       text-align: start;
     }
-
     .dropdown-container {
       display: inline-block;
       position: relative;
@@ -182,9 +133,7 @@ figure {
         padding: 0 10px;
         font-size: 16px;
         border-radius: 5px;
-        -webkit-appearance: none;
-        -moz-appearance: none;
-        appearance: none;
+        @include appearance(none);
         border-style: none;
         border-radius: 5px;
       }
@@ -212,16 +161,14 @@ figure {
       margin-top: 10px;
 
       .slider {
-        -webkit-appearance: none;
+        @include appearance(none);
         height: 3px;
         background: $light-grey;
         border-radius: 5px;
         outline: none;
-        -webkit-transition: 0.2s;
-        transition: opacity 0.2s;
+        @include transition(opacity 0.2s);
         &::-webkit-slider-thumb {
-          -webkit-appearance: none;
-          appearance: none;
+          @include appearance(none);
           width: 25px;
           height: 25px;
           background: $dark-grey;
@@ -335,7 +282,7 @@ figure {
       width: 14px;
       height: 14px;
       border-radius: 50%;
-      background: #2e3838;
+      background: $dark-grey;
     }
   }
   .play-button {
@@ -347,12 +294,13 @@ figure {
     margin-right: 20px;
     border: 1px solid $light-grey;
     border-radius: 20px;
-    transition: background-image 0.5s ease;
+    @include transition(background-image 0.5s ease);
     display: inline-block;
     text-align: center;
     cursor: pointer;
-    color: #222a2a;
+    color: $darker-grey;
     vertical-align: middle;
+    vertical-align: -webkit-baseline-middle;
     background-color: $dark-grey;
     &:hover {
       background-image: linear-gradient(to top right, $dark-grey 0%, $bright-blue 60%);
@@ -361,9 +309,8 @@ figure {
 }
 
 // legend
-.chart-legend,
-.secondary-legend {
-  display: flex;
+.chart-legend {
+  @include displayFlex;
   flex-wrap: wrap;
   justify-content: center;
   h4 {
@@ -387,20 +334,15 @@ figure {
 
 .legend-right {
   .chart-options {
+    width: 100%;
     @media only screen and (min-width: $mobile-breakpoint) {
-      max-width: 200px;
+      min-width: clamp(200px,25vw,400px);
     }
   }
-  .chart-legend {
-    flex-direction: row;
-    @media only screen and (min-width: $mobile-breakpoint) {
-      flex-direction: column;
-    }
+  .wide-screen-legend {
+    flex-direction: column;
   }
-}
-.legend-below {
-  flex-direction: column;
-  .chart-legend {
+  .mobile-legend {
     flex-direction: row;
   }
 }
@@ -431,6 +373,21 @@ figure {
 }
 // Dashboard
 .dashboard {
+  .dashboard-side-40 {
+    @media only screen and (min-width: $tablet-breakpoint) {
+      width: clamp(200px, 40%, 1500px);
+    }
+  }
+  .dashboard-side-60 {
+    @media only screen and (min-width: $tablet-breakpoint) {
+      width: clamp(200px, 60%, 2000px);
+    }
+  }
+  .dashboard-side-100 {
+    @media only screen and (min-width: $tablet-breakpoint) {
+      width: 100%;
+    }
+  }
   .dashboard-level-1 {
     .dashboard-side-40 {
       border-radius: 30px 30px 0 0;
@@ -483,7 +440,7 @@ figure {
   }
 
   .radio-container {
-    display: flex;
+    @include displayFlex;
     align-self: flex-start;
   }
 
@@ -497,50 +454,25 @@ figure {
     font-weight: 400;
   }
 
-  .dashboard-side-40 {
-    @media only screen and (min-width: $tablet-breakpoint) {
-      width: 50%;
-    }
-    @media only screen and (min-width: $desktop-breakpoint) {
-      width: 40%;
-    }
-  }
-
-  .dashboard-side-60 {
-    @media only screen and (min-width: $tablet-breakpoint) {
-      width: 50%;
-    }
-    @media only screen and (min-width: $desktop-breakpoint) {
-      width: 60%;
-    }
-  }
-  .dashboard-side-100 {
-    // width: 90%;
-    @media only screen and (min-width: $tablet-breakpoint) {
-      width: 100%;
-    }
-  }
-
   .dashboard-side {
     background-color: $mid-grey;
   }
 
   .dashboard-container-vertical {
-    display: flex;
+    @include displayFlex;
     flex-direction: column;
-
     @media only screen and (min-width: $tablet-breakpoint) {
       flex-direction: row;
     }
   }
 
   .dashboard-container-horizontal {
-    display: flex;
+    @include displayFlex;
     flex-direction: column;
   }
 
   .chart-container-dashboard {
-    display: flex;
+    @include displayFlex;
     flex-direction: column;
     background-image: url(../images/spinner-small.gif);
     background-repeat: no-repeat;
@@ -553,7 +485,6 @@ figure {
 
   .dark-bg {
     height: inherit;
-
     @media only screen and (min-width: $tablet-breakpoint) {
       border-radius: 0 0 30px 0;
     }
@@ -578,11 +509,10 @@ figure {
       margin-right: 5px;
     }
     &.left{
-      width: 100%;
+      width: clamp(100px, 100%, 250px);
       @media only screen and (min-width: $desktop-breakpoint) {
-        width: inherit;
         &:before{
-          content: "\2BC7";
+          content: "\2BC7"; // change arrow direction
         }
       }
       
@@ -590,13 +520,13 @@ figure {
   }
 
   .dashboard-profile {
-    display: flex;
+    @include displayFlex;
     flex-direction: column;
     justify-content: space-between;
     align-items: flex-start;
 
     .dashboard-profile-country {
-      display: flex;
+      @include displayFlex;
       width: 100%;
       justify-content: flex-end;
       color: $bright-blue;
@@ -606,9 +536,6 @@ figure {
       padding-right: 20px;
       margin-bottom: 10px;
       text-align: start;
-      @media (min-width: $desktop-breakpoint) {
-        text-align: end;
-      }
       p {
         margin: 0;
         border-style: solid;
@@ -626,7 +553,7 @@ figure {
     }
     .profile-container {
       flex-direction: row;
-      display: flex;
+      @include displayFlex;
       justify-content: flex-start;
       width: 100%;
       flex-wrap: wrap;
@@ -636,11 +563,8 @@ figure {
       }
   
       .profile-item {
-        display: flex;
-        .profile-label {
-        }
+        @include displayFlex;
         .profile-value {
-          // color: $bright-blue;
           font-weight: 600;
           margin-left: 10px;
         }
@@ -684,9 +608,7 @@ figure {
 }
 
 // Specific charts
-.old-death-tree {
-  min-height: 300px;
-}
+
 .biomass-pie,
 .biomass-scatter {
   min-height: 400px;
@@ -698,303 +620,15 @@ figure {
 .sustain-area {
   min-height: 500px;
 }
-.population-line {
-  display: inline-block;
-  height: 20px;
-  width: 5px;
-  border-radius: 5px;
-}
-.pl-africa {
-  background-color: #ffff1a;
-}
-.pl-asia {
-  background-color: #d1158f;
-}
-.pl-europe {
-  background-color: #0070d1;
-}
-.pl-lac {
-  background-color: #23ca23;
-}
-.pl-na {
-  background-color: #e63333;
-}
-.pl-oceania {
-  background-color: #772eb8;
-}
-.pl-births {
-  background-color: #ddc3c3;
-}
-.pl-deaths {
-  background-color: #101414;
-}
-.births-container {
-  display: inline-block;
-  margin-left: 20px;
-  p {
-    display: inline-block;
-    font-size: 150%;
-    margin: 0;
-    color: #ddc3c3;
-    line-height: 0.8;
-  }
-}
-.deaths-container {
-  display: inline-block;
-  margin-left: 20px;
-  p {
-    display: inline-block;
-    font-size: 150%;
-    margin: 0;
-    color: #101414;
-    line-height: 0.8;
-  }
-}
 
 .side-chart-container {
   box-shadow: 2px 2px 8px $navbar-color;
   padding: 10px;
-  // margin: 20px;
   margin-bottom: 20px;
-  background-color: #2e3838;
+  background-color: $dark-grey;
   border-radius: 30px;
   &.bottom {
     margin-bottom: 0;
-   
-  }
-  
-}
-
-.covid-dashboard {
-  .covid-map {
-    height: 100%;
-    .map {
-      height: 420px;
-    }
-    .selected-element {
-      fill: #000 !important;
-      color: #000 !important;
-      stroke: $bright-blue !important;
-      stroke-width: 20px !important;
-    }
-  }
-  
-  .covid-excess {
-    height: 350px;
-    .error {
-      position: absolute;
-      top: 400px;
-      text-align: center;
-      width: 90%;
-      font-size: 130%;
-      @media only screen and (min-width: $tablet-breakpoint) {
-        width: 35%;
-      }
-    }
-  }
-  .covid-bar-container {
-    @media only screen and (min-width: $tablet-breakpoint) {
-      width: 50%;
-    }
-  }
-  .bars {
-    padding-bottom: 0;
-    height: 170px;
-    .error2 {
-      position: relative;
-      bottom: 70px;
-      text-align: center;
-      width: 90%;
-      font-size: 110%;
-      @media only screen and (min-width: $tablet-breakpoint) {
-        width: 38%;
-        position: absolute;
-        bottom: 205px;
-      }
-    }
-  }
-  .covid-bars {
-    height: 350px;
-    .highcharts-data-label {
-      font-weight: 400;
-    }
-    @media only screen and (min-width: $tablet-breakpoint) {
-      width: 50%;
-      margin-right: 0px;
-    }
-  }
-
-  .dashboard-level-2 {
-    .dashboard-side-40 {
-      border-radius: 0px 0px 30px 30px;
-      @media only screen and (min-width: $tablet-breakpoint) {
-        border-radius: 0px 0px 30px 0;
-      }
-    }
-  }
-  .chart-options .chart-filters {
-    &.row1 {
-      display: flex; 
-      flex-direction: column;
-      justify-content: flex-end; 
-      height: 60px;
-      align-items: flex-start;
-      @media only screen and (min-width: $desktop-breakpoint) {
-        flex-direction: row-reverse; 
-        height: 45px;
-      }
-      .dropdown-container {
-        width: 100%;
-        @media only screen and (min-width: $desktop-breakpoint) {
-          width: 450px;
-        }
-      }
-    }
-    &.row2 {
-      display: flex; 
-      flex-direction: column;
-      justify-content: flex-end; 
-      height: 70px;
-      align-items: flex-start;
-      @media only screen and (min-width: $desktop-breakpoint) {
-        flex-direction: row-reverse; 
-        height: 45px;
-      }
-      .play-container {
-        width: 100%;
-        display: flex;
-        @media only screen and (min-width: $desktop-breakpoint) {
-          width: inherit;
-          margin-right: 10px;
-        }
-        .play-button{
-          margin-right: 10px;
-          @media only screen and (min-width: $desktop-breakpoint) {
-            margin-right: 20px;
-          }
-        }
-
-      }
-      .slider-container {
-        width: 100% !important;
-        margin-top: 0;
-        position: inherit;
-        display: flex;
-        flex-direction: row;
-        @media only screen and (min-width: $desktop-breakpoint) {
-          width: 375px !important;
-          margin-top: 10px;
-          position: relative;
-        }
-        .slider {
-          margin-top: 15px;
-          width: calc(100% - 120px) !important;
-          max-width: 235px;
-          @media only screen and (min-width: $desktop-breakpoint) {
-           width: 235px;
-          }
-        }
-        .slider-output {
-          top: 1px;
-          line-height: inherit;
-          @media only screen and (min-width: $desktop-breakpoint) {
-            line-height: 20px;
-          }
-        }
-      }
-    }
-    .dashboard-command {
-      @media only screen and (min-width: $desktop-breakpoint) {
-        top:10px;
-        position: relative;
-      }
-      
-    }
-    .slider-container {
-      top: -5px;
-    }
-  }
-}
-
-.energy-dashboard {
-  .dashboard-profile .profile-container {
-    justify-content: start;
-  }
-  .chart-options .radio-container  {
-    .coal {
-      background-color: nth($colors, 51) !important;
-    }
-    .oil {
-      background-color: nth($colors, 12) !important;
-    }
-    .gas {
-      background-color: nth($colors, 9) !important;
-    }
-    .nuclear{
-      background-color: nth($colors, 6) !important;
-    }
-    .hydro {
-      background-color: nth($colors, 2) !important;
-    }
-    .renewables {
-      background-color: nth($colors, 25) !important;
-    }
-    .all {
-      background-image: linear-gradient(to bottom left, nth($colors, 3) 25%, nth($colors, 50) 55%, nth($colors, 45) 75%) !important; 
-    }
-  }
-  .sector-pie {
-    .highcharts-point-level1 {
-      cursor: pointer;
-    }
-  }
-
-  .energy-area {
-    height: 340px;
-    margin-top: 10px;
-    .error {
-      position: absolute;
-      top: 400px;
-      text-align: center;
-      width: 90%;
-      font-size: 130%;
-      @media only screen and (min-width: $tablet-breakpoint) {
-        width: 35%;
-      }
-    }
-  }
-  .energy-sector {
-    height: 350px;
-    .error {
-      position: absolute;
-      bottom: 300px;
-      text-align: center;
-      width: 90%;
-      font-size: 130%;
-      @media only screen and (min-width: $tablet-breakpoint) {
-        width: 35%;
-      }
-    }
-  }
-  .import-bars, .export-bars {
-    height: 350px;
-  }
-  .energy-map {
-    .selected-element {
-      fill: #000 !important;
-      color: #000 !important;
-      stroke: $bright-blue !important;
-      stroke-width: 20px !important;
-    }
-    .highcharts-point {
-      cursor: pointer;
-    }
-  }
-}
-
-.lockdown-map {
-  .slider-container {
-    top: 0 !important;
   }
 }
 
@@ -1040,7 +674,7 @@ figure {
    .tooltiptext {
       visibility: hidden;
       width: max-content;
-      background-color: rgba(46,56,56,0.9);
+      background-color: hsla(180, 10%, 20%, 0.9);
       color: $almost-white;
       border-radius: 3px;
       padding: 5px 10px;
@@ -1053,134 +687,12 @@ figure {
       z-index: 1;
       left: 20px;
       &.right{
-        @media only screen and (min-width: $tablet-breakpoint) {
           left:auto;
           right:20px;
-        }
       }
    }
 }
 
 .tooltip:hover .tooltiptext {
   visibility: visible;
-}
-
-#covid_top_cases .highcharts-data-label-color-1 text {
-  fill: #fff;
-}
-
-// Death
-.death-dashboard {
-  
-  .parameters-container {
-    display: flex;
-    margin-bottom: 10px;
-  }
-  .parameter-container {
-    width: 100%;
-    margin: 5px;
-    border-radius: 20px 0;
-    margin-bottom: 10px;
-    justify-content: space-between;
-    display: flex;
-    flex-direction: column;
-    background-image: linear-gradient(
-      160deg, $mid-grey 20%, $dark-grey 80%);
-    .parameter {
-      text-align: center;
-      font-weight: 700;
-      font-size: 150%;
-      margin-bottom: 15px;
-      overflow: hidden;
-    }
-    .parameter-label {
-      padding: 5px 10px;
-    }
-    .parameter-button {
-      margin: 0;
-      font-size: 100%;
-      font-weight: 600;
-      height: 30px;
-      width: 100%;
-      padding: 0;
-      border-radius: 0 0 15px;
-      background-image: linear-gradient(to bottom left, $dark-grey 0%, $bright-blue 60%);
-      text-align: center;
-      color: $dark-grey;
-      padding-top: 5px;
-      box-shadow: none;
-      &:before {
-        background-image: linear-gradient(to top right, $dark-grey 0%, $orange 60%);
-        border-radius: 0 0 15px;
-      }
-    }
-  }
-  .radio-container {
-    align-self: flex-end;
-  }
-  .death-tree {
-    border-radius: 30px; 
-    padding: 15px 20px; 
-    overflow: hidden; 
-    z-index: 2;
-    height: 300px;
-    .highcharts-button-box  {
-      fill: none;
-    }
-    @media only screen and (min-width: $tablet-breakpoint) {
-      margin-right: 0;
-    }
-  }
-  .death-map {
-    height: 100%;
-    .highcharts-point {
-      cursor:pointer;
-    }
-  }
-  .death-pyramid {
-    height: 420px;
-  }
-  .death-bubbles {
-    height: 300px;
-  }
-  .pyramid-label-selected {
-    fill: $orange;
-  }
-  .death-pyramid {
-    .pyramid-band {
-      fill: $dark-grey;
-      fill-opacity: 0.7;
-      cursor: pointer;
-      &:hover {
-        fill: $bright-blue;
-      }
-    }
-    .pyramid-band-selected {
-      fill: $orange;
-      fill-opacity: 1;
-      cursor: pointer;
-      &:hover {
-        fill: $bright-blue;
-      }
-    }
-    .pyramid-series-inactive {
-      opacity: 0.2;
-    }
-  }
-  .selected-element {
-    fill: #000 !important;
-    color: #000 !important;
-    stroke: $orange !important;
-    stroke-width: 20px !important;
-  }
-  .dashboard-border-container-sm {
-    box-shadow: 2px 2px 8px $navbar-color;
-  }
-  .dashboard-level-2 .dashboard-side-40 {
-    border-radius: 0 0 30px 30px;
-    @media only screen and (min-width: $tablet-breakpoint) {
-      padding-bottom: 0px;
-      border-radius: 0 0 30px 0;
-    }
-  }
 }

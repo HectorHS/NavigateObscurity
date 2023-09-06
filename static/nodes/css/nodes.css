@@ -1,4 +1,5 @@
 .node-box-container {
+  display: -ms-grid;
   display: grid;
   grid-gap: 50px;
   grid-template-columns: 1fr 3fr;
@@ -12,7 +13,7 @@
 }
 
 .node-index-container p {
-  color: #dffcff;
+  color: #e0fcff;
 }
 
 .node-box-text {
@@ -59,10 +60,18 @@
 }
 
 .node-container {
+  display: -webkit-box;
+  /* OLD - iOS 6-, Safari 3.1-6 */
+  display: -moz-box;
+  /* OLD - Firefox 19- (buggy but mostly works) */
+  display: -ms-flexbox;
+  /* TWEENER - IE 10 */
+  display: -webkit-flex;
+  /* NEW - Chrome */
   display: flex;
   flex-direction: column-reverse;
   background-color: #2e3838;
-  padding: 0 20px;
+  padding: 0 clamp(5px, 5vw, 50px);
   height: 150vh;
 }
 
@@ -70,28 +79,48 @@
   .node-container {
     height: 85vh;
     flex-direction: row;
-    padding: 0 50px;
   }
 }
 
-.node-container #context-container {
+.node-container #context_container {
+  -webkit-box-flex: 1;
+  /* OLD - iOS 6-, Safari 3.1-6 */
+  -moz-box-flex: 1;
+  /* OLD - Firefox 19- */
+  -webkit-flex: 1;
+  /* Chrome */
+  -ms-flex: 1;
+  /* IE 10 */
   flex: 1;
-  color: #dffcff;
+  color: #e0fcff;
   background-color: #222a2a;
   max-width: 100%;
   border-radius: 20px;
   box-shadow: 2px 4px 10px rgba(23, 28, 28, 0.9);
 }
 
-.node-container #context-container h4 {
-  margin-top: 0;
+.node-container #context_container .context-title-container {
+  font-size: clamp(1em, 3vw, 1.2em);
+  font-weight: 500;
+  margin-bottom: 20px;
 }
 
-.node-container #context-container .simplebar-scrollbar:before {
-  background-color: #fff;
+.node-container #context_container .context-title-container .context-title {
+  display: inline;
 }
 
-.node-container #context-container #context-wrapper {
+.node-container #context_container .context-title-container .node-item {
+  display: inline;
+  margin: 5px;
+  color: #1a94ff;
+  font-style: italic;
+}
+
+.node-container #context_container .simplebar-scrollbar:before {
+  background-color: white;
+}
+
+.node-container #context_container #context_wrapper {
   max-height: 85vh;
   padding: 20px;
 }
@@ -101,17 +130,33 @@
 }
 
 .node-container .nodes {
+  -webkit-box-flex: 2;
+  /* OLD - iOS 6-, Safari 3.1-6 */
+  -moz-box-flex: 2;
+  /* OLD - Firefox 19- */
+  -webkit-flex: 2;
+  /* Chrome */
+  -ms-flex: 2;
+  /* IE 10 */
   flex: 2;
 }
 
 .node-container #graph-container .node-controls {
+  display: -webkit-box;
+  /* OLD - iOS 6-, Safari 3.1-6 */
+  display: -moz-box;
+  /* OLD - Firefox 19- (buggy but mostly works) */
+  display: -ms-flexbox;
+  /* TWEENER - IE 10 */
+  display: -webkit-flex;
+  /* NEW - Chrome */
   display: flex;
   flex-direction: column;
   float: right;
+  width: clamp(250px, 100%, 400px);
 }
 
 .node-container #graph-container .search-container {
-  width: 150px;
   border-radius: 10px;
   border-width: 1px;
   border-style: solid;
@@ -119,7 +164,7 @@
   position: relative;
   display: block;
   z-index: 10;
-  color: #dffcff;
+  color: #e0fcff;
   overflow: hidden;
   height: 34px;
   align-self: flex-end;
@@ -127,17 +172,18 @@
 }
 
 .node-container #graph-container .search-container:hover {
-  border-color: #1A94FF;
+  border-color: #1a94ff;
 }
 
 .node-container #graph-container .search-container input {
-  color: #dffcff;
+  color: #e0fcff;
   border: none;
   height: 34px;
   position: relative;
   padding: 0 10px;
   display: block;
   background-color: rgba(46, 56, 56, 0.8);
+  width: calc(100% - 20px);
 }
 
 @media only screen and (min-width: 768px) {
@@ -170,7 +216,7 @@
   position: relative;
   cursor: pointer;
   z-index: 10;
-  color: #dffcff;
+  color: #e0fcff;
   background-color: rgba(46, 56, 56, 0.8);
   font-size: 20px;
   border-style: solid;
@@ -191,14 +237,14 @@
 
 .node-container .zoom-button:hover {
   color: #2e3838;
-  background-color: #1A94FF;
-  border-color: #1A94FF;
+  background-color: #1a94ff;
+  border-color: #1a94ff;
 }
 
 #node-legend {
   background-color: #2e3838;
   padding: 20px 50px;
-  color: #dffcff;
+  color: #e0fcff;
   text-align: center;
 }
 
@@ -226,22 +272,28 @@
   position: relative;
   top: -15px;
   margin-top: 10px;
-  width: 280px;
+  width: 100%;
 }
 
 .slider-container .slider {
   -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
   height: 3px;
-  width: 110px;
+  width: calc(100% - 167px);
   background: #9dafaf;
   border-radius: 5px;
   outline: none;
-  -webkit-transition: 0.2s;
+  -webkit-transition: opacity 0.2s;
+  -moz-transition: opacity 0.2s;
+  -ms-transition: opacity 0.2s;
+  -o-transition: opacity 0.2s;
   transition: opacity 0.2s;
 }
 
 .slider-container .slider::-webkit-slider-thumb {
   -webkit-appearance: none;
+  -moz-appearance: none;
   appearance: none;
   width: 25px;
   height: 25px;
@@ -254,8 +306,8 @@
 }
 
 .slider-container .slider::-webkit-slider-thumb:hover {
-  background: #1A94FF;
-  border-color: #1A94FF;
+  background: #1a94ff;
+  border-color: #1a94ff;
 }
 
 .slider-container .slider::-moz-range-thumb {
@@ -270,8 +322,8 @@
 }
 
 .slider-container .slider::-moz-range-thumb:hover {
-  background: #1A94FF;
-  border-color: #1A94FF;
+  background: #1a94ff;
+  border-color: #1a94ff;
 }
 
 .slider-container .slider-output {
@@ -279,7 +331,7 @@
   position: relative;
   width: 130px;
   top: 3px;
-  color: #dffcff;
+  color: #e0fcff;
   line-height: 20px;
   text-align: center;
   border-radius: 10px;
@@ -300,18 +352,6 @@
   border-right: 7px solid #9dafaf;
   border-bottom: 7px solid transparent;
   content: "";
-}
-
-@media only screen and (min-width: 768px) {
-  .slider-container {
-    width: 400px;
-  }
-  .slider-container .slider {
-    width: 210px;
-  }
-  .slider-container .slider-output {
-    width: 150px;
-  }
 }
 
 .note-container {
