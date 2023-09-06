@@ -109,39 +109,6 @@
         </p>
     </div>
 </section>
-<section>
-    <div class="container">
-        <div class="comment-container">
-            <hr>
-            <div>
-                {% for comment in comments %}
-                {% if comment.approved_comment %}
-                <div class="comment-author">{{ comment.author }}</div>
-                <div class="comment-date">{{ comment.created_date }}</div>
-                {{ comment.message|linebreaks }}
-                {% endif %}
-                {% empty %}
-                <p>No comments here yet :(</p>
-                {% endfor %}
-            </div>
-            <hr>
-            <div class="comment-form-container">
-                <h3>Leave a comment</h3>
-                <form method="post">
-                    {% csrf_token %}
-                    <div>
-                        {{comment_form.author}}
-                    </div>
-                    <div>
-                        {{ comment_form.message }}
-                    </div>
-                    <div>
-                        <button class="button" type="submit" formmethod="post">Post comment</button>
-                    </div>
-                </form>
-            </div>
-        </div>
-    </div>
-</section>
+{% include "./section-comments.html" %}
 
 {% endblock %}
