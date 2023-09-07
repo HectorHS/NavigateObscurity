@@ -1,21 +1,3 @@
-// Show all selected nodes next to the notes for quick referencelast
-function showSelectedNodes(selected) {
-    // Remove old selecteed nodes
-    document.querySelectorAll('.selected-node').forEach(function (a) {
-        a.remove()
-    });
-
-    if (Object.keys(selected).length > 0) {
-        var selected_container = document.getElementById('selected-nodes');
-        Object.keys(selected).forEach(function (key) {
-            var selected_item = document.createElement("div");
-            selected_item.classList.add('selected-node');
-            selected_item.innerHTML = selected[key].label;
-            selected_container.appendChild(selected_item);
-        });
-    }
-}
-
 // Only show notes relevant to selected nodes, or all notes if no nodes are selected
 function updateContextText(contexts, context_links, selected, percent, type) {
     let contextsToKeep,
@@ -55,6 +37,7 @@ function updateContextText(contexts, context_links, selected, percent, type) {
     if (Number.isInteger(percent)) {
         contextsToKeep = contextsToKeep.filter(c => +c.Percent <= percent);
     }
+    setContextTitle(selected, context_wrapper);
 
     setContextNotes(type, contextsToKeep, context_wrapper)  
 
@@ -64,12 +47,42 @@ function updateContextText(contexts, context_links, selected, percent, type) {
     });
 }
 
-function setContextNotes(type, contextsToKeep, context_wrapper) {
-    // Append a header
-    let context_header = document.createElement("h4");
-    context_header.innerHTML = "Notes:";
-    context_wrapper.appendChild(context_header);
+function setContextTitle(selected, context_wrapper){
+    let context_header = document.createElement("div");
+    context_header.classList.add("context-title-container");
+    let context_title = document.createElement("div");
+    context_title.classList.add("context-title");
 
+    let count = 0;
+    if (Object.keys(selected).length > 0){
+        context_title.innerHTML = "Notes for ";
+        context_header.appendChild(context_title);
+            Object.keys(selected).forEach(function (key) {
+
+                if (count > 0){
+                    let node_plus = document.createElement("div");
+                    node_plus.classList.add("context-title");
+                    node_plus.innerHTML = "&";
+                    context_header.appendChild(node_plus);
+                }
+                let node_item = document.createElement("div");
+                node_item.classList.add("node-item");
+                node_item.innerHTML = selected[key].label;
+                context_header.appendChild(node_item);
+                count++;
+            });
+        let node_dot = document.createElement("div");
+        node_dot.classList.add("context-title");
+        node_dot.innerHTML = ":";
+        context_header.appendChild(node_dot);
+    } else {
+        context_title.innerHTML = "All notes:";
+        context_header.appendChild(context_title);
+    }
+    context_wrapper.appendChild(context_header);
+}
+
+function setContextNotes(type, contextsToKeep, context_wrapper) {
     if (type == "reference") {
         // create context elements
         for (let context of contextsToKeep) {
@@ -122,17 +135,21 @@ function setContextNotes(type, contextsToKeep, context_wrapper) {
 
 // Toggle select a node
 function nodeSelect(s, selected, contexts, context_links, file1, file2, percent, type) {
-    // Making sure we have at least one node selected
-    if (Object.keys(selected).length > 0) {
-        var toKeep = nodesToKeep(s, selected, file1, file2, percent);
-
-        setSelectedColor(s, selected, toKeep);
+    if (Object.keys(selected).length == 0) { // If no nodes are selected after click we just reset the graph
+        resetStates(s);
+    } else if (Object.keys(selected).length == 1) { // If one is selected, find all relevant nodes
+        let toKeep = nodesToKeep(s, selected, file1, file2, percent);
+        
         // Grey out irrelevant edges 
         setEdgesToInactive(s, toKeep);
-    } else { // If no nodes are selected after click we just reset the graph
-        resetStates(s);
+        hideNodes(s, toKeep);
+        setSelectedColor(s, selected, toKeep);
+    } else if (Object.keys(selected).length > 1) { // If two are selected, grey out further options
+        setEdgesToInactive(s, selected);
+        hideNodes(s, selected);
+        setSelectedColor(s, selected, selected);
     }
-    showSelectedNodes(selected);
+
     updateContextText(contexts, context_links, selected, percent, type);
     s.refresh();
 }
@@ -213,33 +230,37 @@ function returnMatchingNodes(array1, array2) {
     return retainNodes;
 }
 
+// I think we have a bit of an issue, because a context might connect with many nodes, without the nodes conecting between them
+// for example (huberman-emotions),for context 17, physiological-sigh connects with heart-rate,lungs, mouth, parasympathetic-system, emotional-regulation
+// distress	connects with physiological-sigh, emotional-regulation. 17 connects with all those, but distress does not connect with mouth
+// Which means that after selecting distress, mouth is not highlighted, and seems irrelevant.
+// there are several ways forward. one is to redo all connections and make sure everything connects with everything. 
+// this will make the graph look more busy, and will make some connections we might not want to make, but will have some consistency in user experience
+// 2 - not allow more than 2 selections. We make a commitment to only show stuff that are directly connected,
+// we rely on the graph for those and connections like distress-mouth will remain hidden.
+// 3 - we allow as many connections we want. We look into the contexts and manually find all relevant nodes.
+// mouth will be visible after selecting distress, but will be lacking an edge. The question is if edges are not there to help 
+// visually on selection, what is their purpose
+// I will go with option 2 for now but might need to review this.
+
 // Return all relevant nodes to be kept
 function nodesToKeep(s, selected, file1, file2, percent) {
-    // Make sure selected is not empty when calling this
-    var toKeep = [],
-        i = 0;
+    let toKeep = [];
 
-    // if nodes are selected, get relevant nodes, otherwise all of them (and only filter on percentage)
-    if (Object.keys(selected).length > 0) {
-        Object.keys(selected).forEach(function (key) {
-            if (i == 0) {
-                toKeep = s.graph.neighbors(key);
-                toKeep[key] = selected[key];
-            } else {
-                var keep = s.graph.neighbors(key);
-                keep[key] = selected[key];
-                toKeep = returnMatchingNodes(toKeep, keep);
-            }
-            i++;
-        });
-    } else {
-        // if no selected, add them all
+    if (Object.keys(selected).length == 0) { // if no selected, add them all
         let all_nodes = s.graph.nodes();
         for (let node of all_nodes) {
             toKeep[node.id] = node;
         }
+    } else if (Object.keys(selected).length == 1) { // when one is selected, find all connections
+        let key = Object.keys(selected)[0];
+        toKeep = s.graph.neighbors(key);
+        toKeep[key] = selected[key];
+    } else if (Object.keys(selected).length == 2) { // if two are already selected, just return those two
+        toKeep = selected;
     }
 
+    // filter on percentage if applicable
     if (percent != null && percent < 100) {
         let perNodes = percentNodesToKeep(s, file1, file2, percent);
         toKeep = returnMatchingNodes(toKeep, perNodes);

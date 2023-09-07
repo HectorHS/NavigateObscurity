@@ -37,14 +37,13 @@ let ggs_graph_gexf = "/static/nodes/gexf/ggs.gexf",
         defaultEdgeType: "curve", // only works on canvas renderer
         defaultLabelColor: "#dffcff",
         labelColor:"#dffcff",
-        // labelHoverBGColor: "default",
         defaultHoverLabelBGColor: "#171c1c",
         defaultLabelHoverColor: "#dffcff",
         font: "Poppins",
         drawLabels: true,
         mouseWheelEnabled: false,
         doubleClickEnabled: false,
-        touchEnabled: false,
+        touchEnabled: true,
     },
   });
 
@@ -119,18 +118,22 @@ let ggs_graph_gexf = "/static/nodes/gexf/ggs.gexf",
     // Click event for node
     s.bind('clickNode', function (e) {
       // Add or remove from selected array
-      if (!selected[e.data.node.id]) {
-        selected[e.data.node.id] = e.data.node;
-      } else {
+      // if we are deselecting, all good
+      if (selected[e.data.node.id]) {
         delete selected[e.data.node.id];
-      }
-
-      nodeSelect(s, selected, contexts, context_links, files[0], files[1], null, "simple");
+        nodeSelect(s, selected, contexts, context_links, files[0], files[1], null, "simple");
+      } else if (Object.keys(selected).length < 2) { // if we want to add to the selected, make sure 2 are not already selected
+        selected[e.data.node.id] = e.data.node;
+        nodeSelect(s, selected, contexts, context_links, files[0], files[1], null, "simple");
+      } 
+      // if two are already selected, do nothing
     });
 
     // Mouse over event
     s.bind('overNode', function (e) {
-      nodeHover(s, e.data.node, selected, files[0], files[1]);
+      if (Object.keys(selected).length < 2) {
+        nodeHover(s, e.data.node, selected, files[0], files[1]);
+      }
     });
 
     // Mouse out event
@@ -142,7 +145,6 @@ let ggs_graph_gexf = "/static/nodes/gexf/ggs.gexf",
     s.bind('clickStage', function (e) {
       selected = [];
       resetStates(s);
-      showSelectedNodes(selected);
       updateContextText(contexts, context_links, selected, null, "simple");
       s.refresh();
     });

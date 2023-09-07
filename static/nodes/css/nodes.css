@@ -192,26 +192,6 @@
   }
 }
 
-.node-container #selected-nodes {
-  position: absolute;
-  z-index: 10;
-  padding-top: 40px;
-}
-
-.node-container #selected-nodes .selected-node {
-  background-color: #0070D1;
-  padding: 3px 10px;
-  border-radius: 20px;
-  margin: 5px;
-  box-shadow: 0.5px 0.5px 5px rgba(23, 28, 28, 0.9);
-}
-
-@media only screen and (min-width: 768px) {
-  .node-container #selected-nodes {
-    padding-top: 0px;
-  }
-}
-
 .node-container .zoom-button {
   position: relative;
   cursor: pointer;

@@ -30,20 +30,20 @@ renderers: [
   }
 ],
 settings: {
-  minNodeSize: 1,
-  maxNodeSize: 20,
+  minNodeSize: 0.5,
+  maxNodeSize: 15, // this also controls how many labels will be shown
   minEdgeSize: 0.1,
-  maxEdgeSize: 0.5,
+  maxEdgeSize: 3,
   defaultEdgeType: "curve", // only works on canvas renderer
-  labelColor: "node",
-  labelHoverBGColor: "default",
+  defaultLabelColor: "#dffcff",
+  labelColor: "dffcff",
   defaultHoverLabelBGColor: "#171c1c",
-  defaultLabelHoverColor: "#fff",
+  defaultLabelHoverColor: "#dffcff",
   font: "Poppins",
-  drawLabels: false,
+  drawLabels: true,
   mouseWheelEnabled: false,
   doubleClickEnabled: false,
-  touchEnabled: false,
+  touchEnabled: true,
 },
 });
 
@@ -118,18 +118,24 @@ function zoomOut() {
 // Click event for node
 s.bind('clickNode', function (e) {
   // Add or remove from selected array
-  if (!selected[e.data.node.id]) {
-    selected[e.data.node.id] = e.data.node;
-  } else {
-    delete selected[e.data.node.id];
-  }
 
-  nodeSelect(s, selected, contexts, context_links, null, null, null, "simple");
+  // if we are deselecting, all good
+  if (selected[e.data.node.id]) {
+    delete selected[e.data.node.id];
+    nodeSelect(s, selected, contexts, context_links, files[0], files[1], null, "simple");
+  } else if (Object.keys(selected).length < 2) { // if we want to add to the selected, make sure 2 are not already selected
+    selected[e.data.node.id] = e.data.node;
+    nodeSelect(s, selected, contexts, context_links, files[0], files[1], null, "simple");
+  } 
+  // if two are already selected, do nothing
 });
 
 // Mouse over event
 s.bind('overNode', function (e) {
-  nodeHover(s, e.data.node, selected);
+  // if two are already selected do nothing
+  if (Object.keys(selected).length < 2) {
+    nodeHover(s, e.data.node, selected, files[0], files[1]);
+  }
 });
 
 // Mouse out event
@@ -141,7 +147,6 @@ s.bind('outNode', function (e) {
 s.bind('clickStage', function (e) {
   selected = [];
   resetStates(s);
-  showSelectedNodes(selected);
   updateContextText(contexts, context_links, selected, null, "simple");
   s.refresh();
 });
