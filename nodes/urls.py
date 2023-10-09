@@ -1,5 +1,5 @@
 from django.urls import path
-from .views import HeadStrongView, IndexView, GotmView, ElasticView, GgsView, HLEmotionsView
+from .views import HeadStrongView, IndexView, GotmView, ElasticView, GgsView, HLEmotionsView, DGView
 
 app_name = 'nodes'
 urlpatterns = [
@@ -9,4 +9,5 @@ urlpatterns = [
     path('elastic-thinking', ElasticView.as_view(), name='elastic-thinking'),
     path('guns-germs-and-steel', GgsView.as_view(), name='guns-germs-and-steel'),
     path('huberman-lab-emotions', HLEmotionsView.as_view(), name='huberman-lab-emotions'),
+    path('deadhouse-gates', DGView.as_view(), name='deadhouse-gates'),
 ]

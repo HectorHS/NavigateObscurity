@@ -1,0 +1,86 @@
+{% extends 'main/layout.html' %}
+{% load static %}
+
+{% block styles %}
+<!-- Meta -->
+<title>{{ title }} - Navigate Obscurity</title>
+<meta name="description" content="{{ abstract }}">
+<meta property="og:image"
+  content="https://www.navigateobscurity.com/static/nodes/images/deadhouse-gates-social.jpg" />
+<meta property="og:title" content="{{ title }} - Navigate Obscurity" />
+<meta property="og:url" content="https://www.navigateobscurity.com/notes/deadhouse-gates" />
+<meta name="twitter:card" content="summary" />
+<meta name="twitter:url" content="https://www.navigateobscurity.com/notes/deadhouse-gates" />
+<meta name="twitter:title" content="{{ title }} - Navigate Obscurity" />
+<meta name="twitter:description" content="{{ abstract }}" />
+<meta name="twitter:image"
+  content="https://www.navigateobscurity.com/static/nodes/images/deadhouse-gates-social.jpg" />
+
+<!-- We use d3 libraries to load data -->
+<script src="https://d3js.org/d3-dsv.v1.min.js"></script>
+<script src="https://d3js.org/d3-fetch.v1.min.js"></script>
+<!-- simplebar for custom styled scroll bars -->
+<link rel="stylesheet" href="https://unpkg.com/simplebar@latest/dist/simplebar.css" />
+<script src="https://unpkg.com/simplebar@latest/dist/simplebar.min.js"></script>
+<!-- We use sigma to visualise the graph -->
+<script src={% static "nodes/js/sigma.min.js" %}></script>
+<script src={% static "nodes/js/sigma.parsers.gexf.min.js" %}></script>
+<script src={% static "nodes/js/sigma.renderers.parallelEdges.min.js" %}></script>
+
+<script src={% static "nodes/js/node-helpers.js" %}></script>
+
+<link rel='stylesheet' type="text/css" href={% static "nodes/css/nodes.css" %}>
+
+<!-- using defer to load after the html -->
+<script type="text/javascript" src={% static "nodes/js/dg.js" %} defer></script> 
+<noscript>
+  <style>
+    /**
+    * Reinstate scrolling for non-JS clients
+    */
+    .simplebar-content-wrapper {
+      overflow: auto;
+    }
+  </style>
+</noscript>
+{% endblock %}
+
+{% block content %}
+<section class="banner-container">
+  <h1 class="header-title-banner">{{title}} by Steven Erikson</h1>
+</section>
+<!-- Intro -->
+<section>
+  <div class="container limited-width">
+    <p>
+        In the Seven Cities continent a rebellion is brewing with a prophecy, an obscure goddess, high mages, local warlords and ex-Malazan militants all playing a role. The Malazan Empire will try to supress it strengthening its presence in the area with a newly appointed Fist and his forces. Two bridgeburners embark on a quest across the same continent with a hidden agenda. A noble, a historian and a thug form an unlikely partnership as they are enslaved and sent to what promises to be a transformative journey. An ancient warrior is on a mission to uncover his past while his companion is deliberately keeping it obscure. A horde of shapeshifters converge on a path fighting for ascension. Paths will be crossed, ankles will be broken, prophecies will be fulfilled, innocents will be crucified, assassins will be unleashed, soldiers will be betrayed, and children will die. This is the second installment of the Malazan Book of the Fallen.
+    </p>
+
+  </div>
+</section>
+<!-- How to use -->
+{% include "./graph-instructions-percent.html" %}
+
+<!-- Graph -->
+<section class="node-container">
+  <div id="context_container" class="nodes-text"> </div>
+  <div id="graph-container" class="nodes" style="width:100%;">
+    <div id="selected-nodes"></div>
+    <div class="node-controls">
+      <div id="slider_container"></div>
+      <div class="search-container">
+        <input id="search-input" list="nodes-datalist" placeholder="Search for a node">
+      </div>
+      <datalist id="nodes-datalist"></datalist>
+      <button type="button" id="zoom-in-button" class="zoom-button zoom-in">+</button>
+      <button type="button" id="zoom-out-button" class="zoom-button zoom-out">-</button>
+    </div>
+
+  </div>
+</section>
+<!-- Legend -->
+<section id="node-legend">
+</section>
+{% include "main/section-comments.html" %}
+
+{% endblock %}
