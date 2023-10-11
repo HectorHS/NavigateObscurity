@@ -59,11 +59,6 @@ Promise.all([
     var contexts = files[0],
         context_links = files[1];
 
-    for (let row of files[1]) {
-        let one = Object.values(row);
-        let test = "one";
-    }
-
     // Load data to the graph
     sigma.parsers.gexf(head_strong_gexf, s,
         function (s) {
