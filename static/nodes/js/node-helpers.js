@@ -1,7 +1,7 @@
 // Only show notes relevant to selected nodes, or all notes if no nodes are selected
 function updateContextText(contexts, context_links, selected, percent, type) {
-    let contextsToKeep,
-        linksToKeep;
+    let contextsToKeep = [];
+    let linksToKeep = []; // array of numbers as strings
 
     // Remove old wrapper
     document.querySelectorAll('#context_wrapper').forEach(function (a) {
@@ -16,17 +16,21 @@ function updateContextText(contexts, context_links, selected, percent, type) {
 
     // Show only relevant contexts, or all contexts if none is selected
     if (Object.keys(selected).length > 0) {
-        let i = 0;
-
-        Object.keys(selected).forEach(function (key) {
-            if (i == 0) {
-                linksToKeep = context_links.filter(l => l.Node == selected[key].id).map(l => l.Context);
+        let keys = Object.keys(selected);
+        for (let row of context_links) {
+            let nodes = Object.values(row);
+            if (keys.length > 1) {
+                if (nodes.includes(keys[0]) && nodes.includes(keys[1])) {
+                    linksToKeep.push(row.Context);
+                }
             } else {
-                let tempLinks = context_links.filter(l => l.Node == selected[key].id).map(l => l.Context);
-                linksToKeep = returnMatchingArrayItems(linksToKeep, tempLinks);
+                if (nodes.includes(keys[0])) {
+                    linksToKeep.push(row.Context);
+                }
             }
-            i++;
-        });
+        }
+        // keep only unique values
+        linksToKeep = [...new Set(linksToKeep)];
 
         contextsToKeep = contexts.filter(c => linksToKeep.includes(c.Id));
     } else {
@@ -245,7 +249,7 @@ function returnMatchingNodes(array1, array2) {
 
 // Return all relevant nodes to be kept
 function nodesToKeep(s, selected, file1, file2, percent) {
-    let toKeep = [];
+    let toKeep = []; // array of nodes
 
     if (Object.keys(selected).length == 0) { // if no selected, add them all
         let all_nodes = s.graph.nodes();
@@ -254,7 +258,9 @@ function nodesToKeep(s, selected, file1, file2, percent) {
         }
     } else if (Object.keys(selected).length == 1) { // when one is selected, find all connections
         let key = Object.keys(selected)[0];
+        // add all neighbors
         toKeep = s.graph.neighbors(key);
+        // add itself
         toKeep[key] = selected[key];
     } else if (Object.keys(selected).length == 2) { // if two are already selected, just return those two
         toKeep = selected;
@@ -328,11 +334,15 @@ function percentNodesToKeep(s, file1, file2, percent) {
         }
     }
 
-    // ger corresponding names and remove duplicates
+    // get corresponding names and remove duplicates
     let nodeNamesToKeep = [];
     for (let row of file2) {
         if (row.Context <= maxId) {
-            nodeNamesToKeep.push(row.Node);
+            for (let k of Object.keys(row)) {
+                nodeNamesToKeep.push(row[k])
+            }
+        } else {
+            break;
         }
     }
     let uniqueNodeNamesToKeep = [...new Set(nodeNamesToKeep)];
