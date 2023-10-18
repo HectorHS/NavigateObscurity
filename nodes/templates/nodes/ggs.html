@@ -25,11 +25,11 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/sigma.js/1.2.2/plugins/sigma.parsers.gexf.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/sigma.js/1.2.2/plugins/sigma.renderers.parallelEdges.min.js"></script>
 
-<script src={% static "nodes/js/node-helpers.js" %}></script>
+<script type="module" src={% static "nodes/js/node-helpers.js" %}></script>
 
 <link rel='stylesheet' type="text/css" href={% static "nodes/css/nodes.css" %}>
 <!-- using defer to load after the html -->
-<script type="text/javascript" src={% static "nodes/js/ggs.js" %} defer></script> 
+<script type="module" src={% static "nodes/js/ggs.js" %} defer></script> 
 <noscript>
   <style>
     /**
@@ -79,4 +79,7 @@
 <section id="node-legend">
 </section>
 {% include "main/section-comments.html" %}
+<script>
+  let txt2 = "some other test";
+</script>
 {% endblock %}

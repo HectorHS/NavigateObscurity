@@ -1,32 +1,42 @@
+import * as Node from "./nodeInterfaces.js";
 import { fCapital, updateContextText, nodeSelect, nodeHover, nodeHoverOut, resetStates, addSlider, filterByPercent } from "./node-helpers.js";
+// Basically saying to typescript these will be here when you need them, trust me
+declare let sigma: any;
+declare let d3: any;
+
 let head_strong_gexf = "/static/nodes/gexf/gotm.gexf";
 let head_strong_context = "/static/nodes/csv/gotm-context.csv";
 let head_strong_context_links = "/static/nodes/csv/gotm-context-links.csv";
-let selected = [];
+
+let selected: string[] = [];
 let percent = 100;
-sigma.classes.graph.addMethod('neighbors', function (nodeId) {
-    let k;
-    let neighbors = {};
-    let index = this.allNeighborsIndex[nodeId] || {};
+
+sigma.classes.graph.addMethod('neighbors', function (this: any, nodeId: string): Node.SigmaNodeColelction {
+    let k: string;
+    let neighbors: Node.SigmaNodeColelction = {};
+    let index: string[] = this.allNeighborsIndex[nodeId] || {};
+
     for (k in index)
         neighbors[k] = this.nodesIndex[k];
+
     return neighbors;
 });
+
 // Initialise sigma with settings
-let SigmaConstructor = {
+let SigmaConstructor: Node.SigmaConstructor = {
     renderers: [
         {
             type: 'canvas',
-            container: document.getElementById('graph-container'),
+            container: document.getElementById('graph-container')!,
             freeStyle: true
         }
     ],
     settings: {
         minNodeSize: 1,
-        maxNodeSize: 20,
+        maxNodeSize: 20, // this also controls how many labels will be shown
         minEdgeSize: 0.1,
         maxEdgeSize: 3,
-        defaultEdgeType: "curve",
+        defaultEdgeType: "curve", // only works on canvas renderer
         defaultLabelColor: "#dffcff",
         labelColor: "#dffcff",
         defaultHoverLabelBGColor: "#171c1c",
@@ -38,60 +48,73 @@ let SigmaConstructor = {
         touchEnabled: false,
     },
 };
-let s = new sigma(SigmaConstructor);
+let s: any = new sigma(SigmaConstructor);
+
 // Load all notes
 Promise.all([
     d3.csv(head_strong_context),
     d3.csv(head_strong_context_links),
-]).then(function (files) {
+]).then(function (files: any[]): void {
+
     let contexts = files[0];
     let context_links = files[1];
+
     // Load data to the graph
-    sigma.parsers.gexf(head_strong_gexf, s, function (s) {
-        // Add various parameters to nodes and edges
-        s.graph.nodes().forEach(function (n) {
-            n.label = fCapital(n.label);
-            n.color = getColor.get(n.attributes["modularity class"]);
-            n.originalColor = n.color;
-            n.inactiveColor = "#455454";
-            n.selectedColor = "#DDDDDD";
+    sigma.parsers.gexf(head_strong_gexf, s,
+        function (s: any): void {
+            // Add various parameters to nodes and edges
+            s.graph.nodes().forEach(function (n: Node.SigmaNode) {
+                n.label = fCapital(n.label);
+                n.color = getColor.get(n.attributes["modularity class"])!;
+                n.originalColor = n.color;
+                n.inactiveColor = "#455454";
+                n.selectedColor = "#DDDDDD";
+            });
+            s.graph.edges().forEach(function (e: Node.SigmaEdge) {
+                e.originalColor = e.color;
+                e.inactiveColor = "#455454";
+            });
+            s.refresh();
+            populateSearchList(s);
+
+            // Add event listeners to buttons
+            let inputBox: HTMLElement = document.getElementById('search-input')!;
+            inputBox.addEventListener("change", searchChange);
+
+            let zoomInButton: HTMLElement = document.getElementById('zoom-in-button')!;
+            zoomInButton.addEventListener("click", zoomIn);
+            let zoomOutButton: HTMLElement = document.getElementById('zoom-out-button')!;
+            zoomOutButton.addEventListener("click", zoomOut);
         });
-        s.graph.edges().forEach(function (e) {
-            e.originalColor = e.color;
-            e.inactiveColor = "#455454";
-        });
-        s.refresh();
-        populateSearchList(s);
-        // Add event listeners to buttons
-        let inputBox = document.getElementById('search-input');
-        inputBox.addEventListener("change", searchChange);
-        let zoomInButton = document.getElementById('zoom-in-button');
-        zoomInButton.addEventListener("click", zoomIn);
-        let zoomOutButton = document.getElementById('zoom-out-button');
-        zoomOutButton.addEventListener("click", zoomOut);
-    });
+
     updateContextText(s, contexts, context_links, selected, percent, "simple");
     createLegend();
+
     // Create slider
     let sliderName = "percent-slider";
     let min = '0';
     let max = '100';
     let value = percent.toString();
-    let sliderContainer = document.getElementById("slider_container");
+    let sliderContainer: HTMLElement = document.getElementById("slider_container")!;
     addSlider(sliderContainer, sliderName, min, max, value, sliderChange);
-    function sliderChange() {
-        let slider = document.getElementById(sliderName + "-slider");
-        let shownPercentage = document.getElementById("percent-slider-slider-output");
+
+    function sliderChange(): void {
+        let slider: HTMLSelectElement = <HTMLSelectElement>document.getElementById(sliderName + "-slider");
+        let shownPercentage: HTMLElement = document.getElementById("percent-slider-slider-output")!;
         percent = +slider.value;
         shownPercentage.innerHTML = percent + "% completed";
+
         filterByPercent(s, selected, contexts, context_links, percent);
+
         updateContextText(s, contexts, context_links, selected, percent, "simple");
         s.refresh();
+
     }
-    function searchChange(e) {
+    function searchChange(e: any): void {
         let value = e.target.value;
+
         // Add node to selected
-        s.graph.nodes().forEach(function (n) {
+        s.graph.nodes().forEach(function (n: Node.SigmaNode) {
             if (n.label == value) {
                 if (!selected.includes(n.id)) {
                     selected.push(n.id);
@@ -100,20 +123,23 @@ Promise.all([
         });
         nodeSelect(s, selected, contexts, context_links, percent, "simple");
     }
-    function zoomIn() {
+
+    function zoomIn(): void {
         let c = s.camera;
         c.goTo({
             ratio: c.ratio / c.settings('zoomingRatio')
         });
     }
-    function zoomOut() {
+
+    function zoomOut(): void {
         let c = s.camera;
         c.goTo({
             ratio: c.ratio * c.settings('zoomingRatio')
         });
     }
+
     // Click event for node
-    s.bind('clickNode', function (e) {
+    s.bind('clickNode', function (e: any): void {
         // Add or remove from selected array
         let nod = e.data.node.id;
         // if we are deselecting, all good
@@ -121,32 +147,35 @@ Promise.all([
             let index = selected.indexOf(nod);
             selected.splice(index, 1);
             nodeSelect(s, selected, contexts, context_links, percent, "simple");
-        }
-        else if (selected.length < 2) { // if we want to add to the selected, make sure 2 are not already selected
+        } else if (selected.length < 2) { // if we want to add to the selected, make sure 2 are not already selected
             selected.push(nod);
             nodeSelect(s, selected, contexts, context_links, percent, "simple");
         }
         // if two are already selected, do nothing
     });
+
     // Mouse over event
-    s.bind('overNode', function (e) {
+    s.bind('overNode', function (e: any): void {
         // if two are already selected do nothing
         if (selected.length < 2) {
             nodeHover(s, e.data.node, selected, contexts, context_links, percent);
         }
     });
+
     // Mouse out event
-    s.bind('outNode', function () {
+    s.bind('outNode', function (): void {
         nodeHoverOut(s, selected, contexts, context_links, percent);
     });
+
     // When the background is clicked, we reset the graph
-    s.bind('clickStage', function () {
+    s.bind('clickStage', function (): void {
         selected = [];
         resetStates(s);
         updateContextText(s, contexts, context_links, selected, percent, "simple");
         s.refresh();
     });
-    function createLegend() {
+
+    function createLegend(): void {
         let categories = [
             { class: 4, name: "Darujhistan cabal, Eel & allies" },
             { class: 5, name: "Darujhistan, others" },
@@ -156,34 +185,42 @@ Promise.all([
             { class: 0, name: "Malazans" },
             { class: 6, name: "Others" },
         ];
-        let container = document.getElementById('node-legend');
+
+        let container: HTMLElement = document.getElementById('node-legend')!;
+
         //Object.keys(categories).forEach(function (key) {
         for (let cat of categories) {
             let legend_item = document.createElement("div");
             legend_item.classList.add('legend-item');
+
             let legend_dot = document.createElement("div");
             legend_dot.classList.add('legend-dot');
-            legend_dot.style.backgroundColor = getColor.get(cat.class);
+            legend_dot.style.backgroundColor = getColor.get(cat.class)!;
             legend_item.appendChild(legend_dot);
+
             let legend_label = document.createElement("div");
             legend_label.classList.add('legend-label');
             legend_label.innerHTML = cat.name;
             legend_item.appendChild(legend_label);
+
             container.appendChild(legend_item);
         }
     }
-    function populateSearchList(s) {
-        let container = document.getElementById('nodes-datalist');
-        s.graph.nodes().forEach(function (n) {
+
+    function populateSearchList(s: any): void {
+        let container: HTMLElement = document.getElementById('nodes-datalist')!;
+        s.graph.nodes().forEach(function (n: Node.SigmaNode): void {
             let item = document.createElement('option');
             item.value = n.label;
             container.appendChild(item);
         });
     }
+
 }).catch(function (error) {
     console.log(error);
-});
-let getColor = new Map();
+})
+
+let getColor = new Map<number, string>();
 getColor.set(0, "#EB6060");
 getColor.set(1, "#CC1919");
 getColor.set(2, "#23CA23");
