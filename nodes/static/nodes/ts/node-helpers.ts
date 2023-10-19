@@ -298,7 +298,6 @@ export function setEdgesToInactive(s: any, nodesToKeep: string[]): void {
         }
     });
 }
-// TODO can this be a component??
 export function addSlider(parent: HTMLElement, name: string, min: string, max: string, value: string, onChange: any): void {
     var sliderContainer = document.createElement("div");
     sliderContainer.classList.add("slider-container");
@@ -354,3 +353,51 @@ export function filterByPercent(s: any, selected: string[], contexts: Node.Conte
     hideNodes(s, toKeep);
     setSelectedColor(s, selected, toKeep);
 }
+
+function zoomIn(s:any): void {
+  let c: any = s.camera;
+  c.goTo({
+    ratio: c.ratio / c.settings('zoomingRatio')
+  });
+}
+
+function zoomOut(s:any): void {
+    let c: any = s.camera;
+    c.goTo({
+      ratio: c.ratio * c.settings('zoomingRatio')
+    });
+  }
+  export function setupZoomButtons(s:any) {
+    let zoomInButton: HTMLElement = document.getElementById('zoom-in-button')!;
+    zoomInButton.addEventListener("click", function () { zoomIn(s)});
+    let zoomOutButton: HTMLElement = document.getElementById('zoom-out-button')!;
+    zoomOutButton.addEventListener("click", function () { zoomOut(s)});
+  }
+  export function createLegend(categories:Node.LegendItem[], getColor:Map<number,string>): void {
+    let container:HTMLElement = document.getElementById('node-legend')!;
+
+    for (let cat of categories) {
+      let legend_item = document.createElement("div");
+      legend_item.classList.add('legend-item');
+
+      let legend_dot = document.createElement("div");
+      legend_dot.classList.add('legend-dot');
+      legend_dot.style.backgroundColor = getColor.get(cat.class)!;
+      legend_item.appendChild(legend_dot);
+
+      let legend_label = document.createElement("div");
+      legend_label.classList.add('legend-label');
+      legend_label.innerHTML = cat.name;
+      legend_item.appendChild(legend_label);
+
+      container.appendChild(legend_item);
+    }
+  }
+  export function populateSearchList(s: any): void {
+    let container: HTMLElement = document.getElementById('nodes-datalist')!;
+    s.graph.nodes().forEach(function (n: Node.SigmaNode): void {
+      let item = document.createElement('option');
+      item.value = n.label;
+      container.appendChild(item);
+    });
+  }

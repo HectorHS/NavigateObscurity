@@ -272,7 +272,6 @@ export function setEdgesToInactive(s, nodesToKeep) {
         }
     });
 }
-// TODO can this be a component??
 export function addSlider(parent, name, min, max, value, onChange) {
     var sliderContainer = document.createElement("div");
     sliderContainer.classList.add("slider-container");
@@ -322,4 +321,46 @@ export function filterByPercent(s, selected, contexts, context_links, percent) {
     let toKeep = nodesToKeep(s, selected, contexts, context_links, percent);
     hideNodes(s, toKeep);
     setSelectedColor(s, selected, toKeep);
+}
+function zoomIn(s) {
+    let c = s.camera;
+    c.goTo({
+        ratio: c.ratio / c.settings('zoomingRatio')
+    });
+}
+function zoomOut(s) {
+    let c = s.camera;
+    c.goTo({
+        ratio: c.ratio * c.settings('zoomingRatio')
+    });
+}
+export function setupZoomButtons(s) {
+    let zoomInButton = document.getElementById('zoom-in-button');
+    zoomInButton.addEventListener("click", function () { zoomIn(s); });
+    let zoomOutButton = document.getElementById('zoom-out-button');
+    zoomOutButton.addEventListener("click", function () { zoomOut(s); });
+}
+export function createLegend(categories, getColor) {
+    let container = document.getElementById('node-legend');
+    for (let cat of categories) {
+        let legend_item = document.createElement("div");
+        legend_item.classList.add('legend-item');
+        let legend_dot = document.createElement("div");
+        legend_dot.classList.add('legend-dot');
+        legend_dot.style.backgroundColor = getColor.get(cat.class);
+        legend_item.appendChild(legend_dot);
+        let legend_label = document.createElement("div");
+        legend_label.classList.add('legend-label');
+        legend_label.innerHTML = cat.name;
+        legend_item.appendChild(legend_label);
+        container.appendChild(legend_item);
+    }
+}
+export function populateSearchList(s) {
+    let container = document.getElementById('nodes-datalist');
+    s.graph.nodes().forEach(function (n) {
+        let item = document.createElement('option');
+        item.value = n.label;
+        container.appendChild(item);
+    });
 }

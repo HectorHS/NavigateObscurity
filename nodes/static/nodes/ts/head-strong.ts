@@ -1,5 +1,5 @@
 import * as Node from "./nodeInterfaces.js";
-import { fCapital, updateContextText, nodeSelect, nodeHover, nodeHoverOut, resetStates } from "./node-helpers.js";
+import { fCapital, updateContextText, nodeSelect, nodeHover, nodeHoverOut, resetStates, setupZoomButtons, createLegend, populateSearchList } from "./node-helpers.js";
 // Basically saying to typescript these will be here when you need them, trust me
 declare let sigma: any;
 declare let d3: any;
@@ -9,6 +9,29 @@ let head_strong_context = "/static/nodes/csv/context.csv";
 let head_strong_context_links = "/static/nodes/csv/context-links.csv";
 
 let selected: string[] = [];
+let categories:Node.LegendItem[] = [
+  { class: 7, name: "Cellular" },
+  { class: 4, name: "Physiological" },
+  { class: 9, name: "Hormonal" },
+  { class: 5, name: "Neurological" },
+  { class: 3, name: "Mental" },
+  { class: 2, name: "Habits" },
+  { class: 1, name: "Foods" },
+  { class: 0, name: "Food components" },
+  { class: 6, name: "Toxins" },
+  { class: 8, name: "Environment" }
+];
+let getColor = new Map<number, string>();
+getColor.set(0, "#ED45B2");
+getColor.set(1, "#970F67");
+getColor.set(2, "#1B981B");
+getColor.set(3, "#66B8FF");
+getColor.set(4, "#001B33");
+getColor.set(5, "#0070D1");
+getColor.set(6, "#E63333");
+getColor.set(7, "#101414");
+getColor.set(8, "#FFFF1A");
+getColor.set(9, "#9D61D1");
 
 sigma.classes.graph.addMethod('neighbors', function (this: any, nodeId: string): Node.SigmaNodeColelction {
   let k: string;
@@ -80,14 +103,11 @@ Promise.all([
       let inputBox: HTMLElement = document.getElementById('search-input')!;
       inputBox.addEventListener("change", searchChange);
 
-      let zoomInButton: HTMLElement = document.getElementById('zoom-in-button')!;
-      zoomInButton.addEventListener("click", zoomIn);
-      let zoomOutButton: HTMLElement = document.getElementById('zoom-out-button')!;
-      zoomOutButton.addEventListener("click", zoomOut);
+      setupZoomButtons(s);
     });
 
   updateContextText(s, contexts, context_links, selected, 0, "simple");
-  createLegend();
+  createLegend(categories, getColor);
 
   function searchChange(e: any): void {
     let value = e.target.value;
@@ -101,20 +121,6 @@ Promise.all([
       }
     });
     nodeSelect(s, selected, contexts, context_links, 0, "simple");
-  }
-
-  function zoomIn(): void {
-    let c = s.camera;
-    c.goTo({
-      ratio: c.ratio / c.settings('zoomingRatio')
-    });
-  }
-
-  function zoomOut(): void {
-    let c = s.camera;
-    c.goTo({
-      ratio: c.ratio * c.settings('zoomingRatio')
-    });
   }
 
   // Click event for node
@@ -154,62 +160,7 @@ Promise.all([
     s.refresh();
   });
 
-  function createLegend(): void {
-    let categories = [
-      { class: 7, name: "Cellular" },
-      { class: 4, name: "Physiological" },
-      { class: 9, name: "Hormonal" },
-      { class: 5, name: "Neurological" },
-      { class: 3, name: "Mental" },
-      { class: 2, name: "Habits" },
-      { class: 1, name: "Foods" },
-      { class: 0, name: "Food components" },
-      { class: 6, name: "Toxins" },
-      { class: 8, name: "Environment" }
-    ];
-
-    let container: HTMLElement = document.getElementById('node-legend')!;
-
-    //Object.keys(categories).forEach(function (key) {
-    for (let cat of categories) {
-      let legend_item = document.createElement("div");
-      legend_item.classList.add('legend-item');
-
-      let legend_dot = document.createElement("div");
-      legend_dot.classList.add('legend-dot');
-      legend_dot.style.backgroundColor = getColor.get(cat.class)!;
-      legend_item.appendChild(legend_dot);
-
-      let legend_label = document.createElement("div");
-      legend_label.classList.add('legend-label');
-      legend_label.innerHTML = cat.name;
-      legend_item.appendChild(legend_label);
-
-      container.appendChild(legend_item);
-    }
-  }
-
-  function populateSearchList(s: any): void {
-    let container: HTMLElement = document.getElementById('nodes-datalist')!;
-    s.graph.nodes().forEach(function (n: Node.SigmaNode): void {
-      let item = document.createElement('option');
-      item.value = n.label;
-      container.appendChild(item);
-    });
-  }
-
 }).catch(function (error): void {
   console.log(error);
 })
 
-let getColor = new Map<number, string>();
-getColor.set(0, "#ED45B2");
-getColor.set(1, "#970F67");
-getColor.set(2, "#1B981B");
-getColor.set(3, "#66B8FF");
-getColor.set(4, "#001B33");
-getColor.set(5, "#0070D1");
-getColor.set(6, "#E63333");
-getColor.set(7, "#101414");
-getColor.set(8, "#FFFF1A");
-getColor.set(9, "#9D61D1");

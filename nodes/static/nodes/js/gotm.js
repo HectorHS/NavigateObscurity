@@ -1,9 +1,26 @@
-import { fCapital, updateContextText, nodeSelect, nodeHover, nodeHoverOut, resetStates, addSlider, filterByPercent } from "./node-helpers.js";
+import { fCapital, updateContextText, nodeSelect, nodeHover, nodeHoverOut, resetStates, addSlider, filterByPercent, setupZoomButtons, createLegend, populateSearchList } from "./node-helpers.js";
 let head_strong_gexf = "/static/nodes/gexf/gotm.gexf";
 let head_strong_context = "/static/nodes/csv/gotm-context.csv";
 let head_strong_context_links = "/static/nodes/csv/gotm-context-links.csv";
 let selected = [];
 let percent = 100;
+let categories = [
+    { class: 4, name: "Darujhistan cabal, Eel & allies" },
+    { class: 5, name: "Darujhistan, others" },
+    { class: 3, name: "Tiste Andii & allies" },
+    { class: 2, name: "Ascendants" },
+    { class: 1, name: "Bridgeburners" },
+    { class: 0, name: "Malazans" },
+    { class: 6, name: "Others" },
+];
+let getColor = new Map();
+getColor.set(0, "#EB6060");
+getColor.set(1, "#CC1919");
+getColor.set(2, "#23CA23");
+getColor.set(3, "#101414");
+getColor.set(4, "#0070D1");
+getColor.set(5, "#66B8FF");
+getColor.set(6, "#FFFF1A");
 sigma.classes.graph.addMethod('neighbors', function (nodeId) {
     let k;
     let neighbors = {};
@@ -65,13 +82,10 @@ Promise.all([
         // Add event listeners to buttons
         let inputBox = document.getElementById('search-input');
         inputBox.addEventListener("change", searchChange);
-        let zoomInButton = document.getElementById('zoom-in-button');
-        zoomInButton.addEventListener("click", zoomIn);
-        let zoomOutButton = document.getElementById('zoom-out-button');
-        zoomOutButton.addEventListener("click", zoomOut);
+        setupZoomButtons(s);
     });
     updateContextText(s, contexts, context_links, selected, percent, "simple");
-    createLegend();
+    createLegend(categories, getColor);
     // Create slider
     let sliderName = "percent-slider";
     let min = '0';
@@ -99,18 +113,6 @@ Promise.all([
             }
         });
         nodeSelect(s, selected, contexts, context_links, percent, "simple");
-    }
-    function zoomIn() {
-        let c = s.camera;
-        c.goTo({
-            ratio: c.ratio / c.settings('zoomingRatio')
-        });
-    }
-    function zoomOut() {
-        let c = s.camera;
-        c.goTo({
-            ratio: c.ratio * c.settings('zoomingRatio')
-        });
     }
     // Click event for node
     s.bind('clickNode', function (e) {
@@ -146,48 +148,6 @@ Promise.all([
         updateContextText(s, contexts, context_links, selected, percent, "simple");
         s.refresh();
     });
-    function createLegend() {
-        let categories = [
-            { class: 4, name: "Darujhistan cabal, Eel & allies" },
-            { class: 5, name: "Darujhistan, others" },
-            { class: 3, name: "Tiste Andii & allies" },
-            { class: 2, name: "Ascendants" },
-            { class: 1, name: "Bridgeburners" },
-            { class: 0, name: "Malazans" },
-            { class: 6, name: "Others" },
-        ];
-        let container = document.getElementById('node-legend');
-        //Object.keys(categories).forEach(function (key) {
-        for (let cat of categories) {
-            let legend_item = document.createElement("div");
-            legend_item.classList.add('legend-item');
-            let legend_dot = document.createElement("div");
-            legend_dot.classList.add('legend-dot');
-            legend_dot.style.backgroundColor = getColor.get(cat.class);
-            legend_item.appendChild(legend_dot);
-            let legend_label = document.createElement("div");
-            legend_label.classList.add('legend-label');
-            legend_label.innerHTML = cat.name;
-            legend_item.appendChild(legend_label);
-            container.appendChild(legend_item);
-        }
-    }
-    function populateSearchList(s) {
-        let container = document.getElementById('nodes-datalist');
-        s.graph.nodes().forEach(function (n) {
-            let item = document.createElement('option');
-            item.value = n.label;
-            container.appendChild(item);
-        });
-    }
 }).catch(function (error) {
     console.log(error);
 });
-let getColor = new Map();
-getColor.set(0, "#EB6060");
-getColor.set(1, "#CC1919");
-getColor.set(2, "#23CA23");
-getColor.set(3, "#101414");
-getColor.set(4, "#0070D1");
-getColor.set(5, "#66B8FF");
-getColor.set(6, "#FFFF1A");

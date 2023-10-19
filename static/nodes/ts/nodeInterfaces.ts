@@ -72,3 +72,8 @@ export interface SigmaSettings {
 export interface NodeAttributes {
     'modularity class': number;
 }
+
+export interface LegendItem {
+    class: number;
+    name: string;
+}
