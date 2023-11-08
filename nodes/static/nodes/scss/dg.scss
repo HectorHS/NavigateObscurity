@@ -1,0 +1,71 @@
+@import "../../../../main/static/main/scss/variables.scss";
+@import "../../../../main/static/main/scss/mixins.scss";
+@import "../../../../main/static/main/scss/parents.scss";
+
+.map-section-container {
+    display: flex;
+    flex-direction: column;
+    @media only screen and (min-width: $mobile-breakpoint) {
+        flex-direction: row;
+    }
+    .map-container {
+        position: relative;
+    }
+    .map-legend{
+        padding-left: 50px;
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        flex-wrap: wrap;
+        
+        @media only screen and (min-width: $mobile-breakpoint) {
+            flex-direction: column;
+            width:250px;
+        }
+        
+        .legend-item {
+            cursor: pointer;
+            @media only screen and (min-width: $mobile-breakpoint) {
+                padding-bottom: 15px;
+            }
+        }
+    }
+    .main-map {
+        width: 100%;
+        @media only screen and (min-width: $mobile-breakpoint) {
+            width: clamp(100px, 70vw, 1000px);
+          }
+    }
+    .map-overlay{
+        width: 100%;
+        @media only screen and (min-width: $mobile-breakpoint) {
+            width: clamp(100px, 70vw, 1000px);
+          }
+        position: absolute;
+        top:0;
+        left:0;
+    }
+    .unhovered, .unselected {
+        opacity: 0.4;
+    }
+    
+    .coltaine .legend-dot{
+        background-color: #cc1919;
+    }
+    .felisin .legend-dot{
+        background-color: #cc6d00;
+    }
+    .fiddler .legend-dot{
+        background-color: #00294d;
+    }
+    .kalam .legend-dot{
+        background-color: #006dcc;
+    }
+    .gesler .legend-dot{
+        background-color: #1fad1f;
+    }
+    .icarium .legend-dot{
+        background-color: #cf1791;
+    }
+}
+

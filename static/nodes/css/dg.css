@@ -1,0 +1,90 @@
+.map-section-container {
+  display: flex;
+  flex-direction: column;
+}
+
+@media only screen and (min-width: 768px) {
+  .map-section-container {
+    flex-direction: row;
+  }
+}
+
+.map-section-container .map-container {
+  position: relative;
+}
+
+.map-section-container .map-legend {
+  padding-left: 50px;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+@media only screen and (min-width: 768px) {
+  .map-section-container .map-legend {
+    flex-direction: column;
+    width: 250px;
+  }
+}
+
+.map-section-container .map-legend .legend-item {
+  cursor: pointer;
+}
+
+@media only screen and (min-width: 768px) {
+  .map-section-container .map-legend .legend-item {
+    padding-bottom: 15px;
+  }
+}
+
+.map-section-container .main-map {
+  width: 100%;
+}
+
+@media only screen and (min-width: 768px) {
+  .map-section-container .main-map {
+    width: clamp(100px, 70vw, 1000px);
+  }
+}
+
+.map-section-container .map-overlay {
+  width: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+@media only screen and (min-width: 768px) {
+  .map-section-container .map-overlay {
+    width: clamp(100px, 70vw, 1000px);
+  }
+}
+
+.map-section-container .unhovered, .map-section-container .unselected {
+  opacity: 0.4;
+}
+
+.map-section-container .coltaine .legend-dot {
+  background-color: #cc1919;
+}
+
+.map-section-container .felisin .legend-dot {
+  background-color: #cc6d00;
+}
+
+.map-section-container .fiddler .legend-dot {
+  background-color: #00294d;
+}
+
+.map-section-container .kalam .legend-dot {
+  background-color: #006dcc;
+}
+
+.map-section-container .gesler .legend-dot {
+  background-color: #1fad1f;
+}
+
+.map-section-container .icarium .legend-dot {
+  background-color: #cf1791;
+}

@@ -30,9 +30,10 @@
 <script type="module" src={% static "nodes/js/node-helpers.js" %}></script>
 
 <link rel='stylesheet' type="text/css" href={% static "nodes/css/nodes.css" %}>
+<link rel='stylesheet' type="text/css" href={% static "nodes/css/dg.css" %}>
 
 <!-- using defer to load after the html -->
-<script type="module" src={% static "nodes/js/dg.js" %} defer></script> 
+<script type="module" src={% static "nodes/js/dg.js" %}></script> 
 <noscript>
   <style>
     /**
@@ -58,6 +59,9 @@
 
   </div>
 </section>
+<div class="container">
+  <h2 style="margin-bottom: 0;">What happened?</h2>
+</div>
 <!-- How to use -->
 {% include "./graph-instructions-percent.html" %}
 
@@ -80,6 +84,52 @@
 </section>
 <!-- Legend -->
 <section id="node-legend">
+</section>
+
+<!-- map -->
+<section>
+  <div class="container">
+  <h2>Where did they come from, where did they go?</h2>
+  <p>It's hard to be accurate here, so treat the points below as educated guesses.</p>
+  <div class="map-section-container">
+    <div class="map-container">
+      <img class="main-map" src="{% static 'nodes/images/dg-seven_cities.jpg' %}" alt="Seven cities map">
+      <img id="coltaine" class="map-overlay" src="{% static 'nodes/images/dg-coltaine.png' %}" alt="Seven cities map">
+      <img id="felisin" class="map-overlay" src="{% static 'nodes/images/dg-felisin.png' %}" alt="Seven cities map">
+      <img id="fiddler" class="map-overlay" src="{% static 'nodes/images/dg-fiddler.png' %}" alt="Seven cities map">
+      <img id="gesler"class="map-overlay" src="{% static 'nodes/images/dg-gesler.png' %}" alt="Seven cities map">
+      <img  id="icarium" class="map-overlay" src="{% static 'nodes/images/dg-icarium.png' %}" alt="Seven cities map">
+      <img id="kalam" class="map-overlay" src="{% static 'nodes/images/dg-kalam.png' %}" alt="Seven cities map">
+    </div>
+    <div class="map-legend">
+      <div class="legend-item coltaine"">
+        <div class="legend-dot"></div>
+        <div class="legend-label">The Chain of Dogs</div>
+      </div>
+      <div class="legend-item felisin">
+        <div class="legend-dot"></div>
+        <div class="legend-label">Felisin, Heboric, Baudin</div>
+      </div>
+      <div class="legend-item gesler">
+        <div class="legend-dot"></div>
+        <div class="legend-label">Gesler, Stormy, Truth</div>
+      </div>
+      <div class="legend-item kalam">
+        <div class="legend-dot"></div>
+        <div class="legend-label">Kalam</div>
+      </div>
+      <div class="legend-item fiddler">
+        <div class="legend-dot"></div>
+        <div class="legend-label">Fiddler, Apsalar, Crokus</div>
+      </div>
+      <div class="legend-item icarium">
+        <div class="legend-dot"></div>
+        <div class="legend-label">Icarium, Mappo</div>
+      </div>
+    </div>
+  </div>
+</div>
+
 </section>
 {% include "main/section-comments.html" %}
 

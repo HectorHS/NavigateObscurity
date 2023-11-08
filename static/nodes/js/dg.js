@@ -13,6 +13,7 @@ let categories = [
     { class: 6, name: "Other Malazans" },
     { class: 7, name: "Others" },
 ];
+let mapSelected = false;
 let getColor = new Map();
 getColor.set(1, "#FF8800");
 getColor.set(2, "#CC1919");
@@ -152,3 +153,48 @@ Promise.all([
 }).catch(function (error) {
     console.log(error);
 });
+addLegendEvents();
+function addLegendEvents() {
+    // click effect for legend
+    document.querySelectorAll('.legend-item').forEach(function (a) {
+        a.addEventListener("mouseover", function () {
+            let name = this.classList[1];
+            mapLegendHover(name);
+        });
+        a.addEventListener("mouseout", function () {
+            mapLegendHoverOut();
+        });
+        a.addEventListener("click", function () {
+            let name = this.classList[1];
+            mapLegendClick(name);
+        });
+    });
+}
+function mapLegendHover(name) {
+    document.querySelectorAll('.map-overlay').forEach(function (e) {
+        if (name != e.id) {
+            e.classList.add("unhovered");
+        }
+    });
+}
+function mapLegendHoverOut() {
+    document.querySelectorAll('.map-overlay').forEach(function (e) {
+        e.classList.remove("unhovered");
+    });
+}
+function mapLegendClick(name) {
+    if (mapSelected) {
+        mapSelected = false;
+        document.querySelectorAll('.map-overlay').forEach(function (e) {
+            e.classList.remove("unselected");
+        });
+    }
+    else {
+        mapSelected = true;
+        document.querySelectorAll('.map-overlay').forEach(function (e) {
+            if (name != e.id) {
+                e.classList.add("unselected");
+            }
+        });
+    }
+}
