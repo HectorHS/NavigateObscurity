@@ -77,3 +77,17 @@ export interface LegendItem {
     class: number;
     name: string;
 }
+
+// Highcharts
+export interface BubblesData {
+    absolute?:number;
+    colorIndex: number;
+    id: string;
+    name: string;
+    value: number;
+}
+export interface CloudData {
+    name: string;
+    weight: number;
+    colorIndex?: number;
+}

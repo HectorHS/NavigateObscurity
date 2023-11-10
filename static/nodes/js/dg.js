@@ -198,3 +198,41 @@ function mapLegendClick(name) {
         });
     }
 }
+// WORDCLOUD
+let dg_wordcloud = "/static/nodes/csv/dg-wordcloud.csv";
+let wordColors = [2, 8, 16, 23, 4, 31, 49, 44, 6, 10, 18, 26, 29, 37];
+let wordcloud = d3.csv(dg_wordcloud)
+    .then(function (data) {
+    let initialData = get_data();
+    function get_data() {
+        let new_data = [];
+        let i = 0;
+        for (let row of data) {
+            new_data.push({ name: row.label, weight: row.weight, colorIndex: wordColors[i] });
+            i++;
+            if (i == wordColors.length) {
+                i = 0;
+            }
+        }
+        return new_data;
+    }
+    let chart = Highcharts.chart('wordcloud', {
+        chart: {
+            styledMode: true,
+        },
+        series: [{
+                type: 'wordcloud',
+                data: initialData,
+                name: 'Occurrences',
+            }],
+        title: {
+            text: null
+        },
+        credits: {
+            enabled: false
+        },
+    });
+})
+    .catch(function (error) {
+    console.log(error);
+});

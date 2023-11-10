@@ -26,11 +26,15 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/sigma.js/1.2.2/sigma.require.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/sigma.js/1.2.2/plugins/sigma.parsers.gexf.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/sigma.js/1.2.2/plugins/sigma.renderers.parallelEdges.min.js"></script>
+<!-- We use highcharts for additional charts -->
+<script src="https://code.highcharts.com/highcharts.js"></script>
+<script src="https://code.highcharts.com/modules/wordcloud.js"></script>
 
 <script type="module" src={% static "nodes/js/node-helpers.js" %}></script>
 
 <link rel='stylesheet' type="text/css" href={% static "nodes/css/nodes.css" %}>
 <link rel='stylesheet' type="text/css" href={% static "nodes/css/dg.css" %}>
+<link rel='stylesheet' type="text/css" href={% static "worlddata/css/highcharts.css" %}>
 
 <!-- using defer to load after the html -->
 <script type="module" src={% static "nodes/js/dg.js" %}></script> 
@@ -61,6 +65,7 @@
 </section>
 <div class="container">
   <h2 style="margin-bottom: 0;">What happened?</h2>
+  <p>According to my notes</p>
 </div>
 <!-- How to use -->
 {% include "./graph-instructions-percent.html" %}
@@ -129,7 +134,13 @@
     </div>
   </div>
 </div>
+</section>
 
+<section>
+  <div class="container">
+    <h2>Most used phrases</h2>
+    <div id="wordcloud"></div>
+</div>
 </section>
 {% include "main/section-comments.html" %}
 

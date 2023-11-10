@@ -3,6 +3,7 @@ import { fCapital, updateContextText, nodeSelect, nodeHover, nodeHoverOut, reset
 // Basically saying to typescript these will be here when you need them, trust me
 declare let sigma: any;
 declare let d3: any;
+declare let Highcharts: any;
 
 let head_strong_gexf = "/static/nodes/gexf/dg.gexf";
 let context_path = "/static/nodes/csv/dg-context.csv";
@@ -226,4 +227,48 @@ function mapLegendClick(name:string):void {
         });
     }
 }
+
+// WORDCLOUD
+let dg_wordcloud = "/static/nodes/csv/dg-wordcloud.csv";
+let wordColors = [2, 8, 16, 23, 4, 31, 49, 44, 6, 10, 18, 26, 29, 37]
+
+let wordcloud = d3.csv(dg_wordcloud)
+    .then(function (data: any[]): void {
+        let initialData = get_data();
+
+        function get_data(): Node.CloudData[] {
+            let new_data: Node.CloudData[] = [];
+            let i = 0;
+
+            for (let row of data) {
+                
+                new_data.push({ name: row.label, weight:row.weight, colorIndex: wordColors[i] });
+                i++;
+                if (i == wordColors.length) {
+                    i = 0;
+                }
+            }
+            return new_data;
+        }
+
+        let chart = Highcharts.chart('wordcloud', {
+            chart: {
+                styledMode: true,
+            },
+            series: [{
+                type: 'wordcloud',
+                data: initialData,
+                name: 'Occurrences',
+            }],
+            title: {
+                text: null
+            },
+            credits: {
+                enabled: false
+            },
+        });
+})
+.catch(function (error: Error) {
+    console.log(error);
+})
 
