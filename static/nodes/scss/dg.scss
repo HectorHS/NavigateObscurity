@@ -69,3 +69,18 @@
     }
 }
 
+.bubbles {
+  /* Define gradients */
+  @for $i from 1 through length($colors) {
+    $color: nth($colors, $i);
+    .highcharts-color-#{$i - 1} {
+      stroke: none;
+      &.highcharts-series.highcharts-area-series,
+      &.highcharts-point:not(.highcharts-node) {
+        fill: url("#gradient-area-#{$i - 1}");
+      }
+    }
+  }
+}
+
+

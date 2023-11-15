@@ -236,3 +236,89 @@ let wordcloud = d3.csv(dg_wordcloud)
     .catch(function (error) {
     console.log(error);
 });
+let dg_bubbles = "/static/nodes/csv/dg-bubbles.csv";
+let BubblesColor = new Map();
+BubblesColor.set('Assassins', 3);
+BubblesColor.set('COD', 30);
+BubblesColor.set('Enslaved', 44);
+BubblesColor.set('Malazans', 29);
+BubblesColor.set('Others', 8);
+BubblesColor.set('POH', 1);
+BubblesColor.set('Rebels', 24);
+let bubbles = d3.csv(dg_bubbles)
+    .then(function (data) {
+    let initial_bubbles_data = get_data();
+    function get_data() {
+        let new_data = [];
+        for (let row of data) {
+            let alias = '';
+            if (+row.aliasflag > 0) {
+                alias = row.alias;
+            }
+            new_data.push({ id: row.id, name: row.name, value: +row.weight, colorIndex: BubblesColor.get(row.category), customFlag: +row.aliasflag, customProperty: alias });
+        }
+        return new_data;
+    }
+    Highcharts.chart('bubbles', {
+        chart: {
+            type: 'packedbubble',
+            height: 500,
+        },
+        title: {
+            text: undefined
+        },
+        tooltip: {
+            useHTML: true,
+            headerFormat: '',
+            pointFormatter: function () {
+                let text;
+                if (this.customFlag == 1) {
+                    text = this.value + " mentions for " + this.customProperty;
+                }
+                else {
+                    text = this.value + " mentions";
+                }
+                return '<text><span style="font-size:1.1em"><strong>' + this.name + '</strong></span><br>' + text + '</text>';
+            },
+        },
+        plotOptions: {
+            packedbubble: {
+                crisp: true,
+                minSize: "5%",
+                maxSize: "400%",
+                marker: {
+                    lineColor: '#DDDDD',
+                    states: {
+                        hover: {
+                            enabled: true,
+                        },
+                    }
+                },
+                layoutAlgorithm: {
+                    gravitationalConstant: 0.02,
+                },
+                dataLabels: {
+                    enabled: true,
+                    format: '{point.name}',
+                    filter: {
+                        property: 'value',
+                        operator: '>',
+                        value: 70
+                    }
+                }
+            }
+        },
+        legend: {
+            enabled: false
+        },
+        series: [{
+                type: 'packedbubble',
+                name: 'Mentions by name',
+                data: initial_bubbles_data,
+                allowPointSelect: false
+            }]
+    });
+})
+    .catch(function (error) {
+    console.log(error);
+});

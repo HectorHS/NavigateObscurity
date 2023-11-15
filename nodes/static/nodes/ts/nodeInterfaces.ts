@@ -79,15 +79,24 @@ export interface LegendItem {
 }
 
 // Highcharts
-export interface BubblesData {
+export interface BubbleData {
     absolute?:number;
     colorIndex: number;
     id: string;
     name: string;
     value: number;
+    customFlag?: number;
+    customProperty?: string;
 }
 export interface CloudData {
     name: string;
     weight: number;
     colorIndex?: number;
+}
+export interface TooltipFormatterContextObject {
+    key?: string;
+    name?: string;
+    value?: number;
+    customFlag?: number;
+    customProperty?: string;
 }

@@ -88,3 +88,447 @@
 .map-section-container .icarium .legend-dot {
   background-color: #cf1791;
 }
+
+.bubbles {
+  /* Define gradients */
+}
+
+.bubbles .highcharts-color-0 {
+  stroke: none;
+}
+
+.bubbles .highcharts-color-0.highcharts-series.highcharts-area-series, .bubbles .highcharts-color-0.highcharts-point:not(.highcharts-node) {
+  fill: url("#gradient-area-0");
+}
+
+.bubbles .highcharts-color-1 {
+  stroke: none;
+}
+
+.bubbles .highcharts-color-1.highcharts-series.highcharts-area-series, .bubbles .highcharts-color-1.highcharts-point:not(.highcharts-node) {
+  fill: url("#gradient-area-1");
+}
+
+.bubbles .highcharts-color-2 {
+  stroke: none;
+}
+
+.bubbles .highcharts-color-2.highcharts-series.highcharts-area-series, .bubbles .highcharts-color-2.highcharts-point:not(.highcharts-node) {
+  fill: url("#gradient-area-2");
+}
+
+.bubbles .highcharts-color-3 {
+  stroke: none;
+}
+
+.bubbles .highcharts-color-3.highcharts-series.highcharts-area-series, .bubbles .highcharts-color-3.highcharts-point:not(.highcharts-node) {
+  fill: url("#gradient-area-3");
+}
+
+.bubbles .highcharts-color-4 {
+  stroke: none;
+}
+
+.bubbles .highcharts-color-4.highcharts-series.highcharts-area-series, .bubbles .highcharts-color-4.highcharts-point:not(.highcharts-node) {
+  fill: url("#gradient-area-4");
+}
+
+.bubbles .highcharts-color-5 {
+  stroke: none;
+}
+
+.bubbles .highcharts-color-5.highcharts-series.highcharts-area-series, .bubbles .highcharts-color-5.highcharts-point:not(.highcharts-node) {
+  fill: url("#gradient-area-5");
+}
+
+.bubbles .highcharts-color-6 {
+  stroke: none;
+}
+
+.bubbles .highcharts-color-6.highcharts-series.highcharts-area-series, .bubbles .highcharts-color-6.highcharts-point:not(.highcharts-node) {
+  fill: url("#gradient-area-6");
+}
+
+.bubbles .highcharts-color-7 {
+  stroke: none;
+}
+
+.bubbles .highcharts-color-7.highcharts-series.highcharts-area-series, .bubbles .highcharts-color-7.highcharts-point:not(.highcharts-node) {
+  fill: url("#gradient-area-7");
+}
+
+.bubbles .highcharts-color-8 {
+  stroke: none;
+}
+
+.bubbles .highcharts-color-8.highcharts-series.highcharts-area-series, .bubbles .highcharts-color-8.highcharts-point:not(.highcharts-node) {
+  fill: url("#gradient-area-8");
+}
+
+.bubbles .highcharts-color-9 {
+  stroke: none;
+}
+
+.bubbles .highcharts-color-9.highcharts-series.highcharts-area-series, .bubbles .highcharts-color-9.highcharts-point:not(.highcharts-node) {
+  fill: url("#gradient-area-9");
+}
+
+.bubbles .highcharts-color-10 {
+  stroke: none;
+}
+
+.bubbles .highcharts-color-10.highcharts-series.highcharts-area-series, .bubbles .highcharts-color-10.highcharts-point:not(.highcharts-node) {
+  fill: url("#gradient-area-10");
+}
+
+.bubbles .highcharts-color-11 {
+  stroke: none;
+}
+
+.bubbles .highcharts-color-11.highcharts-series.highcharts-area-series, .bubbles .highcharts-color-11.highcharts-point:not(.highcharts-node) {
+  fill: url("#gradient-area-11");
+}
+
+.bubbles .highcharts-color-12 {
+  stroke: none;
+}
+
+.bubbles .highcharts-color-12.highcharts-series.highcharts-area-series, .bubbles .highcharts-color-12.highcharts-point:not(.highcharts-node) {
+  fill: url("#gradient-area-12");
+}
+
+.bubbles .highcharts-color-13 {
+  stroke: none;
+}
+
+.bubbles .highcharts-color-13.highcharts-series.highcharts-area-series, .bubbles .highcharts-color-13.highcharts-point:not(.highcharts-node) {
+  fill: url("#gradient-area-13");
+}
+
+.bubbles .highcharts-color-14 {
+  stroke: none;
+}
+
+.bubbles .highcharts-color-14.highcharts-series.highcharts-area-series, .bubbles .highcharts-color-14.highcharts-point:not(.highcharts-node) {
+  fill: url("#gradient-area-14");
+}
+
+.bubbles .highcharts-color-15 {
+  stroke: none;
+}
+
+.bubbles .highcharts-color-15.highcharts-series.highcharts-area-series, .bubbles .highcharts-color-15.highcharts-point:not(.highcharts-node) {
+  fill: url("#gradient-area-15");
+}
+
+.bubbles .highcharts-color-16 {
+  stroke: none;
+}
+
+.bubbles .highcharts-color-16.highcharts-series.highcharts-area-series, .bubbles .highcharts-color-16.highcharts-point:not(.highcharts-node) {
+  fill: url("#gradient-area-16");
+}
+
+.bubbles .highcharts-color-17 {
+  stroke: none;
+}
+
+.bubbles .highcharts-color-17.highcharts-series.highcharts-area-series, .bubbles .highcharts-color-17.highcharts-point:not(.highcharts-node) {
+  fill: url("#gradient-area-17");
+}
+
+.bubbles .highcharts-color-18 {
+  stroke: none;
+}
+
+.bubbles .highcharts-color-18.highcharts-series.highcharts-area-series, .bubbles .highcharts-color-18.highcharts-point:not(.highcharts-node) {
+  fill: url("#gradient-area-18");
+}
+
+.bubbles .highcharts-color-19 {
+  stroke: none;
+}
+
+.bubbles .highcharts-color-19.highcharts-series.highcharts-area-series, .bubbles .highcharts-color-19.highcharts-point:not(.highcharts-node) {
+  fill: url("#gradient-area-19");
+}
+
+.bubbles .highcharts-color-20 {
+  stroke: none;
+}
+
+.bubbles .highcharts-color-20.highcharts-series.highcharts-area-series, .bubbles .highcharts-color-20.highcharts-point:not(.highcharts-node) {
+  fill: url("#gradient-area-20");
+}
+
+.bubbles .highcharts-color-21 {
+  stroke: none;
+}
+
+.bubbles .highcharts-color-21.highcharts-series.highcharts-area-series, .bubbles .highcharts-color-21.highcharts-point:not(.highcharts-node) {
+  fill: url("#gradient-area-21");
+}
+
+.bubbles .highcharts-color-22 {
+  stroke: none;
+}
+
+.bubbles .highcharts-color-22.highcharts-series.highcharts-area-series, .bubbles .highcharts-color-22.highcharts-point:not(.highcharts-node) {
+  fill: url("#gradient-area-22");
+}
+
+.bubbles .highcharts-color-23 {
+  stroke: none;
+}
+
+.bubbles .highcharts-color-23.highcharts-series.highcharts-area-series, .bubbles .highcharts-color-23.highcharts-point:not(.highcharts-node) {
+  fill: url("#gradient-area-23");
+}
+
+.bubbles .highcharts-color-24 {
+  stroke: none;
+}
+
+.bubbles .highcharts-color-24.highcharts-series.highcharts-area-series, .bubbles .highcharts-color-24.highcharts-point:not(.highcharts-node) {
+  fill: url("#gradient-area-24");
+}
+
+.bubbles .highcharts-color-25 {
+  stroke: none;
+}
+
+.bubbles .highcharts-color-25.highcharts-series.highcharts-area-series, .bubbles .highcharts-color-25.highcharts-point:not(.highcharts-node) {
+  fill: url("#gradient-area-25");
+}
+
+.bubbles .highcharts-color-26 {
+  stroke: none;
+}
+
+.bubbles .highcharts-color-26.highcharts-series.highcharts-area-series, .bubbles .highcharts-color-26.highcharts-point:not(.highcharts-node) {
+  fill: url("#gradient-area-26");
+}
+
+.bubbles .highcharts-color-27 {
+  stroke: none;
+}
+
+.bubbles .highcharts-color-27.highcharts-series.highcharts-area-series, .bubbles .highcharts-color-27.highcharts-point:not(.highcharts-node) {
+  fill: url("#gradient-area-27");
+}
+
+.bubbles .highcharts-color-28 {
+  stroke: none;
+}
+
+.bubbles .highcharts-color-28.highcharts-series.highcharts-area-series, .bubbles .highcharts-color-28.highcharts-point:not(.highcharts-node) {
+  fill: url("#gradient-area-28");
+}
+
+.bubbles .highcharts-color-29 {
+  stroke: none;
+}
+
+.bubbles .highcharts-color-29.highcharts-series.highcharts-area-series, .bubbles .highcharts-color-29.highcharts-point:not(.highcharts-node) {
+  fill: url("#gradient-area-29");
+}
+
+.bubbles .highcharts-color-30 {
+  stroke: none;
+}
+
+.bubbles .highcharts-color-30.highcharts-series.highcharts-area-series, .bubbles .highcharts-color-30.highcharts-point:not(.highcharts-node) {
+  fill: url("#gradient-area-30");
+}
+
+.bubbles .highcharts-color-31 {
+  stroke: none;
+}
+
+.bubbles .highcharts-color-31.highcharts-series.highcharts-area-series, .bubbles .highcharts-color-31.highcharts-point:not(.highcharts-node) {
+  fill: url("#gradient-area-31");
+}
+
+.bubbles .highcharts-color-32 {
+  stroke: none;
+}
+
+.bubbles .highcharts-color-32.highcharts-series.highcharts-area-series, .bubbles .highcharts-color-32.highcharts-point:not(.highcharts-node) {
+  fill: url("#gradient-area-32");
+}
+
+.bubbles .highcharts-color-33 {
+  stroke: none;
+}
+
+.bubbles .highcharts-color-33.highcharts-series.highcharts-area-series, .bubbles .highcharts-color-33.highcharts-point:not(.highcharts-node) {
+  fill: url("#gradient-area-33");
+}
+
+.bubbles .highcharts-color-34 {
+  stroke: none;
+}
+
+.bubbles .highcharts-color-34.highcharts-series.highcharts-area-series, .bubbles .highcharts-color-34.highcharts-point:not(.highcharts-node) {
+  fill: url("#gradient-area-34");
+}
+
+.bubbles .highcharts-color-35 {
+  stroke: none;
+}
+
+.bubbles .highcharts-color-35.highcharts-series.highcharts-area-series, .bubbles .highcharts-color-35.highcharts-point:not(.highcharts-node) {
+  fill: url("#gradient-area-35");
+}
+
+.bubbles .highcharts-color-36 {
+  stroke: none;
+}
+
+.bubbles .highcharts-color-36.highcharts-series.highcharts-area-series, .bubbles .highcharts-color-36.highcharts-point:not(.highcharts-node) {
+  fill: url("#gradient-area-36");
+}
+
+.bubbles .highcharts-color-37 {
+  stroke: none;
+}
+
+.bubbles .highcharts-color-37.highcharts-series.highcharts-area-series, .bubbles .highcharts-color-37.highcharts-point:not(.highcharts-node) {
+  fill: url("#gradient-area-37");
+}
+
+.bubbles .highcharts-color-38 {
+  stroke: none;
+}
+
+.bubbles .highcharts-color-38.highcharts-series.highcharts-area-series, .bubbles .highcharts-color-38.highcharts-point:not(.highcharts-node) {
+  fill: url("#gradient-area-38");
+}
+
+.bubbles .highcharts-color-39 {
+  stroke: none;
+}
+
+.bubbles .highcharts-color-39.highcharts-series.highcharts-area-series, .bubbles .highcharts-color-39.highcharts-point:not(.highcharts-node) {
+  fill: url("#gradient-area-39");
+}
+
+.bubbles .highcharts-color-40 {
+  stroke: none;
+}
+
+.bubbles .highcharts-color-40.highcharts-series.highcharts-area-series, .bubbles .highcharts-color-40.highcharts-point:not(.highcharts-node) {
+  fill: url("#gradient-area-40");
+}
+
+.bubbles .highcharts-color-41 {
+  stroke: none;
+}
+
+.bubbles .highcharts-color-41.highcharts-series.highcharts-area-series, .bubbles .highcharts-color-41.highcharts-point:not(.highcharts-node) {
+  fill: url("#gradient-area-41");
+}
+
+.bubbles .highcharts-color-42 {
+  stroke: none;
+}
+
+.bubbles .highcharts-color-42.highcharts-series.highcharts-area-series, .bubbles .highcharts-color-42.highcharts-point:not(.highcharts-node) {
+  fill: url("#gradient-area-42");
+}
+
+.bubbles .highcharts-color-43 {
+  stroke: none;
+}
+
+.bubbles .highcharts-color-43.highcharts-series.highcharts-area-series, .bubbles .highcharts-color-43.highcharts-point:not(.highcharts-node) {
+  fill: url("#gradient-area-43");
+}
+
+.bubbles .highcharts-color-44 {
+  stroke: none;
+}
+
+.bubbles .highcharts-color-44.highcharts-series.highcharts-area-series, .bubbles .highcharts-color-44.highcharts-point:not(.highcharts-node) {
+  fill: url("#gradient-area-44");
+}
+
+.bubbles .highcharts-color-45 {
+  stroke: none;
+}
+
+.bubbles .highcharts-color-45.highcharts-series.highcharts-area-series, .bubbles .highcharts-color-45.highcharts-point:not(.highcharts-node) {
+  fill: url("#gradient-area-45");
+}
+
+.bubbles .highcharts-color-46 {
+  stroke: none;
+}
+
+.bubbles .highcharts-color-46.highcharts-series.highcharts-area-series, .bubbles .highcharts-color-46.highcharts-point:not(.highcharts-node) {
+  fill: url("#gradient-area-46");
+}
+
+.bubbles .highcharts-color-47 {
+  stroke: none;
+}
+
+.bubbles .highcharts-color-47.highcharts-series.highcharts-area-series, .bubbles .highcharts-color-47.highcharts-point:not(.highcharts-node) {
+  fill: url("#gradient-area-47");
+}
+
+.bubbles .highcharts-color-48 {
+  stroke: none;
+}
+
+.bubbles .highcharts-color-48.highcharts-series.highcharts-area-series, .bubbles .highcharts-color-48.highcharts-point:not(.highcharts-node) {
+  fill: url("#gradient-area-48");
+}
+
+.bubbles .highcharts-color-49 {
+  stroke: none;
+}
+
+.bubbles .highcharts-color-49.highcharts-series.highcharts-area-series, .bubbles .highcharts-color-49.highcharts-point:not(.highcharts-node) {
+  fill: url("#gradient-area-49");
+}
+
+.bubbles .highcharts-color-50 {
+  stroke: none;
+}
+
+.bubbles .highcharts-color-50.highcharts-series.highcharts-area-series, .bubbles .highcharts-color-50.highcharts-point:not(.highcharts-node) {
+  fill: url("#gradient-area-50");
+}
+
+.bubbles .highcharts-color-51 {
+  stroke: none;
+}
+
+.bubbles .highcharts-color-51.highcharts-series.highcharts-area-series, .bubbles .highcharts-color-51.highcharts-point:not(.highcharts-node) {
+  fill: url("#gradient-area-51");
+}
+
+.bubbles .highcharts-color-52 {
+  stroke: none;
+}
+
+.bubbles .highcharts-color-52.highcharts-series.highcharts-area-series, .bubbles .highcharts-color-52.highcharts-point:not(.highcharts-node) {
+  fill: url("#gradient-area-52");
+}
+
+.bubbles .highcharts-color-53 {
+  stroke: none;
+}
+
+.bubbles .highcharts-color-53.highcharts-series.highcharts-area-series, .bubbles .highcharts-color-53.highcharts-point:not(.highcharts-node) {
+  fill: url("#gradient-area-53");
+}
+
+.bubbles .highcharts-color-54 {
+  stroke: none;
+}
+
+.bubbles .highcharts-color-54.highcharts-series.highcharts-area-series, .bubbles .highcharts-color-54.highcharts-point:not(.highcharts-node) {
+  fill: url("#gradient-area-54");
+}

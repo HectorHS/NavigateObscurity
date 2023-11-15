@@ -29,8 +29,10 @@
 <!-- We use highcharts for additional charts -->
 <script src="https://code.highcharts.com/highcharts.js"></script>
 <script src="https://code.highcharts.com/modules/wordcloud.js"></script>
+<script src="https://code.highcharts.com/highcharts-more.js"></script>
 
 <script type="module" src={% static "nodes/js/node-helpers.js" %}></script>
+<script type="module" src={% static "worlddata/js/chartOptions.js" %} defer></script>
 
 <link rel='stylesheet' type="text/css" href={% static "nodes/css/nodes.css" %}>
 <link rel='stylesheet' type="text/css" href={% static "nodes/css/dg.css" %}>
@@ -89,6 +91,14 @@
 </section>
 <!-- Legend -->
 <section id="node-legend">
+</section>
+<!-- Bubbles -->
+<section>
+  <div class="container">
+    <h2 style="margin-bottom:0;">Who took the spotlight?</h2>
+    <p style="margin-top:0;">Mentions by name or alias.</p>
+    <div id="bubbles" class="bubbles"></div>
+  </div>
 </section>
 
 <!-- map -->
