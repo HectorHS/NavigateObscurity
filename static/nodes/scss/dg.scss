@@ -1,7 +1,39 @@
 @import "../../../../main/static/main/scss/variables.scss";
 @import "../../../../main/static/main/scss/mixins.scss";
 @import "../../../../main/static/main/scss/parents.scss";
+h2 {
+    font-size: clamp(1.1rem, 3vw, 1.8rem);
+    font-weight: 600;
+}
+.spacer {
+    height: clamp(0px, 3vw, 60px);
+}
+.stat-container{
+  display: flex; 
+  flex-direction: column;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  
+  @media only screen and (min-width: $mobile-breakpoint) {
+    flex-direction: row;
+  }
 
+  .stat {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    padding:10px;
+  }
+  .stat-icon{
+    height: 60px;
+    width: 60px;
+  }
+  .stat-label{
+    padding:10px;
+    font-size: clamp(1.1rem, 2.5vw, 1.7rem);
+    font-weight: 600;
+  } 
+}
 .map-section-container {
     display: flex;
     flex-direction: column;
@@ -10,6 +42,7 @@
     }
     .map-container {
         position: relative;
+        width: clamp(50px, 100%, 1000px);
     }
     .map-legend{
         padding-left: 50px;
@@ -31,16 +64,12 @@
         }
     }
     .main-map {
+        // width: clamp(50px, 100%, 1000px);
         width: 100%;
-        @media only screen and (min-width: $mobile-breakpoint) {
-            width: clamp(100px, 70vw, 1000px);
-          }
     }
     .map-overlay{
-        width: 100%;
-        @media only screen and (min-width: $mobile-breakpoint) {
-            width: clamp(100px, 70vw, 1000px);
-          }
+        // width: clamp(50px, 100%, 1000px);
+        width:100%;
         position: absolute;
         top:0;
         left:0;

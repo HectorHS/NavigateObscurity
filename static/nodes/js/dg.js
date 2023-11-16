@@ -259,7 +259,7 @@ let bubbles = d3.csv(dg_bubbles)
         }
         return new_data;
     }
-    Highcharts.chart('bubbles', {
+    let bubblesChart = Highcharts.chart('bubbles', {
         chart: {
             type: 'packedbubble',
             height: 500,
@@ -316,7 +316,21 @@ let bubbles = d3.csv(dg_bubbles)
                 name: 'Mentions by name',
                 data: initial_bubbles_data,
                 allowPointSelect: false
-            }]
+            }],
+        responsive: {
+            rules: [{
+                    condition: {
+                        maxWidth: 700
+                    },
+                    chartOptions: {
+                        plotOptions: {
+                            packedbubble: {
+                                maxSize: "250%",
+                            }
+                        }
+                    }
+                }]
+        }
     });
 })
     .catch(function (error) {

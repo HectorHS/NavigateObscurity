@@ -1,3 +1,43 @@
+h2 {
+  font-size: clamp(1.1rem, 3vw, 1.8rem);
+  font-weight: 600;
+}
+
+.spacer {
+  height: clamp(0px, 3vw, 60px);
+}
+
+.stat-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  flex-wrap: wrap;
+}
+
+@media only screen and (min-width: 768px) {
+  .stat-container {
+    flex-direction: row;
+  }
+}
+
+.stat-container .stat {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  padding: 10px;
+}
+
+.stat-container .stat-icon {
+  height: 60px;
+  width: 60px;
+}
+
+.stat-container .stat-label {
+  padding: 10px;
+  font-size: clamp(1.1rem, 2.5vw, 1.7rem);
+  font-weight: 600;
+}
+
 .map-section-container {
   display: flex;
   flex-direction: column;
@@ -11,6 +51,7 @@
 
 .map-section-container .map-container {
   position: relative;
+  width: clamp(50px, 100%, 1000px);
 }
 
 .map-section-container .map-legend {
@@ -42,23 +83,11 @@
   width: 100%;
 }
 
-@media only screen and (min-width: 768px) {
-  .map-section-container .main-map {
-    width: clamp(100px, 70vw, 1000px);
-  }
-}
-
 .map-section-container .map-overlay {
   width: 100%;
   position: absolute;
   top: 0;
   left: 0;
-}
-
-@media only screen and (min-width: 768px) {
-  .map-section-container .map-overlay {
-    width: clamp(100px, 70vw, 1000px);
-  }
 }
 
 .map-section-container .unhovered, .map-section-container .unselected {

@@ -65,11 +65,37 @@
 
   </div>
 </section>
-<div class="container">
+<div class="spacer"></div>
+<!-- summary stats -->
+<section>
+  <div class="container stat-container">
+    <div class="stat">
+      <img class="stat-icon" src="{% static 'nodes/icons/text.svg' %}" alt="text-icon">
+      <div class="stat-label">276,056 words</div>
+    </div>
+    <div class="stat">
+      <img class="stat-icon" src="{% static 'nodes/icons/audio.svg' %}" alt="audiobook-icon">
+      <div class="stat-label">34:06 spoken words</div>
+    </div>
+    <div class="stat">
+      <img class="stat-icon" src="{% static 'nodes/icons/people.svg' %}" alt="people-icon">
+      <div class="stat-label">86 characters</div>
+    </div>
+    <div class="stat">
+      <img class="stat-icon" src="{% static 'nodes/icons/death.svg' %}" alt="death-icon">
+      <div class="stat-label">26% death rate</div>
+    </div>
+  </div>
+</section>
+
+<div class="spacer"></div>
+
+<!-- Notes -->
+<div class="container" style="padding-bottom:0">
   <h2 style="margin-bottom: 0;">What happened?</h2>
-  <p>According to my notes</p>
+  <p style="margin-top:0">According to my notes.</p>
 </div>
-<!-- How to use -->
+
 {% include "./graph-instructions-percent.html" %}
 
 <!-- Graph -->
@@ -92,6 +118,9 @@
 <!-- Legend -->
 <section id="node-legend">
 </section>
+
+<div class="spacer"></div>
+
 <!-- Bubbles -->
 <section>
   <div class="container">
@@ -101,11 +130,13 @@
   </div>
 </section>
 
+<div class="spacer"></div>
+
 <!-- map -->
 <section>
   <div class="container">
-  <h2>Where did they come from, where did they go?</h2>
-  <p>It's hard to be accurate here, so treat the points below as educated guesses.</p>
+  <h2 style="margin-bottom: 0;">Where did they come from, where did they go?</h2>
+  <p style="margin-top: 0;">It's hard to be accurate here, so treat the points below as educated guesses.</p>
   <div class="map-section-container">
     <div class="map-container">
       <img class="main-map" src="{% static 'nodes/images/dg-seven_cities.jpg' %}" alt="Seven cities map">
@@ -146,12 +177,18 @@
 </div>
 </section>
 
+<div class="spacer"></div>
+
+<!-- Wordcloud -->
 <section>
   <div class="container">
-    <h2>Most used phrases</h2>
+    <h2 style="margin-bottom:0;">Most used phrases</h2>
+    <p style="margin-top:0;">Word combinations after excluding character names.</p>
     <div id="wordcloud"></div>
 </div>
 </section>
+
+
 {% include "main/section-comments.html" %}
 
 {% endblock %}
