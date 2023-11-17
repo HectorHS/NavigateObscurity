@@ -1,0 +1,103 @@
+@import "../../../../main/static/main/scss/variables.scss";
+@import "../../../../main/static/main/scss/mixins.scss";
+@import "../../../../main/static/main/scss/parents.scss";
+
+
+.energy-dashboard {
+    .dashboard-profile .profile-container {
+      justify-content: start;
+    }
+    .chart-options .radio-container  {
+      flex-wrap: wrap;
+      .coal {
+        background-color: nth($colors, 51) !important;
+      }
+      .oil {
+        background-color: nth($colors, 52) !important;
+      }
+      .gas {
+        background-color: nth($colors, 9) !important;
+      }
+      .nuclear{
+        background-color: nth($colors, 5) !important;
+      }
+      .hydro {
+        background-color: nth($colors, 2) !important;
+      }
+      .renewables {
+        background-color: nth($colors, 25) !important;
+      }
+      .all {
+        background-image: linear-gradient(to bottom left, nth($colors, 3) 25%, nth($colors, 50) 55%, nth($colors, 45) 75%) !important; 
+      }
+    }
+    .sector-pie {
+      .highcharts-point-level1 {
+        cursor: pointer;
+      }
+    }
+  
+    .energy-area {
+      height: 340px;
+      margin-top: 10px;
+      .error {
+        position: absolute;
+        top: 400px;
+        text-align: center;
+        width: 90%;
+        font-size: 130%;
+        @media only screen and (min-width: $tablet-breakpoint) {
+          width: 35%;
+        }
+      }
+    }
+    .energy-sector {
+      height: 350px;
+      .error {
+        position: absolute;
+        bottom: 300px;
+        text-align: center;
+        width: 90%;
+        font-size: 130%;
+        @media only screen and (min-width: $tablet-breakpoint) {
+          width: 35%;
+        }
+      }
+    }
+    .import-bars, .export-bars {
+      height: 350px;
+    }
+    .import-bars {
+      margin-bottom: 20px;
+      @media only screen and (min-width: $tablet-breakpoint) {
+        margin-right:20px;
+        margin-bottom: 0;
+      }
+      
+    }
+    .energy-map {
+      height:100%;
+      .selected-element {
+        fill: #000 !important;
+        color: #000 !important;
+        stroke: $bright-blue !important;
+        stroke-width: 20px !important;
+      }
+      .highcharts-point {
+        cursor: pointer;
+      }
+    }
+    #energy_map {
+      height: 500px;
+    }
+
+    .dashboard-level-2 .dashboard-side-40 {
+      border-radius: 0 0 30px 30px;
+      padding-bottom: 0;
+      
+      @media only screen and (min-width: $tablet-breakpoint) {
+        border-radius: 0 0 30px 0;
+      }
+    }
+  }
+  

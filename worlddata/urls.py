@@ -1,5 +1,5 @@
 from django.urls import path
-from .views import BiodiversityView, DeathView, IndexView, MigrationView, SustainabilityView, Covid19View, CooperationConflictLabView
+from .views import BiodiversityView, DeathView, IndexView, MigrationView, SustainabilityView, Covid19View, EnergyView
 
 app_name = 'worlddata'
 urlpatterns = [
@@ -9,6 +9,5 @@ urlpatterns = [
     path('biodiversity', BiodiversityView.as_view(), name='biodiversity'),
     path('migration', MigrationView.as_view(), name='migration'),
     path('covid-19', Covid19View.as_view(), name='covid-19'),
-    path('cooperation-conflict-lab', CooperationConflictLabView.as_view(),
-         name='cooperation-conflict-lab')
+    path('energy', EnergyView.as_view(), name='energy')
 ]
