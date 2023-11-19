@@ -16,13 +16,13 @@ let categories = [
     { class: 8, name: "Environment" }
 ];
 let getColor = new Map();
-getColor.set(0, "#ED45B2");
-getColor.set(1, "#970F67");
+getColor.set(0, "#f28cd0");
+getColor.set(1, "#cf1791");
 getColor.set(2, "#1B981B");
 getColor.set(3, "#66B8FF");
-getColor.set(4, "#001B33");
+getColor.set(4, "#7de87d");
 getColor.set(5, "#0070D1");
-getColor.set(6, "#E63333");
+getColor.set(6, "#9f1414");
 getColor.set(7, "#101414");
 getColor.set(8, "#FFFF1A");
 getColor.set(9, "#9D61D1");
@@ -46,7 +46,7 @@ let SigmaConstructor = {
     settings: {
         minNodeSize: 0.5,
         maxNodeSize: 15,
-        minEdgeSize: 0.1,
+        minEdgeSize: 0.05,
         maxEdgeSize: 3,
         defaultEdgeType: "curve",
         defaultLabelColor: "#dffcff",
