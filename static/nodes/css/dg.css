@@ -21,21 +21,34 @@ h2 {
 }
 
 .stat-container .stat {
-  display: flex;
-  flex-direction: row;
   align-items: center;
   padding: 10px;
+  margin-top: 40px;
 }
 
 .stat-container .stat-icon {
-  height: 60px;
-  width: 60px;
+  height: 50px;
+  width: 50px;
+  filter: drop-shadow(5px 5px 3px rgba(0, 0, 0, 0.3));
+}
+
+.stat-container .stat-value-container {
+  display: flex;
+  flex-direction: row;
+  min-width: 150px;
+  justify-content: center;
+}
+
+.stat-container .stat-value {
+  padding-left: 15px;
+  font-size: clamp(1.4rem, 2.5vw, 2.2rem);
+  font-weight: 600;
+  text-shadow: 4px 4px 8px rgba(0, 0, 0, 0.5);
 }
 
 .stat-container .stat-label {
-  padding: 10px;
-  font-size: clamp(1.1rem, 2.5vw, 1.7rem);
-  font-weight: 600;
+  text-align: center;
+  text-shadow: 4px 4px 8px rgba(0, 0, 0, 0.3);
 }
 
 .map-section-container {
