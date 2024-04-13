@@ -151,3 +151,141 @@ Promise.all([
 }).catch(function (error) {
     console.log(error);
 });
+// Bubbles
+let gotm_bubbles = "/static/nodes/csv/gotm-bubbles.csv";
+let BubblesColor = new Map();
+BubblesColor.set('ascendants', 24);
+BubblesColor.set('bridgeburners', 30);
+BubblesColor.set('darujhistan', 3);
+BubblesColor.set('darujhistan_others', 1);
+BubblesColor.set('malazans', 29);
+BubblesColor.set('others', 8);
+BubblesColor.set('tiste', 51);
+let bubbles = d3.csv(gotm_bubbles).then(function (data) {
+    let initial_bubbles_data = get_data();
+    function get_data() {
+        let new_data = [];
+        for (let row of data) {
+            let alias = '';
+            if (+row.aliasflag > 0) {
+                alias = row.alias;
+            }
+            new_data.push({ id: row.id, name: row.name, value: +row.weight, colorIndex: BubblesColor.get(row.category), customFlag: +row.aliasflag, customProperty: alias });
+        }
+        return new_data;
+    }
+    let bubblesChart = Highcharts.chart('bubbles', {
+        chart: {
+            type: 'packedbubble',
+            height: 500,
+        },
+        title: {
+            text: undefined
+        },
+        tooltip: {
+            useHTML: true,
+            headerFormat: '',
+            pointFormatter: function () {
+                let text;
+                if (this.customFlag == 1) {
+                    text = this.value + " mentions for " + this.customProperty;
+                }
+                else {
+                    text = this.value + " mentions";
+                }
+                return '<text><span style="font-size:1.1em"><strong>' + this.name + '</strong></span><br>' + text + '</text>';
+            },
+        },
+        plotOptions: {
+            packedbubble: {
+                crisp: true,
+                minSize: "5%",
+                maxSize: "400%",
+                marker: {
+                    lineColor: '#DDDDD',
+                    states: {
+                        hover: {
+                            enabled: true,
+                        },
+                    }
+                },
+                layoutAlgorithm: {
+                    gravitationalConstant: 0.02,
+                },
+                dataLabels: {
+                    enabled: true,
+                    format: '{point.name}',
+                    filter: {
+                        property: 'value',
+                        operator: '>',
+                        value: 70
+                    }
+                }
+            }
+        },
+        legend: {
+            enabled: false
+        },
+        series: [{
+                type: 'packedbubble',
+                name: 'Mentions by name',
+                data: initial_bubbles_data,
+                allowPointSelect: false
+            }],
+        responsive: {
+            rules: [{
+                    condition: {
+                        maxWidth: 700
+                    },
+                    chartOptions: {
+                        plotOptions: {
+                            packedbubble: {
+                                maxSize: "250%",
+                            }
+                        }
+                    }
+                }]
+        }
+    });
+})
+    .catch(function (error) {
+    console.log(error);
+});
+// WORDCLOUD
+let gotm_wordcloud = "/static/nodes/csv/gotm-wordcloud.csv";
+let wordColors = [2, 8, 16, 23, 4, 31, 49, 44, 6, 10, 18, 26, 29, 37];
+let wordcloud = d3.csv(gotm_wordcloud)
+    .then(function (data) {
+    let initialData = get_data();
+    function get_data() {
+        let new_data = [];
+        let i = 0;
+        for (let row of data) {
+            new_data.push({ name: row.label, weight: row.weight, colorIndex: wordColors[i] });
+            i++;
+            if (i == wordColors.length) {
+                i = 0;
+            }
+        }
+        return new_data;
+    }
+    let chart = Highcharts.chart('wordcloud', {
+        chart: {
+            styledMode: true,
+        },
+        series: [{
+                type: 'wordcloud',
+                data: initialData,
+                name: 'Occurrences',
+            }],
+        title: {
+            text: null
+        },
+        credits: {
+            enabled: false
+        },
+    });
+})
+    .catch(function (error) {
+    console.log(error);
+});

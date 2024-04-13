@@ -26,10 +26,17 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/sigma.js/1.2.2/sigma.require.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/sigma.js/1.2.2/plugins/sigma.parsers.gexf.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/sigma.js/1.2.2/plugins/sigma.renderers.parallelEdges.min.js"></script>
+<!-- We use highcharts for additional charts -->
+<script src="https://code.highcharts.com/highcharts.js"></script>
+<script src="https://code.highcharts.com/modules/wordcloud.js"></script>
+<script src="https://code.highcharts.com/highcharts-more.js"></script>
 
 <script type="module" src={% static "nodes/js/node-helpers.js" %}></script>
+<script type="module" src={% static "worlddata/js/chartOptions.js" %} defer></script>
 
 <link rel='stylesheet' type="text/css" href={% static "nodes/css/nodes.css" %}>
+<link rel='stylesheet' type="text/css" href={% static "nodes/css/dg.css" %}>
+<link rel='stylesheet' type="text/css" href={% static "worlddata/css/highcharts.css" %}>
 
 <!-- using defer to load after the html -->
 <script type="module" src={% static "nodes/js/gotm.js" %} defer></script> 
@@ -64,6 +71,47 @@
 
   </div>
 </section>
+<div class="spacer"></div>
+
+<!-- summary stats -->
+<section>
+  <div class="container stat-container">
+    <div class="stat">
+      <div class="stat-value-container">
+        <img class="stat-icon" src="{% static 'nodes/icons/text.svg' %}" alt="text-icon">
+        <div class="stat-value">212,090</div>
+      </div>
+      <div class="stat-label">written words</div>
+    </div>
+    <div class="stat">
+      <div class="stat-value-container">
+        <img class="stat-icon" src="{% static 'nodes/icons/audio.svg' %}" alt="audiobook-icon">
+        <div class="stat-value">26:04:10 </div>
+      </div>
+      <div class="stat-label">long audio</div>
+    </div>
+    <div class="stat">
+      <div class="stat-value-container">
+        <img class="stat-icon" src="{% static 'nodes/icons/people.svg' %}" alt="people-icon">
+        <div class="stat-value">92 </div>
+      </div>
+      <div class="stat-label">characters</div>
+    </div>
+    <div class="stat">
+      <div class="stat-value-container">
+        <img class="stat-icon" src="{% static 'nodes/icons/death.svg' %}" alt="death-icon">
+        <div class="stat-value">20% </div>
+      </div>
+      <div class="stat-label">death rate</div>
+    </div>
+  </div>
+</section>
+
+<div class="spacer"></div>
+<div class="container" style="padding-bottom:0">
+  <h2 style="margin-bottom: 0;">What happened?</h2>
+  <p style="margin-top:0">According to my notes.</p>
+</div>
 <!-- How to use -->
 {% include "./graph-instructions-percent.html" %}
 
@@ -86,6 +134,26 @@
 </section>
 <!-- Legend -->
 <section id="node-legend">
+</section>
+
+<!-- Bubbles  -->
+<section>
+  <div class="container">
+    <h2 style="margin-bottom:0;">Who took the spotlight?</h2>
+    <p style="margin-top:0;">Mentions by name or alias.</p>
+    <div id="bubbles" class="bubbles"></div>
+  </div>
+</section>
+
+<div class="spacer"></div>
+
+<!-- Wordcloud -->
+<section>
+  <div class="container">
+    <h2 style="margin-bottom:0;">Most used phrases</h2>
+    <p style="margin-top:0;">Word combinations after excluding character names.</p>
+    <div id="wordcloud"></div>
+</div>
 </section>
 {% include "main/section-comments.html" %}
 
