@@ -1,0 +1,41 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+/* @import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,300;1,400;1,500;1,600;1,700;1,800&display=swap'); */
+body {
+  @apply bg-gray text-textColor font-main;
+  font-size: clamp(0.9rem, 2.5vw, 1.1rem);
+  letter-spacing: 0.8px;
+  word-spacing: 1.5px;
+}
+
+h1 {
+  font-size: clamp(1.1rem, 5vw, 2.5rem);
+}
+
+h2 {
+  /* @apply font-bold border-b-4 tracking-wider pb-2 mb-10; */
+  font-size: clamp(1rem, 4vw, 1.7rem);
+}
+
+h3 {
+  /* @apply font-bold border-b-4 tracking-wider pb-2 mb-10; */
+  font-size: clamp(1rem, 4vw, 1.5rem);
+}
+
+h4 {
+  /* @apply font-bold tracking-wider pb-2; */
+  font-size: clamp(1rem, 4vw, 1.3rem);
+}
+
+p {
+  /* @apply tracking-wide mt-2; */
+}
+
+.logo-width {
+  width: clamp(50px, 30vw, 300px);
+}
+
+.error-logo-width {
+  width: clamp(30px, 20vw, 200px);
+}/*# sourceMappingURL=tailwind.css.map */

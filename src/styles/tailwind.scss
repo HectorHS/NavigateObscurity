@@ -1,0 +1,105 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+/* @import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,300;1,400;1,500;1,600;1,700;1,800&display=swap'); */
+
+body {
+    @apply bg-gray text-textColor font-main;
+    font-size: clamp(0.8rem, 2.5vw, 1rem);
+    letter-spacing: 0.12rem;
+    word-spacing: 0.15rem;
+}
+h1 {
+  font-size: clamp(1rem, 3vw, 1.7rem);
+  @apply text-blue border-blue pl-4 font-bold;
+  border-left: 7px solid;
+}
+h2 {
+  /* @apply font-bold border-b-4 tracking-wider pb-2 mb-10; */
+  @apply font-bold;
+  font-size: clamp(1rem, 3vw, 1.5rem);
+
+}
+h3 {
+  /* @apply font-bold border-b-4 tracking-wider pb-2 mb-10; */
+  // font-size: clamp(1rem, 4vw, 1.5rem);
+  font-size: clamp(0.9rem, 2.2vw, 1.4rem);
+  @apply font-extrabold break-words;
+}
+h4 {
+  /* @apply font-bold tracking-wider pb-2; */
+  font-size: clamp(1rem, 4vw, 1.3rem);
+}
+h5 {
+  @apply font-bold;
+}
+p {
+  @apply pb-7;
+  /* @apply tracking-wide mt-2; */
+}
+hr {
+  @apply mt-12 mb-5 border-blue;
+}
+a {
+  @apply text-blue;
+}
+.button {
+  @apply transition-all duration-300 bg-gradient-to-tl to-blue-300 via-blue-700 from-amber-600 bg-size-200 bg-pos-0-l hover:bg-pos-100-l p-3 px-8;
+
+  border: none;
+  border-radius: 35px;
+  color: #222a2a;
+  font-size: clamp(0.85rem, 2.2vw, 1.3rem);
+  font-weight: 800;
+  box-shadow: 1px 2.8px 2.2px rgba(0, 0, 0, 0.02),
+  2px 6.7px 5.3px rgba(0, 0, 0, 0.028),
+  3px 12.5px 10px rgba(0, 0, 0, 0.035),
+  4px 22.3px 17.9px rgba(0, 0, 0, 0.042);
+  &:hover {
+    box-shadow: 2.8px 2.8px 2.2px rgba(0, 0, 0, 0.04),
+    6.7px 6.7px 5.3px rgba(0, 0, 0, 0.05),
+    12.5px 12.5px 10px rgba(0, 0, 0, 0.07),
+    22.3px 22.3px 17.9px rgba(0, 0, 0, 0.084);
+  }
+  &:disabled {
+    @apply bg-gradient-to-tl to-gray-400 via-gray-700 from-gray-500;
+  }
+}
+
+.logo-width {
+  width: clamp(50px, 30vw, 300px);
+}
+.error-logo-width {
+  width: clamp(30px, 20vw, 200px);
+}
+.source-text {
+  @apply text-right text-sm px-2 self-end md:ml-[30%];
+  word-spacing: 0.08rem;
+  letter-spacing: 0.05rem;
+  p {
+    @apply m-0;
+  }
+  a {
+    @apply text-blue;
+  }
+}
+.legend-dot {
+  @apply w-6 h-6 rounded-full mr-2 m-1 inline-block;
+  background-image:linear-gradient(to bottom right, rgba(0,0,0,0), rgba(0,0,0,0.5))
+}
+.dash-card {
+  @apply bg-gray rounded-2xl py-2 px-4 shadow-xl;
+}
+.dash-row-1 {
+  @apply bg-gradient-to-b from-cyan-300/30 via-blue-400/40 to-blue-300/40 rounded-t-3xl p-4;
+}
+.dash-row-2 {
+  @apply bg-gradient-to-b from-blue-300/40 via-cyan-400/40 to-cyan-300/30 rounded-b-3xl;
+}
+.play-button {
+  @apply fill-gray-200 py-2 px-4 border border-solid border-gray-200 rounded-2xl mr-3 hover:bg-gradient-to-tl hover:to-blue-300 hover:from-blue-700;
+}
+.no-data {
+  @apply flex w-full justify-center items-center text-3xl text-gray-600 font-bold;
+}
+

@@ -1,0 +1,32 @@
+// breadcrumb buttons on drilldowns
+.highcharts-breadcrumbs-button {
+    text {
+      @apply fill-textColor #{!important};
+    }
+    .highcharts-button-box {
+      @apply fill-transparent #{!important};
+    }
+    &:hover {
+      text {
+        @apply fill-blue #{!important};
+      }
+    }
+  }
+  .highcharts-tooltip {
+    line-height: 1.3rem;
+  }
+// map
+.highcharts-map-navigation {
+  .highcharts-button-box {
+    @apply fill-gray;
+    &:hover {
+      @apply fill-blue;
+    }
+  }
+  .highcharts-button-symbol{
+    @apply stroke-gray-200 stroke-[1];
+  }
+}
+.highcharts-map-series .highcharts-point-select {
+  @apply stroke-orange stroke-[30px] fill-orange-700/30;
+}
