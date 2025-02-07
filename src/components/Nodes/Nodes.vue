@@ -57,7 +57,7 @@
   import NodeGradientProgram  from "@/helpers/node-gradient";
 
   import { type EdgeDisplayData, type NodeDisplayData,  } from "sigma/types";
-  import{ type AbstractGraph} from "graphology-types"; // available types https://github.com/graphology/graphology/blob/master/src/types/index.d.ts
+  // import{ type AbstractGraph} from "graphology-types"; // available types https://github.com/graphology/graphology/blob/master/src/types/index.d.ts
   import * as NOTypes from '@/interfaces/NOTypes';
 
   export default defineComponent ({
@@ -112,7 +112,7 @@
       selectedNodes: [] as string[],
       selectedNeighbors: [] as string[],
       renderer: undefined as Sigma | undefined,
-      graph: undefined as AbstractGraph | undefined,
+      graph: undefined as any,
       allNodes: [] as string[],
       nodeSearched: '',
       invalidColor: "#32383e",
