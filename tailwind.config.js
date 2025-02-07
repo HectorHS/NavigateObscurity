@@ -120,18 +120,18 @@ export default {
           DEFAULT: 'hsl(189, 95%, 40%)'
         },
         'gray': {
-          100: 'hsl(180, 10%, 92%)',
-          200: 'hsl(180, 10%, 75%)',
-          300: 'hsl(190, 11%, 54%)',
-          400: 'hsl(200, 14%, 39%)',
-          500: 'hsl(210, 12%, 29%)',
-          600: 'hsl(210, 10%, 22%)',
-          700: 'hsl(220, 10%, 15%)',
-          800: 'hsl(220, 10%, 9%)',
-          900: 'hsl(220, 15%, 2%)',
-          DEFAULT: 'hsl(220, 10%, 15%)'
+          100: 'hsl(212, 28%, 92%)',
+          200: 'hsl(212, 28%, 70%)',
+          300: 'hsl(212, 28%, 55%)',
+          400: 'hsl(212, 28%, 37%)',
+          500: 'hsl(212, 28%, 26%)',
+          600: 'hsl(212, 28%, 18%)',
+          700: 'hsl(212, 28%, 13%)',
+          800: 'hsl(212, 28%, 9%)',
+          900: 'hsl(212, 28%, 2%)',
+          DEFAULT: 'hsl(212, 28%, 13%)'
         },
-        cclabDark: '#1c1c1c'
+        cclabDark: '#1c1c1c',
       },
       fontFamily: {
         'main': ['Poppins','Open Sans', 'Segoe UI', 'Roboto', 'Arial'],
@@ -139,10 +139,11 @@ export default {
       spacing: {
           'base': 'clamp(5px, 5vw, 50px)',
           '95ch': 'clamp(10ch, 80%, 95ch)',
-          'mainText': 'clamp(35ch, 90%, 100ch)',
+          'mainText': 'clamp(35ch, 100%, 100ch)',
           'comment': 'clamp(5px, 17vw, 500px)',
           'select':'calc(100% + 4px)',
-          'qon':'clamp(10px, 2vw, 20px)'
+          'qon':'clamp(10px, 2vw, 20px)',
+          'nodeControls': 'clamp(250px, 100%, 400px)',
       },
       backgroundSize: {
         'size-200': '200% 200%', // helps with moving button gradients on hover
@@ -153,12 +154,13 @@ export default {
           'pos-0-r': '100% 0%', // helps with moving button gradients on hover - for top right gradients
           'pos-100-l': '100% 100%', // helps with moving button gradients on hover - for top left gradients
           'pos-100-r': '0% 100%', // helps with moving button gradients on hover - for top right gradients
-
       },
       backgroundImage: {
-        'header-full': "url('@/assets/images/header.jpg')",
-        'header-small': "url('@/assets/images/banner.jpg')",
-        'footer': "url('@/assets/images/footer.jpg')",
+        'header-full': "url('/images/header.jpg')",
+        'header-small': "url('/images/banner.jpg')",
+        'footer': "url('/images/footer.jpg')",
+        'logo': "url('/svg/logo.svg')",
+        'demo-map': "url('/images/demo/map.jpg')"
       },
       fontSize: {
         sm: ['clamp(0.4rem, 2vw, 0.9rem)', '1.25rem'],
@@ -168,6 +170,20 @@ export default {
       },
       maxWidth: {
         'xsm': '150px',
+      },
+      dropShadow: {
+        'md-dark': [
+          '4px 4px 3px rgb(0 0 0 / 0.25)',
+          '2px 2px 2px rgb(0 0 0 / 0.25)'
+        ],
+        'lg-dark': [
+          '7px 7px 4px rgb(0 0 0 / 0.2)',
+          '4px 4px 3px rgb(0 0 0 / 0.25)',
+          '2px 2px 2px rgb(0 0 0 / 0.25)'
+        ],
+      },
+      animation: {
+        'spin-slow': 'spin 30s linear infinite',
       }
     }
   },

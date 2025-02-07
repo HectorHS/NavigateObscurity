@@ -147,7 +147,7 @@ export interface SankeyData {
 }
 
 export interface ScatterData {
-    color: string;
+    color: string | Highcharts.GradientColorObject;
     name: string;
     x:number;
     y: number;

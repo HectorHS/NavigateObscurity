@@ -24,10 +24,6 @@
       computed: {
         ...mapState(useCovidStore, ['deathsOptions']),
       },
-      watch: {
-      },
-      mounted () {
-      }
     })
 
   </script>

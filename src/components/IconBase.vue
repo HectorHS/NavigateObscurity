@@ -26,7 +26,8 @@ const viewbox = computed(() =>{
     // icons with a 512x512 viewbox
     let v512 = ['skull','earth', 'virus'];
     let v32 = ['earthLeaf', 'atom'];
-    let v24 = ['down', 'check', 'refresh', 'play', 'stop', 'info'];
+    let v24 = ['down', 'check', 'refresh', 'play', 'stop', 'info', 'search', 'text', 'audio', ];
+    let v45 = ['warrior']
 
     if (v512.includes(props.icon)) {
         v = "0 0 512 512";
@@ -34,6 +35,8 @@ const viewbox = computed(() =>{
         v = "0 0 32 32";
     } else if (v24.includes(props.icon)) {
         v = "0 0 24 24";
+    } else if (v45.includes(props.icon)) {
+        v = "0 0 44.999 44.999";
     }
     return v;
 })

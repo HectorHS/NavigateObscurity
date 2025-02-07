@@ -25,10 +25,6 @@
         },
         ...mapState(useEnergyStore, ['importOptions','selectedCountry']),
       },
-      watch: {
-      },
-      mounted () {
-      }
     })
 
   </script>

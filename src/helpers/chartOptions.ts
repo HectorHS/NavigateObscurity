@@ -4,9 +4,6 @@ import {fCapital, numberFormatter, getTailwindHexColor, get10ColorsDark} from '@
 
 export function getBioSunburstOptions():Highcharts.Options {
     let options = {
-        chart: {
-            height: 600,
-        },
         navigation:{
             breadcrumbs: {
                 floating: true,
@@ -189,7 +186,7 @@ export function getMigrationTreemapOptions():Highcharts.Options {
             clip: false,
             borderRadius: 5,
             dataLabels: {
-                color: getTailwindHexColor('gray-100'),
+                color: getTailwindHexColor('textColor'),
             },
             states: {
                 hover: {
@@ -284,13 +281,13 @@ export function getDeathTreemapOptions():Highcharts.Options {
             treemap: {
                 colorKey: 'colorValue',
                 levels: [{
-                    borderColor: getTailwindHexColor('gray-700'),
+                    borderColor: getTailwindHexColor('gray-600'),
                     borderDashStyle: 'Solid',
                     borderWidth: 3,
                     level: 1,
                 },
                 {
-                    borderColor: getTailwindHexColor('gray-700'),
+                    borderColor: getTailwindHexColor('gray-600'),
                     borderDashStyle: 'Solid',
                     borderWidth: 3,
                     level: 2,
@@ -328,13 +325,13 @@ export function getDeathTreemapOptions():Highcharts.Options {
                 dataLabels: {
                     enabled: true,
                 },
-                borderColor:getTailwindHexColor('gray-700'),
+                borderColor:getTailwindHexColor('gray-600'),
                 borderDashStyle: 'Solid',
                 borderWidth: 5,
             },
             {
                 level: 2,
-                borderColor:getTailwindHexColor('gray-700'),
+                borderColor:getTailwindHexColor('gray-600'),
                 borderDashStyle: 'Solid',
                 borderWidth: 1,
             }],
@@ -391,7 +388,7 @@ export function getDeathAgePyramidOptions():Highcharts.Options {
         series: [{
             type: 'bar',
             name: "Male",
-            color: getTailwindHexColor('gray-400'),
+            color: getTailwindHexColor('gray-900'),
         }, {
             type: 'bar',
             name: "Female",
@@ -466,8 +463,6 @@ export function getDeathTreemapOldOptions(): Highcharts.Options {
             name: 'Causes of death',
             type: 'treemap',
             layoutAlgorithm: 'squarified',
-            // allowTraversingTree: true,
-            // levelIsConstant: false,
             clip: false,
             borderRadius: 5,
             dataLabels: {
@@ -697,5 +692,93 @@ export function getCovidMapOptions():Highcharts.Options {
     };
     return options;
 }
-
+export function getMalazanBubbleOptions():Highcharts.Options {
+    let options: Highcharts.Options = {
+        chart: {
+            type: 'packedbubble',
+        },
+        tooltip: {
+            useHTML: true,
+            headerFormat: '',
+        },
+        plotOptions: {
+            packedbubble: {
+                crisp: true,
+                minSize: "5%", // These two control the min and max size of the bubbles
+                maxSize: "400%",
+                marker: {
+                    fillOpacity: 1,
+                },
+                states: {
+                    hover: {
+                        halo: {
+                            opacity: 1,
+                            size:5
+                        }
+                    }
+                },
+                draggable: false,
+                animation: false,
+                layoutAlgorithm: {
+                    enableSimulation: false,
+                    maxIterations: 500
+                },
+                dataLabels:{
+                    enabled: true,
+                    format: '{point.name}',
+                    overflow: 'hidden',
+                    style: { 
+                        textOutline: 'none',
+                        color: '#fff',
+                        fontSize: '12px' ,
+                        textOverflow: 'ellipsis'
+                    },
+                    filter: {
+                        property: 'value',
+                        operator: '>',
+                        value: 90
+                    }
+                }
+            }
+        },
+        responsive: {
+            rules: [{
+                condition: {
+                    maxWidth: 700
+                },
+                chartOptions: {
+                    plotOptions: {
+                        packedbubble: {
+                            maxSize: "250%",
+                        }
+                    }
+                }
+            }]
+        }
+    };    
+    return options;
+}
+export function getMalazanWordcloudOptions():Highcharts.Options {
+    let options: Highcharts.Options = {
+        plotOptions: {
+            wordcloud: {
+                minFontSize: 4,
+                states: {
+                    hover: {
+                        brightness: 0.6
+                    }
+                }
+            }
+        },
+        tooltip: {
+            useHTML: true,
+            headerFormat: '<div><b>{point.key}</b></div>',
+        },
+        series: [{
+            type: 'wordcloud',
+            name: 'Occurrences',
+        }],
+    };
+    return options;
+}
 

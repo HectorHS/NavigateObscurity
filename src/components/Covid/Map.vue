@@ -2,7 +2,7 @@
     <figure class="bg-gray h-full">
       <h5 class="pb-2"></h5>
       <div class="flex" :class="flexDirection">
-        <Dropdown :items="allParameters" v-model="selectedParameter" class="w-[395px]"></Dropdown>
+        <Dropdown :items="allParameters" v-model="selectedParameter" class="w-full md:w-[410px]"></Dropdown>
         <DashCommand text="Select a measure"></DashCommand>
       </div>
       <div class="flex mt-2" :class="flexDirection">
@@ -62,10 +62,6 @@
         ...mapState(useAppStore, ['screenWidth']),
         ...mapWritableState(useCovidStore, ['selectedParameter', 'selectedDateIndex', 'animateDates'])
       },
-      watch: {
-      },
-      mounted () {
-      }
     })
 
   </script>

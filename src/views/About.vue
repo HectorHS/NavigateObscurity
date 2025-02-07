@@ -34,14 +34,10 @@
     data: () => ({
     }),
     methods: {
-      
+
     },
     computed: {
     },
-    watch: {
-    },
-    mounted () {
-    }
   })
 
 </script>

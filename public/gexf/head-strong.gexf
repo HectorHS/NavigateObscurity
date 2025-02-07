@@ -1,0 +1,1229 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<gexf xmlns="http://www.gexf.net/1.3" version="1.3" xmlns:viz="http://www.gexf.net/1.3/viz" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.gexf.net/1.3 http://www.gexf.net/1.3/gexf.xsd">
+  <meta lastmodifieddate="2019-12-12">
+    <creator>Gephi 0.9</creator>
+    <description></description>
+  </meta>
+  <graph defaultedgetype="undirected" mode="static">
+    <attributes class="node" mode="static">
+      <attribute id="modularity class" title="modularity class" type="integer"></attribute>
+    </attributes>
+    <nodes>
+      <node id="aspartame" label="aspartame">
+        <attvalues>
+          <attvalue for="modularity class" value="0"></attvalue>
+        </attvalues>
+        <viz:size value="9.411764"></viz:size>
+        <viz:position x="44.668488" y="-108.820435"></viz:position>
+        <viz:color r="158" g="0" b="128"></viz:color>
+      </node>
+      <node id="collagen" label="collagen">
+        <attvalues>
+          <attvalue for="modularity class" value="0"></attvalue>
+        </attvalues>
+        <viz:size value="6.470588"></viz:size>
+        <viz:position x="397.6803" y="48.765434"></viz:position>
+        <viz:color r="158" g="0" b="128"></viz:color>
+      </node>
+      <node id="fat" label="fat">
+        <attvalues>
+          <attvalue for="modularity class" value="0"></attvalue>
+        </attvalues>
+        <viz:size value="12.3529415"></viz:size>
+        <viz:position x="41.057644" y="129.7603"></viz:position>
+        <viz:color r="158" g="0" b="128"></viz:color>
+      </node>
+      <node id="glutathione" label="glutathione">
+        <attvalues>
+          <attvalue for="modularity class" value="0"></attvalue>
+        </attvalues>
+        <viz:size value="5.0"></viz:size>
+        <viz:position x="216.28389" y="-121.0555"></viz:position>
+        <viz:color r="158" g="0" b="128"></viz:color>
+      </node>
+      <node id="gluten" label="gluten">
+        <attvalues>
+          <attvalue for="modularity class" value="0"></attvalue>
+        </attvalues>
+        <viz:size value="9.411764"></viz:size>
+        <viz:position x="-228.23517" y="-76.1942"></viz:position>
+        <viz:color r="158" g="0" b="128"></viz:color>
+      </node>
+      <node id="lactose" label="lactose">
+        <attvalues>
+          <attvalue for="modularity class" value="0"></attvalue>
+        </attvalues>
+        <viz:size value="5.0"></viz:size>
+        <viz:position x="-237.43506" y="-157.69981"></viz:position>
+        <viz:color r="158" g="0" b="128"></viz:color>
+      </node>
+      <node id="MCT" label="MCT">
+        <attvalues>
+          <attvalue for="modularity class" value="0"></attvalue>
+        </attvalues>
+        <viz:size value="6.470588"></viz:size>
+        <viz:position x="11.147491" y="126.77933"></viz:position>
+        <viz:color r="158" g="0" b="128"></viz:color>
+      </node>
+      <node id="omega3" label="omega 3">
+        <attvalues>
+          <attvalue for="modularity class" value="0"></attvalue>
+        </attvalues>
+        <viz:size value="12.3529415"></viz:size>
+        <viz:position x="93.363266" y="101.49178"></viz:position>
+        <viz:color r="158" g="0" b="128"></viz:color>
+      </node>
+      <node id="omega6" label="omega 6">
+        <attvalues>
+          <attvalue for="modularity class" value="0"></attvalue>
+        </attvalues>
+        <viz:size value="7.9411764"></viz:size>
+        <viz:position x="300.3201" y="103.05256"></viz:position>
+        <viz:color r="158" g="0" b="128"></viz:color>
+      </node>
+      <node id="PGC-1" label="PGC-1">
+        <attvalues>
+          <attvalue for="modularity class" value="0"></attvalue>
+        </attvalues>
+        <viz:size value="7.9411764"></viz:size>
+        <viz:position x="-32.356964" y="135.03847"></viz:position>
+        <viz:color r="158" g="0" b="128"></viz:color>
+      </node>
+      <node id="polyphenols" label="polyphenols">
+        <attvalues>
+          <attvalue for="modularity class" value="0"></attvalue>
+        </attvalues>
+        <viz:size value="18.235294"></viz:size>
+        <viz:position x="-293.49194" y="-71.899155"></viz:position>
+        <viz:color r="158" g="0" b="128"></viz:color>
+      </node>
+      <node id="saturated-fat" label="saturated fat">
+        <attvalues>
+          <attvalue for="modularity class" value="0"></attvalue>
+        </attvalues>
+        <viz:size value="13.823529"></viz:size>
+        <viz:position x="183.70668" y="104.20565"></viz:position>
+        <viz:color r="158" g="0" b="128"></viz:color>
+      </node>
+      <node id="sugar" label="sugar">
+        <attvalues>
+          <attvalue for="modularity class" value="0"></attvalue>
+        </attvalues>
+        <viz:size value="22.647058"></viz:size>
+        <viz:position x="90.94934" y="140.74875"></viz:position>
+        <viz:color r="158" g="0" b="128"></viz:color>
+      </node>
+      <node id="trans-fats" label="trans fats">
+        <attvalues>
+          <attvalue for="modularity class" value="0"></attvalue>
+        </attvalues>
+        <viz:size value="9.411764"></viz:size>
+        <viz:position x="90.48946" y="-110.09256"></viz:position>
+        <viz:color r="158" g="0" b="128"></viz:color>
+      </node>
+      <node id="unsaturated-fat" label="unsaturated fat">
+        <attvalues>
+          <attvalue for="modularity class" value="0"></attvalue>
+        </attvalues>
+        <viz:size value="9.411764"></viz:size>
+        <viz:position x="198.40211" y="147.08496"></viz:position>
+        <viz:color r="158" g="0" b="128"></viz:color>
+      </node>
+      <node id="vitamin-c" label="vitamin C">
+        <attvalues>
+          <attvalue for="modularity class" value="0"></attvalue>
+        </attvalues>
+        <viz:size value="5.0"></viz:size>
+        <viz:position x="145.25201" y="176.71173"></viz:position>
+        <viz:color r="158" g="0" b="128"></viz:color>
+      </node>
+      <node id="beer" label="beer">
+        <attvalues>
+          <attvalue for="modularity class" value="1"></attvalue>
+        </attvalues>
+        <viz:size value="5.0"></viz:size>
+        <viz:position x="122.52043" y="-281.0207"></viz:position>
+        <viz:color r="255" g="61" b="166"></viz:color>
+      </node>
+      <node id="brown-rice" label="brown rice">
+        <attvalues>
+          <attvalue for="modularity class" value="1"></attvalue>
+        </attvalues>
+        <viz:size value="5.0"></viz:size>
+        <viz:position x="-105.163284" y="-235.01051"></viz:position>
+        <viz:color r="255" g="61" b="166"></viz:color>
+      </node>
+      <node id="butter" label="butter">
+        <attvalues>
+          <attvalue for="modularity class" value="1"></attvalue>
+        </attvalues>
+        <viz:size value="7.9411764"></viz:size>
+        <viz:position x="-215.95108" y="-125.666885"></viz:position>
+        <viz:color r="255" g="61" b="166"></viz:color>
+      </node>
+      <node id="cereal" label="cereal">
+        <attvalues>
+          <attvalue for="modularity class" value="1"></attvalue>
+        </attvalues>
+        <viz:size value="5.0"></viz:size>
+        <viz:position x="104.85312" y="-272.24237"></viz:position>
+        <viz:color r="255" g="61" b="166"></viz:color>
+      </node>
+      <node id="chocolate" label="chocolate">
+        <attvalues>
+          <attvalue for="modularity class" value="1"></attvalue>
+        </attvalues>
+        <viz:size value="6.470588"></viz:size>
+        <viz:position x="-2.4828224" y="-274.21472"></viz:position>
+        <viz:color r="255" g="61" b="166"></viz:color>
+      </node>
+      <node id="coconut-oil" label="coconut oil">
+        <attvalues>
+          <attvalue for="modularity class" value="1"></attvalue>
+        </attvalues>
+        <viz:size value="7.9411764"></viz:size>
+        <viz:position x="95.863525" y="76.36009"></viz:position>
+        <viz:color r="255" g="61" b="166"></viz:color>
+      </node>
+      <node id="coffee" label="coffee">
+        <attvalues>
+          <attvalue for="modularity class" value="1"></attvalue>
+        </attvalues>
+        <viz:size value="10.882353"></viz:size>
+        <viz:position x="-142.89111" y="-110.358315"></viz:position>
+        <viz:color r="255" g="61" b="166"></viz:color>
+      </node>
+      <node id="corn" label="corn">
+        <attvalues>
+          <attvalue for="modularity class" value="1"></attvalue>
+        </attvalues>
+        <viz:size value="6.470588"></viz:size>
+        <viz:position x="-68.72099" y="-254.81398"></viz:position>
+        <viz:color r="255" g="61" b="166"></viz:color>
+      </node>
+      <node id="dairy" label="dairy">
+        <attvalues>
+          <attvalue for="modularity class" value="1"></attvalue>
+        </attvalues>
+        <viz:size value="9.411764"></viz:size>
+        <viz:position x="-282.46393" y="-133.03949"></viz:position>
+        <viz:color r="255" g="61" b="166"></viz:color>
+      </node>
+      <node id="dried-fruit" label="dried fruit">
+        <attvalues>
+          <attvalue for="modularity class" value="1"></attvalue>
+        </attvalues>
+        <viz:size value="5.0"></viz:size>
+        <viz:position x="76.983765" y="-278.5978"></viz:position>
+        <viz:color r="255" g="61" b="166"></viz:color>
+      </node>
+      <node id="eggs" label="eggs">
+        <attvalues>
+          <attvalue for="modularity class" value="1"></attvalue>
+        </attvalues>
+        <viz:size value="7.9411764"></viz:size>
+        <viz:position x="130.85194" y="98.68391"></viz:position>
+        <viz:color r="255" g="61" b="166"></viz:color>
+      </node>
+      <node id="fish" label="fish">
+        <attvalues>
+          <attvalue for="modularity class" value="1"></attvalue>
+        </attvalues>
+        <viz:size value="12.3529415"></viz:size>
+        <viz:position x="146.80292" y="73.50928"></viz:position>
+        <viz:color r="255" g="61" b="166"></viz:color>
+      </node>
+      <node id="fried-foods" label="fried foods">
+        <attvalues>
+          <attvalue for="modularity class" value="1"></attvalue>
+        </attvalues>
+        <viz:size value="10.882353"></viz:size>
+        <viz:position x="109.94348" y="-90.63141"></viz:position>
+        <viz:color r="255" g="61" b="166"></viz:color>
+      </node>
+      <node id="fruits" label="fruits">
+        <attvalues>
+          <attvalue for="modularity class" value="1"></attvalue>
+        </attvalues>
+        <viz:size value="6.470588"></viz:size>
+        <viz:position x="190.09123" y="-50.96767"></viz:position>
+        <viz:color r="255" g="61" b="166"></viz:color>
+      </node>
+      <node id="gmo" label="gmo">
+        <attvalues>
+          <attvalue for="modularity class" value="1"></attvalue>
+        </attvalues>
+        <viz:size value="7.9411764"></viz:size>
+        <viz:position x="15.628935" y="-101.01533"></viz:position>
+        <viz:color r="255" g="61" b="166"></viz:color>
+      </node>
+      <node id="grains" label="grains">
+        <attvalues>
+          <attvalue for="modularity class" value="1"></attvalue>
+        </attvalues>
+        <viz:size value="6.470588"></viz:size>
+        <viz:position x="-19.726797" y="-248.67296"></viz:position>
+        <viz:color r="255" g="61" b="166"></viz:color>
+      </node>
+      <node id="meat" label="meat">
+        <attvalues>
+          <attvalue for="modularity class" value="1"></attvalue>
+        </attvalues>
+        <viz:size value="13.823529"></viz:size>
+        <viz:position x="171.9295" y="38.84434"></viz:position>
+        <viz:color r="255" g="61" b="166"></viz:color>
+      </node>
+      <node id="nuts" label="nuts">
+        <attvalues>
+          <attvalue for="modularity class" value="1"></attvalue>
+        </attvalues>
+        <viz:size value="7.9411764"></viz:size>
+        <viz:position x="182.74284" y="1.7325068"></viz:position>
+        <viz:color r="255" g="61" b="166"></viz:color>
+      </node>
+      <node id="olive-oil" label="olive oil">
+        <attvalues>
+          <attvalue for="modularity class" value="1"></attvalue>
+        </attvalues>
+        <viz:size value="6.470588"></viz:size>
+        <viz:position x="53.656387" y="-129.8489"></viz:position>
+        <viz:color r="255" g="61" b="166"></viz:color>
+      </node>
+      <node id="processed-foods" label="processed foods">
+        <attvalues>
+          <attvalue for="modularity class" value="1"></attvalue>
+        </attvalues>
+        <viz:size value="6.470588"></viz:size>
+        <viz:position x="-19.852295" y="-116.482086"></viz:position>
+        <viz:color r="255" g="61" b="166"></viz:color>
+      </node>
+      <node id="seafood" label="seafood">
+        <attvalues>
+          <attvalue for="modularity class" value="1"></attvalue>
+        </attvalues>
+        <viz:size value="6.470588"></viz:size>
+        <viz:position x="-139.96127" y="-251.91359"></viz:position>
+        <viz:color r="255" g="61" b="166"></viz:color>
+      </node>
+      <node id="soy-sauce" label="soy sauce">
+        <attvalues>
+          <attvalue for="modularity class" value="1"></attvalue>
+        </attvalues>
+        <viz:size value="6.470588"></viz:size>
+        <viz:position x="163.8286" y="-240.69696"></viz:position>
+        <viz:color r="255" g="61" b="166"></viz:color>
+      </node>
+      <node id="vegetable-oils" label="vegetable oils">
+        <attvalues>
+          <attvalue for="modularity class" value="1"></attvalue>
+        </attvalues>
+        <viz:size value="6.470588"></viz:size>
+        <viz:position x="220.48215" y="123.14023"></viz:position>
+        <viz:color r="255" g="61" b="166"></viz:color>
+      </node>
+      <node id="vegetables" label="vegetables">
+        <attvalues>
+          <attvalue for="modularity class" value="1"></attvalue>
+        </attvalues>
+        <viz:size value="6.470588"></viz:size>
+        <viz:position x="-41.690998" y="-274.86343"></viz:position>
+        <viz:color r="255" g="61" b="166"></viz:color>
+      </node>
+      <node id="water" label="water">
+        <attvalues>
+          <attvalue for="modularity class" value="1"></attvalue>
+        </attvalues>
+        <viz:size value="7.9411764"></viz:size>
+        <viz:position x="122.73672" y="-227.15952"></viz:position>
+        <viz:color r="255" g="61" b="166"></viz:color>
+      </node>
+      <node id="wine" label="wine">
+        <attvalues>
+          <attvalue for="modularity class" value="1"></attvalue>
+        </attvalues>
+        <viz:size value="5.0"></viz:size>
+        <viz:position x="95.211525" y="-286.97818"></viz:position>
+        <viz:color r="255" g="61" b="166"></viz:color>
+      </node>
+      <node id="breathing" label="breathing">
+        <attvalues>
+          <attvalue for="modularity class" value="2"></attvalue>
+        </attvalues>
+        <viz:size value="5.0"></viz:size>
+        <viz:position x="102.54791" y="183.4882"></viz:position>
+        <viz:color r="0" g="189" b="148"></viz:color>
+      </node>
+      <node id="cold" label="cold">
+        <attvalues>
+          <attvalue for="modularity class" value="2"></attvalue>
+        </attvalues>
+        <viz:size value="16.764706"></viz:size>
+        <viz:position x="64.60149" y="209.94533"></viz:position>
+        <viz:color r="0" g="189" b="148"></viz:color>
+      </node>
+      <node id="exercise" label="exercise">
+        <attvalues>
+          <attvalue for="modularity class" value="2"></attvalue>
+        </attvalues>
+        <viz:size value="30.0"></viz:size>
+        <viz:position x="-29.850632" y="259.81885"></viz:position>
+        <viz:color r="0" g="189" b="148"></viz:color>
+      </node>
+      <node id="fasting" label="fasting">
+        <attvalues>
+          <attvalue for="modularity class" value="2"></attvalue>
+        </attvalues>
+        <viz:size value="13.823529"></viz:size>
+        <viz:position x="-65.95729" y="170.72574"></viz:position>
+        <viz:color r="0" g="189" b="148"></viz:color>
+      </node>
+      <node id="ketosis" label="ketosis">
+        <attvalues>
+          <attvalue for="modularity class" value="2"></attvalue>
+        </attvalues>
+        <viz:size value="15.294118"></viz:size>
+        <viz:position x="67.33478" y="276.232"></viz:position>
+        <viz:color r="0" g="189" b="148"></viz:color>
+      </node>
+      <node id="meditation" label="meditation">
+        <attvalues>
+          <attvalue for="modularity class" value="2"></attvalue>
+        </attvalues>
+        <viz:size value="7.9411764"></viz:size>
+        <viz:position x="33.313194" y="246.26436"></viz:position>
+        <viz:color r="0" g="189" b="148"></viz:color>
+      </node>
+      <node id="sauna" label="sauna">
+        <attvalues>
+          <attvalue for="modularity class" value="2"></attvalue>
+        </attvalues>
+        <viz:size value="5.0"></viz:size>
+        <viz:position x="-12.851967" y="114.32356"></viz:position>
+        <viz:color r="0" g="189" b="148"></viz:color>
+      </node>
+      <node id="sex" label="sex">
+        <attvalues>
+          <attvalue for="modularity class" value="2"></attvalue>
+        </attvalues>
+        <viz:size value="5.0"></viz:size>
+        <viz:position x="-76.15665" y="132.58733"></viz:position>
+        <viz:color r="0" g="189" b="148"></viz:color>
+      </node>
+      <node id="sleep" label="sleep">
+        <attvalues>
+          <attvalue for="modularity class" value="2"></attvalue>
+        </attvalues>
+        <viz:size value="13.823529"></viz:size>
+        <viz:position x="19.41476" y="183.45059"></viz:position>
+        <viz:color r="0" g="189" b="148"></viz:color>
+      </node>
+      <node id="anxiety" label="anxiety">
+        <attvalues>
+          <attvalue for="modularity class" value="3"></attvalue>
+        </attvalues>
+        <viz:size value="7.9411764"></viz:size>
+        <viz:position x="-138.77745" y="198.32768"></viz:position>
+        <viz:color r="255" g="136" b="5"></viz:color>
+      </node>
+      <node id="brain-fog" label="brain fog">
+        <attvalues>
+          <attvalue for="modularity class" value="3"></attvalue>
+        </attvalues>
+        <viz:size value="6.470588"></viz:size>
+        <viz:position x="-180.01529" y="95.42232"></viz:position>
+        <viz:color r="255" g="136" b="5"></viz:color>
+      </node>
+      <node id="calming" label="calming">
+        <attvalues>
+          <attvalue for="modularity class" value="3"></attvalue>
+        </attvalues>
+        <viz:size value="6.470588"></viz:size>
+        <viz:position x="-193.44922" y="209.75633"></viz:position>
+        <viz:color r="255" g="136" b="5"></viz:color>
+      </node>
+      <node id="depression" label="depression">
+        <attvalues>
+          <attvalue for="modularity class" value="3"></attvalue>
+        </attvalues>
+        <viz:size value="7.9411764"></viz:size>
+        <viz:position x="-154.37668" y="101.985794"></viz:position>
+        <viz:color r="255" g="136" b="5"></viz:color>
+      </node>
+      <node id="fatigue" label="fatigue">
+        <attvalues>
+          <attvalue for="modularity class" value="3"></attvalue>
+        </attvalues>
+        <viz:size value="10.882353"></viz:size>
+        <viz:position x="-178.83295" y="145.10226"></viz:position>
+        <viz:color r="255" g="136" b="5"></viz:color>
+      </node>
+      <node id="focus" label="focus">
+        <attvalues>
+          <attvalue for="modularity class" value="3"></attvalue>
+        </attvalues>
+        <viz:size value="7.9411764"></viz:size>
+        <viz:position x="-128.87776" y="120.19449"></viz:position>
+        <viz:color r="255" g="136" b="5"></viz:color>
+      </node>
+      <node id="happiness" label="happiness">
+        <attvalues>
+          <attvalue for="modularity class" value="3"></attvalue>
+        </attvalues>
+        <viz:size value="5.0"></viz:size>
+        <viz:position x="-158.40694" y="219.54782"></viz:position>
+        <viz:color r="255" g="136" b="5"></viz:color>
+      </node>
+      <node id="memory" label="memory">
+        <attvalues>
+          <attvalue for="modularity class" value="3"></attvalue>
+        </attvalues>
+        <viz:size value="9.411764"></viz:size>
+        <viz:position x="-215.39445" y="126.00534"></viz:position>
+        <viz:color r="255" g="136" b="5"></viz:color>
+      </node>
+      <node id="mood" label="mood">
+        <attvalues>
+          <attvalue for="modularity class" value="3"></attvalue>
+        </attvalues>
+        <viz:size value="9.411764"></viz:size>
+        <viz:position x="-122.34335" y="145.55728"></viz:position>
+        <viz:color r="255" g="136" b="5"></viz:color>
+      </node>
+      <node id="stress" label="stress">
+        <attvalues>
+          <attvalue for="modularity class" value="3"></attvalue>
+        </attvalues>
+        <viz:size value="13.823529"></viz:size>
+        <viz:position x="-174.16093" y="178.32208"></viz:position>
+        <viz:color r="255" g="136" b="5"></viz:color>
+      </node>
+      <node id="circulation" label="circulation">
+        <attvalues>
+          <attvalue for="modularity class" value="4"></attvalue>
+        </attvalues>
+        <viz:size value="9.411764"></viz:size>
+        <viz:position x="-90.31065" y="-0.18709946"></viz:position>
+        <viz:color r="33" g="235" b="0"></viz:color>
+      </node>
+      <node id="cravings" label="cravings">
+        <attvalues>
+          <attvalue for="modularity class" value="4"></attvalue>
+        </attvalues>
+        <viz:size value="6.470588"></viz:size>
+        <viz:position x="-113.388916" y="73.72795"></viz:position>
+        <viz:color r="33" g="235" b="0"></viz:color>
+      </node>
+      <node id="food-sensitivities" label="food sensitivities">
+        <attvalues>
+          <attvalue for="modularity class" value="4"></attvalue>
+        </attvalues>
+        <viz:size value="6.470588"></viz:size>
+        <viz:position x="-243.76495" y="-41.868668"></viz:position>
+        <viz:color r="33" g="235" b="0"></viz:color>
+      </node>
+      <node id="glymphatic-system" label="glymphatic system">
+        <attvalues>
+          <attvalue for="modularity class" value="4"></attvalue>
+        </attvalues>
+        <viz:size value="9.411764"></viz:size>
+        <viz:position x="-127.825455" y="38.8282"></viz:position>
+        <viz:color r="33" g="235" b="0"></viz:color>
+      </node>
+      <node id="gut" label="gut">
+        <attvalues>
+          <attvalue for="modularity class" value="4"></attvalue>
+        </attvalues>
+        <viz:size value="16.764706"></viz:size>
+        <viz:position x="-165.90329" y="-54.98383"></viz:position>
+        <viz:color r="33" g="235" b="0"></viz:color>
+      </node>
+      <node id="inflammation" label="inflammation">
+        <attvalues>
+          <attvalue for="modularity class" value="4"></attvalue>
+        </attvalues>
+        <viz:size value="28.529411"></viz:size>
+        <viz:position x="-177.05502" y="5.990013"></viz:position>
+        <viz:color r="33" g="235" b="0"></viz:color>
+      </node>
+      <node id="lymphatic-system" label="lymphatic system">
+        <attvalues>
+          <attvalue for="modularity class" value="4"></attvalue>
+        </attvalues>
+        <viz:size value="6.470588"></viz:size>
+        <viz:position x="-56.470394" y="-12.721954"></viz:position>
+        <viz:color r="33" g="235" b="0"></viz:color>
+      </node>
+      <node id="melanin" label="melanin">
+        <attvalues>
+          <attvalue for="modularity class" value="4"></attvalue>
+        </attvalues>
+        <viz:size value="9.411764"></viz:size>
+        <viz:position x="-89.47481" y="-33.87432"></viz:position>
+        <viz:color r="33" g="235" b="0"></viz:color>
+      </node>
+      <node id="metabolism" label="metabolism">
+        <attvalues>
+          <attvalue for="modularity class" value="4"></attvalue>
+        </attvalues>
+        <viz:size value="5.0"></viz:size>
+        <viz:position x="-69.93689" y="69.68428"></viz:position>
+        <viz:color r="33" g="235" b="0"></viz:color>
+      </node>
+      <node id="oxidative-stress" label="oxidative stress">
+        <attvalues>
+          <attvalue for="modularity class" value="4"></attvalue>
+        </attvalues>
+        <viz:size value="12.3529415"></viz:size>
+        <viz:position x="-90.6022" y="-62.442204"></viz:position>
+        <viz:color r="33" g="235" b="0"></viz:color>
+      </node>
+      <node id="acetylcholine" label="acetylcholine">
+        <attvalues>
+          <attvalue for="modularity class" value="5"></attvalue>
+        </attvalues>
+        <viz:size value="13.823529"></viz:size>
+        <viz:position x="65.543106" y="46.108078"></viz:position>
+        <viz:color r="76" g="70" b="62"></viz:color>
+      </node>
+      <node id="BDNF" label="BDNF">
+        <attvalues>
+          <attvalue for="modularity class" value="5"></attvalue>
+        </attvalues>
+        <viz:size value="12.3529415"></viz:size>
+        <viz:position x="27.889095" y="85.73356"></viz:position>
+        <viz:color r="76" g="70" b="62"></viz:color>
+      </node>
+      <node id="brain" label="brain">
+        <attvalues>
+          <attvalue for="modularity class" value="5"></attvalue>
+        </attvalues>
+        <viz:size value="15.294118"></viz:size>
+        <viz:position x="-29.381088" y="-66.70061"></viz:position>
+        <viz:color r="76" g="70" b="62"></viz:color>
+      </node>
+      <node id="dopamine" label="dopamine">
+        <attvalues>
+          <attvalue for="modularity class" value="5"></attvalue>
+        </attvalues>
+        <viz:size value="15.294118"></viz:size>
+        <viz:position x="98.72182" y="-39.812187"></viz:position>
+        <viz:color r="76" g="70" b="62"></viz:color>
+      </node>
+      <node id="gaba" label="GABA">
+        <attvalues>
+          <attvalue for="modularity class" value="5"></attvalue>
+        </attvalues>
+        <viz:size value="15.294118"></viz:size>
+        <viz:position x="111.904816" y="-2.0183544"></viz:position>
+        <viz:color r="76" g="70" b="62"></viz:color>
+      </node>
+      <node id="l-tryptophan" label="l-tryptophan">
+        <attvalues>
+          <attvalue for="modularity class" value="5"></attvalue>
+        </attvalues>
+        <viz:size value="10.882353"></viz:size>
+        <viz:position x="96.153564" y="28.824524"></viz:position>
+        <viz:color r="76" g="70" b="62"></viz:color>
+      </node>
+      <node id="melatonin" label="melatonin">
+        <attvalues>
+          <attvalue for="modularity class" value="5"></attvalue>
+        </attvalues>
+        <viz:size value="6.470588"></viz:size>
+        <viz:position x="40.708435" y="63.0505"></viz:position>
+        <viz:color r="76" g="70" b="62"></viz:color>
+      </node>
+      <node id="neurogenesis" label="neurogenesis">
+        <attvalues>
+          <attvalue for="modularity class" value="5"></attvalue>
+        </attvalues>
+        <viz:size value="25.588236"></viz:size>
+        <viz:position x="-21.051144" y="31.30962"></viz:position>
+        <viz:color r="76" g="70" b="62"></viz:color>
+      </node>
+      <node id="neurons" label="neurons">
+        <attvalues>
+          <attvalue for="modularity class" value="5"></attvalue>
+        </attvalues>
+        <viz:size value="16.764706"></viz:size>
+        <viz:position x="57.861176" y="-51.150696"></viz:position>
+        <viz:color r="76" g="70" b="62"></viz:color>
+      </node>
+      <node id="neurotransmission" label="neurotransmission">
+        <attvalues>
+          <attvalue for="modularity class" value="5"></attvalue>
+        </attvalues>
+        <viz:size value="13.823529"></viz:size>
+        <viz:position x="62.789383" y="-2.3776164"></viz:position>
+        <viz:color r="76" g="70" b="62"></viz:color>
+      </node>
+      <node id="norepinephrine" label="norepinephrine">
+        <attvalues>
+          <attvalue for="modularity class" value="5"></attvalue>
+        </attvalues>
+        <viz:size value="10.882353"></viz:size>
+        <viz:position x="25.802292" y="-35.245018"></viz:position>
+        <viz:color r="76" g="70" b="62"></viz:color>
+      </node>
+      <node id="antibiotics" label="antibiotics">
+        <attvalues>
+          <attvalue for="modularity class" value="6"></attvalue>
+        </attvalues>
+        <viz:size value="5.0"></viz:size>
+        <viz:position x="132.2332" y="-118.485"></viz:position>
+        <viz:color r="0" g="196" b="255"></viz:color>
+      </node>
+      <node id="arsenic" label="arsenic">
+        <attvalues>
+          <attvalue for="modularity class" value="6"></attvalue>
+        </attvalues>
+        <viz:size value="12.3529415"></viz:size>
+        <viz:position x="-65.60759" y="-211.27533"></viz:position>
+        <viz:color r="0" g="196" b="255"></viz:color>
+      </node>
+      <node id="cadmium" label="cadmium">
+        <attvalues>
+          <attvalue for="modularity class" value="6"></attvalue>
+        </attvalues>
+        <viz:size value="9.411764"></viz:size>
+        <viz:position x="-107.08047" y="-162.28172"></viz:position>
+        <viz:color r="0" g="196" b="255"></viz:color>
+      </node>
+      <node id="detox" label="detox">
+        <attvalues>
+          <attvalue for="modularity class" value="6"></attvalue>
+        </attvalues>
+        <viz:size value="21.176472"></viz:size>
+        <viz:position x="24.10582" y="-140.64883"></viz:position>
+        <viz:color r="0" g="196" b="255"></viz:color>
+      </node>
+      <node id="drugs" label="drugs">
+        <attvalues>
+          <attvalue for="modularity class" value="6"></attvalue>
+        </attvalues>
+        <viz:size value="6.470588"></viz:size>
+        <viz:position x="158.61078" y="-125.38373"></viz:position>
+        <viz:color r="0" g="196" b="255"></viz:color>
+      </node>
+      <node id="fluoride" label="fluoride">
+        <attvalues>
+          <attvalue for="modularity class" value="6"></attvalue>
+        </attvalues>
+        <viz:size value="6.470588"></viz:size>
+        <viz:position x="152.29362" y="-206.52666"></viz:position>
+        <viz:color r="0" g="196" b="255"></viz:color>
+      </node>
+      <node id="heavy-metals" label="heavy metals">
+        <attvalues>
+          <attvalue for="modularity class" value="6"></attvalue>
+        </attvalues>
+        <viz:size value="12.3529415"></viz:size>
+        <viz:position x="0.9982252" y="-193.97554"></viz:position>
+        <viz:color r="0" g="196" b="255"></viz:color>
+      </node>
+      <node id="lead" label="lead">
+        <attvalues>
+          <attvalue for="modularity class" value="6"></attvalue>
+        </attvalues>
+        <viz:size value="7.9411764"></viz:size>
+        <viz:position x="90.911385" y="-202.72925"></viz:position>
+        <viz:color r="0" g="196" b="255"></viz:color>
+      </node>
+      <node id="mercury" label="mercury">
+        <attvalues>
+          <attvalue for="modularity class" value="6"></attvalue>
+        </attvalues>
+        <viz:size value="15.294118"></viz:size>
+        <viz:position x="-44.741505" y="-153.01419"></viz:position>
+        <viz:color r="0" g="196" b="255"></viz:color>
+      </node>
+      <node id="mould" label="mould">
+        <attvalues>
+          <attvalue for="modularity class" value="6"></attvalue>
+        </attvalues>
+        <viz:size value="22.647058"></viz:size>
+        <viz:position x="38.66751" y="-244.5145"></viz:position>
+        <viz:color r="0" g="196" b="255"></viz:color>
+      </node>
+      <node id="MSG" label="MSG">
+        <attvalues>
+          <attvalue for="modularity class" value="6"></attvalue>
+        </attvalues>
+        <viz:size value="6.470588"></viz:size>
+        <viz:position x="195.45076" y="-162.9116"></viz:position>
+        <viz:color r="0" g="196" b="255"></viz:color>
+      </node>
+      <node id="pesticides" label="pesticides">
+        <attvalues>
+          <attvalue for="modularity class" value="6"></attvalue>
+        </attvalues>
+        <viz:size value="9.411764"></viz:size>
+        <viz:position x="-151.95364" y="-191.50972"></viz:position>
+        <viz:color r="0" g="196" b="255"></viz:color>
+      </node>
+      <node id="toxins" label="toxins">
+        <attvalues>
+          <attvalue for="modularity class" value="6"></attvalue>
+        </attvalues>
+        <viz:size value="18.235294"></viz:size>
+        <viz:position x="78.58375" y="-163.9151"></viz:position>
+        <viz:color r="0" g="196" b="255"></viz:color>
+      </node>
+      <node id="apoptosis" label="apoptosis">
+        <attvalues>
+          <attvalue for="modularity class" value="7"></attvalue>
+        </attvalues>
+        <viz:size value="6.470588"></viz:size>
+        <viz:position x="211.61389" y="-72.919464"></viz:position>
+        <viz:color r="211" g="179" b="176"></viz:color>
+      </node>
+      <node id="autophagy" label="autophagy">
+        <attvalues>
+          <attvalue for="modularity class" value="7"></attvalue>
+        </attvalues>
+        <viz:size value="6.470588"></viz:size>
+        <viz:position x="272.60074" y="92.36655"></viz:position>
+        <viz:color r="211" g="179" b="176"></viz:color>
+      </node>
+      <node id="energy" label="energy">
+        <attvalues>
+          <attvalue for="modularity class" value="7"></attvalue>
+        </attvalues>
+        <viz:size value="13.823529"></viz:size>
+        <viz:position x="356.48563" y="-95.75029"></viz:position>
+        <viz:color r="211" g="179" b="176"></viz:color>
+      </node>
+      <node id="energy-production" label="energy production">
+        <attvalues>
+          <attvalue for="modularity class" value="7"></attvalue>
+        </attvalues>
+        <viz:size value="16.764706"></viz:size>
+        <viz:position x="336.14294" y="54.59127"></viz:position>
+        <viz:color r="211" g="179" b="176"></viz:color>
+      </node>
+      <node id="EZ-water" label="EZ-Water">
+        <attvalues>
+          <attvalue for="modularity class" value="7"></attvalue>
+        </attvalues>
+        <viz:size value="16.764706"></viz:size>
+        <viz:position x="273.73145" y="-61.719322"></viz:position>
+        <viz:color r="211" g="179" b="176"></viz:color>
+      </node>
+      <node id="mitochondria" label="mitochondria">
+        <attvalues>
+          <attvalue for="modularity class" value="7"></attvalue>
+        </attvalues>
+        <viz:size value="28.529411"></viz:size>
+        <viz:position x="341.72366" y="-29.966473"></viz:position>
+        <viz:color r="211" g="179" b="176"></viz:color>
+      </node>
+      <node id="mitogenesis" label="mitogenesis">
+        <attvalues>
+          <attvalue for="modularity class" value="7"></attvalue>
+        </attvalues>
+        <viz:size value="16.764706"></viz:size>
+        <viz:position x="423.75568" y="17.380219"></viz:position>
+        <viz:color r="211" g="179" b="176"></viz:color>
+      </node>
+      <node id="myelin" label="myelin">
+        <attvalues>
+          <attvalue for="modularity class" value="7"></attvalue>
+        </attvalues>
+        <viz:size value="10.882353"></viz:size>
+        <viz:position x="289.50525" y="-0.76807404"></viz:position>
+        <viz:color r="211" g="179" b="176"></viz:color>
+      </node>
+      <node id="grounding" label="grounding">
+        <attvalues>
+          <attvalue for="modularity class" value="8"></attvalue>
+        </attvalues>
+        <viz:size value="5.0"></viz:size>
+        <viz:position x="170.31235" y="-22.171516"></viz:position>
+        <viz:color r="255" g="32" b="10"></viz:color>
+      </node>
+      <node id="infrared-light" label="infrared light">
+        <attvalues>
+          <attvalue for="modularity class" value="8"></attvalue>
+        </attvalues>
+        <viz:size value="7.9411764"></viz:size>
+        <viz:position x="259.21143" y="16.93663"></viz:position>
+        <viz:color r="255" g="32" b="10"></viz:color>
+      </node>
+      <node id="light" label="light">
+        <attvalues>
+          <attvalue for="modularity class" value="8"></attvalue>
+        </attvalues>
+        <viz:size value="13.823529"></viz:size>
+        <viz:position x="213.62863" y="31.642118"></viz:position>
+        <viz:color r="255" g="32" b="10"></viz:color>
+      </node>
+      <node id="oxygen" label="oxygen">
+        <attvalues>
+          <attvalue for="modularity class" value="8"></attvalue>
+        </attvalues>
+        <viz:size value="6.470588"></viz:size>
+        <viz:position x="225.39847" y="79.44187"></viz:position>
+        <viz:color r="255" g="32" b="10"></viz:color>
+      </node>
+      <node id="sunlight" label="sunlight">
+        <attvalues>
+          <attvalue for="modularity class" value="8"></attvalue>
+        </attvalues>
+        <viz:size value="12.3529415"></viz:size>
+        <viz:position x="212.7318" y="-13.887695"></viz:position>
+        <viz:color r="255" g="32" b="10"></viz:color>
+      </node>
+      <node id="UV-light" label="UV light">
+        <attvalues>
+          <attvalue for="modularity class" value="8"></attvalue>
+        </attvalues>
+        <viz:size value="6.470588"></viz:size>
+        <viz:position x="249.15738" y="49.37124"></viz:position>
+        <viz:color r="255" g="32" b="10"></viz:color>
+      </node>
+      <node id="adrenaline" label="adrenaline">
+        <attvalues>
+          <attvalue for="modularity class" value="9"></attvalue>
+        </attvalues>
+        <viz:size value="9.411764"></viz:size>
+        <viz:position x="205.05646" y="212.37936"></viz:position>
+        <viz:color r="255" g="243" b="87"></viz:color>
+      </node>
+      <node id="cholesterol" label="cholesterol">
+        <attvalues>
+          <attvalue for="modularity class" value="9"></attvalue>
+        </attvalues>
+        <viz:size value="7.9411764"></viz:size>
+        <viz:position x="247.45529" y="166.83464"></viz:position>
+        <viz:color r="255" g="243" b="87"></viz:color>
+      </node>
+      <node id="cortisol" label="cortisol">
+        <attvalues>
+          <attvalue for="modularity class" value="9"></attvalue>
+        </attvalues>
+        <viz:size value="10.882353"></viz:size>
+        <viz:position x="163.89803" y="286.4928"></viz:position>
+        <viz:color r="255" g="243" b="87"></viz:color>
+      </node>
+      <node id="growth-hormone" label="growth hormone">
+        <attvalues>
+          <attvalue for="modularity class" value="9"></attvalue>
+        </attvalues>
+        <viz:size value="10.882353"></viz:size>
+        <viz:position x="124.58983" y="316.05646"></viz:position>
+        <viz:color r="255" g="243" b="87"></viz:color>
+      </node>
+      <node id="insulin" label="insulin">
+        <attvalues>
+          <attvalue for="modularity class" value="9"></attvalue>
+        </attvalues>
+        <viz:size value="12.3529415"></viz:size>
+        <viz:position x="134.51262" y="212.11813"></viz:position>
+        <viz:color r="255" g="243" b="87"></viz:color>
+      </node>
+      <node id="serotonin" label="serotonin">
+        <attvalues>
+          <attvalue for="modularity class" value="9"></attvalue>
+        </attvalues>
+        <viz:size value="13.823529"></viz:size>
+        <viz:position x="174.91846" y="170.74269"></viz:position>
+        <viz:color r="255" g="243" b="87"></viz:color>
+      </node>
+      <node id="testosterone" label="testosterone">
+        <attvalues>
+          <attvalue for="modularity class" value="9"></attvalue>
+        </attvalues>
+        <viz:size value="7.9411764"></viz:size>
+        <viz:position x="125.94651" y="264.2133"></viz:position>
+        <viz:color r="255" g="243" b="87"></viz:color>
+      </node>
+      <node id="thyroid" label="thyroid">
+        <attvalues>
+          <attvalue for="modularity class" value="9"></attvalue>
+        </attvalues>
+        <viz:size value="12.3529415"></viz:size>
+        <viz:position x="171.74107" y="244.74382"></viz:position>
+        <viz:color r="255" g="243" b="87"></viz:color>
+      </node>
+    </nodes>
+    <edges>
+      <edge id="1783" source="mitochondria" target="energy"></edge>
+      <edge id="1784" source="brain" target="energy"></edge>
+      <edge id="1785" source="brain" target="fatigue"></edge>
+      <edge id="1786" source="brain" target="focus"></edge>
+      <edge id="1787" source="brain" target="mood"></edge>
+      <edge id="1788" source="brain" target="brain-fog"></edge>
+      <edge id="1789" source="brain" target="cravings"></edge>
+      <edge id="1790" source="myelin" target="neurons" weight="2.0"></edge>
+      <edge id="1791" source="energy-production" target="fat" weight="2.0"></edge>
+      <edge id="1792" source="energy-production" target="sugar" weight="2.0"></edge>
+      <edge id="1793" source="sugar" target="cravings" weight="2.0"></edge>
+      <edge id="1794" source="toxins" target="energy" weight="2.0"></edge>
+      <edge id="1795" source="adrenaline" target="energy-production"></edge>
+      <edge id="1796" source="adrenaline" target="sugar"></edge>
+      <edge id="1797" source="adrenaline" target="insulin"></edge>
+      <edge id="1798" source="sugar" target="insulin"></edge>
+      <edge id="1800" source="sugar" target="fat"></edge>
+      <edge id="1801" source="mitochondria" target="energy-production"></edge>
+      <edge id="1802" source="cortisol" target="sugar"></edge>
+      <edge id="1803" source="cortisol" target="insulin"></edge>
+      <edge id="1804" source="mitochondria" target="mitogenesis"></edge>
+      <edge id="1805" source="mitogenesis" target="testosterone"></edge>
+      <edge id="1806" source="mitogenesis" target="thyroid"></edge>
+      <edge id="1808" source="stress" target="mitogenesis"></edge>
+      <edge id="1809" source="stress" target="detox"></edge>
+      <edge id="1810" source="stress" target="energy"></edge>
+      <edge id="1811" source="energy" target="neurons"></edge>
+      <edge id="1812" source="myelin" target="thyroid"></edge>
+      <edge id="1814" source="cholesterol" target="myelin"></edge>
+      <edge id="1815" source="cholesterol" target="fasting"></edge>
+      <edge id="1816" source="energy-production" target="toxins"></edge>
+      <edge id="1817" source="oxidative-stress" target="toxins"></edge>
+      <edge id="1818" source="oxidative-stress" target="detox"></edge>
+      <edge id="1819" source="neurogenesis" target="fat"></edge>
+      <edge id="1820" source="neurogenesis" target="toxins"></edge>
+      <edge id="1821" source="neurogenesis" target="sugar"></edge>
+      <edge id="1822" source="neurogenesis" target="omega3"></edge>
+      <edge id="1823" source="neurogenesis" target="stress" weight="2.0"></edge>
+      <edge id="1824" source="neurogenesis" target="exercise"></edge>
+      <edge id="1825" source="neurogenesis" target="sunlight"></edge>
+      <edge id="1826" source="neurogenesis" target="sex"></edge>
+      <edge id="1827" source="inflammation" target="brain-fog" weight="2.0"></edge>
+      <edge id="1828" source="inflammation" target="fatigue"></edge>
+      <edge id="1830" source="inflammation" target="food-sensitivities"></edge>
+      <edge id="1831" source="gut" target="food-sensitivities"></edge>
+      <edge id="1832" source="gut" target="antibiotics"></edge>
+      <edge id="1833" source="gut" target="pesticides"></edge>
+      <edge id="1834" source="gut" target="processed-foods"></edge>
+      <edge id="1835" source="brain" target="inflammation"></edge>
+      <edge id="1836" source="brain" target="gut"></edge>
+      <edge id="1837" source="gut" target="butter"></edge>
+      <edge id="1838" source="inflammation" target="polyphenols" weight="2.0"></edge>
+      <edge id="1839" source="polyphenols" target="gut"></edge>
+      <edge id="1840" source="inflammation" target="omega3"></edge>
+      <edge id="1841" source="inflammation" target="omega6"></edge>
+      <edge id="1842" source="neurons" target="oxidative-stress"></edge>
+      <edge id="1843" source="neurons" target="grounding"></edge>
+      <edge id="1844" source="UV-light" target="EZ-water"></edge>
+      <edge id="1845" source="polyphenols" target="neurogenesis"></edge>
+      <edge id="1846" source="polyphenols" target="apoptosis"></edge>
+      <edge id="1848" source="polyphenols" target="vegetables"></edge>
+      <edge id="1849" source="polyphenols" target="coffee" weight="2.0"></edge>
+      <edge id="1850" source="polyphenols" target="chocolate"></edge>
+      <edge id="1851" source="polyphenols" target="fruits"></edge>
+      <edge id="1852" source="neurotransmission" target="dopamine"></edge>
+      <edge id="1853" source="neurotransmission" target="norepinephrine"></edge>
+      <edge id="1854" source="neurotransmission" target="serotonin"></edge>
+      <edge id="1855" source="neurotransmission" target="l-tryptophan"></edge>
+      <edge id="1856" source="neurotransmission" target="melatonin"></edge>
+      <edge id="1857" source="neurotransmission" target="acetylcholine"></edge>
+      <edge id="1858" source="neurotransmission" target="gaba"></edge>
+      <edge id="1859" source="dopamine" target="meat"></edge>
+      <edge id="1860" source="dopamine" target="nuts"></edge>
+      <edge id="1861" source="dopamine" target="fish"></edge>
+      <edge id="1862" source="dopamine" target="fruits"></edge>
+      <edge id="1863" source="dopamine" target="sunlight"></edge>
+      <edge id="1864" source="norepinephrine" target="vitamin-c"></edge>
+      <edge id="1865" source="norepinephrine" target="dopamine"></edge>
+      <edge id="1866" source="norepinephrine" target="detox"></edge>
+      <edge id="1867" source="serotonin" target="l-tryptophan"></edge>
+      <edge id="1868" source="serotonin" target="mood"></edge>
+      <edge id="1869" source="serotonin" target="depression"></edge>
+      <edge id="1870" source="l-tryptophan" target="meat"></edge>
+      <edge id="1871" source="l-tryptophan" target="fish"></edge>
+      <edge id="1872" source="l-tryptophan" target="nuts"></edge>
+      <edge id="1873" source="acetylcholine" target="sleep"></edge>
+      <edge id="1874" source="acetylcholine" target="fatigue"></edge>
+      <edge id="1875" source="acetylcholine" target="meat"></edge>
+      <edge id="1876" source="acetylcholine" target="eggs"></edge>
+      <edge id="1877" source="acetylcholine" target="fish"></edge>
+      <edge id="1878" source="gaba" target="calming"></edge>
+      <edge id="1879" source="gaba" target="neurons"></edge>
+      <edge id="1880" source="gaba" target="anxiety"></edge>
+      <edge id="1881" source="gaba" target="meat"></edge>
+      <edge id="1882" source="gaba" target="fish"></edge>
+      <edge id="1883" source="gaba" target="eggs"></edge>
+      <edge id="1884" source="unsaturated-fat" target="saturated-fat"></edge>
+      <edge id="1885" source="unsaturated-fat" target="omega3"></edge>
+      <edge id="1886" source="unsaturated-fat" target="omega6"></edge>
+      <edge id="1887" source="saturated-fat" target="butter"></edge>
+      <edge id="1888" source="saturated-fat" target="meat"></edge>
+      <edge id="1889" source="saturated-fat" target="omega3"></edge>
+      <edge id="1890" source="saturated-fat" target="eggs"></edge>
+      <edge id="1891" source="saturated-fat" target="cholesterol"></edge>
+      <edge id="1892" source="olive-oil" target="detox"></edge>
+      <edge id="1893" source="olive-oil" target="unsaturated-fat"></edge>
+      <edge id="1894" source="fish" target="omega3"></edge>
+      <edge id="1895" source="ketosis" target="fasting"></edge>
+      <edge id="1896" source="ketosis" target="fat" weight="2.0"></edge>
+      <edge id="1897" source="ketosis" target="energy-production" weight="2.0"></edge>
+      <edge id="1898" source="ketosis" target="gaba"></edge>
+      <edge id="1900" source="ketosis" target="sleep"></edge>
+      <edge id="1901" source="ketosis" target="cortisol"></edge>
+      <edge id="1902" source="ketosis" target="thyroid"></edge>
+      <edge id="1903" source="ketosis" target="MCT"></edge>
+      <edge id="1905" source="fasting" target="myelin"></edge>
+      <edge id="1906" source="fasting" target="autophagy"></edge>
+      <edge id="1907" source="fasting" target="inflammation"></edge>
+      <edge id="1908" source="fasting" target="neurogenesis"></edge>
+      <edge id="1909" source="fasting" target="mood"></edge>
+      <edge id="1910" source="trans-fats" target="processed-foods"></edge>
+      <edge id="1911" source="trans-fats" target="fried-foods"></edge>
+      <edge id="1912" source="trans-fats" target="mitochondria"></edge>
+      <edge id="1913" source="trans-fats" target="inflammation"></edge>
+      <edge id="1914" source="dairy" target="lactose"></edge>
+      <edge id="1915" source="dairy" target="gluten"></edge>
+      <edge id="1916" source="dairy" target="inflammation"></edge>
+      <edge id="1917" source="dairy" target="polyphenols"></edge>
+      <edge id="1918" source="gluten" target="gut"></edge>
+      <edge id="1919" source="gluten" target="inflammation"></edge>
+      <edge id="1920" source="gluten" target="thyroid"></edge>
+      <edge id="1921" source="vegetable-oils" target="omega3"></edge>
+      <edge id="1922" source="vegetable-oils" target="omega6"></edge>
+      <edge id="1923" source="mould" target="toxins"></edge>
+      <edge id="1924" source="mould" target="mitochondria"></edge>
+      <edge id="1925" source="mould" target="cereal"></edge>
+      <edge id="1926" source="mould" target="grains"></edge>
+      <edge id="1927" source="mould" target="meat"></edge>
+      <edge id="1928" source="mould" target="coffee"></edge>
+      <edge id="1929" source="mould" target="dried-fruit"></edge>
+      <edge id="1930" source="mould" target="wine"></edge>
+      <edge id="1931" source="mould" target="beer"></edge>
+      <edge id="1932" source="mould" target="chocolate"></edge>
+      <edge id="1933" source="mould" target="nuts"></edge>
+      <edge id="1934" source="corn" target="mould"></edge>
+      <edge id="1935" source="corn" target="pesticides"></edge>
+      <edge id="1936" source="MSG" target="toxins"></edge>
+      <edge id="1937" source="MSG" target="mitochondria"></edge>
+      <edge id="1938" source="aspartame" target="neurons"></edge>
+      <edge id="1939" source="aspartame" target="mitochondria"></edge>
+      <edge id="1940" source="aspartame" target="gut"></edge>
+      <edge id="1941" source="aspartame" target="toxins"></edge>
+      <edge id="1942" source="soy-sauce" target="mould"></edge>
+      <edge id="1943" source="soy-sauce" target="mitochondria"></edge>
+      <edge id="1944" source="fluoride" target="water"></edge>
+      <edge id="1945" source="fluoride" target="thyroid"></edge>
+      <edge id="1946" source="gmo" target="pesticides"></edge>
+      <edge id="1947" source="gmo" target="mitochondria"></edge>
+      <edge id="1948" source="gmo" target="acetylcholine"></edge>
+      <edge id="1949" source="mercury" target="inflammation"></edge>
+      <edge id="1950" source="mercury" target="mitochondria"></edge>
+      <edge id="1951" source="insulin" target="neurons"></edge>
+      <edge id="1952" source="sugar" target="dopamine"></edge>
+      <edge id="1953" source="sugar" target="oxidative-stress"></edge>
+      <edge id="1954" source="sugar" target="mood" weight="2.0"></edge>
+      <edge id="1955" source="sugar" target="inflammation"></edge>
+      <edge id="1956" source="coconut-oil" target="saturated-fat"></edge>
+      <edge id="1957" source="coconut-oil" target="MCT"></edge>
+      <edge id="1958" source="coconut-oil" target="inflammation"></edge>
+      <edge id="1959" source="fried-foods" target="meat"></edge>
+      <edge id="1960" source="fried-foods" target="mitochondria"></edge>
+      <edge id="1961" source="fried-foods" target="oxidative-stress"></edge>
+      <edge id="1962" source="fried-foods" target="apoptosis"></edge>
+      <edge id="1964" source="fat" target="myelin"></edge>
+      <edge id="1965" source="fat" target="inflammation"></edge>
+      <edge id="1966" source="heavy-metals" target="toxins"></edge>
+      <edge id="1967" source="arsenic" target="pesticides"></edge>
+      <edge id="1968" source="arsenic" target="water"></edge>
+      <edge id="1969" source="arsenic" target="seafood"></edge>
+      <edge id="1970" source="arsenic" target="heavy-metals"></edge>
+      <edge id="1971" source="arsenic" target="brown-rice"></edge>
+      <edge id="1972" source="arsenic" target="neurons"></edge>
+      <edge id="1973" source="cadmium" target="heavy-metals"></edge>
+      <edge id="1974" source="cadmium" target="grains"></edge>
+      <edge id="1975" source="cadmium" target="oxidative-stress"></edge>
+      <edge id="1976" source="cadmium" target="mitochondria"></edge>
+      <edge id="1977" source="lead" target="heavy-metals"></edge>
+      <edge id="1978" source="lead" target="water"></edge>
+      <edge id="1979" source="lead" target="mitochondria"></edge>
+      <edge id="1980" source="mercury" target="heavy-metals"></edge>
+      <edge id="1981" source="mercury" target="seafood"></edge>
+      <edge id="1982" source="mercury" target="fatigue"></edge>
+      <edge id="1983" source="mercury" target="depression"></edge>
+      <edge id="1984" source="mercury" target="focus"></edge>
+      <edge id="1985" source="mercury" target="memory"></edge>
+      <edge id="1986" source="mitochondria" target="drugs" weight="3.0"></edge>
+      <edge id="1988" source="drugs" target="glutathione"></edge>
+      <edge id="1990" source="detox" target="toxins"></edge>
+      <edge id="1991" source="detox" target="sauna"></edge>
+      <edge id="1992" source="exercise" target="circulation" weight="2.0"></edge>
+      <edge id="1993" source="exercise" target="detox"></edge>
+      <edge id="1994" source="circulation" target="detox"></edge>
+      <edge id="1995" source="circulation" target="inflammation"></edge>
+      <edge id="1996" source="circulation" target="energy-production"></edge>
+      <edge id="1997" source="detox" target="fish"></edge>
+      <edge id="1998" source="detox" target="heavy-metals"></edge>
+      <edge id="1999" source="energy" target="light"></edge>
+      <edge id="2000" source="infrared-light" target="light" weight="2.0"></edge>
+      <edge id="2001" source="serotonin" target="sunlight"></edge>
+      <edge id="2002" source="serotonin" target="melatonin"></edge>
+      <edge id="2003" source="serotonin" target="sleep"></edge>
+      <edge id="2004" source="EZ-water" target="light"></edge>
+      <edge id="2005" source="EZ-water" target="sunlight"></edge>
+      <edge id="2006" source="EZ-water" target="mitochondria"></edge>
+      <edge id="2007" source="EZ-water" target="vegetables"></edge>
+      <edge id="2008" source="EZ-water" target="toxins"></edge>
+      <edge id="2009" source="light" target="UV-light"></edge>
+      <edge id="2011" source="light" target="sunlight"></edge>
+      <edge id="2012" source="mitogenesis" target="infrared-light"></edge>
+      <edge id="2013" source="mitogenesis" target="collagen"></edge>
+      <edge id="2014" source="collagen" target="infrared-light"></edge>
+      <edge id="2015" source="light" target="stress"></edge>
+      <edge id="2016" source="light" target="focus"></edge>
+      <edge id="2017" source="oxygen" target="BDNF"></edge>
+      <edge id="2018" source="oxygen" target="energy-production"></edge>
+      <edge id="2019" source="breathing" target="energy"></edge>
+      <edge id="2020" source="cold" target="testosterone"></edge>
+      <edge id="2021" source="cold" target="norepinephrine"></edge>
+      <edge id="2022" source="cold" target="autophagy"></edge>
+      <edge id="2023" source="cold" target="insulin"></edge>
+      <edge id="2024" source="cold" target="thyroid"></edge>
+      <edge id="2025" source="cold" target="growth-hormone"></edge>
+      <edge id="2026" source="cold" target="inflammation"></edge>
+      <edge id="2027" source="cold" target="PGC-1"></edge>
+      <edge id="2028" source="cold" target="calming"></edge>
+      <edge id="2029" source="lymphatic-system" target="detox"></edge>
+      <edge id="2030" source="glymphatic-system" target="detox"></edge>
+      <edge id="2031" source="glymphatic-system" target="EZ-water"></edge>
+      <edge id="2032" source="glymphatic-system" target="sleep" weight="2.0"></edge>
+      <edge id="2033" source="sleep" target="growth-hormone"></edge>
+      <edge id="2034" source="sleep" target="memory"></edge>
+      <edge id="2035" source="growth-hormone" target="mitogenesis"></edge>
+      <edge id="2036" source="growth-hormone" target="neurogenesis"></edge>
+      <edge id="2037" source="sugar" target="sleep"></edge>
+      <edge id="2040" source="glymphatic-system" target="mitochondria"></edge>
+      <edge id="2042" source="meditation" target="cortisol"></edge>
+      <edge id="2043" source="meditation" target="stress"></edge>
+      <edge id="2044" source="meditation" target="adrenaline"></edge>
+      <edge id="2045" source="BDNF" target="neurogenesis"></edge>
+      <edge id="2046" source="BDNF" target="memory"></edge>
+      <edge id="2047" source="neurogenesis" target="neurons"></edge>
+      <edge id="2049" source="neurogenesis" target="anxiety"></edge>
+      <edge id="2050" source="neurogenesis" target="depression"></edge>
+      <edge id="2051" source="exercise" target="mitochondria"></edge>
+      <edge id="2052" source="exercise" target="PGC-1"></edge>
+      <edge id="2053" source="mitogenesis" target="metabolism"></edge>
+      <edge id="2054" source="mitogenesis" target="BDNF"></edge>
+      <edge id="2055" source="BDNF" target="PGC-1"></edge>
+      <edge id="2056" source="exercise" target="sugar"></edge>
+      <edge id="2057" source="exercise" target="insulin"></edge>
+      <edge id="2059" source="exercise" target="anxiety"></edge>
+      <edge id="2060" source="exercise" target="fatigue"></edge>
+      <edge id="2061" source="exercise" target="memory"></edge>
+      <edge id="2062" source="exercise" target="happiness"></edge>
+      <edge id="2063" source="exercise" target="lymphatic-system"></edge>
+      <edge id="2064" source="exercise" target="testosterone"></edge>
+      <edge id="2065" source="exercise" target="growth-hormone" weight="2.0"></edge>
+      <edge id="2066" source="exercise" target="stress"></edge>
+      <edge id="2067" source="exercise" target="cortisol"></edge>
+      <edge id="2068" source="exercise" target="BDNF" weight="2.0"></edge>
+      <edge id="2071" source="exercise" target="EZ-water"></edge>
+      <edge id="2072" source="melanin" target="energy-production"></edge>
+      <edge id="2073" source="melanin" target="sunlight"></edge>
+      <edge id="2074" source="melanin" target="polyphenols"></edge>
+      <edge id="2075" source="coffee" target="melanin"></edge>
+      <edge id="2077" source="coffee" target="EZ-water"></edge>
+      <edge id="2078" source="coffee" target="butter"></edge>
+    </edges>
+  </graph>
+</gexf>

@@ -42,10 +42,6 @@
         ...mapState(useEnergyStore, ['mapOptions', 'typeMap']),
         ...mapWritableState(useEnergyStore, ['energyRadioItems','selectedSource']),
       },
-      watch: {
-      },
-      mounted () {
-      }
     })
 
   </script>

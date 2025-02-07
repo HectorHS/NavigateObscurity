@@ -1,0 +1,1693 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<gexf xmlns="http://gexf.net/1.3" version="1.3" xmlns:viz="http://gexf.net/1.3/viz" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://gexf.net/1.3 http://gexf.net/1.3/gexf.xsd">
+  <meta lastmodifieddate="2023-09-27">
+    <creator>Gephi 0.10.1</creator>
+    <title></title>
+    <description></description>
+  </meta>
+  <graph defaultedgetype="undirected" mode="static">
+    <attributes class="node" mode="static">
+      <attribute id="modularity class" title="modularity class" type="integer"/>
+      <attribute id="degree" title="Degree" type="integer">
+        <default>0</default>
+      </attribute>
+      <attribute id="weighted degree" title="Weighted Degree" type="double">
+        <default>0.0</default>
+      </attribute>
+      <attribute id="pageranks" title="PageRank" type="double">
+        <default>0.0</default>
+      </attribute>
+      <attribute id="authority" title="Authority" type="float">
+        <default>0.0</default>
+      </attribute>
+      <attribute id="hub" title="Hub" type="float">
+        <default>0.0</default>
+      </attribute>
+      <attribute id="eccentricity" title="Eccentricity" type="double">
+        <default>0.0</default>
+      </attribute>
+      <attribute id="closnesscentrality" title="Closeness Centrality" type="double">
+        <default>0.0</default>
+      </attribute>
+      <attribute id="harmonicclosnesscentrality" title="Harmonic Closeness Centrality" type="double">
+        <default>0.0</default>
+      </attribute>
+      <attribute id="betweenesscentrality" title="Betweenness Centrality" type="double">
+        <default>0.0</default>
+      </attribute>
+      <attribute id="size" title="Size" type="integer"/>
+    </attributes>
+    <nodes>
+      <node id="Apsalar" label="Apsalar">
+        <attvalues>
+          <attvalue for="modularity class" value="4"/>
+          <attvalue for="degree" value="21"/>
+          <attvalue for="weighted degree" value="107.0"/>
+          <attvalue for="pageranks" value="0.022394537703045208"/>
+          <attvalue for="authority" value="0.14964151"/>
+          <attvalue for="hub" value="0.14963955"/>
+          <attvalue for="eccentricity" value="3.0"/>
+          <attvalue for="closnesscentrality" value="0.532258064516129"/>
+          <attvalue for="harmonicclosnesscentrality" value="0.6262626262626262"/>
+          <attvalue for="betweenesscentrality" value="43.08096030730676"/>
+          <attvalue for="size" value="22"/>
+        </attvalues>
+        <viz:size value="19.0"/>
+        <viz:position x="10.477066" y="172.9473"/>
+        <viz:color r="0" g="189" b="148"/>
+      </node>
+      <node id="Apt" label="Apt">
+        <attvalues>
+          <attvalue for="modularity class" value="7"/>
+          <attvalue for="degree" value="20"/>
+          <attvalue for="weighted degree" value="34.0"/>
+          <attvalue for="pageranks" value="0.020597807528751275"/>
+          <attvalue for="authority" value="0.1873683"/>
+          <attvalue for="hub" value="0.18736799"/>
+          <attvalue for="eccentricity" value="3.0"/>
+          <attvalue for="closnesscentrality" value="0.5454545454545454"/>
+          <attvalue for="harmonicclosnesscentrality" value="0.6287878787878788"/>
+          <attvalue for="betweenesscentrality" value="64.8221920219305"/>
+          <attvalue for="size" value="8"/>
+        </attvalues>
+        <viz:size value="9.666666"/>
+        <viz:position x="119.01834" y="126.23983"/>
+        <viz:color r="115" g="192" b="0"/>
+      </node>
+      <node id="Baudin" label="Baudin">
+        <attvalues>
+          <attvalue for="modularity class" value="1"/>
+          <attvalue for="degree" value="14"/>
+          <attvalue for="weighted degree" value="66.0"/>
+          <attvalue for="pageranks" value="0.017015686918044302"/>
+          <attvalue for="authority" value="0.07754268"/>
+          <attvalue for="hub" value="0.07754257"/>
+          <attvalue for="eccentricity" value="3.0"/>
+          <attvalue for="closnesscentrality" value="0.515625"/>
+          <attvalue for="harmonicclosnesscentrality" value="0.5808080808080809"/>
+          <attvalue for="betweenesscentrality" value="32.872100452844066"/>
+          <attvalue for="size" value="16"/>
+        </attvalues>
+        <viz:size value="15.0"/>
+        <viz:position x="206.08817" y="-105.47663"/>
+        <viz:color r="0" g="196" b="255"/>
+      </node>
+      <node id="Beneth" label="Beneth">
+        <attvalues>
+          <attvalue for="modularity class" value="1"/>
+          <attvalue for="degree" value="5"/>
+          <attvalue for="weighted degree" value="17.0"/>
+          <attvalue for="pageranks" value="0.007828583528021436"/>
+          <attvalue for="authority" value="0.02218414"/>
+          <attvalue for="hub" value="0.022184068"/>
+          <attvalue for="eccentricity" value="4.0"/>
+          <attvalue for="closnesscentrality" value="0.38823529411764707"/>
+          <attvalue for="harmonicclosnesscentrality" value="0.4305555555555553"/>
+          <attvalue for="betweenesscentrality" value="0.0"/>
+          <attvalue for="size" value="6"/>
+        </attvalues>
+        <viz:size value="8.333334"/>
+        <viz:position x="64.99663" y="-165.63806"/>
+        <viz:color r="0" g="196" b="255"/>
+      </node>
+      <node id="Bidithal" label="Bidithal">
+        <attvalues>
+          <attvalue for="modularity class" value="3"/>
+          <attvalue for="degree" value="7"/>
+          <attvalue for="weighted degree" value="7.0"/>
+          <attvalue for="pageranks" value="0.00980104712390585"/>
+          <attvalue for="authority" value="0.028667884"/>
+          <attvalue for="hub" value="0.02866773"/>
+          <attvalue for="eccentricity" value="4.0"/>
+          <attvalue for="closnesscentrality" value="0.4"/>
+          <attvalue for="harmonicclosnesscentrality" value="0.45328282828282795"/>
+          <attvalue for="betweenesscentrality" value="0.0"/>
+          <attvalue for="size" value="1"/>
+        </attvalues>
+        <viz:size value="5.0"/>
+        <viz:position x="163.8244" y="-299.84262"/>
+        <viz:color r="255" g="136" b="5"/>
+      </node>
+      <node id="Blistig" label="Blistig">
+        <attvalues>
+          <attvalue for="modularity class" value="6"/>
+          <attvalue for="degree" value="14"/>
+          <attvalue for="weighted degree" value="19.0"/>
+          <attvalue for="pageranks" value="0.01490435020093761"/>
+          <attvalue for="authority" value="0.13938716"/>
+          <attvalue for="hub" value="0.13938834"/>
+          <attvalue for="eccentricity" value="4.0"/>
+          <attvalue for="closnesscentrality" value="0.4583333333333333"/>
+          <attvalue for="harmonicclosnesscentrality" value="0.5416666666666665"/>
+          <attvalue for="betweenesscentrality" value="10.46511842625973"/>
+          <attvalue for="size" value="4"/>
+        </attvalues>
+        <viz:size value="7.0"/>
+        <viz:position x="-335.6088" y="-85.61207"/>
+        <viz:color r="223" g="137" b="255"/>
+      </node>
+      <node id="Bult" label="Bult">
+        <attvalues>
+          <attvalue for="modularity class" value="2"/>
+          <attvalue for="degree" value="16"/>
+          <attvalue for="weighted degree" value="26.0"/>
+          <attvalue for="pageranks" value="0.017062066295839562"/>
+          <attvalue for="authority" value="0.15118058"/>
+          <attvalue for="hub" value="0.15118153"/>
+          <attvalue for="eccentricity" value="3.0"/>
+          <attvalue for="closnesscentrality" value="0.5196850393700787"/>
+          <attvalue for="harmonicclosnesscentrality" value="0.5934343434343434"/>
+          <attvalue for="betweenesscentrality" value="36.52220274088967"/>
+          <attvalue for="size" value="5"/>
+        </attvalues>
+        <viz:size value="7.666667"/>
+        <viz:position x="-99.66071" y="-176.41595"/>
+        <viz:color r="76" g="70" b="62"/>
+      </node>
+      <node id="Cartheron" label="Cartheron Crust">
+        <attvalues>
+          <attvalue for="modularity class" value="6"/>
+          <attvalue for="degree" value="5"/>
+          <attvalue for="weighted degree" value="5.0"/>
+          <attvalue for="pageranks" value="0.006878442672856047"/>
+          <attvalue for="authority" value="0.045923226"/>
+          <attvalue for="hub" value="0.045923132"/>
+          <attvalue for="eccentricity" value="3.0"/>
+          <attvalue for="closnesscentrality" value="0.4429530201342282"/>
+          <attvalue for="harmonicclosnesscentrality" value="0.4823232323232321"/>
+          <attvalue for="betweenesscentrality" value="1.2650749469828417"/>
+          <attvalue for="size" value="2"/>
+        </attvalues>
+        <viz:size value="5.6666665"/>
+        <viz:position x="245.08925" y="56.971962"/>
+        <viz:color r="223" g="137" b="255"/>
+      </node>
+      <node id="Coltaine" label="Coltaine">
+        <attvalues>
+          <attvalue for="modularity class" value="2"/>
+          <attvalue for="degree" value="28"/>
+          <attvalue for="weighted degree" value="84.0"/>
+          <attvalue for="pageranks" value="0.028580715133993514"/>
+          <attvalue for="authority" value="0.240745"/>
+          <attvalue for="hub" value="0.2407463"/>
+          <attvalue for="eccentricity" value="3.0"/>
+          <attvalue for="closnesscentrality" value="0.5689655172413793"/>
+          <attvalue for="harmonicclosnesscentrality" value="0.6818181818181818"/>
+          <attvalue for="betweenesscentrality" value="109.20943782311758"/>
+          <attvalue for="size" value="22"/>
+        </attvalues>
+        <viz:size value="19.0"/>
+        <viz:position x="-91.78537" y="-104.52323"/>
+        <viz:color r="76" g="70" b="62"/>
+      </node>
+      <node id="Cotillion" label="Cotillion">
+        <attvalues>
+          <attvalue for="modularity class" value="7"/>
+          <attvalue for="degree" value="10"/>
+          <attvalue for="weighted degree" value="15.0"/>
+          <attvalue for="pageranks" value="0.011481812352752233"/>
+          <attvalue for="authority" value="0.09068872"/>
+          <attvalue for="hub" value="0.09068781"/>
+          <attvalue for="eccentricity" value="3.0"/>
+          <attvalue for="closnesscentrality" value="0.4583333333333333"/>
+          <attvalue for="harmonicclosnesscentrality" value="0.52020202020202"/>
+          <attvalue for="betweenesscentrality" value="3.336100157152789"/>
+          <attvalue for="size" value="6"/>
+        </attvalues>
+        <viz:size value="8.333334"/>
+        <viz:position x="76.18828" y="243.80217"/>
+        <viz:color r="115" g="192" b="0"/>
+      </node>
+      <node id="Crokus" label="Crokus">
+        <attvalues>
+          <attvalue for="modularity class" value="4"/>
+          <attvalue for="degree" value="19"/>
+          <attvalue for="weighted degree" value="105.0"/>
+          <attvalue for="pageranks" value="0.020475044230350903"/>
+          <attvalue for="authority" value="0.13322069"/>
+          <attvalue for="hub" value="0.13321884"/>
+          <attvalue for="eccentricity" value="3.0"/>
+          <attvalue for="closnesscentrality" value="0.515625"/>
+          <attvalue for="harmonicclosnesscentrality" value="0.6060606060606061"/>
+          <attvalue for="betweenesscentrality" value="35.11696390579798"/>
+          <attvalue for="size" value="21"/>
+        </attvalues>
+        <viz:size value="18.333334"/>
+        <viz:position x="-3.2600708" y="82.23195"/>
+        <viz:color r="0" g="189" b="148"/>
+      </node>
+      <node id="Dassem" label="Dassem Ultor">
+        <attvalues>
+          <attvalue for="modularity class" value="6"/>
+          <attvalue for="degree" value="11"/>
+          <attvalue for="weighted degree" value="15.0"/>
+          <attvalue for="pageranks" value="0.012556240746203757"/>
+          <attvalue for="authority" value="0.08803995"/>
+          <attvalue for="hub" value="0.08803866"/>
+          <attvalue for="eccentricity" value="3.0"/>
+          <attvalue for="closnesscentrality" value="0.4647887323943662"/>
+          <attvalue for="harmonicclosnesscentrality" value="0.5303030303030302"/>
+          <attvalue for="betweenesscentrality" value="4.759732800766001"/>
+          <attvalue for="size" value="3"/>
+        </attvalues>
+        <viz:size value="6.3333335"/>
+        <viz:position x="185.48257" y="219.4518"/>
+        <viz:color r="223" g="137" b="255"/>
+      </node>
+      <node id="Dryjhna" label="Dryjhna">
+        <attvalues>
+          <attvalue for="modularity class" value="3"/>
+          <attvalue for="degree" value="13"/>
+          <attvalue for="weighted degree" value="18.0"/>
+          <attvalue for="pageranks" value="0.01547687415227177"/>
+          <attvalue for="authority" value="0.08865291"/>
+          <attvalue for="hub" value="0.08865264"/>
+          <attvalue for="eccentricity" value="3.0"/>
+          <attvalue for="closnesscentrality" value="0.5365853658536586"/>
+          <attvalue for="harmonicclosnesscentrality" value="0.5883838383838383"/>
+          <attvalue for="betweenesscentrality" value="52.62387521878196"/>
+          <attvalue for="size" value="5"/>
+        </attvalues>
+        <viz:size value="7.666667"/>
+        <viz:position x="261.44318" y="-151.98734"/>
+        <viz:color r="255" g="136" b="5"/>
+      </node>
+      <node id="Duiker" label="Duiker">
+        <attvalues>
+          <attvalue for="modularity class" value="2"/>
+          <attvalue for="degree" value="35"/>
+          <attvalue for="weighted degree" value="93.0"/>
+          <attvalue for="pageranks" value="0.03542735033030677"/>
+          <attvalue for="authority" value="0.2854345"/>
+          <attvalue for="hub" value="0.28543553"/>
+          <attvalue for="eccentricity" value="3.0"/>
+          <attvalue for="closnesscentrality" value="0.66"/>
+          <attvalue for="harmonicclosnesscentrality" value="0.7575757575757576"/>
+          <attvalue for="betweenesscentrality" value="301.2777236057847"/>
+          <attvalue for="size" value="26"/>
+        </attvalues>
+        <viz:size value="21.666666"/>
+        <viz:position x="-158.07658" y="-33.372295"/>
+        <viz:color r="76" g="70" b="62"/>
+      </node>
+      <node id="Dujek" label="Dujek">
+        <attvalues>
+          <attvalue for="modularity class" value="6"/>
+          <attvalue for="degree" value="6"/>
+          <attvalue for="weighted degree" value="11.0"/>
+          <attvalue for="pageranks" value="0.007631469092502195"/>
+          <attvalue for="authority" value="0.07242963"/>
+          <attvalue for="hub" value="0.07242976"/>
+          <attvalue for="eccentricity" value="4.0"/>
+          <attvalue for="closnesscentrality" value="0.4583333333333333"/>
+          <attvalue for="harmonicclosnesscentrality" value="0.5012626262626262"/>
+          <attvalue for="betweenesscentrality" value="0.3683712121212121"/>
+          <attvalue for="size" value="4"/>
+        </attvalues>
+        <viz:size value="7.0"/>
+        <viz:position x="189.14444" y="-21.81264"/>
+        <viz:color r="223" g="137" b="255"/>
+      </node>
+      <node id="Febryl" label="Febryl">
+        <attvalues>
+          <attvalue for="modularity class" value="3"/>
+          <attvalue for="degree" value="7"/>
+          <attvalue for="weighted degree" value="7.0"/>
+          <attvalue for="pageranks" value="0.00980104712390585"/>
+          <attvalue for="authority" value="0.028667884"/>
+          <attvalue for="hub" value="0.02866773"/>
+          <attvalue for="eccentricity" value="4.0"/>
+          <attvalue for="closnesscentrality" value="0.4"/>
+          <attvalue for="harmonicclosnesscentrality" value="0.45328282828282795"/>
+          <attvalue for="betweenesscentrality" value="0.0"/>
+          <attvalue for="size" value="1"/>
+        </attvalues>
+        <viz:size value="5.0"/>
+        <viz:position x="293.21222" y="-198.95396"/>
+        <viz:color r="255" g="136" b="5"/>
+      </node>
+      <node id="Felisin" label="Felisin Paran">
+        <attvalues>
+          <attvalue for="modularity class" value="1"/>
+          <attvalue for="degree" value="22"/>
+          <attvalue for="weighted degree" value="85.0"/>
+          <attvalue for="pageranks" value="0.025625010678088877"/>
+          <attvalue for="authority" value="0.112951405"/>
+          <attvalue for="hub" value="0.11295119"/>
+          <attvalue for="eccentricity" value="3.0"/>
+          <attvalue for="closnesscentrality" value="0.5641025641025641"/>
+          <attvalue for="harmonicclosnesscentrality" value="0.648989898989899"/>
+          <attvalue for="betweenesscentrality" value="146.0433663457437"/>
+          <attvalue for="size" value="23"/>
+        </attvalues>
+        <viz:size value="19.666668"/>
+        <viz:position x="124.41479" y="-74.58636"/>
+        <viz:color r="0" g="196" b="255"/>
+      </node>
+      <node id="Fiddler" label="Fiddler">
+        <attvalues>
+          <attvalue for="modularity class" value="4"/>
+          <attvalue for="degree" value="23"/>
+          <attvalue for="weighted degree" value="116.0"/>
+          <attvalue for="pageranks" value="0.02448811811565554"/>
+          <attvalue for="authority" value="0.16872028"/>
+          <attvalue for="hub" value="0.16871838"/>
+          <attvalue for="eccentricity" value="3.0"/>
+          <attvalue for="closnesscentrality" value="0.5739130434782609"/>
+          <attvalue for="harmonicclosnesscentrality" value="0.6590909090909091"/>
+          <attvalue for="betweenesscentrality" value="89.13413518166617"/>
+          <attvalue for="size" value="27"/>
+        </attvalues>
+        <viz:size value="22.333334"/>
+        <viz:position x="-104.19952" y="37.685184"/>
+        <viz:color r="0" g="189" b="148"/>
+      </node>
+      <node id="Gesler" label="Gesler">
+        <attvalues>
+          <attvalue for="modularity class" value="1"/>
+          <attvalue for="degree" value="12"/>
+          <attvalue for="weighted degree" value="51.0"/>
+          <attvalue for="pageranks" value="0.013711655771428596"/>
+          <attvalue for="authority" value="0.098243006"/>
+          <attvalue for="hub" value="0.098243274"/>
+          <attvalue for="eccentricity" value="3.0"/>
+          <attvalue for="closnesscentrality" value="0.532258064516129"/>
+          <attvalue for="harmonicclosnesscentrality" value="0.5808080808080809"/>
+          <attvalue for="betweenesscentrality" value="22.508824159239097"/>
+          <attvalue for="size" value="10"/>
+        </attvalues>
+        <viz:size value="11.0"/>
+        <viz:position x="-25.11908" y="-160.43422"/>
+        <viz:color r="0" g="196" b="255"/>
+      </node>
+      <node id="Gothos" label="Gothos">
+        <attvalues>
+          <attvalue for="modularity class" value="7"/>
+          <attvalue for="degree" value="7"/>
+          <attvalue for="weighted degree" value="7.0"/>
+          <attvalue for="pageranks" value="0.008889546530472015"/>
+          <attvalue for="authority" value="0.049314193"/>
+          <attvalue for="hub" value="0.049313236"/>
+          <attvalue for="eccentricity" value="4.0"/>
+          <attvalue for="closnesscentrality" value="0.3905325443786982"/>
+          <attvalue for="harmonicclosnesscentrality" value="0.4494949494949492"/>
+          <attvalue for="betweenesscentrality" value="0.0"/>
+          <attvalue for="size" value="1"/>
+        </attvalues>
+        <viz:size value="5.0"/>
+        <viz:position x="-298.91223" y="235.7916"/>
+        <viz:color r="115" g="192" b="0"/>
+      </node>
+      <node id="Gryllen" label="Gryllen">
+        <attvalues>
+          <attvalue for="modularity class" value="5"/>
+          <attvalue for="degree" value="12"/>
+          <attvalue for="weighted degree" value="17.0"/>
+          <attvalue for="pageranks" value="0.013900897202695262"/>
+          <attvalue for="authority" value="0.07948599"/>
+          <attvalue for="hub" value="0.07948488"/>
+          <attvalue for="eccentricity" value="3.0"/>
+          <attvalue for="closnesscentrality" value="0.48175182481751827"/>
+          <attvalue for="harmonicclosnesscentrality" value="0.5479797979797978"/>
+          <attvalue for="betweenesscentrality" value="25.6197950711555"/>
+          <attvalue for="size" value="3"/>
+        </attvalues>
+        <viz:size value="6.3333335"/>
+        <viz:position x="-265.71777" y="117.163284"/>
+        <viz:color r="255" g="85" b="132"/>
+      </node>
+      <node id="Heboric" label="Heboric">
+        <attvalues>
+          <attvalue for="modularity class" value="1"/>
+          <attvalue for="degree" value="23"/>
+          <attvalue for="weighted degree" value="92.0"/>
+          <attvalue for="pageranks" value="0.02669285453859444"/>
+          <attvalue for="authority" value="0.11735383"/>
+          <attvalue for="hub" value="0.11735337"/>
+          <attvalue for="eccentricity" value="3.0"/>
+          <attvalue for="closnesscentrality" value="0.5892857142857143"/>
+          <attvalue for="harmonicclosnesscentrality" value="0.6666666666666666"/>
+          <attvalue for="betweenesscentrality" value="169.9132771053309"/>
+          <attvalue for="size" value="25"/>
+        </attvalues>
+        <viz:size value="21.0"/>
+        <viz:position x="44.276443" y="-67.52915"/>
+        <viz:color r="0" g="196" b="255"/>
+      </node>
+      <node id="Icarium" label="Icarium">
+        <attvalues>
+          <attvalue for="modularity class" value="5"/>
+          <attvalue for="degree" value="16"/>
+          <attvalue for="weighted degree" value="100.0"/>
+          <attvalue for="pageranks" value="0.018277287091395013"/>
+          <attvalue for="authority" value="0.09738294"/>
+          <attvalue for="hub" value="0.09738131"/>
+          <attvalue for="eccentricity" value="3.0"/>
+          <attvalue for="closnesscentrality" value="0.5"/>
+          <attvalue for="harmonicclosnesscentrality" value="0.5808080808080808"/>
+          <attvalue for="betweenesscentrality" value="43.410785825761074"/>
+          <attvalue for="size" value="25"/>
+        </attvalues>
+        <viz:size value="21.0"/>
+        <viz:position x="-201.04926" y="90.7626"/>
+        <viz:color r="255" g="85" b="132"/>
+      </node>
+      <node id="Iskaral" label="Iskaral Pust">
+        <attvalues>
+          <attvalue for="modularity class" value="5"/>
+          <attvalue for="degree" value="16"/>
+          <attvalue for="weighted degree" value="77.0"/>
+          <attvalue for="pageranks" value="0.018598189751786034"/>
+          <attvalue for="authority" value="0.100426696"/>
+          <attvalue for="hub" value="0.10042507"/>
+          <attvalue for="eccentricity" value="3.0"/>
+          <attvalue for="closnesscentrality" value="0.4852941176470588"/>
+          <attvalue for="harmonicclosnesscentrality" value="0.5707070707070707"/>
+          <attvalue for="betweenesscentrality" value="59.302667676132046"/>
+          <attvalue for="size" value="17"/>
+        </attvalues>
+        <viz:size value="15.666667"/>
+        <viz:position x="-148.04619" y="234.94548"/>
+        <viz:color r="255" g="85" b="132"/>
+      </node>
+      <node id="Kalam" label="Kalam">
+        <attvalues>
+          <attvalue for="modularity class" value="4"/>
+          <attvalue for="degree" value="27"/>
+          <attvalue for="weighted degree" value="82.0"/>
+          <attvalue for="pageranks" value="0.028214985126343697"/>
+          <attvalue for="authority" value="0.22714214"/>
+          <attvalue for="hub" value="0.22714147"/>
+          <attvalue for="eccentricity" value="3.0"/>
+          <attvalue for="closnesscentrality" value="0.6"/>
+          <attvalue for="harmonicclosnesscentrality" value="0.691919191919192"/>
+          <attvalue for="betweenesscentrality" value="157.4522957489314"/>
+          <attvalue for="size" value="31"/>
+        </attvalues>
+        <viz:size value="25.0"/>
+        <viz:position x="98.7663" y="57.902187"/>
+        <viz:color r="0" g="189" b="148"/>
+      </node>
+      <node id="Kallor" label="Kallor">
+        <attvalues>
+          <attvalue for="modularity class" value="7"/>
+          <attvalue for="degree" value="1"/>
+          <attvalue for="weighted degree" value="1.0"/>
+          <attvalue for="pageranks" value="0.0032204237641929746"/>
+          <attvalue for="authority" value="0.008751264"/>
+          <attvalue for="hub" value="0.0087511595"/>
+          <attvalue for="eccentricity" value="4.0"/>
+          <attvalue for="closnesscentrality" value="0.3728813559322034"/>
+          <attvalue for="harmonicclosnesscentrality" value="0.39267676767676735"/>
+          <attvalue for="betweenesscentrality" value="0.0"/>
+          <attvalue for="size" value="1"/>
+        </attvalues>
+        <viz:size value="5.0"/>
+        <viz:position x="289.21216" y="58.621536"/>
+        <viz:color r="115" g="192" b="0"/>
+      </node>
+      <node id="Kamist" label="Kamist Reloe">
+        <attvalues>
+          <attvalue for="modularity class" value="3"/>
+          <attvalue for="degree" value="17"/>
+          <attvalue for="weighted degree" value="31.0"/>
+          <attvalue for="pageranks" value="0.017334687172780767"/>
+          <attvalue for="authority" value="0.17805508"/>
+          <attvalue for="hub" value="0.17805624"/>
+          <attvalue for="eccentricity" value="4.0"/>
+          <attvalue for="closnesscentrality" value="0.49624060150375937"/>
+          <attvalue for="harmonicclosnesscentrality" value="0.5845959595959596"/>
+          <attvalue for="betweenesscentrality" value="11.503779442056068"/>
+          <attvalue for="size" value="6"/>
+        </attvalues>
+        <viz:size value="8.333334"/>
+        <viz:position x="-249.52869" y="-1.9729838"/>
+        <viz:color r="255" g="136" b="5"/>
+      </node>
+      <node id="Keneb" label="Keneb">
+        <attvalues>
+          <attvalue for="modularity class" value="6"/>
+          <attvalue for="degree" value="15"/>
+          <attvalue for="weighted degree" value="27.0"/>
+          <attvalue for="pageranks" value="0.015791261571555606"/>
+          <attvalue for="authority" value="0.15357243"/>
+          <attvalue for="hub" value="0.15357283"/>
+          <attvalue for="eccentricity" value="3.0"/>
+          <attvalue for="closnesscentrality" value="0.528"/>
+          <attvalue for="harmonicclosnesscentrality" value="0.5934343434343434"/>
+          <attvalue for="betweenesscentrality" value="35.60472515098094"/>
+          <attvalue for="size" value="8"/>
+        </attvalues>
+        <viz:size value="9.666666"/>
+        <viz:position x="216.7992" y="90.38339"/>
+        <viz:color r="223" g="137" b="255"/>
+      </node>
+      <node id="Khundryl" label="Khundryl">
+        <attvalues>
+          <attvalue for="modularity class" value="7"/>
+          <attvalue for="degree" value="4"/>
+          <attvalue for="weighted degree" value="4.0"/>
+          <attvalue for="pageranks" value="0.005816384521620287"/>
+          <attvalue for="authority" value="0.04346812"/>
+          <attvalue for="hub" value="0.043468487"/>
+          <attvalue for="eccentricity" value="4.0"/>
+          <attvalue for="closnesscentrality" value="0.3905325443786982"/>
+          <attvalue for="harmonicclosnesscentrality" value="0.43434343434343414"/>
+          <attvalue for="betweenesscentrality" value="0.0"/>
+          <attvalue for="size" value="1"/>
+        </attvalues>
+        <viz:size value="5.0"/>
+        <viz:position x="-114.168884" y="-274.12097"/>
+        <viz:color r="115" g="192" b="0"/>
+      </node>
+      <node id="Kimloc" label="Kimloc the Tanno Spiritwalker">
+        <attvalues>
+          <attvalue for="modularity class" value="7"/>
+          <attvalue for="degree" value="8"/>
+          <attvalue for="weighted degree" value="9.0"/>
+          <attvalue for="pageranks" value="0.009852510730093805"/>
+          <attvalue for="authority" value="0.05898656"/>
+          <attvalue for="hub" value="0.058985483"/>
+          <attvalue for="eccentricity" value="4.0"/>
+          <attvalue for="closnesscentrality" value="0.4370860927152318"/>
+          <attvalue for="harmonicclosnesscentrality" value="0.4936868686868684"/>
+          <attvalue for="betweenesscentrality" value="0.5313346883468835"/>
+          <attvalue for="size" value="3"/>
+        </attvalues>
+        <viz:size value="6.3333335"/>
+        <viz:position x="28.929535" y="258.98596"/>
+        <viz:color r="115" g="192" b="0"/>
+      </node>
+      <node id="Korbolo" label="Korbolo Dom">
+        <attvalues>
+          <attvalue for="modularity class" value="3"/>
+          <attvalue for="degree" value="24"/>
+          <attvalue for="weighted degree" value="47.0"/>
+          <attvalue for="pageranks" value="0.02432391967061599"/>
+          <attvalue for="authority" value="0.22242084"/>
+          <attvalue for="hub" value="0.22242211"/>
+          <attvalue for="eccentricity" value="3.0"/>
+          <attvalue for="closnesscentrality" value="0.5739130434782609"/>
+          <attvalue for="harmonicclosnesscentrality" value="0.6641414141414141"/>
+          <attvalue for="betweenesscentrality" value="81.73364700793049"/>
+          <attvalue for="size" value="11"/>
+        </attvalues>
+        <viz:size value="11.666667"/>
+        <viz:position x="-306.43707" y="45.466652"/>
+        <viz:color r="255" g="136" b="5"/>
+      </node>
+      <node id="Kulp" label="Kulp">
+        <attvalues>
+          <attvalue for="modularity class" value="1"/>
+          <attvalue for="degree" value="16"/>
+          <attvalue for="weighted degree" value="60.0"/>
+          <attvalue for="pageranks" value="0.017730261124177582"/>
+          <attvalue for="authority" value="0.12134374"/>
+          <attvalue for="hub" value="0.12134388"/>
+          <attvalue for="eccentricity" value="3.0"/>
+          <attvalue for="closnesscentrality" value="0.55"/>
+          <attvalue for="harmonicclosnesscentrality" value="0.6111111111111112"/>
+          <attvalue for="betweenesscentrality" value="54.07559577970803"/>
+          <attvalue for="size" value="14"/>
+        </attvalues>
+        <viz:size value="13.666667"/>
+        <viz:position x="-3.8031998" y="-106.04903"/>
+        <viz:color r="0" g="196" b="255"/>
+      </node>
+      <node id="Laseen" label="Laseen">
+        <attvalues>
+          <attvalue for="modularity class" value="6"/>
+          <attvalue for="degree" value="19"/>
+          <attvalue for="weighted degree" value="35.0"/>
+          <attvalue for="pageranks" value="0.02109205198192043"/>
+          <attvalue for="authority" value="0.15459661"/>
+          <attvalue for="hub" value="0.15459599"/>
+          <attvalue for="eccentricity" value="3.0"/>
+          <attvalue for="closnesscentrality" value="0.5739130434782609"/>
+          <attvalue for="harmonicclosnesscentrality" value="0.6388888888888888"/>
+          <attvalue for="betweenesscentrality" value="93.24934390100601"/>
+          <attvalue for="size" value="11"/>
+        </attvalues>
+        <viz:size value="11.666667"/>
+        <viz:position x="-0.94273376" y="2.5215592"/>
+        <viz:color r="223" g="137" b="255"/>
+      </node>
+      <node id="Leoman" label="Leoman">
+        <attvalues>
+          <attvalue for="modularity class" value="3"/>
+          <attvalue for="degree" value="9"/>
+          <attvalue for="weighted degree" value="18.0"/>
+          <attvalue for="pageranks" value="0.011738070891061157"/>
+          <attvalue for="authority" value="0.043455828"/>
+          <attvalue for="hub" value="0.04345556"/>
+          <attvalue for="eccentricity" value="3.0"/>
+          <attvalue for="closnesscentrality" value="0.4489795918367347"/>
+          <attvalue for="harmonicclosnesscentrality" value="0.5075757575757575"/>
+          <attvalue for="betweenesscentrality" value="7.191182203736005"/>
+          <attvalue for="size" value="4"/>
+        </attvalues>
+        <viz:size value="7.0"/>
+        <viz:position x="181.61354" y="-240.07611"/>
+        <viz:color r="255" g="136" b="5"/>
+      </node>
+      <node id="List" label="List">
+        <attvalues>
+          <attvalue for="modularity class" value="2"/>
+          <attvalue for="degree" value="12"/>
+          <attvalue for="weighted degree" value="16.0"/>
+          <attvalue for="pageranks" value="0.012812278550037966"/>
+          <attvalue for="authority" value="0.13059388"/>
+          <attvalue for="hub" value="0.13059504"/>
+          <attvalue for="eccentricity" value="4.0"/>
+          <attvalue for="closnesscentrality" value="0.44594594594594594"/>
+          <attvalue for="harmonicclosnesscentrality" value="0.5227272727272727"/>
+          <attvalue for="betweenesscentrality" value="0.5971590909090909"/>
+          <attvalue for="size" value="3"/>
+        </attvalues>
+        <viz:size value="6.3333335"/>
+        <viz:position x="-202.37411" y="-90.51639"/>
+        <viz:color r="76" g="70" b="62"/>
+      </node>
+      <node id="Loric" label="L'oric">
+        <attvalues>
+          <attvalue for="modularity class" value="3"/>
+          <attvalue for="degree" value="7"/>
+          <attvalue for="weighted degree" value="7.0"/>
+          <attvalue for="pageranks" value="0.00980104712390585"/>
+          <attvalue for="authority" value="0.028667884"/>
+          <attvalue for="hub" value="0.02866773"/>
+          <attvalue for="eccentricity" value="4.0"/>
+          <attvalue for="closnesscentrality" value="0.4"/>
+          <attvalue for="harmonicclosnesscentrality" value="0.45328282828282795"/>
+          <attvalue for="betweenesscentrality" value="0.0"/>
+          <attvalue for="size" value="1"/>
+        </attvalues>
+        <viz:size value="5.0"/>
+        <viz:position x="240.15866" y="-253.08961"/>
+        <viz:color r="255" g="136" b="5"/>
+      </node>
+      <node id="Lostara" label="Lostara Yil">
+        <attvalues>
+          <attvalue for="modularity class" value="6"/>
+          <attvalue for="degree" value="15"/>
+          <attvalue for="weighted degree" value="25.0"/>
+          <attvalue for="pageranks" value="0.016323225753465738"/>
+          <attvalue for="authority" value="0.13380416"/>
+          <attvalue for="hub" value="0.13380411"/>
+          <attvalue for="eccentricity" value="3.0"/>
+          <attvalue for="closnesscentrality" value="0.528"/>
+          <attvalue for="harmonicclosnesscentrality" value="0.5934343434343433"/>
+          <attvalue for="betweenesscentrality" value="45.18609112549461"/>
+          <attvalue for="size" value="8"/>
+        </attvalues>
+        <viz:size value="9.666666"/>
+        <viz:position x="218.85599" y="136.59366"/>
+        <viz:color r="223" g="137" b="255"/>
+      </node>
+      <node id="Lull" label="Lull">
+        <attvalues>
+          <attvalue for="modularity class" value="2"/>
+          <attvalue for="degree" value="14"/>
+          <attvalue for="weighted degree" value="20.0"/>
+          <attvalue for="pageranks" value="0.014676563630749064"/>
+          <attvalue for="authority" value="0.14534031"/>
+          <attvalue for="hub" value="0.1453416"/>
+          <attvalue for="eccentricity" value="4.0"/>
+          <attvalue for="closnesscentrality" value="0.4520547945205479"/>
+          <attvalue for="harmonicclosnesscentrality" value="0.5378787878787878"/>
+          <attvalue for="betweenesscentrality" value="1.7578733766233765"/>
+          <attvalue for="size" value="4"/>
+        </attvalues>
+        <viz:size value="7.0"/>
+        <viz:position x="-313.80484" y="-192.32306"/>
+        <viz:color r="76" g="70" b="62"/>
+      </node>
+      <node id="Mallick" label="Mallick Rel">
+        <attvalues>
+          <attvalue for="modularity class" value="6"/>
+          <attvalue for="degree" value="17"/>
+          <attvalue for="weighted degree" value="29.0"/>
+          <attvalue for="pageranks" value="0.01733290241191895"/>
+          <attvalue for="authority" value="0.1788376"/>
+          <attvalue for="hub" value="0.1788387"/>
+          <attvalue for="eccentricity" value="3.0"/>
+          <attvalue for="closnesscentrality" value="0.5116279069767442"/>
+          <attvalue for="harmonicclosnesscentrality" value="0.5934343434343434"/>
+          <attvalue for="betweenesscentrality" value="14.576367199319852"/>
+          <attvalue for="size" value="4"/>
+        </attvalues>
+        <viz:size value="7.0"/>
+        <viz:position x="-353.17734" y="93.211075"/>
+        <viz:color r="223" g="137" b="255"/>
+      </node>
+      <node id="Mappo" label="Mappo">
+        <attvalues>
+          <attvalue for="modularity class" value="5"/>
+          <attvalue for="degree" value="18"/>
+          <attvalue for="weighted degree" value="102.0"/>
+          <attvalue for="pageranks" value="0.020309497085091017"/>
+          <attvalue for="authority" value="0.10539965"/>
+          <attvalue for="hub" value="0.10539805"/>
+          <attvalue for="eccentricity" value="3.0"/>
+          <attvalue for="closnesscentrality" value="0.4888888888888889"/>
+          <attvalue for="harmonicclosnesscentrality" value="0.5833333333333333"/>
+          <attvalue for="betweenesscentrality" value="71.78834260161273"/>
+          <attvalue for="size" value="25"/>
+        </attvalues>
+        <viz:size value="21.0"/>
+        <viz:position x="-218.00946" y="172.89873"/>
+        <viz:color r="255" g="85" b="132"/>
+      </node>
+      <node id="Messremb" label="Messremb">
+        <attvalues>
+          <attvalue for="modularity class" value="5"/>
+          <attvalue for="degree" value="12"/>
+          <attvalue for="weighted degree" value="14.0"/>
+          <attvalue for="pageranks" value="0.014294786263747021"/>
+          <attvalue for="authority" value="0.07709301"/>
+          <attvalue for="hub" value="0.077091955"/>
+          <attvalue for="eccentricity" value="3.0"/>
+          <attvalue for="closnesscentrality" value="0.48175182481751827"/>
+          <attvalue for="harmonicclosnesscentrality" value="0.5479797979797978"/>
+          <attvalue for="betweenesscentrality" value="39.16229150659592"/>
+          <attvalue for="size" value="3"/>
+        </attvalues>
+        <viz:size value="6.3333335"/>
+        <viz:position x="-298.0412" y="153.06306"/>
+        <viz:color r="255" g="85" b="132"/>
+      </node>
+      <node id="Minala" label="Minala">
+        <attvalues>
+          <attvalue for="modularity class" value="6"/>
+          <attvalue for="degree" value="16"/>
+          <attvalue for="weighted degree" value="28.0"/>
+          <attvalue for="pageranks" value="0.016614897944840158"/>
+          <attvalue for="authority" value="0.15912813"/>
+          <attvalue for="hub" value="0.15912785"/>
+          <attvalue for="eccentricity" value="3.0"/>
+          <attvalue for="closnesscentrality" value="0.515625"/>
+          <attvalue for="harmonicclosnesscentrality" value="0.5909090909090909"/>
+          <attvalue for="betweenesscentrality" value="24.492175413305056"/>
+          <attvalue for="size" value="8"/>
+        </attvalues>
+        <viz:size value="9.666666"/>
+        <viz:position x="184.19125" y="46.748672"/>
+        <viz:color r="223" g="137" b="255"/>
+      </node>
+      <node id="Mogora" label="Mogora">
+        <attvalues>
+          <attvalue for="modularity class" value="5"/>
+          <attvalue for="degree" value="2"/>
+          <attvalue for="weighted degree" value="2.0"/>
+          <attvalue for="pageranks" value="0.004356507665511081"/>
+          <attvalue for="authority" value="0.009068775"/>
+          <attvalue for="hub" value="0.009068628"/>
+          <attvalue for="eccentricity" value="4.0"/>
+          <attvalue for="closnesscentrality" value="0.36065573770491804"/>
+          <attvalue for="harmonicclosnesscentrality" value="0.3939393939393938"/>
+          <attvalue for="betweenesscentrality" value="0.0"/>
+          <attvalue for="size" value="1"/>
+        </attvalues>
+        <viz:size value="5.0"/>
+        <viz:position x="-176.75067" y="262.9346"/>
+        <viz:color r="255" g="85" b="132"/>
+      </node>
+      <node id="Nameless" label="Nameless Ones">
+        <attvalues>
+          <attvalue for="modularity class" value="7"/>
+          <attvalue for="degree" value="8"/>
+          <attvalue for="weighted degree" value="12.0"/>
+          <attvalue for="pageranks" value="0.009898863049432393"/>
+          <attvalue for="authority" value="0.057568435"/>
+          <attvalue for="hub" value="0.057567384"/>
+          <attvalue for="eccentricity" value="4.0"/>
+          <attvalue for="closnesscentrality" value="0.4258064516129032"/>
+          <attvalue for="harmonicclosnesscentrality" value="0.48358585858585823"/>
+          <attvalue for="betweenesscentrality" value="1.5656867864104707"/>
+          <attvalue for="size" value="4"/>
+        </attvalues>
+        <viz:size value="7.0"/>
+        <viz:position x="-238.65587" y="217.92065"/>
+        <viz:color r="115" g="192" b="0"/>
+      </node>
+      <node id="Nether" label="Nether">
+        <attvalues>
+          <attvalue for="modularity class" value="2"/>
+          <attvalue for="degree" value="17"/>
+          <attvalue for="weighted degree" value="30.0"/>
+          <attvalue for="pageranks" value="0.017602000622752037"/>
+          <attvalue for="authority" value="0.16207887"/>
+          <attvalue for="hub" value="0.16208023"/>
+          <attvalue for="eccentricity" value="3.0"/>
+          <attvalue for="closnesscentrality" value="0.4748201438848921"/>
+          <attvalue for="harmonicclosnesscentrality" value="0.5681818181818182"/>
+          <attvalue for="betweenesscentrality" value="12.826835031714133"/>
+          <attvalue for="size" value="5"/>
+        </attvalues>
+        <viz:size value="7.666667"/>
+        <viz:position x="-254.68906" y="-233.83719"/>
+        <viz:color r="76" g="70" b="62"/>
+      </node>
+      <node id="Nethpara" label="Nethpara">
+        <attvalues>
+          <attvalue for="modularity class" value="2"/>
+          <attvalue for="degree" value="6"/>
+          <attvalue for="weighted degree" value="10.0"/>
+          <attvalue for="pageranks" value="0.007523654122088478"/>
+          <attvalue for="authority" value="0.07178661"/>
+          <attvalue for="hub" value="0.07178717"/>
+          <attvalue for="eccentricity" value="4.0"/>
+          <attvalue for="closnesscentrality" value="0.4258064516129032"/>
+          <attvalue for="harmonicclosnesscentrality" value="0.47474747474747464"/>
+          <attvalue for="betweenesscentrality" value="0.2"/>
+          <attvalue for="size" value="4"/>
+        </attvalues>
+        <viz:size value="7.0"/>
+        <viz:position x="-263.0797" y="-115.63625"/>
+        <viz:color r="76" g="70" b="62"/>
+      </node>
+      <node id="Nil" label="Nil">
+        <attvalues>
+          <attvalue for="modularity class" value="2"/>
+          <attvalue for="degree" value="17"/>
+          <attvalue for="weighted degree" value="30.0"/>
+          <attvalue for="pageranks" value="0.017602000622752037"/>
+          <attvalue for="authority" value="0.16207887"/>
+          <attvalue for="hub" value="0.16208023"/>
+          <attvalue for="eccentricity" value="3.0"/>
+          <attvalue for="closnesscentrality" value="0.4748201438848921"/>
+          <attvalue for="harmonicclosnesscentrality" value="0.5681818181818182"/>
+          <attvalue for="betweenesscentrality" value="12.826835031714133"/>
+          <attvalue for="size" value="5"/>
+        </attvalues>
+        <viz:size value="7.666667"/>
+        <viz:position x="-193.1591" y="-244.9148"/>
+        <viz:color r="76" g="70" b="62"/>
+      </node>
+      <node id="Olar" label="Olar Ethil">
+        <attvalues>
+          <attvalue for="modularity class" value="7"/>
+          <attvalue for="degree" value="9"/>
+          <attvalue for="weighted degree" value="17.0"/>
+          <attvalue for="pageranks" value="0.011949084692147897"/>
+          <attvalue for="authority" value="0.050182577"/>
+          <attvalue for="hub" value="0.050182443"/>
+          <attvalue for="eccentricity" value="3.0"/>
+          <attvalue for="closnesscentrality" value="0.4489795918367347"/>
+          <attvalue for="harmonicclosnesscentrality" value="0.5075757575757575"/>
+          <attvalue for="betweenesscentrality" value="32.06621412957924"/>
+          <attvalue for="size" value="4"/>
+        </attvalues>
+        <viz:size value="7.0"/>
+        <viz:position x="108.482025" y="-251.74391"/>
+        <viz:color r="115" g="192" b="0"/>
+      </node>
+      <node id="Pearl" label="Pearl">
+        <attvalues>
+          <attvalue for="modularity class" value="6"/>
+          <attvalue for="degree" value="13"/>
+          <attvalue for="weighted degree" value="26.0"/>
+          <attvalue for="pageranks" value="0.014290415659880635"/>
+          <attvalue for="authority" value="0.12419636"/>
+          <attvalue for="hub" value="0.124196455"/>
+          <attvalue for="eccentricity" value="3.0"/>
+          <attvalue for="closnesscentrality" value="0.4925373134328358"/>
+          <attvalue for="harmonicclosnesscentrality" value="0.5606060606060606"/>
+          <attvalue for="betweenesscentrality" value="13.566066987564666"/>
+          <attvalue for="size" value="9"/>
+        </attvalues>
+        <viz:size value="10.333334"/>
+        <viz:position x="208.78023" y="184.46042"/>
+        <viz:color r="223" g="137" b="255"/>
+      </node>
+      <node id="Pella" label="Pella">
+        <attvalues>
+          <attvalue for="modularity class" value="1"/>
+          <attvalue for="degree" value="6"/>
+          <attvalue for="weighted degree" value="7.0"/>
+          <attvalue for="pageranks" value="0.008776471298473188"/>
+          <attvalue for="authority" value="0.038394824"/>
+          <attvalue for="hub" value="0.038394827"/>
+          <attvalue for="eccentricity" value="3.0"/>
+          <attvalue for="closnesscentrality" value="0.4583333333333333"/>
+          <attvalue for="harmonicclosnesscentrality" value="0.4999999999999999"/>
+          <attvalue for="betweenesscentrality" value="7.259199134199137"/>
+          <attvalue for="size" value="2"/>
+        </attvalues>
+        <viz:size value="5.6666665"/>
+        <viz:position x="114.04678" y="-190.7264"/>
+        <viz:color r="0" g="196" b="255"/>
+      </node>
+      <node id="Pormqual" label="Pormqual">
+        <attvalues>
+          <attvalue for="modularity class" value="6"/>
+          <attvalue for="degree" value="16"/>
+          <attvalue for="weighted degree" value="27.0"/>
+          <attvalue for="pageranks" value="0.01659720729663017"/>
+          <attvalue for="authority" value="0.1663299"/>
+          <attvalue for="hub" value="0.16633095"/>
+          <attvalue for="eccentricity" value="4.0"/>
+          <attvalue for="closnesscentrality" value="0.4925373134328358"/>
+          <attvalue for="harmonicclosnesscentrality" value="0.577020202020202"/>
+          <attvalue for="betweenesscentrality" value="13.824951542783799"/>
+          <attvalue for="size" value="5"/>
+        </attvalues>
+        <viz:size value="7.666667"/>
+        <viz:position x="-366.85574" y="-10.474914"/>
+        <viz:color r="223" g="137" b="255"/>
+      </node>
+      <node id="Quick" label="Quick Ben">
+        <attvalues>
+          <attvalue for="modularity class" value="6"/>
+          <attvalue for="degree" value="15"/>
+          <attvalue for="weighted degree" value="21.0"/>
+          <attvalue for="pageranks" value="0.016387741474342778"/>
+          <attvalue for="authority" value="0.1437946"/>
+          <attvalue for="hub" value="0.14379425"/>
+          <attvalue for="eccentricity" value="3.0"/>
+          <attvalue for="closnesscentrality" value="0.5365853658536586"/>
+          <attvalue for="harmonicclosnesscentrality" value="0.5984848484848485"/>
+          <attvalue for="betweenesscentrality" value="35.57694789464039"/>
+          <attvalue for="size" value="7"/>
+        </attvalues>
+        <viz:size value="9.0"/>
+        <viz:position x="145.789" y="8.800567"/>
+        <viz:color r="223" g="137" b="255"/>
+      </node>
+      <node id="Rellock" label="Rellock">
+        <attvalues>
+          <attvalue for="modularity class" value="5"/>
+          <attvalue for="degree" value="14"/>
+          <attvalue for="weighted degree" value="53.0"/>
+          <attvalue for="pageranks" value="0.015486148671037673"/>
+          <attvalue for="authority" value="0.10704711"/>
+          <attvalue for="hub" value="0.107045636"/>
+          <attvalue for="eccentricity" value="3.0"/>
+          <attvalue for="closnesscentrality" value="0.4852941176470588"/>
+          <attvalue for="harmonicclosnesscentrality" value="0.5606060606060606"/>
+          <attvalue for="betweenesscentrality" value="13.713665096287968"/>
+          <attvalue for="size" value="10"/>
+        </attvalues>
+        <viz:size value="11.0"/>
+        <viz:position x="-59.608704" y="230.04774"/>
+        <viz:color r="255" g="85" b="132"/>
+      </node>
+      <node id="Rhyllandaras" label="Rhyllandaras">
+        <attvalues>
+          <attvalue for="modularity class" value="5"/>
+          <attvalue for="degree" value="3"/>
+          <attvalue for="weighted degree" value="5.0"/>
+          <attvalue for="pageranks" value="0.005182650678960458"/>
+          <attvalue for="authority" value="0.016852492"/>
+          <attvalue for="hub" value="0.016852135"/>
+          <attvalue for="eccentricity" value="4.0"/>
+          <attvalue for="closnesscentrality" value="0.36666666666666664"/>
+          <attvalue for="harmonicclosnesscentrality" value="0.40404040404040387"/>
+          <attvalue for="betweenesscentrality" value="0.0"/>
+          <attvalue for="size" value="2"/>
+        </attvalues>
+        <viz:size value="5.6666665"/>
+        <viz:position x="-302.27002" y="197.2276"/>
+        <viz:color r="255" g="85" b="132"/>
+      </node>
+      <node id="Sawark" label="Sawark">
+        <attvalues>
+          <attvalue for="modularity class" value="1"/>
+          <attvalue for="degree" value="5"/>
+          <attvalue for="weighted degree" value="6.0"/>
+          <attvalue for="pageranks" value="0.007828583528021436"/>
+          <attvalue for="authority" value="0.02218414"/>
+          <attvalue for="hub" value="0.022184068"/>
+          <attvalue for="eccentricity" value="4.0"/>
+          <attvalue for="closnesscentrality" value="0.38823529411764707"/>
+          <attvalue for="harmonicclosnesscentrality" value="0.43055555555555525"/>
+          <attvalue for="betweenesscentrality" value="0.0"/>
+          <attvalue for="size" value="2"/>
+        </attvalues>
+        <viz:size value="5.6666665"/>
+        <viz:position x="148.89902" y="-192.37952"/>
+        <viz:color r="0" g="196" b="255"/>
+      </node>
+      <node id="Semk" label="Semk">
+        <attvalues>
+          <attvalue for="modularity class" value="7"/>
+          <attvalue for="degree" value="14"/>
+          <attvalue for="weighted degree" value="26.0"/>
+          <attvalue for="pageranks" value="0.015064990034102969"/>
+          <attvalue for="authority" value="0.13699777"/>
+          <attvalue for="hub" value="0.13699876"/>
+          <attvalue for="eccentricity" value="4.0"/>
+          <attvalue for="closnesscentrality" value="0.4714285714285714"/>
+          <attvalue for="harmonicclosnesscentrality" value="0.553030303030303"/>
+          <attvalue for="betweenesscentrality" value="11.85265962622053"/>
+          <attvalue for="size" value="6"/>
+        </attvalues>
+        <viz:size value="8.333334"/>
+        <viz:position x="13.01416" y="-333.86044"/>
+        <viz:color r="115" g="192" b="0"/>
+      </node>
+      <node id="Shadowthrone" label="Shadowthrone">
+        <attvalues>
+          <attvalue for="modularity class" value="7"/>
+          <attvalue for="degree" value="14"/>
+          <attvalue for="weighted degree" value="26.0"/>
+          <attvalue for="pageranks" value="0.015202184948714458"/>
+          <attvalue for="authority" value="0.12785544"/>
+          <attvalue for="hub" value="0.12785421"/>
+          <attvalue for="eccentricity" value="3.0"/>
+          <attvalue for="closnesscentrality" value="0.528"/>
+          <attvalue for="harmonicclosnesscentrality" value="0.5883838383838383"/>
+          <attvalue for="betweenesscentrality" value="12.316021738014104"/>
+          <attvalue for="size" value="9"/>
+        </attvalues>
+        <viz:size value="10.333334"/>
+        <viz:position x="110.70678" y="189.3608"/>
+        <viz:color r="115" g="192" b="0"/>
+      </node>
+      <node id="Shaik" label="Sha'ik">
+        <attvalues>
+          <attvalue for="modularity class" value="3"/>
+          <attvalue for="degree" value="17"/>
+          <attvalue for="weighted degree" value="30.0"/>
+          <attvalue for="pageranks" value="0.018597266809769027"/>
+          <attvalue for="authority" value="0.126576"/>
+          <attvalue for="hub" value="0.12657458"/>
+          <attvalue for="eccentricity" value="3.0"/>
+          <attvalue for="closnesscentrality" value="0.5409836065573771"/>
+          <attvalue for="harmonicclosnesscentrality" value="0.611111111111111"/>
+          <attvalue for="betweenesscentrality" value="65.40343046967637"/>
+          <attvalue for="size" value="8"/>
+        </attvalues>
+        <viz:size value="9.666666"/>
+        <viz:position x="267.16284" y="-97.2851"/>
+        <viz:color r="255" g="136" b="5"/>
+      </node>
+      <node id="Sormo" label="Sormo E'nath">
+        <attvalues>
+          <attvalue for="modularity class" value="2"/>
+          <attvalue for="degree" value="14"/>
+          <attvalue for="weighted degree" value="25.0"/>
+          <attvalue for="pageranks" value="0.015028987472659279"/>
+          <attvalue for="authority" value="0.13790417"/>
+          <attvalue for="hub" value="0.13790508"/>
+          <attvalue for="eccentricity" value="3.0"/>
+          <attvalue for="closnesscentrality" value="0.5196850393700787"/>
+          <attvalue for="harmonicclosnesscentrality" value="0.5833333333333334"/>
+          <attvalue for="betweenesscentrality" value="27.54539143468084"/>
+          <attvalue for="size" value="8"/>
+        </attvalues>
+        <viz:size value="9.666666"/>
+        <viz:position x="-132.22249" y="-224.9573"/>
+        <viz:color r="76" g="70" b="62"/>
+      </node>
+      <node id="Stormy" label="Stormy">
+        <attvalues>
+          <attvalue for="modularity class" value="1"/>
+          <attvalue for="degree" value="12"/>
+          <attvalue for="weighted degree" value="51.0"/>
+          <attvalue for="pageranks" value="0.013711655771428596"/>
+          <attvalue for="authority" value="0.098243006"/>
+          <attvalue for="hub" value="0.098243274"/>
+          <attvalue for="eccentricity" value="3.0"/>
+          <attvalue for="closnesscentrality" value="0.532258064516129"/>
+          <attvalue for="harmonicclosnesscentrality" value="0.5808080808080809"/>
+          <attvalue for="betweenesscentrality" value="22.508824159239097"/>
+          <attvalue for="size" value="10"/>
+        </attvalues>
+        <viz:size value="11.0"/>
+        <viz:position x="-25.247742" y="-215.48839"/>
+        <viz:color r="0" g="196" b="255"/>
+      </node>
+      <node id="Tavore" label="Tavore Paran">
+        <attvalues>
+          <attvalue for="modularity class" value="6"/>
+          <attvalue for="degree" value="8"/>
+          <attvalue for="weighted degree" value="9.0"/>
+          <attvalue for="pageranks" value="0.009823672693767268"/>
+          <attvalue for="authority" value="0.0664685"/>
+          <attvalue for="hub" value="0.06646847"/>
+          <attvalue for="eccentricity" value="3.0"/>
+          <attvalue for="closnesscentrality" value="0.4852941176470588"/>
+          <attvalue for="harmonicclosnesscentrality" value="0.5303030303030303"/>
+          <attvalue for="betweenesscentrality" value="12.625924336851783"/>
+          <attvalue for="size" value="5"/>
+        </attvalues>
+        <viz:size value="7.666667"/>
+        <viz:position x="51.408287" y="-16.263943"/>
+        <viz:color r="223" g="137" b="255"/>
+      </node>
+      <node id="Tithansi" label="Tithansi">
+        <attvalues>
+          <attvalue for="modularity class" value="7"/>
+          <attvalue for="degree" value="12"/>
+          <attvalue for="weighted degree" value="17.0"/>
+          <attvalue for="pageranks" value="0.013224367357343178"/>
+          <attvalue for="authority" value="0.12174904"/>
+          <attvalue for="hub" value="0.12174986"/>
+          <attvalue for="eccentricity" value="4.0"/>
+          <attvalue for="closnesscentrality" value="0.4647887323943662"/>
+          <attvalue for="harmonicclosnesscentrality" value="0.5378787878787878"/>
+          <attvalue for="betweenesscentrality" value="8.451819896080487"/>
+          <attvalue for="size" value="4"/>
+        </attvalues>
+        <viz:size value="7.0"/>
+        <viz:position x="-66.64842" y="-306.89514"/>
+        <viz:color r="115" g="192" b="0"/>
+      </node>
+      <node id="Toblakai" label="Toblakai">
+        <attvalues>
+          <attvalue for="modularity class" value="3"/>
+          <attvalue for="degree" value="10"/>
+          <attvalue for="weighted degree" value="21.0"/>
+          <attvalue for="pageranks" value="0.012658876588810465"/>
+          <attvalue for="authority" value="0.056356017"/>
+          <attvalue for="hub" value="0.0563557"/>
+          <attvalue for="eccentricity" value="3.0"/>
+          <attvalue for="closnesscentrality" value="0.4782608695652174"/>
+          <attvalue for="harmonicclosnesscentrality" value="0.5353535353535351"/>
+          <attvalue for="betweenesscentrality" value="17.88516295065793"/>
+          <attvalue for="size" value="6"/>
+        </attvalues>
+        <viz:size value="8.333334"/>
+        <viz:position x="230.18022" y="-198.68771"/>
+        <viz:color r="255" g="136" b="5"/>
+      </node>
+      <node id="Topper" label="Topper">
+        <attvalues>
+          <attvalue for="modularity class" value="6"/>
+          <attvalue for="degree" value="2"/>
+          <attvalue for="weighted degree" value="3.0"/>
+          <attvalue for="pageranks" value="0.004070275307337789"/>
+          <attvalue for="authority" value="0.022985723"/>
+          <attvalue for="hub" value="0.022985615"/>
+          <attvalue for="eccentricity" value="4.0"/>
+          <attvalue for="closnesscentrality" value="0.39285714285714285"/>
+          <attvalue for="harmonicclosnesscentrality" value="0.4217171717171715"/>
+          <attvalue for="betweenesscentrality" value="0.0"/>
+          <attvalue for="size" value="2"/>
+        </attvalues>
+        <viz:size value="5.6666665"/>
+        <viz:position x="111.02126" y="-17.165806"/>
+        <viz:color r="223" g="137" b="255"/>
+      </node>
+      <node id="Truth" label="Truth">
+        <attvalues>
+          <attvalue for="modularity class" value="1"/>
+          <attvalue for="degree" value="12"/>
+          <attvalue for="weighted degree" value="51.0"/>
+          <attvalue for="pageranks" value="0.013711655771428596"/>
+          <attvalue for="authority" value="0.098243006"/>
+          <attvalue for="hub" value="0.098243274"/>
+          <attvalue for="eccentricity" value="3.0"/>
+          <attvalue for="closnesscentrality" value="0.532258064516129"/>
+          <attvalue for="harmonicclosnesscentrality" value="0.5808080808080809"/>
+          <attvalue for="betweenesscentrality" value="22.508824159239097"/>
+          <attvalue for="size" value="10"/>
+        </attvalues>
+        <viz:size value="11.0"/>
+        <viz:position x="-4.0410385" y="-277.5624"/>
+        <viz:color r="0" g="196" b="255"/>
+      </node>
+      <node id="Trygalle" label="Trygalle Trade Guild">
+        <attvalues>
+          <attvalue for="modularity class" value="7"/>
+          <attvalue for="degree" value="4"/>
+          <attvalue for="weighted degree" value="5.0"/>
+          <attvalue for="pageranks" value="0.005799314720475363"/>
+          <attvalue for="authority" value="0.050500255"/>
+          <attvalue for="hub" value="0.05050026"/>
+          <attvalue for="eccentricity" value="3.0"/>
+          <attvalue for="closnesscentrality" value="0.4647887323943662"/>
+          <attvalue for="harmonicclosnesscentrality" value="0.4949494949494948"/>
+          <attvalue for="betweenesscentrality" value="0.37226277974237837"/>
+          <attvalue for="size" value="2"/>
+        </attvalues>
+        <viz:size value="5.6666665"/>
+        <viz:position x="-357.20905" y="-116.702965"/>
+        <viz:color r="115" g="192" b="0"/>
+      </node>
+      <node id="Worldbuilding" label="Worldbuilding">
+        <attvalues>
+          <attvalue for="modularity class" value="8"/>
+          <attvalue for="degree" value="21"/>
+          <attvalue for="weighted degree" value="37.0"/>
+          <attvalue for="pageranks" value="0.024249033010210468"/>
+          <attvalue for="authority" value="0.14533685"/>
+          <attvalue for="hub" value="0.1453356"/>
+          <attvalue for="eccentricity" value="3.0"/>
+          <attvalue for="closnesscentrality" value="0.5892857142857143"/>
+          <attvalue for="harmonicclosnesscentrality" value="0.6565656565656565"/>
+          <attvalue for="betweenesscentrality" value="176.54836759338252"/>
+          <attvalue for="size" value="14"/>
+        </attvalues>
+        <viz:size value="13.666667"/>
+        <viz:position x="271.92004" y="15.8811"/>
+        <viz:color r="211" g="179" b="176"/>
+      </node>
+    </nodes>
+    <edges>
+      <edge id="0" source="Heboric" target="Duiker" weight="3.0"/>
+      <edge id="1" source="Heboric" target="Felisin" weight="19.0"/>
+      <edge id="2" source="Heboric" target="Baudin" weight="15.0"/>
+      <edge id="3" source="Felisin" target="Baudin" weight="16.0"/>
+      <edge id="4" source="Heboric" target="Worldbuilding" weight="2.0"/>
+      <edge id="5" source="Felisin" target="Tavore" weight="2.0"/>
+      <edge id="6" source="Laseen" target="Tavore"/>
+      <edge id="7" source="Laseen" target="Heboric"/>
+      <edge id="11" source="Mappo" target="Icarium" weight="22.0"/>
+      <edge id="12" source="Mappo" target="Rhyllandaras" weight="2.0"/>
+      <edge id="13" source="Icarium" target="Rhyllandaras" weight="2.0"/>
+      <edge id="14" source="Duiker" target="Coltaine" weight="14.0"/>
+      <edge id="15" source="Duiker" target="Dujek" weight="3.0"/>
+      <edge id="16" source="Coltaine" target="Dujek" weight="3.0"/>
+      <edge id="17" source="Kalam" target="Fiddler" weight="6.0"/>
+      <edge id="18" source="Kalam" target="Crokus" weight="4.0"/>
+      <edge id="19" source="Kalam" target="Apsalar" weight="6.0"/>
+      <edge id="20" source="Kalam" target="Laseen" weight="5.0"/>
+      <edge id="21" source="Kalam" target="Quick" weight="4.0"/>
+      <edge id="22" source="Fiddler" target="Crokus" weight="19.0"/>
+      <edge id="23" source="Fiddler" target="Apsalar" weight="18.0"/>
+      <edge id="24" source="Crokus" target="Apsalar" weight="20.0"/>
+      <edge id="27" source="Quick" target="Apsalar"/>
+      <edge id="34" source="Duiker" target="Sormo" weight="5.0"/>
+      <edge id="35" source="Duiker" target="Dryjhna"/>
+      <edge id="36" source="Sormo" target="Dryjhna"/>
+      <edge id="38" source="Duiker" target="Bult" weight="4.0"/>
+      <edge id="39" source="Duiker" target="Mallick" weight="3.0"/>
+      <edge id="40" source="Duiker" target="Kulp" weight="3.0"/>
+      <edge id="42" source="Duiker" target="Pormqual" weight="4.0"/>
+      <edge id="44" source="Coltaine" target="Bult" weight="2.0"/>
+      <edge id="45" source="Coltaine" target="Mallick" weight="3.0"/>
+      <edge id="46" source="Coltaine" target="Kulp"/>
+      <edge id="47" source="Coltaine" target="Sormo" weight="4.0"/>
+      <edge id="48" source="Coltaine" target="Pormqual" weight="3.0"/>
+      <edge id="50" source="Bult" target="Mallick" weight="2.0"/>
+      <edge id="51" source="Bult" target="Kulp" weight="3.0"/>
+      <edge id="52" source="Bult" target="Sormo" weight="3.0"/>
+      <edge id="53" source="Bult" target="Pormqual" weight="2.0"/>
+      <edge id="54" source="Bult" target="Dujek"/>
+      <edge id="55" source="Mallick" target="Kulp"/>
+      <edge id="56" source="Mallick" target="Sormo"/>
+      <edge id="57" source="Mallick" target="Pormqual" weight="3.0"/>
+      <edge id="58" source="Kulp" target="Sormo" weight="3.0"/>
+      <edge id="62" source="Bult" target="Laseen"/>
+      <edge id="63" source="Bult" target="Worldbuilding"/>
+      <edge id="65" source="Bult" target="Cartheron"/>
+      <edge id="66" source="Laseen" target="Worldbuilding" weight="3.0"/>
+      <edge id="67" source="Laseen" target="Duiker" weight="2.0"/>
+      <edge id="68" source="Laseen" target="Cartheron"/>
+      <edge id="69" source="Worldbuilding" target="Cartheron"/>
+      <edge id="70" source="Fiddler" target="Kimloc" weight="2.0"/>
+      <edge id="71" source="Worldbuilding" target="Icarium" weight="4.0"/>
+      <edge id="72" source="Worldbuilding" target="Mappo" weight="4.0"/>
+      <edge id="73" source="Worldbuilding" target="Sormo"/>
+      <edge id="74" source="Worldbuilding" target="Kimloc"/>
+      <edge id="75" source="Duiker" target="Kalam"/>
+      <edge id="76" source="Duiker" target="Fiddler"/>
+      <edge id="78" source="Kalam" target="Dryjhna"/>
+      <edge id="79" source="Kalam" target="Shaik" weight="2.0"/>
+      <edge id="80" source="Kalam" target="Lostara" weight="6.0"/>
+      <edge id="81" source="Dryjhna" target="Shaik" weight="2.0"/>
+      <edge id="82" source="Dryjhna" target="Lostara"/>
+      <edge id="83" source="Shaik" target="Lostara" weight="2.0"/>
+      <edge id="85" source="Icarium" target="Messremb" weight="2.0"/>
+      <edge id="87" source="Mappo" target="Messremb" weight="2.0"/>
+      <edge id="89" source="Messremb" target="Rhyllandaras"/>
+      <edge id="91" source="Icarium" target="Iskaral" weight="13.0"/>
+      <edge id="92" source="Icarium" target="Rellock" weight="7.0"/>
+      <edge id="93" source="Mappo" target="Iskaral" weight="13.0"/>
+      <edge id="94" source="Mappo" target="Rellock" weight="7.0"/>
+      <edge id="95" source="Iskaral" target="Rellock" weight="7.0"/>
+      <edge id="96" source="Iskaral" target="Shadowthrone"/>
+      <edge id="97" source="Rellock" target="Shadowthrone" weight="2.0"/>
+      <edge id="98" source="Worldbuilding" target="Kalam" weight="3.0"/>
+      <edge id="99" source="Worldbuilding" target="Fiddler" weight="4.0"/>
+      <edge id="104" source="Felisin" target="Beneth" weight="5.0"/>
+      <edge id="106" source="Heboric" target="Beneth" weight="3.0"/>
+      <edge id="107" source="Baudin" target="Beneth" weight="5.0"/>
+      <edge id="108" source="Worldbuilding" target="Lostara"/>
+      <edge id="110" source="Worldbuilding" target="Kulp"/>
+      <edge id="111" source="Worldbuilding" target="Shaik" weight="2.0"/>
+      <edge id="115" source="Felisin" target="Sawark"/>
+      <edge id="118" source="Heboric" target="Sawark"/>
+      <edge id="120" source="Baudin" target="Sawark"/>
+      <edge id="121" source="Beneth" target="Sawark" weight="2.0"/>
+      <edge id="122" source="Worldbuilding" target="Nameless"/>
+      <edge id="125" source="Worldbuilding" target="Iskaral"/>
+      <edge id="128" source="Icarium" target="Nameless" weight="3.0"/>
+      <edge id="130" source="Mappo" target="Nameless" weight="3.0"/>
+      <edge id="131" source="Pella" target="Beneth" weight="2.0"/>
+      <edge id="132" source="Pella" target="Sawark"/>
+      <edge id="146" source="Fiddler" target="Laseen" weight="3.0"/>
+      <edge id="150" source="Crokus" target="Laseen" weight="2.0"/>
+      <edge id="156" source="Apsalar" target="Laseen" weight="3.0"/>
+      <edge id="158" source="Worldbuilding" target="Dryjhna"/>
+      <edge id="161" source="Worldbuilding" target="Apsalar"/>
+      <edge id="165" source="Fiddler" target="Shadowthrone" weight="2.0"/>
+      <edge id="166" source="Fiddler" target="Cotillion"/>
+      <edge id="168" source="Fiddler" target="Dassem" weight="2.0"/>
+      <edge id="170" source="Apsalar" target="Shadowthrone" weight="2.0"/>
+      <edge id="171" source="Apsalar" target="Cotillion"/>
+      <edge id="173" source="Apsalar" target="Dassem" weight="2.0"/>
+      <edge id="174" source="Laseen" target="Shadowthrone" weight="2.0"/>
+      <edge id="175" source="Laseen" target="Cotillion" weight="2.0"/>
+      <edge id="177" source="Laseen" target="Dassem" weight="2.0"/>
+      <edge id="178" source="Shadowthrone" target="Cotillion" weight="2.0"/>
+      <edge id="179" source="Shadowthrone" target="Crokus" weight="2.0"/>
+      <edge id="180" source="Shadowthrone" target="Dassem"/>
+      <edge id="181" source="Cotillion" target="Crokus"/>
+      <edge id="182" source="Cotillion" target="Dassem"/>
+      <edge id="183" source="Crokus" target="Dassem" weight="2.0"/>
+      <edge id="187" source="Kalam" target="Toblakai"/>
+      <edge id="189" source="Kalam" target="Shadowthrone" weight="4.0"/>
+      <edge id="190" source="Kalam" target="Apt" weight="5.0"/>
+      <edge id="191" source="Toblakai" target="Shaik" weight="3.0"/>
+      <edge id="192" source="Shadowthrone" target="Apt" weight="4.0"/>
+      <edge id="193" source="Shadowthrone" target="Shaik"/>
+      <edge id="194" source="Apt" target="Shaik"/>
+      <edge id="197" source="Shaik" target="Leoman" weight="2.0"/>
+      <edge id="198" source="Lostara" target="Toblakai"/>
+      <edge id="199" source="Lostara" target="Leoman"/>
+      <edge id="201" source="Toblakai" target="Leoman" weight="4.0"/>
+      <edge id="205" source="Felisin" target="Pella"/>
+      <edge id="206" source="Felisin" target="Duiker"/>
+      <edge id="209" source="Heboric" target="Pella"/>
+      <edge id="212" source="Baudin" target="Pella"/>
+      <edge id="213" source="Baudin" target="Duiker"/>
+      <edge id="214" source="Pella" target="Duiker"/>
+      <edge id="218" source="Duiker" target="Stormy" weight="2.0"/>
+      <edge id="219" source="Duiker" target="Gesler" weight="2.0"/>
+      <edge id="220" source="Duiker" target="Truth" weight="2.0"/>
+      <edge id="222" source="Kulp" target="Heboric" weight="10.0"/>
+      <edge id="223" source="Kulp" target="Stormy" weight="6.0"/>
+      <edge id="224" source="Kulp" target="Gesler" weight="6.0"/>
+      <edge id="225" source="Kulp" target="Truth" weight="6.0"/>
+      <edge id="226" source="Heboric" target="Stormy" weight="6.0"/>
+      <edge id="227" source="Heboric" target="Gesler" weight="6.0"/>
+      <edge id="228" source="Heboric" target="Truth" weight="6.0"/>
+      <edge id="229" source="Stormy" target="Gesler" weight="10.0"/>
+      <edge id="230" source="Stormy" target="Truth" weight="10.0"/>
+      <edge id="231" source="Gesler" target="Truth" weight="10.0"/>
+      <edge id="233" source="Duiker" target="Kamist" weight="4.0"/>
+      <edge id="234" source="Coltaine" target="Kamist" weight="6.0"/>
+      <edge id="243" source="Fiddler" target="Gryllen" weight="2.0"/>
+      <edge id="244" source="Fiddler" target="Icarium" weight="14.0"/>
+      <edge id="245" source="Fiddler" target="Mappo" weight="14.0"/>
+      <edge id="247" source="Crokus" target="Gryllen" weight="2.0"/>
+      <edge id="248" source="Crokus" target="Icarium" weight="13.0"/>
+      <edge id="249" source="Crokus" target="Mappo" weight="13.0"/>
+      <edge id="250" source="Apsalar" target="Gryllen" weight="2.0"/>
+      <edge id="251" source="Apsalar" target="Icarium" weight="12.0"/>
+      <edge id="252" source="Apsalar" target="Mappo" weight="12.0"/>
+      <edge id="253" source="Gryllen" target="Icarium" weight="2.0"/>
+      <edge id="254" source="Gryllen" target="Mappo" weight="2.0"/>
+      <edge id="272" source="Kulp" target="Baudin" weight="7.0"/>
+      <edge id="273" source="Kulp" target="Felisin" weight="8.0"/>
+      <edge id="277" source="Gesler" target="Baudin" weight="5.0"/>
+      <edge id="278" source="Gesler" target="Felisin" weight="5.0"/>
+      <edge id="281" source="Stormy" target="Baudin" weight="5.0"/>
+      <edge id="282" source="Stormy" target="Felisin" weight="5.0"/>
+      <edge id="284" source="Truth" target="Baudin" weight="5.0"/>
+      <edge id="285" source="Truth" target="Felisin" weight="5.0"/>
+      <edge id="321" source="Fiddler" target="Iskaral" weight="11.0"/>
+      <edge id="323" source="Apsalar" target="Iskaral" weight="11.0"/>
+      <edge id="324" source="Crokus" target="Iskaral" weight="11.0"/>
+      <edge id="330" source="Worldbuilding" target="Quick"/>
+      <edge id="332" source="Worldbuilding" target="Shadowthrone"/>
+      <edge id="333" source="Worldbuilding" target="Cotillion" weight="2.0"/>
+      <edge id="344" source="Kalam" target="Keneb" weight="4.0"/>
+      <edge id="345" source="Kalam" target="Minala" weight="8.0"/>
+      <edge id="347" source="Kalam" target="Kamist"/>
+      <edge id="348" source="Kalam" target="Coltaine"/>
+      <edge id="349" source="Kalam" target="Mallick"/>
+      <edge id="350" source="Kalam" target="Korbolo" weight="3.0"/>
+      <edge id="351" source="Keneb" target="Minala" weight="4.0"/>
+      <edge id="352" source="Keneb" target="Apt"/>
+      <edge id="353" source="Keneb" target="Kamist"/>
+      <edge id="354" source="Keneb" target="Coltaine"/>
+      <edge id="355" source="Keneb" target="Mallick" weight="2.0"/>
+      <edge id="356" source="Keneb" target="Korbolo" weight="4.0"/>
+      <edge id="357" source="Minala" target="Apt" weight="2.0"/>
+      <edge id="358" source="Minala" target="Kamist"/>
+      <edge id="359" source="Minala" target="Coltaine"/>
+      <edge id="360" source="Minala" target="Mallick"/>
+      <edge id="361" source="Minala" target="Korbolo" weight="2.0"/>
+      <edge id="362" source="Apt" target="Kamist"/>
+      <edge id="363" source="Apt" target="Coltaine"/>
+      <edge id="364" source="Apt" target="Mallick"/>
+      <edge id="365" source="Apt" target="Korbolo" weight="2.0"/>
+      <edge id="367" source="Kamist" target="Mallick" weight="2.0"/>
+      <edge id="368" source="Kamist" target="Korbolo" weight="2.0"/>
+      <edge id="370" source="Coltaine" target="Korbolo" weight="6.0"/>
+      <edge id="371" source="Mallick" target="Korbolo" weight="3.0"/>
+      <edge id="394" source="Duiker" target="Lull" weight="2.0"/>
+      <edge id="397" source="Coltaine" target="Lull" weight="3.0"/>
+      <edge id="400" source="Lull" target="Sormo"/>
+      <edge id="401" source="Lull" target="Kamist" weight="2.0"/>
+      <edge id="402" source="Sormo" target="Kamist"/>
+      <edge id="404" source="Coltaine" target="List" weight="3.0"/>
+      <edge id="406" source="Coltaine" target="Semk" weight="5.0"/>
+      <edge id="407" source="Duiker" target="List" weight="3.0"/>
+      <edge id="409" source="Duiker" target="Semk" weight="4.0"/>
+      <edge id="410" source="List" target="Kamist"/>
+      <edge id="411" source="List" target="Semk"/>
+      <edge id="412" source="Kamist" target="Semk" weight="2.0"/>
+      <edge id="413" source="Semk" target="Sormo"/>
+      <edge id="416" source="Semk" target="Nil" weight="2.0"/>
+      <edge id="417" source="Semk" target="Nether" weight="2.0"/>
+      <edge id="420" source="Sormo" target="Nil"/>
+      <edge id="421" source="Sormo" target="Nether"/>
+      <edge id="423" source="Coltaine" target="Nil" weight="5.0"/>
+      <edge id="424" source="Coltaine" target="Nether" weight="5.0"/>
+      <edge id="425" source="Duiker" target="Nil" weight="4.0"/>
+      <edge id="426" source="Duiker" target="Nether" weight="4.0"/>
+      <edge id="427" source="Nil" target="Nether" weight="4.0"/>
+      <edge id="434" source="Kulp" target="Olar" weight="2.0"/>
+      <edge id="440" source="Heboric" target="Olar" weight="3.0"/>
+      <edge id="445" source="Baudin" target="Olar" weight="2.0"/>
+      <edge id="449" source="Felisin" target="Olar" weight="2.0"/>
+      <edge id="452" source="Gesler" target="Olar" weight="2.0"/>
+      <edge id="454" source="Stormy" target="Olar" weight="2.0"/>
+      <edge id="455" source="Truth" target="Olar" weight="2.0"/>
+      <edge id="487" source="Kulp" target="Tavore"/>
+      <edge id="494" source="Heboric" target="Tavore"/>
+      <edge id="495" source="Baudin" target="Tavore"/>
+      <edge id="496" source="Iskaral" target="Shaik" weight="2.0"/>
+      <edge id="502" source="Shaik" target="Icarium" weight="2.0"/>
+      <edge id="503" source="Shaik" target="Mappo" weight="2.0"/>
+      <edge id="504" source="Shaik" target="Fiddler" weight="2.0"/>
+      <edge id="505" source="Shaik" target="Apsalar" weight="2.0"/>
+      <edge id="506" source="Shaik" target="Crokus" weight="2.0"/>
+      <edge id="534" source="Rellock" target="Apsalar" weight="8.0"/>
+      <edge id="535" source="Rellock" target="Shaik"/>
+      <edge id="536" source="Rellock" target="Fiddler" weight="7.0"/>
+      <edge id="537" source="Rellock" target="Crokus" weight="8.0"/>
+      <edge id="549" source="Fiddler" target="Quick" weight="2.0"/>
+      <edge id="550" source="Iskaral" target="Quick"/>
+      <edge id="558" source="Kalam" target="Pearl" weight="7.0"/>
+      <edge id="561" source="Keneb" target="Quick"/>
+      <edge id="562" source="Keneb" target="Lostara"/>
+      <edge id="563" source="Keneb" target="Pearl"/>
+      <edge id="565" source="Minala" target="Quick"/>
+      <edge id="566" source="Minala" target="Lostara"/>
+      <edge id="567" source="Minala" target="Pearl"/>
+      <edge id="568" source="Korbolo" target="Quick"/>
+      <edge id="569" source="Korbolo" target="Lostara"/>
+      <edge id="570" source="Korbolo" target="Pearl"/>
+      <edge id="571" source="Quick" target="Lostara"/>
+      <edge id="572" source="Quick" target="Pearl" weight="2.0"/>
+      <edge id="573" source="Lostara" target="Pearl" weight="4.0"/>
+      <edge id="575" source="Apt" target="Lostara" weight="2.0"/>
+      <edge id="576" source="Apt" target="Pearl" weight="4.0"/>
+      <edge id="584" source="Duiker" target="Shadowthrone"/>
+      <edge id="585" source="Coltaine" target="Tithansi" weight="3.0"/>
+      <edge id="588" source="Tithansi" target="Duiker" weight="2.0"/>
+      <edge id="589" source="Tithansi" target="Semk" weight="3.0"/>
+      <edge id="597" source="Keneb" target="Icarium"/>
+      <edge id="601" source="Duiker" target="Pearl"/>
+      <edge id="602" source="Duiker" target="Lostara"/>
+      <edge id="604" source="Duiker" target="Apt"/>
+      <edge id="607" source="Pearl" target="Semk"/>
+      <edge id="609" source="Pearl" target="Tithansi"/>
+      <edge id="610" source="Lostara" target="Semk"/>
+      <edge id="612" source="Lostara" target="Tithansi"/>
+      <edge id="613" source="Semk" target="Apt"/>
+      <edge id="615" source="Apt" target="Tithansi"/>
+      <edge id="623" source="Tithansi" target="Kamist"/>
+      <edge id="624" source="Tithansi" target="Nil"/>
+      <edge id="625" source="Tithansi" target="Nether"/>
+      <edge id="626" source="Tithansi" target="Lull"/>
+      <edge id="630" source="Semk" target="Lull"/>
+      <edge id="631" source="Kamist" target="Nil" weight="2.0"/>
+      <edge id="632" source="Kamist" target="Nether" weight="2.0"/>
+      <edge id="635" source="Nil" target="Lull" weight="2.0"/>
+      <edge id="636" source="Nether" target="Lull" weight="2.0"/>
+      <edge id="638" source="Worldbuilding" target="Kallor"/>
+      <edge id="647" source="Felisin" target="Gryllen"/>
+      <edge id="648" source="Felisin" target="Messremb"/>
+      <edge id="651" source="Heboric" target="Gryllen"/>
+      <edge id="652" source="Heboric" target="Messremb"/>
+      <edge id="654" source="Kulp" target="Gryllen"/>
+      <edge id="655" source="Kulp" target="Messremb"/>
+      <edge id="657" source="Gryllen" target="Messremb"/>
+      <edge id="658" source="Gryllen" target="Baudin"/>
+      <edge id="659" source="Messremb" target="Baudin"/>
+      <edge id="660" source="Pormqual" target="Laseen"/>
+      <edge id="661" source="Pormqual" target="Kalam"/>
+      <edge id="662" source="Pormqual" target="Minala"/>
+      <edge id="664" source="Coltaine" target="Nethpara" weight="3.0"/>
+      <edge id="665" source="Heboric" target="Toblakai" weight="4.0"/>
+      <edge id="668" source="Shaik" target="Felisin"/>
+      <edge id="669" source="Shaik" target="Heboric"/>
+      <edge id="671" source="Toblakai" target="Felisin" weight="3.0"/>
+      <edge id="673" source="Leoman" target="Felisin" weight="3.0"/>
+      <edge id="674" source="Leoman" target="Heboric" weight="3.0"/>
+      <edge id="693" source="Gesler" target="Nether"/>
+      <edge id="694" source="Gesler" target="Nil"/>
+      <edge id="695" source="Gesler" target="Coltaine" weight="2.0"/>
+      <edge id="698" source="Stormy" target="Nether"/>
+      <edge id="699" source="Stormy" target="Nil"/>
+      <edge id="700" source="Stormy" target="Coltaine" weight="2.0"/>
+      <edge id="702" source="Truth" target="Nether"/>
+      <edge id="703" source="Truth" target="Nil"/>
+      <edge id="704" source="Truth" target="Coltaine" weight="2.0"/>
+      <edge id="713" source="Toblakai" target="Dryjhna" weight="2.0"/>
+      <edge id="716" source="Leoman" target="Dryjhna" weight="2.0"/>
+      <edge id="718" source="Felisin" target="Dryjhna" weight="2.0"/>
+      <edge id="720" source="Dryjhna" target="Heboric" weight="2.0"/>
+      <edge id="770" source="Tavore" target="Kalam"/>
+      <edge id="779" source="Fiddler" target="Messremb"/>
+      <edge id="784" source="Apsalar" target="Messremb"/>
+      <edge id="788" source="Crokus" target="Messremb"/>
+      <edge id="791" source="Iskaral" target="Messremb"/>
+      <edge id="799" source="Felisin" target="Bidithal"/>
+      <edge id="800" source="Felisin" target="Febryl"/>
+      <edge id="801" source="Felisin" target="Loric"/>
+      <edge id="805" source="Heboric" target="Bidithal"/>
+      <edge id="806" source="Heboric" target="Febryl"/>
+      <edge id="807" source="Heboric" target="Loric"/>
+      <edge id="810" source="Leoman" target="Bidithal"/>
+      <edge id="811" source="Leoman" target="Febryl"/>
+      <edge id="812" source="Leoman" target="Loric"/>
+      <edge id="814" source="Toblakai" target="Bidithal"/>
+      <edge id="815" source="Toblakai" target="Febryl"/>
+      <edge id="816" source="Toblakai" target="Loric"/>
+      <edge id="817" source="Dryjhna" target="Bidithal"/>
+      <edge id="818" source="Dryjhna" target="Febryl"/>
+      <edge id="819" source="Dryjhna" target="Loric"/>
+      <edge id="820" source="Bidithal" target="Febryl"/>
+      <edge id="821" source="Bidithal" target="Loric"/>
+      <edge id="822" source="Febryl" target="Loric"/>
+      <edge id="835" source="Apsalar" target="Kimloc"/>
+      <edge id="840" source="Crokus" target="Kimloc"/>
+      <edge id="843" source="Iskaral" target="Gryllen"/>
+      <edge id="844" source="Iskaral" target="Kimloc"/>
+      <edge id="847" source="Icarium" target="Kimloc"/>
+      <edge id="849" source="Mappo" target="Kimloc"/>
+      <edge id="850" source="Gryllen" target="Kimloc"/>
+      <edge id="854" source="Korbolo" target="Nethpara" weight="2.0"/>
+      <edge id="855" source="Korbolo" target="Sormo"/>
+      <edge id="856" source="Nethpara" target="Sormo"/>
+      <edge id="863" source="Coltaine" target="Quick"/>
+      <edge id="865" source="Coltaine" target="Laseen"/>
+      <edge id="866" source="Coltaine" target="Trygalle"/>
+      <edge id="868" source="Quick" target="Duiker"/>
+      <edge id="869" source="Quick" target="Laseen"/>
+      <edge id="870" source="Quick" target="Trygalle" weight="2.0"/>
+      <edge id="871" source="Quick" target="Dujek"/>
+      <edge id="873" source="Duiker" target="Trygalle"/>
+      <edge id="875" source="Laseen" target="Dujek" weight="2.0"/>
+      <edge id="877" source="Coltaine" target="Khundryl"/>
+      <edge id="880" source="Korbolo" target="Khundryl"/>
+      <edge id="881" source="Korbolo" target="Semk"/>
+      <edge id="882" source="Korbolo" target="Tithansi"/>
+      <edge id="883" source="Khundryl" target="Semk"/>
+      <edge id="884" source="Khundryl" target="Tithansi"/>
+      <edge id="906" source="Rellock" target="Dassem"/>
+      <edge id="909" source="Icarium" target="Dassem"/>
+      <edge id="911" source="Mappo" target="Dassem"/>
+      <edge id="912" source="Iskaral" target="Dassem"/>
+      <edge id="913" source="Fiddler" target="Trygalle"/>
+      <edge id="922" source="Duiker" target="Korbolo" weight="5.0"/>
+      <edge id="924" source="Duiker" target="Nethpara" weight="2.0"/>
+      <edge id="927" source="Duiker" target="Keneb" weight="2.0"/>
+      <edge id="930" source="Pearl" target="Laseen"/>
+      <edge id="932" source="Apt" target="Cotillion" weight="2.0"/>
+      <edge id="937" source="Cotillion" target="Kalam" weight="2.0"/>
+      <edge id="938" source="Cotillion" target="Pearl"/>
+      <edge id="942" source="Pearl" target="Cartheron"/>
+      <edge id="943" source="Apt" target="Cartheron"/>
+      <edge id="948" source="Duiker" target="Blistig" weight="2.0"/>
+      <edge id="956" source="Nil" target="Pormqual"/>
+      <edge id="957" source="Nil" target="Mallick"/>
+      <edge id="958" source="Nil" target="Blistig"/>
+      <edge id="960" source="Nil" target="Korbolo"/>
+      <edge id="961" source="Nil" target="List"/>
+      <edge id="963" source="Nil" target="Bult"/>
+      <edge id="965" source="Nether" target="Pormqual"/>
+      <edge id="966" source="Nether" target="Mallick"/>
+      <edge id="967" source="Nether" target="Blistig"/>
+      <edge id="969" source="Nether" target="Korbolo"/>
+      <edge id="970" source="Nether" target="List"/>
+      <edge id="972" source="Nether" target="Bult"/>
+      <edge id="975" source="Pormqual" target="Blistig" weight="2.0"/>
+      <edge id="977" source="Pormqual" target="Korbolo" weight="3.0"/>
+      <edge id="978" source="Pormqual" target="List"/>
+      <edge id="979" source="Pormqual" target="Lull"/>
+      <edge id="981" source="Pormqual" target="Kamist"/>
+      <edge id="982" source="Mallick" target="Blistig" weight="2.0"/>
+      <edge id="985" source="Mallick" target="List"/>
+      <edge id="986" source="Mallick" target="Lull"/>
+      <edge id="989" source="Blistig" target="Coltaine"/>
+      <edge id="990" source="Blistig" target="Korbolo" weight="2.0"/>
+      <edge id="991" source="Blistig" target="List"/>
+      <edge id="992" source="Blistig" target="Lull"/>
+      <edge id="993" source="Blistig" target="Bult"/>
+      <edge id="994" source="Blistig" target="Kamist"/>
+      <edge id="1000" source="Korbolo" target="List"/>
+      <edge id="1001" source="Korbolo" target="Lull"/>
+      <edge id="1002" source="Korbolo" target="Bult"/>
+      <edge id="1004" source="List" target="Lull"/>
+      <edge id="1005" source="List" target="Bult"/>
+      <edge id="1006" source="Lull" target="Bult"/>
+      <edge id="1007" source="Kalam" target="Topper" weight="2.0"/>
+      <edge id="1032" source="Nethpara" target="Blistig"/>
+      <edge id="1033" source="Nethpara" target="Pormqual"/>
+      <edge id="1047" source="Pormqual" target="Keneb"/>
+      <edge id="1054" source="Keneb" target="Blistig" weight="2.0"/>
+      <edge id="1059" source="Fiddler" target="Gothos"/>
+      <edge id="1061" source="Fiddler" target="Nameless"/>
+      <edge id="1065" source="Crokus" target="Gothos"/>
+      <edge id="1067" source="Crokus" target="Nameless"/>
+      <edge id="1070" source="Apsalar" target="Gothos"/>
+      <edge id="1072" source="Apsalar" target="Nameless"/>
+      <edge id="1074" source="Rellock" target="Gothos"/>
+      <edge id="1076" source="Rellock" target="Nameless"/>
+      <edge id="1078" source="Gothos" target="Icarium"/>
+      <edge id="1079" source="Gothos" target="Nameless"/>
+      <edge id="1080" source="Gothos" target="Mappo"/>
+      <edge id="1085" source="Kalam" target="Dujek"/>
+      <edge id="1088" source="Kalam" target="Dassem"/>
+      <edge id="1096" source="Laseen" target="Topper"/>
+      <edge id="1101" source="Kalam" target="Rellock"/>
+      <edge id="1107" source="Fiddler" target="Minala"/>
+      <edge id="1109" source="Fiddler" target="Apt"/>
+      <edge id="1113" source="Crokus" target="Minala"/>
+      <edge id="1115" source="Crokus" target="Apt"/>
+      <edge id="1118" source="Apsalar" target="Minala"/>
+      <edge id="1120" source="Apsalar" target="Apt"/>
+      <edge id="1123" source="Minala" target="Rellock"/>
+      <edge id="1126" source="Minala" target="Shadowthrone"/>
+      <edge id="1127" source="Rellock" target="Apt"/>
+      <edge id="1133" source="Felisin" target="Korbolo"/>
+      <edge id="1134" source="Tavore" target="Blistig"/>
+      <edge id="1135" source="Tavore" target="Keneb"/>
+      <edge id="1139" source="Gesler" target="Mappo"/>
+      <edge id="1141" source="Mappo" target="Stormy"/>
+      <edge id="1142" source="Mappo" target="Truth"/>
+      <edge id="1144" source="Iskaral" target="Mogora"/>
+      <edge id="1145" source="Iskaral" target="Olar"/>
+      <edge id="1146" source="Mogora" target="Olar"/>
+    </edges>
+  </graph>
+</gexf>

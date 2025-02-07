@@ -477,18 +477,18 @@ export const useEnergyStore = defineStore('energyStore', () =>{
         selectedCountry.value = 'World';
     }
     function loadData():void {
-        d3Fetch.csv("/csv/energy-map.csv").then( (data: any[]): void => {
+        d3Fetch.csv("/csv/data/energy-map.csv").then( (data: any[]): void => {
             mapDataRaw.value = data;
         });
-        d3Fetch.csv("/csv/energy-area.csv").then( (data: any): void => {
+        d3Fetch.csv("/csv/data/energy-area.csv").then( (data: any): void => {
             areaDataRaw.value = data;
             allYears.value = data.columns as string[];
             allYears.value.splice(0, 2);
         });
-        d3Fetch.csv("/csv/energy-trade.csv").then((data: any[]): void => {
+        d3Fetch.csv("/csv/data/energy-trade.csv").then((data: any[]): void => {
             tradeDataRaw.value = data;
         });
-        d3Fetch.csv("/csv/energy-consumption-sectors.csv").then((data: any[]): void => {
+        d3Fetch.csv("/csv/data/energy-consumption-sectors.csv").then((data: any[]): void => {
            sunburstDataRaw.value = data;
         });
     }
@@ -498,7 +498,7 @@ export const useEnergyStore = defineStore('energyStore', () =>{
         color.set('oilmax', 'red-400');
         color.set('gas', 'yellow-300');
         color.set('gasmax', 'yellow-200');
-        color.set('coal', 'gray-400');
+        color.set('coal', 'gray-300');
         color.set('coalmax', 'gray-100');
         color.set('nuclear', 'purple-700');
         color.set('nuclearmax', 'purple-300');

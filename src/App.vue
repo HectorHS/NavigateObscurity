@@ -27,7 +27,7 @@ export default {
       timer: 0
     }),
     methods: {
-            // implementing a debounce function to avoid calling updateScreensize multiple times on manual size changes
+      // implementing a debounce function to avoid calling updateScreensize multiple times on manual size changes
       screenSizeChange(){
           clearTimeout(this.timer);
           this.timer = setTimeout(() => { this.updateScreensize(); }, 500);
@@ -39,8 +39,6 @@ export default {
     },
     computed: {
     },
-    watch: {
-    },
     mounted () {
       this.updateScreensize();
       window.addEventListener("resize", this.screenSizeChange);
@@ -50,7 +48,3 @@ export default {
     },
   }
 </script>
-
-<style lang="scss">
-
-</style>

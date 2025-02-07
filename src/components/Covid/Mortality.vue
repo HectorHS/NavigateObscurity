@@ -28,10 +28,6 @@
         },
         ...mapState(useCovidStore, ['selectedCountry','excessOptions']),
       },
-      watch: {
-      },
-      mounted () {
-      }
     })
 
   </script>

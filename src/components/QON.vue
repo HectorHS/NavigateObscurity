@@ -45,10 +45,6 @@
         },
         computed: {
         },
-        watch: {
-        },
-        mounted () {
-        }
     })
 </script>
 
@@ -59,7 +55,7 @@
 
     }
     .tab-active {
-        @apply  text-gray md:hover:text-textColor font-semibold mb-0 md:mb-1 md:mr-0 
+        @apply  text-gray md:hover:text-textColor font-semibold mb-0 md:mb-1 md:mr-0
         bg-gradient-to-tr bg-size-200 to-blue to-90% via-gray-700 from-orange bg-pos-0-r md:hover:bg-pos-100-r;
     }
 </style>

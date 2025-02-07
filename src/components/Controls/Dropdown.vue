@@ -1,5 +1,6 @@
 <template>
-    <div class="flex relative h-[34px] overflow-hidden border-solid border-gray-200 hover:border-blue border rounded mr-3 ">
+    <div>
+    <div class="flex relative h-[34px] overflow-hidden border-solid border-textColor hover:border-blue border rounded mr-3 ">
         <select
             :value="modelValue"
             @input="$emit('update:modelValue', $event.target.value)"
@@ -7,6 +8,7 @@
             <option v-for="item of items" class="!hover:bg-blue">{{ item }}</option>
         </select>
         <IconBase icon="down" height="12" class="absolute top-[10px] right-2 fill-textColor inline"></IconBase>
+    </div>
     </div>
 </template>
 
@@ -31,10 +33,6 @@
         },
         computed: {
         },
-        watch: {
-        },
-        mounted () {
-        }
     })
 
 </script>

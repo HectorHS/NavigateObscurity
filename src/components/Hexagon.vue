@@ -20,7 +20,7 @@ export default defineComponent ({
     setup() {
     },
     components: {
-      IconBase     
+      IconBase
     },
     props: {
       image: String,
@@ -32,14 +32,12 @@ export default defineComponent ({
     data: () => ({
     }),
     methods: {
-      
+
     },
     computed: {
         bgClass() {
             return "bg-" + this.background;
         }
-    },
-    watch: {
     },
     mounted () {
     }

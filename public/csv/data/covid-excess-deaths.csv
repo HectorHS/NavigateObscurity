@@ -1,0 +1,3385 @@
+Country,Time,Time_unit,Deaths_old,Deaths_2020,Deaths_2021,Deaths_2022
+Albania,1,month,2447.8,2187,3002,3294
+Albania,2,month,1975.2,2018,3773,2752
+Albania,3,month,1980.8,1993,3447,1892
+Albania,4,month,1747.6,1804,2419,1707
+Albania,5,month,1698.6,1803,1874,1675
+Albania,6,month,1627.6,1779,1822,1534
+Albania,7,month,1764.8,2166,1820,1988
+Albania,8,month,1708.2,2476,2080,1876
+Albania,9,month,1531.8,1982,2506,1266
+Albania,10,month,1664.6,2403,2559,1668
+Albania,11,month,1764.2,3854,2506,1672
+Albania,12,month,2044.6,3140,2772,1576
+Algeria,1,month,17096.35,17195,,
+Algeria,2,month,15369.9,15810,,
+Algeria,3,month,15297,15882,,
+Algeria,4,month,14323.35,15020,,
+Algeria,5,month,14312,14833,,
+Algeria,6,month,13949.1,18100,,
+Algeria,7,month,14729,32170,,
+Algeria,8,month,14723.6,23413,,
+Algeria,9,month,13766.05,17043,,
+Algeria,10,month,14758.45,18665,,
+Algeria,11,month,14975.6,26100,,
+Algeria,12,month,15989.25,21397,,
+Andorra,1,month,33,34,52,
+Andorra,2,month,26.4,37,36,
+Andorra,3,month,30.8,40,26,
+Andorra,4,month,22.8,60,43,
+Andorra,5,month,20,36,32,
+Andorra,6,month,24.2,26,19,
+Andorra,7,month,25.8,29,29,
+Andorra,8,month,23.6,19,28,
+Andorra,9,month,23.6,27,26,
+Andorra,10,month,25.8,51,27,
+Andorra,11,month,24.6,19,26,
+Andorra,12,month,29.6,41,42,
+Antigua and Barbuda,1,month,41.8,50,56,
+Antigua and Barbuda,2,month,50.4,47,68,
+Antigua and Barbuda,3,month,54.8,60,55,
+Antigua and Barbuda,4,month,44.2,49,50,
+Antigua and Barbuda,5,month,46,52,46,
+Antigua and Barbuda,6,month,46,42,39,
+Antigua and Barbuda,7,month,42,46,55,
+Antigua and Barbuda,8,month,54,44,47,
+Antigua and Barbuda,9,month,47.4,45,104,
+Antigua and Barbuda,10,month,51.4,50,26,
+Antigua and Barbuda,11,month,47.6,49,64,
+Antigua and Barbuda,12,month,45,40,39,
+Argentina,1,month,26538.4,25870,34698,
+Argentina,2,month,23869.8,24405,29482,
+Argentina,3,month,26036,26072,32055,
+Argentina,4,month,25988.4,24941,40056,
+Argentina,5,month,29418.4,26927,51612,
+Argentina,6,month,33223.8,28365,51214,
+Argentina,7,month,34500,35340,44006,
+Argentina,8,month,31917.4,37222,37125,
+Argentina,9,month,29307.4,40543,29428,
+Argentina,10,month,28188,40941,28978,
+Argentina,11,month,25602.8,34895,27041,
+Argentina,12,month,26798.2,32073,31103,
+Armenia,1,month,2727.6,2567,3013,2676
+Armenia,2,month,2380.2,2434,2418,3239
+Armenia,3,month,2449.6,2288,2836,2679
+Armenia,4,month,2220.4,2156,3361,1993
+Armenia,5,month,2254.4,2103,2633,2100
+Armenia,6,month,2078.2,2869,2290,1879
+Armenia,7,month,2151.6,2719,2247,1869
+Armenia,8,month,2083.2,2106,2241,2006
+Armenia,9,month,1811.6,2042,2559,2045
+Armenia,10,month,2115.2,3632,3462,1982
+Armenia,11,month,2316.8,6060,4577,2055
+Armenia,12,month,2458.6,4395,3001,2169
+Aruba,1,month,60,69,68,
+Aruba,2,month,59.8,56,87,
+Aruba,3,month,60.2,74,80,
+Aruba,4,month,61.6,60,95,
+Aruba,5,month,64.4,47,69,
+Aruba,6,month,54.2,60,45,
+Aruba,7,month,56.8,47,70,
+Aruba,8,month,57.6,63,120,
+Aruba,9,month,53.6,82,92,
+Aruba,10,month,57.6,71,93,
+Aruba,11,month,61,57,78,
+Aruba,12,month,63,57,67,
+Australia,1,week,2878.6,2926,3029,3331
+Australia,2,week,2872.8,2902,2950,3739
+Australia,3,week,2841,2914,3148,3891
+Australia,4,week,2832.4,3007,2944,3786
+Australia,5,week,2803.2,2910,3068,3743
+Australia,6,week,2840,2917,2962,3566
+Australia,7,week,2823,3030,2934,3413
+Australia,8,week,2880.4,3059,3048,3409
+Australia,9,week,2858,3090,3069,3381
+Australia,10,week,2897.6,2996,3117,3213
+Australia,11,week,2833.4,2976,3084,3349
+Australia,12,week,2865.4,3095,3037,3345
+Australia,13,week,2884.8,3143,3094,3417
+Australia,14,week,2902.6,3217,2954,3449
+Australia,15,week,2948,3140,3251,3378
+Australia,16,week,2951.2,3084,3242,3483
+Australia,17,week,2943,3044,3272,3491
+Australia,18,week,2976.2,3031,3362,3677
+Australia,19,week,3098.4,3161,3362,3797
+Australia,20,week,3097.4,3150,3358,3655
+Australia,21,week,3172,3214,3507,3773
+Australia,22,week,3188.8,3178,3371,3915
+Australia,23,week,3259.2,3113,3556,4033
+Australia,24,week,3207.6,3128,3487,4133
+Australia,25,week,3236.4,3064,3451,4002
+Australia,26,week,3289.8,3058,3463,3911
+Australia,27,week,3366.6,3218,3539,4107
+Australia,28,week,3348.4,3197,3585,4120
+Australia,29,week,3433.6,3204,3612,4146
+Australia,30,week,3455.6,3332,3664,4161
+Australia,31,week,3410.8,3353,3464,4203
+Australia,32,week,3433.2,3398,3426,4117
+Australia,33,week,3478.8,3478,3494,3925
+Australia,34,week,3502.8,3310,3409,3875
+Australia,35,week,3510.8,3283,3481,3719
+Australia,36,week,3444.8,3290,3402,3769
+Australia,37,week,3360.6,3239,3478,3688
+Australia,38,week,3309.6,3100,3353,3670
+Australia,39,week,3188.6,3145,3513,3404
+Australia,40,week,3191.4,3183,3381,3490
+Australia,41,week,3145.8,3042,3338,3447
+Australia,42,week,3090.4,3002,3339,3510
+Australia,43,week,3025.8,2964,3303,3295
+Australia,44,week,3017.8,3036,3285,3372
+Australia,45,week,2968.4,3033,3152,3472
+Australia,46,week,2920.8,3132,3303,3418
+Australia,47,week,2950.8,3043,3232,3454
+Australia,48,week,2914.2,2957,3233,3393
+Australia,49,week,2878.6,3106,3143,3550
+Australia,50,week,2947.4,3007,3221,3471
+Australia,51,week,2905.6,3047,3324,3516
+Australia,52,week,2847,3067,3165,3364
+Australia,53,week,2819,2987,,
+Austria,1,week,1809,1607,1953,1756
+Austria,2,week,1857,1691,1954,1679
+Austria,3,week,1786.4,1791,2003,1816
+Austria,4,week,1747,1773,1940,1766
+Austria,5,week,1818.6,1941,1860,1792
+Austria,6,week,1836.8,1675,1743,1858
+Austria,7,week,1812.8,1714,1715,1916
+Austria,8,week,1822,1718,1661,1847
+Austria,9,week,1815.6,1761,1579,1957
+Austria,10,week,1753.6,1734,1747,1848
+Austria,11,week,1711.4,1714,1691,1918
+Austria,12,week,1598,1828,1649,2000
+Austria,13,week,1645.8,1756,1769,1953
+Austria,14,week,1585.4,1821,1662,1964
+Austria,15,week,1546.2,1794,1694,1813
+Austria,16,week,1523.4,1691,1689,1655
+Austria,17,week,1470.2,1580,1691,1687
+Austria,18,week,1464.6,1472,1657,1650
+Austria,19,week,1439.4,1516,1601,1574
+Austria,20,week,1463,1480,1520,1601
+Austria,21,week,1421.6,1477,1486,1531
+Austria,22,week,1414.4,1410,1602,1578
+Austria,23,week,1412.4,1483,1557,1589
+Austria,24,week,1443.4,1457,1598,1629
+Austria,25,week,1407.6,1406,1652,1652
+Austria,26,week,1399.8,1433,1504,1655
+Austria,27,week,1435.2,1554,1469,1597
+Austria,28,week,1377.4,1378,1454,1561
+Austria,29,week,1469.8,1439,1574,1847
+Austria,30,week,1488.8,1445,1530,1732
+Austria,31,week,1504.8,1522,1455,1661
+Austria,32,week,1426.2,1427,1621,1560
+Austria,33,week,1460.6,1603,1621,1685
+Austria,34,week,1433.8,1467,1567,1550
+Austria,35,week,1426.8,1488,1542,1454
+Austria,36,week,1377.2,1518,1627,1544
+Austria,37,week,1424.8,1562,1580,1589
+Austria,38,week,1423,1560,1577,1652
+Austria,39,week,1471.6,1531,1675,1727
+Austria,40,week,1510.4,1573,1600,1870
+Austria,41,week,1519,1620,1632,1764
+Austria,42,week,1505.2,1612,1721,1766
+Austria,43,week,1509,1772,1887,1829
+Austria,44,week,1513,1886,1943,1718
+Austria,45,week,1509.4,2004,2052,1733
+Austria,46,week,1552.4,2283,2111,1780
+Austria,47,week,1538,2401,2152,1744
+Austria,48,week,1546.2,2428,2201,1872
+Austria,49,week,1603,2544,2120,1901
+Austria,50,week,1606.8,2478,1930,2175
+Austria,51,week,1653.6,2255,1856,2284
+Austria,52,week,1735.2,2123,1864,2303
+Austria,53,week,1537,2000,,
+Azerbaijan,1,month,5349,5177,7972,6009
+Azerbaijan,2,month,4879,5039,5366,6548
+Azerbaijan,3,month,4604.4,5792,5676,6166
+Azerbaijan,4,month,5196,4511,7400,5025
+Azerbaijan,5,month,4710.8,4294,5435,4350
+Azerbaijan,6,month,4158.8,6203,5198,4491
+Azerbaijan,7,month,4902.4,6410,5087,4594
+Azerbaijan,8,month,4567.4,5049,6499,4575
+Azerbaijan,9,month,4070.2,4520,7540,4614
+Azerbaijan,10,month,4512.4,5774,5978,4085
+Azerbaijan,11,month,4623.8,8378,7610,5224
+Azerbaijan,12,month,4856.6,14500,7117,5129
+Bahamas,1,month,219.2,249,234,
+Bahamas,2,month,212,214,219,
+Bahamas,3,month,209.2,222,239,
+Bahamas,4,month,187.6,218,235,
+Bahamas,5,month,198.2,197,234,
+Bahamas,6,month,192.6,200,233,
+Bahamas,7,month,210,263,335,
+Bahamas,8,month,210.6,327,525,
+Bahamas,9,month,202.2,312,488,
+Bahamas,10,month,192.8,318,397,
+Bahamas,11,month,196.2,259,240,
+Bahamas,12,month,204.2,237,270,
+Barbados,1,month,269.4,255,173,297
+Barbados,2,month,215.4,224,220,285
+Barbados,3,month,209.6,244,322,422
+Barbados,4,month,207.2,183,189,293
+Barbados,5,month,240.6,245,221,275
+Barbados,6,month,202.6,238,246,287
+Barbados,7,month,213.6,229,143,178
+Barbados,8,month,198,233,248,295
+Barbados,9,month,224,187,236,255
+Barbados,10,month,234,225,279,277
+Barbados,11,month,220,209,298,238
+Barbados,12,month,208.2,241,320,252
+Belarus,1,month,11445.8,10725,16127,
+Belarus,2,month,9892.6,9622,12554,
+Belarus,3,month,10779.8,10690,11036,
+Belarus,4,month,10237.6,10886,,
+Belarus,5,month,10280.4,11966,,
+Belarus,6,month,9326.2,13016,,
+Belarus,7,month,9501,10759,,
+Belarus,8,month,9245.2,10413,,
+Belarus,9,month,9126.4,10659,,
+Belarus,10,month,10394,12704,,
+Belarus,11,month,9536.6,15565,,
+Belarus,12,month,10165.8,17531,,
+Belgium,1,week,2390.4,2234,2466,2366
+Belgium,2,week,2431.6,2388,2396,2220
+Belgium,3,week,2422.8,2314,2437,2369
+Belgium,4,week,2422.4,2204,2430,2531
+Belgium,5,week,2510,2356,2275,2639
+Belgium,6,week,2488.4,2169,2224,2553
+Belgium,7,week,2523.6,2307,2316,2451
+Belgium,8,week,2487.8,2301,2137,2299
+Belgium,9,week,2544.8,2249,2015,2170
+Belgium,10,week,2452.8,2212,2155,2420
+Belgium,11,week,2344.6,2234,2101,2391
+Belgium,12,week,2322.2,2554,2115,2400
+Belgium,13,week,2226.8,3198,2217,2508
+Belgium,14,week,2119.6,4021,2205,2545
+Belgium,15,week,2095.2,4292,2165,2439
+Belgium,16,week,2051.4,3703,2211,2340
+Belgium,17,week,2032.2,3039,2201,2206
+Belgium,18,week,2012.2,2429,2251,2248
+Belgium,19,week,2030.2,2390,2076,2057
+Belgium,20,week,1981.2,2042,2027,2094
+Belgium,21,week,1970.2,2082,1995,1917
+Belgium,22,week,1931.4,1983,1992,2044
+Belgium,23,week,1878,1799,1878,1933
+Belgium,24,week,1860.6,1899,1964,2110
+Belgium,25,week,1922.6,1822,1780,2023
+Belgium,26,week,1897,1968,1928,1956
+Belgium,27,week,2023.2,1768,1829,2033
+Belgium,28,week,1861.8,1682,1906,2055
+Belgium,29,week,1904.8,1859,1999,2148
+Belgium,30,week,1995.8,1810,1890,2020
+Belgium,31,week,1885.4,1947,1877,2060
+Belgium,32,week,1875.4,2046,1890,2150
+Belgium,33,week,1855.2,2882,1840,2103
+Belgium,34,week,1901.8,2215,1861,2071
+Belgium,35,week,1908,1879,1954,1985
+Belgium,36,week,1848,1891,2012,2004
+Belgium,37,week,1864.4,1825,1895,1901
+Belgium,38,week,1882.8,2004,1885,2041
+Belgium,39,week,1907.6,1916,1939,2090
+Belgium,40,week,1969,1920,2054,2219
+Belgium,41,week,2020,2060,2221,2219
+Belgium,42,week,2005,2157,2335,2198
+Belgium,43,week,1991.8,2629,2327,2170
+Belgium,44,week,1983.4,3282,2276,2002
+Belgium,45,week,2006.6,3689,2382,2057
+Belgium,46,week,2044,3432,2397,2076
+Belgium,47,week,2104.8,3179,2485,2215
+Belgium,48,week,2104.2,2893,2728,2242
+Belgium,49,week,2164.6,2704,2604,2503
+Belgium,50,week,2221,2780,2534,2644
+Belgium,51,week,2255.6,2736,2431,3047
+Belgium,52,week,2240.4,2617,2449,2869
+Belgium,53,week,2123,2441,,
+Belize,1,month,165.6,178,198,
+Belize,2,month,150.2,166,184,
+Belize,3,month,174,166,171,
+Belize,4,month,158.6,145,143,
+Belize,5,month,154.2,157,170,
+Belize,6,month,151.4,168,178,
+Belize,7,month,151.2,156,165,
+Belize,8,month,151.2,156,242,
+Belize,9,month,155.6,149,255,
+Belize,10,month,156.6,189,287,
+Belize,11,month,156.6,253,314,
+Belize,12,month,170.8,275,182,
+Bhutan,1,month,323,322,296,
+Bhutan,2,month,251,289,269,
+Bhutan,3,month,303,273,277,
+Bhutan,4,month,233,240,262,
+Bhutan,5,month,255,223,252,
+Bhutan,6,month,281,214,266,
+Bhutan,7,month,247,224,241,
+Bhutan,8,month,257,249,256,
+Bhutan,9,month,255,274,226,
+Bhutan,10,month,249,262,246,
+Bhutan,11,month,232,284,289,
+Bhutan,12,month,334,255,312,
+Bolivia,1,month,4308.8,4717,9977,9779
+Bolivia,2,month,3890.6,4364,7382,
+Bolivia,3,month,4227.2,4715,6026,
+Bolivia,4,month,4038.8,3393,5666,
+Bolivia,5,month,4311.4,4763,9055,
+Bolivia,6,month,4432.6,8960,10599,
+Bolivia,7,month,4456.2,15992,7631,
+Bolivia,8,month,4326.4,8283,6087,
+Bolivia,9,month,4111.8,5240,5067,
+Bolivia,10,month,4200.2,4972,5045,
+Bolivia,11,month,4012.8,4642,5202,
+Bolivia,12,month,4296,4822,6564,
+Bosnia and Herzegovina,1,month,3456.4,2800,3452,3985
+Bosnia and Herzegovina,2,month,3372.8,3203,3454,5060
+Bosnia and Herzegovina,3,month,3423.8,2970,4787,3931
+Bosnia and Herzegovina,4,month,3068.6,3207,6051,2970
+Bosnia and Herzegovina,5,month,3056.4,2938,4223,3000
+Bosnia and Herzegovina,6,month,2822.2,2953,3276,2705
+Bosnia and Herzegovina,7,month,2866.6,3066,3067,2779
+Bosnia and Herzegovina,8,month,2911.4,3329,3019,3182
+Bosnia and Herzegovina,9,month,2727.2,3459,3779,3075
+Bosnia and Herzegovina,10,month,3072.4,3506,4125,2864
+Bosnia and Herzegovina,11,month,2993.6,5410,4615,2887
+Bosnia and Herzegovina,12,month,3127,5962,4655,3227
+Brazil,1,month,107200.8,110932,151728,168257
+Brazil,2,month,96648.6,104255,137029,135927
+Brazil,3,month,108378.6,117888,209406,123641
+Brazil,4,month,108504.6,123596,196654,118717
+Brazil,5,month,115587,154511,182945,132372
+Brazil,6,month,115331.6,140663,172187,136780
+Brazil,7,month,119659.2,145262,158549,138613
+Brazil,8,month,113413,141329,143594,135328.2
+Brazil,9,month,106914,127115,125984,123526.4
+Brazil,10,month,108218.4,128797,125180,119114.7
+Brazil,11,month,102370.2,122598,119930,118244.5
+Brazil,12,month,108400.4,139878,132436,119096.5
+Brunei,1,month,146.2,183,124,
+Brunei,2,month,125,151,145,
+Brunei,3,month,139.8,151,159,
+Brunei,4,month,137.6,138,148,
+Brunei,5,month,137.2,136,140,
+Brunei,6,month,117.4,182,164,
+Brunei,7,month,138.8,140,155,
+Brunei,8,month,147.4,148,54,
+Brunei,9,month,144.6,122,59,
+Brunei,10,month,150.2,133,132,
+Brunei,11,month,123.4,128,313,
+Brunei,12,month,141.2,140,272,
+Bulgaria,1,week,2584,2091,2628,3170
+Bulgaria,2,week,2575,2262,2489,3166
+Bulgaria,3,week,2528.8,2166,2525,3276
+Bulgaria,4,week,2508.8,2375,2464,3501
+Bulgaria,5,week,2460.4,2414,2388,3649
+Bulgaria,6,week,2313,2328,2371,3651
+Bulgaria,7,week,2296.4,2286,2494,3470
+Bulgaria,8,week,2287.2,2142,2589,3046
+Bulgaria,9,week,2280,2152,2755,2712
+Bulgaria,10,week,2268.8,2011,3020,2671
+Bulgaria,11,week,2202.4,2000,3391,2442
+Bulgaria,12,week,2163.4,1970,3686,2504
+Bulgaria,13,week,2142.8,1999,4044,2394
+Bulgaria,14,week,2132.4,1951,3787,2311
+Bulgaria,15,week,2074.4,1920,3738,2148
+Bulgaria,16,week,2066.2,2024,3437,2059
+Bulgaria,17,week,2052.4,1981,3139,2144
+Bulgaria,18,week,2013,1891,2801,1893
+Bulgaria,19,week,2030.4,1913,2552,2024
+Bulgaria,20,week,1969.6,2087,2362,1983
+Bulgaria,21,week,1975,1898,2184,1975
+Bulgaria,22,week,1953.6,1799,2098,1900
+Bulgaria,23,week,1918.8,1922,2054,1767
+Bulgaria,24,week,1934.4,1951,2030,1780
+Bulgaria,25,week,1961.6,1930,2291,1858
+Bulgaria,26,week,1959.2,1904,2139,1873
+Bulgaria,27,week,1898,2138,2099,1860
+Bulgaria,28,week,1940.6,2043,2091,1928
+Bulgaria,29,week,1873,1846,1936,2003
+Bulgaria,30,week,1971.2,1987,2104,2164
+Bulgaria,31,week,1963,2161,2242,2155
+Bulgaria,32,week,1934.4,2059,2243,2054
+Bulgaria,33,week,1859,1975,2085,2073
+Bulgaria,34,week,1834.2,1911,2348,1984
+Bulgaria,35,week,1817.8,1937,2479,1862
+Bulgaria,36,week,1815.8,1946,2658,1937
+Bulgaria,37,week,1817,1912,2900,1903
+Bulgaria,38,week,1813.6,1849,2776,1844
+Bulgaria,39,week,1803.2,1844,2842,1973
+Bulgaria,40,week,1948.8,1986,3073,1969
+Bulgaria,41,week,1985,2084,3403,1996
+Bulgaria,42,week,2058.8,2157,3841,2095
+Bulgaria,43,week,2053.2,2372,4049,2122
+Bulgaria,44,week,2086.8,2732,4171,2160
+Bulgaria,45,week,2103,3236,4092,2092
+Bulgaria,46,week,2125.2,3948,3987,2143
+Bulgaria,47,week,2080.2,4407,3657,1945
+Bulgaria,48,week,2105,4739,3491,2020
+Bulgaria,49,week,2154.6,4753,3310,2143
+Bulgaria,50,week,2193.6,4370,3132,2120
+Bulgaria,51,week,2227,3945,3100,2122
+Bulgaria,52,week,2354.2,3242,3084,2209
+Bulgaria,53,week,2149,2968,,
+Cape Verde,1,month,247.4,250,,
+Cape Verde,2,month,218.6,226,,
+Cape Verde,3,month,249.8,212,,
+Cape Verde,4,month,208.4,221,,
+Cape Verde,5,month,202.2,206,,
+Cape Verde,6,month,197,245,,
+Cape Verde,7,month,216,227,,
+Cape Verde,8,month,243.6,259,,
+Cape Verde,9,month,227,283,,
+Cape Verde,10,month,229.4,293,,
+Cape Verde,11,month,218.8,264,,
+Cape Verde,12,month,233,273,,
+Canada,1,week,6067,6210,6805,7125
+Canada,2,week,6091,6220,6770,7765
+Canada,3,week,6038,6135,6760,7995
+Canada,4,week,5902,6165,6680,7745
+Canada,5,week,5776,5855,6500,7405
+Canada,6,week,5746,5900,6120,7075
+Canada,7,week,5735,5735,6080,6720
+Canada,8,week,5709,5680,5985,6410
+Canada,9,week,5638,5770,6005,6320
+Canada,10,week,5620,5770,5785,6110
+Canada,11,week,5525,5680,5630,5950
+Canada,12,week,5503,5885,5755,5820
+Canada,13,week,5464,5930,5670,5790
+Canada,14,week,5371,6295,5870,6190
+Canada,15,week,5361,6585,5750,6070
+Canada,16,week,5288,6620,5760,6085
+Canada,17,week,5249,6945,5975,6085
+Canada,18,week,5291,6900,5915,6215
+Canada,19,week,5165,6440,5820,6405
+Canada,20,week,5048,6115,5820,5950
+Canada,21,week,5036,5930,5360,5845
+Canada,22,week,4920,5895,5670,5830
+Canada,23,week,4929,5540,5360,5770
+Canada,24,week,4900,5205,5420,5695
+Canada,25,week,4871,5300,5335,5520
+Canada,26,week,4880,5305,6165,5755
+Canada,27,week,4905,5165,5425,5725
+Canada,28,week,4856,5395,5395,6025
+Canada,29,week,4793,5280,5420,6025
+Canada,30,week,4879,5285,5560,5990
+Canada,31,week,4790,5225,5575,5965
+Canada,32,week,4849,5250,5485,5975
+Canada,33,week,4855,5415,5750,5955
+Canada,34,week,4828,5410,5670,5870
+Canada,35,week,4893,5260,5840,6020
+Canada,36,week,4908,5440,6100,5855
+Canada,37,week,4937,5325,5990,5905
+Canada,38,week,4950,5470,5995,6060
+Canada,39,week,5088,5745,6080,6250
+Canada,40,week,5194,5705,6020,6230
+Canada,41,week,5206,5770,6200,6155
+Canada,42,week,5279,5725,6200,6360
+Canada,43,week,5268,5745,6075,6350
+Canada,44,week,5337,5905,6285,6305
+Canada,45,week,5311,6250,6395,6095
+Canada,46,week,5314,6145,6195,6210
+Canada,47,week,5333,6140,6250,6200
+Canada,48,week,5402,6295,6375,
+Canada,49,week,5421,6495,6230,
+Canada,50,week,5465,6575,6440,
+Canada,51,week,5578,6440,6550,
+Canada,52,week,5706,6645,6525,
+Canada,53,week,,6780,,
+Chile,1,week,1545.6,1535,2448,2487
+Chile,2,week,1475,2053,2439,2490
+Chile,3,week,1514.6,2057,2702,2419
+Chile,4,week,1528,1964,2560,2665
+Chile,5,week,1531.8,1970,2635,2914
+Chile,6,week,1469.2,1994,2506,3036
+Chile,7,week,1466.6,1909,2502,3242
+Chile,8,week,1504.4,1899,2607,3269
+Chile,9,week,1426,1884,2661,3102
+Chile,10,week,1431.4,1885,2656,2878
+Chile,11,week,1436.2,1928,2550,2677
+Chile,12,week,1444.8,2008,2741,2558
+Chile,13,week,1473.2,2006,2833,2484
+Chile,14,week,1509.2,2081,2849,2469
+Chile,15,week,1561.2,2010,2899,2254
+Chile,16,week,1527.2,2087,2664,2421
+Chile,17,week,1587.6,2095,2787,2288
+Chile,18,week,1583.4,2083,2735,2443
+Chile,19,week,1564.4,2342,2767,2519
+Chile,20,week,1629.8,2438,2936,2495
+Chile,21,week,1741.2,2933,3081,2468
+Chile,22,week,1766.4,3394,3018,2892
+Chile,23,week,1848.6,3899,3132,2770
+Chile,24,week,1932.2,3983,3182,2879
+Chile,25,week,1940.4,3732,3196,2819
+Chile,26,week,1952.6,3519,3327,2884
+Chile,27,week,1912,3070,3120,3009
+Chile,28,week,1888.6,2967,3043,3058
+Chile,29,week,1939.8,2814,2868,3077
+Chile,30,week,1895.8,2698,2749,2676
+Chile,31,week,1875.2,2653,2640,2629
+Chile,32,week,1822.2,2516,2628,2666
+Chile,33,week,1796,2431,2613,2734
+Chile,34,week,1778.4,2596,2362,2630
+Chile,35,week,1724,2479,2339,2615
+Chile,36,week,1770.6,2395,2397,2520
+Chile,37,week,1723.4,2405,2389,2536
+Chile,38,week,1771,2401,2361,2643
+Chile,39,week,1698,2364,2250,2401
+Chile,40,week,1655.4,2340,2327,2388
+Chile,41,week,1604.4,2396,2362,2334
+Chile,42,week,1585,2307,2222,2341
+Chile,43,week,1566.4,2304,2405,2363
+Chile,44,week,1553.6,2268,2248,2524
+Chile,45,week,1557.2,2239,2395,2445
+Chile,46,week,1518.4,2121,2362,2471
+Chile,47,week,1553.8,2184,2405,2605
+Chile,48,week,1516.6,2203,2539,2319
+Chile,49,week,1480.2,2174,2383,2488
+Chile,50,week,1512,2187,2426,2531
+Chile,51,week,1507,2155,2419,2332
+Chile,52,week,1449.2,2291,2422,2301
+Chile,53,week,,2239,,
+Colombia,1,week,4752.4,5019,8054,6405
+Colombia,2,week,4535.6,5050,8537,7083
+Colombia,3,week,4553.6,4937,8573,7901
+Colombia,4,week,4420,4793,7753,8288
+Colombia,5,week,4310.2,4651,7103,7751
+Colombia,6,week,4254.8,4760,6401,6910
+Colombia,7,week,4206.6,4736,5969,6120
+Colombia,8,week,4202.2,4729,5620,5456
+Colombia,9,week,4239.4,4565,5624,5195
+Colombia,10,week,4280,4567,5368,5076
+Colombia,11,week,4317.6,4480,5654,4972
+Colombia,12,week,4263,4529,6015,4972
+Colombia,13,week,4278.4,4358,6557,4888
+Colombia,14,week,4250.2,4219,7279,4917
+Colombia,15,week,4230.6,4276,8519,4784
+Colombia,16,week,4232,4376,8872,4994
+Colombia,17,week,4237.2,4359,8850,4940
+Colombia,18,week,4301.2,4304,8965,5180
+Colombia,19,week,4339.4,4488,9061,5129
+Colombia,20,week,4487.2,4613,9142,5118
+Colombia,21,week,4445.8,4727,9390,5167
+Colombia,22,week,4454.4,4772,9874,5302
+Colombia,23,week,4511.2,5190,10199,5348
+Colombia,24,week,4477,5385,10558,5394
+Colombia,25,week,4521.2,5828,10606,5419
+Colombia,26,week,4564.2,6166,10412,5892
+Colombia,27,week,4527.4,6291,9705,5960
+Colombia,28,week,4511.2,6796,8895,5967
+Colombia,29,week,4410,7377,7761,5443
+Colombia,30,week,4289.2,7767,7150,5473
+Colombia,31,week,4327.2,8131,6385,5301
+Colombia,32,week,4407,7926,5891,5271
+Colombia,33,week,4365.8,7693,5673,5065
+Colombia,34,week,4300.2,7193,5383,5182
+Colombia,35,week,4320.4,6845,5136,5225
+Colombia,36,week,4313.2,6613,5099,5147
+Colombia,37,week,4278.4,6427,5028,4894
+Colombia,38,week,4338.8,6290,5259,4891
+Colombia,39,week,4222.6,6200,5051,4871
+Colombia,40,week,4273,6053,5180,4986
+Colombia,41,week,4307,6227,5105,5045
+Colombia,42,week,4290.4,6226,5041,5115
+Colombia,43,week,4211.4,6349,5080,4992
+Colombia,44,week,4325.2,6124,5156,5000
+Colombia,45,week,4343,6301,5317,4948
+Colombia,46,week,4351.4,6169,5316,5040
+Colombia,47,week,4381.8,6281,5309,5314
+Colombia,48,week,4421,6313,5523,5233
+Colombia,49,week,4556,6250,5635,5383
+Colombia,50,week,4557,6682,5510,5391
+Colombia,51,week,4581.8,6724,5901,5561
+Colombia,52,week,4743.8,7237,5959,5727
+Colombia,53,week,4580,7881,,
+Costa Rica,1,month,2022.6,2160,2676,2506
+Costa Rica,2,month,1685.8,1914,2076,2494
+Costa Rica,3,month,1873.8,2003,2274,2401
+Costa Rica,4,month,1834,1881,2314,2128
+Costa Rica,5,month,1906.6,1862,3022,2466
+Costa Rica,6,month,1911.6,1857,2636,2506
+Costa Rica,7,month,1902.2,2059,2486,2560
+Costa Rica,8,month,1922.6,2273,2742,2434
+Costa Rica,9,month,1873,2536,3169,
+Costa Rica,10,month,1953.8,2467,2958,
+Costa Rica,11,month,1954.8,2300,2360,
+Costa Rica,12,month,2147,2897,2368,
+Croatia,1,week,1207.8,1033,1342,1415
+Croatia,2,week,1258.4,1056,1358,1405
+Croatia,3,week,1253.2,1016,1307,1454
+Croatia,4,week,1234,1134,1244,1558
+Croatia,5,week,1195,1094,1204,1613
+Croatia,6,week,1160.2,1059,1161,1415
+Croatia,7,week,1139.2,1091,1121,1422
+Croatia,8,week,1116,1045,1096,1235
+Croatia,9,week,1117.2,1021,1034,1218
+Croatia,10,week,1128.2,1056,1080,1137
+Croatia,11,week,1092,1082,1021,1178
+Croatia,12,week,1064,1094,1142,1089
+Croatia,13,week,1037.6,1122,1231,1096
+Croatia,14,week,1046.4,1012,1283,1079
+Croatia,15,week,995.8,1001,1289,1085
+Croatia,16,week,962.8,978,1318,1039
+Croatia,17,week,1013.4,868,1341,997
+Croatia,18,week,969.6,909,1252,1032
+Croatia,19,week,948.2,880,1255,1017
+Croatia,20,week,941.2,908,1106,869
+Croatia,21,week,945.2,904,1047,901
+Croatia,22,week,929,848,1143,928
+Croatia,23,week,949.6,972,1061,953
+Croatia,24,week,940.8,979,1030,872
+Croatia,25,week,921.6,889,1116,993
+Croatia,26,week,912.6,927,982,1016
+Croatia,27,week,951.6,970,1002,1048
+Croatia,28,week,949.4,919,991,950
+Croatia,29,week,955.2,888,909,1108
+Croatia,30,week,987.2,974,1069,1113
+Croatia,31,week,961.4,1059,957,1098
+Croatia,32,week,957.6,956,1063,990
+Croatia,33,week,937.2,926,996,962
+Croatia,34,week,904.2,921,963,1032
+Croatia,35,week,915,972,1043,960
+Croatia,36,week,886.4,931,1092,971
+Croatia,37,week,899.2,1000,1111,911
+Croatia,38,week,930.4,975,1080,918
+Croatia,39,week,945,963,1106,1076
+Croatia,40,week,961.2,1065,1099,1024
+Croatia,41,week,973.8,970,1130,998
+Croatia,42,week,945.8,1096,1218,983
+Croatia,43,week,957,1136,1325,992
+Croatia,44,week,962.8,1156,1404,970
+Croatia,45,week,975.6,1287,1535,1017
+Croatia,46,week,981,1361,1563,977
+Croatia,47,week,956.2,1489,1716,1040
+Croatia,48,week,974.8,1484,1636,1037
+Croatia,49,week,1011.6,1713,1568,1085
+Croatia,50,week,1045.8,1761,1536,1131
+Croatia,51,week,1048.2,1785,1488,1250
+Croatia,52,week,1105.4,1681,1478,1284
+Croatia,53,week,1046,1525,,
+Cuba,1,month,9318.2,9920,11968,
+Cuba,2,month,8471,9134,10689,
+Cuba,3,month,8627.4,10022,10610,
+Cuba,4,month,8149.6,9330,10332,
+Cuba,5,month,8366,8544,10542,
+Cuba,6,month,8542.8,8722,10641,
+Cuba,7,month,9237.8,9290,18450,
+Cuba,8,month,8864.6,9405,28655,
+Cuba,9,month,8312,8349,22921,
+Cuba,10,month,8639.2,9081,12583,
+Cuba,11,month,8629,9460,10008,
+Cuba,12,month,9105,11192,10246,
+Cyprus,1,week,130.8,152,170,194
+Cyprus,2,week,142.8,157,129,175
+Cyprus,3,week,137.2,160,141,212
+Cyprus,4,week,145.8,157,166,180
+Cyprus,5,week,146.8,166,158,203
+Cyprus,6,week,157.6,149,120,187
+Cyprus,7,week,138,114,142,175
+Cyprus,8,week,130.4,145,133,176
+Cyprus,9,week,135.8,143,125,149
+Cyprus,10,week,125,119,123,148
+Cyprus,11,week,123.4,130,137,167
+Cyprus,12,week,122.8,139,128,192
+Cyprus,13,week,113,139,138,207
+Cyprus,14,week,119.8,132,152,181
+Cyprus,15,week,112.6,111,166,155
+Cyprus,16,week,114.2,122,149,122
+Cyprus,17,week,117.8,117,147,142
+Cyprus,18,week,115.2,121,155,123
+Cyprus,19,week,103,111,113,117
+Cyprus,20,week,96.8,139,100,126
+Cyprus,21,week,107.4,185,121,121
+Cyprus,22,week,101.6,108,119,106
+Cyprus,23,week,94.2,124,110,107
+Cyprus,24,week,90.6,92,114,123
+Cyprus,25,week,107.4,101,112,109
+Cyprus,26,week,101.4,107,140,113
+Cyprus,27,week,99.8,114,133,119
+Cyprus,28,week,114,110,142,156
+Cyprus,29,week,98.8,106,151,112
+Cyprus,30,week,99.4,116,163,149
+Cyprus,31,week,102.8,117,175,117
+Cyprus,32,week,107,91,170,140
+Cyprus,33,week,92,101,135,106
+Cyprus,34,week,100.6,108,150,105
+Cyprus,35,week,107.2,110,146,118
+Cyprus,36,week,97,95,127,108
+Cyprus,37,week,105.2,125,133,124
+Cyprus,38,week,96,101,120,104
+Cyprus,39,week,97.8,103,128,121
+Cyprus,40,week,97.8,113,120,144
+Cyprus,41,week,99.8,107,131,102
+Cyprus,42,week,99.2,107,122,108
+Cyprus,43,week,97.4,114,114,130
+Cyprus,44,week,106.4,113,104,142
+Cyprus,45,week,100.2,117,137,125
+Cyprus,46,week,114.8,128,164,157
+Cyprus,47,week,103.6,113,139,124
+Cyprus,48,week,116.8,137,155,151
+Cyprus,49,week,116,141,145,136
+Cyprus,50,week,113.8,156,168,140
+Cyprus,51,week,130.8,156,154,142
+Cyprus,52,week,122.6,142,185,159
+Cyprus,53,week,115,169,,
+Czechia,1,week,2365.4,2305,3846,2552
+Czechia,2,week,2342.6,2325,3751,2553
+Czechia,3,week,2389,2244,3598,2358
+Czechia,4,week,2386.2,2337,3449,2372
+Czechia,5,week,2405.6,2364,3274,2628
+Czechia,6,week,2466.4,2355,3443,2676
+Czechia,7,week,2499,2391,3472,2615
+Czechia,8,week,2501,2350,3631,2496
+Czechia,9,week,2465.8,2360,3919,2404
+Czechia,10,week,2411,2294,4028,2385
+Czechia,11,week,2330.8,2295,3835,2301
+Czechia,12,week,2265.8,2325,3470,2452
+Czechia,13,week,2199,2297,3389,2505
+Czechia,14,week,2161.8,2320,2947,2415
+Czechia,15,week,2116.4,2244,2639,2304
+Czechia,16,week,2066,2125,2511,2311
+Czechia,17,week,2110.2,2036,2475,2240
+Czechia,18,week,2027.4,2109,2305,2261
+Czechia,19,week,2022.8,1999,2247,2183
+Czechia,20,week,1981.6,2026,2052,2031
+Czechia,21,week,1986.6,1919,1959,1889
+Czechia,22,week,2038.4,1939,2054,2048
+Czechia,23,week,1956.4,2135,1967,2059
+Czechia,24,week,1957.4,1983,2055,1973
+Czechia,25,week,1948,2022,2002,1975
+Czechia,26,week,1961.2,2082,1887,2164
+Czechia,27,week,1982.8,2111,1935,1874
+Czechia,28,week,1988,1999,2030,1956
+Czechia,29,week,1993.8,1989,1959,2311
+Czechia,30,week,2029,2088,2107,2182
+Czechia,31,week,2035.8,2227,1912,2198
+Czechia,32,week,2019.8,2166,2032,2156
+Czechia,33,week,2056,2187,1983,2180
+Czechia,34,week,1962,2104,1955,2102
+Czechia,35,week,1956.4,2033,1999,2025
+Czechia,36,week,1958,2038,2074,2158
+Czechia,37,week,1960.2,2089,2125,2218
+Czechia,38,week,1987.8,2220,2098,2281
+Czechia,39,week,2018.2,2392,2074,2350
+Czechia,40,week,2101.8,2381,2112,2398
+Czechia,41,week,2109.4,2609,2217,2337
+Czechia,42,week,2072.8,2946,2311,2299
+Czechia,43,week,2079.4,3647,2570,2279
+Czechia,44,week,2056,4226,2691,2151
+Czechia,45,week,2036.8,4238,2883,2211
+Czechia,46,week,2087.2,3852,3047,2198
+Czechia,47,week,2088.8,3424,3235,2237
+Czechia,48,week,2089.8,3169,3388,2418
+Czechia,49,week,2118.6,3100,3370,2429
+Czechia,50,week,2160.2,3104,3132,2705
+Czechia,51,week,2222.8,3242,2937,2969
+Czechia,52,week,2248,3214,2770,3109
+Czechia,53,week,2156,3518,,
+Denmark,1,week,1121.4,1117,1234,1350
+Denmark,2,week,1115,1150,1213,1210
+Denmark,3,week,1102.4,1071,1270,1179
+Denmark,4,week,1100,1033,1218,1180
+Denmark,5,week,1149.2,1094,1206,1209
+Denmark,6,week,1138.8,1079,1114,1281
+Denmark,7,week,1167.4,1059,1062,1267
+Denmark,8,week,1156.2,1034,970,1254
+Denmark,9,week,1182.4,1025,974,1230
+Denmark,10,week,1169.6,1061,1052,1222
+Denmark,11,week,1158.2,1066,968,1189
+Denmark,12,week,1122.2,1140,1034,1223
+Denmark,13,week,1085.2,1112,973,1198
+Denmark,14,week,1055.6,1156,975,1197
+Denmark,15,week,1068.6,1143,1029,1159
+Denmark,16,week,1025.4,1078,1060,1082
+Denmark,17,week,983.2,1086,1014,1129
+Denmark,18,week,1034.8,1048,1120,1095
+Denmark,19,week,1013.8,1027,1046,1018
+Denmark,20,week,972.8,951,1049,1070
+Denmark,21,week,968.2,994,1032,994
+Denmark,22,week,969.2,968,1031,1054
+Denmark,23,week,971.4,962,1053,1046
+Denmark,24,week,974,1000,1000,1037
+Denmark,25,week,969.8,948,1006,1115
+Denmark,26,week,929.8,984,1061,1130
+Denmark,27,week,942.6,996,956,1028
+Denmark,28,week,942.8,957,1075,1014
+Denmark,29,week,958,1026,1051,1101
+Denmark,30,week,979.2,944,1057,1069
+Denmark,31,week,965.8,983,1134,1091
+Denmark,32,week,956.4,957,1085,1074
+Denmark,33,week,944.2,993,1048,1148
+Denmark,34,week,969.2,995,1064,1119
+Denmark,35,week,941,953,1052,993
+Denmark,36,week,942,985,1093,1053
+Denmark,37,week,950.2,984,1050,1002
+Denmark,38,week,965.2,1082,1051,1033
+Denmark,39,week,979,974,1139,1099
+Denmark,40,week,970.4,996,1064,1140
+Denmark,41,week,991.8,938,1161,1085
+Denmark,42,week,982.8,1008,1130,1145
+Denmark,43,week,983.8,1096,1138,1103
+Denmark,44,week,986.6,979,1141,1018
+Denmark,45,week,996.4,1026,1142,1091
+Denmark,46,week,1018.2,1097,1132,1063
+Denmark,47,week,1019.2,1082,1209,1144
+Denmark,48,week,1041.8,1097,1215,1166
+Denmark,49,week,1080.8,1105,1266,1209
+Denmark,50,week,1070.6,1095,1261,1360
+Denmark,51,week,1056,1273,1286,1421
+Denmark,52,week,1064.2,1212,1275,1384
+Denmark,53,week,986,1259,,
+Dominican Republic,1,month,3830,4207,4788,5589
+Dominican Republic,2,month,3488,3723,3711,3519
+Dominican Republic,3,month,3814.6,3598,3958,3554
+Dominican Republic,4,month,3481.2,3190,3745,3327
+Dominican Republic,5,month,3516.4,3179,4418,3688
+Dominican Republic,6,month,3483.2,3926,4925,3621
+Dominican Republic,7,month,3630.2,5074,4251,3555
+Dominican Republic,8,month,3510.6,4650,3885,3508
+Dominican Republic,9,month,3484.2,3620,3811,3405
+Dominican Republic,10,month,3701.8,3620,4402,3565
+Dominican Republic,11,month,3645.4,3669,4152,
+Dominican Republic,12,month,3789.6,4225,4033,
+Ecuador,1,week,1392.2,1370,2008,1951
+Ecuador,2,week,1392,1567,2197,2288
+Ecuador,3,week,1381,1518,2347,2660
+Ecuador,4,week,1370.6,1461,2216,2523
+Ecuador,5,week,1356.6,1363,2240,2390
+Ecuador,6,week,1389.2,1430,2218,2062
+Ecuador,7,week,1388.4,1511,2255,1837
+Ecuador,8,week,1385.6,1481,2280,1694
+Ecuador,9,week,1388.4,1546,2227,1805
+Ecuador,10,week,1454.8,1442,2426,1622
+Ecuador,11,week,1424.8,1474,2640,1632
+Ecuador,12,week,1374.8,1532,2718,1738
+Ecuador,13,week,1376.6,3771,2862,1684
+Ecuador,14,week,1403.6,7245,3056,1623
+Ecuador,15,week,1495.4,6418,3148,1611
+Ecuador,16,week,1352,4493,3272,1619
+Ecuador,17,week,1331.2,3500,3097,1544
+Ecuador,18,week,1356.6,2856,2904,1535
+Ecuador,19,week,1301.8,2622,2587,1611
+Ecuador,20,week,1343.8,2314,2394,1568
+Ecuador,21,week,1318.4,2195,2188,1599
+Ecuador,22,week,1327.8,2125,2003,1602
+Ecuador,23,week,1341,2088,1986,1679
+Ecuador,24,week,1311,2181,1936,1650
+Ecuador,25,week,1331,2151,1920,1699
+Ecuador,26,week,1333.2,2142,1835,1662
+Ecuador,27,week,1339.4,2243,1888,1644
+Ecuador,28,week,1304.8,2431,1821,1706
+Ecuador,29,week,1317.6,2536,1745,1731
+Ecuador,30,week,1284.2,2569,1772,1748
+Ecuador,31,week,1322.6,2542,1627,1718
+Ecuador,32,week,1313.4,2486,1591,1800
+Ecuador,33,week,1328.2,2379,1555,1725
+Ecuador,34,week,1291.6,2198,1618,1682
+Ecuador,35,week,1356,2083,1581,1638
+Ecuador,36,week,1307.6,2070,1530,1555
+Ecuador,37,week,1291.6,1950,1550,1616
+Ecuador,38,week,1286.6,1882,1500,1559
+Ecuador,39,week,1294,1783,1616,1561
+Ecuador,40,week,1319.8,1702,1506,1569
+Ecuador,41,week,1284.2,1829,1563,1559
+Ecuador,42,week,1288.4,1718,1486,1552
+Ecuador,43,week,1290,1758,1478,1546
+Ecuador,44,week,1321.4,1682,1481,1620
+Ecuador,45,week,1346.2,1672,1588,1473
+Ecuador,46,week,1308.2,1765,1613,1548
+Ecuador,47,week,1293.6,1812,1595,1642
+Ecuador,48,week,1298.6,1719,1530,1722
+Ecuador,49,week,1320.4,1799,1647,1703
+Ecuador,50,week,1342.6,1670,1659,1723
+Ecuador,51,week,1363.8,1783,1743,1830
+Ecuador,52,week,1331.8,1779,1806,1850
+Ecuador,53,week,1367,1914,,
+Egypt,1,month,58571,56964,69452,69000
+Egypt,2,month,48206.2,49835,54184,68100
+Egypt,3,month,46251.8,49131,60592,53400
+Egypt,4,month,42388,42078,67163,44800
+Egypt,5,month,43598.6,56747,73447,44500
+Egypt,6,month,43236,79078,54580,42600
+Egypt,7,month,47102.2,61079,54861,45300
+Egypt,8,month,49617.8,56515,56235,48000
+Egypt,9,month,42585,49351,57300,42200
+Egypt,10,month,42908,45897,65500,48000
+Egypt,11,month,43895.4,50681,61200,46900
+Egypt,12,month,53155,68844,60400,52700
+El Salvador,1,month,4398.4,4545,,
+El Salvador,2,month,3209.4,3102,,
+El Salvador,3,month,3260.2,2610,,
+El Salvador,4,month,3462.6,1906,,
+El Salvador,5,month,3649,2082,,
+El Salvador,6,month,3664.6,5930,,
+El Salvador,7,month,3874.2,8467,,
+El Salvador,8,month,3476.2,5210,,
+El Salvador,9,month,3417.6,,,
+El Salvador,10,month,3758.8,,,
+El Salvador,11,month,3426.8,,,
+El Salvador,12,month,2624.4,,,
+Estonia,1,week,343.8,294,378,388
+Estonia,2,week,344.8,326,392,373
+Estonia,3,week,330.8,308,406,345
+Estonia,4,week,335.6,299,353,358
+Estonia,5,week,339.6,307,348,381
+Estonia,6,week,340.8,271,376,374
+Estonia,7,week,321.6,322,342,442
+Estonia,8,week,338.6,331,405,439
+Estonia,9,week,333.4,315,418,407
+Estonia,10,week,334.4,293,420,390
+Estonia,11,week,323.6,340,421,370
+Estonia,12,week,311.8,311,403,348
+Estonia,13,week,316.8,325,406,330
+Estonia,14,week,299.2,312,404,321
+Estonia,15,week,304,310,386,307
+Estonia,16,week,299.4,309,367,321
+Estonia,17,week,285.2,319,313,285
+Estonia,18,week,289.4,304,341,304
+Estonia,19,week,287.6,307,344,326
+Estonia,20,week,305.2,285,318,289
+Estonia,21,week,286.6,278,320,285
+Estonia,22,week,274.4,301,295,291
+Estonia,23,week,279.6,269,302,330
+Estonia,24,week,268.8,273,302,297
+Estonia,25,week,272,279,395,342
+Estonia,26,week,262.8,287,310,339
+Estonia,27,week,262.2,268,367,312
+Estonia,28,week,265.4,270,319,298
+Estonia,29,week,270,284,279,297
+Estonia,30,week,280.6,296,280,315
+Estonia,31,week,268,304,308,330
+Estonia,32,week,286.2,281,305,283
+Estonia,33,week,278.2,295,291,319
+Estonia,34,week,264.2,265,292,312
+Estonia,35,week,272.2,298,325,285
+Estonia,36,week,265.8,280,339,298
+Estonia,37,week,272.6,256,297,340
+Estonia,38,week,281.6,312,346,321
+Estonia,39,week,286.6,330,346,356
+Estonia,40,week,286.8,301,342,315
+Estonia,41,week,285.4,274,348,316
+Estonia,42,week,292.4,309,355,284
+Estonia,43,week,295.6,304,414,328
+Estonia,44,week,294.4,267,419,347
+Estonia,45,week,279.8,287,392,337
+Estonia,46,week,291,291,397,342
+Estonia,47,week,280.6,317,416,304
+Estonia,48,week,292.8,334,363,323
+Estonia,49,week,296.2,339,379,373
+Estonia,50,week,300.8,348,373,401
+Estonia,51,week,310.2,344,375,377
+Estonia,52,week,314.4,360,284,419
+Estonia,53,week,268,368,,
+Faroe Islands,1,month,41,31,39,40
+Faroe Islands,2,month,32.4,24,36,51
+Faroe Islands,3,month,39.4,30,25,56
+Faroe Islands,4,month,31,40,40,38
+Faroe Islands,5,month,36.4,18,32,46
+Faroe Islands,6,month,30.8,36,30,35
+Faroe Islands,7,month,31.6,31,36,46
+Faroe Islands,8,month,33,28,31,43
+Faroe Islands,9,month,30.2,27,34,31
+Faroe Islands,10,month,30.6,30,31,29
+Faroe Islands,11,month,31,38,43,35
+Faroe Islands,12,month,34.8,33,53,37
+Finland,1,week,1165.2,1047,1104,1278
+Finland,2,week,1180.4,1069,1130,1283
+Finland,3,week,1172.4,1061,1204,1403
+Finland,4,week,1127.2,1040,1159,1245
+Finland,5,week,1137.6,1074,1103,1314
+Finland,6,week,1123,1115,1056,1354
+Finland,7,week,1098.8,1098,1160,1265
+Finland,8,week,1095.2,1091,1133,1167
+Finland,9,week,1120.2,1050,1091,1245
+Finland,10,week,1102.6,1106,1050,1263
+Finland,11,week,1102.8,1105,1090,1243
+Finland,12,week,1087.6,1122,1021,1233
+Finland,13,week,1064,1108,1053,1275
+Finland,14,week,1077,1110,1056,1309
+Finland,15,week,1047.4,1181,1033,1277
+Finland,16,week,1057.8,1094,1055,1241
+Finland,17,week,1015.4,1142,1009,1230
+Finland,18,week,1037.8,1131,1068,1210
+Finland,19,week,991.4,1074,1116,1160
+Finland,20,week,970.8,1104,1009,1112
+Finland,21,week,958.6,957,996,1081
+Finland,22,week,950.4,990,1013,1070
+Finland,23,week,966.2,984,981,1021
+Finland,24,week,950,1003,1009,1041
+Finland,25,week,967,1068,1080,1066
+Finland,26,week,950.6,1021,1009,1143
+Finland,27,week,945.8,996,1092,1090
+Finland,28,week,943,944,1148,1002
+Finland,29,week,959.6,1021,1015,1110
+Finland,30,week,973.4,964,1028,1097
+Finland,31,week,938.6,982,1063,1114
+Finland,32,week,924.8,954,1100,1183
+Finland,33,week,950.4,977,1081,1190
+Finland,34,week,958.6,1016,1066,1097
+Finland,35,week,963,989,1079,1060
+Finland,36,week,967.2,979,1148,1193
+Finland,37,week,965,1124,1064,1232
+Finland,38,week,986.6,1046,1121,1146
+Finland,39,week,990.8,1089,1134,1173
+Finland,40,week,1016.4,977,1138,1211
+Finland,41,week,1022.8,984,1187,1232
+Finland,42,week,1015.4,1074,1200,1245
+Finland,43,week,1034.8,1070,1129,1251
+Finland,44,week,1032.6,1132,1088,1259
+Finland,45,week,1008.6,1043,1161,1236
+Finland,46,week,994.8,1025,1193,1239
+Finland,47,week,1023.2,1119,1229,1278
+Finland,48,week,1032.6,1108,1231,1204
+Finland,49,week,1058,1119,1300,1361
+Finland,50,week,1060.6,1106,1225,1405
+Finland,51,week,1088.2,1148,1236,1445
+Finland,52,week,1162.4,1129,1336,1462
+Finland,53,week,1103,1177,,
+France,1,week,13445,12737,14678,14567
+France,2,week,13563,13200,14638,14546
+France,3,week,13210,12598,15150,14464
+France,4,week,13070.8,12331,14786,15078
+France,5,week,13071.2,12541,14437,15112
+France,6,week,13189.6,12407,14159,14306
+France,7,week,13024,12261,14133,13714
+France,8,week,12893,11835,13323,12745
+France,9,week,12922.2,12042,12965,12790
+France,10,week,12623.6,12139,12800,12572
+France,11,week,12036.8,12554,12967,12385
+France,12,week,11745,13939,12780,12426
+France,13,week,11642.4,16188,13241,12844
+France,14,week,11380.2,18805,13002,13090
+France,15,week,11173.6,17563,13087,13227
+France,16,week,11027.8,15396,13222,12716
+France,17,week,10917.4,12821,12749,12117
+France,18,week,10777,11260,12505,12053
+France,19,week,10639.2,11030,11506,11530
+France,20,week,10533.2,10755,11244,11295
+France,21,week,10531,11116,11057,10381
+France,22,week,10265.6,10434,10820,11059
+France,23,week,10207.6,10392,10678,10582
+France,24,week,10093.2,10360,10860,11359
+France,25,week,10365.4,10427,9862,10996
+France,26,week,10386.2,11111,10136,10474
+France,27,week,10746.6,10020,10495,11480
+France,28,week,10218.6,10316,10332,12512
+France,29,week,10444.6,10129,11501,13056
+France,30,week,10436.6,10542,10676,11670
+France,31,week,10156.6,10866,10546,11915
+France,32,week,10258.6,10748,11583,12084
+France,33,week,10023,11767,11220,11332
+France,34,week,10296,10490,10926,11150
+France,35,week,10282.2,10503,11472,11087
+France,36,week,10078.4,10623,11733,10830
+France,37,week,10356.2,11199,10951,10883
+France,38,week,10614.6,11781,10914,11530
+France,39,week,10628.4,10868,11313,12076
+France,40,week,10874.4,11856,11408,12436
+France,41,week,11147.8,11841,12069,12409
+France,42,week,11011.4,12167,11983,12565
+France,43,week,11157.2,13689,12254,12074
+France,44,week,11173.6,14613,11683,11693
+France,45,week,11289.2,15609,12135,12115
+France,46,week,11302.2,15467,12261,12815
+France,47,week,11422.8,14993,12853,13033
+France,48,week,11550.4,14697,13512,13292
+France,49,week,11671.8,14533,13984,14675
+France,50,week,11962,14504,13905,15673
+France,51,week,12305.2,14106,14599,16878
+France,52,week,12618.6,13801,14736,16477
+France,53,week,11770,14365,,
+French Polynesia,1,month,135,125,162,
+French Polynesia,2,month,120.2,138,146,
+French Polynesia,3,month,131.4,153,122,
+French Polynesia,4,month,139.2,143,127,
+French Polynesia,5,month,124.4,125,115,
+French Polynesia,6,month,115.8,129,123,
+French Polynesia,7,month,128.2,114,138,
+French Polynesia,8,month,133,116,567,
+French Polynesia,9,month,113.2,136,356,
+French Polynesia,10,month,122.4,141,141,
+French Polynesia,11,month,127.4,180,146,
+French Polynesia,12,month,127.8,179,131,
+Georgia,1,month,4815,4630,5134,5628
+Georgia,2,month,4104.8,4136,3892,5634
+Georgia,3,month,4378,4001,4318,4939
+Georgia,4,month,4114.4,3644,4170,3792
+Georgia,5,month,4047.2,3860,4557,3705
+Georgia,6,month,3703.6,3523,4120,3352
+Georgia,7,month,3630.4,3706,4203,3548
+Georgia,8,month,3711.2,3361,5977,3705
+Georgia,9,month,3360.4,3299,5309,3363
+Georgia,10,month,3819.4,4085,5610,3466
+Georgia,11,month,4045.2,5929,6563,3733
+Georgia,12,month,4449.8,6363,6053,4253
+Germany,1,week,19225.2,18883,24919,20763
+Germany,2,week,19546.4,19408,24532,19878
+Germany,3,week,19542.6,18953,24129,19805
+Germany,4,week,19762.4,18827,22674,20198
+Germany,5,week,20443.8,19774,21773,20691
+Germany,6,week,20451.4,19038,20946,20485
+Germany,7,week,20993,19648,20493,21187
+Germany,8,week,21448.4,18953,18979,20411
+Germany,9,week,21955.8,19505,18455,20770
+Germany,10,week,21444.4,19667,18606,21220
+Germany,11,week,20517.2,19849,18374,21349
+Germany,12,week,19653.6,19722,18437,21204
+Germany,13,week,18984.4,19678,18520,20874
+Germany,14,week,18529.8,20662,18873,20925
+Germany,15,week,17943.8,20502,19098,20252
+Germany,16,week,17521.8,19261,19282,19578
+Germany,17,week,17468.4,18557,19555,19369
+Germany,18,week,17004.6,17920,19329,19219
+Germany,19,week,17277.6,17651,18579,19235
+Germany,20,week,16843,17001,17811,18557
+Germany,21,week,16532,17163,17193,17208
+Germany,22,week,16681.6,16776,18191,18074
+Germany,23,week,16525.4,17262,17442,17955
+Germany,24,week,16028.4,16601,19076,18454
+Germany,25,week,16366,16401,17191,19015
+Germany,26,week,16482.8,17293,17013,18536
+Germany,27,week,17015.8,16457,16994,18155
+Germany,28,week,16305,16142,17662,18976
+Germany,29,week,16715.8,16537,17613,20961
+Germany,30,week,17291.4,16887,17211,20267
+Germany,31,week,16954,17433,17021,19946
+Germany,32,week,16588,17470,17560,19807
+Germany,33,week,16422.2,19720,17501,19892
+Germany,34,week,16227,17559,17151,18949
+Germany,35,week,16383.8,16656,17341,18266
+Germany,36,week,15970.8,16789,18879,18761
+Germany,37,week,16213,17155,18057,18204
+Germany,38,week,16259.2,17555,18157,19050
+Germany,39,week,16424.2,17446,18129,20357
+Germany,40,week,16593.2,17614,18209,20577
+Germany,41,week,17266.4,17501,18949,21747
+Germany,42,week,17170.2,17754,19761,21791
+Germany,43,week,17184.2,18588,20387,21387
+Germany,44,week,17104,18584,20426,19892
+Germany,45,week,17528,19007,21071,20099
+Germany,46,week,17577.4,19727,22344,20737
+Germany,47,week,17751.2,20182,23273,21350
+Germany,48,week,17899.4,21304,24185,22135
+Germany,49,week,18316.4,22604,24032,23946
+Germany,50,week,18297.4,24003,23009,25882
+Germany,51,week,18667.2,24724,22479,28521
+Germany,52,week,18346,25554,22169,27089
+Germany,53,week,17210,25541,,
+Gibraltar,1,month,31.4,34,89,
+Gibraltar,2,month,26.6,27,,
+Gibraltar,3,month,22.8,24,,
+Gibraltar,4,month,20.8,21,,
+Gibraltar,5,month,21.2,12,,
+Gibraltar,6,month,20.4,16,,
+Gibraltar,7,month,17.8,23,,
+Gibraltar,8,month,21.6,22,,
+Gibraltar,9,month,22.8,23,,
+Gibraltar,10,month,22.4,25,,
+Gibraltar,11,month,19.6,26,,
+Gibraltar,12,month,28.6,17,,
+Greece,1,week,2789.2,2749,2650,3278
+Greece,2,week,2977.8,2910,2497,3378
+Greece,3,week,2880.4,2863,2651,3269
+Greece,4,week,2841.4,2772,2625,3677
+Greece,5,week,2785.4,2990,2493,3558
+Greece,6,week,2675.6,2849,2463,3241
+Greece,7,week,2538.8,2782,2535,3065
+Greece,8,week,2516.2,2470,2668,2797
+Greece,9,week,2541.4,2543,2724,2847
+Greece,10,week,2466.6,2644,2657,2846
+Greece,11,week,2426.2,2596,2788,3046
+Greece,12,week,2364.2,2550,2759,3042
+Greece,13,week,2317,2439,2930,3037
+Greece,14,week,2356.4,2454,2898,2872
+Greece,15,week,2331.8,2362,2971,2806
+Greece,16,week,2286.4,2268,2663,2624
+Greece,17,week,2244.8,2205,2805,2647
+Greece,18,week,2276.8,2307,2937,2336
+Greece,19,week,2199.6,2127,2439,2485
+Greece,20,week,2109.2,2472,2501,2398
+Greece,21,week,2069.2,2329,2584,2423
+Greece,22,week,2171.2,1963,2318,2596
+Greece,23,week,2159.4,2101,2393,2369
+Greece,24,week,2230.4,2211,2314,2276
+Greece,25,week,2355,2352,2960,2477
+Greece,26,week,2287.2,2180,3154,2526
+Greece,27,week,2270.4,2670,2703,2740
+Greece,28,week,2258.6,2304,2702,2580
+Greece,29,week,2146.6,2136,2450,2654
+Greece,30,week,2280.6,2237,2827,3222
+Greece,31,week,2345.4,2714,3895,3088
+Greece,32,week,2397.8,2529,2954,2765
+Greece,33,week,2259.6,2368,2673,2626
+Greece,34,week,2141.2,2361,2781,2383
+Greece,35,week,2135.6,2298,2567,2399
+Greece,36,week,2122.2,2316,2522,2249
+Greece,37,week,2051.6,2274,2721,2260
+Greece,38,week,2010.8,2275,2440,2098
+Greece,39,week,1985.2,2156,2442,2394
+Greece,40,week,2068,2224,2456,2192
+Greece,41,week,2129.4,2213,2489,2253
+Greece,42,week,2143,2144,2514,2280
+Greece,43,week,2167.4,2224,2722,2441
+Greece,44,week,2229.6,2413,2995,2462
+Greece,45,week,2306.2,2549,2853,2415
+Greece,46,week,2296.2,2785,2990,2596
+Greece,47,week,2331.4,3149,3174,2479
+Greece,48,week,2335.6,3298,3177,2752
+Greece,49,week,2369.4,3338,3344,2716
+Greece,50,week,2428.2,3115,3293,2588
+Greece,51,week,2490,2938,3296,2699
+Greece,52,week,2588.4,2767,3310,3045
+Greece,53,week,2569,2686,,
+Greenland,1,month,44.8,38,48,47
+Greenland,2,month,40.4,50,53,52
+Greenland,3,month,48.4,39,39,24
+Greenland,4,month,43.2,29,47,48
+Greenland,5,month,42.6,40,27,43
+Greenland,6,month,41.4,49,43,33
+Greenland,7,month,37.8,37,57,43
+Greenland,8,month,39.8,45,48,52
+Greenland,9,month,42.4,55,47,39
+Greenland,10,month,35.4,32,43,58
+Greenland,11,month,36.4,47,25,44
+Greenland,12,month,46.8,58,54,45
+Guadeloupe,1,week,62.2,80,75,64
+Guadeloupe,2,week,59,50,80,87
+Guadeloupe,3,week,64,56,80,87
+Guadeloupe,4,week,56.8,69,55,106
+Guadeloupe,5,week,66,61,69,118
+Guadeloupe,6,week,64,57,52,92
+Guadeloupe,7,week,61.8,74,58,92
+Guadeloupe,8,week,51.4,81,81,73
+Guadeloupe,9,week,68,75,65,74
+Guadeloupe,10,week,59.2,67,60,71
+Guadeloupe,11,week,64,67,65,69
+Guadeloupe,12,week,61.6,69,76,68
+Guadeloupe,13,week,62.4,65,65,75
+Guadeloupe,14,week,59.4,72,71,73
+Guadeloupe,15,week,54.4,60,80,68
+Guadeloupe,16,week,55.6,74,80,65
+Guadeloupe,17,week,59.2,72,64,64
+Guadeloupe,18,week,53.2,76,68,71
+Guadeloupe,19,week,58.2,62,70,65
+Guadeloupe,20,week,64.2,68,83,78
+Guadeloupe,21,week,60.2,72,68,82
+Guadeloupe,22,week,56.6,56,63,93
+Guadeloupe,23,week,58.4,59,80,80
+Guadeloupe,24,week,68.6,63,75,91
+Guadeloupe,25,week,62.4,59,61,83
+Guadeloupe,26,week,66,70,70,76
+Guadeloupe,27,week,58.8,61,70,56
+Guadeloupe,28,week,64,66,68,74
+Guadeloupe,29,week,59.8,55,74,91
+Guadeloupe,30,week,66.6,65,79,88
+Guadeloupe,31,week,59.4,72,135,78
+Guadeloupe,32,week,62.2,73,207,75
+Guadeloupe,33,week,62.2,84,311,77
+Guadeloupe,34,week,64.8,64,290,77
+Guadeloupe,35,week,65,87,192,88
+Guadeloupe,36,week,55.4,83,161,79
+Guadeloupe,37,week,68,87,96,84
+Guadeloupe,38,week,63.8,105,103,78
+Guadeloupe,39,week,57.4,89,82,59
+Guadeloupe,40,week,65.4,89,67,65
+Guadeloupe,41,week,62.4,88,74,63
+Guadeloupe,42,week,55,95,64,74
+Guadeloupe,43,week,59.2,90,66,71
+Guadeloupe,44,week,56.6,74,62,55
+Guadeloupe,45,week,58,72,58,65
+Guadeloupe,46,week,59,60,73,70
+Guadeloupe,47,week,54.4,53,63,75
+Guadeloupe,48,week,55.6,70,53,78
+Guadeloupe,49,week,58.4,68,66,78
+Guadeloupe,50,week,60.4,64,55,63
+Guadeloupe,51,week,59.2,57,72,76
+Guadeloupe,52,week,65,60,64,89
+Guadeloupe,53,week,54,55,,
+Guatemala,1,week,1605.4,1757,1904,2597
+Guatemala,2,week,1633.6,1670,1930,2247
+Guatemala,3,week,1615,1663,1898,2296
+Guatemala,4,week,1557.6,1607,1837,2155
+Guatemala,5,week,1502.2,1599,1776,2221
+Guatemala,6,week,1561.4,1610,1785,2201
+Guatemala,7,week,1584.2,1586,1706,2255
+Guatemala,8,week,1576.2,1517,1748,2270
+Guatemala,9,week,1536.6,1565,1811,2092
+Guatemala,10,week,1579.6,1581,1769,2112
+Guatemala,11,week,1577.2,1478,1798,2031
+Guatemala,12,week,1588.6,1394,1970,2015
+Guatemala,13,week,1617.4,1329,1965,1887
+Guatemala,14,week,1603.8,1305,2064,1850
+Guatemala,15,week,1582.2,1259,2221,821
+Guatemala,16,week,1608.8,1314,2191,2452
+Guatemala,17,week,1668.4,1405,2184,1775
+Guatemala,18,week,1610,1351,2133,1709
+Guatemala,19,week,1575.6,1375,2092,1750
+Guatemala,20,week,1598.6,1402,2135,1752
+Guatemala,21,week,1564.2,1470,2079,1693
+Guatemala,22,week,1501.4,1542,2157,1707
+Guatemala,23,week,1631,1890,2209,1667
+Guatemala,24,week,1575.6,1946,2156,1582
+Guatemala,25,week,1630,2113,2188,1774
+Guatemala,26,week,1618.2,2352,2360,1731
+Guatemala,27,week,1634.2,2626,2467,1761
+Guatemala,28,week,1611.6,2961,2537,1672
+Guatemala,29,week,1614.2,2785,2675,2060
+Guatemala,30,week,1622,2710,2732,1792
+Guatemala,31,week,1552.6,2576,2823,1828
+Guatemala,32,week,1606.4,2386,2981,1826
+Guatemala,33,week,1537.4,2225,3329,1902
+Guatemala,34,week,1577.2,2128,3556,1692
+Guatemala,35,week,1519.2,2127,3686,2100
+Guatemala,36,week,1564.6,2029,3855,2082
+Guatemala,37,week,1568.2,1957,3697,1428
+Guatemala,38,week,1580.6,1932,3206,2193
+Guatemala,39,week,1562.8,1907,2956,1998
+Guatemala,40,week,1627.4,1812,2649,2016
+Guatemala,41,week,1594.8,1926,2412,1967
+Guatemala,42,week,1569.8,1819,2108,1859
+Guatemala,43,week,1557,1787,1984,2103
+Guatemala,44,week,1545.2,1821,1933,1640
+Guatemala,45,week,1552.8,1866,1807,2103
+Guatemala,46,week,1532,1820,1783,1852
+Guatemala,47,week,1534.2,1876,1714,1871
+Guatemala,48,week,1507.6,1862,1802,1796
+Guatemala,49,week,1518.2,1765,1732,1922
+Guatemala,50,week,1562.8,1866,1792,1977
+Guatemala,51,week,1556.4,1851,1817,1483
+Guatemala,52,week,1647.4,1898,1564,1547
+Guatemala,53,week,1605,2049,,
+Hong Kong,1,month,4548.2,4749,5278,4736
+Hong Kong,2,month,4317.4,4789,4124,6092
+Hong Kong,3,month,4289.8,4171,4318,12216
+Hong Kong,4,month,3901.6,3899,4096,5552
+Hong Kong,5,month,3874.6,4091,4173,4255
+Hong Kong,6,month,3650.6,3728,4022,3496
+Hong Kong,7,month,3803.4,4117,4141,4038
+Hong Kong,8,month,3699.8,4177,4063,4191
+Hong Kong,9,month,3497.4,3849,3877,4226
+Hong Kong,10,month,3767.4,4184,4256,4324
+Hong Kong,11,month,3655.8,4125,4252,4223
+Hong Kong,12,month,4233.8,4787,4754,4707
+Hungary,1,week,2885.4,2612,3222,3126
+Hungary,2,week,2918.4,2585,3204,2898
+Hungary,3,week,2924.6,2584,3044,2851
+Hungary,4,week,3016.6,2723,2867,2936
+Hungary,5,week,3056.2,2802,2884,3136
+Hungary,6,week,3068.4,2637,2888,3172
+Hungary,7,week,2983.4,2751,2926,3189
+Hungary,8,week,2955.8,2585,3172,3013
+Hungary,9,week,2893.8,2781,3271,2890
+Hungary,10,week,2812,2606,3809,2756
+Hungary,11,week,2709.2,2578,4301,2864
+Hungary,12,week,2635.2,2801,4568,2760
+Hungary,13,week,2591.6,2592,4534,2778
+Hungary,14,week,2510.6,2528,4139,2739
+Hungary,15,week,2478.2,2575,3532,2537
+Hungary,16,week,2430.2,2509,3251,2605
+Hungary,17,week,2436.8,2359,2970,2611
+Hungary,18,week,2367,2249,2724,2434
+Hungary,19,week,2314.6,2292,2552,2381
+Hungary,20,week,2271.8,2346,2392,2238
+Hungary,21,week,2275.8,2110,2334,2174
+Hungary,22,week,2286.6,2191,2410,2337
+Hungary,23,week,2262.2,2399,2375,2328
+Hungary,24,week,2292,2288,2370,2071
+Hungary,25,week,2250,2068,2678,2315
+Hungary,26,week,2193.4,2269,2389,2737
+Hungary,27,week,2219,2317,2362,2272
+Hungary,28,week,2281,2169,2424,2181
+Hungary,29,week,2279.2,2110,2110,2642
+Hungary,30,week,2380.4,2153,2505,2513
+Hungary,31,week,2309.4,2362,2190,2342
+Hungary,32,week,2284.8,2311,2351,2394
+Hungary,33,week,2306.6,2268,2204,2571
+Hungary,34,week,2191.2,2224,2167,2343
+Hungary,35,week,2293.6,2203,2272,2223
+Hungary,36,week,2223.6,2221,2408,2341
+Hungary,37,week,2271.4,2333,2470,2270
+Hungary,38,week,2316,2472,2373,2503
+Hungary,39,week,2355.4,2457,2426,2771
+Hungary,40,week,2401.4,2562,2534,2584
+Hungary,41,week,2452,2563,2665,2625
+Hungary,42,week,2427.8,2758,2668,2519
+Hungary,43,week,2413.2,2989,2975,2584
+Hungary,44,week,2386.2,3185,3332,2508
+Hungary,45,week,2405,3551,3530,2519
+Hungary,46,week,2397.4,3963,3673,2560
+Hungary,47,week,2467.6,3950,4030,2650
+Hungary,48,week,2456,4067,4151,2754
+Hungary,49,week,2575.4,4169,3965,2846
+Hungary,50,week,2557.2,4089,3657,2803
+Hungary,51,week,2637.8,3733,3448,2881
+Hungary,52,week,2678.6,3752,3336,2979
+Hungary,53,week,2519,3485,,
+Iceland,1,week,45.8,57,45,51
+Iceland,2,week,47.8,55,57,54
+Iceland,3,week,44.4,52,48,64
+Iceland,4,week,44.6,55,42,42
+Iceland,5,week,45.6,39,42,50
+Iceland,6,week,47.8,47,46,49
+Iceland,7,week,47.2,49,55,55
+Iceland,8,week,46.2,48,46,70
+Iceland,9,week,43.6,43,46,78
+Iceland,10,week,44.4,50,40,72
+Iceland,11,week,45.2,42,42,67
+Iceland,12,week,41.6,39,37,58
+Iceland,13,week,47.2,43,52,67
+Iceland,14,week,43.4,50,40,56
+Iceland,15,week,44.4,50,54,49
+Iceland,16,week,48.6,60,45,47
+Iceland,17,week,44.4,35,47,49
+Iceland,18,week,40.2,44,54,51
+Iceland,19,week,41.6,37,41,46
+Iceland,20,week,42.4,42,41,46
+Iceland,21,week,43.6,50,35,46
+Iceland,22,week,42.6,50,38,42
+Iceland,23,week,45,34,45,44
+Iceland,24,week,39.6,40,52,57
+Iceland,25,week,37.4,31,44,47
+Iceland,26,week,47.2,35,45,50
+Iceland,27,week,43,35,43,65
+Iceland,28,week,38.2,46,47,55
+Iceland,29,week,39.2,42,38,51
+Iceland,30,week,45,35,56,56
+Iceland,31,week,36,36,47,42
+Iceland,32,week,38.8,37,47,51
+Iceland,33,week,39,43,44,40
+Iceland,34,week,43.6,34,45,43
+Iceland,35,week,36,28,36,34
+Iceland,36,week,39.2,55,43,50
+Iceland,37,week,42.6,41,43,42
+Iceland,38,week,42,45,32,54
+Iceland,39,week,50,37,35,48
+Iceland,40,week,42.4,38,42,50
+Iceland,41,week,42.4,53,43,48
+Iceland,42,week,42.2,47,31,37
+Iceland,43,week,46,50,39,41
+Iceland,44,week,41.4,56,50,40
+Iceland,45,week,38.4,50,58,57
+Iceland,46,week,47,53,41,52
+Iceland,47,week,44.2,45,43,52
+Iceland,48,week,44,35,43,35
+Iceland,49,week,41.8,39,46,53
+Iceland,50,week,42.4,46,61,49
+Iceland,51,week,43.8,43,50,74
+Iceland,52,week,42,53,56,61
+Iceland,53,week,50,46,,
+Iran,1,week,8014.38,7868.7,8929,8076.9
+Iran,2,week,7720.1,7527.1,8628.3,8504
+Iran,3,week,7819.06,7717.3,8651.4,7958
+Iran,4,week,7783.64,7509.4,8933.9,8549
+Iran,5,week,7619.18,7443.1,8426.1,8609.9
+Iran,6,week,7387.96,8022.6,7880.7,9085
+Iran,7,week,7263.34,7343.6,8528.4,9876.7
+Iran,8,week,7543.72,8151,8304.3,11144.3
+Iran,9,week,7310.62,7895.3,8672.1,10155.6
+Iran,10,week,7306.14,8737,8497.3,10159.3
+Iran,11,week,6748.68,9865.7,8648.3,5391.6
+Iran,12,week,5876.8,10799.7,5860.7,11806.3
+Iran,13,week,7315.38,8696.7,9754.9,7825.9
+Iran,14,week,6718.06,8087.9,10664.1,7892.4
+Iran,15,week,7448.26,10126.3,10997.9,7499.6
+Iran,16,week,6925.24,9272.4,12153.1,7016
+Iran,17,week,7045.72,8380.7,12372.7,6255
+Iran,18,week,6708.86,8146.1,10916.4,7980.9
+Iran,19,week,6785.4,7577.6,10800.3,7279.7
+Iran,20,week,6604.04,7311.3,11003.9,7633.9
+Iran,21,week,6687.2,7493.6,10225,7712.1
+Iran,22,week,6434.94,6933.6,9352,7111.3
+Iran,23,week,5940.94,7831.1,9142.4,7706.3
+Iran,24,week,7105.34,9429.4,9257.1,7362.3
+Iran,25,week,6644.18,8421,8625.9,7355
+Iran,26,week,6618.9,9823.3,8929.7,7204.3
+Iran,27,week,6736.42,9477.4,8708,7184.9
+Iran,28,week,6862.94,9826.1,9588.6,7660
+Iran,29,week,6827.08,10213.9,9209.3,8788
+Iran,30,week,6956.5,10512.1,11563.9,8142.9
+Iran,31,week,6884.16,11327.3,13007.6,7850.4
+Iran,32,week,6713.1,10651.7,12663.3,9391.7
+Iran,33,week,6473.16,9549.9,14426.4,8572.9
+Iran,34,week,6627.18,9726.1,18497.7,8411.4
+Iran,35,week,6838.48,9369.7,16214.1,7878.3
+Iran,36,week,6722.48,8351.4,15295,7330.7
+Iran,37,week,6283.1,9179.1,13196.3,7225.6
+Iran,38,week,6535.64,9046,11972.4,7154.1
+Iran,39,week,7127.96,9571.6,10955.1,7614.1
+Iran,40,week,6830.74,10081.1,9807.7,
+Iran,41,week,6768.38,10211.3,11203.6,
+Iran,42,week,6949.94,11648,10237,
+Iran,43,week,7066.06,11606.9,9756.4,
+Iran,44,week,6878.26,13075.6,9705.6,
+Iran,45,week,7127.38,14019.1,9219.1,
+Iran,46,week,7581.72,15608.4,8931.6,
+Iran,47,week,7358.28,14411.7,9013.4,
+Iran,48,week,7735.32,13887,9067.7,
+Iran,49,week,7846.72,12210.7,8492.4,
+Iran,50,week,7827.62,11198.1,8262.6,
+Iran,51,week,7894.64,10653.7,8391.7,
+Iran,52,week,8199.28,9764.3,8194.4,
+Iran,53,week,7824.7,9316,,
+Ireland,1,week,718.4,723,798,744
+Ireland,2,week,737,761,918,662
+Ireland,3,week,727,673,985,737
+Ireland,4,week,703.4,659,982,694
+Ireland,5,week,693.4,656,898,703
+Ireland,6,week,676.4,670,845,689
+Ireland,7,week,676.2,695,760,687
+Ireland,8,week,644,669,675,697
+Ireland,9,week,658.6,663,630,678
+Ireland,10,week,668,652,588,698
+Ireland,11,week,618.2,636,583,652
+Ireland,12,week,611.6,666,597,682
+Ireland,13,week,610.8,718,622,668
+Ireland,14,week,600.2,880,570,725
+Ireland,15,week,594.4,947,589,765
+Ireland,16,week,574.4,893,596,683
+Ireland,17,week,576.4,785,593,659
+Ireland,18,week,570.8,699,632,600
+Ireland,19,week,554.4,664,589,647
+Ireland,20,week,553,625,574,673
+Ireland,21,week,558.4,569,612,654
+Ireland,22,week,559.6,588,569,594
+Ireland,23,week,521.6,529,560,607
+Ireland,24,week,538.4,545,516,633
+Ireland,25,week,533,521,523,585
+Ireland,26,week,526.2,524,590,635
+Ireland,27,week,534.6,485,519,623
+Ireland,28,week,507.8,518,600,626
+Ireland,29,week,521.2,579,656,607
+Ireland,30,week,501.8,522,569,621
+Ireland,31,week,490.8,477,537,609
+Ireland,32,week,505.6,539,615,631
+Ireland,33,week,511.8,539,596,598
+Ireland,34,week,523.4,549,578,612
+Ireland,35,week,523.8,555,625,597
+Ireland,36,week,533.2,546,647,618
+Ireland,37,week,552.4,616,567,584
+Ireland,38,week,536.2,515,624,628
+Ireland,39,week,551.8,552,689,668
+Ireland,40,week,549,621,642,644
+Ireland,41,week,561.4,624,673,699
+Ireland,42,week,572.8,611,682,670
+Ireland,43,week,588.4,632,656,686
+Ireland,44,week,556.8,657,742,682
+Ireland,45,week,577.4,596,704,693
+Ireland,46,week,606.2,646,664,717
+Ireland,47,week,588,589,728,715
+Ireland,48,week,586.4,580,703,718
+Ireland,49,week,616.2,625,724,760
+Ireland,50,week,651.4,613,690,811
+Ireland,51,week,654.6,626,748,920
+Ireland,52,week,678,651,687,988
+Ireland,53,week,652,677,,
+Israel,1,week,1011.4,1092,1212,1070
+Israel,2,week,1054.2,1010,1264,1212
+Israel,3,week,1033.4,1099,1278,1394
+Israel,4,week,1049.2,1001,1298,1489
+Israel,5,week,1056,991,1253,1569
+Israel,6,week,1052,944,1182,1459
+Israel,7,week,987.6,965,1089,1287
+Israel,8,week,984.4,989,1011,1195
+Israel,9,week,961,905,987,1105
+Israel,10,week,940,930,1042,1021
+Israel,11,week,922,965,1063,1030
+Israel,12,week,863,893,998,1017
+Israel,13,week,889,983,922,1134
+Israel,14,week,868.8,1029,1010,1064
+Israel,15,week,835.8,878,928,891
+Israel,16,week,824.6,928,876,924
+Israel,17,week,852.2,901,895,927
+Israel,18,week,815.8,831,860,936
+Israel,19,week,817.2,857,907,869
+Israel,20,week,801.2,847,879,845
+Israel,21,week,798.8,961,839,883
+Israel,22,week,788,837,798,843
+Israel,23,week,774.2,810,785,868
+Israel,24,week,753,785,807,865
+Israel,25,week,763.8,792,867,834
+Israel,26,week,758.8,779,841,921
+Israel,27,week,770.2,780,837,963
+Israel,28,week,758.6,838,750,927
+Israel,29,week,757.2,836,903,940
+Israel,30,week,790,817,890,981
+Israel,31,week,765.6,938,948,898
+Israel,32,week,783.8,858,1021,919
+Israel,33,week,766.6,944,1045,875
+Israel,34,week,775.6,913,1048,883
+Israel,35,week,778.2,899,1083,860
+Israel,36,week,768.8,897,992,855
+Israel,37,week,762.2,963,1034,843
+Israel,38,week,772.2,1004,955,851
+Israel,39,week,780.6,1026,960,902
+Israel,40,week,786,1011,962,922
+Israel,41,week,798,1114,922,867
+Israel,42,week,822,1080,977,885
+Israel,43,week,818.4,1047,885,887
+Israel,44,week,831.4,932,908,879
+Israel,45,week,834.2,905,946,896
+Israel,46,week,852.4,814,859,874
+Israel,47,week,837.4,930,843,930
+Israel,48,week,898.6,930,895,938
+Israel,49,week,866.2,927,969,949
+Israel,50,week,940,966,1025,1064
+Israel,51,week,933.6,1007,1009,1021
+Israel,52,week,974.2,1016,1104,1019
+Israel,53,week,1003,1137,,
+Italy,1,week,15436,13483,16831,15960
+Italy,2,week,15733.2,13974,16921,16909
+Italy,3,week,15511.4,14049,17209,17035
+Italy,4,week,14971,13989,16383,17347
+Italy,5,week,14866,13900,15657,16852
+Italy,6,week,14392.2,13537,14324,15581
+Italy,7,week,14230.6,13641,14965,14667
+Italy,8,week,13969.6,13257,14443,13896
+Italy,9,week,13895,13696,14751,13932
+Italy,10,week,13599.4,14706,15259,14089
+Italy,11,week,13233.2,18234,15559,14045
+Italy,12,week,12730.8,21929,15982,13686
+Italy,13,week,12686,23457,15929,13824
+Italy,14,week,12417.8,20901,15219,13739
+Italy,15,week,12192.8,18949,14646,13541
+Italy,16,week,12002.4,16757,14576,13064
+Italy,17,week,11815,14725,13761,12801
+Italy,18,week,11634.6,13156,12813,12648
+Italy,19,week,11637.4,12604,12428,12725
+Italy,20,week,11302.4,11976,12188,12495
+Italy,21,week,11410.6,11447,12005,12295
+Italy,22,week,11182.2,10982,11957,11661
+Italy,23,week,11445,11144,11874,11671
+Italy,24,week,11356,10708,11716,12022
+Italy,25,week,11222.2,11123,12871,12443
+Italy,26,week,11287.2,12070,12419,13308
+Italy,27,week,11550.4,12396,12039,14052
+Italy,28,week,11793.8,11484,11693,13535
+Italy,29,week,11557.8,10923,11999,15706
+Italy,30,week,11968.8,11393,12850,16109
+Italy,31,week,11858.4,12724,12646,14636
+Italy,32,week,12211.6,12115,13752,13141
+Italy,33,week,11398.6,12410,12889,12569
+Italy,34,week,10993.8,11914,12075,11943
+Italy,35,week,10946.6,11761,12021,11679
+Italy,36,week,10765.8,11262,12142,11896
+Italy,37,week,10824.6,11627,12231,11643
+Italy,38,week,10947.8,11821,11633,11480
+Italy,39,week,11025.2,11179,11534,12133
+Italy,40,week,11277.2,12017,11378,12442
+Italy,41,week,11810.2,12246,12515,12392
+Italy,42,week,11691.8,12746,13072,12536
+Italy,43,week,11847.8,14547,12703,12520
+Italy,44,week,11602.4,15659,12743,12112
+Italy,45,week,11904.4,17335,12794,12908
+Italy,46,week,12103.8,18647,12781,13558
+Italy,47,week,12150.6,18784,12751,13720
+Italy,48,week,12182.6,18887,13879,14704
+Italy,49,week,12546.2,17995,14237,15180
+Italy,50,week,12949.4,17482,14972,15497
+Italy,51,week,13415.6,17073,15214,15433
+Italy,52,week,13965.8,15703,15021,15462
+Italy,53,week,13218,16338,,
+Jamaica,1,month,1662.8,1596,1704,
+Jamaica,2,month,1536.2,1453,1806,
+Jamaica,3,month,1610.6,1525,2435,
+Jamaica,4,month,1460.2,1479,1892,
+Jamaica,5,month,1486.4,1462,1713,
+Jamaica,6,month,1495,1503,1539,
+Jamaica,7,month,1583,1551,1601,
+Jamaica,8,month,1493.2,1672,2986,
+Jamaica,9,month,1470.4,1685,3583,
+Jamaica,10,month,1495.2,1659,2028,
+Jamaica,11,month,1456.6,1628,1556,
+Jamaica,12,month,1555,1765,,
+Japan,1,month,134218.8,132622,140844,143992
+Japan,2,month,116254,117010,118984,138474
+Japan,3,month,117772.2,119161,123579,139571
+Japan,4,month,108067.8,113362,118169,121799
+Japan,5,month,105704.2,108380,118634,121473
+Japan,6,month,97723.2,100423,108734,111904
+Japan,7,month,102882.8,104849,112222,117568
+Japan,8,month,105087,111591,117804,135649
+Japan,9,month,102349.6,107468,115706,127040
+Japan,10,month,110912.4,118038,120781,131840
+Japan,11,month,113915.4,118455,122806,134336
+Japan,12,month,123008.6,133185,134026,158387
+Jordan,1,month,2814.5,3226,3184,
+Jordan,2,month,2290.75,2490,2840,
+Jordan,3,month,2359,2486,5482,
+Jordan,4,month,2160.75,2084,4688,
+Jordan,5,month,2131.5,2350,3130,
+Jordan,6,month,2009.5,2068,2512,
+Jordan,7,month,2130.75,2113,2635,
+Jordan,8,month,2169.5,2202,2773,
+Jordan,9,month,2129,2290,2415,
+Jordan,10,month,2320.75,3414,2610,
+Jordan,11,month,2385.75,4960,3130,
+Jordan,12,month,2623.25,3390,3934,
+Kazakhstan,1,month,12188.4,11867,12478,13264
+Kazakhstan,2,month,10482,10842,11186,13800
+Kazakhstan,3,month,10969.6,8511,12476,11036
+Kazakhstan,4,month,11037.8,4441,13317,9578
+Kazakhstan,5,month,11104.8,14358,14202,10773
+Kazakhstan,6,month,10779.4,14949,12904,10730
+Kazakhstan,7,month,11557,28178,16700,10628
+Kazakhstan,8,month,10486.6,17835,24342,11644
+Kazakhstan,9,month,10526.4,13672,19975,10213
+Kazakhstan,10,month,11026.4,12489,16002,10473
+Kazakhstan,11,month,10640,12388,15862,10857
+Kazakhstan,12,month,10663.2,13083,13913,11713
+Kosovo,1,month,815.8,906,1252,900
+Kosovo,2,month,740,805,1007,987
+Kosovo,3,month,774,831,1350,763
+Kosovo,4,month,717.6,739,1338,742
+Kosovo,5,month,717.8,841,943,746
+Kosovo,6,month,673.8,854,814,640
+Kosovo,7,month,674.4,1426,777,736
+Kosovo,8,month,712.8,1426,1284,717
+Kosovo,9,month,682.4,915,1535,663
+Kosovo,10,month,737.6,984,893,737
+Kosovo,11,month,719,1610,802,748
+Kosovo,12,month,804,1650,1024,758
+Kuwait,1,month,668.8,599,764,
+Kuwait,2,month,544.8,607,749,
+Kuwait,3,month,582.4,636,1037,
+Kuwait,4,month,538,702,1098,
+Kuwait,5,month,543.2,1347,991,
+Kuwait,6,month,532.2,1235,1032,
+Kuwait,7,month,530.6,1047,1461,
+Kuwait,8,month,507.6,907,1135,
+Kuwait,9,month,513.4,878,738,
+Kuwait,10,month,524.4,906,602,
+Kuwait,11,month,589.4,903,634,
+Kuwait,12,month,647.4,802,697,
+Kyrgyzstan,1,month,3050.4,3082,2988,2871
+Kyrgyzstan,2,month,2626.8,2900,2621,2977
+Kyrgyzstan,3,month,2798,2390,3137,2955
+Kyrgyzstan,4,month,2724.2,1263,3024,2924
+Kyrgyzstan,5,month,2819.6,2919,2868,1951
+Kyrgyzstan,6,month,2653.8,3559,3375,2483
+Kyrgyzstan,7,month,2923.2,4045,3835,2378
+Kyrgyzstan,8,month,2674,4572,3810,4307
+Kyrgyzstan,9,month,2570.8,3411,3307,2799
+Kyrgyzstan,10,month,2806.4,3423,3257,1656
+Kyrgyzstan,11,month,2795.2,4154,3381,931
+Kyrgyzstan,12,month,3103.6,4259,3590,3169
+Latvia,1,week,612,603,840,684
+Latvia,2,week,619.4,591,825,680
+Latvia,3,week,630.8,537,795,652
+Latvia,4,week,614.6,555,791,589
+Latvia,5,week,605.6,560,765,669
+Latvia,6,week,588,534,709,675
+Latvia,7,week,605.8,545,682,726
+Latvia,8,week,624.6,543,668,670
+Latvia,9,week,629.2,523,603,700
+Latvia,10,week,620.4,507,610,651
+Latvia,11,week,593.6,549,631,692
+Latvia,12,week,603.8,546,586,666
+Latvia,13,week,596,532,611,610
+Latvia,14,week,582.6,571,558,601
+Latvia,15,week,575.4,567,596,568
+Latvia,16,week,551.8,514,603,562
+Latvia,17,week,546.4,554,630,559
+Latvia,18,week,510.6,522,609,524
+Latvia,19,week,541.2,453,657,529
+Latvia,20,week,530.8,587,609,534
+Latvia,21,week,522,538,572,526
+Latvia,22,week,526,506,570,530
+Latvia,23,week,502.8,505,640,524
+Latvia,24,week,480.6,523,526,508
+Latvia,25,week,529.2,514,714,551
+Latvia,26,week,499.6,560,618,599
+Latvia,27,week,496,516,589,468
+Latvia,28,week,507.4,472,632,479
+Latvia,29,week,530.6,526,513,500
+Latvia,30,week,496.8,494,552,519
+Latvia,31,week,495,493,552,533
+Latvia,32,week,477.8,501,496,502
+Latvia,33,week,493.8,524,553,564
+Latvia,34,week,496.4,530,503,493
+Latvia,35,week,480.6,473,535,486
+Latvia,36,week,476,481,605,515
+Latvia,37,week,503,481,561,524
+Latvia,38,week,505,487,624,538
+Latvia,39,week,529.8,536,654,582
+Latvia,40,week,537.2,543,665,583
+Latvia,41,week,522.4,508,779,584
+Latvia,42,week,537.2,557,925,546
+Latvia,43,week,521.8,575,921,556
+Latvia,44,week,539.2,559,927,528
+Latvia,45,week,511.8,558,895,505
+Latvia,46,week,528,572,840,584
+Latvia,47,week,537,600,726,586
+Latvia,48,week,537.4,618,682,565
+Latvia,49,week,547.8,669,697,595
+Latvia,50,week,549.4,711,655,676
+Latvia,51,week,589.4,730,669,702
+Latvia,52,week,584,820,703,785
+Latvia,53,week,581,743,,
+Lebanon,1,month,2453.6,2779,4380,
+Lebanon,2,month,2299.8,2485,4200,
+Lebanon,3,month,2456.8,2222,4574,
+Lebanon,4,month,2088.2,1836,3584,
+Lebanon,5,month,2130.2,2183,2485,
+Lebanon,6,month,1934.4,1826,2035,
+Lebanon,7,month,1914.4,1938,2197,
+Lebanon,8,month,1888.2,2139,2633,
+Lebanon,9,month,1756,2218,2521,
+Lebanon,10,month,2154,2765,2372,
+Lebanon,11,month,2012.2,2857,2720,
+Lebanon,12,month,2069,3144,3249,
+Liechtenstein,1,month,25,19,31,35
+Liechtenstein,2,month,20.2,30,23,28
+Liechtenstein,3,month,27.4,23,16,28
+Liechtenstein,4,month,20.2,22,29,19
+Liechtenstein,5,month,18.4,21,24,19
+Liechtenstein,6,month,19.4,18,11,28
+Liechtenstein,7,month,21.6,19,26,16
+Liechtenstein,8,month,22.6,23,20,21
+Liechtenstein,9,month,20.8,30,18,17
+Liechtenstein,10,month,22.4,23,20,
+Liechtenstein,11,month,22,39,25,
+Liechtenstein,12,month,21.8,52,28,
+Lithuania,1,week,863,812,1200,956
+Lithuania,2,week,873.6,803,1195,941
+Lithuania,3,week,920,787,1095,972
+Lithuania,4,week,911.2,786,1089,917
+Lithuania,5,week,911.6,762,974,886
+Lithuania,6,week,899.6,764,984,1036
+Lithuania,7,week,876.2,809,933,981
+Lithuania,8,week,896.2,707,784,947
+Lithuania,9,week,864.6,807,873,891
+Lithuania,10,week,841.4,773,898,897
+Lithuania,11,week,819.4,773,825,891
+Lithuania,12,week,804.4,804,832,887
+Lithuania,13,week,786.4,816,771,840
+Lithuania,14,week,795.6,775,896,814
+Lithuania,15,week,789,803,842,792
+Lithuania,16,week,785.2,784,870,884
+Lithuania,17,week,763.2,786,823,802
+Lithuania,18,week,749,769,881,771
+Lithuania,19,week,762.8,717,866,717
+Lithuania,20,week,736.2,733,837,737
+Lithuania,21,week,776.4,715,817,733
+Lithuania,22,week,750.4,745,832,628
+Lithuania,23,week,742,735,816,757
+Lithuania,24,week,711.6,820,804,735
+Lithuania,25,week,710.8,760,917,745
+Lithuania,26,week,729,811,687,884
+Lithuania,27,week,696.6,689,825,688
+Lithuania,28,week,702,703,883,653
+Lithuania,29,week,704.6,764,700,692
+Lithuania,30,week,739,757,752,722
+Lithuania,31,week,696.4,723,722,770
+Lithuania,32,week,719,726,788,689
+Lithuania,33,week,697.4,746,804,875
+Lithuania,34,week,677.2,763,789,784
+Lithuania,35,week,701,721,771,670
+Lithuania,36,week,676.6,673,866,679
+Lithuania,37,week,653.2,729,916,783
+Lithuania,38,week,695.6,721,973,708
+Lithuania,39,week,716.4,784,1014,826
+Lithuania,40,week,736.8,744,1009,839
+Lithuania,41,week,736.4,785,1081,784
+Lithuania,42,week,777.8,836,1087,852
+Lithuania,43,week,771.6,845,1110,742
+Lithuania,44,week,753,853,1049,699
+Lithuania,45,week,739.8,877,1032,744
+Lithuania,46,week,747.8,952,973,735
+Lithuania,47,week,746.4,1099,993,801
+Lithuania,48,week,749.8,1109,964,788
+Lithuania,49,week,770.4,1238,965,879
+Lithuania,50,week,744.8,1220,998,930
+Lithuania,51,week,782.6,1371,1075,966
+Lithuania,52,week,822.4,1395,983,1041
+Lithuania,53,week,900,1343,,
+Luxembourg,1,week,86.8,62,102,98
+Luxembourg,2,week,94.6,85,94,89
+Luxembourg,3,week,87.4,92,89,84
+Luxembourg,4,week,89.2,86,109,94
+Luxembourg,5,week,97.2,89,93,96
+Luxembourg,6,week,97,90,89,96
+Luxembourg,7,week,97.2,70,92,97
+Luxembourg,8,week,90.4,85,87,109
+Luxembourg,9,week,87.6,74,86,92
+Luxembourg,10,week,102,92,114,90
+Luxembourg,11,week,81.6,87,116,84
+Luxembourg,12,week,86,87,78,83
+Luxembourg,13,week,86.2,113,77,89
+Luxembourg,14,week,83.6,91,89,92
+Luxembourg,15,week,71.6,116,73,84
+Luxembourg,16,week,79,88,82,98
+Luxembourg,17,week,74.2,83,93,90
+Luxembourg,18,week,71.8,69,79,74
+Luxembourg,19,week,70.4,87,63,80
+Luxembourg,20,week,71.4,80,85,78
+Luxembourg,21,week,76.4,77,68,63
+Luxembourg,22,week,69.2,77,64,97
+Luxembourg,23,week,73.8,73,80,72
+Luxembourg,24,week,74.6,70,85,86
+Luxembourg,25,week,66.6,78,69,74
+Luxembourg,26,week,68.8,67,87,60
+Luxembourg,27,week,75.2,70,78,88
+Luxembourg,28,week,80.4,73,85,84
+Luxembourg,29,week,72.2,73,67,81
+Luxembourg,30,week,74.8,71,64,93
+Luxembourg,31,week,75,91,75,86
+Luxembourg,32,week,74.6,93,75,86
+Luxembourg,33,week,74,99,63,90
+Luxembourg,34,week,67.2,72,72,67
+Luxembourg,35,week,76,61,84,69
+Luxembourg,36,week,76,86,92,75
+Luxembourg,37,week,73.8,73,72,83
+Luxembourg,38,week,67.4,87,69,72
+Luxembourg,39,week,80.8,75,90,83
+Luxembourg,40,week,77.2,82,95,85
+Luxembourg,41,week,84.8,69,67,93
+Luxembourg,42,week,74.8,87,79,90
+Luxembourg,43,week,74.4,93,113,77
+Luxembourg,44,week,85.2,98,102,84
+Luxembourg,45,week,83,113,101,81
+Luxembourg,46,week,79.2,117,89,81
+Luxembourg,47,week,85,126,100,92
+Luxembourg,48,week,74.2,134,105,96
+Luxembourg,49,week,78.6,110,90,86
+Luxembourg,50,week,82.8,126,89,76
+Luxembourg,51,week,83.8,105,109,92
+Luxembourg,52,week,84.2,117,99,118
+Luxembourg,53,week,83,98,,
+Macao,1,month,208.6,201,212,206
+Macao,2,month,174.8,187,193,191
+Macao,3,month,186.2,167,188,218
+Macao,4,month,173.4,189,187,210
+Macao,5,month,172.8,165,181,203
+Macao,6,month,172.4,178,194,228
+Macao,7,month,183.6,187,178,205
+Macao,8,month,178.6,206,201,202
+Macao,9,month,162,184,178,163
+Macao,10,month,165.4,184,196,190
+Macao,11,month,167.8,192,181,203
+Macao,12,month,198.6,190,231,785
+Malaysia,1,month,14303.8,16028,16184,16760
+Malaysia,2,month,13187.8,13827,14332,15842
+Malaysia,3,month,14450,14676,15391,21521
+Malaysia,4,month,13648.2,13038,14895,16176
+Malaysia,5,month,14079.2,13886,18089,16558
+Malaysia,6,month,13724.8,13317,17756,14038
+Malaysia,7,month,14280.6,13659,24520,19099
+Malaysia,8,month,13880,13950,26799,15986
+Malaysia,9,month,13123.2,13249,22287,15191
+Malaysia,10,month,13677.2,13880,19439,16252
+Malaysia,11,month,13542.2,12846,17165,16337
+Malaysia,12,month,14489.4,14151,17712,16191
+Maldives,1,month,107.4,114,98,
+Maldives,2,month,98.4,96,102,
+Maldives,3,month,117.6,109,104,
+Maldives,4,month,101.2,91,129,
+Maldives,5,month,97.4,109,186,
+Maldives,6,month,91.6,91,178,
+Maldives,7,month,91.8,115,115,
+Maldives,8,month,92.8,129,106,
+Maldives,9,month,89.4,112,114,
+Maldives,10,month,94.8,103,149,
+Maldives,11,month,91.2,110,116,
+Maldives,12,month,97.2,96,116,
+Malta,1,week,96.2,73,93,97
+Malta,2,week,84.2,93,85,91
+Malta,3,week,98.8,107,118,124
+Malta,4,week,87.4,88,93,121
+Malta,5,week,86,77,90,112
+Malta,6,week,87.2,90,94,115
+Malta,7,week,82,72,110,103
+Malta,8,week,88.2,74,109,79
+Malta,9,week,81.6,69,108,104
+Malta,10,week,79.2,70,105,97
+Malta,11,week,72.8,90,94,83
+Malta,12,week,76.2,104,86,80
+Malta,13,week,67.6,81,77,80
+Malta,14,week,71.8,75,66,106
+Malta,15,week,66.6,79,70,77
+Malta,16,week,67,93,65,82
+Malta,17,week,60.8,57,59,87
+Malta,18,week,66.2,75,70,72
+Malta,19,week,65.2,71,77,72
+Malta,20,week,60.4,71,75,71
+Malta,21,week,61.2,53,78,53
+Malta,22,week,65.6,68,53,63
+Malta,23,week,57.8,65,59,80
+Malta,24,week,64.2,58,69,78
+Malta,25,week,55.8,62,57,68
+Malta,26,week,58.8,49,94,61
+Malta,27,week,59.4,71,68,87
+Malta,28,week,60.2,65,79,75
+Malta,29,week,54.2,66,64,83
+Malta,30,week,62.2,62,62,66
+Malta,31,week,63,70,97,67
+Malta,32,week,63,71,97,79
+Malta,33,week,58,79,74,64
+Malta,34,week,56.2,81,77,54
+Malta,35,week,60,73,70,67
+Malta,36,week,61.8,71,72,75
+Malta,37,week,60.6,64,73,76
+Malta,38,week,53.8,64,50,56
+Malta,39,week,55.2,80,85,66
+Malta,40,week,56.6,84,66,75
+Malta,41,week,60.8,71,54,70
+Malta,42,week,63.6,62,87,81
+Malta,43,week,60.2,67,57,72
+Malta,44,week,60.4,90,72,79
+Malta,45,week,58.2,86,64,75
+Malta,46,week,67.2,97,82,77
+Malta,47,week,64.4,90,82,81
+Malta,48,week,68.8,93,80,67
+Malta,49,week,68,108,77,81
+Malta,50,week,70,102,88,78
+Malta,51,week,69.8,110,109,98
+Malta,52,week,86.2,114,92,85
+Malta,53,week,87,90,,
+Mauritius,1,month,902.4,965,955,1134
+Mauritius,2,month,786.2,845,853,1071
+Mauritius,3,month,887.6,929,952,1306
+Mauritius,4,month,803.6,850,864,980
+Mauritius,5,month,844,893,888,1008
+Mauritius,6,month,811,910,952,1020
+Mauritius,7,month,990.2,1006,1012,1252
+Mauritius,8,month,931.2,1002,1178,1201
+Mauritius,9,month,906.6,906,1203,1002
+Mauritius,10,month,862,932,1220,1002
+Mauritius,11,month,812,899,1761,970
+Mauritius,12,month,867.6,923,1436,992
+Mexico,1,week,15631.2,16824,36751,18212
+Mexico,2,week,15468.8,16961,43931,20207
+Mexico,3,week,15306,16459,45154,24506
+Mexico,4,week,15019.4,15844,37098,33273
+Mexico,5,week,14972.8,15467,32261,27943
+Mexico,6,week,14986,15954,27253,23648
+Mexico,7,week,14694.6,15120,25693,20951
+Mexico,8,week,14413,14709,24394,18024
+Mexico,9,week,14189.4,14138,20917,16272
+Mexico,10,week,13823.4,14238,20186,15690
+Mexico,11,week,13543.4,14052,18911,14689
+Mexico,12,week,13468.6,13321,18155,14000
+Mexico,13,week,13175.6,13838,17351,14401
+Mexico,14,week,13256.6,13646,17760,13758
+Mexico,15,week,12888,14155,17337,13843
+Mexico,16,week,12754,15139,16364,13679
+Mexico,17,week,12924.4,17236,15884,13001
+Mexico,18,week,12848,18966,15515,14055
+Mexico,19,week,12796.2,20759,15158,14199
+Mexico,20,week,12867.6,22472,14711,14127
+Mexico,21,week,13065,23399,14810,13497
+Mexico,22,week,12669,23347,14424,13408
+Mexico,23,week,12609.4,24390,14615,14016
+Mexico,24,week,12455.2,24999,14838,13774
+Mexico,25,week,12655,25317,14874,13728
+Mexico,26,week,12446.2,25046,15158,14391
+Mexico,27,week,12573,25887,16048,14549
+Mexico,28,week,12572.2,26825,17162,15540
+Mexico,29,week,12688.2,26806,19162,15889
+Mexico,30,week,12744.4,26075,21659,15440
+Mexico,31,week,12819.8,25118,24674,15580
+Mexico,32,week,12543.6,24060,26824,14728
+Mexico,33,week,12603,22914,28498,14217
+Mexico,34,week,12428.6,21964,27669,13782
+Mexico,35,week,12364.6,21059,27301,13482
+Mexico,36,week,12485.6,20403,25363,13385
+Mexico,37,week,12672.2,19641,24097,13573
+Mexico,38,week,12831.2,19011,22179,13673
+Mexico,39,week,12558.4,19117,20707,13483
+Mexico,40,week,12874.8,18690,19568,13772
+Mexico,41,week,12859.8,19057,18347,13712
+Mexico,42,week,12933.8,19090,17167,13325
+Mexico,43,week,12997.8,19875,16600,13674
+Mexico,44,week,13231.4,20617,16666,13817
+Mexico,45,week,13242.2,21775,16586,13793
+Mexico,46,week,13420.2,22008,16754,14064
+Mexico,47,week,13959.8,22575,16275,14899
+Mexico,48,week,13789.6,22807,16490,15299
+Mexico,49,week,13884.6,23783,16274,15150
+Mexico,50,week,14539.8,25585,16592,15412
+Mexico,51,week,14573.6,26784,17140,16012
+Mexico,52,week,15437.8,29852,17726,16801
+Mexico,53,week,14170,33034,,
+Moldova,1,month,3980.8,3477,4128,3873
+Moldova,2,month,3318.6,3098,3691,4047
+Moldova,3,month,3386.6,2708,4908,3468
+Moldova,4,month,3096.8,2275,4345,2916
+Moldova,5,month,3198.8,3873,3378,2844
+Moldova,6,month,2957,3339,3024,2644
+Moldova,7,month,2757.4,3355,2946,2529
+Moldova,8,month,2662.4,2707,2499,2722
+Moldova,9,month,2820.6,3467,3574,2690
+Moldova,10,month,3148.6,3829,4764,2777
+Moldova,11,month,3255.8,3736,4713,2890
+Moldova,12,month,3238.6,4852,3416,3154
+Monaco,1,month,52.8,46,58,51
+Monaco,2,month,46,36,70,33
+Monaco,3,month,44.6,53,66,50
+Monaco,4,month,42.6,45,40,42
+Monaco,5,month,40,38,58,41
+Monaco,6,month,38.6,39,27,39
+Monaco,7,month,42.8,37,39,42
+Monaco,8,month,38.8,43,45,40
+Monaco,9,month,41,44,46,46
+Monaco,10,month,45,47,50,
+Monaco,11,month,52.2,42,36,
+Monaco,12,month,43.4,51,58,
+Mongolia,1,month,1414.6,1366,1151,1345
+Mongolia,2,month,1300.8,1298,1237,1487
+Mongolia,3,month,1437.8,1292,1381,1496
+Mongolia,4,month,1345,1310,1484,1558
+Mongolia,5,month,1420.6,1288,1403,1506
+Mongolia,6,month,1328.4,1306,1715,1424
+Mongolia,7,month,1376.2,1402,1819,1438
+Mongolia,8,month,1366.6,1331,1678,1609
+Mongolia,9,month,1388.6,1405,2026,1490
+Mongolia,10,month,1396.8,1427,2302,1485
+Mongolia,11,month,1312.2,1278,1950,1472
+Mongolia,12,month,1493,1219,1785,1671
+Montenegro,1,week,151,86,200,188
+Montenegro,2,week,150.2,118,179,219
+Montenegro,3,week,151.6,145,194,235
+Montenegro,4,week,143.8,133,173,260
+Montenegro,5,week,147,139,203,228
+Montenegro,6,week,133,150,205,177
+Montenegro,7,week,127.8,130,211,169
+Montenegro,8,week,146.2,142,220,163
+Montenegro,9,week,141.2,119,221,129
+Montenegro,10,week,138.8,141,212,129
+Montenegro,11,week,120.4,113,232,129
+Montenegro,12,week,131.2,126,184,130
+Montenegro,13,week,116.8,150,222,127
+Montenegro,14,week,136.2,118,197,130
+Montenegro,15,week,119,122,187,109
+Montenegro,16,week,117.4,113,193,130
+Montenegro,17,week,124,101,189,112
+Montenegro,18,week,120.8,112,155,114
+Montenegro,19,week,109.4,95,166,125
+Montenegro,20,week,110,115,156,129
+Montenegro,21,week,111,113,111,141
+Montenegro,22,week,110,115,144,126
+Montenegro,23,week,121.4,112,96,123
+Montenegro,24,week,121.6,113,138,108
+Montenegro,25,week,115,101,125,116
+Montenegro,26,week,118.6,115,132,134
+Montenegro,27,week,111,154,137,125
+Montenegro,28,week,114,137,116,126
+Montenegro,29,week,113.2,146,132,143
+Montenegro,30,week,129.6,156,147,137
+Montenegro,31,week,119.4,151,136,121
+Montenegro,32,week,122.8,130,182,121
+Montenegro,33,week,109,112,167,115
+Montenegro,34,week,110,137,181,
+Montenegro,35,week,105.4,138,168,
+Montenegro,36,week,119.8,148,178,
+Montenegro,37,week,108.4,123,193,
+Montenegro,38,week,114,131,187,
+Montenegro,39,week,113.8,154,187,
+Montenegro,40,week,125.8,149,173,
+Montenegro,41,week,116.8,147,199,
+Montenegro,42,week,116.2,159,169,
+Montenegro,43,week,117.6,183,193,
+Montenegro,44,week,119.8,176,201,
+Montenegro,45,week,121.4,173,178,
+Montenegro,46,week,124.6,163,199,
+Montenegro,47,week,123.6,197,183,
+Montenegro,48,week,121,168,202,
+Montenegro,49,week,126,166,165,
+Montenegro,50,week,137.2,163,173,
+Montenegro,51,week,148.8,194,154,
+Montenegro,52,week,139,192,170,
+Montenegro,53,week,125,166,,
+Netherlands,1,week,3281.8,3103,4144,3435
+Netherlands,2,week,3353.6,3364,3852,3157
+Netherlands,3,week,3290,3157,3862,3192
+Netherlands,4,week,3336.8,3046,3716,3202
+Netherlands,5,week,3310.4,3164,3654,3286
+Netherlands,6,week,3290.6,3196,3550,3254
+Netherlands,7,week,3334.2,3198,3528,3379
+Netherlands,8,week,3389,2959,3207,3351
+Netherlands,9,week,3309.8,3098,3105,3233
+Netherlands,10,week,3339.6,3107,3245,3387
+Netherlands,11,week,3191.8,3218,3043,3603
+Netherlands,12,week,3068,3614,3045,3630
+Netherlands,13,week,3043,4458,3178,3565
+Netherlands,14,week,2912,5085,3164,3574
+Netherlands,15,week,2846.6,4982,3141,3515
+Netherlands,16,week,2832.6,4308,3145,3235
+Netherlands,17,week,2796.2,3910,3125,3141
+Netherlands,18,week,2731.2,3383,3003,3129
+Netherlands,19,week,2783.4,2989,3018,3127
+Netherlands,20,week,2724.8,2777,2989,3057
+Netherlands,21,week,2720.6,2770,2806,2922
+Netherlands,22,week,2711.8,2732,3009,2962
+Netherlands,23,week,2645.2,2682,2884,2942
+Netherlands,24,week,2630.8,2689,2871,3012
+Netherlands,25,week,2617.4,2696,2675,3136
+Netherlands,26,week,2661.6,2659,2793,3101
+Netherlands,27,week,2739.6,2638,2838,2972
+Netherlands,28,week,2635,2619,2872,3088
+Netherlands,29,week,2658,2528,2776,3189
+Netherlands,30,week,2688,2673,2913,3133
+Netherlands,31,week,2600.2,2666,2959,2957
+Netherlands,32,week,2628.6,2642,2840,2985
+Netherlands,33,week,2572.8,3209,2899,3077
+Netherlands,34,week,2602.2,2856,2929,3039
+Netherlands,35,week,2603,2735,2860,2964
+Netherlands,36,week,2568,2692,3090,2937
+Netherlands,37,week,2644,2742,2918,2814
+Netherlands,38,week,2627.2,2721,2889,3014
+Netherlands,39,week,2695.4,2891,3072,3197
+Netherlands,40,week,2720.4,3002,3070,3307
+Netherlands,41,week,2814,3022,3062,3306
+Netherlands,42,week,2757.6,3222,3273,3363
+Netherlands,43,week,2801,3448,3385,3304
+Netherlands,44,week,2792.4,3687,3515,3225
+Netherlands,45,week,2844.8,3589,3784,3169
+Netherlands,46,week,2849.6,3580,3994,3204
+Netherlands,47,week,2904.2,3335,4190,3396
+Netherlands,48,week,2903.2,3405,4387,3422
+Netherlands,49,week,2964.4,3530,4364,3594
+Netherlands,50,week,3077,3615,4036,3963
+Netherlands,51,week,3065.8,3909,3740,4126
+Netherlands,52,week,3008.6,3867,3644,3597
+Netherlands,53,week,2918,4077,,
+New Zealand,1,week,569.4,590,670,677
+New Zealand,2,week,588,581,630,610
+New Zealand,3,week,574.4,641,659,633
+New Zealand,4,week,584.4,610,603,647
+New Zealand,5,week,573,615,642,660
+New Zealand,6,week,567,588,647,682
+New Zealand,7,week,553,618,591,641
+New Zealand,8,week,568.8,622,603,627
+New Zealand,9,week,576.4,595,639,685
+New Zealand,10,week,577.6,611,618,732
+New Zealand,11,week,588,601,630,776
+New Zealand,12,week,582.4,619,637,750
+New Zealand,13,week,593.8,613,679,753
+New Zealand,14,week,591.2,628,631,699
+New Zealand,15,week,585,651,629,759
+New Zealand,16,week,616,663,640,748
+New Zealand,17,week,605.6,633,687,713
+New Zealand,18,week,611,561,656,713
+New Zealand,19,week,631.6,629,638,797
+New Zealand,20,week,612.4,617,680,759
+New Zealand,21,week,636.4,608,658,813
+New Zealand,22,week,660.2,603,682,790
+New Zealand,23,week,669.6,623,685,776
+New Zealand,24,week,666.6,642,738,858
+New Zealand,25,week,680.8,643,665,828
+New Zealand,26,week,676,621,662,798
+New Zealand,27,week,682,618,743,842
+New Zealand,28,week,703.8,617,762,888
+New Zealand,29,week,720,693,754,853
+New Zealand,30,week,729.4,683,756,968
+New Zealand,31,week,731.4,676,780,847
+New Zealand,32,week,736,643,787,761
+New Zealand,33,week,716.8,635,771,829
+New Zealand,34,week,686.4,655,705,757
+New Zealand,35,week,687.6,601,735,760
+New Zealand,36,week,663.2,630,712,756
+New Zealand,37,week,683.2,623,643,705
+New Zealand,38,week,672.6,606,654,754
+New Zealand,39,week,647,611,646,697
+New Zealand,40,week,643,651,643,712
+New Zealand,41,week,656.6,609,650,701
+New Zealand,42,week,614,615,678,750
+New Zealand,43,week,614.4,689,638,709
+New Zealand,44,week,619,584,649,713
+New Zealand,45,week,611.2,631,663,670
+New Zealand,46,week,587.8,586,667,668
+New Zealand,47,week,610.4,612,635,730
+New Zealand,48,week,588.4,650,633,631
+New Zealand,49,week,576,643,666,709
+New Zealand,50,week,600.6,640,603,737
+New Zealand,51,week,582.4,670,703,684
+New Zealand,52,week,585.6,625,623,714
+New Zealand,53,week,575,675,,
+Nicaragua,1,month,2080.4,2144,2314,
+Nicaragua,2,month,1748.8,1942,1922,
+Nicaragua,3,month,1958.6,1986,2147,
+Nicaragua,4,month,1960.8,2122,2205,
+Nicaragua,5,month,1975.2,5615,2509,
+Nicaragua,6,month,1992.8,5582,2692,
+Nicaragua,7,month,2105.6,3207,3099,
+Nicaragua,8,month,2096,2354,3620,
+Nicaragua,9,month,2037.6,2008,6143,
+Nicaragua,10,month,2123.2,2135,3965,
+Nicaragua,11,month,2060,2240,2274,
+Nicaragua,12,month,2103.8,2346,2109,
+North Macedonia,1,month,2094.6,1924,2471,2228
+North Macedonia,2,month,1772,1766,2018,3037
+North Macedonia,3,month,1807.4,1751,2757,2162
+North Macedonia,4,month,1622,1750,3212,1476
+North Macedonia,5,month,1618.6,1656,2166,1509
+North Macedonia,6,month,1526.2,1936,1771,1775
+North Macedonia,7,month,1590.8,1901,1724,1528
+North Macedonia,8,month,1573.6,1842,2773,1992
+North Macedonia,9,month,1485.6,1758,2736,1625
+North Macedonia,10,month,1714.2,2311,2311,1533
+North Macedonia,11,month,1649.2,3842,2236,1757
+North Macedonia,12,month,1820.4,3286,2341,1753
+Norway,1,week,924.4,862,832,957
+Norway,2,week,917.6,952,868,911
+Norway,3,week,907.2,837,860,824
+Norway,4,week,884.8,862,851,825
+Norway,5,week,895.2,816,793,922
+Norway,6,week,864,796,813,888
+Norway,7,week,875.6,855,769,909
+Norway,8,week,867.6,813,757,992
+Norway,9,week,877.4,836,705,973
+Norway,10,week,868.4,799,790,931
+Norway,11,week,828.2,827,788,992
+Norway,12,week,817,810,769,988
+Norway,13,week,781.2,854,719,895
+Norway,14,week,799.4,831,780,949
+Norway,15,week,785.6,841,751,863
+Norway,16,week,765.8,816,753,842
+Norway,17,week,780,777,777,843
+Norway,18,week,741.6,749,696,834
+Norway,19,week,736.4,742,707,832
+Norway,20,week,724.6,686,740,843
+Norway,21,week,732.2,740,728,752
+Norway,22,week,713.6,662,726,806
+Norway,23,week,714.2,677,729,778
+Norway,24,week,722.6,731,686,809
+Norway,25,week,724,739,696,891
+Norway,26,week,734.2,684,720,804
+Norway,27,week,748.6,697,770,857
+Norway,28,week,718,668,716,882
+Norway,29,week,723.2,754,757,867
+Norway,30,week,722.4,732,746,801
+Norway,31,week,693.4,746,767,815
+Norway,32,week,718.2,738,779,793
+Norway,33,week,709.2,734,789,826
+Norway,34,week,717.2,746,785,775
+Norway,35,week,733.4,699,792,766
+Norway,36,week,723.8,710,786,828
+Norway,37,week,708.4,786,821,802
+Norway,38,week,720.6,773,818,847
+Norway,39,week,738.4,743,806,845
+Norway,40,week,730.2,784,806,815
+Norway,41,week,749.4,743,803,859
+Norway,42,week,749.2,714,847,853
+Norway,43,week,761,796,894,853
+Norway,44,week,753.4,791,918,867
+Norway,45,week,764.8,777,958,844
+Norway,46,week,782.4,780,918,883
+Norway,47,week,779,800,948,932
+Norway,48,week,793.6,774,968,925
+Norway,49,week,825.2,789,1050,948
+Norway,50,week,823.4,841,979,1024
+Norway,51,week,835.8,823,968,1066
+Norway,52,week,876.2,831,929,1136
+Norway,53,week,851,841,,
+Oman,1,month,814.4,845,874,958
+Oman,2,month,682,739,795,965
+Oman,3,month,755,691,927,848
+Oman,4,month,684.6,669,1144,719
+Oman,5,month,693.2,701,1235,746
+Oman,6,month,675.2,865,1757,659
+Oman,7,month,723.4,1060,1825,818
+Oman,8,month,706.6,1021,1021,840
+Oman,9,month,677.2,1082,720,725
+Oman,10,month,698,1124,773,848
+Oman,11,month,689.6,917,751,764
+Oman,12,month,742.4,875,827,760
+Palestine,1,month,1309.5,1329,1625,
+Palestine,2,month,1112.5,1194,1324,
+Palestine,3,month,1117.5,1105,1892,
+Palestine,4,month,1006,889,1794,
+Palestine,5,month,1031.5,1044,1556,
+Palestine,6,month,921.5,883,1090,
+Palestine,7,month,930.5,1045,1046,
+Palestine,8,month,981.5,1048,1139,
+Palestine,9,month,890.5,1149,1498,
+Palestine,10,month,962.5,1165,1344,
+Palestine,11,month,1029,1357,1057,
+Palestine,12,month,1156.5,1898,1390,
+Panama,1,month,1664.8,2032,3147,
+Panama,2,month,1450,1531,3028,
+Panama,3,month,1578.8,1287,2437,
+Panama,4,month,1563.2,69,1872,
+Panama,5,month,1557.2,2483,1795,
+Panama,6,month,1604.4,2284,1953,
+Panama,7,month,1685.4,2742,2068,
+Panama,8,month,1639.4,2668,2142,
+Panama,9,month,1644.8,2401,1998,
+Panama,10,month,1672.2,2131,1821,
+Panama,11,month,1601,2108,,
+Panama,12,month,1658.4,2140,,
+Paraguay,1,month,2602.2,2863,3325,6257
+Paraguay,2,month,2307.2,2868,3357,3899
+Paraguay,3,month,2517.2,3010,4779,2946
+Paraguay,4,month,2461,2568,6437,2718
+Paraguay,5,month,2754,2676,7677,3081
+Paraguay,6,month,3037.6,2822,7317,3474
+Paraguay,7,month,3065.2,2991,5198,3515
+Paraguay,8,month,2861.6,3451,3790,2975
+Paraguay,9,month,2609.2,3414,2979,2714
+Paraguay,10,month,2543.2,3425,2992,2712
+Paraguay,11,month,2358.8,3100,2926,2581
+Paraguay,12,month,2564.6,3550,3456,2890
+Peru,1,week,2715.3,2705.7,4238.8,3675.3
+Peru,2,week,2704.4,2778,4932,3933.7
+Peru,3,week,2715.533333,2666.4,6067.4,4507.8
+Peru,4,week,2736.766667,2736.6,7133.7,4824.6
+Peru,5,week,2868.9,2597.3,7467.6,4720.4
+Peru,6,week,2762.6,2722.7,8182,4333.4
+Peru,7,week,2803,2756.8,8210.7,3844.4
+Peru,8,week,2909.233333,2765.3,7863.1,3488.2
+Peru,9,week,2994.1,2821.6,7978.9,3410.6
+Peru,10,week,2826.133333,2768.4,7855.6,3270.3
+Peru,11,week,2889.3,2826.9,7903.5,3220.3
+Peru,12,week,2812,2564.3,8057.6,2949.2
+Peru,13,week,2756.466667,2513.3,8406.3,2931.1
+Peru,14,week,2765.4,2742.9,9010.2,3070.4
+Peru,15,week,2669.133333,2891.8,8968.7,2936.4
+Peru,16,week,2779.3,3516.9,8774.2,2980
+Peru,17,week,2668.366667,4425.9,8186.3,2883.3
+Peru,18,week,2787.333333,5440.1,7628.1,2951.3
+Peru,19,week,2687.4,6234.3,6949.8,3123.5
+Peru,20,week,2789.466667,6848.8,6441.6,2948.1
+Peru,21,week,2856.466667,7239,5986.6,3067.2
+Peru,22,week,2876.966667,7409.1,5624.1,3117.2
+Peru,23,week,3000.333333,7526,5022.3,3076.8
+Peru,24,week,3015.5,7569.6,4608.8,3159.7
+Peru,25,week,3119.366667,7393.2,4278.1,3173.5
+Peru,26,week,3090.466667,6902,4059.1,3289.4
+Peru,27,week,3146.8,6972.1,3830.5,3246.9
+Peru,28,week,3009.2,7266.6,3545.6,3345.7
+Peru,29,week,3089.7,7566.4,3460.6,3418
+Peru,30,week,3113.633333,7634.5,3365.9,3451
+Peru,31,week,3065.166667,7708.9,3260.7,3620
+Peru,32,week,3132.233333,7898.2,3313.8,3529.7
+Peru,33,week,2999.9,7486.7,3121.4,3521.2
+Peru,34,week,2986.733333,6796.7,3305.3,3219.2
+Peru,35,week,3082.5,6214.1,3178.8,3362.7
+Peru,36,week,3050.6,5289.2,3071.4,3299
+Peru,37,week,3062.3,4812.9,3071.4,3154.4
+Peru,38,week,3112.433333,4412.1,3132,3027.9
+Peru,39,week,3120.533333,3976.2,3065.1,2854.6
+Peru,40,week,3025.8,3699.8,3162.9,3160.7
+Peru,41,week,3085.5,3608.3,3073.6,
+Peru,42,week,3141.8,3483.9,3049.1,
+Peru,43,week,3075.466667,3432.9,2976.8,
+Peru,44,week,3101.866667,3244.7,3128.9,
+Peru,45,week,3049.566667,3334,3025.7,
+Peru,46,week,2894.866667,3312.8,2977.9,
+Peru,47,week,2936.4,3219.2,3066.1,
+Peru,48,week,2899.8,3139.5,3169.3,
+Peru,49,week,2935.433333,3182,3270.3,
+Peru,50,week,2975.7,3303.2,3177.8,
+Peru,51,week,2955.466667,3512.7,3288.3,
+Peru,52,week,3035.266667,3627.5,3524.3,
+Peru,53,week,,3840.1,,
+Philippines,1,month,51995.4,53500,59993,70151
+Philippines,2,month,45454,46256,53861,52490
+Philippines,3,month,47911.2,45996,62558,52329
+Philippines,4,month,47258.4,44768,70556,50611
+Philippines,5,month,49102.4,50251,71920,54228
+Philippines,6,month,46106.6,48484,68399,52281
+Philippines,7,month,48859.4,54412,75672,56264
+Philippines,8,month,50565.2,56827,97880,58765
+Philippines,9,month,49370.8,53953,119758,53169
+Philippines,10,month,51316,54200,84428,53465
+Philippines,11,month,48674.6,51558,58202,
+Philippines,12,month,50015.6,53731,56202,
+Poland,1,week,8503.6,8463,11478,12003
+Poland,2,week,8512.6,8242,10974,10782
+Poland,3,week,8539.4,8059,11022,10000
+Poland,4,week,8614.6,8015,10397,10158
+Poland,5,week,8871.6,8560,9880,10554
+Poland,6,week,8820,8343,9927,10689
+Poland,7,week,8878.2,8624,10117,10399
+Poland,8,week,8789.8,8474,9894,9820
+Poland,9,week,8788.4,8471,10155,9213
+Poland,10,week,8629.4,8364,10835,9161
+Poland,11,week,8407.6,8410,11565,8780
+Poland,12,week,8275.4,8322,12605,8884
+Poland,13,week,8145.6,8148,13833,8898
+Poland,14,week,7956.6,7991,13797,8576
+Poland,15,week,7804,7996,12791,8433
+Poland,16,week,7606.8,8184,11996,8732
+Poland,17,week,7617.2,7743,11074,8289
+Poland,18,week,7425,7757,10084,8208
+Poland,19,week,7285.2,7581,9678,7901
+Poland,20,week,7167,7558,8679,7584
+Poland,21,week,7265,7546,8233,7472
+Poland,22,week,7238.4,7632,8157,7584
+Poland,23,week,7206.6,7808,8137,7740
+Poland,24,week,7194.2,7740,8347,7464
+Poland,25,week,7161.2,7395,8359,7765
+Poland,26,week,7004.4,7375,7543,8205
+Poland,27,week,7017.8,7657,7657,7067
+Poland,28,week,6997.8,7309,7883,7231
+Poland,29,week,7065.2,7505,7352,7990
+Poland,30,week,7322.8,7569,7825,7650
+Poland,31,week,7209.2,7787,7392,7781
+Poland,32,week,7172.2,7952,7579,7726
+Poland,33,week,7008.2,8071,7410,8457
+Poland,34,week,6850,7947,7404,7731
+Poland,35,week,7134.4,7443,7405,7318
+Poland,36,week,7005.4,7557,8078,7735
+Poland,37,week,6942.4,7704,7830,8082
+Poland,38,week,7203.4,8231,8087,8295
+Poland,39,week,7416.2,8219,8144,8851
+Poland,40,week,7618.6,8413,8478,8502
+Poland,41,week,7569.2,9187,8540,8565
+Poland,42,week,7696.8,10231,8856,8264
+Poland,43,week,7599.4,12364,9490,8060
+Poland,44,week,7598,14743,9921,7652
+Poland,45,week,7496.6,16244,10771,7626
+Poland,46,week,7540.8,15633,12040,7835
+Poland,47,week,7633.6,14828,12725,8078
+Poland,48,week,7667.8,13627,13386,8136
+Poland,49,week,7876,12982,13785,8633
+Poland,50,week,7841.4,12018,13831,9315
+Poland,51,week,8020,11679,13733,10183
+Poland,52,week,8280.6,12128,13541,10996
+Poland,53,week,7816,11775,,
+Portugal,1,week,2794.4,2510,3836,2469
+Portugal,2,week,2808,2665,4618,2555
+Portugal,3,week,2858.6,2772,5044,2795
+Portugal,4,week,2825.8,2671,4818,2791
+Portugal,5,week,2686.8,2691,3973,2876
+Portugal,6,week,2647,2490,3394,2702
+Portugal,7,week,2643.4,2288,2862,2705
+Portugal,8,week,2508,2360,2535,2474
+Portugal,9,week,2463.2,2309,2354,2400
+Portugal,10,week,2338.4,2182,2138,2446
+Portugal,11,week,2276.4,2362,2115,2424
+Portugal,12,week,2212.4,2440,2057,2467
+Portugal,13,week,2160.6,2544,2133,2470
+Portugal,14,week,2185.2,2654,1996,2416
+Portugal,15,week,2108,2609,1966,2439
+Portugal,16,week,2008.8,2390,1916,2309
+Portugal,17,week,1988.8,2311,1893,2289
+Portugal,18,week,1975.4,2174,2046,2219
+Portugal,19,week,1918.8,2172,1912,2454
+Portugal,20,week,1957.2,2057,1838,2354
+Portugal,21,week,1917,2071,1996,2341
+Portugal,22,week,1915.8,2335,1884,2390
+Portugal,23,week,1879.4,2023,1947,2502
+Portugal,24,week,1873.6,1871,1987,2679
+Portugal,25,week,1984,1942,1854,2174
+Portugal,26,week,1851.8,2121,1954,2148
+Portugal,27,week,1810.6,2061,1953,2354
+Portugal,28,week,1842.8,2236,2058,2744
+Portugal,29,week,1835,2651,1960,2361
+Portugal,30,week,1853.8,2440,1979,2310
+Portugal,31,week,1901.6,2217,2066,2196
+Portugal,32,week,1935.6,2090,2089,2100
+Portugal,33,week,1821.2,1941,2129,2066
+Portugal,34,week,1911.8,2014,2095,2050
+Portugal,35,week,1790.4,2078,2083,2054
+Portugal,36,week,1844,2061,1994,2048
+Portugal,37,week,1786.6,2239,1923,2091
+Portugal,38,week,1818.6,2127,2034,2120
+Portugal,39,week,1860.6,1891,2016,1921
+Portugal,40,week,1908.8,2142,2130,2138
+Portugal,41,week,1868.6,2157,2140,2144
+Portugal,42,week,1938.2,2216,2051,2106
+Portugal,43,week,1982.4,2228,2187,2196
+Portugal,44,week,1983.4,2474,2135,2236
+Portugal,45,week,2028.2,2562,2425,2336
+Portugal,46,week,2076.6,2738,2470,2353
+Portugal,47,week,2116.2,2708,2568,2513
+Portugal,48,week,2198.8,2701,2741,2663
+Portugal,49,week,2238.8,2853,2628,2836
+Portugal,50,week,2280.4,3031,2504,2922
+Portugal,51,week,2396.6,2923,2596,2729
+Portugal,52,week,2545.8,2801,2539,2712
+Portugal,53,week,2331,3162,,
+Qatar,1,month,197.6,192,212,292
+Qatar,2,month,188.4,198,178,228
+Qatar,3,month,192.6,221,250,224
+Qatar,4,month,189.4,166,395,218
+Qatar,5,month,202.2,238,273,204
+Qatar,6,month,186.8,303,229,178
+Qatar,7,month,179.4,269,209,213
+Qatar,8,month,182.2,209,221,229
+Qatar,9,month,185.6,216,168,230
+Qatar,10,month,193.4,226,215,221
+Qatar,11,month,201.2,168,203,226
+Qatar,12,month,209.8,221,221,226
+Romania,1,week,5929.6,5346,6788,5841
+Romania,2,week,5904.6,5376,6531,5829
+Romania,3,week,5849.8,5419,6986,6038
+Romania,4,week,5819,5350,6339,6615
+Romania,5,week,5819.4,5432,6287,7408
+Romania,6,week,5607.2,5433,5952,7746
+Romania,7,week,5632,5385,5971,7689
+Romania,8,week,5657.6,5211,5967,6934
+Romania,9,week,5658.6,5341,6247,6390
+Romania,10,week,5522.8,5182,6410,6103
+Romania,11,week,5442.6,5097,6864,5678
+Romania,12,week,5355,5032,7142,5642
+Romania,13,week,5289,5180,7225,5859
+Romania,14,week,5207.8,5190,7193,5344
+Romania,15,week,5111.6,5237,7152,5281
+Romania,16,week,5044.8,5126,6782,4964
+Romania,17,week,4923.6,5092,6496,5047
+Romania,18,week,4926,4861,5891,4728
+Romania,19,week,4719.2,4817,5605,4839
+Romania,20,week,4659.2,4870,5303,4611
+Romania,21,week,4699.8,4560,4974,4393
+Romania,22,week,4636.4,4559,4847,4548
+Romania,23,week,4672.2,4910,4876,4332
+Romania,24,week,4710.4,5079,4662,4277
+Romania,25,week,4819.4,4677,5527,4451
+Romania,26,week,4594.8,4827,4818,4712
+Romania,27,week,4492.2,5288,4686,4502
+Romania,28,week,4509,4900,4948,4294
+Romania,29,week,4427.8,4727,4639,4770
+Romania,30,week,4645.8,4951,5007,5191
+Romania,31,week,4706,5560,4863,5076
+Romania,32,week,4525.4,5318,4511,4932
+Romania,33,week,4493.6,5272,4681,5142
+Romania,34,week,4380.4,5169,4600,5012
+Romania,35,week,4403.8,5219,4686,4663
+Romania,36,week,4385.2,5074,5337,4494
+Romania,37,week,4366.2,5024,5977,4418
+Romania,38,week,4396.6,5067,6364,4589
+Romania,39,week,4545.8,5050,7471,4861
+Romania,40,week,4830.6,5382,9448,4675
+Romania,41,week,4897,5796,10830,4745
+Romania,42,week,5036,6215,11641,4861
+Romania,43,week,4957.4,6512,11351,4689
+Romania,44,week,5014.8,7010,10808,4650
+Romania,45,week,4999,7754,8909,4576
+Romania,46,week,5007,7992,7957,4935
+Romania,47,week,5048.8,8372,6989,4812
+Romania,48,week,5070.4,8515,6273,4650
+Romania,49,week,5179.4,8602,5956,5062
+Romania,50,week,5272,8172,5754,4932
+Romania,51,week,5376.8,7425,5885,5083
+Romania,52,week,5531.6,7425,5748,3879
+Romania,53,week,5361,7047,,
+Russia,1,month,173609.84,161007.1,222794.4,192952
+Russia,2,month,150606.3,147290.4,170499.6,190628
+Russia,3,month,162913.72,154923,177020.9,201072
+Russia,4,month,154252.3,152500.1,163090.9,146601
+Russia,5,month,157469.22,173281.8,171291.7,147057
+Russia,6,month,151005.2,168436.1,188462.3,140730
+Russia,7,month,150230.54,176449.7,218472.9,131763
+Russia,8,month,148170.8,161629.9,208832.3,146524
+Russia,9,month,146076.1,165758.5,204029.6,150974
+Russia,10,month,153753.08,215817.7,266343,145406
+Russia,11,month,146389.72,228543.6,242330.2,147531
+Russia,12,month,156102.82,232948,208426.2,164540
+Saint Kitts and Nevis,1,month,36.5,29,50,70
+Saint Kitts and Nevis,2,month,33.5,31,27,40
+Saint Kitts and Nevis,3,month,36.25,34,27,39
+Saint Kitts and Nevis,4,month,32.5,27,28,35
+Saint Kitts and Nevis,5,month,27.5,35,29,29
+Saint Kitts and Nevis,6,month,29.5,37,32,38
+Saint Kitts and Nevis,7,month,33.25,38,32,33
+Saint Kitts and Nevis,8,month,32.5,28,42,32
+Saint Kitts and Nevis,9,month,35,29,59,30
+Saint Kitts and Nevis,10,month,32.75,32,51,
+Saint Kitts and Nevis,11,month,26.5,26,39,
+Saint Kitts and Nevis,12,month,31.25,31,38,
+Saint Vincent and the Grenadines,1,month,77.6,93,85,
+Saint Vincent and the Grenadines,2,month,70.2,76,94,
+Saint Vincent and the Grenadines,3,month,77,90,68,
+Saint Vincent and the Grenadines,4,month,75.2,87,85,
+Saint Vincent and the Grenadines,5,month,71.8,97,87,
+Saint Vincent and the Grenadines,6,month,72.4,82,76,
+Saint Vincent and the Grenadines,7,month,87.6,84,90,
+Saint Vincent and the Grenadines,8,month,85.8,91,96,
+Saint Vincent and the Grenadines,9,month,87.8,94,109,
+Saint Vincent and the Grenadines,10,month,78,85,161,
+Saint Vincent and the Grenadines,11,month,76,90,102,
+Saint Vincent and the Grenadines,12,month,85.4,80,131,
+San Marino,1,month,23.8,23,22,33
+San Marino,2,month,22.2,26,32,22
+San Marino,3,month,21.2,50,36,19
+San Marino,4,month,22.6,31,28,19
+San Marino,5,month,20.2,25,21,23
+San Marino,6,month,21.4,29,20,22
+San Marino,7,month,19,24,24,22
+San Marino,8,month,20.4,21,22,24
+San Marino,9,month,19.8,18,23,15
+San Marino,10,month,19.2,25,26,25
+San Marino,11,month,21,26,23,19
+San Marino,12,month,21.4,45,35,20
+Serbia,1,month,10481.2,9886,10417,11392
+Serbia,2,month,9217.4,9205,10166,13094
+Serbia,3,month,9234,9050,12952,11250
+Serbia,4,month,8465,8710,12659,8479
+Serbia,5,month,8198.8,7943,10525,8387
+Serbia,6,month,7772.2,8222,9098,7744
+Serbia,7,month,7978.2,9959,8417,7848
+Serbia,8,month,7818.2,8626,8447,9158
+Serbia,9,month,7447.4,7646,11032,8390
+Serbia,10,month,8491.8,8580,14666,8454
+Serbia,11,month,8228.2,11914,15113,7930
+Serbia,12,month,8937,17109,12409,8713
+Seychelles,1,month,61.8,65,69,
+Seychelles,2,month,59.2,61,78,
+Seychelles,3,month,62.8,57,74,
+Seychelles,4,month,66.2,59,63,
+Seychelles,5,month,63.6,41,91,
+Seychelles,6,month,63.8,52,108,
+Seychelles,7,month,64.2,56,98,
+Seychelles,8,month,61.2,50,66,
+Seychelles,9,month,58.8,54,72,
+Seychelles,10,month,70,43,72,
+Seychelles,11,month,66.8,66,59,
+Seychelles,12,month,63.8,64,75,
+Singapore,1,month,1776.4,2091,1871,1982
+Singapore,2,month,1588.6,1762,1769,2135
+Singapore,3,month,1770.8,1891,1924,2649
+Singapore,4,month,1673.4,1913,1938,2138
+Singapore,5,month,1790.2,1874,1975,2249
+Singapore,6,month,1764,1761,1937,2110
+Singapore,7,month,1815.4,1759,1998,2391
+Singapore,8,month,1763.4,1860,1967,2346
+Singapore,9,month,1617,1751,1965,2125
+Singapore,10,month,1741.2,1770,2492,2371
+Singapore,11,month,1647,1771,2349,2163
+Singapore,12,month,1755,1851,2107,2232
+Slovakia,1,week,1158.8,1147,2089,1413
+Slovakia,2,week,1157.8,1109,2125,1270
+Slovakia,3,week,1200,1086,1995,1221
+Slovakia,4,week,1160.4,1107,1971,1175
+Slovakia,5,week,1221,1159,1987,1253
+Slovakia,6,week,1193.4,1101,2081,1220
+Slovakia,7,week,1188.4,1181,2009,1365
+Slovakia,8,week,1190,1088,1963,1314
+Slovakia,9,week,1191.6,1152,1869,1393
+Slovakia,10,week,1146.4,1131,1784,1365
+Slovakia,11,week,1101.8,1122,1677,1363
+Slovakia,12,week,1079.8,1187,1584,1300
+Slovakia,13,week,1051.4,1054,1467,1264
+Slovakia,14,week,1016,1081,1333,1207
+Slovakia,15,week,1045.6,1003,1309,1087
+Slovakia,16,week,1004.8,957,1253,1104
+Slovakia,17,week,1008.8,977,1166,1119
+Slovakia,18,week,979.2,970,1133,1068
+Slovakia,19,week,954.4,1005,1126,1017
+Slovakia,20,week,944.2,979,999,975
+Slovakia,21,week,960.6,953,962,965
+Slovakia,22,week,953.6,913,1001,1061
+Slovakia,23,week,922.2,963,1000,1018
+Slovakia,24,week,972.2,981,1048,931
+Slovakia,25,week,955.2,899,1090,1057
+Slovakia,26,week,926.6,937,968,1102
+Slovakia,27,week,937.4,982,988,971
+Slovakia,28,week,942,973,999,992
+Slovakia,29,week,948.4,948,896,1168
+Slovakia,30,week,1023.4,957,1027,1085
+Slovakia,31,week,976,985,953,1066
+Slovakia,32,week,964.2,1065,974,1074
+Slovakia,33,week,960.8,963,1011,1115
+Slovakia,34,week,934.8,960,893,1081
+Slovakia,35,week,954.2,1023,996,980
+Slovakia,36,week,945.6,969,1041,1014
+Slovakia,37,week,949.6,1034,1142,957
+Slovakia,38,week,978.2,963,1154,1052
+Slovakia,39,week,991.2,1042,1103,1140
+Slovakia,40,week,989.4,1135,1214,1114
+Slovakia,41,week,983.4,1071,1202,1099
+Slovakia,42,week,1010.4,1204,1309,1105
+Slovakia,43,week,980.8,1276,1450,1128
+Slovakia,44,week,999.8,1362,1505,1114
+Slovakia,45,week,1006.8,1437,1675,1028
+Slovakia,46,week,1005.6,1411,1854,1051
+Slovakia,47,week,1008.4,1371,1923,1126
+Slovakia,48,week,1008.2,1425,1922,1004
+Slovakia,49,week,976.2,1458,1897,1120
+Slovakia,50,week,1011.6,1553,1758,1238
+Slovakia,51,week,1087,1616,1596,1370
+Slovakia,52,week,1092.8,1793,1493,1287
+Slovakia,53,week,1034,2047,,
+Slovenia,1,week,441.6,420,606,473
+Slovenia,2,week,456.2,426,624,493
+Slovenia,3,week,465.8,430,591,463
+Slovenia,4,week,475.4,455,530,483
+Slovenia,5,week,487.4,476,526,592
+Slovenia,6,week,459,449,435,544
+Slovenia,7,week,462,502,428,562
+Slovenia,8,week,453.4,441,470,465
+Slovenia,9,week,459.6,431,442,487
+Slovenia,10,week,409,425,444,477
+Slovenia,11,week,439.4,437,444,461
+Slovenia,12,week,418.4,443,424,432
+Slovenia,13,week,425.2,390,442,435
+Slovenia,14,week,401.4,383,406,429
+Slovenia,15,week,368.8,424,421,430
+Slovenia,16,week,399.2,433,458,440
+Slovenia,17,week,379.6,392,383,411
+Slovenia,18,week,364.2,356,390,384
+Slovenia,19,week,360.6,381,401,395
+Slovenia,20,week,354.8,354,408,391
+Slovenia,21,week,353.6,405,390,366
+Slovenia,22,week,349.6,330,414,380
+Slovenia,23,week,346.4,345,389,364
+Slovenia,24,week,339.6,377,396,369
+Slovenia,25,week,345.4,374,381,374
+Slovenia,26,week,325.2,408,383,411
+Slovenia,27,week,354.2,371,342,380
+Slovenia,28,week,344,328,339,380
+Slovenia,29,week,354.4,352,332,459
+Slovenia,30,week,366.8,369,375,380
+Slovenia,31,week,352.2,393,330,417
+Slovenia,32,week,349.6,370,353,433
+Slovenia,33,week,352.8,392,327,403
+Slovenia,34,week,359.2,353,334,382
+Slovenia,35,week,359,341,400,328
+Slovenia,36,week,335.4,370,418,354
+Slovenia,37,week,358.2,393,405,392
+Slovenia,38,week,361.2,421,423,356
+Slovenia,39,week,350.4,354,432,409
+Slovenia,40,week,375.4,412,412,416
+Slovenia,41,week,381.8,415,453,410
+Slovenia,42,week,371.8,441,471,391
+Slovenia,43,week,382.6,514,467,394
+Slovenia,44,week,372,595,546,408
+Slovenia,45,week,373.2,624,585,384
+Slovenia,46,week,389.2,739,587,445
+Slovenia,47,week,372.2,731,542,458
+Slovenia,48,week,372.4,792,589,438
+Slovenia,49,week,401.2,801,528,479
+Slovenia,50,week,407.2,784,500,494
+Slovenia,51,week,406.6,717,479,566
+Slovenia,52,week,410.4,686,493,479
+Slovenia,53,week,401,660,,
+South Africa,1,week,10311.6,10458,23511,12456
+South Africa,2,week,9391.2,9678,24955,11364
+South Africa,3,week,9172.6,9256,21809,10369
+South Africa,4,week,9026,8626,15820,9837
+South Africa,5,week,9352.8,9417,13833,10226
+South Africa,6,week,9465.8,10095,12182,9944
+South Africa,7,week,9128.4,9281,11441,9603
+South Africa,8,week,9080.2,9318,10722,9762
+South Africa,9,week,9526.8,9020,10965,10114
+South Africa,10,week,9465.8,9840,10922,10099
+South Africa,11,week,9247.2,9401,10170,9688
+South Africa,12,week,9136.2,9119,10173,9831
+South Africa,13,week,9524,9045,10623,10102
+South Africa,14,week,9794.6,8772,10848,10111
+South Africa,15,week,9557.4,8844,10812,10978
+South Africa,16,week,9514,8991,10637,10427
+South Africa,17,week,9766.6,9120,10930,10757
+South Africa,18,week,10306,9238,11474,11558
+South Africa,19,week,10298.6,9485,11723,11604
+South Africa,20,week,10378.2,9607,11775,11150
+South Africa,21,week,10267.4,9798,12298,11717
+South Africa,22,week,10964.6,9935,13574,12055
+South Africa,23,week,11614.8,10507,14340,12354
+South Africa,24,week,11634.2,11010,13948,12458
+South Africa,25,week,11461.4,12399,15732,11950
+South Africa,26,week,11536,12988,17352,12291
+South Africa,27,week,11746,13966,18885,11931
+South Africa,28,week,11196.2,15242,21374,11196
+South Africa,29,week,10994.8,16711,20408,10860
+South Africa,30,week,10693,16559,19075,10858
+South Africa,31,week,11188.8,15637,17450,11177
+South Africa,32,week,11057.6,14192,15650,10860
+South Africa,33,week,10769.6,12735,15788,10762
+South Africa,34,week,10570.4,12389,14887,10865
+South Africa,35,week,10549.6,11556,14706,10800
+South Africa,36,week,10823.6,11381,13691,11069
+South Africa,37,week,10308.2,10487,12181,10427
+South Africa,38,week,10204,10010,11801,10205
+South Africa,39,week,10099.2,10261,11161,10325
+South Africa,40,week,10514,9941,11159,10984
+South Africa,41,week,9990.2,10521,11036,10288
+South Africa,42,week,9676,10575,10459,9566
+South Africa,43,week,9705,10452,10054,9248
+South Africa,44,week,10060.6,10299,11146,9921
+South Africa,45,week,9832.6,10480,10984,9778
+South Africa,46,week,9556.4,10852,10367,9756
+South Africa,47,week,9428.2,10743,10173,9533
+South Africa,48,week,10088.8,10603,11506,9889
+South Africa,49,week,10147.8,11881,11317,9969
+South Africa,50,week,9732,12805,11996,
+South Africa,51,week,10375,14323,13345,
+South Africa,52,week,10318.6,17529,13604,
+South Africa,53,week,,20235,,
+South Korea,1,week,6089.8,6438,6217,6834
+South Korea,2,week,6125.4,6320,6332,6722
+South Korea,3,week,6087.2,6403,6189,6698
+South Korea,4,week,6010,6490,5838,6713
+South Korea,5,week,6014.4,6434,6073,6614
+South Korea,6,week,5854,6431,5779,7021
+South Korea,7,week,5855.4,6161,6076,7044
+South Korea,8,week,5900.6,5970,5908,7808
+South Korea,9,week,5870,6012,5950,8848
+South Korea,10,week,5797.8,5961,6100,9642
+South Korea,11,week,5715.6,5933,6036,10475
+South Korea,12,week,5612.4,5838,5896,10542
+South Korea,13,week,5595,5708,5920,10285
+South Korea,14,week,5601.4,5649,5836,9640
+South Korea,15,week,5447.6,5874,5937,8873
+South Korea,16,week,5517.2,5745,5822,7910
+South Korea,17,week,5365.4,5578,5767,7145
+South Korea,18,week,5465.6,5982,5859,6779
+South Korea,19,week,5353.2,5529,5943,6738
+South Korea,20,week,5373.2,5437,5559,6325
+South Korea,21,week,5268.8,5496,5780,6263
+South Korea,22,week,5312.4,5390,5659,6004
+South Korea,23,week,5187,5636,5707,5710
+South Korea,24,week,5126,5540,5639,5742
+South Korea,25,week,5170.4,5440,5724,5675
+South Korea,26,week,5113.4,5435,5707,5723
+South Korea,27,week,5094.2,5422,5690,5819
+South Korea,28,week,5053.4,5210,5710,5760
+South Korea,29,week,5045.4,5437,5879,5576
+South Korea,30,week,5172.8,5522,6012,6017
+South Korea,31,week,5269,5507,5902,
+South Korea,32,week,5247.6,5421,5820,
+South Korea,33,week,5103.2,5690,5853,
+South Korea,34,week,5144.2,5954,5822,
+South Korea,35,week,5131.6,5814,5844,
+South Korea,36,week,5222.2,5617,5984,
+South Korea,37,week,5199,5630,5968,
+South Korea,38,week,5232.2,5733,6016,
+South Korea,39,week,5319.6,5763,6099,
+South Korea,40,week,5432.8,5776,6099,
+South Korea,41,week,5423.4,5951,6117,
+South Korea,42,week,5567.8,5884,6358,
+South Korea,43,week,5544.4,6043,6562,
+South Korea,44,week,5563.6,6081,6473,
+South Korea,45,week,5591.8,6062,6490,
+South Korea,46,week,5579.2,6029,6667,
+South Korea,47,week,5578,5943,6682,
+South Korea,48,week,5653.6,5802,6955,
+South Korea,49,week,5663,6161,7067,
+South Korea,50,week,5785.2,6027,7236,
+South Korea,51,week,5888.8,5922,7234,
+South Korea,52,week,5927.8,6138,7105,
+South Korea,53,week,5366,6161,,
+Spain,1,week,9864,8710,10470,9932
+Spain,2,week,10286,9398,11858,10687
+Spain,3,week,10464,9917,12950,10849
+Spain,4,week,10129.8,9954,12701,11221
+Spain,5,week,10000,9974,11571,10908
+Spain,6,week,9719.8,9192,10368,10048
+Spain,7,week,9564.2,8839,9488,9285
+Spain,8,week,9358.4,8413,9032,8954
+Spain,9,week,9118.6,8379,8542,8639
+Spain,10,week,8817,8465,8318,8507
+Spain,11,week,8513.8,9481,8077,8536
+Spain,12,week,8237.6,12843,8189,8539
+Spain,13,week,8273.4,19828,8195,8511
+Spain,14,week,8119,20967,8080,8717
+Spain,15,week,7988.6,17325,7947,8699
+Spain,16,week,7786.2,13244,8084,8402
+Spain,17,week,7683.8,10452,7867,8505
+Spain,18,week,7518.8,9008,8062,8489
+Spain,19,week,7557.2,8458,7738,8819
+Spain,20,week,7523.4,7536,7606,8906
+Spain,21,week,7433.4,7643,7437,8231
+Spain,22,week,7273.4,7620,7353,8133
+Spain,23,week,7324.8,7144,7710,8187
+Spain,24,week,7256.2,6849,7799,9361
+Spain,25,week,7447.4,7032,7285,8577
+Spain,26,week,7372.2,7512,7557,8589
+Spain,27,week,7632.4,7635,7544,9104
+Spain,28,week,7563.4,7732,7563,10877
+Spain,29,week,7457.4,7562,8481,10972
+Spain,30,week,7364.4,7827,8362,9907
+Spain,31,week,7447.4,8589,8642,9426
+Spain,32,week,7391.6,8394,8860,9310
+Spain,33,week,7123.4,8170,8766,8084
+Spain,34,week,7027.8,7886,8214,8141
+Spain,35,week,6978.4,7954,7936,7742
+Spain,36,week,6859.2,7777,7895,7650
+Spain,37,week,6760.8,7998,7504,7631
+Spain,38,week,6962.6,8168,7430,7426
+Spain,39,week,7111.6,8064,7548,7545
+Spain,40,week,7092.2,8188,7526,7982
+Spain,41,week,7214.8,8593,7586,7802
+Spain,42,week,7272,8594,7744,8192
+Spain,43,week,7391.4,9470,8179,8001
+Spain,44,week,7527.8,9596,7821,7694
+Spain,45,week,7701.6,10316,8717,8245
+Spain,46,week,7899.8,10030,8793,8443
+Spain,47,week,7961,9695,8846,8542
+Spain,48,week,8136.8,9534,9386,9051
+Spain,49,week,8179.2,9541,9017,9523
+Spain,50,week,8511.6,9534,9503,9543
+Spain,51,week,8754,9287,9780,9804
+Spain,52,week,9056.2,9015,9845,9717
+Spain,53,week,8427,9524,,
+Suriname,1,month,352.2,329,383,
+Suriname,2,month,281.8,348,301,
+Suriname,3,month,334,306,305,
+Suriname,4,month,289.6,283,318,
+Suriname,5,month,306,276,497,
+Suriname,6,month,282,327,648,
+Suriname,7,month,312.6,337,541,
+Suriname,8,month,323.4,396,447,
+Suriname,9,month,322.8,362,609,
+Suriname,10,month,312,349,659,
+Suriname,11,month,293,308,446,
+Suriname,12,month,286.6,350,381,
+Sweden,1,week,1975.4,1822,2306,2030
+Sweden,2,week,1952.6,1891,2289,1997
+Sweden,3,week,1947.4,1831,2243,1947
+Sweden,4,week,1923.6,1730,2066,2024
+Sweden,5,week,1886.6,1848,1851,2129
+Sweden,6,week,1890.2,1728,1859,1953
+Sweden,7,week,1927.4,1824,1834,2027
+Sweden,8,week,1991.4,1777,1804,1932
+Sweden,9,week,1977,1778,1656,1892
+Sweden,10,week,1915,1826,1803,1751
+Sweden,11,week,1899.8,1730,1681,1741
+Sweden,12,week,1798,1865,1714,1709
+Sweden,13,week,1820.6,2040,1668,1703
+Sweden,14,week,1803.8,2383,1703,1740
+Sweden,15,week,1747,2569,1657,1605
+Sweden,16,week,1761.2,2525,1688,1597
+Sweden,17,week,1695.4,2269,1616,1590
+Sweden,18,week,1649,2239,1675,1628
+Sweden,19,week,1637.2,2182,1657,1605
+Sweden,20,week,1572,1989,1546,1651
+Sweden,21,week,1562.4,1918,1510,1531
+Sweden,22,week,1562,1656,1509,1558
+Sweden,23,week,1537,1751,1508,1522
+Sweden,24,week,1525,1721,1467,1559
+Sweden,25,week,1536.4,1670,1490,1609
+Sweden,26,week,1559.6,1674,1485,1631
+Sweden,27,week,1579.4,1565,1533,1601
+Sweden,28,week,1566.6,1571,1557,1489
+Sweden,29,week,1572.6,1513,1514,1658
+Sweden,30,week,1561.6,1540,1588,1626
+Sweden,31,week,1582.4,1547,1477,1658
+Sweden,32,week,1529.6,1571,1584,1711
+Sweden,33,week,1527.6,1517,1540,1701
+Sweden,34,week,1538.8,1578,1557,1611
+Sweden,35,week,1587.6,1486,1568,1519
+Sweden,36,week,1571.6,1517,1604,1578
+Sweden,37,week,1550.6,1527,1650,1695
+Sweden,38,week,1568.8,1513,1621,1697
+Sweden,39,week,1593.4,1563,1664,1733
+Sweden,40,week,1640.2,1547,1599,1725
+Sweden,41,week,1650.8,1543,1638,1666
+Sweden,42,week,1627.2,1612,1679,1611
+Sweden,43,week,1670.4,1570,1674,1635
+Sweden,44,week,1695.4,1691,1773,1597
+Sweden,45,week,1663,1673,1716,1665
+Sweden,46,week,1689.8,1868,1726,1732
+Sweden,47,week,1665.2,1989,1679,1809
+Sweden,48,week,1737.8,1959,1761,1771
+Sweden,49,week,1786,2148,1873,1938
+Sweden,50,week,1752.6,2117,1850,2187
+Sweden,51,week,1800.6,2299,1881,2302
+Sweden,52,week,1830.8,2316,1975,2305
+Sweden,53,week,1914,2374,,
+Switzerland,1,week,1468.6,1314,1907,1550
+Switzerland,2,week,1479.6,1366,1791,1522
+Switzerland,3,week,1489,1418,1761,1494
+Switzerland,4,week,1457.6,1417,1611,1480
+Switzerland,5,week,1467,1426,1439,1478
+Switzerland,6,week,1502,1396,1410,1471
+Switzerland,7,week,1506.6,1384,1299,1580
+Switzerland,8,week,1508,1369,1312,1447
+Switzerland,9,week,1521.4,1349,1281,1478
+Switzerland,10,week,1447.2,1357,1287,1493
+Switzerland,11,week,1388.4,1396,1229,1557
+Switzerland,12,week,1339.8,1530,1271,1566
+Switzerland,13,week,1283,1630,1244,1558
+Switzerland,14,week,1299.8,1879,1259,1470
+Switzerland,15,week,1235.2,1647,1253,1350
+Switzerland,16,week,1228.2,1576,1251,1378
+Switzerland,17,week,1198.6,1377,1276,1296
+Switzerland,18,week,1227.8,1250,1219,1269
+Switzerland,19,week,1196,1184,1259,1241
+Switzerland,20,week,1174,1153,1191,1291
+Switzerland,21,week,1207.2,1190,1209,1214
+Switzerland,22,week,1155.8,1102,1217,1207
+Switzerland,23,week,1162.4,1171,1111,1217
+Switzerland,24,week,1138.4,1152,1201,1359
+Switzerland,25,week,1174,1149,1191,1387
+Switzerland,26,week,1191.8,1180,1190,1352
+Switzerland,27,week,1191,1180,1171,1344
+Switzerland,28,week,1182.4,1174,1184,1364
+Switzerland,29,week,1222,1114,1220,1490
+Switzerland,30,week,1191.6,1156,1166,1507
+Switzerland,31,week,1171.2,1280,1170,1368
+Switzerland,32,week,1164.8,1172,1318,1344
+Switzerland,33,week,1163.6,1230,1255,1323
+Switzerland,34,week,1177.4,1219,1241,1334
+Switzerland,35,week,1165.2,1173,1337,1234
+Switzerland,36,week,1167.6,1167,1339,1267
+Switzerland,37,week,1192.6,1259,1347,1305
+Switzerland,38,week,1209.6,1243,1309,1226
+Switzerland,39,week,1218.4,1255,1320,1476
+Switzerland,40,week,1255,1243,1249,1426
+Switzerland,41,week,1243.6,1334,1313,1456
+Switzerland,42,week,1243.2,1289,1337,1370
+Switzerland,43,week,1237.4,1492,1375,1446
+Switzerland,44,week,1249.6,1694,1319,1399
+Switzerland,45,week,1258.8,2068,1430,1407
+Switzerland,46,week,1283.2,2149,1516,1440
+Switzerland,47,week,1275.8,2157,1591,1493
+Switzerland,48,week,1335.6,2123,1719,1567
+Switzerland,49,week,1319.6,2179,1793,1631
+Switzerland,50,week,1324.2,2215,1712,1689
+Switzerland,51,week,1366.6,2187,1589,1784
+Switzerland,52,week,1387.2,2121,1638,1682
+Switzerland,53,week,1318,1987,,
+Taiwan,1,week,3358,3494,3860,
+Taiwan,2,week,3409.4,3528,4222,
+Taiwan,3,week,3532.4,3572,4230,
+Taiwan,4,week,3586.2,3663,3753,
+Taiwan,5,week,3663.8,3862,3719,
+Taiwan,6,week,3746.8,3993,3600,
+Taiwan,7,week,3832,3860,3728,
+Taiwan,8,week,3709.2,3655,3702,
+Taiwan,9,week,3600.6,3556,3446,
+Taiwan,10,week,3525.6,3579,3369,
+Taiwan,11,week,3485.4,3202,3363,
+Taiwan,12,week,3438.8,3485,3370,
+Taiwan,13,week,3423.6,3287,3471,
+Taiwan,14,week,3369.8,3292,3287,
+Taiwan,15,week,3301.6,3356,3325,
+Taiwan,16,week,3252.4,3553,3323,
+Taiwan,17,week,3162.6,3180,3222,
+Taiwan,18,week,3180.4,3301,3336,
+Taiwan,19,week,3095.8,3278,3653,
+Taiwan,20,week,3145.2,3165,3919,
+Taiwan,21,week,3119.2,2961,3929,
+Taiwan,22,week,3161.2,3074,3865,
+Taiwan,23,week,3141.2,3149,3687,
+Taiwan,24,week,3181.8,3148,3736,
+Taiwan,25,week,3283.6,3188,3583,
+Taiwan,26,week,3257.8,3260,3596,
+Taiwan,27,week,3300.6,3245,3583,
+Taiwan,28,week,3248,3058,3529,
+Taiwan,29,week,3248.2,3241,3401,
+Taiwan,30,week,3257.2,3215,3315,
+Taiwan,31,week,3197.4,3079,3440,
+Taiwan,32,week,3205.4,3041,3277,
+Taiwan,33,week,3117.2,3054,3349,
+Taiwan,34,week,3121.6,3132,3345,
+Taiwan,35,week,3081,2972,3323,
+Taiwan,36,week,3157,3125,3434,
+Taiwan,37,week,3172.2,3097,3427,
+Taiwan,38,week,3155.2,3144,3323,
+Taiwan,39,week,3158.8,3183,3445,
+Taiwan,40,week,3156.4,3105,3430,
+Taiwan,41,week,3127.4,3158,3339,
+Taiwan,42,week,3128.4,3128,3308,
+Taiwan,43,week,3185.6,3243,3342,
+Taiwan,44,week,3177.8,3316,3444,
+Taiwan,45,week,3173.8,3194,3420,
+Taiwan,46,week,3126.2,3263,3573,
+Taiwan,47,week,3087.8,3280,3385,
+Taiwan,48,week,3171.8,3233,3492,
+Taiwan,49,week,3284,3287,3760,
+Taiwan,50,week,3389,3413,3633,
+Taiwan,51,week,3439.2,3507,3581,
+Taiwan,52,week,3372.4,3473,3672.2,
+Taiwan,53,week,3293,3651,,
+Tajikistan,1,month,3184,3358,3273,
+Tajikistan,2,month,2687.6,2904,2449,
+Tajikistan,3,month,2889.8,2895,2884,
+Tajikistan,4,month,2663.4,2870,2633,
+Tajikistan,5,month,2661,5067,2677,
+Tajikistan,6,month,2613,3234,3037,
+Tajikistan,7,month,2802.2,3128,6268,
+Tajikistan,8,month,2553.6,3368,4566,
+Tajikistan,9,month,2394.8,3560,2659,
+Tajikistan,10,month,2636.8,4818,2829,
+Tajikistan,11,month,2778,4121,3037,
+Tajikistan,12,month,3327.6,3303,2800,
+Thailand,1,month,43235.4,47125,46685,48377
+Thailand,2,month,38251.6,39758,38228,42195
+Thailand,3,month,40038.4,44304,46748,53256
+Thailand,4,month,41775.2,40057,42435,55398
+Thailand,5,month,40454,39674,45387,51273
+Thailand,6,month,37016.8,39479,43522,47056
+Thailand,7,month,39267.2,39817,48944,44147
+Thailand,8,month,40162.4,40999,57125,54270
+Thailand,9,month,38552.2,39361,48129,47755
+Thailand,10,month,41848.8,41640,46448,51160
+Thailand,11,month,39524.4,43545,48892,49543
+Thailand,12,month,40401.2,45679,51107,51535
+Tunisia,1,month,7242.2,7465,9899,8047
+Tunisia,2,month,6463,6950,6842,7883
+Tunisia,3,month,6292.4,6297,6967,
+Tunisia,4,month,5126.2,5038,8459,
+Tunisia,5,month,4845,4759,7794,
+Tunisia,6,month,4622.4,4717,8909,
+Tunisia,7,month,5278.4,5218,14221,
+Tunisia,8,month,5270.8,5855,11681,
+Tunisia,9,month,4818,5394,6867,
+Tunisia,10,month,5121.6,7635,5668,
+Tunisia,11,month,5416.2,7537,5795,
+Tunisia,12,month,6061,8193,7168,
+Turkey,1,month,42045.2,41999,46913,
+Turkey,2,month,35426,34997,36887,
+Turkey,3,month,36542,37627,43038,
+Turkey,4,month,34199.4,38316,51078,
+Turkey,5,month,34146.6,35060,46144,
+Turkey,6,month,32994.4,33613,37987,
+Turkey,7,month,35147.8,38873,43677,
+Turkey,8,month,34723.4,42703,53274,
+Turkey,9,month,32182,43902,50242,
+Turkey,10,month,34219,42678,51879,
+Turkey,11,month,34558.4,57313,52341,
+Turkey,12,month,37324.6,60857,52134,
+Ukraine,1,month,57144.2,53610,57721,57248
+Ukraine,2,month,48311.8,47128,51391,
+Ukraine,3,month,52085.6,48326,64938,
+Ukraine,4,month,49104,46223,68621,
+Ukraine,5,month,51095.8,44680,57293,
+Ukraine,6,month,44957.8,47043,49077,
+Ukraine,7,month,45924.4,47297,46851,
+Ukraine,8,month,44229.6,44008,43538,
+Ukraine,9,month,42430.4,48372,48425,
+Ukraine,10,month,49842.2,59047,74282,
+Ukraine,11,month,48575.4,63438,87862,
+Ukraine,12,month,50564.4,67663,64264,
+United Arab Emirates,1,month,816.5,741,,
+United Arab Emirates,2,month,772,666,,
+United Arab Emirates,3,month,772,651,,
+United Arab Emirates,4,month,712.5,1064,,
+United Arab Emirates,5,month,710,1598,,
+United Arab Emirates,6,month,719.5,1061,,
+United Arab Emirates,7,month,716.5,782,,
+United Arab Emirates,8,month,713,753,,
+United Arab Emirates,9,month,717.5,722,,
+United Arab Emirates,10,month,717.5,720,,
+United Arab Emirates,11,month,760,817,,
+United Arab Emirates,12,month,773,782,,
+United Kingdom,1,week,13803.6,13767,20039,13909
+United Kingdom,2,week,15781,16018,20035,15273
+United Kingdom,3,week,14983,14723,20709,14440
+United Kingdom,4,week,14455.2,13426,20489,13998
+United Kingdom,5,week,13836.2,13123,19160,13485
+United Kingdom,6,week,13505.2,12532,17148,13171
+United Kingdom,7,week,13200.8,12416,15583,12748
+United Kingdom,8,week,13148.2,12299,14290,12667
+United Kingdom,9,week,12677.6,12333,13115,12755
+United Kingdom,10,week,13063.6,12412,12471,12787
+United Kingdom,11,week,12684.6,12539,11678,12495
+United Kingdom,12,week,12003.8,12113,11449,12358
+United Kingdom,13,week,11547.6,12508,9461,11450
+United Kingdom,14,week,11679,18565,10401,12278
+United Kingdom,15,week,11916.6,20929,10474,11305
+United Kingdom,16,week,11848,24691,11358,12196
+United Kingdom,17,week,11842.6,24303,11023,14074
+United Kingdom,18,week,11310.8,20058,9210,11315
+United Kingdom,19,week,10884.6,14428,11566,13614
+United Kingdom,20,week,11546.4,16390,11221,13046
+United Kingdom,21,week,11276.4,13839,10991,12289
+United Kingdom,22,week,9445.8,11268,9115,7893
+United Kingdom,23,week,11321.8,12106,11619,13291
+United Kingdom,24,week,10700.2,11302,10826,12328
+United Kingdom,25,week,10696.2,10694,10064,12294
+United Kingdom,26,week,10601.6,10282,10175,11841
+United Kingdom,27,week,10480.4,10412,11137,11649
+United Kingdom,28,week,10508.4,9942,11055,11948
+United Kingdom,29,week,10356.4,10096,11176,12456
+United Kingdom,30,week,10309.4,10160,11583,12547
+United Kingdom,31,week,10305,10262,11602,12159
+United Kingdom,32,week,10359.8,10236,11802,11794
+United Kingdom,33,week,10343.2,10598,11527,12477
+United Kingdom,34,week,10431.2,10990,11696,12343
+United Kingdom,35,week,9469.8,10365,10317,10202
+United Kingdom,36,week,10428.6,9023,12542,12196
+United Kingdom,37,week,10608.4,11176,12642,12141
+United Kingdom,38,week,10545,10796,12263,10028
+United Kingdom,39,week,10706.4,10890,12145,12509
+United Kingdom,40,week,10887.8,11469,12505,12814
+United Kingdom,41,week,11184.4,11374,12859,13271
+United Kingdom,42,week,11221.6,11946,12944,13512
+United Kingdom,43,week,11092.2,12317,12649,12874
+United Kingdom,44,week,11250.4,12517,13219,13446
+United Kingdom,45,week,11725.4,13448,13791,13141
+United Kingdom,46,week,11800.8,13998,13755,13256
+United Kingdom,47,week,11817,14291,13166,13114
+United Kingdom,48,week,11798.4,14133,13370,12884
+United Kingdom,49,week,12154.8,13986,13624,13355
+United Kingdom,50,week,12323.8,13942,14122,14070
+United Kingdom,51,week,13155.6,14658,14697,16552
+United Kingdom,52,week,9229.6,13035,9805,10953
+United Kingdom,53,week,8773,11580,,
+United States,1,week,48124.4,60161,87068,79805
+United States,2,week,60962.2,60731,87413,85064
+United States,3,week,59833.2,59358,83675,85643
+United States,4,week,58714,59157,79197,85064
+United States,5,week,58060.2,58829,76512,81181
+United States,6,week,58332.4,59476,71513,77096
+United States,7,week,57820.4,58810,69513,70840
+United States,8,week,57177.8,58907,66739,66022
+United States,9,week,56854,59330,63696,64450
+United States,10,week,57187.4,59692,61859,61838
+United States,11,week,56237,58667,60371,60558
+United States,12,week,55886.8,59212,60811,58580
+United States,13,week,54997.2,63020,58699,58040
+United States,14,week,54935,72287,60994,57786
+United States,15,week,54465.4,79088,59145,57816
+United States,16,week,53627,76801,60254,56759
+United States,17,week,52772.4,73907,59831,57368
+United States,18,week,52741.4,69294,59010,57555
+United States,19,week,52152.2,66811,58466,57977
+United States,20,week,51664.2,64479,58755,57769
+United States,21,week,51195.8,61623,57336,57182
+United States,22,week,51003.6,59680,57457,57681
+United States,23,week,51217.4,58907,57155,58147
+United States,24,week,51010.2,58024,57239,57908
+United States,25,week,50778.6,57994,56924,58415
+United States,26,week,50614.6,58504,57524,58222
+United States,27,week,50904.6,59816,57213,58271
+United States,28,week,50455,61940,57210,58560
+United States,29,week,50293.4,63173,58433,59895
+United States,30,week,50032,64242,60313,58880
+United States,31,week,50174.6,64232,63795,59313
+United States,32,week,50287.8,63713,67043,58733
+United States,33,week,49968.6,63640,69955,58556
+United States,34,week,49907.2,62560,72182,58385
+United States,35,week,50255.4,61103,73519,58202
+United States,36,week,50497.8,60246,73737,58791
+United States,37,week,50738.6,59660,73312,58346
+United States,38,week,50778,59737,72182,58843
+United States,39,week,51021.4,60610,71346,58646
+United States,40,week,51563,59802,69133,59655
+United States,41,week,52032.6,61775,67547,59807
+United States,42,week,52280.4,60638,67062,60176
+United States,43,week,52687.4,62184,66477,60125
+United States,44,week,52822.6,63425,66620,61136
+United States,45,week,53362.6,67586,67460,61115
+United States,46,week,53809,68821,66960,61733
+United States,47,week,54047.4,71670,67967,64670
+United States,48,week,54319.2,73298,70180,65832
+United States,49,week,55317.6,77421,72143,67100
+United States,50,week,56321.6,82003,71333,66438
+United States,51,week,56538.2,82930,72320,67967
+United States,52,week,57333.6,84367,74432,70159
+United States,53,week,52633,87029,,
+Uruguay,1,month,2580,2546,3074,3766
+Uruguay,2,month,2287.2,2427,2541,3650
+Uruguay,3,month,2563,2601,3065,3026
+Uruguay,4,month,2494.8,2511,4442,2891
+Uruguay,5,month,2893.8,2718,4792,3305
+Uruguay,6,month,3228.6,2707,4448,3967
+Uruguay,7,month,3486,3162,3713,3795
+Uruguay,8,month,3314.2,2952,3379,3425
+Uruguay,9,month,3043.4,2866,2949,2976
+Uruguay,10,month,2797,2721,2959,2992
+Uruguay,11,month,2573.6,2568,2785,2676
+Uruguay,12,month,2608,2859,3021,2857
+Uzbekistan,1,month,10178.8,11136,11921,11848
+Uzbekistan,2,month,13366.4,13693,14702,14612
+Uzbekistan,3,month,13461.4,12633,13603,13951
+Uzbekistan,4,month,13018,11613,12432,12762
+Uzbekistan,5,month,12893.4,11792,12440,12847
+Uzbekistan,6,month,12162,13787,14629,14817
+Uzbekistan,7,month,13731.8,17345,17670,17269
+Uzbekistan,8,month,12252.8,20706,21208,18771
+Uzbekistan,9,month,10857.2,13161,13456,13351
+Uzbekistan,10,month,11917.8,15629,13701,13602
+Uzbekistan,11,month,12830.4,14204,12981,12850
+Uzbekistan,12,month,18736.4,19938,15797,15395
+World,1,month,4916180.707,5171872.677,5948533.334,
+World,2,month,4798482.786,4678191.383,5212351.323,
+World,3,month,4733272.276,4558346.126,5247161.584,
+World,4,month,4606363.208,4373583.722,5449535.347,
+World,5,month,4538082.683,4550824.967,6292974.391,
+World,6,month,4493302.114,4834794.337,6052086.866,
+World,7,month,4520769.817,5091435.165,5603542.993,
+World,8,month,4511999.154,5129163.228,5403895.871,
+World,9,month,4500232.075,5100236.645,5135214.173,
+World,10,month,4603783.707,5268776.924,5270247.136,
+World,11,month,4724173.935,5535403.574,5353576.403,
+World,12,month,4919237.723,5860448.829,5542372.844,

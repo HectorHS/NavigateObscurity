@@ -22,14 +22,11 @@
         data: () => ({
         }),
         methods: {
-        
         },
         computed: {
             orientClass():string {
                 return this.orientation === 'left'? 'right-5' : 'left-5';
             }
-        },
-        watch: {
         },
         mounted () {
         }

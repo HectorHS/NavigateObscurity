@@ -58,10 +58,6 @@
         ...mapState(useEnergyStore, ['selectedCountry','stats']),
         ...mapWritableState(useEnergyStore, []),
       },
-      watch: {
-      },
-      mounted () {
-      }
     })
 
   </script>

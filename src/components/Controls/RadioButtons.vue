@@ -1,6 +1,6 @@
 <template>
-    <div class="flex items-center" :style="flexDirection">
-        <label v-for="item in items" class="block relative pl-[28px] cursor-pointer select-none" :style="itemStyle">
+    <div class="flex items-center flex-wrap" :style="flexDirection">
+        <label v-for="item in items" class="block relative pl-[28px] cursor-pointer select-none pt-[1px] mt-2" :style="itemStyle">
             {{item.title}}
             <input
                 type="radio"
@@ -28,6 +28,7 @@ export default defineComponent ({
         modelValue: String,
         id: String,
         direction: String,
+        light: Boolean
     },
     emits: ['update:modelValue'], // emit event so that the parent knows the value has been updated
     data: () => ({
@@ -43,8 +44,8 @@ export default defineComponent ({
                 color = 'bg-gradient-to-br from-' + col[0] + ' from-20% via-' + col[1] + ' to-' + col[2] + ' to-80%';
             }
             // include some valid classes to make sure they are compiled
-            // to-gray-100 from-gray-400 to-blue-400 from-orange-400 via-gray-200
-            let bgColor = 'after:bg-gray';
+            // to-gray-100 from-gray-400 to-blue-400 from-orange-400 via-gray-200 from-gray-900
+            let bgColor = this.light ? 'after:bg-gray-600' : 'after:bg-gray';
             if (checked && col && col.length > 1) {
                 bgColor = 'after:' + 'bg-gradient-to-br after:from-' + col[0] + ' after:to-' + col[1];
             } else if (checked) {
@@ -62,10 +63,6 @@ export default defineComponent ({
             return this.direction == 'row' ? 'margin-left: 10px;' : 'margin-bottom: 10px;';
         }
     },
-    watch: {
-    },
-    mounted () {
-    }
   })
 
 </script>

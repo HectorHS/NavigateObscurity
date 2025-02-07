@@ -36,10 +36,6 @@
       },
       ...mapState(useDeathStore, ['deathRiskOptions', 'selectedDeathCause']),
     },
-    watch: {
-    },
-    mounted () {
-    }
   })
 
 </script>

@@ -10,8 +10,8 @@
         <p v-else>No comments here yet :(</p>
         <hr>
         <h3>Leave a comment</h3>
-        <input type="text" v-model="commentName" placeholder="Name" max-length="200" class="block my-5 bg-gray p-2 border border-gray-300 rounded" style="width:clamp(5px, 100%, 400px);"/>
-        <textarea v-model="commentText" placeholder="Your comment" max-length="1500" class="block my-5 bg-gray p-2 border border-gray-300 rounded w-full h-48"/>
+        <input type="text" v-model="commentName" placeholder="Name" max-length="200" class="block my-5 bg-gray p-2 border border-textColor rounded" style="width:clamp(5px, 100%, 400px);"/>
+        <textarea v-model="commentText" placeholder="Your comment" max-length="1500" class="block my-5 bg-gray p-2 border border-textColor rounded w-full h-48"/>
         <button type="button" class="button mt-8" @click="postComment" :disabled="!commentName || !commentText">Post comment</button>
       </div>
     </section>
@@ -88,8 +88,6 @@
         },
         computed: {
             ...mapState(useAppStore, [ 'pageComments']),
-        },
-        watch: {
         },
         mounted () {
             this.appStore.getPageComments(this.pageId);

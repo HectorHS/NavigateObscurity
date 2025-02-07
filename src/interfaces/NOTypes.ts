@@ -17,4 +17,14 @@ export interface LegendItem {
     name: string,
     color: string
 }
-
+export interface ContextData {
+    id: number,
+    text: string
+    link?: string,
+    percent?: number
+}
+export interface ContextLinkData {
+    contextId: number,
+    from: string,
+    to: string[]
+}

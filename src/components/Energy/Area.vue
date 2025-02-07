@@ -22,10 +22,6 @@
       computed: {
         ...mapState(useEnergyStore, ['areaOptions', 'selectedCountry']),
       },
-      watch: {
-      },
-      mounted () {
-      }
     })
 
   </script>

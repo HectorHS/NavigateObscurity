@@ -38,10 +38,6 @@
       ...mapState(useDeathStore, ['deathMapOptions']),
       ...mapWritableState(useDeathStore, ['selectedDeathCause']),
     },
-    watch: {
-    },
-    mounted () {
-    }
   })
 
 </script>

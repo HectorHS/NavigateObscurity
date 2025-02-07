@@ -20,23 +20,23 @@ export const useBiodiversityStore = defineStore('biodiversityStore', () =>{
     })
     const sunburstOptions = computed<Highcharts.Options>(() => {
         let options:Highcharts.Options = getBioSunburstOptions();
-        options.series![0].data = sunburstSeries.value;
+        (options.series![0] as Highcharts.SeriesSunburstOptions).data = sunburstSeries.value;
         return options;
     })
     const scatterOptions = computed<Highcharts.Options>(() => {
         let options:Highcharts.Options = getBioScatterOptions();
-        options.series![0].data = scatterData.value;
+        (options.series![0] as Highcharts.SeriesScatterOptions).data = scatterData.value;
         return options;
     })
     function loadData():void {
-        d3Fetch.csv("/csv/biodiversity-pie.csv").then( (data: any[]): void => {
+        d3Fetch.csv("/csv/data/biodiversity-pie.csv").then( (data: any[]): void => {
             let d:HCTypes.SunburstData[] = [];
             for (let row of data) {
                 d.push({id: row.id, parent: row.parent, parentName: row.parent_name, name: row.name, value:row.value, mass:row.biomass, percent: row.percent, plants: row.plants, color: getTailwindColor(colorMap.value!.get(row.id)!)});
             }
             sunburstDataRaw.value = d;
         });
-        d3Fetch.csv("/csv/biodiversity-scatter.csv").then( (data: any[]): void => {
+        d3Fetch.csv("/csv/data/biodiversity-scatter.csv").then( (data: any[]): void => {
             let d:HCTypes.ScatterData[] = [];
             for (let row of data) {
                 d.push({name: row.group, y: +row.mass, x: +row.power, color: getRadialGradient(colorMap.value!.get(row.group)!)});

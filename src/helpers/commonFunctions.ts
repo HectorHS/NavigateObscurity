@@ -998,3 +998,37 @@ export function addLineBreaks(input:string, lineSize:number):string[] {
   }
   return returnText;
 }
+export function getMetaData(page:any):any {
+  let meta:any = {};
+  meta.title = page.title + " - Navigate Obscurity";
+  meta.metaTags = [
+    {
+      name: 'description',
+      content: page.abstract
+    },{
+      name:"og:image",
+    content: page.social
+  },{
+      name: "og:title",
+    content: page.title + " - Navigate Obscurity"
+  },{
+      name: "og:url",
+    content: "https://www.navigateobscurity.com" + page.path
+  },{
+    name: "twitter:card",
+    content: "summary"
+  },{
+    name: "twitter:url",
+    content: "https://www.navigateobscurity.com" + page.path
+  },{
+    name: "twitter:title",
+    content: page.title + " - Navigate Obscurity"
+  },{
+    name:"twitter:description",
+    content: page.abstract
+  },{
+    name: "twitter:image",
+    content: page.social
+  }];
+  return meta;
+}

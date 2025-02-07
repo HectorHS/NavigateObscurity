@@ -1,0 +1,606 @@
+key,description,response,type
+Progress,"Survey completion progress as a percent. This does not indicate how many questions were answered (participants were free to skip questions), but how far they got into the survey.",values range is 50 - 100,int
+Age,What is your age?,,int
+Sex,What is your sex?,"1=male, 2=female, 3=other",int
+SexOther,If the response to Sex was 3 (Other) participants could add additional free text here,Free text,string
+Children,How many children do you have?,,int
+Under12,How many children do you have under the age of 12?,,int
+Over12,How many children do you have age 12 and older?,,int
+Education,What is the highest level of education that you have completed?,"1=Less than High School, 2=High School, 3=Some College, 4=2-year degree (Associates), 5=4-year degree (BA, BS), 6=Master's Degree, 7=Doctoral Degree, 8=Professional Degree",int
+SubjectiveSES,"Below, you will see a ladder. At the top of the ladder are the people who are the best off, have the most money, most education, and best jobs. These people are represented by number 10 marked on the ladder. At the bottom are the people who are the worst off, have the least money, least education, worst jobs, or no job. These people are represented by number 1 at the bottom of the ladder. Please choose the number associated with the rung that best represents where you think you stand on the ladder",,int
+Ethnicity,What is your ethnicity?,"1=Asian or Pacific Islander, 2=Hispanic or Latino/a, 3=White or Caucasian, 4=Black or African American, 5=Native American, 6=Other",int
+EthnicityOther,If the response to Ethnicity was 6 (Other) participants could add additional free text here,Free text,string
+English,Is English your first language?,"1=Yes, 2=No",int
+Fluent,Do you consider yourself to be fluent in English?,"1=Yes, 2=No",int
+CurrentCountry,What country do you currently live in?,Free text,string
+BornCountry,What country were you born in?,Free text,string
+LivingSituation,What is your current living situation? ,"1=Living alone, 2=Living with non-family roommates, 3=Living with family roommates, 4=Living with parents, 5=Living with spouse and children, 6=Living with extended family, 7= Living with spouse without children, 8= Living with spouse and flatmates/ roommates, 9= Living with just children",int
+Preexisting,Do you have any pre-existing health conditions that require you to take extra precautions to avoid being sick?,"1=Yes, 2=No",int
+PreexistWhat,"If you have any pre-existing health conditions, what is the complication?",Free text,string
+OccupationPandemic,What best describes your occupational situation during the COVID-19 Pandemic?,"1= Worked in close contact with a large number of people (e.g. healthcare or a supermarket), 2= Continued to work but maintained separation from others at my workplace, 3 = Worked from home, 4= Did not work",int
+MateSeeking1,I spend a lot of time thinking about ways to meet possible dating partners,"1=Strongly disagree, 7=Strongly agree",int
+MateSeeking2,Starting a new romantic/sexual relationship is not a high priority for me,"1=Strongly disagree, 7=Strongly agree",int
+PFIclose1,"When my close friend succeeds, I feel good","1=Do not agree at all, 7=Strongly agree",int
+PFIclose2,"When my close friend fails, I feel bad","1=Do not agree at all, 7=Strongly agree",int
+PFIclose3,I feel that my close friend's gain is my gain,"1=Do not agree at all, 7=Strongly agree",int
+PFIclose4,What is good for my close friend is good for me,"1=Do not agree at all, 7=Strongly agree",int
+PFIclose5,"Honestly, I don't care whether my close friend thrives or not","1=Do not agree at all, 7=Strongly agree",int
+PFIclose6,My close friend and I rise and fall together,"1=Do not agree at all, 7=Strongly agree",int
+CFIclose1,"When something good happens to my close friend, that is","-3=Very bad for me, 3=Very good for me",int
+CFIclose2,"When something bad happens to my close friend, that is","-3=Very bad for me, 3=Very good for me",int
+CFIclose3,"When my close friend succeeds, I feel","-3=Very bad for me, 3=Very good for me",int
+CFIclose4,"When my close friend fails, I feel","-3=Very bad for me, 3=Very good for me",int
+CFIclose5,My close friend's gain is,"-3=Very bad for me, 3=Very good for me",int
+CFIclose6,My close friend's loss is,"-3=Very bad for me, 3=Very good for me",int
+PFIAcq1,"When my acquaintance succeeds, I feel good","1=Do not agree at all, 7=Strongly agree",int
+PFIAcq2,"When my acquaintance fails, I feel bad","1=Do not agree at all, 7=Strongly agree",int
+PFIAcq3,I feel that my acquaintance's gain is my gain,"1=Do not agree at all, 7=Strongly agree",int
+PFIAcq4,What is good for my acquaintance is good for me,"1=Do not agree at all, 7=Strongly agree",int
+PFIAcq5,"Honestly, I don't care whether my acquaintance thrives or not","1=Do not agree at all, 7=Strongly agree",int
+PFIAcq6,My acquaintance and I rise and fall together,"1=Do not agree at all, 7=Strongly agree",int
+CFIAcq1,"When something good happens to my acquaintance, that is","-3=Very bad for me, 3=Very good for me",int
+CFIAcq2,"When something bad happens to my acquaintance, that is","-3=Very bad for me, 3=Very good for me",int
+CFIAcq3,"When my acquaintance succeeds, I feel","-3=Very bad for me, 3=Very good for me",int
+CFIAcq4,"When my acquaintance fails, I feel","-3=Very bad for me, 3=Very good for me",int
+CFIAcq5,My acquaintance's gain is,"-3=Very bad for me, 3=Very good for me",int
+CFIAcq6,My acquaintance's loss is,"-3=Very bad for me, 3=Very good for me",int
+PFINeighEmpathy,"When my neighborhood succeeds, I feel good","1=Do not agree at all, 7=Strongly agree",int
+PFINeigh2,"When my neighborhood fails, I feel bad","1=Do not agree at all, 7=Strongly agree",int
+PFINeigh3,I feel that my neighborhood's gain is my gain,"1=Do not agree at all, 7=Strongly agree",int
+PFINeigh4,What is good for my neighborhood is good for me,"1=Do not agree at all, 7=Strongly agree",int
+PFINeigh5,"Honestly, I don't care whether my neighborhood thrives or not","1=Do not agree at all, 7=Strongly agree",int
+PFINeighSharedFate,My neighborhood and I rise and fall together,"1=Do not agree at all, 7=Strongly agree",int
+CFINeigh1,"When something good happens to my neighborhood, that is","-3=Very bad for me, 3=Very good for me",int
+CFINeigh2,"When something bad happens to my neighborhood, that is","-3=Very bad for me, 3=Very good for me",int
+CFINeigh3,"When my neighborhood succeeds, I feel","-3=Very bad for me, 3=Very good for me",int
+CFINeigh4,"When my neighborhood fails, I feel","-3=Very bad for me, 3=Very good for me",int
+CFINeigh5,My neighborhood's gain is,"-3=Very bad for me, 3=Very good for me",int
+CFINeigh6,My neighborhood's loss is,"-3=Very bad for me, 3=Very good for me",int
+WillingnessNeigh1,"During a winter storm, someone from your neighborhood knocks on your door because their heating is out. How willing would you be to let them sleep in your living room for the night?","1=Not at all willing, 7=Very willing",int
+WillingnessNeigh2,Someone from your neighborhood has no water in their house. How willing would you be to fill their jugs with water from your tap?,"1=Not at all willing, 7=Very willing",int
+WillingnessNeigh,"Someone from your neighborhood is having their house fixed, so it isn't livable. How willing would you be to let them move into your house for a week?","1=Not at all willing, 7=Very willing",int
+WillingnessNeigh4,How willing would you be to help someone from your neighborhood move boxes into their new apartment?,"1=Not at all willing, 7=Very willing",int
+RepayNeigh1,How much repayment or compensation would you expect for helping someone from your neighborhood?,"1=I would not expect any repayment or compensation, 7=I would expect equal repayment or compensation",int
+NBTNeigh,Helping someone from my neighborhood when they are in need is the right thing to do,"1=Strongly disagree, 7= Strongly agree",int
+NBTNeigh2,I get a strong urge to help when I see that someone from my neighborhood is upset,"1=Strongly disagree, 7= Strongly agree",int
+PFICountry1,"When my country succeeds, I feel good","1=Do not agree at all, 7=Strongly agree",int
+PFICountry2,"When my country fails, I feel bad","1=Do not agree at all, 7=Strongly agree",int
+PFICountry3,I feel that my country's gain is my gain,"1=Do not agree at all, 7=Strongly agree",int
+PFICountry4,What is good for my country is good for me,"1=Do not agree at all, 7=Strongly agree",int
+PFICountry5,"Honestly, I don't care whether my country thrives or not","1=Do not agree at all, 7=Strongly agree",int
+PFICountry6,My country and I rise and fall together,"1=Do not agree at all, 7=Strongly agree",int
+CFICountry1,"When something good happens to my country, that is","-3=Very bad for me, 3=Very good for me",int
+CFICountry2,"When something bad happens to my country, that is","-3=Very bad for me, 3=Very good for me",int
+CFICountry3,"When my country succeeds, I feel","-3=Very bad for me, 3=Very good for me",int
+CFICountry4,"When my country fails, I feel","-3=Very bad for me, 3=Very good for me",int
+CFICountry5,My country's gain is,"-3=Very bad for me, 3=Very good for me",int
+CFICountry6,My country's loss is,"-3=Very bad for me, 3=Very good for me",int
+WillingnessCountry1,"During a winter storm, a displaced person who is a citizen of your own country knocks on your door because their heating is out. How willing would you be to let them sleep in your living room for the night?","1=Not at all willing, 7=Very willing",int
+WillingnessCountry2,A displaced person who is a citizen of your own country has no water in their house. How willing would you be to fill their jugs with water from your tap?,"1=Not at all willing, 7=Very willing",int
+WillingnessCountry3,"A displaced person who is a citizen of your own country is having their house fixed, so it isn't livable. How willing would you be to let them move into your house for a week?","1=Not at all willing, 7=Very willing",int
+WillingnessCountry4,How willing would you be to help a displaced person who is a citizen of your own country move boxes into their new apartment?,"1=Not at all willing, 7=Very willing",int
+RepayCountry1,How much repayment or compensation would you expect for helping someone from a displaced person who is a citizen of your own country? ,"1=I would not expect any repayment or compensation, 7=I would expect equal repayment or compensation",int
+NBTCountry,Helping a displaced person who is a citizen of your own country when they are in need is the right thing to do,"1=Strongly disagree, 7= Strongly agree",int
+NBTCountry2,I get a strong urge to help when I see that a displaced citizen from my own country is upset,"1=Strongly disagree, 7= Strongly agree",int
+PFIHumanityEmpathy,"When all of humanity succeeds, I feel good","1=Do not agree at all, 7=Strongly agree",int
+PFIHumanity2,"When all of humanity fails, I feel bad","1=Do not agree at all, 7=Strongly agree",int
+PFIHumanity3,I feel that all of humanity's gain is my gain,"1=Do not agree at all, 7=Strongly agree",int
+PFIHumanity4,What is good for my all of humanity is good for me,"1=Do not agree at all, 7=Strongly agree",int
+PFIHumanity5,"Honestly, I don't care whether all of humanity thrives or not","1=Do not agree at all, 7=Strongly agree",int
+PFIHumanitySharedFate,All of humanity and I rise and fall together,"1=Do not agree at all, 7=Strongly agree",int
+CFIHumanity1,"When something good happens to all of humanity, that is","-3=Very bad for me, 3=Very good for me",int
+CFIHumanity2,"When something bad happens to all of humanity, that is","-3=Very bad for me, 3=Very good for me",int
+CFIHumanity3,"When all of humanity succeeds, I feel","-3=Very bad for me, 3=Very good for me",int
+CFIHumanity4,"CFIHumanity - When all of humanity fails, I feel","-3=Very bad for me, 3=Very good for me",int
+CFIHumanity5,All of humanity's gain is,"-3=Very bad for me, 3=Very good for me",int
+CFIHumanity6,All of humanity's loss is,"-3=Very bad for me, 3=Very good for me",int
+WillingnessHumanity1,"During a winter storm, a displaced person who is not a citizen of your own country knocks on your door because their heating is out. How willing would you be to let them sleep in your living room for the night?","1=Not at all willing, 7=Very willing",int
+WillingnessHumanity2,A displaced person who is not a citizen of your own country has no water in their house. How willing would you be to fill their jugs with water from your tap?,"1=Not at all willing, 7=Very willing",int
+WillingnessHumanity,"A displaced person who is not a citizen of your own country is having their house fixed, so it isn't livable. How willing would you be to let them move into your house for a week?","1=Not at all willing, 7=Very willing",int
+WillingnessHumanity4,How willing would you be to help a displaced person who is not a citizen of your own country move boxes into their new apartment?,"1=Not at all willing, 7=Very willing",int
+RepayHumanity1,How much repayment or compensation would you expect for helping someone from a displaced person who is not a citizen of your own country?,"1=I would not expect any repayment or compensation, 7= I would expect equal repayment or compensation",int
+NBTHumanity,Helping a displaced person who is not a citizen of your own country when they are in need is the right thing to do,"1=Strongly disagree, 7= Strongly agree",int
+NBTHumanity2,I get a strong urge to help when I see that a displaced citizen who is not from my own country is upset,"1=Strongly disagree, 7= Strongly agree",int
+Stress,How stressed do you currently feel dealing with changes caused by COVID19? ,"1=Not at all stressed, 7=Extremely stressed",int
+PSS1,"In the last month, how often have you been upset because of something that happened unexpectedly?","1=Never, 5=Very often",int
+PSS2,"In the last month, how often have you felt that you were unable to control the important things in your life?","1=Never, 5=Very often",int
+PSS3,"In the last month, how often have you felt nervous and stressed?","1=Never, 5=Very often",int
+PSS4,"In the last month, how often have you felt confident about your ability to handle your personal problems?","1=Never, 5=Very often",int
+PSS5,"In the last month, how often have you felt that things were going your way?","1=Never, 5=Very often",int
+PSS6,"In the last month, how often have you found that you could not cope with all the things that you had to do?","1=Never, 5=Very often",int
+PSS7,"In the last month, how often have you been able to control irritations in your life?","1=Never, 5=Very often",int
+PSS8,"In the last month, how often have you felt that you were on top of things?","1=Never, 5=Very often",int
+PSS9,"In the last month, how often have you been angered because of things that were outside of your control?","1=Never, 5=Very often",int
+PSS10,"In the last month, how often have you felt difficulties were piling up so high that you could not overcome them?","1=Never, 5=Very often",int
+Anxiety,How anxious do you feel when you think about the current events going on in the world? ,"1=Not at all anxious, 7=Extremely anxious",int
+Anxiety1,"Over the last two weeks, how often have you been bothered by the following problems? Feeling nervous, anxious, or on edge","1=Not at all, 2=Several days, 3=Over half of the days, 4=Nearly every day",int
+Anxiety2,"Over the last two weeks, how often have you been bothered by the following problems? Not being able to stop or control worrying","1=Not at all, 2=Several days, 3=Over half of the days, 4=Nearly every day",int
+Anxiety3,"Over the last two weeks, how often have you been bothered by the following problems? Worrying too much about different things","1=Not at all, 2=Several days, 3=Over half of the days, 4=Nearly every day",int
+Anxiety4,"Over the last two weeks, how often have you been bothered by the following problems? Trouble relaxing","1=Not at all, 2=Several days, 3=Over half of the days, 4=Nearly every day",int
+Anxiety5,"Over the last two weeks, how often have you been bothered by the following problems? Being so restless that it's hard to sit still","1=Not at all, 2=Several days, 3=Over half of the days, 4=Nearly every day",int
+Anxiety6,"Over the last two weeks, how often have you been bothered by the following problems? Becoming easily annoyed or irritable","1=Not at all, 2=Several days, 3=Over half of the days, 4=Nearly every day",int
+Anxiety7,"Over the last two weeks, how often have you been bothered by the following problems? Feeling afraid as if something awful might happen","1=Not at all, 2=Several days, 3=Over half of the days, 4=Nearly every day",int
+PerceptionsRisk,How likely do you think it is that you will contract COVID19?,"1=Not at all, 7=Extremely",int
+PerceptionsRisk2,How likely is it that the epidemic will get a lot worse before it gets better?,"1=Not at all, 7=Extremely",int
+PerceptionsRisk3,"How likely are you to avoid places where you might contract the virus (school, work, hospitals, etc.)?","1=Not at all, 7=Extremely",int
+Riskmanagementtransfer,I am likely to ask parents or friends for help preparing for the COVID19 epidemic,"1=Do not agree at all, 7= Strongly agree",int
+Riskmanagementretention,I have been stocking up on food and supplies so that I am prepared for the COVID19 epidemic,"1=Do not agree at all, 7= Strongly agree",int
+Riskmanagementreduction,I try to reduce my risk of getting COVID19 by doing things like washing my hands often,"1=Do not agree at all, 7= Strongly agree",int
+Riskmanagementavoidance,"I completely avoid situations that could put me at risk of contracting COVID19, like going to the grocery store when it is crowded","1=Do not agree at all, 7= Strongly agree",int
+RiskmanagementAvoid1,"I completely avoid situations that could put me at risk of contracting COVID19, for example staying away from large events where there have been cases","1=Do not agree at all, 7= Strongly agree",int
+RiskmanagementAvoid2,"I completely avoid situations that could put me at risk of contracting COVID19, for example not traveling to locations where there have been cases","1=Do not agree at all, 7= Strongly agree",int
+Riskmanagementreduction2,I try to reduce my risk of getting COVID19 by wearing a mask when I leave the house,"1=Do not agree at all, 7= Strongly agree",int
+RiskmanagementavoidComposite,Average of RiskmanagementAvoid1 & RiskmanagementAvoid2,,int
+RiskmanagementreductionComposite,Average of Riskmanagementreduction & Riskmanagementreduction2,,int
+DiseaseAvoidance1,I avoid places and people that might carry diseases,"1=Strongly disagree, 7=Strongly agree",int
+DiseaseAvoidance2,I avoid people who might have a contagious illness,"1=Strongly disagree, 7=Strongly agree",int
+DiseaseAvoidance3,I worry about catching colds and the flu from too much contact with other people,"1=Strongly disagree, 7=Strongly agree",int
+DiseaseAvoidance4,I do not worry very much about getting germs from others,"1=Strongly disagree, 7=Strongly agree",int
+DiseaseAvoidance5,"When someone near me is sick, it doesn't bother me very much","1=Strongly disagree, 7=Strongly agree",int
+DiseaseAvoidance6,I don't mind being around people who are sick,"1=Strongly disagree, 7=Strongly agree",int
+NonfoodHave,How many days of non-food supplies do you currently have for your household?,"Free input, numbers only",int
+NonfoodWant,How many days of non-food supplies would you like to have for your household?,"Free input, numbers only",int
+FoodHave,How many days of food do you currently have for your household?,"Free input, numbers only",int
+FoodWant,How many days of food would you like to have for your household?,"Free input, numbers only",int
+Summer1,"How much are you thinking about canceling your plans (travel, work, vacation, etc.) for the next week?","1=Not at all, 7=Very much",int
+Summer2,"How much are you thinking about canceling your plans (travel, work, vacation, etc.) for the next month?","1=Not at all, 7=Very much",int
+Summer3,"How much are you thinking about canceling your plans (travel, work, vacation, etc.) for the summer?","1=Not at all, 7=Very much",int
+Back2Normal,When do you think life will get back to normal?,"1=Two weeks, 2=One month, 3=Two months, 4= Four months, 5=Six months, 6=Nine months, 7=1 year, 8= 1.5 years, 9=2 years, 10=More than 2 years, 11=Never",int
+Concern,How concerned are you about becoming infected with COVID19?,"1=Not at all concerned, 7=Very concerned",int
+OtherConcern,How concerned are you about other matters (not-related to infection) associated with the COVID19 outbreak?,"1=Not at all concerned, 7=Very concerned",int
+DiscussWith1,How likely are you to talk about your concerns or show that you are concerned with COVID19 with the following people? Family,"1=Not at all likely, 7=Very likely",int
+DiscussWith2,How likely are you to talk about your concerns or show that you are concerned with COVID19 with the following people? Friends,"1=Not at all likely, 7=Very likely",int
+DiscussWith3,How likely are you to talk about your concerns or show that you are concerned with COVID19 with the following people? Coworkers,"1=Not at all likely, 7=Very likely",int
+DiscussWith4,How likely are you to talk about your concerns or show that you are concerned with COVID19 with the following people? Strangers,"1=Not at all likely, 7=Very likely",int
+PrepTimeCovidnotCOVID,"Since you learned about COVID19, how much effort (time, energy, money) have you put into these preparations? (% of your time, responses to all PrepTime questions should add up to 100%) Spent time on things NOT RELATED to the COVID19",,int
+PrepTimeCovidtracking,"Since you learned about COVID19, how much effort (time, energy, money) have you put into these preparations? (% of your time, responses to all PrepTime questions should add up to 100%) Spent time learning about or tracking news about the COVID19, how it is spreading, how to protect against it, etc",,int
+PrepTimeCovidtalking,"Since you learned about COVID19, how much effort (time, energy, money) have you put into these preparations? (% of your time, responses to all PrepTime questions should add up to 100%). Spent time talking, texting, etc., with family, friends, and coworkers about COVID19 and how to prepare for it",,int
+PrepTimeCovidnewrelationships,"Since you learned about COVID19, how much effort (time, energy, money) have you put into these preparations? (% of your time, responses to all PrepTime questions should add up to 100%). Spent time trying to develop new relationships, or improving existing relationships, with family, friends, neighbors, coworkers, church congregation members, etc.",,int
+PrepTimeCovidmedical,"Since you learned about COVID19, how much effort (time, energy, money) have you put into these preparations? (% of your time, responses to all PrepTime questions should add up to 100%). Spent time stocking up on medical supplies such as medications",,int
+PrepTimeCovidfood,"Since you learned about COVID19, how much effort (time, energy, money) have you put into these preparations? (% of your time, responses to all PrepTime questions should add up to 100%). Spent time stocking up on food",,int
+PrepTimeCovidwater,"Since you learned about COVID19, how much effort (time, energy, money) have you put into these preparations? (% of your time, responses to all PrepTime questions should add up to 100%). Spent time stocking up on water or prepa ring in case the water supply fails",,int
+PrepTimeCovidpower,"Since you learned about COVID19, how much effort (time, energy, money) have you put into these preparations? (% of your time, responses to all PrepTime questions should add up to 100%). Spent time buying supplies in case there is a loss of power from the electrical grid",,int
+PrepTimeCovidhomedefense,"Since you learned about COVID19, how much effort (time, energy, money) have you put into these preparations? (% of your time, responses to all PrepTime questions should add up to 100%). Spent time buying supplies for home defense (I.e., guns, ammo, door locks, security systems)",,int
+PrepTimeCovidfinancial,"Since you learned about COVID19, how much effort (time, energy, money) have you put into these preparations? (% of your time, responses to all PrepTime questions should add up to 100%). Spent time planning for the possible impact on your business, career, investments, pension, home equity, etc.?",,int
+PrepTimeCovidbarter,"Since you learned about COVID19, how much effort (time, energy, money) have you put into these preparations? (% of your time, responses to all PrepTime questions should add up to 100%). Spent time stocking up on physical goods that you could trade or barter if things get bad?",,int
+PrepTimeCovidother,"Since you learned about COVID19, how much effort (time, energy, money) have you put into these preparations? (% of your time, responses to all PrepTime questions should add up to 100%). Spent time on anything else related to preparing for COVID19?",,int
+PrepTimeCovidotherText,"Since you learned about COVID19, how much effort (time, energy, money) have you put into these preparations? (% of your time, responses to all PrepTime questions should add up to 100%). If you spent time preparing for an ""other"" activity, what was it?",,string
+PrepCOVIDPoliticalLeaders,"In preparing for and managing COVID19, how good of a job do you think the following individuals are doing: National political leaders","0=Very bad, 5=Neutral, 10=Excelent",int
+PrepCOVIDLocalGov,"In preparing for and managing COVID19, how good of a job do you think the following individuals are doing: Local or city government","0=Very bad, 5=Neutral, 10=Excelent",int
+PrepCOVIDNationalHealthcare,"In preparing for and managing COVID19, how good of a job do you think the following individuals are doing: National healthcare system","0=Very bad, 5=Neutral, 10=Excelent",int
+PrepCOVIDLocalHealthcare,"In preparing for and managing COVID19, how good of a job do you think the following individuals are doing: Local healthcare system","0=Very bad, 5=Neutral, 10=Excelent",int
+PrepCOVIDNationalMedia,"In preparing for and managing COVID19, how good of a job do you think the following individuals are doing: National media","0=Very bad, 5=Neutral, 10=Excelent",int
+PrepCOVIDLocalMedia,"In preparing for and managing COVID19, how good of a job do you think the following individuals are doing: Local media","0=Very bad, 5=Neutral, 10=Excelent",int
+PrepCOVIDAirline,"In preparing for and managing COVID19, how good of a job do you think the following individuals are doing: Airline transport system","0=Very bad, 5=Neutral, 10=Excelent",int
+PrepCOVIDEmployer,"In preparing for and managing COVID19, how good of a job do you think the following individuals are doing: Your employer","0=Very bad, 5=Neutral, 10=Excelent",int
+PrepCOVIDExtendedFamily,"In preparing for and managing COVID19, how good of a job do you think the following individuals are doing: Your extended family (grandparents, parents, aunts, uncles, cousins, in-laws, etc.)","0=Very bad, 5=Neutral, 10=Excelent",int
+PrepCOVIDSigOther,"In preparing for and managing COVID19, how good of a job do you think the following individuals are doing: Your significant other (boyfriend, girlfriend, wife, husband)","0=Very bad, 5=Neutral, 10=Excelent",int
+PrepCOVIDParents,"In preparing for and managing COVID19, how good of a job do you think the following individuals are doing: Your parents","0=Very bad, 5=Neutral, 10=Excelent",int
+PrepCOVIDSiblings,"In preparing for and managing COVID19, how good of a job do you think the following individuals are doing: Your siblings (brothers, sisters, etc.)","0=Very bad, 5=Neutral, 10=Excelent",int
+Howmuch,How much money have you spent on preparations for COVID19?,"Free input, numbers only",int
+Currency,What type of currency was this?,"1= US dollar (USD), 2= Euro (EUR), 3= Japanese yen (JPY), 4= British pound (GBP), 5=Australian dollar (AUD), 6=Canadian dollar (CAD), 7= Swiss franc (CHF), 8= Chinese renminbi (CNH), 9= Swedish krona (SEK), 10= New Zealand dollar (NZD)",int
+CPR1,"If a stranger collapses and it looks like they need CPR (cardiopulmonary resuscitation), I would be willing to start performing CPR","1 = not at all willing, 7 = very willing",int
+CPR2,"If an acquaintance collapses and it looks like they need CPR (cardiopulmonary resuscitation), I would be willing to start performing CPR","1 = not at all willing, 7 = very willing",int
+CPR3,"If a family member collapses and it looks like they need CPR (cardiopulmonary resuscitation), I would be willing to start performing CPR","1 = not at all willing, 7 = very willing",int
+Delay1,I am considering delaying routine checkups and dentist visits.,"1=Strongly disagree, 7=Srongly agree",int
+TemporalDiscounting,"If you found $100 tomorrow, how likely would you be to use it to go out to dinner?","1=Not at all likely, 7=Very likely",int
+FutureWorld,How much are you thinking about climate change and other global sustainability issues that will have an impact on the world in the next 10-20 years?,"1=Not at all, 7=A lot",int
+SocialDistancing,To what extent are you avoiding gathering in public places?,"1=Not avoiding/cancelling anything, 7= Actively avoiding/canceling as much as possible",int
+SocialDistancing2,To what extent are you canceling meetings and get-togethers?,"1=Not avoiding/cancelling anything, 7= Actively avoiding/canceling as much as possible",int
+Isolate1,I can have a significant impact on limiting the spread of the virus by isolating myself at home and washing my hands frequently,"1=Strongly disagree, 7=Strongly agree",int
+Isolate2,I can significantly reduce my risk of becoming infected by the virus by isolating myself at home and washing my hands frequently,"1=Strongly disagree, 7=Strongly agree",int
+Isolate3,Most people in my community are isolating themselves in their homes,"1=Strongly disagree, 7=Strongly agree",int
+Altruistic,What is more altruistic at this time?,"1=Staying at home, 4=Not sure, 7=Bringing a meal to a neighbor",int
+HoursworkedOutside,"In the last seven days, how many hours have you worked outside your home (in paid employment)? ","Free input, numbers only. Max value = 40",int
+HoursWorkHome,"In the last 7 days, how many hours in total have you worked from home (in any way that brings in income or builds your career)?","Free input, numbers only. Max value = 40",int
+HoursSpentOthers,"In the last 7 days, how many hours have you spent in places with many other people, such as in schools, stores, or public transport?","Free input, numbers only. Max value = 40",int
+HoursInContact,"In the last 7 days, how many hours have you spent in contact with friends or family through phone calls, video chat, texting, or writing/reading emails?","Free input, numbers only. Max value = 40",int
+HoursVolunteer,"In the last 7 days, how many hours have you volunteered to help people affected by the pandemic?","Free input, numbers only",int
+MoneyDonated,"In the last 7 days, how much money have you contributed to charities that try to help people affected by the pandemic?","Free input, numbers only",int
+HoursworkedOutsideOriginal,"In the last seven days, how many hours have you worked outside your home (in paid employment)?","Free input, numbers only",int
+HoursWorkHomeOriginal,"In the last 7 days, how many hours in total have you worked from home (in any way that brings in income or builds your career)?","Free input, numbers only",int
+HoursSpentOthersOriginal,"In the last 7 days, how many hours have you spent in places with many other people, such as in schools, stores, or public transport?","Free input, numbers only",int
+HoursInContactOriginal,"In the last 7 days, how many hours have you spent in contact with friends or family through phone calls, video chat, texting, or writing/reading emails?","Free input, numbers only",int
+aidindividuals,"If my government gives emergency aid to people during this pandemic, what percentage of the aid should go to: Individuals",,int
+aidsmallbusiness,"If my government gives emergency aid to people during this pandemic, what percentage of the aid should go to: Small businesses that employ a few people each",,int
+aidlargebusiness,"If my government gives emergency aid to people during this pandemic, what percentage of the aid should go to: Large businesses that employ many people each",,int
+aidbanks,"If my government gives emergency aid to people during this pandemic, what percentage of the aid should go to: Banks that can loan money to people & businesses",,int
+aidgovernment,"If my government gives emergency aid to people during this pandemic, what percentage of the aid should go to: State & local governments",,int
+MostImportant,What do you think is the most important thing to do right now?,"1=Reduce the global spread of the virus, 2=Reduce the spread of the virus within my country, 3=Save lives of older people who get sick, 4=Save jobs and businesses disrupted by the pandemic, 5=Help families that have lost jobs and income",int
+discounting,"If you could get $1000 from the government in a week or $2000 in the government in a month, which would you prefer?","1=Very strongly prefer $1000 in a week, 4=No preference, 7=Very strongly prefer $2000 in a month)",int
+StartedPreparing,Have you started preparing for the Pandemic?,"0=No, 1=Yes",int
+WeeksAgoPrepare,How many weeks ago did you start preparing for the COVID19 pandemic?,"Free input, numbers only",int
+Cause,What caused you to start preparing for the pandemic? (Please respond in one or two sentences.),Free text,string
+Information1,"After you decided to begin preparing, where did you seek information about how to prepare? Please list up to five sources that come to mind. Source 1",Free text,string
+Information2,"After you decided to begin preparing, where did you seek information about how to prepare? Please list up to five sources that come to mind. Source 2",Free text,string
+Information3,"After you decided to begin preparing, where did you seek information about how to prepare? Please list up to five sources that come to mind. Source 3",Free text,string
+Information4,"After you decided to begin preparing, where did you seek information about how to prepare? Please list up to five sources that come to mind. Source 4",Free text,string
+Information5,"After you decided to begin preparing, where did you seek information about how to prepare? Please list up to five sources that come to mind. Source 5",Free text,string
+Whatdidyoudo1,What did you do to prepare? Please list up to five things you did to prepare. First thing,Free text,string
+Whatdidyoudo2,What did you do to prepare? Please list up to five things you did to prepare. Second thing,Free text,string
+Whatdidyoudo3,What did you do to prepare? Please list up to five things you did to prepare. Third thing,Free text,string
+Whatdidyoudo4,What did you do to prepare? Please list up to five things you did to prepare. Fourth thing,Free text,string
+Whatdidyoudo5,What did you do to prepare? Please list up to five things you did to prepare. Fifth thing,Free text,string
+ImportantHelp1,What are some of the most important ways in which you are helping others during this time? List up to 5 things. First thing,Free text,string
+ImportantHelp2,What are some of the most important ways in which you are helping others during this time? List up to 5 things. Second thing,Free text,string
+ImportantHelp3,What are some of the most important ways in which you are helping others during this time? List up to 5 things. Third thing,Free text,string
+ImportantHelp4,What are some of the most important ways in which you are helping others during this time? List up to 5 things. Fourth thing,Free text,string
+ImportantHelp5,What are some of the most important ways in which you are helping others during this time? List up to 5 things. Fifth thing,Free text,string
+ImportantHelpMe1,What are some of the most important ways in which others are helping you during this time? List up to 5 things. First thing,Free text,string
+ImportantHelpMe2,What are some of the most important ways in which others are helping you during this time? List up to 5 things. Second thing,Free text,string
+ImportantHelpMe3,What are some of the most important ways in which others are helping you during this time? List up to 5 things. Third thing,Free text,string
+ImportantHelpMe4,What are some of the most important ways in which others are helping you during this time? List up to 5 things. Fourth thing,Free text,string
+ImportantHelpMe5,What are some of the most important ways in which others are helping you during this time? List up to 5 things. Fifth thing,Free text,string
+ContractedCovid,Have you contracted COVID-19?,"1=No, 2=Maybe, 3=Yes",int
+WeeksSinceCovid,If yes or maybe how many weeks ago did you contract COVID-19?,"Free input, numbers only",int
+TestedCovid,If yes or maybe have you tested positive?,"1=No, 2=Haven't been tested, 3=Yes",int
+KnowSomeoneInfected,Do you personally know of someone who has contracted COVID-19?,"1=No, 2=Not sure, 3=Yes",int
+HowManyInfected,"If yes or not sure, how many people do you personally know who have been diagnosed by a physician or tested positive for COVID-19?","Free input, numbers only",int
+ShareExp,"In 1-2 sentences, is there anything else you would like to share about yourself or someone you know having or possibly having COVID19?",Free text,string
+CouldInfect,"If I get sick with COVID-19, I could infect people who are more vulnerable than me (e.g., elderly people, hospital patients). ","1=Disagree completely, 7=Agree completely",int
+Careful,"Considering the potential risk of COVID-19 infection, how careful are you when having in-person interactions?","1=Not at all, 7=Extremely",int
+WashHands,How often do you wash or sanitize your hands?,"1=Less often than before the pandemic, 7=As soon as possible after I come in contact with a person or surface outside my household",int
+Askingforhelp1,How likely are you to ask your friends and family for help in the following areas during the COVID19 pandemic? Asking for money,"1=Not at all likely, 7=Extremely likely",int
+Askingforhelp2,How likely are you to ask your friends and family for help in the following areas during the COVID19 pandemic? Asking for up to date information,"1=Not at all likely, 7=Extremely likely",int
+Askingforhelp3,How likely are you to ask your friends and family for help in the following areas during the COVID19 pandemic? Asking for food supplies,"1=Not at all likely, 7=Extremely likely",int
+Askingforhelp4,How likely are you to ask your friends and family for help in the following areas during the COVID19 pandemic? Asking for medical advice,"1=Not at all likely, 7=Extremely likely",int
+Askingforhelp5,How likely are you to ask your friends and family for help in the following areas during the COVID19 pandemic? Asking for medical care,"1=Not at all likely, 7=Extremely likely",int
+Askingforhelp6,How likely are you to ask your friends and family for help in the following areas during the COVID19 pandemic? Asking for help with childcare,"1=Not at all likely, 7=Extremely likely",int
+Askingforhelp7,How likely are you to ask your friends and family for help in the following areas during the COVID19 pandemic? Asking for emotional or psychological support,"1=Not at all likely, 7=Extremely likely",int
+Givinghelp1,How likely are you to give help to your friends and family in the following areas during the COVID19 pandemic? Helping by sending money,"1=Not at all likely, 7=Extremely likely",int
+Givinghelp2,How likely are you to give help to your friends and family in the following areas during the COVID19 pandemic? Helping by giving up to date information,"1=Not at all likely, 7=Extremely likely",int
+Givinghelp3,How likely are you to give help to your friends and family in the following areas during the COVID19 pandemic? Helping by giving food supplies,"1=Not at all likely, 7=Extremely likely",int
+Givinghelp4,How likely are you to give help to your friends and family in the following areas during the COVID19 pandemic? Helping with medical advice,"1=Not at all likely, 7=Extremely likely",int
+Givinghelp5,How likely are you to give help to your friends and family in the following areas during the COVID19 pandemic? Helping with medical care,"1=Not at all likely, 7=Extremely likely",int
+Givinghelp6,How likely are you to give help to your friends and family in the following areas during the COVID19 pandemic? Helping with childcare,"1=Not at all likely, 7=Extremely likely",int
+Givinghelp7,How likely are you to give help to your friends and family in the following areas during the COVID19 pandemic? Helping by giving emotional or psychological support,"1=Not at all likely, 7=Extremely likely",int
+MaskAttitudes1,I wear a face mask when going out in public to keep myself from getting sick,"1=Strongly disagree, 7=Strongly agree",int
+MaskAttitudes2,Seeing people in public wearing face masks makes me feel safe,"1=Strongly disagree, 7=Strongly agree",int
+MaskAttitudes3,Seeing people in public wearing face masks makes me feel anxious,"1=Strongly disagree, 7=Strongly agree",int
+MaskAttitudes4,Wearing a face mask when going out in public is the right thing to do,"1=Strongly disagree, 7=Strongly agree",int
+MaskAttitudes5,I wear a face mask when going out in public to prevent others from getting sick in case I may be infected but dont know it yet,"1=Strongly disagree, 7=Strongly agree",int
+WearMask,Are you more or less likely to wear a mask in public than you were 2 weeks ago?,"1=A lot less likely, 5=A lot more likely",int
+NeighborMasks,Do you see people in your neighborhood wearing masks more or less now compared to 2 weeks ago?,"1=A lot less mask wearing in my neighborhood, 5=A lot more mask wearing in my neighborhood",int
+SafetyProtests,How concerned are you about your own safety or the safety of your family given the current protests/political unrest in your country related to the death of George Floyd?,"1= People are not protesting in my city, 2=Not at all, 8=Very much",int
+MoneyProtests,"In the last several weeks, how much money have you donated to help the recent protests/demonstrations or causes/organizations related to the death of George Floyd?","Free input, numbers only",int
+CurrencyProtests,What type of currency was this?,"1= US dollar (USD), 2= Euro (EUR), 3= Japanese yen (JPY), 4= British pound (GBP), 5=Australian dollar (AUD), 6=Canadian dollar (CAD), 7= Swiss franc (CHF), 8= Chinese renminbi (CNH), 9= Swedish krona (SEK), 10= New Zealand dollar (NZD)",int
+ParticipatedProtests,Have you participated in protests/demonstrations related to the death of George Floyd in the last several weeks?,"1=No, 2=Yes",int
+LikelyToProtests,How likely are you to participate in protests/demonstrations related to the death of George Floyd? ,"1=Not at all, 7=Very Likely",int
+COVIDaffectProtest,How much has COVID-19 affected your decision to participate or not in protests/demonstrations related to the death of George Floyd?,"1=Not at all, 7=It's a big factor",int
+RiskProtests1,I am likely to ask parents or friends for help dealing with the current political unrest/protests,"1=Do not agree at all, 7=Strongly agree",int
+RiskProtests2,I have been stocking up on supplies so that I am prepared to keep myself safe during the current political unrest/protests,"1=Do not agree at all, 7=Strongly agree",int
+RiskProtests3,"I completely avoid situations that could put my safety at risk, like avoiding attending protests and demonstrations","1=Do not agree at all, 7=Strongly agree",int
+RiskProtests4,"I manage my risk of being part of protests and demonstrations, for example by wearing a mask, using hand sanitizer and keeping distance from others","1=Do not agree at all, 7=Strongly agree",int
+RiskProtests5,Taking part in protests is more important than keeping my risk of coronavirus low,"1=Do not agree at all, 7=Strongly agree",int
+TimesHelpGiven1,"Since March 11, when COVID-19 was declared a global pandemic, how many times have you helped others that you know (e.g., family, friends, neighbors) because of the following reasons? Do not include money that you donated to charity, or time you spent volunteering. Giving money to somebody you know who needs it","1=0 times, 2=1-2 times, 3=3-5 times, 4=6-10 times, 5=11-15 times, 6=16-20 times, 7=More than 20 times",int
+TimesHelpGiven2,"Since March 11, when COVID-19 was declared a global pandemic, how many times have you helped others that you know (e.g., family, friends, neighbors) because of the following reasons? Do not include money that you donated to charity, or time you spent volunteering. Providing up to date information","1=0 times, 2=1-2 times, 3=3-5 times, 4=6-10 times, 5=11-15 times, 6=16-20 times, 7=More than 20 times",int
+TimesHelpGiven3,"Since March 11, when COVID-19 was declared a global pandemic, how many times have you helped others that you know (e.g., family, friends, neighbors) because of the following reasons? Do not include money that you donated to charity, or time you spent volunteering. Providing food or water","1=0 times, 2=1-2 times, 3=3-5 times, 4=6-10 times, 5=11-15 times, 6=16-20 times, 7=More than 20 times",int
+TimesHelpGiven4,"Since March 11, when COVID-19 was declared a global pandemic, how many times have you helped others that you know (e.g., family, friends, neighbors) because of the following reasons? Do not include money that you donated to charity, or time you spent volunteering. Providing cleaning supplies","1=0 times, 2=1-2 times, 3=3-5 times, 4=6-10 times, 5=11-15 times, 6=16-20 times, 7=More than 20 times",int
+TimesHelpGiven5,"Since March 11, when COVID-19 was declared a global pandemic, how many times have you helped others that you know (e.g., family, friends, neighbors) because of the following reasons? Do not include money that you donated to charity, or time you spent volunteering. Providing medical supplies","1=0 times, 2=1-2 times, 3=3-5 times, 4=6-10 times, 5=11-15 times, 6=16-20 times, 7=More than 20 times",int
+TimesHelpGiven6,"Since March 11, when COVID-19 was declared a global pandemic, how many times have you helped others that you know (e.g., family, friends, neighbors) because of the following reasons? Do not include money that you donated to charity, or time you spent volunteering. Providing help with childcare","1=0 times, 2=1-2 times, 3=3-5 times, 4=6-10 times, 5=11-15 times, 6=16-20 times, 7=More than 20 times",int
+TimesHelpGiven7,"Since March 11, when COVID-19 was declared a global pandemic, how many times have you helped others that you know (e.g., family, friends, neighbors) because of the following reasons? Do not include money that you donated to charity, or time you spent volunteering. Providing emotional support","1=0 times, 2=1-2 times, 3=3-5 times, 4=6-10 times, 5=11-15 times, 6=16-20 times, 7=More than 20 times",int
+HelpReceived1,"Since March 11, when COVID-19 was declared a global pandemic, how many times have you received help from others that you know (e.g., family, friends, neighbors) because of the following reasons? Do not include goods received from charities, or time strangers volunteered. Receiving money from somebody you know when you needed it","1=0 times, 2=1-2 times, 3=3-5 times, 4=6-10 times, 5=11-15 times, 6=16-20 times, 7=More than 20 times",int
+HelpReceived2,"Since March 11, when COVID-19 was declared a global pandemic, how many times have you received help from others that you know (e.g., family, friends, neighbors) because of the following reasons? Do not include goods received from charities, or time strangers volunteered. Receiving up to date information","1=0 times, 2=1-2 times, 3=3-5 times, 4=6-10 times, 5=11-15 times, 6=16-20 times, 7=More than 20 times",int
+HelpReceived3,"Since March 11, when COVID-19 was declared a global pandemic, how many times have you received help from others that you know (e.g., family, friends, neighbors) because of the following reasons? Do not include goods received from charities, or time strangers volunteered. Receiving food or water","1=0 times, 2=1-2 times, 3=3-5 times, 4=6-10 times, 5=11-15 times, 6=16-20 times, 7=More than 20 times",int
+HelpReceived4,"Since March 11, when COVID-19 was declared a global pandemic, how many times have you received help from others that you know (e.g., family, friends, neighbors) because of the following reasons? Do not include goods received from charities, or time strangers volunteered. Receiving cleaning supplies","1=0 times, 2=1-2 times, 3=3-5 times, 4=6-10 times, 5=11-15 times, 6=16-20 times, 7=More than 20 times",int
+HelpReceived5,"Since March 11, when COVID-19 was declared a global pandemic, how many times have you received help from others that you know (e.g., family, friends, neighbors) because of the following reasons? Do not include goods received from charities, or time strangers volunteered. Receiving medical supplies","1=0 times, 2=1-2 times, 3=3-5 times, 4=6-10 times, 5=11-15 times, 6=16-20 times, 7=More than 20 times",int
+HelpReceived6,"Since March 11, when COVID-19 was declared a global pandemic, how many times have you received help from others that you know (e.g., family, friends, neighbors) because of the following reasons? Do not include goods received from charities, or time strangers volunteered. Receiving help with childcare","1=0 times, 2=1-2 times, 3=3-5 times, 4=6-10 times, 5=11-15 times, 6=16-20 times, 7=More than 20 times",int
+HelpReceived7,"Since March 11, when COVID-19 was declared a global pandemic, how many times have you received help from others that you know (e.g., family, friends, neighbors) because of the following reasons? Do not include goods received from charities, or time strangers volunteered. Receiving emotional support","1=0 times, 2=1-2 times, 3=3-5 times, 4=6-10 times, 5=11-15 times, 6=16-20 times, 7=More than 20 times",int
+ReceivedCharity,"Since March 11, when COVID-19 was declared a global pandemic, how many times have you received assistance or goods from charities? ","1=0 times, 2=1-2 times, 3=3-5 times, 4=6-10 times, 5=11-15 times, 6=16-20 times, 7=More than 20 times",int
+GivenCharity,"Since March 11, when COVID-19 was declared a global pandemic, how many times have you donated money, goods or your time to charities?",,int
+Motivations1,I help others because I feel compassion toward people in need,"1=Does not fit my personality at all, 7=Fits my personality",int
+Motivations2,People with whom I am close place a high value on helping others,"1=Does not fit my personality at all, 7=Fits my personality",int
+Motivations3,Helping others puts too much of a strain on me,"1=Does not fit my personality at all, 7=Fits my personality",int
+Motivations4,Helping others enables me to obtain recognition,"1=Does not fit my personality at all, 7=Fits my personality",int
+Motivations5,Helping others makes me feel happy,"1=Does not fit my personality at all, 7=Fits my personality",int
+Motivations6,"When I give money to charitable causes, I find it important that 100% of my contribution goes to the beneficiaries and will not be used for overhead","1=Does not fit my personality at all, 7=Fits my personality",int
+Motivations7,Sometimes I help others because I see other people helping on social media and I feel pressured or guilty.,"1=Does not fit my personality at all, 7=Fits my personality",int
+Motivations8,"When I help others, I do so with my heart rather than my head","1=Does not fit my personality at all, 7=Fits my personality",int
+Motivations9,My religion is an important driver for my helping behavior,"1=Does not fit my personality at all, 7=Fits my personality",int
+Motivations10,I help others because I have so much in my life to be thankful for,"1=Does not fit my personality at all, 7=Fits my personality",int
+Motivations11,I help others to decrease the injustice in this world,"1=Does not fit my personality at all, 7=Fits my personality",int
+Motivations12,Sometimes I help others because I see other people helping on social media and I feel pressured or guilty.,"1=Does not fit my personality at all, 7=Fits my personality",int
+Chaos1,I get a kick when natural disasters strike in foreign countries,"1=Strongly disagree, 7=Strongly agree",int
+Chaos2,I fantasize about a natural disaster wiping out most of humanity such that a small group of people can start all over,"1=Strongly disagree, 7=Strongly agree",int
+Chaos3,I think society should be burned to the ground,"1=Strongly disagree, 7=Strongly agree",int
+Chaos4,"When I think about our political and social institutions, I cannot help thinking just let them all burn","1=Strongly disagree, 7=Strongly agree",int
+Chaos5,"We cannot fix the problems in our societal institutions, we need to tear them down and start over","1=Strongly disagree, 7=Strongly agree",int
+Chaos6,I need chaos around me - it is too boring if nothing is going on,"1=Strongly disagree, 7=Strongly agree",int
+Chaos7,Sometimes I just feel like destroying beautiful things,"1=Strongly disagree, 7=Strongly agree",int
+Chaos8,There is no right and wrong in the world,"1=Strongly disagree, 7=Strongly agree",int
+Chaos9,"When I think about our current political and social institutions, I feel proud","1=Strongly disagree, 7=Strongly agree",int
+Chaos10,"I believe that we can fix the problems in our societal institutions, it just takes hard work","1=Strongly disagree, 7=Strongly agree",int
+Chaos11,I do not feel good unless there is order around me - I do not like chaotic situations,"1=Strongly disagree, 7=Strongly agree",int
+Chaos12,I think we should all work together to preserve the beauty and order of the world we live in,"1=Strongly disagree, 7=Strongly agree",int
+FutureConsequences1,I often engage in activities to achieve outcomes that may not result for many years,"1= not at all like me), 7= very much like me",int
+FutureConsequences2,"I only act to satisfy present concerns, figuring the future will take care of itself","1= not at all like me), 7= very much like me",int
+FutureConsequences3,My behavior is only influenced by the short-term (a matter of days or weeks) outcomes of my actions,"1= not at all like me), 7= very much like me",int
+FutureConsequences4,I generally ignore warnings about possible future problems because I think the problems will be resolved before they reach crisis level,"1= not at all like me), 7= very much like me",int
+FutureConsequences5,I think that sacrificing now is usually unnecessary since future outcomes can be dealt with at a later time,"1= not at all like me), 7= very much like me",int
+FutureConsequences6,"I only act to satisfy immediate concerns, figuring that I will take care of future problems that may occur at a later date","1= not at all like me), 7= very much like me",int
+FutureConsequences7,My day to day work is more important to me than behavior that has distant outcomes,"1= not at all like me), 7= very much like me",int
+FoodInsecurity1,"Since March 11, when COVID-19 was declared a global pandemic I worried whether my food would run out before I was able to get more","1=Never, 2=Sometimes, 3=Often",int
+FoodInsecurity2,"Since March 11, when COVID-19 was declared a global pandemic I cut the size of meals or skipped meals because there was not enough food","1=Never, 2=Sometimes, 3=Often",int
+FoodInsecurity3,"Since March 11, when COVID-19 was declared a global pandemic I lost weight because there was not enough food","1=Never, 2=Sometimes, 3=Often",int
+Housing1,"Since March 11, when COVID-19 was declared a global pandemic I did not pay full amount of rent or mortgage","1=Never, 2=Sometimes, 3=Often",int
+Housing2,"Since March 11, when COVID-19 was declared a global pandemic I did not pay full amount of utilities","1=Never, 2=Sometimes, 3=Often",int
+Housing3,"Since March 11, when COVID-19 was declared a global pandemic I moved in with people due to financial problems","1=Never, 2=Sometimes, 3=Often",int
+Homeless,"Since March 11, when COVID-19 was declared a global pandemic have you experienced homelessness?","1= never, 2= sometimes, 3= often",int
+GreenSettings,"Since March 11, when COVID-19 was declared a global pandemic have you utilized green settings such as parks, gardens, forests, waterbodies, etc. to find peace, relax or de-stress?","1= never, 2= sometimes, 3= often",int
+OutdoorRec,"To cope with the disruptions and increased demands of COVID-19, have you turned to outdoor recreation to take care of yourself and support your physical or mental health?","1= never, 2= sometimes, 3= often",int
+Movies,Please indicate whether you have seen the following movies (select all that apply):,"1 = 12 Monkeys (1995)††
+2 = 12 Monkeys (2015)††
+3 = 28 Days Later (2002)†
+4 = The 100 (2014-2020)††
+5 = 28 Weeks Later (2007)†
+6 = A Quiet Place (2018)†
+15 = The Andromeda Strain (1971)††
+16 = Annihilation (2018)†
+17 = Ash vs Evil Dead (2015-2018)††
+18 = Bird Box (2018)†
+19 = Black Summer (2019)††
+20 = Book of Eli (2010)†
+21 = Cell (2016)†
+22 = Children of Men (2006)†
+23 = Cloverfield (2008)††
+24 = Colony (2016-2018)††
+25 = The Crazies (2010)†
+26 = Dawn of the Dead (1978)†
+27 = Dawn of the Dead (2004)†
+28 = The Day After Tomorrow (2004)††
+29 = Day of the Dead (1985)††
+30 = Dead Set (2008)†
+31 = Dead Snow (2009)†
+32 = Falling Skies (2011-2015)††
+33 = Fear the Walking Dead (2015-present)†
+34 = Freakish (2016-2017)††
+35 = Glitch (2015-2019)††
+36 = I Am Legend (2007)††
+37 = Independence Day (1996)††
+38 = It Comes At Night (2017)†
+39 = JeruZalem (2015)†
+40 = Mad Max (1979)††
+41 = Mad Max: Fury Road (2015)††
+47 = Mutants (2009)†
+48 = Night of the Living Dead (1968)†
+49 = The Omega Man (1971)††
+50 = Patient Zero (2018)†
+51 = Pandemic (2016)†
+46 = Pontypool (2008)†
+53 = Quarantine (2008)†
+54 = The Rain (2018)††
+55 = REC (2007)††
+56 = Resident Evil (2002)††
+57 = The Returned (2015)†
+58 = The Road (2009)††
+59 = Shaun of the Dead (2004)†
+60 = The Serpent and the Rainbow (1988)†
+61 = Snowpiercer (2013)†
+52 = The Stand (1994)†
+62 = Train to Busan (2016)†
+63 = The Walking Dead (2010-present)††
+64 = Warm Bodies (2013)††
+65 = World War Z (2013)††
+66 = Z Nation (2014)††
+67 = Zombieland (2009)††
+68 = Zombieland: Double Tap (2019) ",string
+Discounting1,Please select the amount of money at the indicated time that you would prefer,"1=$26 right now, 2=$59 in 17 days",int
+Discounting2,Please select the amount of money at the indicated time that you would prefer,"1=$69 right now , 2=$85 in 91 days",int
+Discounting3,Please select the amount of money at the indicated time that you would prefer,"1=$47 right now, 2=$80 in 25 days",int
+Discounting4,Please select the amount of money at the indicated time that you would prefer,"1=$11 right now, 2=$30 in 7 days",int
+Discounting5,Please select the amount of money at the indicated time that you would prefer,"1=$34 right now, 2=$50 in 30 days",int
+Discounting6,Please select the amount of money at the indicated time that you would prefer,"1=$17 right now, 2=$29 in 25 days",int
+Discounting7,Please select the amount of money at the indicated time that you would prefer,"1=$23 right now, 2=$60 in 10 days",int
+Discounting8,Please select the amount of money at the indicated time that you would prefer,"1=$40 right now, 2=$55 in 62 days",int
+Discounting9,Please select the amount of money at the indicated time that you would prefer,"1=$32 right now, 2=$83 in 10 days",int
+Discounting10,Please select the amount of money at the indicated time that you would prefer,"1=$27 right now, 2=$50 in 21 days",int
+Discounting11,Please select the amount of money at the indicated time that you would prefer,"1=$25 right now, 2=$60 in 14 days",int
+Discounting12,Please select the amount of money at the indicated time that you would prefer,"1=$41 right now, 2=$75 in 20 days",int
+Discounting13,Please select the amount of money at the indicated time that you would prefer,"1=$14 right now, 2=$25 in 19 days",int
+Discounting14,Please select the amount of money at the indicated time that you would prefer,"1=$55 right now , 2=$75 in 61 days",int
+Discounting15,Please select the amount of money at the indicated time that you would prefer,"1=$33 right now, 2=$80 in 14 days",int
+Discounting16,Please select the amount of money at the indicated time that you would prefer,"1=$15 right now, 2=$33 in 16 days",int
+Discounting17,Please select the amount of money at the indicated time that you would prefer,"1=$49 right now, 2=$60 in 89 days",int
+Discounting18,Please select the amount of money at the indicated time that you would prefer,"1=$30 right now, 2=$51 in 25 days",int
+Discounting19,Please select the amount of money at the indicated time that you would prefer,"1=$19 right now , 2=$25 in 53 days",int
+Discounting20,Please select the amount of money at the indicated time that you would prefer,"1=$24 right now , 2=$35 in 29 days",int
+Discounting21,Please select the amount of money at the indicated time that you would prefer,"1=$15 right now, 2=$35 in 29 days",int
+Discounting22,Please select the amount of money at the indicated time that you would prefer,"1=$20 right now, 2=$55 in 7 days",int
+Discounting23,Please select the amount of money at the indicated time that you would prefer,"1=$31 right now, 2=$85 in 7 days",int
+Discounting24,Please select the amount of money at the indicated time that you would prefer,"1=$25 right now, 2=$30 in 80 days",int
+Discounting25,Please select the amount of money at the indicated time that you would prefer,"1=$15 right now, 2=$39 in 10 days",int
+Discounting26,Please select the amount of money at the indicated time that you would prefer,"1=$37 right now, 2=$84 in 17 days",int
+Discounting27,Please select the amount of money at the indicated time that you would prefer,"1=$54 right now, 2=$80 in 30 days",int
+Job1,How likely do you think it is that you will lose your job because of the economic downturn associated with COVID-19,"1=Not at all likely, 7=Extremely likely, 8=Already have lost job",int
+Job2,"If you lost your job, how long do you think it would take to find another one? ","1=Less than 1 month, 2=1month, 3=2months, 4=3 months, 5=4 months, 6=5 months, 7=6 months, 8=more than 6 months",int
+Job3,"If you didn't have a job, how long would your savings last?","1=Already have used all of my savings, 2=1 month, 3=2 months, 4=3 months, 5=4 months, 6=5 months, 7=6 months, 8=More than 6 months",int
+ImportantSocialDist,How important is it to you to maintain social distancing now to help prevent a spike in COVID-19 cases in a few months from now? (,"1=Not at all important, 7=Extremely important",int
+MaskPreventSurge,"How important is it to you to wear a mask in public now to help prevent a spike in COVID-19 cases in a few months from now? (1=Not at all important, 7=Extremely important)","1=Not at all important, 7=Extremely important",int
+COVIDspike,How likely do you think it is that there will be a spike of COVID-19 cases in a few months from now?,"1=Not at all likely, 7=Extremely likely",int
+CareerImpact,How much of an impact will COVID19 have on your career path in 3-6 months from now? ,"1=Extremely positive, 7=Extremely negative",int
+CareerImpact5yrs,What effect will it have on your career path in five years from now?,"1=Extremely positive, 7=Extremely negative",int
+COVIDthreat,How much of a threat do you believe COVID-19 poses to public health?,"1=No threat at all, 7=Extremely severe threat",int
+Response2ndWave,"Government efforts to slow the spread of COVID-19 have led to severe economic consequences. Assuming we have re-opened completely and a second wave hits in a few months, how should we respond? ","1=Keep economy open, 4=Partial shutdown, 7=Complete shutdown",int
+HowLongSocialDist,How long would you be willing to practice social distancing to limit the spread of the disease?,"1=Not at all, 2=Two weeks, 3=One month, 4=Two months, 5=Four months, 6=Six months, 7=Nine months, 8=1 year, 9=1.5 years, 10=2 years, 11=More than 2 years, 12=Forever",int
+HowLongMask,How long would you be willing to wear a mask in public spaces to limit the spread of the disease?,"1=Not at all, 2=Two weeks, 3=One month, 4=Two months, 5=Four months, 6=Six months, 7=Nine months, 8=1 year, 9=1.5 years, 10=2 years, 11=More than 2 years, 12=Forever",int
+ProportionWearMask1,What proportion of individuals in your neighborhood wear a mask while shopping?,"1=None, 7=All",int
+ProportionWearMask2,"What proportion of your family have modified their behavior (e.g., practice social distancing or wear masks) to prevent spread of COVID-19?","1=None, 7=All",int
+ProportionWearMask3,What percentage of your CLOSE FRIENDS have modified their behavior to prevent the spread of COVID-19,"1=None, 7=All",int
+ProportionWearMask4,What percentage of individuals in your NEIGHBORHOOD have modified their behavior to prevent the spread of COVID-19?,"1=None, 7=All",int
+ClosestMask,Think about the people you are closest with. How important do they believe it is for people to modify their behavior to prevent the spread of COVID-19? (,"1=Not at all important, 7=Extremely important",int
+CFC1,"I consider how things might be in the future, and try to influence those things with my day to day behavior.","1= not at all like me, 7= very much like me",int
+CFC2,My convenience is a big factor in the decisions I make or the actions I take,"1= not at all like me, 7= very much like me",int
+CFC3,I am willing to sacrifice my immediate happiness or well-being in order to achieve future outcomes,"1= not at all like me, 7= very much like me",int
+CFC4,I think it is important to take warnings about negative outcomes seriously even if the negative outcome will not occur for many years,"1= not at all like me, 7= very much like me",int
+CFC5,I think it is more important to perform a behavior with important distant consequences than a behavior with less important immediate consequences,"1= not at all like me, 7= very much like me",int
+CFC6,"When I make a decision, I think about how it might affect me in the future","1= not at all like me, 7= very much like me",int
+CFC7,My behavior is generally influenced by future consequences,"1= not at all like me, 7= very much like me",int
+PoliticalOrient,How would you characterize your political leanings? ,"1 = extremely to the left, 7 = extremely to the right",int
+Contacts24hrs,"How many people (outside of your household) have you had in-person interactions with during the last 24 hours (e.g., visiting with friends, buying food or supplies from a cashier)?","Free input, numbers only",int
+Contacts7days,"How many people (outside of your household) have you had in-person interactions with during the last 7 days (e.g., visiting with friends, buying food or supplies from a cashier)?","Free input, numbers only",int
+ContactsMask,"During these in-person interactions, if you were closer than 6 feet (2 meters) from the person(s) did you wear a face mask?","1=Never, 3=Half the time, 5=Always",int
+SelfIsolation,"Since March 13, when COVID-19 was declared a global pandemic, have you been self-isolating (no physical contact with people outside of your household)?","1=Never, 3=Half the time, 5=Always",int
+HouseHoldIsolation,"Since March 13, when COVID-19 was declared a global pandemic, have members of your household been isolating (no physical contact with people outside of your household)?","1=Never, 3=Half the time, 5=Always",int
+HouseHoldMask,When members of your household have in-person interactions with people outside your household do they wear a mask and/or stay 6 feet (2 meters) away from the person(s)?,"1=Never, 3=Half the time, 5=Always",int
+LargeGroups,"Since March 13, when COVID-19 was declared a global pandemic, how many times have you been exposed to large groups of people (i.e., more than 10 people) while being indoors? Numbers only.","Free text, numbers only",int
+LargeGroupReason1,"If you have been exposed to large groups of people (i.e., more than 10 people), what were the reasons? (select all that apply) Family reasons","1= false, 2= true",int
+LargeGroupReason2,"If you have been exposed to large groups of people (i.e., more than 10 people), what were the reasons? (select all that apply) Social reasons","1= false, 2= true",int
+LargeGroupReason3,"If you have been exposed to large groups of people (i.e., more than 10 people), what were the reasons? (select all that apply)Work-related reasons","1= false, 2= true",int
+LargeGroupReason4,"If you have been exposed to large groups of people (i.e., more than 10 people), what were the reasons? (select all that apply) Other reasons","1= false, 2= true",int
+LargeGroupReason1text,What was the most common family circumstance that brought you together with more than 10 people?,Free text ,string
+LargeGroupReason2text,What was the most common social circumstance that brought you together with more than 10 people?,Free text ,string
+LargeGroupReason3text,What was the most common work-related situation that brought you together with more than 10 people?,Free text ,string
+LargeGroupReason4text,Briefly describe the other type of situation that brought you together with more than 10 people.,Free text ,string
+SchoolAge,Do you have any school-aged children who may be returning to school in the next few weeks? ,"1= no, 2= yes, 3= my children have already returned to school",int
+ConcernBack2School,"Given the current state of the pandemic where you live, how concerned are you at the prospect of your children physically returning to school? ","1=Not at all, 7=Extremely",int
+MethodSchool,"Given the current state of the pandemic, what is/will be your children's method of schooling?","1=In-person, 2=Online, 3=Mixed in-person and online, 4=Homeschool, 5=Other",int
+MethodSchoolOther,"Given the current state of the pandemic, what is/will be your children's method of schooling? (Specify if response was other on MethodSchool)",Free text,string
+PreferredMethod,Is this your preferred method of schooling?,"1=No, 2=Yes",int
+IfNotPreferred,"If not, what would be your preferred method of schooling your children?","1=In-person, 2=Online, 3=Mixed in-person and online, 4=Homeschool, 5=Other",int
+IfNotPreferredOther,If the response to IfNotPreferred was 5 (Other) participants could add additional free text here,Free text ,string
+Streneous,"During a typical 7-Day period (a week), how many times on the average do you do streneous exercise for more than 15 minutes during your free time?","Free input, numbers only",int
+Moderate,"During a typical 7-Day period (a week), how many times on the average do you do moderate exercise for more than 15 minutes during your free time?","Free input, numbers only",int
+Mild,"During a typical 7-Day period (a week), how many times on the average do you do mild exercise for more than 15 minutes during your free time?","Free input, numbers only",int
+Sweat,"During a typical 7-Day period (a week), in your leisure time, how often do you engage in any regular activity long enough to work up a sweat (heart beats rapidly)?","1=Often, 2=Sometimes, 3=Rarely/Never",int
+ActivityCovid,"Compared to your life before the Covid-19 Pandemic response, are you more active, equally active, or less active? ","1=More active, 2=Equally active, 3=Less active",int
+ActivityChanges,"Next, think about your physical activity patterns before the Covid-19 pandemic response compared to your activity patterns now. How have your activity patterns changed? Think about the physical activity setting (in the gym, at home, outside, inside), the social context (group vs alone), the type of activities you performed, the frequency and duration of activity (how often and how long), and the intensity of the activity (how hard is the exercise)",Free text,string
+PT1,"I sometimes find it difficult to see things from the ""other guy's"" point of view","1=Does not describe me well, 5=Describes me very well",int
+PT2,I try to look at everybody's side of a disagreement before I make a decision,"1=Does not describe me well, 5=Describes me very well",int
+PT3,I sometimes try to understand others better by imagining how things look from their perspective,"1=Does not describe me well, 5=Describes me very well",int
+PT4,"If I'm sure I'm right about something, I don't waste much time listening to other people's arguments","1=Does not describe me well, 5=Describes me very well",int
+PT5,I believe that there are two sides to every question and try to look at them both,"1=Does not describe me well, 5=Describes me very well",int
+PT6,"When I'm upset at someone, I usually try to ""put myself in their shoes"" for a while","1=Does not describe me well, 5=Describes me very well",int
+PT7,"Before criticizing somebody, I try to imagine how I would feel if I were in their place","1=Does not describe me well, 5=Describes me very well",int
+RMET8,"You will now be shown a set of eyes from people displaying various thoughts and feelings. For each set of eyes, choose the word that best describes what the person in the picture is thinking or feeling. Please choose the word which you consider to be most suitable. You should try to do the task as quickly as possible, but make sure that you have read all 4 words before making your choice.","Four choices, different for each item. Correct answer = Despondent",string
+RMET9,"You will now be shown a set of eyes from people displaying various thoughts and feelings. For each set of eyes, choose the word that best describes what the person in the picture is thinking or feeling. Please choose the word which you consider to be most suitable. You should try to do the task as quickly as possible, but make sure that you have read all 4 words before making your choice.","Four choices, different for each item. Correct answer = Preoccupied",string
+RMET12,"You will now be shown a set of eyes from people displaying various thoughts and feelings. For each set of eyes, choose the word that best describes what the person in the picture is thinking or feeling. Please choose the word which you consider to be most suitable. You should try to do the task as quickly as possible, but make sure that you have read all 4 words before making your choice.","Four choices, different for each item. Correct answer = Sceptical",string
+RMET14,"You will now be shown a set of eyes from people displaying various thoughts and feelings. For each set of eyes, choose the word that best describes what the person in the picture is thinking or feeling. Please choose the word which you consider to be most suitable. You should try to do the task as quickly as possible, but make sure that you have read all 4 words before making your choice.","Four choices, different for each item. Correct answer = Accusing",string
+RMET15,"You will now be shown a set of eyes from people displaying various thoughts and feelings. For each set of eyes, choose the word that best describes what the person in the picture is thinking or feeling. Please choose the word which you consider to be most suitable. You should try to do the task as quickly as possible, but make sure that you have read all 4 words before making your choice.","Four choices, different for each item. Correct answer = Contemplative",string
+RMET19,"You will now be shown a set of eyes from people displaying various thoughts and feelings. For each set of eyes, choose the word that best describes what the person in the picture is thinking or feeling. Please choose the word which you consider to be most suitable. You should try to do the task as quickly as possible, but make sure that you have read all 4 words before making your choice.","Four choices, different for each item. Correct answer = Tentative",string
+RMET22,"You will now be shown a set of eyes from people displaying various thoughts and feelings. For each set of eyes, choose the word that best describes what the person in the picture is thinking or feeling. Please choose the word which you consider to be most suitable. You should try to do the task as quickly as possible, but make sure that you have read all 4 words before making your choice.","Four choices, different for each item. Correct answer = Preoccupied",string
+RMET24,"You will now be shown a set of eyes from people displaying various thoughts and feelings. For each set of eyes, choose the word that best describes what the person in the picture is thinking or feeling. Please choose the word which you consider to be most suitable. You should try to do the task as quickly as possible, but make sure that you have read all 4 words before making your choice.","Four choices, different for each item. Correct answer = Pensive",string
+RMET32,"You will now be shown a set of eyes from people displaying various thoughts and feelings. For each set of eyes, choose the word that best describes what the person in the picture is thinking or feeling. Please choose the word which you consider to be most suitable. You should try to do the task as quickly as possible, but make sure that you have read all 4 words before making your choice.","Four choices, different for each item. Correct answer = Serious",string
+RMET36,"You will now be shown a set of eyes from people displaying various thoughts and feelings. For each set of eyes, choose the word that best describes what the person in the picture is thinking or feeling. Please choose the word which you consider to be most suitable. You should try to do the task as quickly as possible, but make sure that you have read all 4 words before making your choice.","Four choices, different for each item. Correct answer = Suspicious",string
+RMET8score,"You will now be shown a set of eyes from people displaying various thoughts and feelings. For each set of eyes, choose the word that best describes what the person in the picture is thinking or feeling. Please choose the word which you consider to be most suitable. You should try to do the task as quickly as possible, but make sure that you have read all 4 words before making your choice.","0 = wrong answer, 1 = correct answer",int
+RMET9score,"You will now be shown a set of eyes from people displaying various thoughts and feelings. For each set of eyes, choose the word that best describes what the person in the picture is thinking or feeling. Please choose the word which you consider to be most suitable. You should try to do the task as quickly as possible, but make sure that you have read all 4 words before making your choice.","0 = wrong answer, 1 = correct answer",int
+RMET12score,"You will now be shown a set of eyes from people displaying various thoughts and feelings. For each set of eyes, choose the word that best describes what the person in the picture is thinking or feeling. Please choose the word which you consider to be most suitable. You should try to do the task as quickly as possible, but make sure that you have read all 4 words before making your choice.","0 = wrong answer, 1 = correct answer",int
+RMET14score,"You will now be shown a set of eyes from people displaying various thoughts and feelings. For each set of eyes, choose the word that best describes what the person in the picture is thinking or feeling. Please choose the word which you consider to be most suitable. You should try to do the task as quickly as possible, but make sure that you have read all 4 words before making your choice.","0 = wrong answer, 1 = correct answer",int
+RMET15score,"You will now be shown a set of eyes from people displaying various thoughts and feelings. For each set of eyes, choose the word that best describes what the person in the picture is thinking or feeling. Please choose the word which you consider to be most suitable. You should try to do the task as quickly as possible, but make sure that you have read all 4 words before making your choice.","0 = wrong answer, 1 = correct answer",int
+RMET19score,"You will now be shown a set of eyes from people displaying various thoughts and feelings. For each set of eyes, choose the word that best describes what the person in the picture is thinking or feeling. Please choose the word which you consider to be most suitable. You should try to do the task as quickly as possible, but make sure that you have read all 4 words before making your choice.","0 = wrong answer, 1 = correct answer",int
+RMET22score,"You will now be shown a set of eyes from people displaying various thoughts and feelings. For each set of eyes, choose the word that best describes what the person in the picture is thinking or feeling. Please choose the word which you consider to be most suitable. You should try to do the task as quickly as possible, but make sure that you have read all 4 words before making your choice.","0 = wrong answer, 1 = correct answer",int
+RMET24score,"You will now be shown a set of eyes from people displaying various thoughts and feelings. For each set of eyes, choose the word that best describes what the person in the picture is thinking or feeling. Please choose the word which you consider to be most suitable. You should try to do the task as quickly as possible, but make sure that you have read all 4 words before making your choice.","0 = wrong answer, 1 = correct answer",int
+RMET32score,"You will now be shown a set of eyes from people displaying various thoughts and feelings. For each set of eyes, choose the word that best describes what the person in the picture is thinking or feeling. Please choose the word which you consider to be most suitable. You should try to do the task as quickly as possible, but make sure that you have read all 4 words before making your choice.","0 = wrong answer, 1 = correct answer",int
+RMET36score,"You will now be shown a set of eyes from people displaying various thoughts and feelings. For each set of eyes, choose the word that best describes what the person in the picture is thinking or feeling. Please choose the word which you consider to be most suitable. You should try to do the task as quickly as possible, but make sure that you have read all 4 words before making your choice.","0 = wrong answer, 1 = correct answer",int
+PartnerEmpathy1,I share my acquaintance's emotions,"1=Do not agree at all, 7=Strongly agree",int
+PartnerEmpathy2,I empathize with my acquaintance,"1=Do not agree at all, 7=Strongly agree",int
+PartnerEmpathy3,I see that my acquaintance feels the same emotions as I do,"1=Do not agree at all, 7=Strongly agree",int
+PartnerEmpathy4,I feel a strong bond with my acquaintance,"1=Do not agree at all, 7=Strongly agree",int
+SharedAgency1,My acquaintance will take on my responsibilities so that I can accomplish my goals,"1=Do not agree at all, 7=Strongly agree",int
+SharedAgency2,"If I am busy, my acquaintance will not tell me about their difficulties and needs","1=Do not agree at all, 7=Strongly agree",int
+SharedAgency3,My acquaintance and I tend to negotiate when we disagree,"1=Do not agree at all, 7=Strongly agree",int
+PromotionEE,"Imagine that your acquaintance has received a promotion at their job. They have been working really hard for this company for some time, and are very excited about this new opportunity. This promotion will give your acquaintance more financial stability and the ability to invest in the future. How good do you feel about your acquaintance receiving this promotion?","1=Not at all, 7=Really good",int
+PromotionSH,"Imagine that your acquaintance has received a promotion at their job. They have been working really hard for this company for some time, and are very excited about this new opportunity. This promotion will give your acquaintance more financial stability and the ability to invest in the future. How do you feel this promotion will influence you?","1=This will have no influence on me, 7=This will have a positive influence on me",int
+DeathEE,"Imagine that your acquaintance recently lost both of their parents in a car accident. Your acquaintance is devastated about their loss. Without his/her parents, your acquaintance has lost their main source of emotional and social support, and they do not know how to cope. How bad do you feel about your acquaintance losing their parents?","1=Not at all, 7=Really bad",int
+DeathSH,"Imagine that your acquaintance recently lost both of their parents in a car accident. Your acquaintance is devastated about their loss. Without his/her parents, your acquaintance has lost their main source of emotional and social support, and they do not know how to cope. How do you feel that this loss will influence you? ","1=This will have no influence on me, 7=This will have a positive influence on me",int
+Dggive,"You will now play an allocation task with your acquaintance. In this allocation task you will be given 100 lottery tickets. Each ticket is a lottery entry for two $5.00 USD prices. You can allocate any amount between 0 and 100 to your acquaintance. The remainder amount you will keep as entries to the lottery for yourself. The more tickets you allocate to your acquaintance, the greater the chances of them winning; and the more tickets you allocate to yourself, the greater your chances of winning. We will send you information about how your acquaintance can contact us and receive their payment if they win the lottery. If you are the winner, we will add a bonus payment to your Prolific account. How many lottery tickets would you like to allocate to your acquaintance?","Free input, numbers only. Max = 100",int
+HouseHold,How many people currently live in your household?,"Free input, numbers only",int
+HealthCare,Are you currently employed as a healthcare worker? ,"1=No, 2=Yes",int
+Teacher,Are you currently employed as a teacher? ,"1=No, 2=Yes",int
+Occupation,What is your current occupation?,Free text,string
+WorkHighRisk,Has your occupation been identified as high-risk for COVID-19 transmission?,"1=No, 2=Not sure, 3=Yes",int
+WorkCovidGear,"Does your workplace provide you with sufficient access to protective gear against COVID-19 (for example, cloth masks, surgical masks, respirators, eye protection, etc)?","1=Strongly disagree, 7=Strongly agree",int
+Work,"Since March 13, when COVID-19 was declared a global pandemic, have you worn a mask and/or stayed 6 feet (2 meters) away from other people when doing the following activities? During work"," 1=Never, 3=About half the time, 5=Always, 6=I have not done this activity since March 13",int
+ErrandOut,"Since March 13, when COVID-19 was declared a global pandemic, have you worn a mask and/or stayed 6 feet (2 meters) away from other people when doing the following activities? Outdors errands"," 1=Never, 3=About half the time, 5=Always, 6=I have not done this activity since March 13",int
+ErrandIN,"Since March 13, when COVID-19 was declared a global pandemic, have you worn a mask and/or stayed 6 feet (2 meters) away from other people when doing the following activities? Indoor errands"," 1=Never, 3=About half the time, 5=Always, 6=I have not done this activity since March 13",int
+Taxi,"Since March 13, when COVID-19 was declared a global pandemic, have you worn a mask and/or stayed 6 feet (2 meters) away from other people when doing the following activities? During taxi, lyft/uber"," 1=Never, 3=About half the time, 5=Always, 6=I have not done this activity since March 13",int
+PublicTransport,"Since March 13, when COVID-19 was declared a global pandemic, have you worn a mask and/or stayed 6 feet (2 meters) away from other people when doing the following activities? Using large public transportation such as buses or subways"," 1=Never, 3=About half the time, 5=Always, 6=I have not done this activity since March 13",int
+RestaurantOut,"Since March 13, when COVID-19 was declared a global pandemic, have you worn a mask and/or stayed 6 feet (2 meters) away from other people when doing the following activities? Dining at a restaurant outdoors"," 1=Never, 3=About half the time, 5=Always, 6=I have not done this activity since March 13",int
+RestaurantIN,"Since March 13, when COVID-19 was declared a global pandemic, have you worn a mask and/or stayed 6 feet (2 meters) away from other people when doing the following activities? Dining at a restaurant indoors"," 1=Never, 3=About half the time, 5=Always, 6=I have not done this activity since March 13",int
+PartyOut,"Since March 13, when COVID-19 was declared a global pandemic, have you worn a mask and/or stayed 6 feet (2 meters) away from other people when doing the following activities? Hosting/attending a gathering or party outdoors"," 1=Never, 3=About half the time, 5=Always, 6=I have not done this activity since March 13",int
+PartyIN,"Since March 13, when COVID-19 was declared a global pandemic, have you worn a mask and/or stayed 6 feet (2 meters) away from other people when doing the following activities? Hosting/attending a gathering or party indoors"," 1=Never, 3=About half the time, 5=Always, 6=I have not done this activity since March 13",int
+GymOut,"Since March 13, when COVID-19 was declared a global pandemic, have you worn a mask and/or stayed 6 feet (2 meters) away from other people when doing the following activities? Using an outdoor gym/fitness center"," 1=Never, 3=About half the time, 5=Always, 6=I have not done this activity since March 13",int
+GymIN,"Since March 13, when COVID-19 was declared a global pandemic, have you worn a mask and/or stayed 6 feet (2 meters) away from other people when doing the following activities? Using an indoor gym/fitness center"," 1=Never, 3=About half the time, 5=Always, 6=I have not done this activity since March 13",int
+Salon,"Since March 13, when COVID-19 was declared a global pandemic, have you worn a mask and/or stayed 6 feet (2 meters) away from other people when doing the following activities? Going to a salon such as a nail/hair salon or barbershop"," 1=Never, 3=About half the time, 5=Always, 6=I have not done this activity since March 13",int
+Camping,"Since March 13, when COVID-19 was declared a global pandemic, have you worn a mask and/or stayed 6 feet (2 meters) away from other people when doing the following activities? Camping"," 1=Never, 3=About half the time, 5=Always, 6=I have not done this activity since March 13",int
+Hotel,"Since March 13, when COVID-19 was declared a global pandemic, have you worn a mask and/or stayed 6 feet (2 meters) away from other people when doing the following activities? Spending the night in a hotel"," 1=Never, 3=About half the time, 5=Always, 6=I have not done this activity since March 13",int
+OtherHouse,"Since March 13, when COVID-19 was declared a global pandemic, have you worn a mask and/or stayed 6 feet (2 meters) away from other people when doing the following activities? Spending the night in someone else's house"," 1=Never, 3=About half the time, 5=Always, 6=I have not done this activity since March 13",int
+Park,"Since March 13, when COVID-19 was declared a global pandemic, have you worn a mask and/or stayed 6 feet (2 meters) away from other people when doing the following activities? Going to parks or recreational centers/facilities"," 1=Never, 3=About half the time, 5=Always, 6=I have not done this activity since March 13",int
+Doctor,"Since March 13, when COVID-19 was declared a global pandemic, have you worn a mask and/or stayed 6 feet (2 meters) away from other people when doing the following activities? Going a doctor's/dentist's office"," 1=Never, 3=About half the time, 5=Always, 6=I have not done this activity since March 13",int
+Beach,"Since March 13, when COVID-19 was declared a global pandemic, have you worn a mask and/or stayed 6 feet (2 meters) away from other people when doing the following activities? Going to the beach or lake"," 1=Never, 3=About half the time, 5=Always, 6=I have not done this activity since March 13",int
+Pool,"Since March 13, when COVID-19 was declared a global pandemic, have you worn a mask and/or stayed 6 feet (2 meters) away from other people when doing the following activities? Going to a public/shared pool"," 1=Never, 3=About half the time, 5=Always, 6=I have not done this activity since March 13",int
+ContactFriends,"How often have you been in contact with friends (not including family members, in-laws, children) since the pandemic started?","1=Less than once a month, 2=Once a month, 3=Once a week, 4=A few times a week, 5=Every day",int
+WayContact,What is your primary way of keeping in contact with friends since the pandemic started?,"1=In-person contact, 2=Texting and phone calls, 3=Video calling (e.g., Skype, FaceTime, Zoom), 4=Emails",int
+ImpactedFriends,How has the pandemic impacted your existing friendships?,"1=The pandemic has made them worse, 4=Neither better or worse, 7=The pandemic has made them better",int
+NewFriends,"Have you made any new friendships since the pandemic began? If so, how many?","Free input, numbers only",int
+FriendsSatisfied,How satisfied are you with your friendships currently during the pandemic?,"1=Not at all satisfied, 7=Completely satisfied",int
+FriendsIsolated,How isolated from your social circle have you felt during the pandemic? ,"1=Not at all isolated, 7=Completely isolated",int
+FriendsLonely,How lonely have you felt during the pandemic?,"1=Not at all lonely, 7=Completely lonely",int
+FriendsGuilty,Do you feel guilty because you are not able to check-in on your friends in person as much as you used to?,"1=Not at all, 7=Very much",int
+FriendsParty,"A friend of yours is hosting a party indoors at his house next weekend that will have about 50 guests. Some of the guests are mutual friends of yours; other guests you do not know. Considering you have no other obligations, how likely are you to attend this party?","1=Not at all, 7=Very likely",int
+FP1,How many new friends have you made in the past 12 months?,"1=0 friends, 2=1-2 friends, 3=3-5 friends, 4=6-10 friends, 5=11-15 friends, 6=16-20 friends, 7=More than 20 friends",int
+FP2,"Friendships without closeness are ok, I don∆t feel like I need to be emotionally close with all of my friends","1=Strongly disagree, 7=Strongly agree",int
+FP3,I enjoy making casual friendships with many different people,"1=Strongly disagree, 7=Strongly agree",int
+FP4,I try to make new friends even if I can't be sure that I will develop close friendships with all of them,"1=Strongly disagree, 7=Strongly agree",int
+FP5,"I want to have a lot of different friendships with a lot of different people, even if it means that I don't get to know all of them very well","1=Strongly disagree, 7=Strongly agree",int
+FP6,How long would you have to know someone to consider that person a friend?,"1=More than 1 year, 2=1 year, 3=6-12 months, 4=3-6 months, 5=1-3 months, 6=A few weeks, 7=A few days",int
+FP7,I often find myself wishing I could be friends with lots of new people,"1=Strongly disagree, 7=Strongly agree",int
+FP8,I often find myself wishing I could get closer with lots of new people,"1=Strongly disagree, 7=Strongly agree",int
+FP9,I often wish I could become friends with many of the people that I meet,"1=Strongly disagree, 7=Strongly agree",int
+FP10,"In situations where I am around new people, I often feel really motivated to make new friends","1=Strongly disagree, 7=Strongly agree",int
+FP11,"It doesn't matter how many friends I have, I am always looking to meet new people to talk to/hang out with","1=Strongly disagree, 7=Strongly agree",int
+FP12,I often wish that others would introduce me to new people to talk to/hang out with,"1=Strongly disagree, 7=Strongly agree",int
+FP13,"In situations where I am around new people, I find it really easy to make new friends","1=Strongly disagree, 7=Strongly agree",int
+CloseFriendPFIEmpathyComposite,"Average of items PFIclose1, PFIclose2, & PFIclose5. Values for PFIclose5 have been reversed before averaging.",,int
+AcqPFIEmpathyComposite,"Average of items PFIAcq1, PFIAcq2, & PFIAcq5. Values for PFIAcq5have been reversed before averaging.",,int
+NeighborPFIEmpathyComposite,"Average of items PFINeighEmpathy, PFINeigh2, & PFINeigh5. Values for PFINeigh5 have been reversed before averaging.",,int
+CountryPFIEmpathyComposite,"Average of items PFICountry1, PFICountry2, & PFICountry5. Values for PFICountry5 have been reversed before averaging.",,int
+HumanityPFIEmpathyComposite,"Average of items PFIHumanityEmpathy, PFIHumanity2, & PFIHumanity5. Values for PFIHumanity5have been reversed before averaging.",,int
+CloseFriendPFISharedFAteComposite,"Average of items PFIclose3, PFIclose4, & PFIclose6",,int
+AcqPFISharedFAteComposite,"Average of items PFIAcq3, PFIAcq4, & PFIAcq6",,int
+NeighborPFISharedFAteComposite,"Average of items PFINeigh3, PFINeigh4, & PFINeigh6",,int
+CountryPFISharedFAteComposite,"Average of items PFICountry3, PFICountry4, & PFICountry6",,int
+HumanityPFISharedFAteComposite,"Average of items PFIHumanity3, PFIHumanity4, & PFIHumanity6",,int
+PSScomposite,"Average of items PSS1 to PSS10, with PSS4, PSS5, PSS7 & PSS8 values reversed for this composite calculation.",,int
+AnxietyComposite,Average of items Anxiety1 to Anxiety7,,int
+WillingnessNeighborComposite,"Average of items WillingnessNeigh1, WillingnessNeigh2, WillingnessNeigh, & WillingnessNeigh4",,int
+WillingnessCountryComposite,"Average of items WillingnessCountry1, WillingnessCountry2, WillingnessCountry3, & WillingnessCountry4",,int
+WillingnessHumanityComposite,"Average of items WillingnessHumanity1, WillingnessHumanity2, WillingnessHumanity, & WillingnessHumanity4",,int
+PerceptionRiskComposite,"Average of items PerceptionsRisk, PerceptionsRisk2, & PerceptionsRisk3",,int
+RiskManagementcomposite1,"Average of items Riskmanagementtransfer, Riskmanagementretention, Riskmanagementreduction, RiskmanagementAvoid1, RiskmanagementAvoid2, & Riskmanagementreduction2",,int
+RiskManagementcomposite2,"Average score for items Riskmanagementtransfer, Riskmanagementretention, Riskmanagementreduction, & Riskmanagementavoidance",,int
+CFICloseFriendComposite,Average score for items CFIclose1 to CFIclose6,,int
+CFIAcqComposite,Average score for items CFIAcq1 to CFIAcq6,,int
+CFINeighborComposite,Average score for items CFINeigh1 to CFINeigh6,,int
+CFICountryComposite,Average score for items CFICountry1 to CFICountry6,,int
+CFIHumanityComposite,Average score for items CFIHumanity1 to CFIHumanity6,,int
+DiseaseAvoidanceComposite,Average score for items DiseaseAvoidance1 to DiseaseAvoidance6,,int
+NBTNeighborComposite,Average score for items NBTNeigh & NBTNeigh2,,int
+NBTHumanityComposite,Average score for items NBTHumanity & NBTHumanity2,,int
+NBTCountryComposite,Average score for items NBTCommunity1 & NBTCommunity2,,int
+MateSeekingComposite,Average score for items MateSeeking1 & MateSeeking2,,int
+SocialDistanceComposite,Average score for items SocialDistnacing1 & SocialDistnacing2,,int
+RMETcomposite,"A sum of RMETscore items, basically indicating how many correct answers a participant got",,int
+PerspectiveTakingComposite,Average score for items PT1 to PT7,,int
+PartnerEmpathyAcqComposite,Average score for items PartnerEmpathy1 to PartnerEmpathy4,,int
+SharedAgencyAcqComposite,Average score for items SharedAgency1 to SharedAgency3,,int
+AskingHelpComposite,Average score for items Askingforhelp1 to Askingforhelp7,,int
+LikelyGiveHelpComposite,Average score for items Givinghelp1 to Givinghelp7,,int
+RiskManagementProtestComposite,Average score for items RiskProtests1 to RiskProtests5,,int
+HousingInsecurityComposite,Average score for items Housing1 to Housing3,,int
+NeedForChaosComposite,Average score for items Chaos1 to Chaos8,,int
+NeedForOrderComposite,Average score for items Chaos9 to Chaos12,,int
+FoodInsecurityComposite,Average score for items FoodInsecurity1 to FoodInsecurity3,,int
+UseGreenSpacesComposite,Average score of items GreenSettings & OutdoorRec,,int
+TimesHelpGivenComposite,Average score of items TimesHelpGiven1 to TimesHelpGiven7,,int
+ProportionWearMaskComposite,Average score for items ProportionWearMask1 ProportionWearMask4,,int
+CFCcomposite,CFCcompositeFuture - CFCcompositeImmediate + 56,,int
+CFCcompositeFuture,"Sum of items FutureConsequences1, CFC1, CFC3, CFC4, CFC5, CFC6, CFC7",,int
+CFCcompositeImmediate,"Sum of items FutureConsequences2, FutureConsequences3, FutureConsequences4, FutureConsequences5, FutureConsequences6, FutureConsequences7, CFC2",,int
+RiskmanagementAttention,Are you paying attention? ,"1= Yes, 2= No",int
+PFINeighAttention,Are you paying attention? ,"1= Yes, 2= No",int
+PFIHumanityAttention,Are you paying attention? ,"1= Yes, 2= No",int
+IsolateAttention,Are you paying attention? ,"1= Yes, 2= No",int
+AskingforhelpAttention,Are you paying attention? ,"1= Yes, 2= No",int
+GivinghelpAttention,Are you paying attention? ,"1= Yes, 2= No",int
+FailedAttentionChecks,Number of times a attention check failed (sum of attention items scoring 2),,int
+FailedAttentionChecksScore,Percentage of failed attention checks,,int

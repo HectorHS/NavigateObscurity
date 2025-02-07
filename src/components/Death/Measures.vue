@@ -60,10 +60,6 @@
       ...mapState(useDeathStore, ['deathMapOptions']),
       ...mapWritableState(useDeathStore, ['selectedDeathLocation', 'selectedDeathCause', 'selectedDeathAge', 'selectedDeathSex', 'sexRadioItems']),
     },
-    watch: {
-    },
-    mounted () {
-    }
   })
 
 </script>

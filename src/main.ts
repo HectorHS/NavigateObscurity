@@ -1,5 +1,4 @@
 import { createApp } from 'vue'
-import { createPinia } from 'pinia'
 import HighchartsVue from 'highcharts-vue'
 import Highcharts from 'highcharts';
 import Maps from "highcharts/modules/map";
@@ -7,6 +6,7 @@ import worldMap from '@highcharts/map-collection/custom/world.geo.json';
 
 import App from '@/App.vue'
 import router from '@/router'
+import store from '@/store/store.ts'
 import '@/styles/tailwind.scss'
 // to load colors for highcharts config
 import resolveConfig from 'tailwindcss/resolveConfig'
@@ -15,7 +15,7 @@ import { getTailwindColor, getTailwindHexColor, get10Colors } from './helpers/co
 
 const app = createApp(App)
 
-app.use(createPinia())
+app.use(store)
 app.use(router)
 
 Maps(Highcharts);
@@ -128,7 +128,7 @@ function getHighchartsTheme():Highcharts.Options {
         },
 
         tooltip: {
-            backgroundColor: 'rgba(33, 44, 44, 0.8)',
+            backgroundColor: 'rgba(31, 34, 46, 0.8)',
             borderWidth: 1,
             headerFormat: '',
             style: {
@@ -142,14 +142,14 @@ function getHighchartsTheme():Highcharts.Options {
             endOnTick: true,
             labels: {
                 style: {
-                    color: fullTailwindConfig.theme.colors.gray['100']
+                    color: fullTailwindConfig.theme.colors.textColor
                 }
             },
             title: {
                 text: undefined,
                 style: {
                     fontSize: '1rem',
-                    color: fullTailwindConfig.theme.colors.gray['100']
+                    color: fullTailwindConfig.theme.colors.textColor
                 }
             }
         },
@@ -160,16 +160,32 @@ function getHighchartsTheme():Highcharts.Options {
             startOnTick: false,
             labels: {
                 style: {
-                    color: fullTailwindConfig.theme.colors.gray['100']
+                    color: fullTailwindConfig.theme.colors.textColor
                 }
             },
             title: {
                 style: {
                     fontSize: '1rem',
-                    color: fullTailwindConfig.theme.colors.gray['100']
+                    color: fullTailwindConfig.theme.colors.textColor
                 },
                 text: undefined
             }
+        },
+        responsive: {
+            rules: [{
+                condition: {
+                    maxWidth: 700
+                },
+                chartOptions: {
+                    plotOptions: {
+                        scatter: {
+                            marker: {
+                                radius: 10,
+                            }
+                        }
+                    }
+                }
+            }]
         }
     };
 }

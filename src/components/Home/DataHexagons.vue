@@ -1,10 +1,11 @@
 <template>
     <section class="flex gap-12 flex-col lg:flex-row items-center">
+      <h2 class="lg:hidden text-left -mb-8">Data</h2>
         <div class="flex-1 w-full">
             <ul class="grid gap-1 sm:gap-4 m-0 mx-auto sm:w-11/12 pb-[12%] sm:pb-[8.4%] overflow-hidden grid-cols-6">
                 <li v-for="item in dataPages" :key="item.title" class="hexagon">
                     <div class="hexagon-item">
-                        <a class="absolute visible group" :href="'data'+ item.path">
+                        <a class="absolute visible group" :href="item.path">
                             <IconBase :icon="item.icon" class="-inset-x-full w-auto mx-auto my-0 absolute visible fill-gray h-3/6 opacity-30 lg:opacity-100  group-hover:opacity-30"></IconBase>
                             <h3 class="w-full lg:hidden group-hover:block absolute visible text-gray">{{item.title}}</h3>
                         </a>
@@ -15,13 +16,13 @@
         <div class="flex-1 items-center lg:order-first">
             <!-- This extra div is actually useful -->
             <div>
+              <h1 class="hidden lg:block text-left mb-8">Data</h1>
                 <p>
                     Too often, I realise how little I know about this world. I am not talking about details,
                     I am talking about the big picture. The kind of things you would expect to cover on an Earth
                     101 course in an alien university. So, I look for reasonably well sourced data and visualise
                     them hoping to aid my perspective on life on Earth.
                 </p>
-                <button type="button" class="button mt-8">Browse all data</button>
             </div>
         </div>
     </section>
@@ -45,10 +46,6 @@ export default defineComponent ({
     computed: {
       ...mapState(useAppStore, ['dataPages']),
     },
-    watch: {
-    },
-    mounted () {
-    }
   })
 </script>
 

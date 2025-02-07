@@ -838,21 +838,21 @@ export const useCovidStore = defineStore('covidStore', () =>{
         selectedCountry.value = 'World';
     }
     function loadData():void {
-        d3Fetch.csv("/csv/covid-map.csv").then( (data: any): void => {
+        d3Fetch.csv("/csv/data/covid-map.csv").then( (data: any): void => {
             mapDataRaw.value = data;
             let date_cols = data.columns as string[];
             date_cols.splice(0, 2);
             allDates.value = date_cols;
             selectedDateIndex.value = allDates.value.length - 1;
         });
-        d3Fetch.csv("/csv/covid-stats.csv").then( (data: any): void => {
+        d3Fetch.csv("/csv/data/covid-stats.csv").then( (data: any): void => {
             statsDataRaw.value = data;
         });
-        d3Fetch.csv("/csv/covid-excess-deaths.csv").then((data: any[]): void => {
+        d3Fetch.csv("/csv/data/covid-excess-deaths.csv").then((data: any[]): void => {
             excessDataRaw.value = data;
             allWeeks.value = [...new Set(data.map((d: any) => d.Week))] as string[];
         });
-        d3Fetch.csv("/csv/covid-lockdown-notes.csv").then((data: any[]): void => {
+        d3Fetch.csv("/csv/data/covid-lockdown-notes.csv").then((data: any[]): void => {
             lockdownNotesDataRaw.value = data;
         });
     }
@@ -865,7 +865,7 @@ export const useCovidStore = defineStore('covidStore', () =>{
         color.set('ICU', 'violet-600');
         color.set('vaccinations', 'violet-100');
         color.set('tests_people', 'green-400');
-        color.set('excess_old', 'gray-400');
+        color.set('excess_old', 'gray-200');
         color.set('excess_2020', 'orange-500');
         color.set('excess_2021', 'orange-300');
         color.set('excess_2022', 'yellow-300');

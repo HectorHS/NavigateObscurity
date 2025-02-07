@@ -1,0 +1,51 @@
+State_full,State,Count,Sex,Covid_infected,Age
+Alabama,AL,9,56,0,37.3
+All states,,903,51,98,46.3
+Arizona,AZ,22,45,2,49.6
+Arkansas,AR,9,56,0,45.8
+California,CA,96,45,6,44.7
+Colorado,CO,13,31,2,56.1
+Connecticut,CT,5,60,0,41.8
+Delaware,DE,3,100,0,38.7
+District of Columbia,DC,2,100,1,46.5
+Florida,FL,71,45,7,51.3
+Georgia,GA,39,56,1,47.2
+Hawaii,HI,5,0,2,46.2
+Idaho,ID,4,25,1,47.5
+Illinois,IL,29,48,8,47.3
+Indiana,IN,18,39,4,46.3
+Iowa,IA,7,43,1,42
+Kansas,KS,5,80,1,50.2
+Kentucky,KY,14,50,0,48.7
+Louisiana,LA,8,75,2,43.6
+Maine,ME,2,50,0,21
+Maryland,MD,16,44,1,40.1
+Massachusetts,MA,27,37,2,46
+Michigan,MI,27,59,3,53.5
+Minnesota,MN,7,14,0,40
+Mississippi,MS,5,60,0,55.2
+Missouri,MO,12,50,0,48.1
+Montana,MT,1,0,0,63
+Nebraska,NE,5,40,0,48.2
+Nevada,NV,7,29,0,48.7
+New Hampshire,NH,4,50,1,57.3
+New Jersey,NJ,25,48,7,49.4
+New Mexico,NM,4,50,0,56.8
+New York,NY,99,59,8,38.6
+North Carolina,NC,33,55,5,48.4
+Ohio,OH,36,58,3,51.4
+Oklahoma,OK,14,50,2,47.9
+Oregon,OR,15,40,1,44.7
+Pennsylvania,PA,33,52,2,45.8
+Puerto Rico,PR,1,0,0,31
+Rhode Island,RI,2,50,0,53
+South Carolina,SC,13,62,4,51.5
+South Dakota,SD,1,0,0,38
+Tennessee,TN,16,75,1,46.9
+Texas,TX,70,58,7,45
+Utah,UT,1,0,1,41
+Vermont,VT,3,67,1,47.3
+Virginia,VA,20,75,6,43.7
+Washington,WA,26,42,3,47.3
+West Virginia,WV,4,100,1,49
+Wisconsin,WI,15,40,1,46.8

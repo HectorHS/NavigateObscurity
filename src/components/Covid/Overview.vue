@@ -94,10 +94,6 @@
       computed: {
         ...mapState(useCovidStore, ['selectedCountry', 'stats']),
       },
-      watch: {
-      },
-      mounted () {
-      }
     })
 
   </script>

@@ -172,7 +172,7 @@ export const useMigrationStore = defineStore('migrationStore', () =>{
     });
 // does this need to be an async function?
     function loadData():void {
-        d3Fetch.csv("/csv/migration-map.csv").then( (data: any[]): void => {
+        d3Fetch.csv("/csv/data/migration-map.csv").then( (data: any[]): void => {
             let destination: MigrationMapData[] = [];
             let origin: MigrationMapData[] = [];
             let refugees: MigrationMapData[] = [];
@@ -200,13 +200,13 @@ export const useMigrationStore = defineStore('migrationStore', () =>{
             allMapIncomes.value.splice(0, 1);
             selectedMapIncomes.value = allMapIncomes.value.slice();
         });
-        d3Fetch.csv("/csv/migration-treemap.csv").then( (data: any[]): void => {
+        d3Fetch.csv("/csv/data/migration-treemap.csv").then( (data: any[]): void => {
             treemapRawData.value = data;
             allTreemapYears.value = data.columns;
             allTreemapYears.value.splice(0,2);
             allTreemapCountries.value = [...new Set(data.map((d:any) => d.country_origin))].sort() as string[];
         });
-        d3Fetch.csv("/csv/migration-wheel.csv").then( (data: any[]): void => {
+        d3Fetch.csv("/csv/data/migration-wheel.csv").then( (data: any[]): void => {
             let rawData = data;
             wheelRawData.value = [];
             for (let row of rawData) { 

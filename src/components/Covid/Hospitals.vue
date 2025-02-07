@@ -25,10 +25,6 @@
       computed: {
         ...mapState(useCovidStore, ['hospitalsOptions']),
       },
-      watch: {
-      },
-      mounted () {
-      }
     })
 
   </script>

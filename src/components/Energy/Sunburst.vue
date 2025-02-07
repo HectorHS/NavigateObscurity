@@ -29,10 +29,6 @@
       computed: {
         ...mapState(useEnergyStore, ['sunburstOptions', 'sunburstLegendItems', 'selectedCountry']),
       },
-      watch: {
-      },
-      mounted () {
-      }
     })
 
   </script>

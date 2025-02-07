@@ -23,10 +23,12 @@ export const useSustainabilityStore = defineStore('sustainabilityStore', () =>{
     const selectedAreaCountry = ref<string>('World');
     const allYears = ref<string[]>([]);
     const allCountries = ref<string[]>([]);
-    const allAreaMeasures = ref<string[]>(['Built up land', 'Crop land', 'Grazing land','Forest land','Fishing grounds']); // hardcoding this to control order
+    const allAreaAreas = ref<string[]>(['Built up land', 'Crop land', 'Grazing land','Forest land','Fishing grounds']); // hardcoding this to control order
     const allMapMeasures = ref<string[]>([]);
     const allAreas = ref<string[]>([]);
     const allIncomes = ref<string[]>([]);
+    const allAreaMeasures = ref<string[]>([]);
+    const dataLoaded = ref<boolean>(false);
 
     const colorMap = ref<Map<string, string> | undefined>(undefined);
     const getBiocapacityAverage = ref<Map<string, string> | undefined>(undefined);
@@ -48,7 +50,7 @@ export const useSustainabilityStore = defineStore('sustainabilityStore', () =>{
         let new_data:HCTypes.AreaSeries[] = [];
         if (areaDataRaw.value.length > 0 && colorMap.value) {
             filtered = areaDataRaw.value.filter((r:any) => r.record == selectedAreaMeasure.value && r.country == selectedAreaCountry.value)
-            for (let measure of allAreaMeasures.value) {
+            for (let measure of allAreaAreas.value) {
                 let year_data:any[] = [];
                 let slice = filtered.filter((r:any) => r.area == measure);
                 for (let ye in allYears.value) {
@@ -187,7 +189,7 @@ export const useSustainabilityStore = defineStore('sustainabilityStore', () =>{
         
     });
     function loadData():void {
-        d3Fetch.csv("/csv/sustainability-map.csv").then( (data: any[]): void => {
+        d3Fetch.csv("/csv/data/sustainability-map.csv").then( (data: any[]): void => {
             let d:SustainMapData[] = [];
             for (let row of data) {
                 d.push({country: getCountryCode(row.Country), value: +row.Value, measure: row.Measure, area: row.Area, income: row.IncomeGroup});
@@ -201,12 +203,14 @@ export const useSustainabilityStore = defineStore('sustainabilityStore', () =>{
             all_inco.unshift("All");
             allIncomes.value = all_inco;
         });
-        d3Fetch.csv("/csv/sustainability-area.csv").then( (data: any): void => {
+        d3Fetch.csv("/csv/data/sustainability-area.csv").then( (data: any): void => {
             areaDataRaw.value = data;
             allCountries.value = [...new Set(data.map((d:any) => d.country))] as string[];
             allYears.value = data.columns as string[];
             allYears.value.splice(0,3);
+            allAreaMeasures.value = [...new Set(data.map((d:any) => d.record))] as string[];
         });
+        dataLoaded.value = true;
     }
     function initialiseMaps():void {
         let map = new Map<string, string>();
@@ -257,6 +261,7 @@ export const useSustainabilityStore = defineStore('sustainabilityStore', () =>{
     allYears,
     allCountries,
     allAreaMeasures,
+    allAreaAreas,
     allMapMeasures,
     allAreas,
     allIncomes,
@@ -269,6 +274,7 @@ export const useSustainabilityStore = defineStore('sustainabilityStore', () =>{
     mapOptions,
     areaOptions,
     mapColorAxis,
+    dataLoaded,
     loadData,
     initialiseMaps,
   }

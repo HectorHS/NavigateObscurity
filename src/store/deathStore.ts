@@ -41,9 +41,9 @@ export const useDeathStore = defineStore('deathStore', () =>{
     const selectedDeathSex = ref<string>('Both');
     const selectedDeathCause = ref<string>('All causes');
     const selectedDeathMaxMapColor = ref<string>('#E63333');
-    const sexRadioItems = ref <NOTypes.RadioItem[]>([{ title: 'Male', value: 'Male', checked: false, colors: ['gray-400'] },
+    const sexRadioItems = ref <NOTypes.RadioItem[]>([{ title: 'Male', value: 'Male', checked: false, colors: ['gray-900'] },
         { title: 'Female', value: 'Female', checked: false, colors: ['gray-100'] },
-        { title: 'Both', value: 'Both', checked: true, colors: ['gray-400', 'gray-100'] }]);
+        { title: 'Both', value: 'Both', checked: true, colors: ['gray-900', 'gray-100'] }]);
 
     const filteredLifeData = computed<HCTypes.MapData[]>(() => {
         let data:HCTypes.MapData[] = [];
@@ -475,24 +475,24 @@ export const useDeathStore = defineStore('deathStore', () =>{
 
 // does this need to be an async function?
     function loadData():void {
-        d3Fetch.csv("/csv/life-map.csv").then( (data: any[]): void => {
+        d3Fetch.csv("/csv/data/life-map.csv").then( (data: any[]): void => {
             lifeMapRawData.value = data;
             allLifeMeasures.value = [...new Set(data.map((d: { Parameter: string }) => d.Parameter))].sort() as string[];
             allLifeYears.value = [...new Set(data.map((d: { Year: string }) => d.Year))].sort() as string[];
             allLifeLocations.value = data.columns;
             allLifeLocations.value.splice(0,2);
         });
-        d3Fetch.csv("/csv/death-causes-percent.csv").then( (data: any[]): void => {
+        d3Fetch.csv("/csv/data/death-causes-percent.csv").then( (data: any[]): void => {
             deathPercentRawData.value = data;
             allDeathLocations.value = data.columns;
             allDeathLocations.value.splice(0,3);
             allMainCauses.value = [...new Set(data.map((d:any) => d.cause))].sort() as string[];
         });
-        d3Fetch.csv("/csv/death-causes.csv").then( (data: any[]): void => {
+        d3Fetch.csv("/csv/data/death-causes.csv").then( (data: any[]): void => {
             deathTreemapRawData.value = data;
             allDeathAges.value = [...new Set(data.map((d:any) => d.age))].sort() as string[];
         });
-        d3Fetch.csv("/csv/death-old.csv").then( (data: any[]): void => {
+        d3Fetch.csv("/csv/data/death-old.csv").then( (data: any[]): void => {
             deathOldTreemapData.value = [];
             for (let row of data) {
                 deathOldTreemapData.value.push({
@@ -500,10 +500,10 @@ export const useDeathStore = defineStore('deathStore', () =>{
                 })
             }
         });
-        d3Fetch.csv("/csv/death-risks.csv").then( (data: any[]): void => {
+        d3Fetch.csv("/csv/data/death-risks.csv").then( (data: any[]): void => {
             deathRisksRawData.value = data;
         });
-        d3Fetch.csv("/csv/death-top-causes.csv").then( (data: any[]): void => {
+        d3Fetch.csv("/csv/data/death-top-causes.csv").then( (data: any[]): void => {
             deathTopCausesRawData.value = data;
         });
     }

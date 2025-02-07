@@ -20,9 +20,5 @@
         },
         computed: {
         },
-        watch: {
-        },
-        mounted () {
-        }
     })
 </script>

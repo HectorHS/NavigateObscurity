@@ -11,14 +11,13 @@ body {
 }
 h1 {
   font-size: clamp(1rem, 3vw, 1.7rem);
-  @apply text-blue border-blue pl-4 font-bold;
-  border-left: 7px solid;
+  @apply text-blue border-solid border-blue pl-4 font-bold border-l-4 sm:border-l-8;
+  
 }
 h2 {
   /* @apply font-bold border-b-4 tracking-wider pb-2 mb-10; */
-  @apply font-bold;
+  @apply font-bold text-blue;
   font-size: clamp(1rem, 3vw, 1.5rem);
-
 }
 h3 {
   /* @apply font-bold border-b-4 tracking-wider pb-2 mb-10; */
@@ -88,18 +87,27 @@ a {
   background-image:linear-gradient(to bottom right, rgba(0,0,0,0), rgba(0,0,0,0.5))
 }
 .dash-card {
-  @apply bg-gray rounded-2xl py-2 px-4 shadow-xl;
-}
-.dash-row-1 {
-  @apply bg-gradient-to-b from-cyan-300/30 via-blue-400/40 to-blue-300/40 rounded-t-3xl p-4;
-}
-.dash-row-2 {
-  @apply bg-gradient-to-b from-blue-300/40 via-cyan-400/40 to-cyan-300/30 rounded-b-3xl;
+  @apply bg-gray-600 rounded-2xl py-2 px-4 shadow-xl;
 }
 .play-button {
-  @apply fill-gray-200 py-2 px-4 border border-solid border-gray-200 rounded-2xl mr-3 hover:bg-gradient-to-tl hover:to-blue-300 hover:from-blue-700;
+  @apply fill-textColor py-2 px-4 border border-solid border-textColor rounded-2xl mr-3 hover:bg-gradient-to-tl hover:to-blue-300 hover:from-blue-700;
 }
 .no-data {
   @apply flex w-full justify-center items-center text-3xl text-gray-600 font-bold;
+}
+.large-text {
+  font-size: clamp(1.4rem, 2.5vw, 2.2rem);
+}
+@-webkit-keyframes rotating {
+  from{
+      -webkit-transform: rotate(0deg);
+  }
+  to{
+      -webkit-transform: rotate(360deg);
+  }
+}
+
+.rotating {
+  -webkit-animation: rotating 2s linear infinite;
 }
 

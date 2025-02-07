@@ -1,10 +1,11 @@
 <template>
     <section class="flex relative gap-12 flex-col lg:flex-row items-center">
+      <h2 class="lg:hidden text-left -mb-8">Notes</h2>
         <div class="flex-1 w-full">
             <ul class="grid gap-1 sm:gap-4 m-0 mx-auto sm:w-11/12 pb-[12%] sm:pb-[8.4%] overflow-hidden grid-cols-6">
                 <li v-for="item in nodePages" :key="item.title" class="hexagon">
                     <div class="hexagon-item">
-                        <a class="absolute visible group" :href="'notes'+ item.path">
+                        <a class="absolute visible group" :href="item.path">
                             <img class="m-0 mx-auto w-full absolute visible opacity-15 lg:opacity-100 group-hover:opacity-15" :src='item.image' :alt="item.title">
                             <h3 class="w-full lg:hidden group-hover:block absolute visible text-gray">{{item.title}}</h3>
                         </a>
@@ -15,11 +16,11 @@
         <div class="items-center flex-1">
             <!-- This extra div is actually useful -->
             <div>
+              <h1 class="hidden lg:block text-left mb-8">Notes</h1>
                 <p>
                   I read books and then I forget about them. So I take notes. But then I never go through the notes again. So I am trying to find
                   nicer ways to revisit notes and themes from books in a more engaging and non linear way.
                 </p>
-                <button type="button" class="button mt-8">Browse all notes</button>
             </div>
         </div>
     </section>
@@ -40,10 +41,6 @@ export default defineComponent ({
     computed: {
       ...mapState(useAppStore, ['nodePages']),
     },
-    watch: {
-    },
-    mounted () {
-    }
   })
 </script>
 

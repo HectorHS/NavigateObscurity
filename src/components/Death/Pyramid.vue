@@ -3,8 +3,8 @@
     <h5>Share of deaths by age</h5>
     <DashCommand text="Click on the graph to select an age group and sex"></DashCommand>
 
-    <highcharts :options="deathAgePyramidOptions" class="w-full" style="height: calc(100% - 70px);"></highcharts>
-    <RadioButtons :items="sexRadioItems" id="radio1" v-model="selectedDeathSex" class="justify-center pb-2" direction="row"></RadioButtons>
+    <highcharts :options="deathAgePyramidOptions" class="w-full" style="height: calc(100% - 80px);"></highcharts>
+    <RadioButtons :items="sexRadioItems" id="radio1" v-model="selectedDeathSex" class="justify-center pb-2" direction="row" :light="true"></RadioButtons>
   </figure>
 </template>
 
@@ -35,17 +35,13 @@
       ...mapState(useDeathStore, ['deathAgePyramidOptions']),
       ...mapWritableState(useDeathStore, ['selectedDeathSex', 'sexRadioItems']),
     },
-    watch: {
-    },
-    mounted () {
-    }
   })
 
 </script>
 
 <style lang="scss" scoped>
 :deep(.pyramid-band)  {
-  @apply fill-gray opacity-70 hover:fill-blue cursor-pointer;
+  @apply fill-gray-600 opacity-70 hover:fill-blue cursor-pointer;
 
 }
 :deep(.pyramid-band-selected) {
