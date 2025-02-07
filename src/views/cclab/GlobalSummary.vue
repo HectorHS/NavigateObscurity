@@ -82,22 +82,22 @@
 </template>
 
 <script lang="ts">
-    import { useGlobalSumStore } from '@/store/cclab/globalSumStore.ts';
+    import { useGlobalSumStore } from '@/store/CCLAB/globalSumStore';
   import { mapState, mapWritableState } from 'pinia';
   import { defineComponent } from 'vue';
-  import GloSumOverview from '@/components/cclab/GloSumOverview.vue';
-  import Navbar from '@/components/cclab/Navbar.vue';
-  import Header from '@/components/cclab/Header.vue';
-  import Footer from '@/components/cclab/Footer.vue';
-  import GloSumMap from '@/components/cclab/GloSumMap.vue';
-  import GloSumInter1 from '@/components/cclab/GloSumInter1.vue';
-  import GloSumInter2 from '@/components/cclab/GloSumInter2.vue';
-  import GloSumWill1 from '@/components/cclab/GloSumWill1.vue';
-  import GloSumWill2 from '@/components/cclab/GloSumWill2.vue';
-  import GloSumAge from '@/components/cclab/GloSumAge.vue';
-  import GloSumSex from '@/components/cclab/GloSumSex.vue';
-  import GloSumCovid from '@/components/cclab/GloSumCovid.vue';
-  import GloSumPreexisting from '@/components/cclab/GloSumPreexisting.vue';
+  import GloSumOverview from '@/components/CCLAB/GloSumOverview.vue';
+  import Navbar from '@/components/CCLAB/Navbar.vue';
+  import Header from '@/components/CCLAB/Header.vue';
+  import Footer from '@/components/CCLAB/Footer.vue';
+  import GloSumMap from '@/components/CCLAB/GloSumMap.vue';
+  import GloSumInter1 from '@/components/CCLAB/GloSumInter1.vue';
+  import GloSumInter2 from '@/components/CCLAB/GloSumInter2.vue';
+  import GloSumWill1 from '@/components/CCLAB/GloSumWill1.vue';
+  import GloSumWill2 from '@/components/CCLAB/GloSumWill2.vue';
+  import GloSumAge from '@/components/CCLAB/GloSumAge.vue';
+  import GloSumSex from '@/components/CCLAB/GloSumSex.vue';
+  import GloSumCovid from '@/components/CCLAB/GloSumCovid.vue';
+  import GloSumPreexisting from '@/components/CCLAB/GloSumPreexisting.vue';
 
   export default defineComponent ({
     components: {

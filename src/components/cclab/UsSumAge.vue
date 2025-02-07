@@ -6,7 +6,7 @@
 </template>
 
 <script lang="ts">
-  import { useUsSumStore } from '@/store/cclab/usSumStore.ts';
+  import { useUsSumStore } from '@/store/CCLAB/usSumStore';
   import { mapState, mapWritableState } from 'pinia';
   import { defineComponent } from 'vue';
 

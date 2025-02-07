@@ -69,13 +69,13 @@
 </template>
 
 <script lang="ts">
-  import { useGlobalLookupStore } from '@/store/cclab/globalLookupStore.ts';
+  import { useGlobalLookupStore } from '@/store/CCLAB/globalLookupStore';
   import { mapState, mapWritableState } from 'pinia';
   import { defineComponent } from 'vue';
-  import Navbar from '@/components/cclab/Navbar.vue';
-  import Header from '@/components/cclab/Header.vue';
-  import Footer from '@/components/cclab/Footer.vue';
-  import UsSumOverview from '@/components/cclab/UsSumOverview.vue';
+  import Navbar from '@/components/CCLAB/Navbar.vue';
+  import Header from '@/components/CCLAB/Header.vue';
+  import Footer from '@/components/CCLAB/Footer.vue';
+  import UsSumOverview from '@/components/CCLAB/UsSumOverview.vue';
 
   import Highcharts from 'highcharts';
   import wordcloudInit from 'highcharts/modules/wordcloud'

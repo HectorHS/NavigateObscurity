@@ -83,22 +83,22 @@
 </template>
 
 <script lang="ts">
-  import { useUsSumStore } from '@/store/cclab/usSumStore.ts';
+  import { useUsSumStore } from '@/store/CCLAB/usSumStore';
   import { mapState, mapWritableState } from 'pinia';
   import { defineComponent } from 'vue';
-  import Navbar from '@/components/cclab/Navbar.vue';
-  import Header from '@/components/cclab/Header.vue';
-  import Footer from '@/components/cclab/Footer.vue';
-  import UsSumOverview from '@/components/cclab/UsSumOverview.vue';
-  import UsSumMap from '@/components/cclab/UsSumMap.vue';
-  import UsSumInter1 from '@/components/cclab/UsSumInter1.vue';
-  import UsSumInter2 from '@/components/cclab/UsSumInter2.vue';
-  import UsSumWill1 from '@/components/cclab/UsSumWill1.vue';
-  import UsSumWill2 from '@/components/cclab/UsSumWill2.vue';
-  import UsSumAge from '@/components/cclab/UsSumAge.vue';
-  import UsSumSex from '@/components/cclab/UsSumSex.vue';
-  import UsSumCovid from '@/components/cclab/UsSumCovid.vue';
-  import UsSumInfected from '@/components/cclab/UsSumInfected.vue';
+  import Navbar from '@/components/CCLAB/Navbar.vue';
+  import Header from '@/components/CCLAB/Header.vue';
+  import Footer from '@/components/CCLAB/Footer.vue';
+  import UsSumOverview from '@/components/CCLAB/UsSumOverview.vue';
+  import UsSumMap from '@/components/CCLAB/UsSumMap.vue';
+  import UsSumInter1 from '@/components/CCLAB/UsSumInter1.vue';
+  import UsSumInter2 from '@/components/CCLAB/UsSumInter2.vue';
+  import UsSumWill1 from '@/components/CCLAB/UsSumWill1.vue';
+  import UsSumWill2 from '@/components/CCLAB/UsSumWill2.vue';
+  import UsSumAge from '@/components/CCLAB/UsSumAge.vue';
+  import UsSumSex from '@/components/CCLAB/UsSumSex.vue';
+  import UsSumCovid from '@/components/CCLAB/UsSumCovid.vue';
+  import UsSumInfected from '@/components/CCLAB/UsSumInfected.vue';
 
   export default defineComponent ({
     components: {

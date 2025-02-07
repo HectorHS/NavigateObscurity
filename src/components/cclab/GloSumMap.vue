@@ -3,7 +3,7 @@
 </template>
 
 <script lang="ts">
-  import { useGlobalSumStore } from '@/store/cclab/globalSumStore.ts';
+  import { useGlobalSumStore } from '@/store/CCLAB/globalSumStore';
   import { mapState, mapWritableState } from 'pinia';
   import { defineComponent } from 'vue';
 
