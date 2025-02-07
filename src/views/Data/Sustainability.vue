@@ -38,7 +38,7 @@
             <Dropdown :items="allIncomes" v-model="selectedMapIncome" class="w-[200px]"></Dropdown>
         </div>
         <div class="w-full h-[50vh] lg:h-[80vh]">
-          <highcharts v-if="!dataLoaded" :constructorType="'mapChart'" :options="mapOptions" class="h-full w-full"></highcharts>
+          <highcharts v-if="dataLoaded" :constructorType="'mapChart'" :options="mapOptions" class="h-full w-full"></highcharts>
           <div v-else class="w-full h-full  animate-pulse bg-demo-map bg-cover bg-center bg-no-repeat mt-[3px]"></div>
         </div>
         
