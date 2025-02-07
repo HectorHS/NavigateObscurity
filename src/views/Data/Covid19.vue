@@ -7,39 +7,33 @@
 
       <!-- dashboard - mobile -->
       <div v-if="screenWidth < 1200">
-        <div class="dash-row-1 ">
           <CovidOverview> </CovidOverview>
           <CovidMap class="dash-card my-4 mt-4 h-[300px]"></CovidMap>
-          <CovidMortality class="h-[300px]"></CovidMortality>
-        </div>
-        <div class="dash-row-2 p-4 pt-0">
+          <CovidMortality class="mb-4 h-[400px]"></CovidMortality>
           <CovidCases class="mb-4 h-[300px]"></CovidCases>
           <CovidDeaths class="mb-4 h-[300px]"></CovidDeaths>
           <CovidVaccines class="mb-4 h-[300px]"></CovidVaccines>
           <CovidHospitals class="h-[300px]"></CovidHospitals>
-        </div>
       </div>
 
 
       <!-- dashboard - desktop -->
        <div class=" h-[1100px]" v-else>
         <div class="h-[550px] flex">
-          <div class="w-7/12 bg-blue-300/40 ">
-            <CovidMap class="rounded-ee-2xl"></CovidMap>
-          </div>
-          <div class="w-5/12 h-full dash-row-1">
+            <CovidMap class="w-7/12 pb-4"></CovidMap>
+          <div class="w-5/12 h-full">
             <CovidOverview> </CovidOverview>
             <CovidMortality class="h-[403px] mt-4"></CovidMortality>
           </div>
         </div>
-        <div class="h-[550px] dash-row-2 rounded-s-3xl flex">
-          <div class="flex flex-col w-6/12 h-full">
-              <CovidCases class="p-4 pr-0 h-3/6"></CovidCases>
-              <CovidDeaths class="pl-4 pb-4 h-3/6"></CovidDeaths>
+        <div class="h-[550px] flex">
+          <div class="flex flex-col w-6/12 h-full mr-4">
+              <CovidCases class="h-3/6 mb-4"></CovidCases>
+              <CovidDeaths class="h-3/6"></CovidDeaths>
           </div>
           <div class="flex flex-col w-6/12 h-full">
-              <CovidVaccines class="p-4 h-3/6"></CovidVaccines>
-              <CovidHospitals class=" px-4 pb-4 h-3/6"></CovidHospitals>
+              <CovidVaccines class="h-3/6 mb-4"></CovidVaccines>
+              <CovidHospitals class="h-3/6"></CovidHospitals>
           </div>
         </div>
        </div>
@@ -103,7 +97,7 @@
       return { covidStore }
     },
     data: () => ({
-      pageId: 1, // change this
+      pageId: 6, 
       questions: [
         'For each of the first three years of the pandemic, Chile had a 50% increase in its total yearly death toll (from all causes) compared to the' +
         'average of the previous five years, and only about half of these deaths correspond to the recorded covid-19 deaths.',
@@ -181,11 +175,7 @@
     methods: {
     },
     computed: {
-      ...mapState(useCovidStore, ['']),
       ...mapState(useAppStore, ['screenWidth']),
-      ...mapWritableState(useCovidStore, []),
-    },
-    watch: {
     },
     mounted () {
       this.covidStore.loadData();

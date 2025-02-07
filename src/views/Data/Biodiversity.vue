@@ -1,13 +1,13 @@
 <template>
     <Header title="Biodiversity"></Header>
-    <section>
-      <div class="px-base pt-20 w-mainText">
+    <section class="px-base">
+      <div class="lg:pt-20 w-mainText">
           <p>
             Below you can see the breakdown of the total weight of living organisms (biomass) estimated to be currently
             living on Earth. Biomass is here counted in gigatons of carbon.
           </p>
             <p>
-            Keep in mind that I have excluded the estimated 300gt of tree trunks and stems which are mostly non-living lignified 
+            Keep in mind that I have excluded the estimated 300gt of tree trunks and stems which are mostly non-living lignified
             tissue, as well as the 67gt of bacteria, the 7gt of archaea and the 0.15gt of viruses of the deep subterranian levels
             (both terrestrial and marine) as these organisms are metabolically dormant.
           </p>
@@ -15,11 +15,11 @@
             Still, you will have to exclude plants altogether from the chart below to have a chance to spot humans and other terrestrial animals.
           </p>
       </div>
-      <figure class="flex items-center">
-        <div class="w-3/12 flex justify-end">
-          <RadioButtons :items="radioItems" id="radio1" v-model="selectedPlants" class="w-48"></RadioButtons>
+      <figure class="flex flex-col lg:flex-row items-center">
+        <div class="w-full lg:w-3/12 flex justify-end">
+          <RadioButtons :items="radioItems" id="radio1" v-model="selectedPlants" class="w-full" :direction="radioDirection"></RadioButtons>
         </div>
-        <highcharts :options="sunburstOptions" class="w-9/12"></highcharts>
+        <highcharts :options="sunburstOptions" class="h-[50vh] md:h-[70vh] lg:w-9/12"></highcharts>
       </figure>
       <div class="source-text">
           <p>
@@ -30,9 +30,9 @@
                 America.</a>
           </p>
       </div>
-    </section> 
-    <section >
-      <div class="px-base pt-24 pb-10 w-mainText">
+    </section>
+    <section class="px-base">
+      <div class="pt-24 pb-10 w-mainText">
         <p>
           Here you can see the correlation between the total population of taxa, and their corresponding biomass. Note
           that populations are presented in powers of ten, so every step indicates a tenfold increase of population. 
@@ -52,25 +52,26 @@
       </div>
     </section>
     <Comments :pageId="pageId"></Comments>
-    
+
 </template>
 
 <script lang="ts">
   import { defineComponent } from 'vue';
   import { mapState, mapWritableState } from 'pinia';
   import { useBiodiversityStore } from '@/store/biodiversityStore.ts';
-  
+  import { useAppStore } from '@/store/appStore.ts';
+
   import Header from '@/components/Header.vue';
   import RadioButtons from '@/components/Controls/RadioButtons.vue';
   import Comments from '@/components/Comments.vue';
-  
+
   import Highcharts from 'highcharts';
   import sunburstInit from 'highcharts/modules/sunburst'
   sunburstInit(Highcharts)
   import '@/styles/highcharts.scss';
 
   import * as NOTypes from '@/interfaces/NOTypes';
-  
+
   export default defineComponent ({
     components: {
       Header,
@@ -88,10 +89,16 @@
     methods: {
     },
     computed: {
+      radioDirection() {
+        let direction = 'row';
+        if (this.screenWidth > 800) {
+          direction = 'column';
+        }
+        return direction;
+      },
       ...mapState(useBiodiversityStore, [ 'sunburstOptions', 'scatterOptions']),
+      ...mapState(useAppStore, ['screenWidth']),
       ...mapWritableState(useBiodiversityStore, ['selectedPlants']),
-    },
-    watch: {
     },
     mounted () {
       this.biodiversityStore.loadData();

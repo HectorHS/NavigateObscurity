@@ -1,7 +1,7 @@
 <template>
     <Header title="Sustainability"></Header>
     <section class="px-base">
-      <div class="pt-10 w-mainText"> 
+      <div class="pt-10 w-mainText">
         <p>
             Biocapacity here is the ability of earth to provide what humans demand of it in a
             sustainable way. Start by thinking of all the cropland, grazing land,
@@ -32,12 +32,16 @@
         </p>
       </div>
       <figure>
-        <div class="flex">
+        <div class="flex flex-wrap">
             <Dropdown :items="allMapMeasures" v-model="selectedMapMeasure" class="w-[400px]"></Dropdown>
             <Dropdown :items="allAreas" v-model="selectedMapArea" class="w-[200px]"></Dropdown>
             <Dropdown :items="allIncomes" v-model="selectedMapIncome" class="w-[200px]"></Dropdown>
         </div>
-        <highcharts :constructorType="'mapChart'" :options="mapOptions" class="w-full h-screen"></highcharts>
+        <div class="w-full h-[50vh] lg:h-[80vh]">
+          <highcharts v-if="!dataLoaded" :constructorType="'mapChart'" :options="mapOptions" class="h-full w-full"></highcharts>
+          <div v-else class="w-full h-full  animate-pulse bg-demo-map bg-cover bg-center bg-no-repeat mt-[3px]"></div>
+        </div>
+        
         <div class="source-text">
           <p>
             *Source:
@@ -60,7 +64,10 @@
             <Dropdown :items="allAreaMeasures" v-model="selectedAreaMeasure" class="w-[400px]"></Dropdown>
             <Dropdown :items="allCountries" v-model="selectedAreaCountry" class="w-[200px]"></Dropdown>
         </div>
-        <highcharts :options="areaOptions" class="mt-3"></highcharts>
+        <div class="w-full h-[50vh] mt-3">
+          <highcharts v-if="dataLoaded" :options="areaOptions" class="h-full w-full"></highcharts>
+          <div v-else class="w-8 h-8 animate-spin-slow bg-logo bg-cover bg-center bg-no-repeat mt-[3px]"></div>
+        </div>
         <div class="source-text">
         <p>
             *Source:
@@ -79,20 +86,15 @@
   import { useSustainabilityStore } from '@/store/sustainabilityStore.ts';
 
   import Header from '@/components/Header.vue';
-//   import RadioButtons from '@/components/RadioButtons.vue';
-import Dropdown from '@/components/Controls/Dropdown.vue';
+  import Dropdown from '@/components/Controls/Dropdown.vue';
   import Comments from '@/components/Comments.vue';
 
-//   import Highcharts from 'highcharts';
-//   import Maps from "highcharts/modules/map";
-//   Maps(Highcharts);
   import '@/styles/highcharts.scss';
 
   export default defineComponent ({
     components: {
       Header,
       Dropdown,
-    //   RadioButtons,
       Comments
     },
     setup() {
@@ -105,10 +107,8 @@ import Dropdown from '@/components/Controls/Dropdown.vue';
     methods: {
     },
     computed: {
-      ...mapState(useSustainabilityStore, [ 'mapOptions', 'allMapMeasures', 'allAreas', 'allIncomes', 'areaOptions', 'allAreaMeasures', 'allCountries']),
+      ...mapState(useSustainabilityStore, [ 'mapOptions', 'allMapMeasures', 'allAreas', 'allIncomes', 'areaOptions', 'allAreaMeasures', 'allCountries','dataLoaded']),
       ...mapWritableState(useSustainabilityStore, ['selectedMapMeasure', 'selectedMapArea', 'selectedMapIncome', 'selectedAreaMeasure', 'selectedAreaCountry']),
-    },
-    watch: {
     },
     mounted () {
       this.sustainabilityStore.loadData();

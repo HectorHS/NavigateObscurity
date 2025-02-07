@@ -35,11 +35,11 @@
         </div>
         <!-- deaths: 6 -->
         <div class="inline ml-4">
-          <div class="inline-block text-3xl m-0 text-gray-400 leading-4">-</div>
-          <div v-for="n in 6" class="inline-block h-5 w-1.5 rounded mx-0.5 bg-gray-400"  ></div>
+          <div class="inline-block text-3xl m-0 text-gray-900 leading-4">-</div>
+          <div v-for="n in 6" class="inline-block h-5 w-1.5 rounded mx-0.5 bg-gray-900"  ></div>
         </div>
         <!-- legend -->
-        <div class="flex mt-2 justify-center">
+        <div class="flex mt-2 justify-center flex-wrap">
           <div v-for="item in populationLegendItems" class="flex  mr-5">
             <div class="legend-dot" :class="'bg-' + item.color"></div>
             <div class="my-auto">{{ item.name }}</div>
@@ -81,7 +81,7 @@
             <Dropdown :items="allLifeMeasures" v-model="selectedLifeMeasure" class="w-[400px]"></Dropdown>
             <Dropdown :items="allLifeYears" v-model="selectedLifeYear" class="w-[200px]"></Dropdown>
         </div>
-        <highcharts :constructorType="'mapChart'" :options="lifeMapOptions" class="w-full h-[80vh]"></highcharts>
+        <highcharts :constructorType="'mapChart'" :options="lifeMapOptions" class="w-full h-[50vh] lg:h-[80vh]"></highcharts>
         <div class="source-text">
           <p>*Source:
             <a href="http://data.un.org/" target="_blank">United Nations </a>
@@ -98,34 +98,28 @@
 
       <!-- dashboard - mobile -->
       <div v-if="screenWidth < 1200">
-        <div class="dash-row-1 ">
           <DeathMeasures> </DeathMeasures>
           <DeathMap class="dash-card mb-4 h-[300px]"></DeathMap>
-          <DeathPyramid class="h-[300px]"></DeathPyramid>
-        </div>
-        <div class="dash-row-2 p-4 pt-0">
+          <DeathPyramid class=" mb-4 h-[400px]"></DeathPyramid>
           <DeathTreemap class="mb-4 h-[600px]"></DeathTreemap>
           <DeathRisks class="h-[400px]"></DeathRisks>
-        </div>
       </div>
 
 
       <!-- dashboard - desktop -->
        <div class=" h-[1000px]" v-else>
         <div class="h-[600px] flex">
-          <div class="w-3/5 bg-blue-300/40 ">
-            <DeathMap class="rounded-ee-2xl"></DeathMap>
-          </div>
-          <div class="w-2/5 h-full dash-row-1">
+            <DeathMap class="w-3/5 pb-4"></DeathMap>
+          <div class="w-2/5 h-full">
             <DeathMeasures> </DeathMeasures>
             <DeathPyramid class="h-[430px]"></DeathPyramid>
           </div>
         </div>
-        <div class="h-[400px] dash-row-2 rounded-s-3xl flex">
-          <div class="w-3/5 p-4 pr-0 h-full">
+        <div class="h-[400px] flex">
+          <div class="w-3/5 mr-4 h-full">
             <DeathTreemap></DeathTreemap>
           </div>
-          <div class="w-2/5 p-4 h-full">
+          <div class="w-2/5 h-full">
             <DeathRisks></DeathRisks>
           </div>
         </div>
@@ -206,7 +200,7 @@
         {name: 'Northern America', color: 'red-400'},
         {name: 'Oceania', color: 'cyan-300'},
         {name: 'Births', color: 'gray-100'},
-        {name: 'Deaths', color: 'gray-400'}],
+        {name: 'Deaths', color: 'gray-900'}],
       questions: [
         'The leading cause of death for Males aged 20-29 across Northern Europe, Canada and Australia, is suicide.',
         'One in 5 deaths in Nigeria, are for children under the age of 9.',
@@ -251,10 +245,8 @@
     },
     computed: {
       ...mapState(useDeathStore, ['allLifeMeasures','allLifeYears', 'lifeMapOptions','deathTreemapOldOptions']),
-      ...mapState(useAppStore, ['screenWidth']),
+      ...mapState(useAppStore, ['screenWidth', 'allPages']),
       ...mapWritableState(useDeathStore, ['selectedLifeMeasure','selectedLifeYear']),
-    },
-    watch: {
     },
     mounted () {
       this.deathStore.loadData();

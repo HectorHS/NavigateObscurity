@@ -6,12 +6,10 @@
 
       <!-- dashboard - mobile -->
       <div v-if="screenWidth < 1200">
-        <div class="dash-row-1 ">
+        <div class="">
           <EnergyOverview> </EnergyOverview>
           <EnergyMap class="dash-card mb-4 h-[300px]"></EnergyMap>
-          <EnergyArea class="h-[300px]"></EnergyArea>
-        </div>
-        <div class="dash-row-2 p-4 pt-0">
+          <EnergyArea class="mb-4 h-[600px]"></EnergyArea>
           <EnergyImport class="mb-4 h-[400px]"></EnergyImport>
           <EnergyExport class="mb-4 h-[400px]"></EnergyExport>
           <EnergySunburst class="h-[400px]"></EnergySunburst>
@@ -22,22 +20,20 @@
       <!-- dashboard - desktop -->
        <div class=" h-[1000px]" v-else>
         <div class="h-[600px] flex">
-          <div class="w-8/12 bg-blue-300/40 ">
-            <EnergyMap class="rounded-ee-2xl"></EnergyMap>
-          </div>
-          <div class="w-4/12 h-full dash-row-1">
+          <EnergyMap class="w-8/12 pb-4"></EnergyMap>
+          <div class="w-4/12 h-full ">
             <EnergyOverview> </EnergyOverview>
             <EnergyArea class="h-[458px]"></EnergyArea>
           </div>
         </div>
-        <div class="h-[400px] dash-row-2 rounded-s-3xl flex">
-          <div class="w-4/12 p-4 pr-0 h-full">
+        <div class="h-[400px] flex">
+          <div class="w-4/12 h-full">
             <EnergyImport></EnergyImport>
           </div>
-          <div class="w-4/12 p-4 pr-0 h-full">
-            <EnergyExport></EnergyExport>
+          <div class="w-4/12 h-full">
+            <EnergyExport class=" mx-4"></EnergyExport>
           </div>
-          <div class="w-4/12 p-4 h-full">
+          <div class="w-4/12 h-full">
             <EnergySunburst></EnergySunburst>
           </div>
         </div>
@@ -106,7 +102,7 @@
       return { energyStore }
     },
     data: () => ({
-      pageId: 1, // change this
+      pageId: 12,
       questions: [
         'The total global energy consumption has tripled over the last 55 years.',
         'Large producer countries like the USA, China, and Germany spend as much energy in industry as they do in transportation (of goods and people).',
@@ -145,8 +141,6 @@
     },
     computed: {
       ...mapState(useAppStore, ['screenWidth']),
-    },
-    watch: {
     },
     mounted () {
       this.energyStore.loadData();

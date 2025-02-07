@@ -21,13 +21,13 @@
           </p>
       </div>
       <figure>
-        <div class="flex">
-            <Dropdown :items="allMapMeasures" v-model="selectedMapMeasure" class="w-[400px]"></Dropdown>
-            <Dropdown :items="allMapYears" v-model="selectedMapYear" class="w-[200px]"></Dropdown>
-            <DropdownMultiple :items="allMapIncomes" v-model="selectedMapIncomes" compId="mapIncomeSelect" class="w-[200px]"></DropdownMultiple>
-            <Slider v-model="mapSliderValue" :min="0" :max="50" class="w-[200px]"></Slider>
+        <div class="flex flex-wrap">
+            <Dropdown :items="allMapMeasures" v-model="selectedMapMeasure" class="w-[400px] pt-2"></Dropdown>
+            <Dropdown :items="allMapYears" v-model="selectedMapYear" class="w-[200px] pt-2"></Dropdown>
+            <DropdownMultiple :items="allMapIncomes" v-model="selectedMapIncomes" compId="mapIncomeSelect" class="w-[200px] pt-2"></DropdownMultiple>
+            <Slider v-model="mapSliderValue" :min="0" :max="50" class="w-[200px] pt-2"></Slider>
         </div>
-         <highcharts :constructorType="'mapChart'" :options="mapOptions" class="w-full h-[80vh]"></highcharts>
+         <highcharts :constructorType="'mapChart'" :options="mapOptions" class="w-full h-[50vh] lg:h-[80vh]"></highcharts>
         <div class="source-text">
           <p>
              *Source:
@@ -52,10 +52,10 @@
         </p>
       </div>
       <figure>
-        <div class="flex">
-          <Dropdown :items="allTreemapCountries" v-model="selectedTreemapCountry" class="w-[400px]"></Dropdown>
-          <Dropdown :items="allTreemapYears" v-model="selectedTreemapYear" class="w-[200px]"></Dropdown>
-          <RadioButtons :items="treemapRadioItems" id="radio2" v-model="selectedTreemapMeasure" direction="row" ></RadioButtons>
+        <div class="flex flex-wrap">
+          <Dropdown :items="allTreemapCountries" v-model="selectedTreemapCountry" class="w-[400px] pt-2"></Dropdown>
+          <Dropdown :items="allTreemapYears" v-model="selectedTreemapYear" class="w-[200px] pt-2"></Dropdown>
+          <RadioButtons :items="treemapRadioItems" id="radio2" v-model="selectedTreemapMeasure" direction="row" class="pt-2" ></RadioButtons>
         </div>
         <highcharts :options="treemapOptions" class="w-full h-[60vh]"></highcharts>
 
@@ -79,10 +79,10 @@
             movement. Movements are coloured according to origin.
         </p>
       </div>
-      <figure class="flex items-center">
+      <figure class="flex flex-col lg:flex-row items-center px-base">
 
-        <highcharts :options="wheelOptions" class="w-8/12 min-h-[80vh]"></highcharts>
-        <div class="w-4/12 flex flex-col justify-start">
+        <highcharts :options="wheelOptions" class="w-8/12 h-[50vh] lg:min-h-[80vh]"></highcharts>
+        <div class="w-full lg:w-4/12 flex flex-col justify-start">
           <RadioButtons :items="wheelRadioItems" id="radio1" v-model="selectedWheelMeasure" class="w-48" direction="row"></RadioButtons>
           <!-- Legend -->
           <div class="mt-5" :class="{'columns-2': selectedWheelMeasure == 'Region'}">
@@ -172,8 +172,6 @@
         'allTreemapCountries','allTreemapYears','wheelOptions','allWheelMeasures','wheelLegendItems']),
       ...mapWritableState(useMigrationStore, ['selectedMapMeasure', 'selectedMapYear', 'selectedMapIncomes','mapSliderValue','selectedTreemapMeasure',
         'selectedTreemapCountry','selectedTreemapYear','selectedWheelMeasure']),
-    },
-    watch: {
     },
     mounted () {
       this.migrationStore.loadData();
