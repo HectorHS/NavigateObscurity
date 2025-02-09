@@ -1,8 +1,8 @@
 import axios from 'axios';
 
 const axiosInstance = axios.create({
-  // baseURL:  'https://api.navigateobscurity.com'
-  baseURL:  'http://localhost:5000'
+  baseURL:  'https://api.navigateobscurity.com'
+  // baseURL:  'http://localhost:5000'
 });
 
 export const apiGetComments = async (pageID:number) => {
@@ -16,7 +16,6 @@ export const apiGetComments = async (pageID:number) => {
 export const apiPostComment = async (pageID:number, name:string, message: string) => {
   try {
     let now = new Date().toISOString();
-    console.log(now)
     let date = now.slice(0,10);
     let time = now.slice(11,23);
     let timestamp = date + ' '+ time + '000';
