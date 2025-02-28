@@ -60,7 +60,6 @@ for (let page of allPages) {
   pages.push({ path: page.path, title: page.title, icon: page.icon, bg: page.bg, type: page.type, abstract: page.abstract, image: page.image});
 }
 appStore.savePages(pages);
-console.log(mappedRoutes)
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
   routes: mappedRoutes

@@ -57,7 +57,6 @@
   import NodeGradientProgram  from "@/helpers/node-gradient";
 
   import { type EdgeDisplayData, type NodeDisplayData,  } from "sigma/types";
-  // import{ type AbstractGraph} from "graphology-types"; // available types https://github.com/graphology/graphology/blob/master/src/types/index.d.ts
   import * as NOTypes from '@/interfaces/NOTypes';
 
   export default defineComponent ({
@@ -154,7 +153,6 @@
         let hexes = new Map<number, string>();
         this.colors.forEach((value, key) => {
           hexes.set(key, this.getTailwindHexColor(value));
-          console.log(value, key)
         })
         return hexes;
       },

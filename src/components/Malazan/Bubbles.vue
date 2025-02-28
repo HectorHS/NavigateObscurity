@@ -1,7 +1,11 @@
 <template>
-    <figure>
-      <highcharts :options="options" class="h-full"></highcharts>
-    </figure>
+    <div>
+        <h2>Who took the spotlight?</h2>
+        <div class="mb-6">Mentions by name or alias.</div>
+        <figure class="h-[40vh] lg:h-[70vh] ">
+            <highcharts :options="options" class="h-full"></highcharts>
+        </figure>
+    </div>
   </template>
   
   <script lang="ts">

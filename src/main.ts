@@ -28,7 +28,6 @@ app.mount('#app')
 function getHighchartsTheme():Highcharts.Options {
     const fullTailwindConfig = resolveConfig(tailwindConfig)
 
-    // console.log(fullTailwindConfig)
     return Highcharts.theme = {
         chart: {
             backgroundColor: fullTailwindConfig.theme.colors.gray,

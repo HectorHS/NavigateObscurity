@@ -24,17 +24,9 @@
       <Nodes type="malazan" filePrefix="dg-" gexf='dg.gexf' :colors="colorMap" :categories="categoriesMap" :sizeMultiplier="1"></Nodes>
     </section>
 
-    <section class="px-base mt-20">
-      <h2>Who took the spotlight?</h2>
-      <div class="mb-6">Mentions by name or alias.</div>
-      <Bubbles filePrefix="dg-" :colors="colorMap" class="h-[40vh] lg:h-[70vh]"></Bubbles>
-    </section>
-
-    <section class="px-base mt-20">
-      <h2>Most used phrases</h2>
-      <div class="mb-6">Word combinations after excluding character names.</div>
-      <Wordcloud filePrefix="dg-" class="h-[40vh] lg:h-[70vh]"></Wordcloud>
-    </section>
+    <Bubbles filePrefix="dg-" :colors="colorMap" class="px-base mt-20"></Bubbles>
+    <MalazanMap filePrefix="dg-" :items="mapitems" class="px-base mt-20"></MalazanMap>
+    <Wordcloud filePrefix="dg-" class="px-base mt-20"></Wordcloud>
 
     <Comments :pageId="pageId"></Comments>
 </template>
@@ -49,6 +41,9 @@
   import Stats from '@/components/Malazan/Stats.vue';
   import Bubbles from '@/components/Malazan/Bubbles.vue';
   import Wordcloud from '@/components/Malazan/Wordcloud.vue';
+  import MalazanMap from '@/components/Malazan/Map.vue';
+
+  import * as NOTypes from '@/interfaces/NOTypes';
 
   export default defineComponent ({
     components: {
@@ -58,7 +53,8 @@
       Nodes,
       Stats,
       Bubbles,
-      Wordcloud
+      Wordcloud,
+      MalazanMap
     },
     setup() {
     },
@@ -84,14 +80,17 @@
         [6, "Other Malazans" ],
         [8, "Worldbuilding" ],
       ]),
+      mapitems: [{id: 'coltaine', title: 'The Chain of Dogs', color: 'red-400'},
+        {id: 'felisin', title: 'Felisin, Heboric, Baudin', color: 'orange-300'},
+        {id: 'fiddler', title: 'Fiddler, Apsalar, Crokus', color: 'blue-600'},
+        {id: 'kalam', title: 'Kalam', color: 'blue-300'},
+        {id: 'gesler', title: 'Gesler, Stormy, Truth', color: 'green-400'},
+        {id: 'icarium', title: 'Icarium, Mappo', color: 'violet-400'},
+        ] as NOTypes.MalazanMapItem[]
     }),
     computed: {
     },
     methods: {
     },
-    watch: {
-    },
-    mounted () {
-    }
   })
 </script>

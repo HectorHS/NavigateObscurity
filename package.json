@@ -20,7 +20,6 @@
     "d3-fetch": "^3.0.1",
     "graphology": "^0.25.4",
     "graphology-gexf": "^0.13.2",
-    "graphology-types": "^0.24.8",
     "highcharts": "^11.4.3",
     "highcharts-vue": "^2.0.1",
     "pinia": "^2.1.7",

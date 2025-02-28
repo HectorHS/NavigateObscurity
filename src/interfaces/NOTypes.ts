@@ -28,3 +28,8 @@ export interface ContextLinkData {
     from: string,
     to: string[]
 }
+export interface MalazanMapItem {
+    title: string,
+    color: string,
+    id: string
+}

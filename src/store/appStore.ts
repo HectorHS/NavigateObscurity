@@ -27,7 +27,6 @@ export const useAppStore = defineStore('appStore', () =>{
     try {
         const res = await apiGetComments(pageID);
         pageComments.value = res;
-        console.log(res);
     } catch (error){
         console.log('Error fetching data: ' + error);
     }

@@ -20,7 +20,6 @@ export const useHeadStrongStore = defineStore('headStrongStore', () =>{
             let d: NOTypes.ContextLinkData[] = [];
             let toColumns = data.columns;
             toColumns.splice(0, 2);
-            console.log(toColumns);
             for (let row of data) {
                 let to: string[] = [];
                 for (let col of toColumns) {
@@ -39,5 +38,3 @@ export const useHeadStrongStore = defineStore('headStrongStore', () =>{
         loadData,
     }
 });
-
-

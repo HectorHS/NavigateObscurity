@@ -1,7 +1,11 @@
 <template>
-    <figure>
-        <highcharts :options="options" class="h-full"></highcharts>
-    </figure>
+    <div>
+        <h2>Most used phrases</h2>
+        <div class="mb-6">Word combinations after excluding character names.</div>
+        <figure class="h-[40vh] lg:h-[70vh]">
+            <highcharts :options="options" class="h-full"></highcharts>
+        </figure>
+    </div>
 </template>
   
   <script lang="ts">
