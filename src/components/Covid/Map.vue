@@ -16,7 +16,11 @@
         <DashCommand text="Click on the play button to animate"></DashCommand>
       </div>
       <DashCommand text="Click on the map to select a country"></DashCommand>
-      <highcharts :constructorType="'mapChart'" :options="mapOptions" class="w-full covid-map" style="height:calc(100% - 100px)"></highcharts>
+      <!-- <highcharts  :options="mapOptions" class="w-full covid-map" style="height:calc(100% - 100px)"></highcharts> -->
+      <div class="w-full" style="height:calc(100% - 100px)">
+        <highcharts v-if="mapOptions && mapOptions.series!.length > 0" :options="mapOptions" :constructorType="'mapChart'" class="w-full h-full covid-map"></highcharts>
+        <div v-else class="w-full h-full animate-pulse bg-demo-map bg-contain bg-center bg-no-repeat mt-[3px]"></div>
+      </div>
     </figure>
   </template>
 

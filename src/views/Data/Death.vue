@@ -81,7 +81,10 @@
             <Dropdown :items="allLifeMeasures" v-model="selectedLifeMeasure" class="w-[400px]"></Dropdown>
             <Dropdown :items="allLifeYears" v-model="selectedLifeYear" class="w-[200px]"></Dropdown>
         </div>
-        <highcharts :constructorType="'mapChart'" :options="lifeMapOptions" class="w-full h-[50vh] lg:h-[80vh]"></highcharts>
+        <div class="w-full h-[50vh] lg:h-[80vh]">
+          <highcharts v-if="lifeMapOptions && lifeMapOptions.series!.length > 0 && (lifeMapOptions.series![0] as Highcharts.SeriesMapOptions).data!.length > 0" :constructorType="'mapChart'" :options="lifeMapOptions" class="w-full h-full"></highcharts>
+          <div v-else class="w-full h-full animate-pulse bg-demo-map bg-contain bg-center bg-no-repeat mt-[3px]"></div>
+        </div>
         <div class="source-text">
           <p>*Source:
             <a href="http://data.un.org/" target="_blank">United Nations </a>
@@ -140,7 +143,10 @@
         </p>
       </div>
       <figure>
-        <highcharts :options="deathTreemapOldOptions" class="w-full h-[305px]"></highcharts>
+        <div class="w-full h-[305px]">
+          <highcharts v-if="deathTreemapOldOptions && deathTreemapOldOptions.series!.length > 0 && (deathTreemapOldOptions.series![0] as Highcharts.SeriesTreemapOptions).data!.length > 0" :options="deathTreemapOldOptions" class="w-full h-full"></highcharts>
+          <div v-else class="w-full h-full animate-pulse bg-demo-treemap bg-contain bg-center bg-no-repeat mt-[3px]"></div>
+        </div>
       </figure>
       <div class="source-text">
         <p>*Source:

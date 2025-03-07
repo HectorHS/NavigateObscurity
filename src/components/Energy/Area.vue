@@ -1,7 +1,10 @@
 <template>
     <figure class="dash-card">
       <h5 class="pb-2">{{ selectedCountry }}'s energy use over time </h5>
-      <highcharts :options="areaOptions" style="height: calc(100% - 20px);"></highcharts>
+      <div class="w-full" style="height:calc(100% - 20px)">
+        <highcharts v-if="areaOptions && areaOptions.series!.length > 0 && (areaOptions.series![0] as Highcharts.SeriesAreaOptions).data!.length > 0" :options="areaOptions" class="w-full h-full"></highcharts>
+        <div v-else class="w-full h-full animate-pulse bg-demo-area-light bg-contain bg-center bg-no-repeat"></div>
+      </div>
     </figure>
   </template>
 

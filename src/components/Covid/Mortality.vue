@@ -2,8 +2,13 @@
   <div>
     <figure class="dash-card h-full">
       <h5 class="pb-2">{{ title }}</h5>
-      <highcharts v-if="excessOptions.series && excessOptions.series[0].data.length > 0" :options="excessOptions" style="height: calc(100% - 40px);"></highcharts>
-      <div v-else class="no-data" style="height: calc(100% - 40px);">No data available</div>
+      <div class="w-full" style="height: calc(100% - 40px);">
+        <div v-if="excessOptions && excessOptions.series" class="h-full w-full">
+          <highcharts v-if="(excessOptions.series[0] as Highcharts.SeriesBarOptions).data!.length > 0" :options="excessOptions" class="h-full"></highcharts>
+          <div v-else class="no-data h-full">No data available</div>
+        </div>
+        <div v-else class="w-full h-full animate-pulse bg-demo-columns-lines bg-contain bg-center bg-no-repeat"></div>
+      </div>
     </figure>
   </div>
 </template>

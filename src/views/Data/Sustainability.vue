@@ -39,7 +39,7 @@
         </div>
         <div class="w-full h-[50vh] lg:h-[80vh]">
           <highcharts v-if="dataLoaded" :constructorType="'mapChart'" :options="mapOptions" class="h-full w-full"></highcharts>
-          <div v-else class="w-full h-full  animate-pulse bg-demo-map bg-cover bg-center bg-no-repeat mt-[3px]"></div>
+          <div v-else class="w-full h-full animate-pulse bg-demo-map bg-contain bg-center bg-no-repeat mt-[3px]"></div>
         </div>
         
         <div class="source-text">
@@ -66,7 +66,7 @@
         </div>
         <div class="w-full h-[50vh] mt-3">
           <highcharts v-if="dataLoaded" :options="areaOptions" class="h-full w-full"></highcharts>
-          <div v-else class="w-8 h-8 animate-spin-slow bg-logo bg-cover bg-center bg-no-repeat mt-[3px]"></div>
+          <div v-else class="w-full h-full animate-pulse bg-demo-area bg-contain bg-center bg-no-repeat mt-[3px]"></div>
         </div>
         <div class="source-text">
         <p>

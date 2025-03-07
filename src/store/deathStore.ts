@@ -60,7 +60,7 @@ export const useDeathStore = defineStore('deathStore', () =>{
     const lifeMapOptions = computed<Highcharts.Options>(() => {
         let options: Highcharts.Options = getLifeMapOptions();
 
-        options.series![0].data = filteredLifeData.value;
+        (options.series![0] as Highcharts.SeriesMapOptions).data = filteredLifeData.value;
         options.tooltip!.formatter = function (this: Highcharts.TooltipFormatterContextObject):string {
             let title: string = fCapital(this.key!);
             let value: number = this.point.value!;
@@ -82,30 +82,30 @@ export const useDeathStore = defineStore('deathStore', () =>{
         };
 
         if (selectedLifeMeasure.value == "Fertility rate") {
-            options.colorAxis!.max = 3;
-            options.colorAxis!.min = 1;
+            (options.colorAxis as Highcharts.ColorAxisOptions).max = 3;
+            (options.colorAxis as Highcharts.ColorAxisOptions).min = 1;
         } else if (selectedLifeMeasure.value == "Life expectancy") {
-            options.colorAxis!.max = 80;
-            options.colorAxis!.min = 30;
+            (options.colorAxis as Highcharts.ColorAxisOptions).max = 80;
+            (options.colorAxis as Highcharts.ColorAxisOptions).min = 30;
         } else if (selectedLifeMeasure.value == "Median age") {
-            options.colorAxis!.max = 45;
-            options.colorAxis!.min = 15;
+            (options.colorAxis as Highcharts.ColorAxisOptions).max = 45;
+            (options.colorAxis as Highcharts.ColorAxisOptions).min = 15;
         } else if (selectedLifeMeasure.value == "Mortality percentage") {
-            options.colorAxis!.max = 2.25;
-            options.colorAxis!.min = 0.25;
+            (options.colorAxis as Highcharts.ColorAxisOptions).max = 2.25;
+            (options.colorAxis as Highcharts.ColorAxisOptions).min = 0.25;
         } else if (selectedLifeMeasure.value == "Population") {
-            options.colorAxis!.max = 500000000;
-            options.colorAxis!.min = 1000000;
+            (options.colorAxis as Highcharts.ColorAxisOptions).max = 500000000;
+            (options.colorAxis as Highcharts.ColorAxisOptions).min = 1000000;
         } else if (selectedLifeMeasure.value == "Population density") {
-            options.colorAxis!.max = 400;
-            options.colorAxis!.min = 0;
+            (options.colorAxis as Highcharts.ColorAxisOptions).max = 400;
+            (options.colorAxis as Highcharts.ColorAxisOptions).min = 0;
         }
 
         return options;
     });
-    const filteredDeathMapData = computed<HCTypes.Mapseries>(() => {
+    const filteredDeathMapData = computed<HCTypes.Mapseries[]>(() => {
         let new_data:HCTypes.MapData[] = [];
-        let new_series:HCTypes.Mapseries[]  = [];
+        let new_series:HCTypes.Mapseries[]  = [{ data: [], name: 'no data', type: 'map' }];
         if (selectedDeathCause.value == "All causes") {
             for (let caus of allMainCauses.value) {
                 for (let row of deathTopCausesRawData.value) {
@@ -130,11 +130,7 @@ export const useDeathStore = defineStore('deathStore', () =>{
             let series:HCTypes.Mapseries = { data: new_data, name: selectedDeathCause.value, type: 'map' }
             new_series.push(series);
         }
-        if (new_series.length > 0) {
-            return new_series;
-        } else {
-            return [{ data: [], name: 'no data', type: 'map' }];
-        }
+        return new_series;
     });
     const deathMapOptions = computed<Highcharts.Options>(() => {
         let options: Highcharts.Options = getDeathMapOptions();
@@ -149,7 +145,7 @@ export const useDeathStore = defineStore('deathStore', () =>{
                 return '<text><span style="font-size: 1.1em"><strong>' + title + '</strong></span><br>Percentage of total deaths: ' + per + '%</text>';
             }
         };
-        options.colorAxis!.maxColor = "#E63333";
+        (options.colorAxis as Highcharts.ColorAxisOptions).maxColor = "#E63333";
         options.plotOptions!.series!.events = {
             click: function (e:any) {
                 if (selectedDeathLocation.value == e.point.name) {
@@ -207,7 +203,7 @@ export const useDeathStore = defineStore('deathStore', () =>{
     const deathTreemapOptions = computed<Highcharts.Options>(() => {
         let options: Highcharts.Options = getDeathTreemapOptions();
 
-        options.series![0].data = fitleredDeathTreemapData.value;
+        (options.series![0] as Highcharts.SeriesTreemapOptions).data = fitleredDeathTreemapData.value;
         options.tooltip!.formatter = function (this: Highcharts.TooltipFormatterContextObject):string {
             let title = fCapital(this.key!);
             let deaths = numberFormatter(this.point!.value!);
@@ -394,7 +390,7 @@ export const useDeathStore = defineStore('deathStore', () =>{
         (options.series![1] as Highcharts.SeriesBarOptions).data = fitleredDeatAgeFemaleData.value;
 
         options.chart!.events = {
-            click: function (this:Worlddata.ClickEvent) {
+            click: function (this:any) {
                 if (selectedDeathAge.value == this.hoverPoint!.category) {
                     selectedDeathAge.value = 'All ages';
                 } else {

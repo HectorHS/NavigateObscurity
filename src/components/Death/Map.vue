@@ -1,8 +1,11 @@
 <template>
   <figure class="bg-gray h-full">
-      <h5>{{ mapTitle }}</h5>
-      <DashCommand text="Click on the map to select a country"></DashCommand>
-      <highcharts :constructorType="'mapChart'" :options="deathMapOptions" class="w-full death-map" style="height:calc(100% - 45px)"></highcharts>
+    <h5>{{ mapTitle }}</h5>
+    <DashCommand text="Click on the map to select a country"></DashCommand>
+    <div class="w-full" style="height:calc(100% - 45px)">
+      <highcharts v-if="deathMapOptions && deathMapOptions.series!.length > 0" :constructorType="'mapChart'" :options="deathMapOptions" class="w-full h-full death-map"></highcharts>
+      <div v-else class="w-full h-full animate-pulse bg-demo-map bg-contain bg-center bg-no-repeat mt-[3px]"></div>
+    </div>
   </figure>
 </template>
 

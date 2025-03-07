@@ -3,7 +3,10 @@
     <h5>Share of deaths by age</h5>
     <DashCommand text="Click on the graph to select an age group and sex"></DashCommand>
 
-    <highcharts :options="deathAgePyramidOptions" class="w-full" style="height: calc(100% - 80px);"></highcharts>
+    <div class="w-full" style="height:calc(100% - 80px)">
+      <highcharts v-if="deathAgePyramidOptions && deathAgePyramidOptions.series!.length > 0" :options="deathAgePyramidOptions" class="w-full h-full"></highcharts>
+      <div v-else class="w-full h-full animate-pulse bg-demo-pyramid bg-contain bg-center bg-no-repeat mt-[3px]"></div>
+    </div>
     <RadioButtons :items="sexRadioItems" id="radio1" v-model="selectedDeathSex" class="justify-center pb-2" direction="row" :light="true"></RadioButtons>
   </figure>
 </template>

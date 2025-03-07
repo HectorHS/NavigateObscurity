@@ -2,7 +2,10 @@
   <div>
     <figure class="dash-card h-full">
       <h5 class="pb-2">COVID-19 tests & vaccinations</h5>
-      <highcharts :options="vaccinesOptions" style="height: calc(100% - 30px);"></highcharts>
+      <div class="w-full" style="height:calc(100% - 30px)">
+        <highcharts v-if="vaccinesOptions && vaccinesOptions.series!.length > 0 && (vaccinesOptions.series![0] as Highcharts.SeriesBarOptions).data" :options="vaccinesOptions" class="w-full h-full"></highcharts>
+        <div v-else class="w-full h-full animate-pulse bg-demo-columns-line bg-contain bg-center bg-no-repeat"></div>
+      </div>
     </figure>
   </div>
 </template>

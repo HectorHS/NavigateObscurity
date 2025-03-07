@@ -260,10 +260,7 @@ export function getDeathMapOptions():Highcharts.Options {
             animation: false
         },
         legend: {
-            enabled: true,
-            symbolRadius: 0,
-            symbolHeight: 15,
-            symbolWidth: 300
+            enabled: false,
         },
         series: [{
             type: 'map',

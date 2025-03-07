@@ -62,7 +62,6 @@
 
   import Header from '@/components/Header.vue';
   import Comments from '@/components/Comments.vue';
-  // import Dropdown from '@/components/Controls/Dropdown.vue';
   import QON from '@/components/QON.vue';
   import CovidMap from '@/components/Covid/Map.vue';
   import CovidOverview from '@/components/Covid/Overview.vue';

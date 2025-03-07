@@ -1,7 +1,10 @@
 <template>
     <figure class="dash-card h-full">
       <h5 class="pb-2">{{title}}</h5>
-      <highcharts :options="importOptions" style="height: calc(100% - 30px);"></highcharts>
+      <div class="w-full" style="height:calc(100% - 30px)">
+        <highcharts v-if="importOptions && importOptions.series!.length > 0 && (importOptions.series![0] as Highcharts.SeriesBarOptions).data!.length > 0" :options="importOptions" class="w-full h-full"></highcharts>
+        <div v-else class="w-full h-full animate-pulse bg-demo-bars-stacked bg-contain bg-center bg-no-repeat"></div>
+      </div>
     </figure>
   </template>
 

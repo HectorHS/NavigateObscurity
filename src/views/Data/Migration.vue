@@ -27,7 +27,11 @@
             <DropdownMultiple :items="allMapIncomes" v-model="selectedMapIncomes" compId="mapIncomeSelect" class="w-[200px] pt-2"></DropdownMultiple>
             <Slider v-model="mapSliderValue" :min="0" :max="50" class="w-[200px] pt-2"></Slider>
         </div>
-         <highcharts :constructorType="'mapChart'" :options="mapOptions" class="w-full h-[50vh] lg:h-[80vh]"></highcharts>
+        <div class="w-full h-[50vh] lg:h-[80vh]">
+          <highcharts v-if="mapOptions && mapOptions.series!.length > 0 && (mapOptions.series![0] as Highcharts.SeriesMapOptions).data!.length > 0" :constructorType="'mapChart'" :options="mapOptions" class="h-full w-full"></highcharts>
+          <div v-else class="w-full h-full animate-pulse bg-demo-map bg-contain bg-center bg-no-repeat mt-[3px]"></div>
+         </div>
+
         <div class="source-text">
           <p>
              *Source:
@@ -57,7 +61,10 @@
           <Dropdown :items="allTreemapYears" v-model="selectedTreemapYear" class="w-[200px] pt-2"></Dropdown>
           <RadioButtons :items="treemapRadioItems" id="radio2" v-model="selectedTreemapMeasure" direction="row" class="pt-2" ></RadioButtons>
         </div>
-        <highcharts :options="treemapOptions" class="w-full h-[60vh]"></highcharts>
+        <div class="w-full h-[60vh]">
+          <highcharts v-if="treemapOptions && treemapOptions.series!.length > 0 && (treemapOptions.series![0] as Highcharts.SeriesTreemapOptions).data!.length > 0" :options="treemapOptions" class="h-full w-full"></highcharts>
+          <div v-else class="w-full h-full animate-pulse bg-demo-treemap bg-contain bg-center bg-no-repeat"></div>
+        </div>
 
       </figure>
       <div class="source-text">
@@ -80,8 +87,10 @@
         </p>
       </div>
       <figure class="flex flex-col lg:flex-row items-center px-base">
-
-        <highcharts :options="wheelOptions" class="w-8/12 h-[50vh] lg:min-h-[80vh]"></highcharts>
+        <div class="w-8/12 h-[50vh] lg:min-h-[80vh]">
+          <highcharts v-if="wheelOptions && wheelOptions.series!.length > 0 && (wheelOptions.series![0] as Highcharts.SeriesTreemapOptions).data!.length > 0" :options="wheelOptions" class="h-full w-full"></highcharts>
+          <div v-else class="w-full h-full animate-pulse bg-demo-wheel bg-contain bg-center bg-no-repeat"></div>
+        </div>
         <div class="w-full lg:w-4/12 flex flex-col justify-start">
           <RadioButtons :items="wheelRadioItems" id="radio1" v-model="selectedWheelMeasure" class="w-48" direction="row"></RadioButtons>
           <!-- Legend -->

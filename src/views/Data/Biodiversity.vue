@@ -19,7 +19,10 @@
         <div class="w-full lg:w-3/12 flex justify-end">
           <RadioButtons :items="radioItems" id="radio1" v-model="selectedPlants" class="w-full" :direction="radioDirection"></RadioButtons>
         </div>
-        <highcharts :options="sunburstOptions" class="h-[50vh] md:h-[70vh] lg:w-9/12"></highcharts>
+        <div class="h-[50vh] md:h-[70vh] lg:w-9/12">
+          <highcharts v-if="sunburstOptions && sunburstOptions.series!.length > 0 && (sunburstOptions.series![0] as Highcharts.SeriesSunburstOptions).data!.length > 0" :options="sunburstOptions" class="w-full h-full"></highcharts>
+          <div v-else class="w-full h-full animate-pulse bg-demo-sunburst bg-contain bg-center bg-no-repeat mt-[3px]"></div>
+        </div>
       </figure>
       <div class="source-text">
           <p>
@@ -39,7 +42,10 @@
         </p>
       </div>
       <figure>
-        <highcharts :options="scatterOptions" ></highcharts>
+        <div class="h-[350px]">
+          <highcharts v-if="scatterOptions && scatterOptions.series!.length > 0 && (scatterOptions.series![0] as Highcharts.SeriesScatterOptions).data!.length > 0" :options="scatterOptions" class="w-full h-full"></highcharts>
+          <div v-else class="w-full h-full animate-pulse bg-demo-bubbles bg-contain bg-center bg-no-repeat mt-[3px]"></div>
+        </div>
       </figure>
       <div class="source-text">
           <p>
